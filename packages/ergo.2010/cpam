@@ -1,0 +1,10 @@
+cpam-version: "1" 
+maintainer: "thomas.braibant@gmail.com"
+patches: ["ergo.patch"]
+build: [
+  ["coq_makefile" "-f" "Make" ">" "Makefile"]
+  ["make"]
+  ["make" "install"]
+]
+depends: ["containers" "counting"]
+ocaml-version: [= "8.4.pl2"]

@@ -1,0 +1,2095 @@
+diff --git a/Makefile.build b/Makefile.build
+index 8d3045c..46d8b89 100644
+--- a/Makefile.build
++++ b/Makefile.build
+@@ -209,7 +209,7 @@ coqbinaries:: ${COQBINARIES} ${CSDPCERT} ${FAKEIDE}
+ 
+ coq: coqlib tools coqbinaries
+ 
+-coqlib:: theories plugins
++coqlib:: theories plugins mtac
+ 
+ coqlight: theories-light tools coqbinaries
+ 
+@@ -499,6 +499,14 @@ theories/Numbers/Natural/BigN/NMake_gen.v: theories/Numbers/Natural/BigN/NMake_g
+ 	$(OCAML) $< $(TOTARGET)
+ 
+ ###########################################################################
++# Mtac
++###########################################################################
++
++mtac: $(COQC) theories plugins
++	$(COQC) -coqlib . $(MTACV)
++
++
++###########################################################################
+ # tools
+ ###########################################################################
+ 
+@@ -657,6 +665,9 @@ endif
+ 	$(INSTALLBIN) $(CSDPCERT) $(FULLCOQLIB)/plugins/micromega
+ 	rm -f $(FULLCOQLIB)/revision
+ 	-$(INSTALLLIB) revision $(FULLCOQLIB)
++#mtac
++	$(MKDIR) $(FULLCOQLIB)/user-contrib/Mtac
++	$(INSTALLLIB) user-contrib/Mtac/*.vo $(FULLCOQLIB)/user-contrib/Mtac
+ 
+ install-library-light:
+ 	$(MKDIR) $(FULLCOQLIB)
+diff --git a/Makefile.common b/Makefile.common
+index 444a7ee..6ec4263 100644
+--- a/Makefile.common
++++ b/Makefile.common
+@@ -270,6 +270,7 @@ COQDOCCMO:=$(CONFIG) $(addprefix tools/coqdoc/, \
+ ## we now retrieve the names of .vo file to compile in */vo.itarget files
+ 
+ cat_vo_itarget = $(addprefix $(1)/,$(shell cat $(1)/vo.itarget))
++cat_v_itarget = $(addprefix $(1)/,$(shell cat $(1)/v.itarget))
+ 
+ ## Theories
+ 
+@@ -297,6 +298,8 @@ SETOIDSVO:=$(call cat_vo_itarget, theories/Setoids)
+ UNICODEVO:=$(call cat_vo_itarget, theories/Unicode)
+ CLASSESVO:=$(call cat_vo_itarget, theories/Classes)
+ PROGRAMVO:=$(call cat_vo_itarget, theories/Program)
++MTACV:=$(call cat_v_itarget, user-contrib/Mtac)
++
+ 
+ THEORIESVO:=\
+   $(INITVO) $(LOGICVO) $(ARITHVO) $(BOOLVO) $(PARITHVO) $(NARITHVO) $(ZARITHVO) \
+diff --git a/dev/printers.mllib b/dev/printers.mllib
+index 40a5a82..76098f3 100644
+--- a/dev/printers.mllib
++++ b/dev/printers.mllib
+@@ -93,6 +93,8 @@ Indrec
+ Coercion
+ Unification
+ Cases
++Simpleunify
++Run
+ Pretyping
+ Declaremods
+ 
+diff --git a/interp/constrextern.ml b/interp/constrextern.ml
+index ee529fe..2ebb444 100644
+--- a/interp/constrextern.ml
++++ b/interp/constrextern.ml
+@@ -753,6 +753,8 @@ let rec extern inctx scopes vars r =
+   | GCast (loc,c, CastCoerce) ->
+       CCast (loc,sub_extern true scopes vars c, CastCoerce)
+ 
++  | GRun (loc, c) -> (*BETA*) CRun (loc, extern inctx scopes vars c)
++
+ and extern_typ (_,scopes) =
+   extern true (Some Notation.type_scope,scopes)
+ 
+diff --git a/interp/constrintern.ml b/interp/constrintern.ml
+index e806686..272082a 100644
+--- a/interp/constrintern.ml
++++ b/interp/constrintern.ml
+@@ -1351,6 +1351,7 @@ let internalize sigma globalenv env allow_patvar lvar c =
+ 	GCast (loc,intern env c1, CastConv (k, intern_type env c2))
+     | CCast (loc, c1, CastCoerce) ->
+ 	GCast (loc,intern env c1, CastCoerce)
++    | CRun (loc, c) -> GRun (loc, intern env c) (*BETA*)
+ 
+   and intern_type env = intern (set_type_scope env)
+ 
+diff --git a/interp/implicit_quantifiers.ml b/interp/implicit_quantifiers.ml
+index 2c00025..8a0cce4 100644
+--- a/interp/implicit_quantifiers.ml
++++ b/interp/implicit_quantifiers.ml
+@@ -183,6 +183,7 @@ let generalizable_vars_of_glob_constr ?(bound=Idset.empty) ?(allowed=Idset.empty
+     | GCast (loc,c,k) -> let v = vars bound vs c in
+ 	(match k with CastConv (_,t) -> vars bound v t | _ -> v)
+     | (GSort _ | GHole _ | GRef _ | GEvar _ | GPatVar _) -> vs
++    | GRun (_, e) -> (*BETA*) vars bound vs e
+ 
+   and vars_pattern bound vs (loc,idl,p,c) =
+     let bound' = List.fold_right Idset.add idl bound  in
+diff --git a/interp/topconstr.ml b/interp/topconstr.ml
+index b02a67e..28c6f17 100644
+--- a/interp/topconstr.ml
++++ b/interp/topconstr.ml
+@@ -48,6 +48,8 @@ type aconstr =
+   | AHole of Evd.hole_kind
+   | APatVar of patvar
+   | ACast of aconstr * aconstr cast_type
++  (* BETA *)
++  | ARun of aconstr
+ 
+ type scope_name = string
+ 
+@@ -155,6 +157,8 @@ let glob_constr_of_aconstr_with_binders loc g f e = function
+   | AHole x  -> GHole (loc,x)
+   | APatVar n -> GPatVar (loc,(false,n))
+   | ARef x -> GRef (loc,x)
++  (* BETA *)
++  | ARun x -> GRun (loc, f e x)
+ 
+ let rec glob_constr_of_aconstr loc x =
+   let rec aux () x =
+@@ -200,6 +204,7 @@ let compare_glob_constr f add t1 t2 = match t1,t2 with
+   | GSort (_,s1), GSort (_,s2) -> s1 = s2
+   | GLetIn (_,na1,b1,c1), GLetIn (_,na2,b2,c2) when na1 = na2 ->
+       on_true_do (f b1 b2 & f c1 c2) add na1
++  | GRun (_, e1), GRun (_, e2) -> (*BETA*) f e1 e2
+   | (GCases _ | GRec _
+     | GPatVar _ | GEvar _ | GLetTuple _ | GIf _ | GCast _),_
+   | _,(GCases _ | GRec _
+@@ -208,6 +213,7 @@ let compare_glob_constr f add t1 t2 = match t1,t2 with
+   | (GRef _ | GVar _ | GApp _ | GLambda _ | GProd _
+     | GHole _ | GSort _ | GLetIn _), _
+       -> false
++  | _, _ -> false
+ 
+ let rec eq_glob_constr t1 t2 = compare_glob_constr eq_glob_constr (fun _ -> ()) t1 t2
+ 
+@@ -323,7 +329,8 @@ let aconstr_and_vars_of_glob_constr a =
+   | GPatVar (_,(_,n)) -> APatVar n
+   | GEvar _ ->
+       error "Existential variables not allowed in notations."
+-
++  (*BETA*)
++  | GRun (_,c) -> ARun (aux c)
+   in
+   let t = aux a in
+   (* Side effect *)
+@@ -886,6 +893,7 @@ type constr_expr =
+   | CGeneralization of loc * binding_kind * abstraction_kind option * constr_expr
+   | CPrim of loc * prim_token
+   | CDelimiters of loc * string * constr_expr
++  | CRun of loc * constr_expr (*BETA*)
+ 
+ and fix_expr =
+     identifier located * (identifier located option * recursion_order_expr) * local_binder list * constr_expr * constr_expr
+@@ -957,6 +965,7 @@ let constr_loc = function
+   | CGeneralization (loc,_,_,_) -> loc
+   | CPrim (loc,_) -> loc
+   | CDelimiters (loc,_,_) -> loc
++  | CRun (loc, _) -> loc (*BETA*)
+ 
+ let cases_pattern_expr_loc = function
+   | CPatAlias (loc,_,_) -> loc
+@@ -1076,6 +1085,7 @@ let fold_constr_expr_with_binders g f n acc = function
+ 	  (fold_local_binders g f n acc t lb) c lb) l acc
+   | CCoFix (loc,_,_) ->
+       Pp.warning "Capture check in multiple binders not done"; acc
++  | CRun (_, c) -> f n acc c (*BETA*)
+ 
+ let free_vars_of_constr_expr c =
+   let rec aux bdvars l = function
+@@ -1240,6 +1250,7 @@ let map_constr_expr_with_binders g f e = function
+         let e'' = List.fold_left (fun e ((_,id),_,_,_) -> g id e) e' dl in
+         let d' = f e'' d in
+         (id,bl',t',d')) dl)
++  | CRun (loc, c) -> CRun (loc, f e c) (*BETA*)
+ 
+ (* Used in constrintern *)
+ let rec replace_vars_constr_expr l = function
+diff --git a/interp/topconstr.mli b/interp/topconstr.mli
+index c4c775b..f2d1449 100644
+--- a/interp/topconstr.mli
++++ b/interp/topconstr.mli
+@@ -45,6 +45,8 @@ type aconstr =
+   | AHole of Evd.hole_kind
+   | APatVar of patvar
+   | ACast of aconstr * aconstr cast_type
++  (* BETA *)
++  | ARun of aconstr
+ 
+ type scope_name = string
+ 
+@@ -165,6 +167,7 @@ type constr_expr =
+   | CGeneralization of loc * binding_kind * abstraction_kind option * constr_expr
+   | CPrim of loc * prim_token
+   | CDelimiters of loc * string * constr_expr
++  | CRun of loc * constr_expr (*BETA*)
+ 
+ and fix_expr =
+     identifier located * (identifier located option * recursion_order_expr) * local_binder list * constr_expr * constr_expr
+@@ -272,3 +275,8 @@ val patntn_loc :
+ (** For cases pattern parsing errors *)
+ 
+ val error_invalid_pattern_notation : Util.loc -> 'a
++
++val compare_glob_constr : (Glob_term.glob_constr -> Glob_term.glob_constr -> bool) ->
++           (Names.name -> 'a) ->
++           Glob_term.glob_constr -> Glob_term.glob_constr -> bool
++
+diff --git a/parsing/g_constr.ml4 b/parsing/g_constr.ml4
+index 22dc427..330a340 100644
+--- a/parsing/g_constr.ml4
++++ b/parsing/g_constr.ml4
+@@ -203,8 +203,12 @@ GEXTEND Gram
+ 	  CGeneralization (loc, Implicit, None, c)
+       | "`("; c = operconstr LEVEL "200"; ")" ->
+ 	  CGeneralization (loc, Explicit, None, c)
++      | run(*BETA*); c = operconstr LEVEL "200" -> CRun (loc, c)
+       ] ]
+   ;
++  run: (*BETA*)
++    [ [ "run" -> () ] ]
++  ;
+   forall:
+     [ [ "forall" -> () ] ]
+   ;
+diff --git a/parsing/ppconstr.ml b/parsing/ppconstr.ml
+index 5405e52..3558d77 100644
+--- a/parsing/ppconstr.ml
++++ b/parsing/ppconstr.ml
+@@ -550,6 +550,9 @@ let pr pr sep inherited a =
+   | CGeneralization (_,bk,ak,c) -> pr_generalization bk ak (pr mt ltop c), latom
+   | CPrim (_,p) -> pr_prim_token p, prec_of_prim_token p
+   | CDelimiters (_,sc,a) -> pr_delimiters sc (pr mt (ldelim,E) a), ldelim
++  | CRun (_, c) -> (*BETA*)
++      hv 0 (hov 2 (str "run " ++ pr spc ltop c)),
++      latom
+   in
+   let loc = constr_loc a in
+   pr_with_comments loc
+diff --git a/plugins/subtac/subtac_pretyping_F.ml b/plugins/subtac/subtac_pretyping_F.ml
+index f057971..95d5b43 100644
+--- a/plugins/subtac/subtac_pretyping_F.ml
++++ b/plugins/subtac/subtac_pretyping_F.ml
+@@ -556,6 +556,10 @@ module SubtacPretyping_F (Coercion : Coercion.S) = struct
+ 	in
+ 	  inh_conv_coerce_to_tycon loc env evdref cj tycon
+ 
++(* BETA *)
++     | GRun (loc, c) ->
++        Run.pretype_run pretype inh_conv_coerce_to_tycon tycon env evdref lvar loc c	 
++
+   (* [pretype_type valcon env evdref lvar c] coerces [c] into a type *)
+   and pretype_type valcon env evdref lvar = function
+     | GHole loc ->
+diff --git a/pretyping/detyping.ml b/pretyping/detyping.ml
+index 0166b64..71538fb 100644
+--- a/pretyping/detyping.ml
++++ b/pretyping/detyping.ml
+@@ -677,6 +677,10 @@ let rec subst_glob_constr subst raw =
+ 	     let r1' = subst_glob_constr subst r1 in
+ 	       if r1' == r1 then raw else GCast (loc,r1',k))
+ 
++  | GRun (loc, r) -> (*BETA*)
++    let r' = subst_glob_constr subst r in
++    if r' == r then raw else GRun (loc, r')
++
+ (* Utilities to transform kernel cases to simple pattern-matching problem *)
+ 
+ let simple_cases_matrix_of_branches ind brs =
+diff --git a/pretyping/evarconv.ml b/pretyping/evarconv.ml
+index 0eed194..22d7f53 100644
+--- a/pretyping/evarconv.ml
++++ b/pretyping/evarconv.ml
+@@ -165,6 +165,8 @@ let ise_array2 evd f v1 v2 =
+   if lv1 = Array.length v2 then allrec evd (pred lv1)
+   else (evd,false)
+ 
++let use_eta = ref true
++
+ let rec evar_conv_x ts env evd pbty term1 term2 =
+   let term1 = whd_head_evar evd term1 in
+   let term2 = whd_head_evar evd term2 in
+@@ -425,7 +427,7 @@ and evar_eqappr_x ?(rhs_is_already_stuck = false)
+ 	ise_try evd [f3; f4]
+ 
+     (* Eta-expansion *)
+-    | Rigid c1, _ when isLambda c1 ->
++    | Rigid c1, _ when !use_eta && isLambda c1 ->
+ 	assert (l1 = []);
+ 	let (na,c1,c'1) = destLambda c1 in
+         let c = nf_evar evd c1 in
+@@ -434,7 +436,7 @@ and evar_eqappr_x ?(rhs_is_already_stuck = false)
+ 	let appr2 = (lift 1 term2, List.map (lift 1) l2 @ [mkRel 1]) in
+ 	evar_eqappr_x ts env' evd CONV appr1 appr2
+ 
+-    | _, Rigid c2 when isLambda c2 ->
++    | _, Rigid c2 when !use_eta && isLambda c2 ->
+ 	assert (l2 = []);
+ 	let (na,c2,c'2) = destLambda c2 in
+         let c = nf_evar evd c2 in
+@@ -849,22 +851,26 @@ let consider_remaining_unif_problems ?(ts=full_transparent_state) env evd =
+ 
+ (* Main entry points *)
+ 
+-let the_conv_x ?(ts=full_transparent_state) env t1 t2 evd =
++let the_conv_x ?(eta=true) ?(ts=full_transparent_state) env t1 t2 evd =
++  use_eta := eta;
+   match evar_conv_x ts env evd CONV  t1 t2 with
+       (evd',true) -> evd'
+     | _ -> raise Reduction.NotConvertible
+ 
+ let the_conv_x_leq ?(ts=full_transparent_state) env t1 t2 evd =
++  use_eta := true;
+   match evar_conv_x ts env evd CUMUL t1 t2 with
+       (evd', true) -> evd'
+     | _ -> raise Reduction.NotConvertible
+ 
+ let e_conv ?(ts=full_transparent_state) env evdref t1 t2 =
++  use_eta := true;
+   match evar_conv_x ts env !evdref CONV t1 t2 with
+       (evd',true) -> evdref := evd'; true
+     | _ -> false
+ 
+ let e_cumul ?(ts=full_transparent_state) env evdref t1 t2 =
++  use_eta := true;
+   match evar_conv_x ts env !evdref CUMUL t1 t2 with
+       (evd',true) -> evdref := evd'; true
+     | _ -> false
+diff --git a/pretyping/evarconv.mli b/pretyping/evarconv.mli
+index dd68f16..5f5c952 100644
+--- a/pretyping/evarconv.mli
++++ b/pretyping/evarconv.mli
+@@ -15,7 +15,7 @@ open Reductionops
+ open Evd
+ 
+ (** returns exception Reduction.NotConvertible if not unifiable *)
+-val the_conv_x     : ?ts:transparent_state -> env -> constr -> constr -> evar_map -> evar_map
++val the_conv_x     : ?eta:bool -> ?ts:transparent_state -> env -> constr -> constr -> evar_map -> evar_map
+ val the_conv_x_leq : ?ts:transparent_state -> env -> constr -> constr -> evar_map -> evar_map
+ 
+ (** The same function resolving evars by side-effect and
+diff --git a/pretyping/evarutil.ml b/pretyping/evarutil.ml
+index fc29ba6..e7c14f8 100644
+--- a/pretyping/evarutil.ml
++++ b/pretyping/evarutil.ml
+@@ -1532,6 +1532,16 @@ exception NotInvertibleUsingOurAlgorithm of constr
+ exception NotEnoughInformationToProgress of (identifier * evar_projection) list
+ exception OccurCheckIn of evar_map * constr
+ 
++(* BETA *)
++let fast_path_stats = ref 0
++let slow_path_stats = ref 0
++
++let get_stats () = 
++  let stats = (!fast_path_stats, !slow_path_stats) in
++  fast_path_stats := 0;
++  slow_path_stats := 0;
++  stats
++
+ let rec invert_definition conv_algo choose env evd (evk,argsv as ev) rhs =
+   let aliases = make_alias_map env in
+   let evdref = ref evd in
+@@ -1662,9 +1672,34 @@ let rec invert_definition conv_algo choose env evd (evk,argsv as ev) rhs =
+ 	  (* Evar/Rigid problem (or assimilated if not normal): we "imitate" *)
+ 	    map_constr_with_full_binders (fun d (env,k) -> push_rel d env, k+1)
+ 	      imitate envk t in
+-
++  (* BETA *)
++  let fast rhs = 
++    let filter_ctxt = evar_filtered_context evi in
++    let names = ref Idset.empty in
++    let rec is_id_subst ctxt s =
++       match ctxt, s with
++         | ((id, _, _) :: ctxt'), (c :: s') ->
++           names := Idset.add id !names;
++           isVarId id c && is_id_subst ctxt' s'
++         | [], [] -> true
++         | _ -> false in
++    is_id_subst filter_ctxt (Array.to_list argsv) &&
++    closed0 rhs &&
++    Idset.subset (collect_vars rhs) !names in
++ 
+   let rhs = whd_beta evd rhs (* heuristic *) in
+-  let body = imitate (env,0) rhs in
++  let body = 
++    if fast rhs then 
++      begin
++(*      fast_path_stats := !fast_path_stats +1; *)
++        rhs
++      end
++    else
++      begin
++(*      slow_path_stats := !slow_path_stats +1; *)
++        imitate (env,0) rhs
++      end
++    in
+   (!evdref,body)
+ 
+ (* [define] tries to solve the problem "?ev[args] = rhs" when "?ev" is
+diff --git a/pretyping/glob_term.ml b/pretyping/glob_term.ml
+index 8e4b211..01ebede 100644
+--- a/pretyping/glob_term.ml
++++ b/pretyping/glob_term.ml
+@@ -67,6 +67,7 @@ type glob_constr =
+   | GSort of loc * glob_sort
+   | GHole of (loc * hole_kind)
+   | GCast of loc * glob_constr * glob_constr cast_type
++  | GRun of (loc * glob_constr) (*BETA*)
+ 
+ and glob_decl = name * binding_kind * glob_constr option * glob_constr
+ 
+@@ -144,6 +145,8 @@ let map_glob_constr_left_to_right f = function
+       let comp2 = match k with CastConv (k,t) -> CastConv (k, f t) | x -> x in
+       GCast (loc,comp1,comp2)
+   | (GVar _ | GSort _ | GHole _ | GRef _ | GEvar _ | GPatVar _) as x -> x
++  | GRun (loc,c) -> (*BETA*)
++      GRun (loc, f c)
+ 
+ let map_glob_constr = map_glob_constr_left_to_right
+ 
+@@ -205,6 +208,8 @@ let fold_glob_constr f acc =
+ 	Array.fold_left fold (Array.fold_left fold acc tyl) bv
+     | GCast (_,c,k) -> fold (match k with CastConv (_, t) -> fold acc t | CastCoerce -> acc) c
+     | (GSort _ | GHole _ | GRef _ | GEvar _ | GPatVar _) -> acc
++    | GRun (_,c) -> (*BETA*)
++      fold acc c
+ 
+   and fold_pattern acc (_,idl,p,c) = fold acc c
+ 
+@@ -244,6 +249,8 @@ let occur_glob_constr id =
+           idl bl tyl bv)
+     | GCast (loc,c,k) -> (occur c) or (match k with CastConv (_, t) -> occur t | CastCoerce -> false)
+     | (GSort _ | GHole _ | GRef _ | GEvar _ | GPatVar _) -> false
++    | GRun (loc,c) -> (*BETA*)
++        occur c
+ 
+   and occur_pattern (loc,idl,p,c) = not (List.mem id idl) & (occur c)
+ 
+@@ -302,6 +309,8 @@ let free_glob_vars  =
+     | GCast (loc,c,k) -> let v = vars bounded vs c in
+ 	(match k with CastConv (_,t) -> vars bounded v t | _ -> v)
+     | (GSort _ | GHole _ | GRef _ | GEvar _ | GPatVar _) -> vs
++    | GRun (_, c) -> (*BETA*) 
++        vars bounded vs c
+ 
+   and vars_pattern bounded vs (loc,idl,p,c) =
+     let bounded' = List.fold_right Idset.add idl bounded  in
+@@ -334,6 +343,7 @@ let loc_of_glob_constr = function
+   | GSort (loc,_) -> loc
+   | GHole (loc,_) -> loc
+   | GCast (loc,_,_) -> loc
++  | GRun (loc, _) -> loc (*BETA*) 
+ 
+ (**********************************************************************)
+ (* Conversion from glob_constr to cases pattern, if possible            *)
+diff --git a/pretyping/glob_term.mli b/pretyping/glob_term.mli
+index 798a960..0d9bd3b 100644
+--- a/pretyping/glob_term.mli
++++ b/pretyping/glob_term.mli
+@@ -71,6 +71,7 @@ type glob_constr =
+   | GSort of loc * glob_sort
+   | GHole of (loc * Evd.hole_kind)
+   | GCast of loc * glob_constr * glob_constr cast_type
++  | GRun of (loc * glob_constr) (*BETA*)
+ 
+ and glob_decl = name * binding_kind * glob_constr option * glob_constr
+ 
+diff --git a/pretyping/pretype_errors.ml b/pretyping/pretype_errors.ml
+index 672debf..101f2c5 100644
+--- a/pretyping/pretype_errors.ml
++++ b/pretyping/pretype_errors.ml
+@@ -39,6 +39,8 @@ type pretype_error =
+   | UnexpectedType of constr * constr
+   | NotProduct of constr
+   | TypingError of type_error
++  (* BETA *)
++  | UncaughtUserException of constr
+ 
+ exception PretypeError of env * Evd.evar_map * pretype_error
+ 
+@@ -184,3 +186,7 @@ let error_not_product_loc loc env sigma c =
+ 
+ let error_var_not_found_loc loc s =
+   raise_pretype_error (loc, empty_env, Evd.empty, VarNotFound s)
++
++(* BETA *)
++let error_user_exception loc env sigma c =
++  raise_pretype_error (loc, env, sigma, UncaughtUserException c)
+diff --git a/pretyping/pretype_errors.mli b/pretyping/pretype_errors.mli
+index 68ea67f..d01ed25 100644
+--- a/pretyping/pretype_errors.mli
++++ b/pretyping/pretype_errors.mli
+@@ -38,6 +38,8 @@ type pretype_error =
+   | UnexpectedType of constr * constr
+   | NotProduct of constr
+   | TypingError of Type_errors.type_error
++  (* BETA *)
++  | UncaughtUserException of constr
+ 
+ exception PretypeError of env * Evd.evar_map * pretype_error
+ 
+@@ -129,3 +131,7 @@ val error_not_product_loc :
+ (** {6 Error in conversion from AST to glob_constr } *)
+ 
+ val error_var_not_found_loc : loc -> identifier -> 'b
++
++(* BETA *)
++val error_user_exception :
++  loc -> env -> Evd.evar_map -> constr -> 'b
+diff --git a/pretyping/pretyping.ml b/pretyping/pretyping.ml
+index 1dd71fa..43947d2 100644
+--- a/pretyping/pretyping.ml
++++ b/pretyping/pretyping.ml
+@@ -695,6 +695,9 @@ module Pretyping_F (Coercion : Coercion.S) = struct
+ 		  { uj_val = v; uj_type = tval }
+ 	in inh_conv_coerce_to_tycon loc env evdref cj tycon
+ 
++    | GRun (loc, c) -> (*BETA*)
++        Run.pretype_run pretype inh_conv_coerce_to_tycon tycon env evdref lvar loc c
++
+   (* [pretype_type valcon env evdref lvar c] coerces [c] into a type *)
+   and pretype_type valcon env evdref lvar = function
+     | GHole loc ->
+diff --git a/pretyping/pretyping.mllib b/pretyping/pretyping.mllib
+index 9eec941..38fd7d1 100644
+--- a/pretyping/pretyping.mllib
++++ b/pretyping/pretyping.mllib
+@@ -25,5 +25,7 @@ Unification
+ Detyping
+ Indrec
+ Cases
++Simpleunify
++Run
+ Pretyping
+ 
+diff --git a/pretyping/run.ml b/pretyping/run.ml
+new file mode 100644
+index 0000000..4893a10
+--- /dev/null
++++ b/pretyping/run.ml
+@@ -0,0 +1,716 @@
++open List
++open String
++
++open Term
++open Termops
++open Reductionops
++open Environ
++open Evarutil
++open Evd
++open Names
++open Closure
++open Util
++open Evarconv
++open Libnames
++
++
++let isConstr c t = isConstruct t && eq_constructor (destConstruct t) c
++
++let mk_constr name = constr_of_global (Nametab.global_of_path (path_of_string name))
++
++module Constr = struct
++  let mkConstr s = lazy (mk_constr s)
++
++  let isConstr = fun r c -> eq_constr (Lazy.force r) c
++end
++
++module MtacNames = struct
++  let mtacore_name = "Mtac.mtacore"
++  let mtac_module_name = mtacore_name ^ ".Mtac"
++  let mkConstr = fun e-> mk_constr (mtac_module_name ^ "." ^ e)
++  let mkT_lazy = lazy (mkConstr "Mtac")
++
++  let mkBase = lazy (destInd (mkConstr "tpatt"), 1)
++  let mkTele = lazy (destInd (mkConstr "tpatt"), 2)
++
++  let isBase =  fun c->isConstr (Lazy.force mkBase) c
++  let isTele =  fun c->isConstr (Lazy.force mkTele) c
++
++end
++
++module Exceptions = struct
++
++  let mkInternalException = fun e -> mkApp (
++    MtacNames.mkConstr "InternalException", [|MtacNames.mkConstr e|])
++
++  let mkNullPointer = lazy (mkInternalException  "NullPointer")
++  let mkTermNotGround = lazy (mkInternalException  "TermNotGround")
++
++  (* HACK: we put Prop as the type of the raise. We can put an evar, but
++     what's the point anyway? *)
++  let mkRaise e = mkApp(MtacNames.mkConstr "raise", [|mkProp; Lazy.force e|]) 
++
++  let error_stuck = "Cannot reduce term, perhaps an opaque definition?"
++  let error_param = "Parameter appears in returned value"
++  let error_no_match = "No pattern matches"
++  let error_abs = "Cannot abstract non variable"
++  let unknown_reduction_strategy = "Unknown reduction strategy"
++
++  let raise = error
++end
++
++module ReductionStrategy = struct
++
++  let mkRed = fun s -> lazy (MtacNames.mkConstr s)
++  let redNone = mkRed "RedNone"
++  let redSimpl = mkRed "RedSimpl"
++  let redWhd = mkRed "RedWhd"
++
++  let test = fun r c -> eq_constr (Lazy.force r) c
++  let isRedNone = test redNone
++  let isRedSimpl = test redSimpl
++  let isRedWhd = test redWhd
++
++  let reduce sigma env strategy c =
++    if isRedNone strategy then
++      c
++    else if isRedSimpl strategy then
++      Tacred.simpl env sigma c
++    else if isRedWhd strategy then
++      whd_betadeltaiota env sigma c
++    else
++      Exceptions.raise Exceptions.unknown_reduction_strategy 
++
++end
++
++module UnificationStrategy = struct
++
++  let mkUni = fun s -> lazy (MtacNames.mkConstr s)
++  let uniRed = mkUni "UniRed"
++  let uniSimpl = mkUni "UniSimpl"
++
++  let test = fun r c -> eq_constr (Lazy.force r) c
++  let isUniRed = test uniRed
++  let isUniSimpl = test uniSimpl
++
++  let find_pbs sigma evars =
++    let (_, pbs) = extract_all_conv_pbs sigma in
++    List.filter (fun (_,_,c1,c2) -> 
++      List.exists (fun e -> 
++	Termops.occur_term e c1 || Termops.occur_term e c2) evars) pbs
++
++  let unify rsigma env evars strategy t1 t2 =
++    if isUniRed strategy then
++      try
++        let sigma = the_conv_x ~eta:false env t2 t1 !rsigma in
++	rsigma := consider_remaining_unif_problems env sigma;
++        List.length (find_pbs !rsigma evars) = 0
++      with _ -> false
++    else if isUniSimpl strategy then
++      let b, sigma = Simpleunify.unify env !rsigma t2 t1 in
++      rsigma := sigma;
++      b && List.length (find_pbs sigma evars) = 0
++    else
++      Exceptions.raise Exceptions.unknown_reduction_strategy 
++
++end
++
++let mkT () = Lazy.force MtacNames.mkT_lazy
++
++let mk_ind path s =
++  encode_mind (dirpath_of_string path) (id_of_string s)
++
++module CoqList = struct
++  let t    = (mk_ind "Coq.Init.Datatypes" "list", 0)
++  let nil  = (t, 1)
++  let cons = (t, 2)
++
++  let isNil  = isConstr nil
++  let isCons = isConstr cons
++end
++
++module CoqEq = struct
++  let t       = (mk_ind "Coq.Init.Logic" "eq", 0)
++  let eq_refl = mkConstruct (t, 1)
++
++  let mkEq a x y = mkApp(mkInd t, [|a;x;y|])
++  let mkEqRefl a x = mkApp(eq_refl, [|a;x|])
++end
++
++module CoqSigT = struct
++  let t    = (mk_ind "Coq.Init.Specif" "sigT", 0)
++  let existT  = (t, 1)
++
++  let mkExistT a p x px =
++    mkApp (mkConstruct existT, [|a; p; x; px|])
++end
++
++module CoqNat = struct
++  let t    = (mk_ind "Coq.Init.Datatypes" "nat", 0)
++  let zero = (t, 1)
++  let succ = (t, 2)
++
++  let isZero = isConstr zero
++  let isSucc = isConstr succ
++
++  let rec to_coq = function
++    | 0 -> mkConstruct zero
++    | n -> Term.mkApp (mkConstruct succ, [| to_coq (pred n) |])
++
++  let rec from_coq' reentrant env evd c =
++    if isZero c then
++      0
++    else 
++      let (s, n) = destApp c in
++      begin
++      if isSucc s then
++        1 + (from_coq' false env evd (n.(0)))
++      else if reentrant then
++	anomaly "Not a nat"
++      else
++	let c' = Tacred.cbv_betadeltaiota env evd c in
++	from_coq' true env evd c'
++      end
++
++  let from_coq = from_coq' false
++
++end
++
++module CoqPositive = struct
++  let positive = lazy (mk_constr "Coq.Numbers.BinNums.positive")
++  let xI = lazy (mk_constr "Coq.Numbers.BinNums.xI")
++  let xO = lazy (mk_constr "Coq.Numbers.BinNums.xO")
++  let xH = lazy (mk_constr "Coq.Numbers.BinNums.xH")
++
++  let test = fun r c -> eq_constr (Lazy.force r) c
++  let isH = fun c -> test xH c
++  let isI = fun c -> test xI c
++  let isO = fun c -> test xO c
++  
++  let rec from_coq' reentrant i env evd c =
++    if isH c then
++      1
++    else 
++      let (s, n) = destApp c in
++      begin
++      if isI s then
++        (from_coq' false (i+1) env evd (n.(0)))*2 + 1
++      else if isO s then
++        (from_coq' false (i+1) env evd (n.(0)))*2
++      else if reentrant then
++	anomaly "Not a positive"
++      else
++	let c' = Tacred.cbv_betadeltaiota env evd c in
++	from_coq' true i env evd c'
++      end
++
++  let from_coq = from_coq' false 0
++  
++  let rec to_coq n =
++    if n = 1 then
++      Lazy.force xH
++    else if n mod 2 = 0 then
++      mkApp(Lazy.force xO, [|to_coq (n / 2)|])
++    else
++      mkApp(Lazy.force xI, [|to_coq ((n-1)/2)|])
++
++end
++
++module CoqN = struct
++  let tN = Constr.mkConstr "Coq.Numbers.BinNums.N"
++  let h0 = Constr.mkConstr "Coq.Numbers.BinNums.N0"
++  let hP = Constr.mkConstr "Coq.Numbers.BinNums.Npos"
++
++  let is0 = Constr.isConstr h0
++  let isP = Constr.isConstr hP
++
++  let rec from_coq' reentrant env evd c =
++    if is0 c then
++      0
++    else 
++      let (s, n) = destApp c in
++      begin
++      if isP s then
++        CoqPositive.from_coq env evd (n.(0))
++      else if reentrant then
++	anomaly "Not a positive"
++      else
++	let c' = Tacred.cbv_betadeltaiota env evd c in
++	from_coq' true env evd c'
++      end
++
++  let from_coq = from_coq' false
++
++  let to_coq n =
++    if n = 0 then
++      Lazy.force h0
++    else
++      mkApp(Lazy.force hP, [|CoqPositive.to_coq n|])
++end
++
++module type RefConstructors = 
++  sig
++    val mkRef : constr lazy_t
++  end
++
++module RefFactory = functor (Ref : RefConstructors) ->
++struct
++  let isRef =  Constr.isConstr Ref.mkRef
++
++  let to_coq a n = 
++    Term.mkApp (Lazy.force Ref.mkRef, [|a ; CoqN.to_coq n|])
++
++  let rec from_coq' reentrant env evd c =
++    if isApp c && isRef (fst (destApp c)) then
++      CoqN.from_coq env evd (snd (destApp c)).(1)
++    else if reentrant then
++      anomaly "Not a reference"
++    else
++      try
++	let c' = Tacred.cbv_betadeltaiota env evd c in
++	from_coq' true env evd c'
++      with _ -> 
++	anomaly "Not a reference"
++
++  let from_coq = from_coq' false
++end
++
++module ForgetRef : RefConstructors = struct
++  let mkRef= Constr.mkConstr (MtacNames.mtac_module_name ^ ".mkRef")
++end
++
++module ForgetRefFactory = RefFactory(ForgetRef)
++
++(** An array that grows 1.5 times when it gets out of space *) 
++module GrowingArray = struct
++  type 'a t = 'a array ref * 'a * int ref
++  
++  let make i t = (ref (Array.make i t), t, ref 0)
++  let length g = let (_, _, i) = g in !i
++  let get g = let (a, _, _) = g in Array.get !a
++  let set g = let (a, _, _) = g in Array.set !a
++
++  let add g t =
++    let (a, e, i) = g in
++    begin
++    if Array.length !a <= !i then
++      a := Array.append !a (Array.make (Array.length !a / 2) e)
++    else
++      ()
++    end;
++    Array.set !a !i t;
++    i := !i+1
++ 
++end
++
++module Refs = struct
++  let bag = ref (GrowingArray.make 4 None)
++
++  let clean () = 
++    bag := GrowingArray.make 4 None
++
++  let length () =
++    GrowingArray.length !bag
++
++  let check_context undo index c =
++    let size = List.length undo in
++    let rec check depth t =
++      match kind_of_term t with
++      | Rel k ->
++        if depth < k && k <= depth + size then
++          let rl = List.nth undo (k - depth -1) in
++          rl := (index :: !rl)
++        else
++          ()
++      | _ -> iter_constr_with_binders succ check depth t
++    in
++    check 0 c
++
++  let new_ref undo a c =
++    let level = List.length undo in
++    GrowingArray.add !bag (Some (c, level));
++    let index = pred (GrowingArray.length !bag) in
++    check_context undo index c;
++    ForgetRefFactory.to_coq a index
++
++  exception NullPointerException
++
++  let get env evd undo i = 
++    let level = List.length undo in
++    let index = ForgetRefFactory.from_coq env evd i in
++    let v = GrowingArray.get !bag index in
++    match v with
++      None -> raise NullPointerException
++    | Some (c, l) -> (lift (level - l) c)
++
++  (* HACK SLOW *)
++  let remove_all undo index =
++    List.iter (fun rl ->
++      rl := List.filter (fun i -> i <> index) !rl) undo
++
++  let set env evd undo i c = 
++    let level = List.length undo in
++    let index = ForgetRefFactory.from_coq env evd i in
++    remove_all undo index;
++    check_context undo index c;
++    GrowingArray.set !bag index (Some (c, level))
++
++  let invalidate index =
++    GrowingArray.set !bag index None
++    
++end
++
++
++type data = Val of (evar_map * constr) | Err of constr
++
++let (>>=) v g =
++  match v with
++    | Val v' -> g v'
++    | _ -> v
++
++let return s t = Val (s, t)
++
++let fail t = Err t
++(*
++let uflags =
++  { Unification.default_unify_flags with
++    Unification.modulo_eta = false }
++*)
++let rec open_pattern (env, sigma) p evars =
++  let (patt, args) = whd_betadeltaiota_stack env sigma p in
++  let length = List.length args in
++  let nth = List.nth args in
++  if MtacNames.isBase patt && length = 6 then
++    let p = nth 3 in
++    let b = nth 4 in
++    let strategy = nth 5 in
++    Some (sigma, evars, p, b, strategy)
++  else if MtacNames.isTele patt && length = 5 then
++    let c = nth 2 in
++    let f = nth 4 in
++    let (sigma', evar) = Evarutil.new_evar sigma env (* empty_env *) c in
++(*    let evar = Evarutil.new_meta () in
++    let sigma' = Evd.meta_declare evar c sigma in *)
++    open_pattern (env, sigma') (mkApp (f, [|evar|])) (evar :: evars)
++  else
++    None
++
++
++
++let rec runmatch' ?(reentrant = false) i (env, sigma as ctxt) t ty patts' =
++  let (patts, args) = decompose_app patts' in
++  if CoqList.isNil patts && List.length args = 1 then
++    Exceptions.raise Exceptions.error_no_match
++  else if CoqList.isCons patts && List.length args = 3 then
++      match open_pattern ctxt (List.nth args 1) [] with
++        Some (sigma', evars, p, body, strategy) ->
++          let rsigma' = ref sigma' in
++	  let devars = destEvars evars in
++          begin
++            if unify env rsigma' evars strategy p t && all_defined rsigma' devars then
++              let body = nf_evar !rsigma' body in
++              let () = remove_all rsigma' devars in
++	      let body' = mkApp(body, [|CoqEq.mkEqRefl ty t|]) in
++              (!rsigma', body')
++            else
++              runmatch' (i+1) ctxt t ty (List.nth args 2)
++          end
++        | None -> Exceptions.raise Exceptions.error_stuck
++  else if not reentrant then
++    let patts = whd_betadeltaiota env sigma patts' in
++    runmatch' ~reentrant:true i ctxt t ty patts
++  else
++    Exceptions.raise Exceptions.error_stuck
++
++and destEvars =
++  (* fun l -> l *)
++  List.map (fun e-> let ev, _ = destEvar e in ev)
++
++and all_defined rsigma =
++  (* List.fold_left (fun b e -> b && Evd.meta_defined !rsigma e) true *)
++  (*
++  List.fold_left (fun b e -> b && Evd.is_defined !rsigma e) true
++  *)
++  (fun _->true)
++
++and remove_all rsigma =
++  fun l -> ()
++  (* List.iter (fun e -> rsigma := Evd.remove !rsigma e) *)
++
++and unify env rsigma evars strategy t1 t2 =
++  UnificationStrategy.unify rsigma env evars strategy t1 t2
++
++
++let runmatch = runmatch' 0
++
++
++
++let ind_ascii = (mk_ind "Coq.Strings.Ascii" "ascii", 0)
++
++let ind_string = (mk_ind "Coq.Strings.String" "string", 0)
++
++let ind_unit = (mk_ind "Coq.Init.Datatypes" "unit", 0)
++let unit_elem = (mkConstruct (ind_unit, 1))
++
++let mkBool = (mk_ind "Coq.Init.Datatypes" "bool", 0)
++let mkTrue = (mkBool, 1)
++let mkFalse = (mkBool, 2)
++
++let isTrue b = destConstruct b = mkTrue
++
++let to_ascii env sigma c =
++  let (h, args) = whd_betadeltaiota_stack env sigma c in
++  let rec bla n bits =
++    match bits with
++      | [] -> 0
++      | (b :: bs) -> (if isTrue b then 1 else 0) lsl n + bla (n+1) bs
++  in 
++  let n = bla 0 args in
++  Char.escaped (Char.chr n)
++
++let rec to_string env sigma s =
++  let (h, args) = whd_betadeltaiota_stack env sigma s in
++  if List.length args = 0 then (* assume is nil *)
++    ""
++  else (* assume is cons *)
++    let c, s' = List.nth args 0, List.nth args 1 in
++    to_ascii env sigma c ^ to_string env sigma s'
++    
++    
++let print env sigma s = Printf.printf "[DEBUG] %s\n" (to_string env sigma s)
++
++let mysubstn t n c =
++  let rec substrec depth c = match kind_of_term c with
++    | Rel k     ->
++        if k<=depth then c
++        else if k = depth+n then lift depth t
++        else mkRel (k+1)
++    | _ -> map_constr_with_binders succ substrec depth c in
++  substrec 0 c
++
++let rec run' ?(reentrant = false) (env, sigma, undo as ctxt) t =
++  let (h, args) = decompose_app t in
++  let nth = List.nth args in
++  let assert_args n = 
++    if List.length args = n then
++      ()
++    else
++      anomaly "The number of arguments for the constructor is wrong"
++  in
++  let constr c = 
++    if isConstruct h then
++      let (m, ix) = destConstruct h in
++      if eq_ind m (destInd (mkT ())) then
++	(true, ix)
++      else
++	(false, 0)
++    else
++      (false, 0)
++  in
++  match constr h with
++    (false, _) ->
++      if reentrant then
++        Exceptions.raise Exceptions.error_stuck
++      else
++	let t' = whd_betadeltaiota env sigma t in
++	run' ~reentrant:true ctxt t'
++    | (_, ix) ->
++    begin
++      match ix with
++      | 1 -> assert_args 3; (* ret *)        
++	return sigma (ReductionStrategy.reduce sigma env (nth 1) (nth 2))
++      | 2 -> assert_args 4; (* bind *)
++	run' ctxt (nth 2) >>= fun (sigma', v) ->
++	let t' = whd_betadeltaiota env sigma (mkApp(nth 3, [|v|])) in
++	run' ~reentrant:true (env, sigma', undo) t'
++      | 3 -> assert_args 3; (* try *)
++	begin
++	match run' ctxt (nth 1) with
++	  | Val (sigma', v) -> return sigma' v
++	  | Err i -> 
++            let t' = whd_betadeltaiota env sigma (mkApp(nth 2, [|i|])) in
++            run' ~reentrant:true ctxt t'
++	end
++      | 4 -> assert_args 2; (* raise *)
++	fail (List.nth args 1)
++      | 5 -> assert_args 6; (* fix1 *)
++	let a, b, s, i, f, x = nth 0, nth 1, nth 2, nth 3, nth 4, nth 5 in
++	run_fix ctxt h [|a|] b s i f [|x|]
++      | 6 -> assert_args 8; (* fix 2 *)
++	let a1, a2, b, s, i, f, x1, x2 = nth 0, nth 1, nth 2, nth 3, nth 4, nth 5, nth 6, nth 7 in
++	run_fix ctxt h [|a1; a2|] b s i f [|x1; x2|]
++      | 7 -> assert_args 10; (* fix 3 *)
++	let a1, a2, a3, b, s, i, f, x1, x2, x3 = 
++	  nth 0, nth 1, nth 2, nth 3, nth 4, nth 5, nth 6, nth 7, nth 8, nth 9 in
++	run_fix ctxt h [|a1; a2; a3|] b s i f [|x1; x2; x3|]
++      | 8 -> assert_args 4; (* match *)
++	let (sigma', body) = runmatch (env, sigma) (nth 2) (nth 0) (nth 3) in
++	run' (env, sigma', undo) body
++      | 9 -> assert_args 1; (* print *)
++	let s = nth 0 in
++	print env sigma s;
++	return sigma unit_elem
++      | 10 -> assert_args 3; (* nu *)
++	let a, f = nth 0, nth 2 in
++	let fx = mkApp(lift 1 f, [|mkRel 1|]) in
++        let ur = ref [] in
++        begin
++	match run' (push_rel (Anonymous, None, a) env, sigma, (ur :: undo)) fx with
++          | Val (sigma', e) ->
++            clean !ur;
++	    if Intset.mem 1 (free_rels e) then
++              Exceptions.raise Exceptions.error_param
++	    else
++	      return sigma' (pop e)
++          | Err e -> 
++            clean !ur;
++	    if Intset.mem 1 (free_rels e) then
++              Exceptions.raise Exceptions.error_param
++	    else
++	      fail (pop e)
++        end
++      | 11 -> assert_args 2; (* is_param *)
++	let e = whd_betadeltaiota env sigma (nth 1) in
++	if isRel e then
++	  return sigma (mkConstruct mkTrue)
++	else
++	  return sigma (mkConstruct mkFalse)
++      | 12 -> assert_args 4; (* abs *)
++        let a, p, x, y = nth 0, nth 1, nth 2, nth 3 in
++        abs env sigma a p x y false
++      | 13 -> assert_args 4; (* abs_eq *)
++        let a, p, x, y = nth 0, nth 1, nth 2, nth 3 in
++        abs env sigma a p x y true
++      | 14 -> assert_args 1; (* evar *)
++	let t = nth 0 in
++	let (sigma', ev) = Evarutil.new_evar sigma env t in
++	return sigma' ev
++      | 15 -> assert_args 2; (* is_evar *)
++	let e = whd_betadeltaiota env sigma (nth 1) in
++	if isEvar e then
++	  return sigma (mkConstruct mkTrue)
++	else
++	  return sigma (mkConstruct mkFalse)
++      | 16 -> assert_args 2; (* ref *)
++	return sigma (Refs.new_ref undo (nth 0) (nth 1))
++      | 17 -> assert_args 2; (* read *)
++	begin
++	try
++	  return sigma (Refs.get env sigma undo (nth 1))
++	with Refs.NullPointerException ->
++	  fail (Lazy.force Exceptions.mkNullPointer)
++	end
++      | 18 -> assert_args 3; (* write *)
++	Refs.set env sigma undo (nth 1) (nth 2);
++	return sigma unit_elem
++      | 19 -> assert_args 3; (* hash *)
++        return sigma (hash ctxt (nth 1) (nth 2))
++
++      | 20 -> assert_args 4; (* nu_let *)
++	let a, t, f = nth 0, nth 2, nth 3 in
++	let fx = mkApp(lift 1 f, [|mkRel 1;CoqEq.mkEqRefl a (mkRel 1)|]) in
++        let ur = ref [] in
++        begin
++	match run' (push_rel (Anonymous, Some t, a) env, sigma, (ur :: undo)) fx with
++          | Val (sigma', e) ->
++            clean !ur;
++	    return sigma' (mkLetIn (Anonymous, t, a, e))
++          | Err e -> 
++            clean !ur;
++	    if Intset.mem 1 (free_rels e) then
++              Exceptions.raise Exceptions.error_param
++	    else
++	      fail (pop e)
++        end
++
++      | _ ->
++	anomaly "I have no idea what is this construct of T that you have here"
++    end
++
++and abs env sigma a p x y eq_proof =
++  let x = whd_betadeltaiota env sigma x in
++  if isRel x then
++    let y' = mysubstn (mkRel 1) (destRel x) y in
++    let t = mkLambda (Anonymous, a, y') in
++    if eq_proof then
++      let ex_a = mkProd (Anonymous, a, mkApp(lift 1 p, [|mkRel 1|])) in
++      let px_type = mkApp(p, [|x|]) in
++      let ex_p = mkLambda (Anonymous, ex_a, CoqEq.mkEq px_type (mkApp(mkRel 1, [|lift 1 x|])) (lift 1 y)) in
++      let ex_x = t in
++      let ex_px = CoqEq.mkEqRefl px_type y in
++      return sigma (CoqSigT.mkExistT ex_a ex_p ex_x ex_px)
++    else
++      return sigma t
++  else
++    Exceptions.raise Exceptions.error_abs
++
++and clean =
++  List.iter (fun i -> Refs.invalidate i)
++  
++and run_fix (env, sigma, _ as ctxt) h a b s i f x =
++  let fixf = mkApp(h, Array.append a [|b;s;i;f|]) in
++  let c = mkApp (f, Array.append [| fixf|] x) in
++  let t' = whd_betadeltaiota env sigma c in
++  run' ~reentrant:true ctxt t'
++
++and hash (env, sigma, undo) c size =
++  let size = CoqNat.from_coq env sigma size in
++  let nus = List.length undo in
++  let rec upd depth t =
++    match kind_of_term t with
++    | Rel k ->
++      if depth < k then
++        begin
++        if k > depth + nus then
++          mkRel (k - nus)
++        else
++          mkRel (k + nus - (2 * (k -1)))
++        end
++      else
++        t
++    | _ -> map_constr_with_binders succ upd depth t
++  in
++  let h = Term.hash_constr (upd 0 c) in
++  CoqNat.to_coq (Pervasives.abs (h mod size))
++
++let assert_free_of_refs c =
++  if Refs.length () = 0 then
++    ()
++  else if occur_term (Lazy.force ForgetRef.mkRef) c then
++    anomaly "Returning a reference. This is not allowed since you might be naughty and use it in the next execution."
++  else ()
++
++let run (env, sigma) t  = 
++  let _ = Refs.clean () in
++  match run' (env, sigma, []) (nf_evar sigma t) with
++    | Err i -> 
++      assert_free_of_refs i;
++      Err i
++    | Val (sigma', v) -> 
++      assert_free_of_refs v;
++      Val (sigma', nf_evar sigma' v)
++
++
++let pretypeT pretype tycon env evdref lvar c =
++    let t = 
++      match tycon with
++      | Some (_, ty) -> ty
++      | _ ->
++        let sigma, univ = new_univ_variable !evdref in
++        evdref := sigma;
++        e_new_evar evdref env (mkType univ)
++    in
++    let tt = mkApp(mkT (), [|t|]) in
++    t, pretype (mk_tycon tt) env evdref lvar c
++
++let pretype_run pretype coerce_to_tycon tycon env evdref lvar loc c =
++   let t, r = pretypeT pretype tycon env evdref lvar c in
++   let d = run (env, !evdref) r.uj_val in
++   match d with
++       | Val (evmap, e) ->
++         evdref := evmap ;
++         let r = { uj_val = e; uj_type = t } in
++         coerce_to_tycon loc env evdref r tycon
++       | Err e -> 
++         Pretype_errors.error_user_exception loc env !evdref e
++
+diff --git a/pretyping/run.mli b/pretyping/run.mli
+new file mode 100644
+index 0000000..9110724
+--- /dev/null
++++ b/pretyping/run.mli
+@@ -0,0 +1,24 @@
++open Term
++open Evd
++open Environ
++
++type data = Val of (evar_map * constr) | Err of constr
++
++val mkT : unit -> Term.constr
++
++val run : (env * evar_map) -> constr -> data
++
++val pretype_run : 
++  (Evarutil.type_constraint -> Environ.env -> Evd.evar_map ref -> 'a -> 'b -> Environ.unsafe_judgment) ->
++  (Util.loc -> Environ.env -> Evd.evar_map ref -> Environ.unsafe_judgment -> ('c * Term.types) option -> 'd) ->
++  ('c * Term.types) option ->
++  Environ.env -> Evd.evar_map ref -> 'a -> Util.loc -> 'b -> 'd
++
++
++(* debug *)
++val to_string : env -> evar_map -> constr -> string
++val to_ascii : env -> evar_map -> constr -> string
++val run' : ?reentrant:bool -> (env * evar_map * int list ref list) -> constr -> data
++val runmatch' : ?reentrant:bool -> int ->
++           Environ.env * Evd.evar_map ->
++           Term.constr -> Term.types -> Term.constr -> Evd.evar_map * Term.constr
+diff --git a/pretyping/simpleunify.ml b/pretyping/simpleunify.ml
+new file mode 100644
+index 0000000..cef3428
+--- /dev/null
++++ b/pretyping/simpleunify.ml
+@@ -0,0 +1,221 @@
++open List
++
++open Term
++open Termops
++open Reduction
++open Reductionops
++open Environ
++open Evarutil
++open Evd
++open Names
++open Closure
++
++
++let whd evd c = 
++  Reductionops.whd_stack evd c
++	
++let ise_array2 evd f v1 v2 =
++  let l1 = Array.length v1 in
++  let l2 = Array.length v2 in
++  assert (l1 <= l2) ;
++  let diff = l2 - l1 in
++  let rec allrec evdi n = 
++    if n >= l1 then (true, evdi)
++    else
++      let (b, evdi') = f evdi v1.(n) v2.(n+diff) in
++      if b then allrec evdi' (n+1) else (false, evd)
++  in
++  allrec evd 0
++
++      
++let ise_list2 evd f l1 l2 =
++  let rec ise_list2 i l1 l2 =
++    match l1,l2 with
++      [], [] -> (true, i)
++    | [x], [y] -> f i x y
++    | x::l1, y::l2 ->
++        let (b, i') = f i x y in
++        if b then ise_list2 i' l1 l2 else (false, evd)
++    | _ -> (false, evd) in
++  ise_list2 evd l1 l2
++    
++
++let (>>=) opt f = 
++  match opt with
++  | Some(x) -> f x
++  | None -> None
++   
++let return x = Some x
++
++let (&&=) opt f = 
++  match opt with
++  | (true, x) -> f x
++  | _ -> opt
++
++let (||=) opt f = 
++  match opt with
++  | (false, _) -> f ()
++  | _ -> opt
++
++let success s = (true, s)
++
++let err s = (false, s)
++
++
++let (-.) n m =
++  if n > m then n - m
++  else 0
++
++let rec is_id_subst ctxt s =
++  match ctxt, s with
++    | ((id, _, _) :: ctxt'), (c :: s') ->
++      isVarId id c && is_id_subst ctxt' s'
++    | [], [] -> true
++    | _ -> false
++    
++let linear env args =
++  let arr = Array.make (List.length (rel_context env)) false in
++  List.for_all (fun a -> 
++    if isRel a then
++      let i = destRel a in
++      if arr.(i) = true then false
++      else
++      begin
++	arr.(i) <- true;
++        true
++      end
++    else
++      false) args
++(*
++let rec bla env t i args subs =
++  List.fold_left (fun a t' -> 
++      let ty = lookup_rel (rel_context env) (destRel a) in
++      mkLambda(
++  
++  match args with
++    | (a :: args') ->
++      let ty = lookup_rel (rel_context env) (destRel a)
++      
++*)
++let ev_define env sigma (ev, s) args t =
++  let evi = Evd.find_undefined sigma ev in
++  let ctxt = Evd.evar_context evi in
++  if occur_evar ev t || args <> [] || not (is_id_subst ctxt (Array.to_list s)) 
++    || not (closedn (List.length args) t) || not (linear env args) then
++    err sigma
++  else
++    success (Evd.define ev t sigma)
++    
++
++let rec unify ?(conv_pb=CONV) env sigma0 t t' =
++  let (c, l as t), (c', l' as t') = whd sigma0 t, whd sigma0 t' in
++  let res =
++  match (kind_of_term c, kind_of_term c') with
++  | Evar e, _ when l = [] ->
++    (* ev_define env sigma0 e l (applist t') *)
++    begin
++    try
++      let sigma1 = Evarutil.evar_define 
++	(fun env sigma conv_pb t1 t2->let b, s = unify ~conv_pb:conv_pb env sigma t1 t2
++				      in s, b)
++	env sigma0 e (applist t')
++      in success sigma1
++    with _ -> err sigma0
++    end
++  | _, Evar e when l' = [] ->
++    (* ev_define env sigma0 e l' (applist t) *)
++    begin
++    try
++      let sigma1 = Evarutil.evar_define 
++	(fun env sigma conv_pb t1 t2->let b, s = unify ~conv_pb:conv_pb env sigma t1 t2
++				      in s, b)
++	env sigma0 e (applist t)
++      in success sigma1
++    with _ -> err sigma0
++    end
++
++  (* The setoid algorithm is expecting this *)
++  | Meta e1, Meta e2 -> 
++    if e1 = e2 then
++      success sigma0
++    else
++      err sigma0
++
++  (* Prop-Same, Set-Same, Type-Same *)
++  | Sort s1, Sort s2 -> 
++    begin
++      assert (l = [] && l' = []);
++      try
++	let sigma1 = match conv_pb with
++        | CONV -> Evd.set_eq_sort sigma0 s1 s2 
++        | CUMUL -> Evd.set_leq_sort sigma0 s1 s2
++        in success sigma1
++      with Univ.UniverseInconsistency _ -> err sigma0
++    end
++
++  (* Lam-Same *)
++  | Lambda (name, t1, c1), Lambda (_, t2, c2) 
++    when l = [] && l' = [] ->
++    let env' = push_rel (name, None, t1) env in
++    unify env sigma0 t1 t2 &&= fun sigma1 ->
++    unify env' sigma1 c1 c2 &&= fun sigma2 ->
++    success sigma2
++
++  (* Prod-Same *)
++  | Prod (name, t1, c1), Prod (_, t2, c2) ->
++    assert (l = [] && l' = []);
++    unify env sigma0 t1 t2 &&= fun sigma1 ->
++    unify (push_rel (name,None,t1) env) sigma1 ~conv_pb c1 c2
++
++  (* Let-Same *)
++  | LetIn (name, trm1, ty1, body1), LetIn (_, trm2, ty2, body2) 
++    when l = [] && l'= [] ->
++    unify env sigma0 trm1 trm2 &&= fun sigma1 ->
++    unify (push_rel (name, Some trm1, ty1) env) 
++      sigma1 ~conv_pb body1 body2
++
++  | Rel n1, Rel n2 when n1 = n2 && l = [] && l' = [] ->
++    success sigma0
++  | Var id1, Var id2 when id1 = id2 && l = [] && l' = [] -> 
++    success sigma0
++  | Const c1, Const c2 when eq_constant c1 c2 && l = [] && l' = [] ->
++    success sigma0
++
++  | Ind c1, Ind c2 when eq_ind c1 c2 && l = [] && l' = [] ->
++    success sigma0
++	
++  | Construct c1, Construct c2 
++    when eq_constructor c1 c2 && l = [] && l' = []  ->
++    success sigma0
++
++  | CoFix (i1,(_,tys1,bds1 as recdef1)), CoFix (i2,(_,tys2,bds2))
++    when i1 = i2 && l = [] && l' = [] ->
++    ise_array2 sigma0 (fun i -> unify env i) tys1 tys2 &&= fun sigma1 ->
++    ise_array2 sigma1 (fun i -> unify (push_rec_types recdef1 env) i) bds1 bds2
++
++  | Case (_, p1, c1, cl1), Case (_, p2, c2, cl2) 
++    when l = [] && l' = [] ->
++      unify env sigma0 p1 p2 &&= fun sigma1 ->
++      unify env sigma1 c1 c2 &&= fun sigma2 ->
++      ise_array2 sigma2 (fun i -> unify env i) cl1 cl2
++
++  | Fix (li1, (_, tys1, bds1 as recdef1)), Fix (li2, (_, tys2, bds2)) 
++    when li1 = li2 && l = [] && l' = [] ->
++    ise_array2 sigma0 (fun i -> unify env i) tys1 tys2 &&= fun sigma1 ->
++    ise_array2 sigma1 (fun i -> unify (push_rec_types recdef1 env) i) bds1 bds2
++
++  | _, _ when l <> [] && l' <> [] ->
++    let n = List.length l in
++    let m = List.length l' in
++    let nm = n -. m in
++    let mn = m -. n in
++    let l1, l2 = Util.list_chop nm l in
++    let l1', l2' = Util.list_chop mn l' in
++      unify ~conv_pb env sigma0
++        (applist (c, l1)) (applist (c', l1')) &&= fun sigma1 ->
++      ise_list2 sigma1 (fun i -> unify env i) l2 l2' &&= fun sigma2 ->
++      success sigma2
++
++  | _, _ -> err sigma0
++  in res
++
+diff --git a/pretyping/simpleunify.mli b/pretyping/simpleunify.mli
+new file mode 100644
+index 0000000..1165381
+--- /dev/null
++++ b/pretyping/simpleunify.mli
+@@ -0,0 +1,6 @@
++open Term
++open Environ
++open Evd
++open Reduction
++
++val unify : ?conv_pb:conv_pb -> env -> evar_map -> constr -> constr -> (bool * evar_map)
+diff --git a/theories/theories.itarget b/theories/theories.itarget
+index 3a87d8c..211ce99 100644
+--- a/theories/theories.itarget
++++ b/theories/theories.itarget
+@@ -22,3 +22,4 @@ Strings/vo.otarget
+ Unicode/vo.otarget
+ Wellfounded/vo.otarget
+ ZArith/vo.otarget
++Mtac/vo.otarget
+diff --git a/toplevel/himsg.ml b/toplevel/himsg.ml
+index f550df1..7ea1ee2 100644
+--- a/toplevel/himsg.ml
++++ b/toplevel/himsg.ml
+@@ -505,6 +505,12 @@ let explain_type_error env sigma err =
+   | WrongCaseInfo (ind,ci) ->
+       explain_wrong_case_info env ind ci
+ 
++(* BETA *)
++let explain_user_exception env sigma c =
++  let c = nf_evar sigma c in
++  let pr = pr_lconstr_env env c in
++  str "Uncaught user exception:" ++ spc () ++ pr
++
+ let explain_pretype_error env sigma err =
+   let env = env_nf_betaiotaevar sigma env in
+   let env = make_all_name_different env in
+@@ -526,6 +532,8 @@ let explain_pretype_error env sigma err =
+   | AbstractionOverMeta (m,n) -> explain_abstraction_over_meta env m n
+   | NonLinearUnification (m,c) -> explain_non_linear_unification env m c
+   | TypingError t -> explain_type_error env sigma t
++(* BETA *)
++  | UncaughtUserException c -> explain_user_exception env sigma c
+ 
+ (* Module errors *)
+ 
+diff --git a/user-contrib/Mtac/hash.v b/user-contrib/Mtac/hash.v
+new file mode 100644
+index 0000000..92c4df8
+--- /dev/null
++++ b/user-contrib/Mtac/hash.v
+@@ -0,0 +1,161 @@
++Require Import mtacore.
++Require Import Arith Lists.List.
++Import ListNotations.
++
++Import MtacNotations.
++
++Module ListMtactics.
++
++  Definition NotFound : Exception.
++    exact exception.
++  Qed.
++
++  Definition inlist {A} (x : A) :=
++    mfix f (s : list A) :=
++      mmatch s with
++      | [l r] l ++ r =>
++        mtry 
++          il <- f l;
++          ret (in_or_app l r x (or_introl il))
++        with NotFound =>
++          ir <- f r;
++          ret (in_or_app l r x (or_intror ir))
++        end
++      | [s'] (x :: s') => ret (in_eq _ _)
++      | [y s'] (y :: s') =>
++        r <- f s';
++        ret (in_cons y _ _ r)
++      | _ => raise NotFound
++      end.
++    
++  Program
++  Definition find {A} {B : A -> Type} (x : A) :=
++    mfix f (s : list (sigT B)) :=
++      mmatch s with
++      | [l r] l ++ r => 
++        mtry 
++          f l
++        with NotFound =>
++          f r
++        end
++      | [y s'] (existT B x y :: s') => ret y
++      | [y s'] (y :: s') => f s'
++      | _ => raise NotFound
++      end.
++
++End ListMtactics.
++
++Module HashTbl.
++  
++
++  Definition t A (P : A -> Type) := (Ref nat * Ref (Array.t (list (sigT P))))%type.
++
++  Definition initial_size := 16.
++  Definition inc_factor := 2.
++  Definition threshold := 7.
++
++  Definition NotFound : Exception.
++    exact exception.
++  Qed.
++
++  Definition create A B : M (t A B) :=
++    n <- ref 0;
++    a <- Array.make initial_size nil;
++    ra <- ref a;
++    ret (n, ra).
++
++  
++  Definition quick_add {A P} (a : Array.t (list (sigT P))) (x : A) (y : P x) : M unit :=
++    i <- hash x (Array.length a);
++    l <- Array.get a i;
++    Array.set a i (existT _ x y  :: l).
++
++  
++  Definition iter {A B} (h : t A B) (f : forall x : A, B x -> M unit) : M unit :=
++    let (_, ra) := h in
++    a <- !ra;
++    let size := Array.length a in
++    let execute i :=
++       l <- Array.get a i;
++       fold_right (fun k r => r;;
++         match k with
++           existT x y => f x y
++         end) (ret tt) l
++    in
++    let loop := fix lp n := 
++      match n with
++      | 0 => ret tt
++      | S n' => execute n';; lp n'
++      end
++    in
++    loop size.
++
++  Definition expand {A B} (h : t A B) : M unit :=
++    let (load, ra) := h in
++    a <- !ra;
++    let new_size := Array.length a * inc_factor in
++    new_a <- Array.make new_size nil;
++    iter h (fun x y=> quick_add new_a x y);;
++    ra ::= new_a.
++        
++
++  (* There is no order on the elements *)
++  Definition to_list {A B} (h : t A B) :=
++    rl <- ref nil;
++    HashTbl.iter h (fun x y => l <- !rl; rl ::= (existT _ x y :: l));;
++    !rl.
++
++  (* debugging function to test how big is the biggest bucket *)
++  Definition max_bucket {A B} (h : t A B) :=
++    let (_, ra) := h in
++    a <- !ra;
++    let size := Array.length a in
++    let execute i :=
++       l <- Array.get a i;
++       ret (length l)
++    in
++    max <- ref 0;
++    let loop := fix lp n := 
++      match n with
++      | 0 => !max
++      | S n' => 
++        size <- execute n';
++        prev <- !max;
++        if leb prev size then
++          max ::= size;; lp n'
++        else
++          lp n'
++      end
++    in
++    loop size;;
++    !max.
++    
++
++  Definition add {A B} (h : t A B) (x : A) (y : B x) :=
++    let (rl, ra) := h in
++    load <- !rl;
++    a <- !ra;
++    let size := Array.length a in
++    (if (leb (threshold * size) (10 * load)) then
++      print "expanding";;
++      expand h
++    else
++      ret tt);;
++    a <- !ra;
++    quick_add a x y;;
++    rl ::= (S load).
++
++  Definition find {A B} (h : t A B) (x : A) : M (B x) :=
++    x' <- ret x;
++    let (_, ra) := h in
++    a <- !ra;
++    i <- hash x' (Array.length a);
++    l <- Array.get a i;
++    mtry
++      ListMtactics.find x l
++    with ListMtactics.NotFound =>
++      raise NotFound
++    end.
++
++  
++End HashTbl.
+diff --git a/user-contrib/Mtac/mtac.v b/user-contrib/Mtac/mtac.v
+new file mode 100644
+index 0000000..5bda994
+--- /dev/null
++++ b/user-contrib/Mtac/mtac.v
+@@ -0,0 +1,17 @@
++Require Export mtacore.
++
++Export MtacNotations.
++
++Obligation Tactic := idtac.
++
++(* This coercion allows to avoid the explicit call to eval, but it is 
++   inconvenient for typechecking. *)
++(* Coercion eval : M >-> Funclass. *)
++
++(** Tactic to unify two terms [x] and [y]. *)
++Definition unify {A} (x y : A) (P : A -> Type) (f : x = y -> P y) : M (P x) :=
++    a <- mmatch x as x' return M (x = x' -> _) with 
++           | y => ret (fun H => f H)
++         end;
++    retS (a (eq_refl _)).
++
+diff --git a/user-contrib/Mtac/mtacore.v b/user-contrib/Mtac/mtacore.v
+new file mode 100644
+index 0000000..b87b5bb
+--- /dev/null
++++ b/user-contrib/Mtac/mtacore.v
+@@ -0,0 +1,317 @@
++Require Import Strings.String.
++Require Import Lists.List.
++Require Import NArith.BinNat.
++Require Import NArith.BinNatDef.
++
++
++Module Mtac.
++
++Inductive Exception : Type := exception : Exception.
++
++Definition InternalException : Exception -> Exception.
++  exact id.
++Qed.
++
++Definition NullPointer : Exception.
++  exact exception.
++Qed.
++
++Definition TermNotGround : Exception.
++  exact exception.
++Qed.
++
++Inductive Ref (a : Type) := 
++| mkRef : N -> Ref a.
++
++Inductive Reduction : Type :=
++| RedNone : Reduction
++| RedSimpl : Reduction
++| RedWhd : Reduction.
++
++Inductive Unification : Type :=
++| UniRed : Unification
++| UniSimpl : Unification.
++
++Definition build {A} (r : Ref A) n :=
++  let n' := N.of_nat n in
++  match r with
++  | mkRef i => mkRef A (i + n')%N
++  end.
++
++Inductive Mtac : Type -> Prop :=
++| tret : forall {A}, Reduction -> A -> Mtac A
++| bind : forall {A B}, Mtac A -> (A -> Mtac B) -> Mtac B
++| ttry : forall {A}, Mtac A -> (Exception -> Mtac A) -> Mtac A
++| raise : forall {A}, Exception -> Mtac A
++| tfix1' : forall {A B} (S : Type -> Prop), 
++  (forall a, S a -> Mtac a) ->
++  ((forall x : A, S (B x)) -> (forall x : A, S (B x))) -> 
++  forall x : A, Mtac (B x)
++| tfix2' : forall {A1 A2 B} (S : Type -> Prop), 
++  (forall a, S a -> Mtac a) ->
++  ((forall (x1 : A1) (x2 : A2 x1), S (B x1 x2)) -> 
++    (forall (x1 : A1) (x2 : A2 x1), S (B x1 x2))) -> 
++  forall (x1 : A1) (x2 : A2 x1), Mtac (B x1 x2)
++| tfix3' : forall {A1 A2 A3 B} (S : Type -> Prop), 
++  (forall a, S a -> Mtac a) ->
++  ((forall (x1 : A1) (x2 : A2 x1) (x3 : A3 x1 x2), S (B x1 x2 x3)) -> 
++    (forall (x1 : A1) (x2 : A2 x1) (x3 : A3 x1 x2), S (B x1 x2 x3))) -> 
++  forall (x1 : A1) (x2 : A2 x1) (x3 : A3 x1 x2), Mtac (B x1 x2 x3)
++| tmatch : forall {A} B (t : A), list (tpatt A B t) -> Mtac (B t)
++| print : string -> Mtac unit
++| tnu : forall {A B}, (A -> Mtac B) -> Mtac B
++| is_var : forall {A}, A -> Mtac bool
++| abs : forall {A P} (x : A), P x -> Mtac (forall x, P x)
++| abs_eq : forall {A} {P} (x : A) (y : P x), 
++  Mtac (sigT (fun f : (forall x':A, P x')=> f x = y))
++| evar : forall A, Mtac A
++| is_evar : forall {A}, A -> Mtac bool
++
++| ref : forall {A}, A -> Mtac (Ref A)
++| read : forall {A}, Ref A -> Mtac A
++| write : forall {A}, Ref A -> A -> Mtac unit
++
++| hash : forall {A}, A -> nat -> Mtac nat
++
++| tnu_let : forall {A B}, forall t : A, (forall y : A, y = t -> Mtac B) -> Mtac B
++
++with tpatt : forall A (B : A -> Type) (t : A), Type := 
++| base : forall {A B t} (x:A) (b : t = x -> Mtac (B x)), Unification -> tpatt A B t
++| tele : forall {A B C t}, (forall (x : C), tpatt A B t) -> tpatt A B t.
++
++
++Definition tfix1 {A} B := @tfix1' A B Mtac (fun _ x => x).
++Definition tfix2 {A1 A2} B := @tfix2' A1 A2 B Mtac (fun _ x => x).
++Definition tfix3 {A1 A2 A3} B := @tfix3' A1 A2 A3 B Mtac (fun _ x => x).
++
++
++
++(** Defines [eval f] to execute after elaboration the Mtactic [f]. 
++    It allows e.g. [rewrite (eval f)]. *)
++Class runner A  (f : Mtac A) := { eval : A }.
++Implicit Arguments runner [A].
++Implicit Arguments Build_runner [A].
++Implicit Arguments eval [A runner].
++
++Hint Extern 20 (runner ?f) => (exact (Build_runner f (run f)))  : typeclass_instances.
++
++End Mtac.
++
++Export Mtac.  
++
++
++Module MtacNotations.
++
++Notation "'M'" := Mtac.
++
++Notation "'ret'" := (tret RedNone).
++Notation "'retS'" := (tret RedSimpl).
++Notation "'retW'" := (tret RedWhd).
++
++Notation "r '<-' t1 ';' t2" := (@bind _ _ t1 (fun r=>t2)) 
++  (at level 81, right associativity). 
++Notation "t1 ';;' t2" := (@bind _ _ t1 (fun _=>t2)) 
++  (at level 81, right associativity).
++Notation "f @@ x" := (bind f (fun r=>ret (r x))) (at level 70).
++Notation "f >> x" := (bind f (fun r=>x r)) (at level 70).
++
++Notation "[ x .. y ] ps" := (tele (fun x=> .. (tele (fun y=>ps)).. ))
++  (at level 202, x binder, y binder, ps at next level) : mtac_patt_scope.
++Notation "p => b" := (base p%core (fun _=>b%core) UniRed) 
++  (no associativity, at level 201) : mtac_patt_scope. 
++Notation "p => [ H ] b" := (base p%core (fun H=>b%core) UniRed) 
++  (no associativity, at level 201, H at next level) : mtac_patt_scope. 
++Notation "p '=s>' b" := (base p%core (fun _=>b%core) UniSimpl) 
++  (no associativity, at level 201) : mtac_patt_scope. 
++Notation "'_' => b " := (tele (fun x=> base x (fun _=>b%core) UniRed)) 
++  (at level 201, b at next level) : mtac_patt_scope.
++
++Delimit Scope mtac_patt_scope with mtac_patt.
++
++Notation "'mmatch' t 'with' | p1 | .. | pn 'end'" := 
++  (tmatch (fun _=>_) t (cons p1%mtac_patt (.. (cons pn%mtac_patt nil) ..))) 
++    (at level 90, p1 at level 210, pn at level 210).
++Notation "'mmatch' t 'return' 'M' p 'with' | p1 | .. | pn 'end'" := 
++  (tmatch (fun _=>p) t (cons p1%mtac_patt (.. (cons pn%mtac_patt nil) ..))) 
++    (at level 90, p1 at level 210, pn at level 210).
++Notation "'mmatch' t 'as' x 'return' 'M' p 'with' | p1 | .. | pn 'end'" := 
++  (tmatch (fun x=>p) t (cons p1%mtac_patt (.. (cons pn%mtac_patt nil) ..))) 
++    (at level 90, p1 at level 210, pn at level 210).
++
++Notation "'mmatch' t 'with' p1 | .. | pn 'end'" := 
++  (tmatch (fun _=>_) t (cons p1%mtac_patt (.. (cons pn%mtac_patt nil) ..))) 
++    (at level 90, p1 at level 210, pn at level 210).
++Notation "'mmatch' t 'return' 'M' p 'with' p1 | .. | pn 'end'" := 
++  (tmatch (fun _=>p) t (cons p1%mtac_patt (.. (cons pn%mtac_patt nil) ..))) 
++    (at level 90, p1 at level 210, pn at level 210).
++Notation "'mmatch' t 'as' x 'return' 'M' p 'with' p1 | .. | pn 'end'" := 
++  (tmatch (fun x=>p) t (cons p1%mtac_patt (.. (cons pn%mtac_patt nil) ..))) 
++    (at level 90, p1 at level 210, pn at level 210).
++
++Notation "'nu' x .. y , a" := (tnu (fun x=>.. (tnu (fun y=> a))..)) 
++(at level 81, x binder, y binder, right associativity). 
++      
++Record dynamic := { type : Type; elem : type }.
++
++Definition pf_fix_1 {Ty : Prop} {A} {B} (b : Ty):
++   let Tp := forall x : A, M (B x) in
++   Ty = (Tp -> Tp) -> Tp -> Tp.
++intros Tp H x; rewrite H in b.
++exact (b x).
++Defined.
++
++Definition pf_fix_2 {Ty : Prop} {A} {B} {C} (b : Ty):
++   let Tp := forall (x : A) (y : B x), M (C x y) in
++   Ty = (Tp -> Tp) -> Tp -> Tp.
++intros Tp H x y; rewrite H in b.
++exact (b x y).
++Defined.
++
++Definition pf_fix_3 {Ty : Prop} {A1} {A2} {A3} {B} (b : Ty):
++   let Tp := forall (x1 : A1) (x2 : A2 x1) (x3 : A3 x1 x2), M (B x1 x2 x3) in
++   Ty = (Tp -> Tp) -> Tp -> Tp.
++intros Tp H x1 x2 x3; rewrite H in b.
++exact (b x1 x2 x3).
++Defined.
++
++Definition MFixException (s : string) : Exception.
++  exact exception.
++Qed.
++
++Definition mk_rec {Ty : Prop} (b : Ty) : M dynamic :=
++  mmatch Ty as Ty' return M _ with
++  | [A B] (forall x:A, M (B x)) -> forall x:A, M (B x) => [H]
++    ret (Build_dynamic _ (tfix1 B (pf_fix_1 b H)))
++  | [A B C] (forall (x:A) (y : B x), M (C x y)) -> forall (x:A) (y : B x), M (C x y) =>[H] 
++    ret (Build_dynamic _ (tfix2 C (pf_fix_2 b H)))
++  | [A1 A2 A3 B] (forall (x1:A1) (x2:A2 x1) (x3:A3 x1 x2), M (B x1 x2 x3)) 
++    -> forall (x1:A1) (x2:A2 x1) (x3:A3 x1 x2), M (B x1 x2 x3) => [H]
++    ret (Build_dynamic _ (tfix3 B (pf_fix_3 b H)))
++  | _ => raise (MFixException "Mtac's fixpoint only supports up to 3 arguments")
++  end.
++
++Notation "'mfix' f x .. y := b" := (
++  run (retW (
++    elem (
++    run (mk_rec (fun f : (forall x, .. (forall y, M _) ..)=>(fun x => .. (fun y => b) ..)))
++    )
++  )))
++  (at level 85, f at level 0, x binder, y binder).
++
++Notation "'mfix' f x .. y : 'M' A := b" := (
++  run (retW (
++    elem (
++    run (mk_rec (fun f : (forall x, .. (forall y, M A) ..) =>(fun x => .. (fun y => b) ..)))
++    )
++  )))
++  (at level 85, f at level 0, x binder, y binder).
++
++Notation "'mfix1' f ( x : A ) := b" := (tfix1' _ _ (pf_fix_1 (fun f (x : A)=>b) eq_refl))
++  (at level 85, f at level 0, x at next level, format
++  "'[v  ' 'mfix1'  f  '(' x  ':'  A ')'  ':=' '/  ' b ']'").
++
++Notation "'mfix2' f ( x : A ) ( y : B ) := b" := 
++  (tfix2' _ _ (pf_fix_2 (fun f (x : A) (y : B)=>b) eq_refl))
++  (at level 85, f at level 0, x at next level, y at next level, format
++  "'[v  ' 'mfix2'  f  '(' x  ':'  A ')'  '(' y  ':'  B ')'  ':=' '/  ' b ']'").
++
++Notation "'mfix3' f ( x : A ) ( y : B ) ( z : C ) := b" := 
++  (tfix3' _ _ (pf_fix_3 (fun f (x : A) (y : B) (z : C)=>b) eq_refl))
++  (at level 85, f at level 0, x at next level, y at next level, z at next level, format
++  "'[v  ' 'mfix3'  f  '(' x  ':'  A ')'  '(' y  ':'  B ')'  '(' z  ':'  C ')'  ':=' '/  ' b ']'").
++
++
++Notation "'mtry' a 'with' | p1 | .. | pn 'end'" := 
++  (ttry a (fun e=>
++    (tmatch (fun _=>_) e (cons p1%mtac_patt (.. (cons pn%mtac_patt (cons (tele (fun x=> base x (fun _ =>(raise x)) UniRed)) nil)) ..)))))
++    (at level 82, p1 at level 210, pn at level 210).
++
++Notation "'mtry' a 'with' p1 | .. | pn 'end'" := 
++  (ttry a (fun e=>
++    (tmatch (fun _=>_) e (cons p1%mtac_patt (.. (cons pn%mtac_patt (cons (tele (fun x=> base x (fun _ =>(raise x)) UniRed)) nil)) ..)))))
++    (at level 82, p1 at level 210, pn at level 210).
++
++
++Notation "! a" := (read a) (at level 80).
++Notation "a ::= b" := (write a b) (at level 80).
++
++End MtacNotations.
++
++
++Module Array.
++  Require Import Arith_base.
++
++  Import MtacNotations.
++
++  Definition t A := (nat * Ref A)%type.
++
++  Definition EmptyArrayException : Exception.
++    exact exception.
++  Qed.
++
++  Definition init {A} n (f : nat -> M A) :=
++    if leb n 0 then raise EmptyArrayException
++    else
++      a <- f 0;
++      first <- ref a;
++      let init := fix loop i n := 
++        match n with
++        | 0 => ret tt (* impossible case *)
++        | 1 => ret tt (* already created (first) *)
++        | S n' => 
++          b <- f i;
++          ref b;; loop (S i) n'
++        end in
++      init 1 n;;
++      ret (n, first).
++
++  Definition make {A} n (c : A)  := 
++    init n (fun _=>ret c).
++    
++  Definition length {A} (a : t A) :=
++    let (n, _) := a in n.
++
++  Definition OutOfBoundsException : Exception.
++    exact exception.
++  Qed.
++
++  Definition get {A} (a : t A) i :=
++    let (n, r) := a in
++    if leb (S i) n then
++      rf <- retS (build r i);
++      !rf
++    else
++      raise OutOfBoundsException.
++
++  Definition set {A} (a : t A) i (c : A) :=
++    let (n, r) := a in
++    if leb (S i) n then
++      rf <- retS (build r i);
++      rf ::= c
++    else
++      raise OutOfBoundsException.
++
++  Definition to_list {A} (a : t A) :=
++    let tl :=
++      fix f i :=
++        match i with
++        | 0 => ret nil
++        | S n => 
++          r <- f n;
++          e <- get a n;
++          ret (r ++ (e :: nil))
++        end
++    in tl (length a).
++
++  Definition copy {A} (a b : t A) :=
++    let cp :=
++      fix f i :=
++        match i with
++        | 0 => ret tt
++        | S n => 
++          e <- get a n;
++          set b n e
++        end
++    in cp (length b).
++    
++End Array.
+diff --git a/user-contrib/Mtac/v.itarget b/user-contrib/Mtac/v.itarget
+new file mode 100644
+index 0000000..f956d26
+--- /dev/null
++++ b/user-contrib/Mtac/v.itarget
+@@ -0,0 +1,4 @@
++mtacore.v
++mtac.v
++hash.v
++
