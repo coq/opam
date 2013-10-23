@@ -1,0 +1,9 @@
+opam-version: "1.1" 
+maintainer: "thomas.braibant@gmail.com"
+build: [
+       ["./configure"]
+       [make]
+]
+tags: ["persistent"]
+depends: [ "coq" { = "HoTT+stable"}]
+

@@ -1,0 +1,14 @@
+opam-version: "1.1"
+patches: ["configure.patch"]
+build: [
+  [ "./configure" 
+     "--local" 
+     "--usecamlp5"
+     "--coqide" "no"
+#     "-opt"
+  ]
+  [ "make" "-j4" "world"]
+]
+depends: ["camlp5"]
+tags: ["persistent"]
+conflicts: ["coq"]
