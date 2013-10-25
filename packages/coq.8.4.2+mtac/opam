@@ -4,12 +4,15 @@ patches:
  "mtac-1.1.patch"] 
 build: [
   [ "./configure" 
-     "--local" 
-     "--usecamlp5"
+      "-configdir" "%{lib}%/coq/config"
+     "-mandir" "%{man}%"
+     "-docdir" "%{doc}%"
+     "--prefix" "%{prefix}%"
+      "--usecamlp5"
      "--coqide" "no"
 #     "-opt"
   ]
   [ "make" "-j4" "world"]
+  [ "make" "install"]
 ]
 depends: ["camlp5"]
-tags: ["persistent"]
