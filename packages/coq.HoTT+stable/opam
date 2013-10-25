@@ -13,4 +13,3 @@ build: [
   [ "make" "-j4" "coqlight"]
 ]
 depends: ["camlp5"]
-tags: ["persistent"]
