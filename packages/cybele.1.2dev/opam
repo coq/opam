@@ -5,3 +5,4 @@ build: [
   [make]
   [make "install"]
 ]
+depends: ["coq" {= "8.4.3dev"}]
