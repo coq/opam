@@ -1,0 +1,7 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+build: [
+  ["./configure.sh"]
+  [make]
+  [make "install"]
+]
