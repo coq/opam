@@ -6,6 +6,7 @@ build: [
      "-docdir" "%{doc}%"
      "--prefix" "%{prefix}%"
      "--usecamlp5"
+     "--camlp5dir" "%{lib}%/camlp5"
      "--coqide" "no"
 #     "-opt"
   ]
