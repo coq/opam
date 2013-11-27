@@ -1,0 +1,11 @@
+--- Make.old	2013-11-27 18:35:11.000000000 +0100
++++ Make	2013-11-27 18:35:40.000000000 +0100
+@@ -5,7 +5,7 @@
+ 
+ install-plugin:
+ 	install -d $(COQLIB)/user-contrib/Containers/Plugin/
+-	install -t $(COQLIB)/user-contrib/Containers/Plugin/ $(CONTAINERS_PLUGIN) $(CONTAINERS_PLUGINOPT)
++	install $(CONTAINERS_PLUGIN) $(CONTAINERS_PLUGINOPT) $(COQLIB)/user-contrib/Containers/Plugin/
+ 
+ install: install-plugin
+ 
