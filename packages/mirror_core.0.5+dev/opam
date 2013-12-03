@@ -1,0 +1,10 @@
+opam-version: "0.5+dev"
+maintainer: "gmalecha@cs.harvard.edu"
+build: [
+  [make]
+  [make "install"]
+]
+depends: [
+  "coq" {>= "8.4.2"}
+  "coq_extlib" {>= "0.5+dev"}
+]
