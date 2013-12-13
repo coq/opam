@@ -5,3 +5,4 @@ build: [
   [make "install"]
 ]
 depends: ["coq" {>= "8.4.2"}]
+conflicts: ["coq_extlib" {="0.5+dev"}]
