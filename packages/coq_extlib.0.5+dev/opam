@@ -4,4 +4,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
+remove: [
+  [make "uninstall"]
+]
 depends: ["coq" {>= "8.4.2"}]
