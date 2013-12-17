@@ -1,11 +1,13 @@
 opam-version: "1.1"
 maintainer: "gmalecha@cs.harvard.edu"
 build: [
-  [make "-j%{jobs}%" "all"]
+  [make]
   [make "install"]
+]
+remove: [
+  [make "uninstall"]
 ]
 depends: [
   "coq" {>= "8.4.2"}
-  "coq_extlib" {>= "0.5+dev"}
-  "coq_plugin_util" {>= "0.5+dev"}
+  "ocamlfind"
 ]
