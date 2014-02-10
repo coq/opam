@@ -4,4 +4,4 @@ build: [
   [make]
   [make "install"]
 ]
-depends: [ "mathcomp" { >= "1.5"}]
+depends: [ "CoqEAL_theory" { >= "0.9.0"}]
