@@ -1,7 +1,7 @@
 opam-version: "1.1"
 maintainer:   "cohen@crans.org"
 build: [
-  [make "-j4"]
+  [make "-j%{jobs}%"]
   [make "install"]
 ]
 depends: [ "mathcomp" { >= "1.5"}]
