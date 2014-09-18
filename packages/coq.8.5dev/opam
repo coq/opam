@@ -4,10 +4,10 @@ build: [
      "-configdir" "%{lib}%/coq/config"
      "-mandir" "%{man}%"
      "-docdir" "%{doc}%"
-     "--prefix" "%{prefix}%"
-     "--usecamlp5"
-     "--camlp5dir" "%{lib}%/camlp5"
-     "--coqide" "no"
+     "-prefix" "%{prefix}%"
+     "-usecamlp5"
+     "-camlp5dir" "%{lib}%/camlp5"
+     "-coqide" "no"
 #     "-opt"
   ]
   [ make "-j4" "world"]
