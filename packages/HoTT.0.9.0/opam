@@ -6,8 +6,10 @@ bug-reports: "https://github.com/HoTT/HoTT/issues"
 # authors: "TODO"
 license: "BSD 2-clause"
 build: [
-       ["./configure"]
-       [make]
+  ["./configure"]
+  [make]
+  [make "install"]
 ]
-tags: ["persistent"]
-depends: [ "coq" { = "8.5.0HoTT+dev"}]
+depends: [
+  "coq-HoTT" {= "8.5.0"}
+]
