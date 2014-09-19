@@ -9,7 +9,7 @@ build: [
 #     "-opt"
   ]
   [ "make" "-j4"]
-  [  "make" "install"]  
+  [ "make" "install"]
 ]
 depends: [
   "camlp5"

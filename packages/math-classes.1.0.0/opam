@@ -9,6 +9,7 @@ authors: [
 ]
 license: "Public Domain"
 build: [
-       ["scons" "-j2"]
+  ["scons" "-j 2" "--directory=src"]
+  ["cp" "-pR" "src" "%{lib}/coq/user-contribs/math-classes"]
 ]
 depends: [ "coq" { = "8.4.2"}]
