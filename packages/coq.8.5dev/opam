@@ -8,9 +8,10 @@ build: [
      "-usecamlp5"
      "-camlp5dir" "%{lib}%/camlp5"
      "-coqide" "no"
-#     "-opt"
   ]
   [ make "-j4" "world"]
   [ make "install"]
 ]
-depends: ["camlp5"]
+depends: [
+  "camlp5"
+]
