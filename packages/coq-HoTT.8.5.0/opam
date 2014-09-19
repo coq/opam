@@ -7,7 +7,6 @@ build: [
     "-prefix" "%{prefix}%"
     "-usecamlp5"
     "-camlp5dir" "%{lib}%/camlp5"
-    "-coqide" "yes"
   ]
   [ "make" "-j4"]
   [ "make" "install"]
