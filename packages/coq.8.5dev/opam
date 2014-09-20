@@ -4,13 +4,14 @@ build: [
      "-configdir" "%{lib}%/coq/config"
      "-mandir" "%{man}%"
      "-docdir" "%{doc}%"
-     "--prefix" "%{prefix}%"
-     "--usecamlp5"
-     "--camlp5dir" "%{lib}%/camlp5"
-     "--coqide" "no"
-#     "-opt"
+     "-prefix" "%{prefix}%"
+     "-usecamlp5"
+     "-camlp5dir" "%{lib}%/camlp5"
+     "-coqide" "no"
   ]
   [ make "-j4" "world"]
   [ make "install"]
 ]
-depends: ["camlp5"]
+depends: [
+  "camlp5"
+]
