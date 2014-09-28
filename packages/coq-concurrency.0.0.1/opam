@@ -6,7 +6,7 @@ bug-reports: "https://github.com/clarus/coq-concurrency/issues"
 authors: ["Guillaume Claret"]
 license: "BSD 2-clause"
 build: [
-  ["./configure"]
+  ["./configure.sh"]
   [make]
   [make "install"]
 ]
