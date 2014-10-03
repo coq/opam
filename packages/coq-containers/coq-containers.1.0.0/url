@@ -1,1 +1,1 @@
-http: "http://coq.inria.fr/pylons/contribs/files/Containers/v8.4/Containers.tar.gz"
+http: "https://github.com/coq-contribs/containers/archive/1.0.0.tar.gz"
