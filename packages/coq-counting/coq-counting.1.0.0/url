@@ -1,1 +1,2 @@
-http: "http://coq.inria.fr/pylons/contribs/files/Counting/v8.4/Counting.tar.gz"
+http: "https://github.com/coq-contribs/counting/archive/1.0.0.tar.gz"
+checksum: "66f0f9242723140bc11847746e6c2a0d"
