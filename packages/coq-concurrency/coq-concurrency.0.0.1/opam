@@ -7,7 +7,7 @@ authors: ["Guillaume Claret"]
 license: "BSD 2-clause"
 build: [
   ["./configure.sh"]
-  [make]
+  [make "-j%{jobs}%"]
   [make "install"]
 ]
 depends: [

@@ -6,6 +6,6 @@ build: [
   ["./remake" "install"]
 ]
 depends: [
-  "coq" {>= "8.4.2"}
+  "coq" {= "8.4pl4"}
   "coq-ssreflect" {= "1.5.0"}
 ]

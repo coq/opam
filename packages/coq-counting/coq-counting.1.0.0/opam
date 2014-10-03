@@ -2,8 +2,8 @@ opam-version: "1.1"
 maintainer: "thomas.braibant@gmail.com"
 build: [
   ["coq_makefile" "-f" "Make" ">" "Makefile"]
-  ["make"]
-  ["make" "install"]
+  [make "-j%{jobs}%"]
+  [make "install"]
 ]
-depends: ["coq" {= "8.4.2"}]
-
+depends: [
+  "coq" {= "8.4pl4"}]

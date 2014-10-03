@@ -5,7 +5,7 @@ doc: "http://corn.cs.ru.nl/"
 license: "GPL 2"
 build: [
   [ "./configure.sh" ]
-  [ make ]
+  [ make "-j%{jobs}%" ]
   [ make "install" ]
 ]
 depends: [

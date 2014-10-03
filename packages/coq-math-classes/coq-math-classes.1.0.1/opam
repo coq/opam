@@ -10,7 +10,7 @@ authors: [
 license: "Public Domain"
 build: [
   [ "./configure.sh" ]
-  [ make ]
+  [ make "-j%{jobs}%" ]
   [ make "install" ]
 ]
 depends: [ "coq" {= "8.4pl4"}]
