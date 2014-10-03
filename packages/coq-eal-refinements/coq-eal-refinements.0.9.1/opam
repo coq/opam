@@ -4,4 +4,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-depends: [ "CoqEAL_theory" { >= "0.9.0"}]
+depends: [
+  "coq" {= "8.4pl4"}
+  "coq-eal-theory" {>= "0.9.0"}
+]

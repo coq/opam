@@ -4,5 +4,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-depends: ["ssreflect" {>= "1.5"} "coq" { >= "8.4.2"} ]
-
+depends: [
+  "coq-ssreflect" {>= "1.5"}
+  "coq" {= "8.4pl4"}
+]

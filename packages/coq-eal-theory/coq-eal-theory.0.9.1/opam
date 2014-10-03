@@ -4,4 +4,6 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-depends: [ "mathcomp" { >= "1.5"}]
+depends: [
+  "coq-math-comp" {>= "1.5"}
+]

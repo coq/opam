@@ -4,4 +4,6 @@ build: [
   [make]
   [make "install"]
 ]
-depends: [ "CoqEAL_theory" { >= "0.9.0"}]
+depends: [
+  "coq-eal-theory" { >= "0.9.0"}
+]
