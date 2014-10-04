@@ -1,9 +1,0 @@
-opam-version: "1.1" 
-maintainer: "guillaume.melquiond@inria.fr"
-build: [
-  ["./configure"]
-  ["./remake" "-j%{jobs}%"]
-  ["./remake" "install"]
-]
-depends: ["coq" {>= "8.4.2"}]
-
