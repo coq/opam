@@ -1,5 +1,5 @@
 # Coq Repository
-The repository of Coq packages. Powered by [OPAM](http://opam.ocamlpro.com/).
+The repository for Coq packages. Powered by [OPAM](http://opam.ocamlpro.com/).
 
 ## Usage
 First enable this repository:
@@ -8,7 +8,8 @@ First enable this repository:
 
 To install a package:
 
+    opam search coq-that-package
     opam install coq-that-package
 
 ## Publish
-If you want to add your package, please do a pull-request to this repository. Note that only stable versions are accepted.
+If you want to add your package, please do a pull-request to this repository. Note that only stable versions will be accepted.
