@@ -12,4 +12,4 @@ To install a package:
     opam install coq-that-package
 
 ## Publish
-If you want to add your package, please do a pull-request to this repository. Any pull-request should be accepted, even bugged packages, since this the unstable repository.
+If you want to add your package, please do a pull-request to this repository. Any pull-request should be accepted, even bugged packages, since this is the unstable repository.
