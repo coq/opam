@@ -1,7 +1,7 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-homepage: "https://github.com/clarus/coq-fun-combinators"
-bug-reports: "https://github.com/clarus/coq-fun-combinators/issues"
+homepage: "https://github.com/clarus/coq-function-ninjas"
+bug-reports: "https://github.com/clarus/coq-function-ninjas/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
