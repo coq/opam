@@ -4,7 +4,7 @@ The repository for development packages. Use it at your own risks. Powered by [O
 ## Usage
 First enable this repository:
 
-    opam repo add coq-unstable https://github.com/coq/opam-coq-repo-unstable.git
+    opam repo add coq-unstable https://github.com/coq/repo-unstable.git
 
 To install a package:
 
