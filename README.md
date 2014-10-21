@@ -4,7 +4,7 @@ The repository for Coq packages. Powered by [OPAM](http://opam.ocamlpro.com/).
 ## Usage
 First enable this repository:
 
-    opam repo add coq https://github.com/coq/opam-coq-repo.git
+    opam repo add coq-stable https://github.com/coq/repo-stable.git
 
 To install a package:
 
