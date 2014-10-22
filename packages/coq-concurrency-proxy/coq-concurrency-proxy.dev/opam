@@ -5,8 +5,7 @@ bug-reports: "https://github.com/clarus/coq-concurrency-proxy/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
-  ["./configure.sh"]
-  [make "-j%{jobs}%"]
+  [make]
   [make "install"]
 ]
 depends: [
