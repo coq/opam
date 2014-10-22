@@ -7,5 +7,5 @@ build: [
 ]
 
 depends: [
-  "coq" {= "8.4pl4"}
+  "coq" {>= "8.4pl4"}
 ]

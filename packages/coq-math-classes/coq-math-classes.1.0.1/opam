@@ -13,4 +13,5 @@ build: [
   [ make "-j%{jobs}%" ]
   [ make "install" ]
 ]
-depends: [ "coq" {= "8.4pl4"}]
+depends: [
+  "coq" {>= "8.4pl4"}]

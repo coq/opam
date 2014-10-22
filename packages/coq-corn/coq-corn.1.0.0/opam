@@ -4,11 +4,11 @@ homepage: "http://corn.cs.ru.nl/"
 doc: "http://corn.cs.ru.nl/"
 license: "GPL 2"
 build: [
-  [ "./configure.sh" ]
-  [ make "-j%{jobs}%" ]
-  [ make "install" ]
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+  [make "install"]
 ]
 depends: [
-  "coq" { = "8.4pl4" }
-  "coq-math-classes" { = "1.0.1" }
+  "coq" {>= "8.4pl4"}
+  "coq-math-classes" {= "1.0.1"}
 ]
