@@ -2,9 +2,14 @@
 The repository for development packages. Use it at your own risks. Powered by [OPAM](http://opam.ocamlpro.com/).
 
 ## Usage
-First enable this repository:
+Enable this repository:
 
     opam repo add coq-unstable https://github.com/coq/repo-unstable.git
+
+You might also want the stable and testing repositories:
+
+    opam repo add coq-stable https://github.com/coq/repo-stable.git
+    opam repo add coq-testing https://github.com/coq/repo-testing.git
 
 To install a package:
 
