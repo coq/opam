@@ -28,4 +28,4 @@ RUN opam install -y coq
 
 # This repository
 ADD . /root/repo-stable
-RUN opam repo add coq-stable /root/repo-stable
+RUN opam repo add -k git coq-stable /root/repo-stable
