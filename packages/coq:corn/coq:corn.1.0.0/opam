@@ -10,5 +10,5 @@ build: [
 ]
 depends: [
   "coq" {>= "8.4pl4"}
-  "coq-math-classes" {= "1.0.1"}
+  "coq:math-classes" {= "1.0.1"}
 ]

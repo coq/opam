@@ -5,6 +5,6 @@ build: [
   [make "install"]
 ]
 depends: [
-  "coq-ssreflect" {>= "1.5"}
   "coq" {>= "8.4pl4"}
+  "coq:ssreflect" {>= "1.5"}
 ]
