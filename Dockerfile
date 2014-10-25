@@ -8,16 +8,16 @@ RUN apt-get install -y curl ocaml
 RUN apt-get install -y m4 aspcud
 
 # OPAM from Ubuntu
-RUN apt-get install -y opam
+# RUN apt-get install -y opam
 
 # OPAM from the sources
-# WORKDIR /root
-# RUN curl -L https://github.com/ocaml/opam/archive/1.2.0.tar.gz |tar -xz
-# WORKDIR opam-1.2.0
-# RUN ./configure
-# RUN make lib-ext
-# RUN make
-# RUN make install
+WORKDIR /root
+RUN curl -L https://github.com/ocaml/opam/archive/1.2.0.tar.gz |tar -xz
+WORKDIR opam-1.2.0
+RUN ./configure
+RUN make lib-ext
+RUN make
+RUN make install
 
 # Initialize OPAM
 RUN opam init
