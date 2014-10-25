@@ -7,16 +7,19 @@ RUN apt-get install -y gcc make git
 RUN apt-get install -y curl ocaml
 RUN apt-get install -y m4 aspcud
 
-# OPAM
-WORKDIR /root
-# RUN curl -L https://github.com/ocaml/opam/archive/1.1.1.tar.gz |tar -xz
-# WORKDIR opam-1.1.1
-RUN curl -L https://github.com/ocaml/opam/archive/1.2.0.tar.gz |tar -xz
-WORKDIR opam-1.2.0
-RUN ./configure
-RUN make lib-ext
-RUN make
-RUN make install
+# OPAM from Ubuntu
+RUN apt-get install -y opam
+
+# OPAM from the sources
+# WORKDIR /root
+# RUN curl -L https://github.com/ocaml/opam/archive/1.2.0.tar.gz |tar -xz
+# WORKDIR opam-1.2.0
+# RUN ./configure
+# RUN make lib-ext
+# RUN make
+# RUN make install
+
+# Initialize OPAM
 RUN opam init
 ENV OPAMJOBS 4
 
