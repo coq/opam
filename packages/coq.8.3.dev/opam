@@ -4,11 +4,10 @@ homepage: "http://coq.inria.fr/"
 bug-reports: "https://coq.inria.fr/bugs/"
 license: "LGPL 2"
 build: [
-  ["./configure" "-camlp5dir" "%{lib}%/camlp5" "-prefix" prefix "-docdir" doc "-coqide" "opt"]
+  ["./configure" "-camlp5dir" "%{lib}%/camlp5" "-prefix" prefix "-docdir" doc "-coqide" "no"]
   [make "-j%{jobs}%"]
   [make "install"]
 ]
 depends: [
   "camlp5"
-  "lablgtk"
 ]

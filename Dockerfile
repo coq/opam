@@ -23,9 +23,6 @@ RUN make install
 RUN opam init
 ENV OPAMJOBS 4
 
-# Dependency for Coq IDE
-RUN apt-get install -y liblablgtk2-ocaml-dev
-
 # This repository
 ADD . /root/repo-coqs
-RUN opam repo add -k git coqs /root/repo-coqs
+RUN opam repo add --kind git coqs /root/repo-coqs
