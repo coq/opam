@@ -8,8 +8,8 @@ Enable this repository:
 
 To install a package:
 
-    opam search coq-that-package
-    opam install coq-that-package
+    opam search coq:that-package
+    opam install coq:that-package
 
 ## Publish
 If you want to add your package, please do a pull-request to this repository. Note that only stable versions will be accepted. For development versions, you can use the [unstable repository](https://github.com/coq/opam-coq-repo-unstable).
