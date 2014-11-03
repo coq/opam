@@ -7,7 +7,7 @@ license: "MIT"
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
-  [make "install"]
+  ["cd" "extraction" "&&" make]
 ]
 depends: [
   "coq" {>= "8.4pl4"}
@@ -15,5 +15,6 @@ depends: [
   "coq:function-ninjas"
   "coq:iterable"
   "coq:list-string"
+  "coq:concurrency:proxy"
   "coq:concurrency:system"
 ]
