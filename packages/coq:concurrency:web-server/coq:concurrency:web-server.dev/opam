@@ -7,7 +7,7 @@ license: "MIT"
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
-  ["cd" "extraction" "&&" make]
+  ["sh" "-c" "cd extraction && make"]
 ]
 depends: [
   "coq" {>= "8.4pl4"}
