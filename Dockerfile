@@ -32,4 +32,4 @@ RUN opam repo add coq-testing https://github.com/coq/repo-testing.git
 
 # This repository
 ADD . /root/repo-unstable
-RUN opam repo add -k git coq-unstable /root/repo-unstable
+RUN opam repo add --kind git coq-unstable /root/repo-unstable
