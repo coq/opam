@@ -1,7 +1,7 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-homepage: "https://github.com/clarus/coq-concurrency"
-bug-reports: "https://github.com/clarus/coq-concurrency/issues"
+homepage: "https://github.com/coq-concurrency/system"
+bug-reports: "https://github.com/coq-concurrency/system/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
