@@ -5,6 +5,7 @@ build: [
   ["./remake" "-j%{jobs}%"]
   ["./remake" "install"]
 ]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Flocq"]
 depends: [
   "coq" {>= "8.4pl4"}
 ]
