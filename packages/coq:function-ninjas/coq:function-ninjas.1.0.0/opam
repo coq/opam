@@ -7,7 +7,7 @@ license: "MIT"
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
-  ["ln" "-s" "%{lib}%/coq:function-ninjas" "%{lib}%/coq/user-contrib/FunctionNinjas"]
+  [make "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FunctionNinjas"]
 depends: [
