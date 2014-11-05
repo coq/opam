@@ -4,13 +4,11 @@ MAINTAINER Guillaume Claret
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y gcc make git
-RUN apt-get install -y curl ocaml
-RUN apt-get install -y m4 aspcud
+RUN apt-get install -y curl m4 ruby
+RUN apt-get install -y aspcud
+RUN apt-get install -y g++
 
-# OPAM from Ubuntu
-# RUN apt-get install -y opam
-
-# OPAM from the sources
+# OPAM
 WORKDIR /root
 RUN curl -L https://github.com/ocaml/opam/archive/1.2.0.tar.gz |tar -xz
 WORKDIR opam-1.2.0
@@ -29,4 +27,4 @@ RUN opam install -y coq
 # This repository
 ADD . /root/repo-stable
 WORKDIR /root/repo-stable
-RUN opam repo add --kind git coq-stable .
+RUN opam repo add --kind=git coq-stable .
