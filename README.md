@@ -15,4 +15,4 @@ To install a package:
 If you want to add your package, please do a pull-request to this repository. Note that only stable versions will be accepted. For development versions, you can use the [testing](https://github.com/coq/repo-testing) or [unstable](https://github.com/coq/repo-unstable) repositories.
 
 ## Bench
-The central place for benchmarks is [Coq bench](https://coq-bench.github.io/). We test different versions of Coq and machine configurations, and update the resutls as often as possible.
+The central place for benchmarks is [Coq bench](https://coq-bench.github.io/). We test different versions of Coq and machine configurations, and update the results as often as possible.
