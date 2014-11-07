@@ -1,7 +1,7 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-homepage: "https://github.com/coq-concurrency/web-server"
-bug-reports: "https://github.com/coq-concurrency/web-server/issues"
+homepage: "https://github.com/coq-concurrency/pluto"
+bug-reports: "https://github.com/coq-concurrency/pluto/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
@@ -15,6 +15,7 @@ depends: [
   "coq:function-ninjas"
   "coq:iterable"
   "coq:list-string"
+  "coq:moment"
   "coq:concurrency:proxy"
   "coq:concurrency:system"
 ]
