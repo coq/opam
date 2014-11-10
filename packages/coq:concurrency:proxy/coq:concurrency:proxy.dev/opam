@@ -6,7 +6,6 @@ authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
   [make]
-  [make "install"]
 ]
 depends: [
   "lwt" {>= "2.4.5"}
