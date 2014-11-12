@@ -3,7 +3,6 @@ maintainer: "thomas.braibant@gmail.com"
 build: [
   ["./configure" "ia32-linux"]
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
 depends: [
   "coq" {>= "8.4pl4"}
