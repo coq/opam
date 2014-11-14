@@ -4,7 +4,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Maths"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/maths"]
 depends: [
-  "coq" {>= "8.4pl4"}
+  "coq" {= "dev"}
 ]
