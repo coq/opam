@@ -1,6 +1,11 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
+
+  homepage: "http://www.cmi.univ-mrs.fr/~solange/"
+
+
 build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]
   [make "install"]
 ]

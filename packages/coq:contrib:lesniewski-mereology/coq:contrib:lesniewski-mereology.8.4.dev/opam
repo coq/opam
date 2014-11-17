@@ -1,6 +1,13 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
+
+  homepage: "https://www.researchgate.net/profile/Richard_Dapoigny"
+
+
+  license: "LGPL"
+
 build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]
   [make "install"]
 ]

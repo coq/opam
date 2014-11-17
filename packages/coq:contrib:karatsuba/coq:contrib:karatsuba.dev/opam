@@ -1,6 +1,11 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
+
+  homepage: "http://r6.ca/"
+
+
 build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]
   [make "install"]
 ]

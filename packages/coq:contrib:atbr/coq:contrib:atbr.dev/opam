@@ -1,6 +1,13 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
+
+  homepage: "http://sardes.inrialpes.fr/~braibant"
+
+
+  license: "LGPL"
+
 build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]
   [make "install"]
 ]
