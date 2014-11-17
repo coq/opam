@@ -1,5 +1,7 @@
 opam-version: "1.1"
 maintainer: "guillaume.melquiond@inria.fr"
+homepage: "http://coquelicot.saclay.inria.fr/"
+license: "LGPL 3"
 build: [
   ["./configure"]
   ["./remake" "-j%{jobs}%"]
