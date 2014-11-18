@@ -9,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/classical-realizability"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ClassicalRealizability"]
 depends: [
   "coq" {= "dev"}
 ]

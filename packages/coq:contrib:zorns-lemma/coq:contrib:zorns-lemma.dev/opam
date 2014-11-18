@@ -9,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/zorns-lemma"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZornsLemma"]
 depends: [
   "coq" {= "dev"}
 ]
