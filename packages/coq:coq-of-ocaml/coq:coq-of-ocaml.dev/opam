@@ -13,5 +13,7 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoqOfOCaml"]
 depends: [
   "coq"
+  "yojson"
+  "smart-print"
 ]
 ocaml-version: [>= "4.02.0"]
