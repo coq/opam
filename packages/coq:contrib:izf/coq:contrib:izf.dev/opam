@@ -1,8 +1,6 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-
-  homepage: "http://www.pps.jussieu.fr/~miquel"
-
+homepage: "https://github.com/inria-coq-contribs/izf"
 
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]

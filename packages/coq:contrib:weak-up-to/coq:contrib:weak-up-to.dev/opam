@@ -1,8 +1,6 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-
-  homepage: "http://perso.ens-lyon.fr/damien.pous/"
-
+homepage: "https://github.com/inria-coq-contribs/weak-up-to"
 
   license: "GPL"
 
@@ -11,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/weak-up-to"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/WeakUpTo"]
 depends: [
   "coq" {= "dev"}
 ]

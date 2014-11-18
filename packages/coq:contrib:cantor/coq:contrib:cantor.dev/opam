@@ -1,8 +1,6 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-
-  homepage: "http://www.labri.fr/~casteran/"
-
+homepage: "https://github.com/inria-coq-contribs/cantor"
 
   license: "LGPL"
 
@@ -11,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/cantor"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Cantor"]
 depends: [
   "coq" {= "dev"}
 ]

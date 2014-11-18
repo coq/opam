@@ -1,8 +1,6 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-
-  homepage: "http://www.cmi.univ-mrs.fr/~solange/"
-
+homepage: "https://github.com/inria-coq-contribs/fairisle"
 
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]

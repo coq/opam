@@ -1,8 +1,6 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-
-  homepage: "http://dpt-info.u-strasbg.fr/~jfd/"
-
+homepage: "https://github.com/inria-coq-contribs/euler-formula"
 
   license: "LGPL"
 
@@ -11,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/euler-formula"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/EulerFormula"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]

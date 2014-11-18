@@ -1,8 +1,6 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-
-  homepage: "http://www.andrew.cmu.edu/user/fpv/"
-
+homepage: "https://github.com/inria-coq-contribs/ptsf"
 
   license: "BSD"
 

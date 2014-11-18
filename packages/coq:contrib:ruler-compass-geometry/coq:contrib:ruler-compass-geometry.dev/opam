@@ -1,8 +1,6 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-
-  homepage: ""
-
+homepage: "https://github.com/inria-coq-contribs/ruler-compass-geometry"
 
   license: "GNU Lesser Public License"
 
@@ -11,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ruler-compass-geometry"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RulerCompassGeometry"]
 depends: [
   "coq" {= "dev"}
 ]

@@ -1,8 +1,6 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-
-  homepage: "http://www-verimag.imag.fr/~boulme"
-
+homepage: "https://github.com/inria-coq-contribs/hoare-tut"
 
   license: "GNU LGPL"
 
@@ -11,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/hoare-tut"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HoareTut"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
