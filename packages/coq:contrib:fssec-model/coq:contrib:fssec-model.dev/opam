@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/fssec-model"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FSSecModel"]
 depends: [
   "coq" {= "dev"}
 ]

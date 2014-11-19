@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/lazy-pcf"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/lazyPCF"]
 depends: [
   "coq" {= "dev"}
 ]

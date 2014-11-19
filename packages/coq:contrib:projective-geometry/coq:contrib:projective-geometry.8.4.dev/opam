@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/projective-geometry"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ProjectiveGeometry"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]

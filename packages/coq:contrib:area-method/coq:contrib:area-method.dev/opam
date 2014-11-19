@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/area-method"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/AreaMethod"]
 depends: [
   "coq" {= "dev"}
 ]

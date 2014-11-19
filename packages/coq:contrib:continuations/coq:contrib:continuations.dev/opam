@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/continuations"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Continuations"]
 depends: [
   "coq" {= "dev"}
 ]

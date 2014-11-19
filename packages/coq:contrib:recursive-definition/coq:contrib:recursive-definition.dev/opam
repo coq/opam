@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/recursive-definition"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RecursiveDefinition"]
 depends: [
   "coq" {= "dev"}
 ]

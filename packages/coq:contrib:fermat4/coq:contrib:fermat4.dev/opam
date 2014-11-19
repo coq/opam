@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/fermat4"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Fermat4"]
 depends: [
   "coq" {= "dev"}
 ]

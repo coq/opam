@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/gc"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GC"]
 depends: [
   "coq" {= "dev"}
 ]

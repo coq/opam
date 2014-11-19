@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/constructive-geometry"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ConstructiveGeometry"]
 depends: [
   "coq" {= "dev"}
 ]

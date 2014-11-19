@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/zf"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZF"]
 depends: [
   "coq" {= "dev"}
 ]
