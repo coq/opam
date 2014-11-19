@@ -9,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/railroad-crossing"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RailroadCrossing"]
 depends: [
   "coq" {= "dev"}
 ]

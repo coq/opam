@@ -9,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/three-gap"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ThreeGap"]
 depends: [
   "coq" {= "dev"}
 ]

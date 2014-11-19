@@ -9,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ctltctl"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CTLTCTL"]
 depends: [
   "coq" {= "dev"}
 ]

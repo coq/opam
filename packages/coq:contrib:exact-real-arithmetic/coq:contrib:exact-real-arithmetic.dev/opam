@@ -9,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/exact-real-arithmetic"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ExactRealArithmetic"]
 depends: [
   "coq" {= "dev"}
 ]

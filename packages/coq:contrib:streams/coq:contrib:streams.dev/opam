@@ -9,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/streams"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Streams"]
 depends: [
   "coq" {= "dev"}
 ]

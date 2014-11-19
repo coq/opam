@@ -9,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/sudoku"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Sudoku"]
 depends: [
   "coq" {= "dev"}
 ]
