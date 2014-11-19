@@ -1,9 +1,7 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/inria-coq-contribs/mod-red"
-
-  license: "GNU Lesser General Public License"
-
+license: "GNU Lesser General Public License"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]

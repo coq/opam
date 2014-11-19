@@ -1,9 +1,7 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/inria-coq-contribs/amm11262"
-
-  license: "LGPL"
-
+license: "LGPL"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]

@@ -1,9 +1,7 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/inria-coq-contribs/ruler-compass-geometry"
-
-  license: "GNU Lesser Public License"
-
+license: "GNU Lesser Public License"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]
