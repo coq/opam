@@ -3,8 +3,8 @@ maintainer: "dev@clarus.me"
 homepage: "https://github.com/inria-coq-contribs/compcert"
 license: "see LICENSE"
 build: [
-["./configure" "ia32-linux"]
-[make "-j%{jobs}%"]
+  ["./configure" "ia32-linux"]
+  [make "-j%{jobs}%"]
 ]
 depends: [
   "coq" {= "dev"}
