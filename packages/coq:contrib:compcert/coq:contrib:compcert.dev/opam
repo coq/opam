@@ -3,11 +3,9 @@ maintainer: "dev@clarus.me"
 homepage: "https://github.com/inria-coq-contribs/compcert"
 license: "see LICENSE"
 build: [
-  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
-  [make "-j%{jobs}%"]
-  [make "install"]
+["./configure" "ia32-linux"]
+[make "-j%{jobs}%"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/compcert"]
 depends: [
   "coq" {= "dev"}
 ]

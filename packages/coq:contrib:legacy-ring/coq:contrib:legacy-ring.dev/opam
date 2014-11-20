@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/legacy-ring"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LegacyRing"]
 depends: [
   "coq" {= "dev"}
 ]
