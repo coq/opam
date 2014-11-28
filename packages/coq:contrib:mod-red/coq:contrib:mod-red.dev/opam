@@ -1,6 +1,6 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-homepage: "https://github.com/inria-coq-contribs/mod-red"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/mod-red.git;a=tree"
 license: "GNU Lesser General Public License"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]

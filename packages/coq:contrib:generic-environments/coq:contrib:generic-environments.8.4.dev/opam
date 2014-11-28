@@ -1,6 +1,6 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-homepage: "https://github.com/inria-coq-contribs/generic-environments"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/generic-environments.git;a=tree"
 license: "LGPL"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]

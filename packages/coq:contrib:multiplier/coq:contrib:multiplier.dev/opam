@@ -1,6 +1,6 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-homepage: "https://github.com/inria-coq-contribs/multiplier"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/multiplier.git;a=tree"
 license: "LGPL 2"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
