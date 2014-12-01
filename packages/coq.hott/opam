@@ -1,4 +1,4 @@
- opam-version: "1.1"
+opam-version: "1.1"
 build: [
   [ "./configure" 
     "-configdir" "%{lib}%/coq/config"
@@ -7,12 +7,11 @@ build: [
     "-prefix" "%{prefix}%"
     "-usecamlp5"
     "-camlp5dir" "%{lib}%/camlp5"
-    "-coqide" "yes"
+    "-coqide" "no"
   ]
-  [ "make" "-j4"]
-  [ "make" "install"]
+  [make "-j%{jobs}%"]
+  [make "install"]
 ]
 depends: [
   "camlp5"
-  "lablgtk"
 ]
