@@ -1,0 +1,12 @@
+opam-version: "1.1" 
+maintainer: "b.a.w.spitters@gmail.com"
+homepage: "http://homotopytypetheory.org/"
+doc: "https://github.com/HoTT/HoTT/wiki"
+bug-reports: "https://github.com/HoTT/HoTT/issues"
+license: "BSD 2-clause"
+build: [
+       ["./configure"]
+       [make]
+]
+tags: ["persistent"]
+depends: [ "coq" { = "hott"}]
