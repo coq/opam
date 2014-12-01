@@ -6,7 +6,7 @@ bug-reports: "https://github.com/HoTT/HoTT/issues"
 license: "BSD 2-clause"
 build: [
        ["./configure"]
-       [make]
+       [make "-j%{jobs}%"]
 ]
 tags: ["persistent"]
 depends: [ "coq" { = "hott"}]
