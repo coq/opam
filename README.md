@@ -18,7 +18,5 @@ To install a package:
 ## Publish
 If you want to add your package, please do a pull-request to this repository. Read this [tutorial](http://coq-blog.clarus.me/make-a-coq-package.html) to get an example.
 
-Any pull-request should be accepted, even bugged packages, since this is the unstable repository.
-
 ## Bench
 The central place for benchmarks is [Coq bench](https://coq-bench.github.io/). We test different versions of Coq and machine configurations, and update the results as often as possible.
