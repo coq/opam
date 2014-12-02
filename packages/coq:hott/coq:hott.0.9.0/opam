@@ -9,4 +9,4 @@ build: [
        [make "-j%{jobs}%"]
 ]
 tags: ["persistent"]
-depends: [ "coq" { = "hott"}]
+depends: ["coq" { = "hott"| = "dev"}]
