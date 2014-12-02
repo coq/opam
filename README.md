@@ -12,7 +12,9 @@ To install a package:
     opam install coq:that-package
 
 ## Publish
-If you want to add your package, please do a pull-request to this repository. Note that only stable versions will be accepted. For development versions, you can use the [unstable](https://github.com/coq/repo-unstable) repository.
+If you want to add your package, please do a pull-request to this repository. Read this [tutorial](http://coq-blog.clarus.me/make-a-coq-package.html) to get an example.
+
+Note that only stable versions will be accepted. For development versions, you can use the [unstable](https://github.com/coq/repo-unstable) repository.
 
 ## Bench
 The central place for benchmarks is [Coq bench](https://coq-bench.github.io/). We test different versions of Coq and machine configurations, and update the results as often as possible.
