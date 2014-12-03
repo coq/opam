@@ -9,5 +9,5 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Buchberger"]
 depends: [
-  "coq" {= "dev"}
+  "coq" {>= "8.5"}
 ]
