@@ -12,6 +12,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
+patches: ["makeinstall.patch"]
 depends: [
   "camlp5"
 ]

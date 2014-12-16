@@ -1,0 +1,25 @@
+From 67f338e54850be511a78214c265506a7a03261d9 Mon Sep 17 00:00:00 2001
+From: Cyril Cohen <cohen@crans.org>
+Date: Tue, 16 Dec 2014 16:02:39 +0100
+Subject: [PATCH] Fixing systemwide installation of plugin cmxs.
+
+---
+ Makefile.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.build b/Makefile.build
+index 3aa681b..bd23668 100644
+--- a/Makefile.build
++++ b/Makefile.build
+@@ -771,7 +771,7 @@ ifndef CUSTOM
+ endif
+ ifeq ($(BEST),opt)
+ 	$(INSTALLLIB) $(LIBCOQRUN) $(FULLCOQLIB)
+-	$(INSTALLBIN) $(FULLCOQLIB) $(PLUGINSOPT)
++	$(INSTALLSH) $(FULLCOQLIB) $(PLUGINSOPT)
+ endif
+ # csdpcert is not meant to be directly called by the user; we install
+ # it with libraries
+-- 
+2.1.3
+
