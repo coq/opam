@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "1.2"
 maintainer: "Laurent.Thery@inria.fr"
 homepage: "https://github.com/thery/Plouffe"
 bug-reports: "https://github.com/thery/Plouffe/issues"
