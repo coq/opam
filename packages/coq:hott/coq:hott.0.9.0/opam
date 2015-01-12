@@ -1,12 +1,18 @@
-opam-version: "1.1" 
-maintainer: "b.a.w.spitters@gmail.com"
+opam-version: "1.2"
+name: "HoTT"
+version: "0.1"
+maintainer: "Bas Spitters <b.a.w.spitters@gmail.com>"
 homepage: "http://homotopytypetheory.org/"
-doc: "https://github.com/HoTT/HoTT/wiki"
-bug-reports: "https://github.com/HoTT/HoTT/issues"
+bug-reports: "http://homotopytypetheory.org/"
 license: "BSD 2-clause"
 build: [
-       ["./configure"]
-       [make "-j%{jobs}%"]
+  ["./autogen.sh"]
+  ["./configure" "COQTOP=%{bin}%/coqtop" "--prefix=%{prefix}%"]
+  ["%{make}%" "-j%{jobs}%"]
 ]
-tags: ["persistent"]
-depends: ["coq" { = "hott"| = "dev"}]
+install: ["%{make}%" "install"]
+remove: []
+depends: [
+  "ocamlfind" {build}
+  "coq" {= "hott"| = "dev"}
+]
