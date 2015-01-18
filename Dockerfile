@@ -14,14 +14,11 @@ RUN apt-get install -y m4 aspcud
 WORKDIR /root
 RUN curl -L https://github.com/ocaml/opam/archive/1.2.0.tar.gz |tar -xz
 WORKDIR opam-1.2.0
-RUN ./configure
-RUN make lib-ext
-RUN make
-RUN make install
+RUN ./configure && make lib-ext && make && make install
 
 # Initialize OPAM
 RUN opam init
-ENV OPAMJOBS 4
+ENV OPAMJOBS 2
 
 # This repository
 ADD . /root/repo-coqs
