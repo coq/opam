@@ -5,7 +5,6 @@ homepage: "http://homotopytypetheory.org/"
 bug-reports: "http://homotopytypetheory.org/"
 license: "BSD 2-clause"
 build: [
-  ["cd" "HoTT"]
   ["etc/install_coq.sh"]
   ["./autogen.sh"]
   ["./configure" "COQTOP=%{bin}%/coqtop" "--prefix=%{prefix}%"]
