@@ -1,4 +1,5 @@
 opam-version: "1.2"
+name: "HoTT"
 version: "0.9.0"
 maintainer: "Bas Spitters <b.a.w.spitters@gmail.com>"
 homepage: "http://homotopytypetheory.org/"
@@ -13,5 +14,8 @@ install: ["%{make}%" "install"]
 remove: []
 depends: [
   "ocamlfind" {build}
-  "coq" {= "hott"| = "dev"}
+(*  Due to limitations in coq_Makefile, we need to build the whole coq, the stdlib and HoTT/HoTT at the same time.
+    We hope for a better solution in the future.
+    https://github.com/HoTT/HoTT/blob/master/INSTALL.txt
+   "coq" {= "hott"| = "dev"} *)
 ]
