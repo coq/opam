@@ -1,5 +1,5 @@
 opam-version: "1.2"
-name: "HoTT"
+name: "hott"
 version: "0.9.0"
 maintainer: "Bas Spitters <b.a.w.spitters@gmail.com>"
 homepage: "http://homotopytypetheory.org/"
