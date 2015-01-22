@@ -8,7 +8,7 @@ build: [
   ["etc/install_coq.sh"]
   ["./autogen.sh"]
   (* We cannot use the standard coqtop %{bin}%/coqtop, for now*)
-  ["./configure" "COQTOP=coq-HoTT/bin/coqtop" "--prefix=%{prefix}%"]
+  ["./configure" "COQTOP=coq-HoTT/bin/coqtop" "COQBIN=coq-HoTT/bin/" "--prefix=%{prefix}%"]
   ["%{make}%" "-j%{jobs}%"]
 ]
 install: ["%{make}%" "install"]
