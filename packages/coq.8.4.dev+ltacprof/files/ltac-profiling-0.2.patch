@@ -1,0 +1,1042 @@
+From 79a46cb28604eab2ce3b7b2715cdbc649b6c65d7 Mon Sep 17 00:00:00 2001
+From: Tobias Tebbi <ttebbi@ps.uni-saarland.de>
+Date: Sat, 15 Nov 2014 13:35:49 +0100
+Subject: [PATCH 1/3] initial version of profiler, as distributed by email
+
+---
+ lib/pp.mli                       |   2 +
+ tactics/hightactics.mllib        |   1 +
+ tactics/profile_ltac.ml          | 179 +++++++++++++++++++++++++++++++++++++++
+ tactics/profile_ltac.mli         |   9 ++
+ tactics/profile_ltac_tactics.ml  | Bin 0 -> 17803 bytes
+ tactics/profile_ltac_tactics.ml4 |  32 +++++++
+ tactics/tacinterp.ml             |  10 ++-
+ tactics/tactics.mllib            |   1 +
+ 8 files changed, 230 insertions(+), 4 deletions(-)
+ create mode 100644 tactics/profile_ltac.ml
+ create mode 100644 tactics/profile_ltac.mli
+ create mode 100644 tactics/profile_ltac_tactics.ml
+ create mode 100644 tactics/profile_ltac_tactics.ml4
+
+diff --git a/lib/pp.mli b/lib/pp.mli
+index 695bcbc..e654cdc 100644
+--- a/lib/pp.mli
++++ b/lib/pp.mli
+@@ -122,3 +122,5 @@ val msg_warn : string -> unit
+ val msg_debug : std_ppcmds -> unit
+ 
+ val string_of_ppcmds : std_ppcmds -> string
++
++val utf8_length : string -> int
+diff --git a/tactics/hightactics.mllib b/tactics/hightactics.mllib
+index 7d12f9d..570f570 100644
+--- a/tactics/hightactics.mllib
++++ b/tactics/hightactics.mllib
+@@ -6,3 +6,4 @@ Class_tactics
+ Rewrite
+ Tauto
+ Eqdecide
++Profile_ltac_tactics
+diff --git a/tactics/profile_ltac.ml b/tactics/profile_ltac.ml
+new file mode 100644
+index 0000000..5cbe6fd
+--- /dev/null
++++ b/tactics/profile_ltac.ml
+@@ -0,0 +1,179 @@
++open Pp
++open Printer
++open Util
++
++
++let is_profiling = ref false
++let set_profiling b = is_profiling := b
++
++
++let new_call = ref false
++let entered_call() = new_call := true
++let is_new_call() = let b = !new_call in new_call := false; b
++
++
++type entry = {mutable total : float; mutable local : float; mutable ncalls : int; mutable max_total : float}
++let empty_entry() = {total = 0.; local = 0.; ncalls = 0; max_total = 0.}
++let add_entry e {total; local; ncalls; max_total} =
++  e.total <- e.total +. total;
++  e.local <- e.local +. local;
++  e.ncalls <- e.ncalls + ncalls;
++  e.max_total <- max e.max_total max_total
++
++type treenode = {entry : entry; children : (string, treenode) Hashtbl.t}
++let stack = ref [{entry=empty_entry(); children=Hashtbl.create 20}]
++
++let on_stack = Hashtbl.create 5
++
++let get_node c table = 
++  try Hashtbl.find table c
++  with Not_found -> 
++    let new_node = {entry=empty_entry(); children=Hashtbl.create 5} in
++    Hashtbl.add table c new_node;
++    new_node
++
++let time() = 
++  let times = Unix.times() in
++  times.Unix.tms_utime +. times.Unix.tms_stime
++
++let enter_tactic c =
++  let parent = List.hd !stack in
++  let node = get_node c parent.children in
++  stack := node :: !stack;
++  Hashtbl.add on_stack c (); 
++  time()
++
++let exit_tactic start_time c =
++  let node :: stack' = !stack in
++  let parent = List.hd stack' in
++  stack := stack';
++  Hashtbl.remove on_stack c;
++  let diff = time() -. start_time in
++  parent.entry.local <- parent.entry.local -. diff;
++  add_entry node.entry {total = diff; local = diff; ncalls = 1; max_total = diff}
++
++let try_finalize f finally =
++  let res = try f() with exn -> finally(); raise exn in
++  finally();
++  res
++
++let string_of_call ck =
++  let s =
++  string_of_ppcmds
++    (match ck with
++       | Proof_type.LtacNotationCall s -> str s
++       | Proof_type.LtacNameCall cst -> Pptactic.pr_ltac_constant cst
++       | Proof_type.LtacVarCall (id,t) -> Nameops.pr_id id
++       | Proof_type.LtacAtomCall (te,otac) ->
++	 (Pptactic.pr_glob_tactic (Global.env())
++	    (Tacexpr.TacAtom (dummy_loc,te)))
++       | Proof_type.LtacConstrInterp (c,(vars,unboundvars)) -> 
++	 pr_glob_constr_env (Global.env()) c
++    ) in
++  for i = 0 to String.length s - 1 do if s.[i] = '\n' then s.[i] <- ' ' done;
++  s
++
++(*
++let rec add_entry e1 e2 =
++  e1.total <- e1.total +. e2.total;
++  e1.local <- e1.local +. e2.local;
++  Hashtbl.iter 
++    (fun c e -> add_entry (get_node c e1.children) e) 
++	e2.children
++  *)
++
++let format_sec x = (Printf.sprintf "%.3fs" x)
++let format_ratio x = (Printf.sprintf "%.1f%%" (100. *. x))
++let padl n s = ws (max 0 (n - utf8_length s)) ++ str s
++let padr n s = str s ++ ws (max 0 (n - utf8_length s))
++let padr_with c n s = 
++  let ulength = utf8_length s in
++  let length = String.length s in
++  str (String.sub s 0 (min length (n + length - ulength))) ++ str(String.make (max 0 (n - ulength)) c)  
++
++let rec list_iter_is_last f = function
++  | []      -> ()
++  | [x]     -> f true x
++  | x :: xs -> f false x; list_iter_is_last f xs
++
++(*
++let rec do n f = if n <= 0 then () else f(); do (n-1) f
++
++let repeat_str n s =
++  let length_s = String.length s in
++  let length_res = n * length_s in
++  let res = String.create length_res in
++  let pos = ref 0 in
++    do n (fun()-> 
++      String.blit s 0 res !pos length_s;
++      pos := !pos + length_s
++    );
++    res
++*)
++let header() = 
++  msgnl(str" tactic                                    self  total   calls       max");
++  msgnl(str"────────────────────────────────────────┴──────┴──────┴───────┴─────────┘")
++
++let rec print_node all_total indent first_level is_last (s,n) =
++  let e = n.entry in
++  msgnl(
++    h 0(
++      padr_with '-' 40 (indent ^ (if first_level then "" else if is_last then "└─" else "├─") ^ s^" ")
++      ++padl 7 (format_ratio (e.local /. all_total))
++      ++padl 7 (format_ratio (e.total /. all_total))
++      ++padl 8 (string_of_int e.ncalls)
++      ++padl 10 (format_sec(e.max_total))
++    )
++  );
++  print_table all_total (indent^if first_level then "" else if is_last then "  " else "│ ") false n.children
++
++and print_table all_total indent first_level table =
++  (*let table' = Hashtbl.create (2*Hashtbl.length table) in
++  Hashtbl.iter 
++    (fun s e -> add_entry (get_node (string_of_call c) table') e)
++    table;*)
++  let ls = Hashtbl.fold 
++      (fun s n l -> if n.entry.total /. all_total < 0.02 then l else (s, n) :: l) 
++      table [] in
++  let ls = List.sort (fun (_, n1) (_, n2) -> compare n2.entry.total n1.entry.total) ls in
++    list_iter_is_last (print_node all_total indent first_level) ls
++
++let print_results() =
++  let tree = (List.hd !stack).children in
++  let all_total = -. (List.hd !stack).entry.local in
++  let global = Hashtbl.create 20 in
++  let rec cumulate table =
++    Hashtbl.iter 
++      (fun s node ->
++	let node' = get_node s global in
++	add_entry node'.entry node.entry;
++	cumulate node.children
++      )
++      table
++  in
++  cumulate tree;
++  header();
++  print_table all_total "" true global;
++  msgnl(str"");
++  header();
++  print_table all_total "" true tree
++
++let do_profile s call_trace f =
++  if !is_profiling && is_new_call() then
++    match call_trace with
++      | (_, _, c) :: _ ->
++	let s = string_of_call c in
++	if 
++	  Hashtbl.mem on_stack s
++	then
++	  f()
++	else
++	  let start_time = enter_tactic s in
++	  try_finalize f (fun()->
++	    exit_tactic start_time s
++	  )
++	  
++      | [] -> f()
++  else f()
++
++let reset_profile() = stack := [{entry=empty_entry(); children=Hashtbl.create 20}]
+diff --git a/tactics/profile_ltac.mli b/tactics/profile_ltac.mli
+new file mode 100644
+index 0000000..4208bc6
+--- /dev/null
++++ b/tactics/profile_ltac.mli
+@@ -0,0 +1,9 @@
++val do_profile : string -> ('a * 'b * Proof_type.ltac_call_kind) list -> (unit -> 'c) -> 'c
++
++val set_profiling : bool -> unit
++
++val entered_call : unit -> unit
++
++val print_results : unit -> unit
++
++val reset_profile : unit -> unit
+diff --git a/tactics/profile_ltac_tactics.ml b/tactics/profile_ltac_tactics.ml
+new file mode 100644
+index 0000000000000000000000000000000000000000..e3b155558261852c0b614d65ea875605ad171155
+GIT binary patch
+literal 17803
+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
+QLBS7s@plA2V(?!71AoHqJ^%m!
+
+literal 0
+HcmV?d00001
+
+diff --git a/tactics/profile_ltac_tactics.ml4 b/tactics/profile_ltac_tactics.ml4
+new file mode 100644
+index 0000000..8136db8
+--- /dev/null
++++ b/tactics/profile_ltac_tactics.ml4
+@@ -0,0 +1,32 @@
++(*i camlp4deps: "parsing/grammar.cma" i*)
++
++open Profile_ltac
++
++let tclSET_PROFILING b = fun gl -> 
++   set_profiling b; Tacticals.tclIDTAC gl    
++
++TACTIC EXTEND start_profiling
++  | [ "start" "profiling" ] -> [ tclSET_PROFILING true  ]    
++END
++    
++TACTIC EXTEND stop_profiling 
++  | [ "stop" "profiling" ] ->  [ tclSET_PROFILING false ]    
++END;;
++
++
++VERNAC COMMAND EXTEND StartProfiling
++ [ "Start" "Profiling" ] -> [ reset_profile(); set_profiling true ]
++END
++
++VERNAC COMMAND EXTEND StopProfiling
++ [ "Stop" "Profiling" ] -> [ set_profiling false ]
++ END
++
++VERNAC COMMAND EXTEND ResetProfiling
++ [ "Reset" "Profile" ] -> [ reset_profile() ]
++END
++
++VERNAC COMMAND EXTEND ShowProfile
++ [ "Show" "Profile" ] -> [ print_results() ]
++END
++
+diff --git a/tactics/tacinterp.ml b/tactics/tacinterp.ml
+index e5575a2..9142ba9 100644
+--- a/tactics/tacinterp.ml
++++ b/tactics/tacinterp.ml
+@@ -277,7 +277,7 @@ let lookup_genarg_subst  id = let (_,_,f) = lookup_genarg id in f
+ 
+ let push_trace (loc,ck) = function
+   | (n,loc',ck')::trl when ck=ck' -> (n+1,loc,ck)::trl
+-  | trl -> (1,loc,ck)::trl
++  | trl -> Profile_ltac.entered_call(); (1,loc,ck)::trl
+ 
+ let propagate_trace ist loc id = function
+   | VFun (_,lfun,it,b) ->
+@@ -1796,7 +1796,9 @@ and eval_tactic ist = function
+ 	  catch_error (push_trace(dloc,call)ist.trace)
+ 	    (interp_atomic ist gl) t	in
+ 	(* catch error in the evaluation *)
+-	catch_error (push_trace(loc,call)ist.trace) tac gl
++	let trace = push_trace(loc,call)ist.trace in
++	Profile_ltac.do_profile "eval_tactic:2" trace (fun()->
++	  catch_error trace tac gl)
+   | TacFun _ | TacLetIn _ -> assert false
+   | TacMatchGoal _ | TacMatch _ -> assert false
+   | TacId s -> fun gl ->
+@@ -1948,7 +1950,7 @@ and tactic_of_value ist vle g =
+   | VRTactic res -> res
+   | VFun (trace,lfun,[],t) ->
+       let tac = eval_tactic {ist with lfun=lfun; trace=trace} t in
+-      catch_error trace tac g
++    Profile_ltac.do_profile "tactic_of_value" trace (fun()-> catch_error trace tac g)
+   | (VFun _|VRec _) -> error "A fully applied tactic is expected."
+   | VConstr _ -> errorlabstrm "" (str"Value is a term. Expected a tactic.")
+   | VConstr_context _ ->
+@@ -1965,7 +1967,7 @@ and eval_with_fail ist is_lazy goal tac =
+     (match v with
+     | VFun (trace,lfun,[],t) when not is_lazy ->
+ 	let tac = eval_tactic {ist with lfun=lfun; trace=trace} t in
+-	VRTactic (catch_error trace tac { goal with sigma=sigma })
++	VRTactic (Profile_ltac.do_profile "eval_with_fail" trace (fun() -> catch_error trace tac { goal with sigma=sigma }))
+     | a -> a)
+   with
+     | FailError (0,s) | Loc.Exc_located(_, FailError (0,s))
+diff --git a/tactics/tactics.mllib b/tactics/tactics.mllib
+index f132480..da75068 100644
+--- a/tactics/tactics.mllib
++++ b/tactics/tactics.mllib
+@@ -15,6 +15,7 @@ Equality
+ Contradiction
+ Inv
+ Leminv
++Profile_ltac
+ Tacinterp
+ Evar_tactics
+ Autorewrite
+-- 
+2.1.4
+
+
+From d5731da23fbaddb8e459acdcc18cf47763bd8fc9 Mon Sep 17 00:00:00 2001
+From: Tobias Tebbi <ttebbi@ps.uni-saarland.de>
+Date: Sun, 18 Jan 2015 17:15:17 +0530
+Subject: [PATCH 2/3] CoqPL2015 improvements
+
+---
+ lib/pp.ml4                       |  33 ++++++++
+ lib/pp.mli                       |   1 +
+ tactics/profile_ltac.ml          | 171 ++++++++++++++++++++++-----------------
+ tactics/profile_ltac.mli         |   2 +
+ tactics/profile_ltac_tactics.ml  | Bin 17803 -> 21187 bytes
+ tactics/profile_ltac_tactics.ml4 |   4 +
+ 6 files changed, 138 insertions(+), 73 deletions(-)
+
+diff --git a/lib/pp.ml4 b/lib/pp.ml4
+index f13a3d1..9e83d0a 100644
+--- a/lib/pp.ml4
++++ b/lib/pp.ml4
+@@ -109,6 +109,39 @@ let utf8_length s =
+   done ;
+   !cnt
+ 
++(* Variant of String.sub for UTF8 character positions *)
++let utf8_sub s start_u len_u =
++  let len_b = String.length s
++  and end_u = start_u + len_u   
++  and cnt = ref 0
++  and nc = ref 0
++  and p = ref 0 in
++  let start_b = ref len_b in
++  while !p < len_b && !cnt < end_u do
++    if !cnt <= start_u then start_b := !p ;
++    begin
++      match s.[!p] with
++      | '\000'..'\127' -> nc := 0 (* ascii char *)
++      | '\128'..'\191' -> nc := 0 (* cannot start with a continuation byte *)
++      |	'\192'..'\223' -> nc := 1 (* expect 1 continuation byte *)
++      |	'\224'..'\239' -> nc := 2 (* expect 2 continuation bytes *)
++      |	'\240'..'\247' -> nc := 3 (* expect 3 continuation bytes *)
++      |	'\248'..'\251' -> nc := 4 (* expect 4 continuation bytes *)
++      |	'\252'..'\253' -> nc := 5 (* expect 5 continuation bytes *)
++      |	'\254'..'\255' -> nc := 0 (* invalid byte *)
++    end ;
++    incr p ;
++    while !p < len_b && !nc > 0 do
++      match s.[!p] with
++      |	'\128'..'\191' (* next continuation byte *) -> incr p ; decr nc
++      |	_ (* not a continuation byte *) -> nc := 0
++    done ;
++    incr cnt
++  done ;
++  let end_b = !p in
++  String.sub s !start_b (end_b - !start_b)
++
++
+ (* formatting commands *)
+ let str s = [< 'Ppcmd_print (utf8_length s,s) >]
+ let stras (i,s) = [< 'Ppcmd_print (i,s) >]
+diff --git a/lib/pp.mli b/lib/pp.mli
+index e654cdc..4d8c61d 100644
+--- a/lib/pp.mli
++++ b/lib/pp.mli
+@@ -124,3 +124,4 @@ val msg_debug : std_ppcmds -> unit
+ val string_of_ppcmds : std_ppcmds -> string
+ 
+ val utf8_length : string -> int
++val utf8_sub : string -> int -> int -> string
+diff --git a/tactics/profile_ltac.ml b/tactics/profile_ltac.ml
+index 5cbe6fd..9e5797b 100644
+--- a/tactics/profile_ltac.ml
++++ b/tactics/profile_ltac.ml
+@@ -14,11 +14,11 @@ let is_new_call() = let b = !new_call in new_call := false; b
+ 
+ type entry = {mutable total : float; mutable local : float; mutable ncalls : int; mutable max_total : float}
+ let empty_entry() = {total = 0.; local = 0.; ncalls = 0; max_total = 0.}
+-let add_entry e {total; local; ncalls; max_total} =
+-  e.total <- e.total +. total;
++let add_entry e add_total {total; local; ncalls; max_total} =
++  if add_total then e.total <- e.total +. total;
+   e.local <- e.local +. local;
+   e.ncalls <- e.ncalls + ncalls;
+-  e.max_total <- max e.max_total max_total
++  if add_total then e.max_total <- max e.max_total max_total				       
+ 
+ type treenode = {entry : entry; children : (string, treenode) Hashtbl.t}
+ let stack = ref [{entry=empty_entry(); children=Hashtbl.create 20}]
+@@ -27,35 +27,34 @@ let on_stack = Hashtbl.create 5
+ 
+ let get_node c table = 
+   try Hashtbl.find table c
+-  with Not_found -> 
++  with Not_found ->
+     let new_node = {entry=empty_entry(); children=Hashtbl.create 5} in
+     Hashtbl.add table c new_node;
+     new_node
+ 
++let rec add_node node node' =
++  add_entry node.entry true node'.entry;
++  Hashtbl.iter
++    (fun s node' -> add_node (get_node s node.children) node')
++    node'.children
++
+ let time() = 
+   let times = Unix.times() in
+   times.Unix.tms_utime +. times.Unix.tms_stime
+ 
+-let enter_tactic c =
+-  let parent = List.hd !stack in
+-  let node = get_node c parent.children in
+-  stack := node :: !stack;
+-  Hashtbl.add on_stack c (); 
+-  time()
++let try_finalize f (finally : unit -> unit) =
++  let res = try f() with exn -> finally(); raise exn in
++  finally();
++  res
+ 
+-let exit_tactic start_time c =
++let exit_tactic start_time c add_total =
+   let node :: stack' = !stack in
+   let parent = List.hd stack' in
+   stack := stack';
+-  Hashtbl.remove on_stack c;
++  if add_total then Hashtbl.remove on_stack c;
+   let diff = time() -. start_time in
+   parent.entry.local <- parent.entry.local -. diff;
+-  add_entry node.entry {total = diff; local = diff; ncalls = 1; max_total = diff}
+-
+-let try_finalize f finally =
+-  let res = try f() with exn -> finally(); raise exn in
+-  finally();
+-  res
++  add_entry node.entry add_total {total = diff; local = diff; ncalls = 1; max_total = diff}
+ 
+ let string_of_call ck =
+   let s =
+@@ -71,16 +70,30 @@ let string_of_call ck =
+ 	 pr_glob_constr_env (Global.env()) c
+     ) in
+   for i = 0 to String.length s - 1 do if s.[i] = '\n' then s.[i] <- ' ' done;
+-  s
+-
+-(*
+-let rec add_entry e1 e2 =
+-  e1.total <- e1.total +. e2.total;
+-  e1.local <- e1.local +. e2.local;
+-  Hashtbl.iter 
+-    (fun c e -> add_entry (get_node c e1.children) e) 
+-	e2.children
+-  *)
++  let s = try String.sub s 0 (Util.string_index_from s 0 "(*") with Not_found -> s in
++  Util.strip s
++	    
++let do_profile s call_trace f =
++  if !is_profiling && is_new_call() then
++    match call_trace with
++      | (_, _, c) :: _ ->
++	let s = string_of_call c in
++	let parent = List.hd !stack in
++	let node, add_total = try Hashtbl.find on_stack s, false
++			      with Not_found -> 
++				   let node = get_node s parent.children in
++				   Hashtbl.add on_stack s node;
++				   node, true
++	in
++	if not add_total && node = List.hd !stack then f() else (
++	  stack := node :: !stack;
++	  let start_time = time() in
++	  try_finalize f (fun()->
++			  exit_tactic start_time s add_total
++			 )
++	)
++      | [] -> f()
++  else f()
+ 
+ let format_sec x = (Printf.sprintf "%.3fs" x)
+ let format_ratio x = (Printf.sprintf "%.1f%%" (100. *. x))
+@@ -89,54 +102,47 @@ let padr n s = str s ++ ws (max 0 (n - utf8_length s))
+ let padr_with c n s = 
+   let ulength = utf8_length s in
+   let length = String.length s in
+-  str (String.sub s 0 (min length (n + length - ulength))) ++ str(String.make (max 0 (n - ulength)) c)  
++  str (utf8_sub s 0 n) ++ str(String.make (max 0 (n - ulength)) c)  
+ 
+ let rec list_iter_is_last f = function
+   | []      -> ()
+   | [x]     -> f true x
+   | x :: xs -> f false x; list_iter_is_last f xs
+ 
+-(*
+-let rec do n f = if n <= 0 then () else f(); do (n-1) f
+-
+-let repeat_str n s =
+-  let length_s = String.length s in
+-  let length_res = n * length_s in
+-  let res = String.create length_res in
+-  let pos = ref 0 in
+-    do n (fun()-> 
+-      String.blit s 0 res !pos length_s;
+-      pos := !pos + length_s
+-    );
+-    res
+-*)
+ let header() = 
+   msgnl(str" tactic                                    self  total   calls       max");
+   msgnl(str"────────────────────────────────────────┴──────┴──────┴───────┴─────────┘")
+ 
+-let rec print_node all_total indent first_level is_last (s,n) =
++let rec print_node all_total indent prefix (s,n) =
+   let e = n.entry in
+   msgnl(
+     h 0(
+-      padr_with '-' 40 (indent ^ (if first_level then "" else if is_last then "└─" else "├─") ^ s^" ")
++      padr_with '-' 40 (prefix ^ s ^ " ")
+       ++padl 7 (format_ratio (e.local /. all_total))
+       ++padl 7 (format_ratio (e.total /. all_total))
+       ++padl 8 (string_of_int e.ncalls)
+       ++padl 10 (format_sec(e.max_total))
+     )
+-  );
+-  print_table all_total (indent^if first_level then "" else if is_last then "  " else "│ ") false n.children
++    );
++  print_table all_total indent false n.children
+ 
+ and print_table all_total indent first_level table =
+-  (*let table' = Hashtbl.create (2*Hashtbl.length table) in
+-  Hashtbl.iter 
+-    (fun s e -> add_entry (get_node (string_of_call c) table') e)
+-    table;*)
+   let ls = Hashtbl.fold 
+-      (fun s n l -> if n.entry.total /. all_total < 0.02 then l else (s, n) :: l) 
++	     (fun s n l -> if n.entry.total /. all_total < 0.02 then l else (s, n) :: l) 
+       table [] in
+-  let ls = List.sort (fun (_, n1) (_, n2) -> compare n2.entry.total n1.entry.total) ls in
+-    list_iter_is_last (print_node all_total indent first_level) ls
++  match ls with
++  | [(s,n)]  when (not first_level) ->    
++     print_node all_total indent (indent^"└") (s,n)
++  | _ ->
++     let ls = List.sort (fun (_, n1) (_, n2) -> compare n2.entry.total n1.entry.total) ls in
++     list_iter_is_last
++       (fun is_last ->
++	print_node
++	  all_total
++	  (indent^if first_level then "" else if is_last then "  " else " │")
++	  (indent^if first_level then "─" else if is_last then " └─" else " ├─")
++       )
++       ls
+ 
+ let print_results() =
+   let tree = (List.hd !stack).children in
+@@ -146,34 +152,53 @@ let print_results() =
+     Hashtbl.iter 
+       (fun s node ->
+ 	let node' = get_node s global in
+-	add_entry node'.entry node.entry;
++	add_entry node'.entry true node.entry;
+ 	cumulate node.children
+       )
+       table
+   in
+   cumulate tree;
++  msgnl(str"");
++  msgnl(h 0(
++      str"total time: "++padl 11 (format_sec(all_total))
++    )
++       );
++  msgnl(str"");
+   header();
+   print_table all_total "" true global;
+   msgnl(str"");
+   header();
+   print_table all_total "" true tree
+ 
+-let do_profile s call_trace f =
+-  if !is_profiling && is_new_call() then
+-    match call_trace with
+-      | (_, _, c) :: _ ->
+-	let s = string_of_call c in
+-	if 
+-	  Hashtbl.mem on_stack s
+-	then
+-	  f()
+-	else
+-	  let start_time = enter_tactic s in
+-	  try_finalize f (fun()->
+-	    exit_tactic start_time s
+-	  )
+-	  
+-      | [] -> f()
+-  else f()
+-
++let print_results_tactic tactic =
++  let tree = (List.hd !stack).children in
++  let table_tactic = Hashtbl.create 20 in
++  let rec cumulate table =
++    Hashtbl.iter
++      (fun s node ->
++       if String.sub (s^".") 0 (min (1+String.length s) (String.length tactic)) = tactic
++       then add_node (get_node s table_tactic) node
++       else cumulate node.children
++      )
++      table
++  in
++  cumulate tree;
++  let all_total = -. (List.hd !stack).entry.local in
++  let tactic_total =
++    Hashtbl.fold
++      (fun _ node all_total -> node.entry.total +. all_total)
++      table_tactic 0. in
++  msgnl(str"");
++   msgnl(h 0(
++      str"total time:           "++padl 11 (format_sec(all_total))
++    )
++	);
++   msgnl(h 0(
++      str"time spent in tactic: "++padl 11 (format_sec(tactic_total))
++    )
++       );
++  msgnl(str"");
++  header();
++  print_table tactic_total "" true table_tactic
++	      
+ let reset_profile() = stack := [{entry=empty_entry(); children=Hashtbl.create 20}]
+diff --git a/tactics/profile_ltac.mli b/tactics/profile_ltac.mli
+index 4208bc6..0455e51 100644
+--- a/tactics/profile_ltac.mli
++++ b/tactics/profile_ltac.mli
+@@ -6,4 +6,6 @@ val entered_call : unit -> unit
+ 
+ val print_results : unit -> unit
+ 
++val print_results_tactic : string -> unit
++			      
+ val reset_profile : unit -> unit
+diff --git a/tactics/profile_ltac_tactics.ml b/tactics/profile_ltac_tactics.ml
+index e3b155558261852c0b614d65ea875605ad171155..08f1e8550a461ff77714a1f777318186a3e7d79b 100644
+GIT binary patch
+delta 3368
+zcmZ{mU2IfE6vua4#|zQ!%ne8ZKU+&N!~)eCpj6#`z!o2{(8_~^)TLdPHQjE#yM>_O
+z1tmtT!0m@NqTsC*iWaf7P#_w?s)-Ojln)=oHxU$(Xe3}DigV7)+}W!kX>xD>zyCRB
+z=FIHeX>ARDu{G#ah2|v#0dqJIh%5{Q!Y}TcUpC8jUB~^{-RAc2XSYL)>BN{uLYMjv
+zlF+Y<f;lJnAAh~r5X_w(%$*r_T@o5_+uBQOmZX+dTdBo~##n8%K9i`2h=#z8aF{=1
+z@Qi@>6L*k=&hapJx9b#^mxIfat~7tz;fUjQz#t0Jz*b835@rBpl~h)vf_X@2B9PZ4
+zS&Jkb2CY?UZwL*f^-|iPr8X(G2W%YZh(KV(C~SdKSX@l#R31l5>VrAgf;rdu>tuY*
+zorcrDEQ|$@5?TSi8QNE#<)Z=F)8filQ`Cx2isPd$6O9x4Bm`D+w=FAFWk-g1JDh?v
+zp|xO}tMkuOE|@E=)!=Cbc+csb?moVhvTR9B#!58BBUZe2d2<ZHo)z8@e~s4LFvr~d
+zFm{jDYt$fKIf0nP_#gHnE&%p|mhe&z34IEll=d_$kBGK3NqYoBT10)!yHpW(0Je+V
+z5OkG}U9B7t`ij=qDBa)iiK&)M9dA0J?GUg*2RL4UYZE#jcfM+u6<xM0k*P~#*9hGV
+zq3`I>cXcSCi(s8@nLubSxO%i}t8!uUdNtVY0sgz7U1691{`e1r7)K$)fHn?#Moh6s
+zlOaXKHY{uA%bTgQV(FH~Oq%a5_$?AT4EYWS>%IK-pm=>4b})Ta?XM&KHfM(fE90++
+z#p@$t-Hzz^qdssP|HEbbMu2HJ%oAEanXRAJ`gcm_Ys_OFC-jVW%+MdaV+M{RzOnWb
+zdLCwSR(pQ(JbWg79p6sA$ELq&d`V#((C-@j;RAnaaM=g0XmC{l+>XT92_yMO^Ba=e
+zP>KaTz;e7meXzjU`Vld95XQirr`;jX%_npU=WX;6HV$lKv@KuRu-Z5c#@mX>{ZEV!
+ziSYqp#gO5CZ7lM9ywC;Dyqy@mggpf2DcU?W+kC|{ZzIN5!X5+jOl6)ySVfkb<%pe0
+zj2^;fgYyaHB&;&qnAcGfDYV&B8dqoIF)Gg%!WKfFXS8uawz1%5A0&EG9Q5=Qp8b69
+zvq{`rSbiU*Ys7RmeBfA8<-_i#bfIP+urx^fK#K-T6@YRTUgzE?MmJ$=pzvyKe!0Qc
+zUshHnR-ebM1K;b~*Q%1@_||E#-Ul2F+I*lxgH8pY#9NE_7eIXES(gG><82+WQ2}o<
+z?-64&VcQ_X7VYcte0&Da-E2|VU1Cw#-MA?H1SBkt-w|UIB;2DD4ylBA9<hCz>{kS$
+zZH&%44AG@B`LH-=^23hX<qCcpc!lKhK+6x?(!hV9d51{e*I=rWrr9_`htH%4?mK|0
+zC7O!}J5?j4T9jn5%V1t0$;JN+25S9G^5AG=BjeJvq$5}{+GZ*FZ!>1Y0`kJd;KBsg
+zD*Wb-g5Vc~*}Uz41s<3cx1z~p)S6PspL0@8wJ|H1Xo@!SFmtT1^DBTk&KK#}a0#Rd
+zLYEK|E?KNo4(Cm;Ha7&1li)E(B<@JLkVxK<<W<6)s!Nor5-{>^r>MF<^?Y$8)|9c9
+zLxnzBVFx^IejViN#T(AQYe~RE67Q7*XlpMPA7_A{Nq7JuHtTaK4QuI3DSd?!_OGZW
+zm4w?6J1W^RWPJYOB0OPEG#N`jm}sa=EmoHS6UXzt3^*f`5wnyJ7jLiZN6F42!{MBh
+z(s?cYBBcwSWUf%%vWdA;wF}}+TM=T4s}R4ei5);;DcMz->@SfFYhIJub*}*XTS(@5
+zU-E!d+dS2Vnz>T$^kh(Pm1>ty9Vyj~KJ|8~Zc?fo@>)nVTEaWv8Nr{nnJ={!V}%I5
+m@lxwkNw6V!YH+&Kr}leCgSkr`4Ul6{>$|h{A+7IKdiY;4EN!9y
+
+delta 29
+jcmX@Sl(D;;ae@b*t0@Bm-!ldVvo}C&urbWUmC*qJhj<7c
+
+diff --git a/tactics/profile_ltac_tactics.ml4 b/tactics/profile_ltac_tactics.ml4
+index 8136db8..d536f40 100644
+--- a/tactics/profile_ltac_tactics.ml4
++++ b/tactics/profile_ltac_tactics.ml4
+@@ -30,3 +30,7 @@ VERNAC COMMAND EXTEND ShowProfile
+  [ "Show" "Profile" ] -> [ print_results() ]
+ END
+ 
++
++VERNAC COMMAND EXTEND ShowProfileTactic
++ [ "Show" "Profile" string(s) ] -> [ print_results_tactic s ]
++END
+\ No newline at end of file
+-- 
+2.1.4
+
+
+From 78596b92730445b0d6bcc1f1e05e189ca95944fd Mon Sep 17 00:00:00 2001
+From: Tobias Tebbi <ttebbi@ps.uni-saarland.de>
+Date: Sun, 18 Jan 2015 20:29:40 +0530
+Subject: [PATCH 3/3] deleted generated file
+
+---
+ tactics/profile_ltac_tactics.ml | Bin 21187 -> 0 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 tactics/profile_ltac_tactics.ml
+
+diff --git a/tactics/profile_ltac_tactics.ml b/tactics/profile_ltac_tactics.ml
+deleted file mode 100644
+index 08f1e8550a461ff77714a1f777318186a3e7d79b..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 21187
+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
+
+-- 
+2.1.4
+
