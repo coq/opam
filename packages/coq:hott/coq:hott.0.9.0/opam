@@ -7,7 +7,7 @@ license: "BSD 2-clause"
 build: [
   (* We depend on coq.hott: ["etc/install_coq.sh"] *)
   ["./autogen.sh"]
-  ["./configure" "COQBIN=%{bin}%" "COQTOP=%{bin}%/coqtop" "COQC=%{bin}%/coqc" "--prefix=%{prefix}%"]
+  ["./configure" "COQBIN=%{bin}%" "COQTOP=%{bin}%/coqtop" "COQC=%{bin}%/coqc" "COQDEP=%{bin}%/coqdep" "--prefix=%{prefix}%"]
   ["%{make}%" "-j%{jobs}%"]
 ]
 install: ["%{make}%" "install"]
