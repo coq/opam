@@ -5,7 +5,7 @@ homepage: "http://homotopytypetheory.org/"
 bug-reports: "http://homotopytypetheory.org/"
 license: "BSD 2-clause"
 build: [
-  ["etc/install_coq.sh"]
+  (* We depend on coq.hott: ["etc/install_coq.sh"] *)
   ["./autogen.sh"]
   (* We cannot use the standard coqtop %{bin}%/coqtop, for now*)
   ["./configure" "COQTOP=coq-HoTT/bin/coqtop" "COQBIN=coq-HoTT/bin/" "--prefix=%{prefix}%"]
@@ -17,6 +17,6 @@ depends: [
   "ocamlfind" {build}
 (*  Due to limitations in coq_Makefile, we need to build the whole coq, the stdlib and HoTT/HoTT at the same time.
     We hope for a better solution in the future.
-    https://github.com/HoTT/HoTT/blob/master/INSTALL.txt
-   "coq" {= "hott"| = "dev"} *)
+    https://github.com/HoTT/HoTT/blob/master/INSTALL.txt *)
+   "coq" {= "hott"} 
 ]
