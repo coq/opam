@@ -7,7 +7,8 @@ build: [
     "-prefix" "%{prefix}%"
     "-usecamlp5"
     "-camlp5dir" "%{lib}%/camlp5"
-    "-coqide" "no"
+    (* Ideally, we'd gave coqide its own package, but at some later time *)
+    "-coqide" "yes"
   ]
   [make "-j%{jobs}%"]
   [make "install"]
