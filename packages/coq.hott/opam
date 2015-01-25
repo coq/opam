@@ -10,7 +10,8 @@ build: [
     (* Ideally, we'd gave coqide its own package, but at some later time *)
     "-coqide" "opt"
   ]
-  [make "-j%{jobs}%"]
+  (* Coqlight, as we have our own stdlib *)
+  [make "coqlight" "-j%{jobs}%"]
   [make "install"]
 ]
 depends: [
