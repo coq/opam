@@ -1,0 +1,10 @@
+opam-version: "1"
+maintainer: "Enrico.Tassi@inria.fr"
+homepage: "http://pages.saclay.inria.fr/carst.tankink/jedit.html"
+build: [
+  ["sh" "-c" "COQBIN= COQLIB= coq_makefile -f Make -o Makefile.top"]
+  ["sh" "-c" "COQBIN= COQLIB= make -f Makefile.top install-toploop"]
+]
+depends: [
+  "coq" {>= "8.5"}
+]
