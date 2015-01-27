@@ -5,6 +5,7 @@ bug-reports: "https://github.com/clarus/coq-list-string/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
+  ["ruby" "pp.rb"]
   ["./configure.sh"]
   [make "-j%{jobs}%"]
   [make "install"]
