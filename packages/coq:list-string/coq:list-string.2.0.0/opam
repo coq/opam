@@ -12,4 +12,6 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ListString"]
 depends: [
   "coq" {>= "8.4pl4"}
+  "coq:error-handlers"
+  "coq:list-plus"
 ]
