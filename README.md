@@ -1,5 +1,5 @@
 # Coqs repository
-The repository for Coq versions for developers.
+The repository for non-stable Coq versions.
 
 ## Usage
 Enable this repository:
