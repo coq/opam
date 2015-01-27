@@ -6,5 +6,5 @@ build: [
   ["sh" "-c" "COQBIN= COQLIB= make -f Makefile.top install-toploop"]
 ]
 depends: [
-  "coq" {= "8.5beta1"}
+  "coq" {= "8.5.dev"}
 ]
