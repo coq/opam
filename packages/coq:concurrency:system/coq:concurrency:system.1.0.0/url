@@ -1,1 +1,2 @@
-http: "https://github.com/coq-concurrency/system/archive/master.tar.gz"
+http: "https://github.com/coq-concurrency/system/archive/1.0.0.tar.gz"
+checksum: "c122c6dbe671291ad09956316eb65afd"
