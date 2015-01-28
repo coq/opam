@@ -1,0 +1,18 @@
+opam-version: "1.1"
+build: [
+  [ "./configure" 
+    "-configdir" "%{lib}%/coq/config"
+    "-mandir" "%{man}%"
+    "-docdir" "%{doc}%"
+    "-prefix" "%{prefix}%"
+    "-usecamlp5"
+    "-camlp5dir" "%{lib}%/camlp5"
+    (* Ideally, we'd gave coqide its own package, but at some later time *)
+    "-coqide" "opt"
+  ]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+depends: [
+  "camlp5"
+]
