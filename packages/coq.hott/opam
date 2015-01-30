@@ -14,5 +14,5 @@ build: [
   [make "install"]
 ]
 depends: [
-  "camlp5"
+  "camlp5" "lablgtk"
 ]
