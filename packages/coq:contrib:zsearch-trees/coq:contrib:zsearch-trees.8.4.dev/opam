@@ -8,7 +8,7 @@ build: [
   [make]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/zsearch-trees"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZSearchTrees"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]

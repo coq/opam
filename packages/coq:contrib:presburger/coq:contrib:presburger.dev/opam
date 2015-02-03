@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/presburger"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Presburger"]
 depends: [
   "coq" {>= "8.5"}
 ]

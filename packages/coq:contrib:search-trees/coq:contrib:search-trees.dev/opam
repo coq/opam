@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/search-trees"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SearchTrees"]
 depends: [
   "coq" {>= "8.5"}
 ]

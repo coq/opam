@@ -7,7 +7,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/jprover"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/JProver"]
 depends: [
   "coq" {>= "8.5"}
 ]

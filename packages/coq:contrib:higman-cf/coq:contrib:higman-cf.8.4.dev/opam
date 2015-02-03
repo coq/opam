@@ -8,7 +8,7 @@ build: [
   [make]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/higman-cf"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HigmanCF"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
