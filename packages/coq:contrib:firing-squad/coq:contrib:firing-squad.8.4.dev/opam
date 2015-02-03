@@ -3,8 +3,8 @@ maintainer: "dev@clarus.me"
 homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/firing-squad.git;a=tree"
 license: "LGPL 2"
 build: [
-  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
-  [make "-j%{jobs}%"]
+# No "-j%{jobs}%" option.
+  [make]
   [make "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/firing-squad"]

@@ -10,4 +10,7 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ergo"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
+  "coq:contrib:containers" {= "8.4.dev"}
+  "coq:contrib:counting" {= "8.4.dev"}
+  "coq:contrib:nfix" {= "8.4.dev"}
 ]

@@ -4,7 +4,8 @@ homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contr
 license: "LGPL 2"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
-  [make "-j%{jobs}%"]
+# No "-j%{jobs}%" option.
+  [make]
   [make "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/zsearch-trees"]
