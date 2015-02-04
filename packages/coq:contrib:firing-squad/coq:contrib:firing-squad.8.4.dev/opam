@@ -7,7 +7,7 @@ build: [
   [make]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/firing-squad"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FiringSquad"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]

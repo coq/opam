@@ -8,7 +8,7 @@ build: [
   [make]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/graphs"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Graphs"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
   "coq:contrib:int-map" {= "8.4.dev"}
