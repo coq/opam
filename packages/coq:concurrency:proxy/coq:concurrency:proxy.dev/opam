@@ -8,6 +8,7 @@ build: [
   [make "-j%{jobs}%"]
 ]
 depends: [
+  "base-unix"
   "lwt" {>= "2.4.5"}
   "base64" {>= "1.0.0" & < "2"}
 ]
