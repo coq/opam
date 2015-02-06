@@ -1,0 +1,21 @@
+opam-version: "1.1"
+maintainer: "pierre-yves@strub.nu"
+homepage: "https://github.com/strub/elliptic-curves-ssr"
+bug-reports: "https://github.com/strub/elliptic-curves-ssr/issues"
+license: "CeCILL-B"
+authors: [
+  "Evmorfia-Iro Bartzia"
+  "Pierre-Yves Strub"
+]
+build: [
+  [make "config"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SsrEllipticCurves"]
+depends: [
+  "coq" {>= "8.4pl4" & < "8.5"}
+  "coq:ssreflect" {>= "1.5" & < "1.6"}
+  "coq:math-comp" {>= "1.5" & < "1.6"}
+  "coq:ssr:multinomials" {= "dev"}
+]
