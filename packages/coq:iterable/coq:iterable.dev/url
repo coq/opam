@@ -1,1 +1,1 @@
-http: "https://github.com/clarus/coq-iterable/archive/master.tar.gz"
+git: "https://github.com/clarus/coq-iterable"
