@@ -10,6 +10,7 @@ authors: [
 ]
 build: [
   ["sh" "-c" "cd src && ./configure.sh -standard"]
+# ["sh" "-c" "cd src && make -j%{jobs}%"]
   ["sh" "-c" "cd src && make -j1"]
   ["sh" "-c" "cd src && make install"]
 ]
