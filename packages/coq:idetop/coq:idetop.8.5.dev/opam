@@ -4,7 +4,7 @@ homepage: "https://coq.inria.fr/"
 license: "LGPL-2.1"
 build: [
   ["sh" "-c" "cd ide && COQBIN= COQLIB= coq_makefile -f Make -o Makefile.top"]
-  ["sh" "-c" "cd ide && COQBIN= COQLIB= make -f Makefile.top install-toploop"]
+  ["sh" "-c" "cd ide && COQBIN= COQLIB= make -j%{jobs}% -f Makefile.top install-toploop"]
 ]
 depends: [
   "camlp5"
