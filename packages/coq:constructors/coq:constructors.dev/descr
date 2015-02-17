@@ -1,0 +1,1 @@
+An example Coq plugin, defining a tactic to get the constructors of an inductive type in a list.
