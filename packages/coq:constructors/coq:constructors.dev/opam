@@ -4,7 +4,7 @@ homepage: "https://github.com/mattam82/Constructors"
 bug-reports: "https://github.com/mattam82/Constructors/issues"
 license: "MIT"
 build: [
-  ["coq_makefile -f Make -o Makefile"]
+  [coq_makefile "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]
   [make "install"]
 ]
