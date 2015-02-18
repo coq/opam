@@ -6,7 +6,7 @@ build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
 # No "-j%{jobs}%" option.
   [make]
-  [make "install"]
+  #[make "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/canon-bdds"]
 depends: [

@@ -10,4 +10,6 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/orb-stab"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
+  "coq:contrib:algebra" {= "8.4.dev"}
+  "coq:contrib:lin-alg" {= "8.4.dev"}
 ]
