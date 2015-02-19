@@ -15,5 +15,5 @@ depends: [
   "coq" {>= "8.4pl4"}
   "coq:error-handlers"
   "coq:function-ninjas"
-  "coq:list-string"
+  "coq:list-string" {>= "2.0.0"}
 ]
