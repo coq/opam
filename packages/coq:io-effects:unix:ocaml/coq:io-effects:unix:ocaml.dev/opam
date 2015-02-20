@@ -10,7 +10,5 @@ build: [
 ]
 remove: ["ocamlfind" "remove" "io-effects-unix"]
 depends: [
-  "coq" {>= "8.4pl4"}
-  "coq:io-effects:unix"
   "lwt"
 ]
