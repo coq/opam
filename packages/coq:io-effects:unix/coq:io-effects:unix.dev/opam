@@ -13,4 +13,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IoEffectsUnix"]
 depends: [
   "coq" {>= "8.4pl4"}
   "coq:io-effects"
+  "coq:list-string" {>= "2.0.0"}
 ]
