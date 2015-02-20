@@ -14,5 +14,5 @@ depends: [
   "coq" {>= "8.4pl4"}
   "coq:list-string" {>= "2.0.0"}
   "coq:io-effects"
-  "coq:io-effects:unix"
+  "coq:io-effects:unix:ocaml"
 ]
