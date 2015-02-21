@@ -1,0 +1,19 @@
+opam-version: "1.2"
+author: "Beta Ziliani <beta@mpi-sws.org>"
+	"Matthieu Sozeau <matthieu.sozeau@inria.fr>"
+maintainer: "Matthieu Sozeau <matthieu.sozeau@inria.fr>"
+homepage: "https://github.com/unicoq/"
+bug-reports: "https://github.com/unicoq/unicoq/issues"
+license: "MIT"
+dev-repo: "https://github.com/unicoq/unicoq.git"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/unicoq"]
+depends: [
+  "coq" {>= "8.5"}
+]
