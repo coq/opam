@@ -8,6 +8,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
+remove: [make "uninstall"]
 depends: [
   "lwt"
 ]
