@@ -9,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: [make "uninstall"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FunctionNinjas"]
 depends: [
   "coq" {>= "8.4pl4"}
 ]
