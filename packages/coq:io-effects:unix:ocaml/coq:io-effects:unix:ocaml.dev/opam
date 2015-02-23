@@ -8,7 +8,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["ocamlfind" "remove" "io-effects-unix"]
+remove: [make "uninstall"]
 depends: [
   "ocamlfind"
   "lwt"
