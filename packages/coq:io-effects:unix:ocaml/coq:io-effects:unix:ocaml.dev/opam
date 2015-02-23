@@ -10,5 +10,6 @@ build: [
 ]
 remove: ["ocamlfind" "remove" "io-effects-unix"]
 depends: [
+  "ocamlfind"
   "lwt"
 ]
