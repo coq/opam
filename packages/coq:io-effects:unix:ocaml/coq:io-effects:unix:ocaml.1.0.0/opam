@@ -10,5 +10,6 @@ build: [
 ]
 remove: [make "uninstall"]
 depends: [
+  "ocamlfind"
   "lwt"
 ]
