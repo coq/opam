@@ -1,3 +1,8 @@
 bin: [
+  "hoqide"
+  "hoqtop.byte"
   "hoqtop"
+  "hoqdep"
+  "hoq-config"
+  "hoqc"
 ]
