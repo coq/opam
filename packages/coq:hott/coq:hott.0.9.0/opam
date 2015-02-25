@@ -11,7 +11,10 @@ build: [
   ["%{make}%" "-j%{jobs}%"]
 ]
 install: ["%{make}%" "install"]
-remove: []
+remove: [
+  ["rm" "-R" "%{share}%/hott"]
+  ["rm" "-R" "%{bin}%/hoq*"]
+]
 depends: [
   "ocamlfind" {build}
 (*  Due to limitations in coq_Makefile, we need to build the whole coq, the stdlib and HoTT/HoTT at the same time.
