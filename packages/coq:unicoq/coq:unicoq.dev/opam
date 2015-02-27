@@ -13,7 +13,7 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/unicoq"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Unicoq"]
 depends: [
   "coq" {>= "8.5"}
 ]
