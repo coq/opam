@@ -1,1 +1,1 @@
-Unix effects for Coq programs extracted in OCaml.
+Coq system effects for extraction to OCaml.
