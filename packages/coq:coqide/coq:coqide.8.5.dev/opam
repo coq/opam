@@ -11,7 +11,6 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/ide"]
 depends: [
   "camlp5"
-  "coq" {= "8.5.dev"}
-  "coq:idetop" {= "8.5.dev"}
+  "coq" {>= "8.5" & < "8.6"}
   "lablgtk"
 ]
