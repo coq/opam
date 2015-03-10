@@ -1,0 +1,19 @@
+opam-version: "1.1" 
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/io-system"
+bug-reports: "https://github.com/clarus/io-system/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/System"]
+depends: [
+  "coq" {>= "8.4pl4" & < "8.5"}
+  "coq:function-ninjas"
+  "coq:list-string" {>= "2.0.0"}
+  "coq:io"
+  "coq:io:system:ocaml"
+]
