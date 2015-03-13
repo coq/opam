@@ -9,6 +9,7 @@ build: [
     "-camlp5dir" "%{lib}%/camlp5"
     (* Ideally, we'd gave coqide its own package, but at some later time *)
     "-coqide" "opt"
+    "-debug"
   ]
   [make "-j%{jobs}%"]
   [make "install"]
