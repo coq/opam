@@ -13,4 +13,5 @@ depends: [
   "coq" {>= "8.4pl4"}
   "coq:io"
   "coq:io:exception"
+  "coq:list-string" {>= "2.1.0"}
 ]
