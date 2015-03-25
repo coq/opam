@@ -13,5 +13,6 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/Exception.vo"]
 depends: [
   "coq" {>= "8.4pl4" & < "8.5"}
   "coq:function-ninjas"
+  "coq:io" {= "3.0.0"}
   "coq:io:list"
 ]
