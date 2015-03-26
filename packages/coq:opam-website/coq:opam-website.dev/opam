@@ -12,5 +12,6 @@ build: [
 depends: [
   "coq" {>= "8.4pl4"}
   "coq:io"
-  "coq:exception"
+  "coq:io:system"
+  "coq:io:exception"
 ]
