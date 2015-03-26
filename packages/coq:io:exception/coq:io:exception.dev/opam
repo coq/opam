@@ -14,4 +14,5 @@ depends: [
   "coq" {>= "8.4pl4"}
   "coq:function-ninjas"
   "coq:io:list"
+  "coq:io:run"
 ]
