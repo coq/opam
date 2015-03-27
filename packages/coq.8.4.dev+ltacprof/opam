@@ -4,7 +4,7 @@ homepage: "http://coq.inria.fr/"
 bug-reports: "https://coq.inria.fr/bugs/"
 license: "LGPL 2"
 build: [
-  ["./configure" "-configdir" "%{lib}%/coq/config" "-mandir" man "-nodoc" "-prefix" prefix "-usecamlp5" "-camlp5dir" "%{lib}%/camlp5" "-coqide" "no"]
+  ["./configure" "-configdir" "%{lib}%/coq/config" "-mandir" man "-with-doc" "no" "-prefix" prefix "-usecamlp5" "-camlp5dir" "%{lib}%/camlp5" "-coqide" "no"]
   [make "-j%{jobs}%"]
   [make "install"]
 ]
