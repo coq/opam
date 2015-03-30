@@ -4,7 +4,7 @@ homepage: "https://github.com/mattam82/Coq-Equations"
 bug-reports: "https://github.com/mattam82/Coq-Equations/issues"
 license: "LGPL 2.1"
 build: [
-  ["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]
   [make "install"]
 ]
