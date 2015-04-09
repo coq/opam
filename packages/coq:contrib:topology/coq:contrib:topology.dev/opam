@@ -10,4 +10,5 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Topology"]
 depends: [
   "coq" {>= "8.5"}
+  "coq:contrib:zorns-lemma"
 ]
