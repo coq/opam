@@ -7,9 +7,16 @@ notify_and_die() {
 exit 1
 }
 
+# Check repos are fine. FIXME: this should be done by the git server
 for repo in */version; do
-	cd `basename $repo`
+	cd `dirname $repo`
 	opam admin check || notify_and_die $repo
+	cd ..
+done	
+
+# Refresh repo indexes and download archives
+for repo in */version; do
+	cd `dirname $repo`
 	opam admin make
 	cd ..
 done	
