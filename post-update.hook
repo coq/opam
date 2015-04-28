@@ -18,5 +18,9 @@ done
 for repo in */version; do
 	cd `dirname $repo`
 	opam admin make
+	# opam admit make does not follow symlinks
+	#   https://github.com/ocaml/opam/pull/2138
+	# we rebuild the index by hand
+	tar czhf index.tar.gz packages/
 	cd ..
 done	
