@@ -26,16 +26,15 @@ Packages for development versions of external contributions to Coq.  Typically
 depend on a development version of Coq part of the `core-dev` repository.
 The repository is intended to be used by developers only. 
 
-## stable-8.5
+## stable-$VERSION
 
-All released versions of Coq 8.5 (i.e. pl released) plus a set of packages
-that work with Coq 8.5 and won't break for the whole lifetime of Coq 8.5.
-Coq extensions packages here are maintained by their corresponding authors
-or by the Coq team.  Updates are accepted only if they don't break anything
-(like for Coq pl releases) or if a transition strategy is provided by the
-authors of the extension.  In any case upgrades are handled manually and
-with care to make our users life easy.
-The repository is intended to be used by users preferring stability to
-bleeding edge and users not familiar with the OPAM tool (see also the
-opam-coq simplified shell).
+All released versions of Coq $VERSION (i.e. pl released) plus a set of packages
+that work with Coq $VERSION and won't break for the whole lifetime of Coq
+$VERSION.  Coq extensions packages here are maintained by their corresponding
+authors or by the Coq team.  Updates are accepted only if they don't break
+anything (like for Coq pl releases) or if a transition strategy is provided by
+the authors of the extension.  In any case upgrades are handled manually and
+with care to make our users life easy.  The repository is intended to be used
+by users preferring stability to bleeding edge and users not familiar with the
+OPAM tool (see also the opam-coq simplified shell).
 
