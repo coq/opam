@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Script run on the machine serving via HTTP a git checkout
+
+notify_and_die() {
+# TODO: send an email 
+exit 1
+}
+
+for repo in */version; do
+	cd `basename $repo`
+	opam admin check || notify_and_die $repo
+	opam admin make
+	cd ..
+done	
