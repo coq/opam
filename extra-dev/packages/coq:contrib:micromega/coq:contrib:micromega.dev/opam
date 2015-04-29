@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Micromega"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:tactic reflection arithmetic non linear" "category:Mathematics/Arithmetic and Number Theory/Miscellaneous" "category:Miscellaneous/Coq Extensions" "date:20 Novembre 2006" ]

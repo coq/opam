@@ -13,3 +13,4 @@ depends: [
   "coq:contrib:algebra" {= "8.4.dev"}
   "coq:contrib:lin-alg" {= "8.4.dev"}
 ]
+tags: [ "keyword:orbit" "keyword:stabilizer" "keyword:inclusion exclusion" "category:Mathematics/Algebra" "date:January 5, 2008" ]

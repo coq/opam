@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
   "coq:contrib:zorns-lemma"
 ]
+tags: [ "keyword:topology" "keyword:filters" "keyword:nets" "keyword:metric spaces" "keyword:real analysis" "keyword:urysohn's lemma" "keyword:tietze extension theorem" "category:Mathematics/Real Calculus and Topology" ]

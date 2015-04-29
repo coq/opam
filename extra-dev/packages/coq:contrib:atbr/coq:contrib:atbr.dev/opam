@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ATBR"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:kleene algebra" "keyword:finite automata" "keyword:semiring" "keyword:matrices" "keyword:decision procedures" "keyword:reflexive tactic" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:June 2009" ]

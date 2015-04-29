@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Additions"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:addition chains" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category:Miscellaneous/Extracted Programs/Arithmetic" ]

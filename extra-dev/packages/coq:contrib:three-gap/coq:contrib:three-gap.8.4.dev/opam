@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ThreeGap"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:real numbers" "keyword:steinhaus" "keyword:three gap theorem" "category:Mathematics/Geometry/See also" "category:Mathematics/Arithmetic and Number Theory/Miscellaneous" ]

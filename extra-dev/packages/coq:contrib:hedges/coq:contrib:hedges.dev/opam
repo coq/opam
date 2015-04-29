@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Hedges"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:bisimulation" "keyword:spi calculus" "keyword:hedges" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:20/04/2004" ]

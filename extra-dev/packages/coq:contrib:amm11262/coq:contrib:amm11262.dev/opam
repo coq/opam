@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/AMM11262"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:american mathematical monthly problem 11262" "date:April 2007" ]

@@ -1,1 +1,7 @@
-Category theory in ZFC.
+Category theory in ZFC
+
+In a ZFC-like environment augmented by reference to the
+ambient type theory, we develop some basic set theory, ordinals, cardinals
+and transfinite induction, and category theory including functors,
+natural transformations, limits and colimits, functor categories,
+and the theorem that functor_cat a b has (co)limits if b does.

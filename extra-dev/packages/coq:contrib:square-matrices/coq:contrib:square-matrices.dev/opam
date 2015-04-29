@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SquareMatrices"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:exponentiation" "keyword:vectors" "keyword:matrices" "keyword:polymorphic recursion" "keyword:nested datatypes" "category:Mathematics/Algebra" ]

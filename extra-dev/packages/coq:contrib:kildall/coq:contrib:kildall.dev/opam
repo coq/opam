@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Kildall"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:kildall" "keyword:data flow analysis" "keyword:bytecode verification" "category:Computer Science/Semantics and Compilation/Semantics" "date:July 2005" ]

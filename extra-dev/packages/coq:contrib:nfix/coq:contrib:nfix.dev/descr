@@ -1,1 +1,3 @@
-Nfix: a Coq extension for fixpoints on nested inductives.
+Nfix: a Coq extension for fixpoints on nested inductives
+
+This plugin provides a syntactic extension that allows one to write mutual fixpoints over nested inductives.

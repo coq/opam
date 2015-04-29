@@ -1,1 +1,5 @@
-Paco: Parameterized Coinduction.
+Paco: Parameterized Coinduction
+
+Paco is a Coq library implementing parameterized coinduction. Parameterized coinduction is a technique for defining coinductive predicates (i.e., in Prop), using which one can perform coinductive proofs in a more compositional and incremental fashion than with standard Tarski-style constructions.
+
+The Paco library provides a tactic called "pcofix", replacing Coq's primitive cofix and avoiding its syntactic guardedness checking of proof terms. We have found that pcofix yields clear performance and usability benefits, even on simple examples.

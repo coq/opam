@@ -14,3 +14,4 @@ depends: [
   "coq:contrib:counting"
   "coq:contrib:nfix"
 ]
+tags: [ "keyword:reflexive decision procedure" "keyword:satisfiability modulo theories" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]

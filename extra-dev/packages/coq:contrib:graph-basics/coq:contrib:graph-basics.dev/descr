@@ -1,1 +1,8 @@
-a Coq toolkit for graph theory.
+a Coq toolkit for graph theory
+
+This library offers inductive definitions of basics
+in graph theory. The goal is to offer the possibility to write proofs
+and programs on graphs in the same formalism : the Coq language.
+It now contains : vertices, arcs, edges, degrees, graphs, directed
+graphs,
+paths, acyclic graphs, connected graphs and tree.

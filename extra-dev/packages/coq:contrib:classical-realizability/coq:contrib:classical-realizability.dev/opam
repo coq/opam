@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ClassicalRealizability"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:classical realizability" "keyword:krivine's realizability" "keyword:primitive datatype" "keyword:non determinism" "keyword:quote" "keyword:axiom of countable choice" "keyword:real numbers" "category:Mathematics/Logic/Foundations" ]

@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Rem"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:rem theorem" "keyword:baire space" "category:Mathematics/Real Calculus and Topology" ]

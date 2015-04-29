@@ -1,1 +1,7 @@
-Equivalence notions on labelled transitions systems.
+Equivalence notions on labelled transitions systems
+
+
+We give the specification of three different notions of equivalence
+classically defined on labelled transitions systems underlying the
+theories of process algebra (and particularly CCS). The fundamentals
+properties of these equivalence notions are proven.

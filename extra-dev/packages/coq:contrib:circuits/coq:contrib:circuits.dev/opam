@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Circuits"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:hardware verification" "category:Computer Science/Architecture" ]

@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
   "coq:contrib:int-map"
 ]
+tags: [ "keyword:tree automatas" "keyword:bottom up reflexion terms" "category:Computer Science/Formal Languages Theory and Automata" "date:september 1999" ]

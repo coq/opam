@@ -1,1 +1,14 @@
-Specification of Eratosthene Sieve.
+Specification of Eratosthene Sieve 
+
+Proof of Eratosthene Sieve formalised using streams
+encoded as greatest fixpoints. See paper:
+@InProceedings{LePa94,
+author = "F. Leclerc and C. Paulin-Mohring",
+title = "Programming with Streams in {Coq}. A case study : The Sieve of Eratosthenes",
+editor = "H. Barendregt and T. Nipkow",
+volume = 806,
+series = "LNCS",
+booktitle = "{Types for Proofs and Programs, Types' 93}",
+year = 1994,
+publisher = "Springer-Verlag"
+}

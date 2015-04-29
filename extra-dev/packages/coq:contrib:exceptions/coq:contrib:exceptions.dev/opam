@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Exceptions"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:exceptions" "keyword:continuations" "category:Computer Science/Semantics and Compilation/Semantics" ]

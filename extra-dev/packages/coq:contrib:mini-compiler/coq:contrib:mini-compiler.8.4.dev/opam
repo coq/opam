@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MiniCompiler"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:compilation" "keyword:correctness" "keyword:arithmetic" "category:Computer Science/Semantics and Compilation/Compilation" "date:2003" ]

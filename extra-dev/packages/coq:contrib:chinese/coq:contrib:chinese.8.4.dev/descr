@@ -1,1 +1,3 @@
-A proof of the Chinese Remainder Lemma.
+A proof of the Chinese Remainder Lemma
+
+This is a rewriting of the contribution chinese-lemma using Zarith

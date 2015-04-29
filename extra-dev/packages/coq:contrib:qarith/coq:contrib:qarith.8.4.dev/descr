@@ -1,1 +1,5 @@
-A Library for Rational Numbers (QArith).
+A Library for Rational Numbers (QArith)
+
+
+This contribution is a proposition of a library formalizing
+rational number in Coq.

@@ -1,1 +1,6 @@
-Tortoise and the hare algorithm.
+Tortoise and the hare algorithm
+
+
+Correctness proof of Floyd's cycle-finding algorithm, also known as
+the "tortoise and the hare"-algorithm.
+See http://en.wikipedia.org/wiki/Floyd's_cycle-finding_algorithm

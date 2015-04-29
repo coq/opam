@@ -13,3 +13,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
   "camlp5"
 ]
+tags: [ "keyword:first order unification" "keyword:robinson" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category:Miscellaneous/Extracted Programs/Type checking unification and normalization" ]

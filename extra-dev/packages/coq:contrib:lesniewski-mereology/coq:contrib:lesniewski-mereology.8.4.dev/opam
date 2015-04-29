@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LesniewskiMereology"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:mereology" "keyword:protothetic" "keyword:ontology" "keyword:nominalist theory" "keyword:extensionality" "category:Mathematics/Logic/Foundations" ]

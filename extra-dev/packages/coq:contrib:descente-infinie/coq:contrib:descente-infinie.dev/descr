@@ -1,1 +1,3 @@
-The Descente Infinie Tactic.
+The Descente Infinie Tactic
+
+This is a tactic plugin for coq. The tactic helps to prove inductive lemmas by fixpoint functions. A manual for the tactic can be found on its homepage listed above.

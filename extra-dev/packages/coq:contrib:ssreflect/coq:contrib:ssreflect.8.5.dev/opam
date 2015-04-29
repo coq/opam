@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Ssreflect"]
 depends: [
   "coq" {>= "8.5" & < "8.6" }
 ]
+tags: [ "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" "date:Feb 2014" ]
