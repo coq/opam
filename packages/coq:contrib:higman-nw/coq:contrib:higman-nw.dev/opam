@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HigmanNW"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:a translation" "keyword:higman's lemma" "keyword:impredicativity" "keyword:system f" "keyword:extraction" "category:Mathematics/Logic/See also" "category:Mathematics/Combinatorics and Graph Theory" "category:Miscellaneous/Extracted Programs/Combinatorics" ]

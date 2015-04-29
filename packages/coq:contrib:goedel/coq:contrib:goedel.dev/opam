@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
   "coq:contrib:pocklington"
 ]
+tags: [ "keyword:goedel" "keyword:rosser" "keyword:incompleteness" "keyword:logic" "keyword:hilbert" "category:Mathematics/Logic/Foundations" "date:2007-04-13" ]

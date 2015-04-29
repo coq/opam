@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Chinese"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:number theory" "keyword:chinese remainder" "keyword:primality" "keyword:prime numbers" "category:Mathematics/Arithmetic and Number Theory/Number theory" ]

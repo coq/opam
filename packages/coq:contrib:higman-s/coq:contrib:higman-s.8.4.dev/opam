@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HigmanS"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:higman's lemma" "keyword:well quasi ordering" "category:Mathematics/Combinatorics and Graph Theory" "date:14/09/2007" ]

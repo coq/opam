@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HighSchoolGeometry"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:geometry" "keyword:teaching" "keyword:high school" "category:Mathematics/Geometry/General" "date:January 2004" ]

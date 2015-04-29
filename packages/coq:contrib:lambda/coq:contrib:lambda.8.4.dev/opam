@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Lambda"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:pure lambda calculus" "keyword:confluence" "keyword:parallel moves lemma" "keyword:lévy's cube lemma" "keyword:church rosser" "keyword:residual" "keyword:prism theorem" "category:Computer Science/Lambda Calculi" ]

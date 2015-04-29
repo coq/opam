@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Karatsuba"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:karatsuba multiplication" "keyword:binary ring" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:2005-09-15" ]

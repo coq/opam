@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/EulerFormula"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:polyhedron" "keyword:hypermap" "keyword:genus" "keyword:euler formula" "keyword:assisted proofs" "category:Mathematics/Geometry/See also" "date:September 2006" ]

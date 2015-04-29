@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coqoban"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:sokoban" "keyword:puzzles" "category:Miscellaneous/Logical Puzzles and Entertainment" "date:19 september 2003" ]

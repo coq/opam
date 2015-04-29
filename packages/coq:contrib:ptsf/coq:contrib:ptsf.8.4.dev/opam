@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
   "coq:contrib:ptsatr" {= "8.4.dev"}
 ]
+tags: [ "keyword:pure type systems" "keyword:judgmental equality" "keyword:explicit equality proofs" "keyword:proof relevance" "category:Mathematics/Logic/Type theory" ]

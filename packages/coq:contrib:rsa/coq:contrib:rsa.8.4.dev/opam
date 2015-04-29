@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RSA"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:rsa" "keyword:chinese remainder" "keyword:fermat's little theorem" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "date:1999" ]

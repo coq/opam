@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZFC"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:set theory" "keyword:zermelo fraenkel" "keyword:calculus of inductive constructions" "category:Mathematics/Logic/Set theory" ]

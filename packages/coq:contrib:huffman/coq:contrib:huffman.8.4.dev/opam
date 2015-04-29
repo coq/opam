@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Huffman"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:data compression" "keyword:code" "keyword:huffman tree" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category:Miscellaneous/Extracted Programs/Combinatorics" "date:October 2003" ]

@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZornsLemma"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:set theory" "keyword:cardinals" "keyword:ordinals" "keyword:finite" "keyword:countable" "keyword:quotients" "keyword:well orders" "keyword:zorn's lemma" "category:Mathematics/Logic/Set theory" ]

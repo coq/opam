@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HistoricalExamples"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:newman's lemma" "keyword:tarski's fixpoint theorem" "keyword:line formatting" "keyword:binary search paradigm" "keyword:square root approximation" "keyword:calculus of constructions" "keyword:history of coq" "category:Miscellaneous/Coq Use Examples" "date:" ]

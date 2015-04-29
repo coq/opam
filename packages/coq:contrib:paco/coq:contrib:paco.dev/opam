@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Paco"]
 depends: [
   "coq" {>= "8.5"}
 ]
+tags: [ "keyword:cofix" "keyword:coinduction" "keyword:paco" "keyword:proof" "keyword:coinductive" "category:Mathematics/Logic/Foundations" ]

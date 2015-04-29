@@ -9,3 +9,4 @@ build: [
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:c" "keyword:compiler" "keyword:assembly" "keyword:powerpc" "keyword:ppc" "category:Computer Science/Semantics and Compilation/Compilation" "date:2014-02-24 (release 2.2)" ]

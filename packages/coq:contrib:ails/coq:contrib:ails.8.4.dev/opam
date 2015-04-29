@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/AILS"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:ails" "keyword:aircraft" "keyword:trajectory" "keyword:conflict" "keyword:collision" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "date:2002" ]

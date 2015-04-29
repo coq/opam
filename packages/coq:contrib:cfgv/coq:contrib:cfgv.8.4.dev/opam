@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CFGV"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:generic programming" "keyword:variable bindings" "keyword:context free grammars" "keyword:substitution" "keyword:alpha equality" "keyword:equivariance" "category:Computer Science/Lambda Calculi" ]

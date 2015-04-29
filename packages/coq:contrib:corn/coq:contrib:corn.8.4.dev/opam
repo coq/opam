@@ -11,3 +11,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/corn"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
+tags: [ "keyword:constructive mathematics" "keyword:algebra" "keyword:real calculus" "keyword:real numbers" "keyword:fundamental theorem of algebra" "category:Mathematics/Algebra" "category:Mathematics/Real Calculus and Topology" ]
