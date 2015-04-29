@@ -1,1 +1,8 @@
-Paradoxes in Set Theory and Type Theory.
+Paradoxes in Set Theory and Type Theory
+
+A formalisation of Burali-Forti paradox in system U (the
+existence of an ordinal of ordinals is inconsistent), of Diaconescu
+paradox (axiom of choice implies excluded-middle), of Reynolds paradox
+(there is no set-theoretic model of system F) and Hurkens paradox in
+system U (adapted by H. Geuvers to show the inconsistency of
+Excluded-Middle in impredicative-Set Calculus of Inductive Constructions).

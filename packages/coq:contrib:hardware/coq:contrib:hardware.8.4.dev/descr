@@ -1,1 +1,9 @@
 Verification and synthesis of hardware linear arithmetic structures.
+
+Verification and synthesis of hardware linear arithmetic
+structures. Example of a left-to-right comparator.
+Three approaches are tackled :
+- the usual verification of a circuit, consisting in proving that the
+description satisfies the specification,
+- the synthesis of a circuit from its specification using the Coq extractor,
+- the same approach as above but using the Program tactic.

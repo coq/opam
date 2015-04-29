@@ -1,1 +1,4 @@
-Coqoban (Sokoban).
+Coqoban (Sokoban)
+
+A Coq implementation of Sokoban, the Japanese warehouse
+keepers' game

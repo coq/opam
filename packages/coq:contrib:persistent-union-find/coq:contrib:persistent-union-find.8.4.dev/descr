@@ -1,1 +1,5 @@
-Persistent Union Find.
+Persistent Union Find
+
+
+Correctness proof of the Ocaml implementation of a persistent union-find
+data structure. See http://www.lri.fr/~filliatr/puf/ for more details.

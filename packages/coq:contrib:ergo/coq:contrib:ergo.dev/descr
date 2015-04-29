@@ -1,1 +1,3 @@
-Ergo: a Coq plugin for reification of term with arbitrary signature.
+Ergo: a Coq plugin for reification of term with arbitrary signature
+
+This library provides a tactic that performs SMT solving (SAT + congruence closure + arithmetic).

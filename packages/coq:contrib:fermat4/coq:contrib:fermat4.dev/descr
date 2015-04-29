@@ -1,1 +1,5 @@
-Diophantus' 20th Problem and Fermat's Last Theorem for n = 4.
+Diophantus' 20th Problem and Fermat's Last Theorem for n = 4
+
+This contribution presents the formalization of Fermat's proofs of
+Diophantus' 20th Problem and Fermat's Last Theorem for n = 4. The proofs are
+completed using Fermat's "wonderful" method of infinite descent.

@@ -1,1 +1,4 @@
-Functions extraction from inductive relations.
+Functions extraction from inductive relations
+
+This plugin introduces a new set of extraction commands that
+generates functional code form inductive specifications.

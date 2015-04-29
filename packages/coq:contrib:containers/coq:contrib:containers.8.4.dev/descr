@@ -1,1 +1,3 @@
-Containers: a typeclass-based library of finite sets/maps.
+Containers: a typeclass-based library of finite sets/maps
+
+This is a reimplementation of the FSets/FMaps library from the standard library, using typeclasses. See tests files for usage. A new vernacular command is provided by Generate.v and the plugin to automatically generate ordered types for user-defined inductive types.

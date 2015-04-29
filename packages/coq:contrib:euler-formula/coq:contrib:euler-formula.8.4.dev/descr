@@ -1,1 +1,3 @@
-Hypermaps, Genus Theorem and Euler Formula.
+Hypermaps, Genus Theorem and Euler Formula
+
+This library formalizes the combinatorial hypermaps and their properties in a constructive way. It gives the proofs of the Genus Theorem and of the Euler Formula for the polyhedra.

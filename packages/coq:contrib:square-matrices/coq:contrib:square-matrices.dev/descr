@@ -1,1 +1,5 @@
-From Fast Exponentiation to Square Matrices.
+From Fast Exponentiation to Square Matrices
+
+
+This development is a formalization of Chris Okasaki's article
+``From Fast Exponentiation to Square Matrices: An Adventure in Types''

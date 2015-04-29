@@ -1,1 +1,3 @@
-Dependent Maps.
+Dependent Maps
+
+A rudimentary library for dependent maps that contain their domain in the type.
