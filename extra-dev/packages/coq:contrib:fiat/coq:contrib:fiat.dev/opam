@@ -8,3 +8,6 @@ build: [
   [make "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Fiat"]
+depends: [
+  "coq"
+]
