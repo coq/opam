@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Coq packages archive</title>
+<link rel="stylesheet" type="text/css" href="https://coq.inria.fr/styles/barron/style.css"/>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<div id="filters">
+
+  <div class="framework">
+  <div class="frameworklabel" style="color:black;font-weight:bold">
+    Active filters
+  </div>
+  <div class="frameworkcontent">
+  <input type="text" id="custom-filter" onkeyup="update_filter()" autofocus>
+  <div id="f-selected">
+  </div>
+  </div>
+  </div>
+  
+  <div class="framework">
+  <div class="frameworklabel" style="color:black;font-weight:bold">
+    Available suites
+  </div>
+  <div class="frameworkcontent">
+  <div id="f-suites"> <!-- filled in by js --> </div>
+  </div>
+  </div>
+
+  <div class="framework">
+  <div class="frameworklabel" style="color:black;font-weight:bold">
+    Available categories
+  </div>
+  <div class="frameworkcontent">
+  <div id="f-categories"> <!-- filled in by js --> </div>
+  </div>
+  </div>
+
+  <div class="framework">
+  <div class="frameworklabel" style="color:black;font-weight:bold">
+    Available Keywords
+  </div>
+  <div class="frameworkcontent">
+  <div id="f-keywords"> <!-- filled in by js --> </div>
+  <div class="clear"> <!-- stop floating contents --> </div>
+  </div>
+  </div>
+
+</div>
+
+<div id="packages">
+  <div class="frameworkcontent">
+   <table>
+  <tbody id="data">
+  @@PACKAGES@@
+  </tbody>
+  </table>
+  </div>
+  
+</div>
+
+<script src="filter.js"/></script>
+<script>filter_init();</script>
+
+</body>
+</html>
+
