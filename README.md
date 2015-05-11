@@ -1,7 +1,7 @@
 # OPAM archive for Coq
 
 All OPAM repositories for Coq packages live here.
-Packages are organized in the following repositories.
+Packages are organized in the following "suites".
 
 ## released
 
@@ -38,3 +38,33 @@ with care to make our users life easy.  The repository is intended to be used
 by users preferring stability to bleeding edge and users not familiar with the
 OPAM tool (see also the opam-coq simplified shell).
 
+### policy for stable-$VERSION
+This is an attempt to write down the guidelines, it is not final.
+
+Quality requirements for being in:
+
+ 1. Maintained: by the Coq team or by an external author
+ 1. Released: has a version number
+ 1. Changelog: comes with a document that lists all changes
+    involved in any version ever part of this archive
+ 1. License allowing redistribution
+ 1. The maintainer agrees
+
+Updating to a new version of a package already there:
+
+ 1. The new version must satisfy all the quality requirements
+ 1. The transition from the old to the new version must be
+    eased by a transition strategy
+ 1. All packages in the suite depending on the old version
+    must be ported to the new version and enter the suite
+    at the same time.  These requirements apply, recursively, to
+    these packages.
+ 1. The old version stays there
+
+Going from stable-$VERSION to stable-$VERSION+1:
+
+ 1. stable-$VERSION+1 is initially empty
+ 1. it is populated re-checking the quality requirements
+ 1. only 1 version of each package is in there initially, i.e.
+    the most recent on one in stable-$VERSION
+    
