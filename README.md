@@ -36,7 +36,8 @@ anything (like for Coq pl releases) or if a transition strategy is provided by
 the authors of the extension.  In any case upgrades are handled manually and
 with care to make our users life easy.  The repository is intended to be used
 by users preferring stability to bleeding edge and users not familiar with the
-OPAM tool (see also the opam-coq simplified shell).
+OPAM tool (see also the opam-coq simplified shell). No Admitted proofs, clear
+listing of all Axiom used.
 
 ### policy for stable-$VERSION
 This is an attempt to write down the guidelines, it is not final.
@@ -49,6 +50,7 @@ Quality requirements for being in:
     involved in any version ever part of this archive
  1. License allowing redistribution
  1. The maintainer agrees
+ 2. No Admitted, document Axioms
 
 Updating to a new version of a package already there:
 
