@@ -51,6 +51,8 @@ Quality requirements for being in:
  1. License allowing redistribution
  1. The maintainer agrees
  2. No Admitted, document Axioms
+ 3. What about Obj.magic in .ml code, or reviewing the code?
+ 3. Documentation should be available or buildable
 
 Updating to a new version of a package already there:
 
