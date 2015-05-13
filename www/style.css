@@ -139,7 +139,8 @@
 
  #custom-filter {
    width: auto;
-   margin-bottom: 1em;
+   margin: 2px;
+   display: block;
  }
 
  .clear {
