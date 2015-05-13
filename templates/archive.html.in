@@ -1,10 +1,9 @@
-<html>
-<head>
-<title>Coq packages archive</title>
+<#def TITLE>Archive of Coq packages</#def>
+<#def HEAD>
 <link rel="stylesheet" type="text/css" href="https://coq.inria.fr/styles/barron/style.css"/>
 <link rel="stylesheet" type="text/css" href="style.css"/>
-</head>
-<body>
+</#def>
+<#include "incl/header.html">
 <div id="filters">
 
   <div class="framework">
@@ -62,6 +61,4 @@
 <script src="filter.js"/></script>
 <script>filter_init();</script>
 
-</body>
-</html>
-
+<#include "incl/footer.html">

@@ -123,7 +123,7 @@ end
 template = io.open(templ):read('*a')
 output_fname = templ:gsub('%.in$','')
 assert(template ~= output_fname, "template not ending in .in")
-print("Generating "..output_fname)
+--print("Generating "..output_fname)
 output = io.open(output_fname,'w')
 output:write((template:gsub('@@PACKAGES@@', function()
 	local t = {}

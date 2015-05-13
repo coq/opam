@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Script to be run on the machine serving the git checkout via HTTP
+
+MAILTO=root
+LOG=/tmp/coq-opam-archive.log
+
+notify() {
+(echo "OPAM $1 on repo $2 failed:"; cat $LOG) | mail -s 'OPAM alert' $MAILTO
+}
+
+for repo in $@; do
+	cd $repo
+	opam admin check > $LOG 2>&1
+	if [ "$?" != "0" ]; then notify check $repo;
+	else
+		opam admin make > $LOG 2>&1
+		if [ "$?" != "0" ]; then notify make $repo;
+		else
+			# opam admin make does not follow symlinks
+			#   https://github.com/ocaml/opam/pull/2138
+			# we rebuild the index by hand
+			tar czhf index.tar.gz packages/
+		fi
+	fi
+	cd ..
+done	
+
