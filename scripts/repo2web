@@ -1,6 +1,5 @@
 #!/usr/bin/lua5.1
 -- requires dpkg and lua-filesystem
--- rewrite in python?
 
 function add_uniq(set, e)
 	if e and not(set[e]) then
@@ -13,8 +12,8 @@ require "lfs"
 
 function not_dot(x) return x ~= "." and x ~= ".." end
 
-templ=arg[1] or error "1st argument: the template index file"
-_=arg[2] or error "following argument: the repo root path(s)"
+templ=arg[1] or error "1st argument: the template file"
+_=arg[2] or error "following arguments: the repo root path(s)"
 table.remove(arg,1)
 
 packages = {}
@@ -44,7 +43,8 @@ function do_one_root(suite)
   	  end end
   	end
   	table.sort(versions,function(a,b)
-      return 0 == os.execute('dpkg --compare-versions '..a..' gt '..b)
+      return 0 == os.execute('dpkg --compare-versions '..a..' gt '..b..
+				' 2>/dev/null')
     end)
   	info.versions = versions
   
@@ -121,8 +121,10 @@ function print_pkg(name,info,print)
 end
 
 template = io.open(templ):read('*a')
-output = io.open(templ:gsub('%.in$',''),'w')
-
+output_fname = templ:gsub('%.in$','')
+assert(template ~= output_fname, "template not ending in .in")
+print("Generating "..output_fname)
+output = io.open(output_fname,'w')
 output:write((template:gsub('@@PACKAGES@@', function()
 	local t = {}
 	local function print(s) t[#t+1] = s end
