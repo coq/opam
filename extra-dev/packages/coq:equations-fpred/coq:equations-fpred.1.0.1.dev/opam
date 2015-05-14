@@ -1,0 +1,18 @@
+opam-version: "1.2" 
+author: ["Matthieu Sozeau <matthieu.sozeau@inria.fr>" "Cyprien Mangin <cyprien.mangin@m4x.org>"]
+bug-reports: "mailto:matthieu.sozeau@inria.fr"
+dev-repo: "http://equations-fpred.gforge.inria.fr/"
+maintainer: "matthieu.sozeau@inria.fr"
+homepage: "http://equations-fpred.gforge.inria.fr/"
+license: "CeCILL"
+build: [
+["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
+[make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: [make "uninstall"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
