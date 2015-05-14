@@ -5,8 +5,7 @@ homepage: "http://color.inria.fr/"
 license: "CeCILL"
 patches: ["termslifting.patch"]
 build: [
-[make "Makefile.coq"]
-[make "clean"]
+["rm" "Util/Vector/NaryFunction.vo"]
 [make "-j%{jobs}%"]
 ]
 install: [
