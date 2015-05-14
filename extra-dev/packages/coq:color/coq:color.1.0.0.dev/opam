@@ -9,7 +9,7 @@ build: [
 [make "-j%{jobs}%"]
 ]
 install: [
-  [make "install"]
+  [make "-f" "Makefile.coq" "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
 depends: [
