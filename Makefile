@@ -7,12 +7,12 @@ pp = cd $(COQWEB); yamlpp-0.3/yamlpp $(abspath $(1)) -o $(abspath $(2))
 all: check-deps
 	@./scripts/refresh-opam-indexes $(SUITES)
 	@./scripts/archive2web templates/archive.html.in $(SUITES)
-	$(call pp,templates/archive.html,www/archive.html)
+	@$(call pp,templates/archive.html,www/archive.html)
 	@(echo '<#def TITLE>Archive Policy</#def>';\
 	  echo '<#include "incl/header.html">';\
-	  markdown README.md;\
+	  markdown POLICY.md;\
 	  echo '<#include "incl/footer.html">') > templates/policy.html
-	$(call pp,templates/policy.html,www/policy.html)
+	@$(call pp,templates/policy.html,www/policy.html)
 	@ln -sf $(COQWEB)/styles www/styles
 	@ln -sf $(COQWEB)/files www/files
 
