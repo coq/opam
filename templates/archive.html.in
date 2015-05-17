@@ -1,7 +1,7 @@
 <#def TITLE>Archive of Coq packages</#def>
 <#def HEAD>
-<link rel="stylesheet" type="text/css" href="https://coq.inria.fr/styles/barron/style.css"/>
-<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" type="text/css" href="styles/barron/style.css"/>
+<link rel="stylesheet" type="text/css" href="archive-style.css"/>
 </#def>
 <#include "incl/header.html">
 <div id="filters">

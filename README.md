@@ -87,5 +87,5 @@ Example:
  
 The template in `www/index.html.in` is filled in with `<tr>` nodes for each pacakge
 and the code in `www/filter.js` is used to interactively browse the archive.  The css
-file `www/style.css` is also part of the picture.  The script `scripts/repo2web` fills in
+file `www/archive-style.css` is also part of the picture.  The script `scripts/repo2web` fills in
 the template by crawling the OPAM repositories passed as arguments.
