@@ -1,0 +1,10 @@
+--- Term/SimpleType/TermsLiftingOrig.v	2015-05-14 14:01:01.000000000 +0200
++++ Term/SimpleType/TermsLifting.v	2015-05-14 14:01:11.000000000 +0200
+@@ -517,7 +517,6 @@
+     induction G; destruct x; try_solve.
+     destruct a; try_solve.
+     exists t; try_solve.
+-    inversion H; trivial.
+   Qed.
+ 
+   Lemma app_lift_app_aux : forall M (Mapp: isApp M) n k,
