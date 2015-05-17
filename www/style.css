@@ -22,16 +22,17 @@
  }
  .metadata {
    font-size: small;
+   text-align: left;
  }
  #filters {
-   width: 20%;
+   width: 30%;
    float: left;
-   margin-top: 5em;
+   margin-top: 0;
  }
  #packages {
-   width: 80%;
+   width: 70%;
    float: right;
-   margin-top: 7em;
+   margin-top: 0;
  }
  .category-selector {
    overflow: hidden;
@@ -147,4 +148,10 @@
    clear: both;
  }
 
- 
+ #sidebar-wrapper {
+   display: none;
+ }
+ #content {
+   width: auto;
+ }
+
