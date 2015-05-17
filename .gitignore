@@ -1,5 +1,10 @@
 *~
-www/index.html
+.*.swp
+templates/*html
+www/policy.html
+www/archive.html
+www/files
+www/styles
 */archives/*
 */index.tar.gz
 */urls.txt
