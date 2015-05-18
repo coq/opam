@@ -10,7 +10,7 @@ end
 
 require "lfs"
 
-function not_dot(x) return x ~= "." and x ~= ".." end
+function not_dot(x) return not(x:match("^%.")) end
 
 templ=arg[1] or error "1st argument: the template file"
 _=arg[2] or error "following arguments: the repo root path(s)"
@@ -41,6 +41,7 @@ function do_one_root(suite)
   	  	add_uniq(versions, v)
 			  curv = v
   	  end end
+			assert(curv,"Directory "..root .. p .." is odd")
   	end
   	table.sort(versions,function(a,b)
       return 0 == os.execute('dpkg --compare-versions '..a..' gt '..b..
