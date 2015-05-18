@@ -14,6 +14,9 @@
  .categories {
   font-size: small; 
  }
+ .author:not(:last-child):after {
+   content: ", ";
+ }
  .category:not(:last-child):after {
    content: ", ";
  }

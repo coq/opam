@@ -67,6 +67,13 @@ function do_one_root(suite)
   	info.keywords = keywords
   	info.dates = dates
   	info.homepage = info.homepage or opam:match('homepage: *"([^"]*)"')
+  	
+		local authors_txt = opam:match('authors: *(%b[])') or ""
+		local authors = info.authors or {}
+  	for author in authors_txt:gmatch('(%b"")') do
+  		add_uniq(authors, author:match('"([^<"]*)'):gsub(' *$',''))
+  	end
+		info.authors = authors
   
   	info.description = info.description or io.open(pkg..'/descr'):read('*a')
   
@@ -77,6 +84,11 @@ for _, r in ipairs(arg) do
 	do_one_root(r)
 end
 
+function plural(s,n,...)
+	if n >= 2 then return string.format(s,"s",...)
+	else return string.format(s,"",...) end
+end
+
 function print_pkg(name,info,print)
 	print [[ <tr class="package"><td> ]]
 	if info.homepage ~= "" then print(('<a href="%s">'):format(info.homepage or "#")) end
@@ -84,17 +96,10 @@ function print_pkg(name,info,print)
 	if info.homepage ~= "" then print "</a>" end
 	print (([[<p class="description">%s</p>]]):format(info.description))
 	print [[<div class="metadata">]]
-	if #info.keywords > 0 then
-	  print [[<div class="keywords">keywords: ]]
-	  	for _,k in ipairs(info.keywords) do
-	  		print (([[<span class="keyword">%s</span>]]):format(k))
-	  	end
-	  print [[</div>]]
-	end
-	if #info.categories > 0 then
-	  print [[<div class="categories">categories: ]]
-	  	for _,k in ipairs(info.categories) do
-	  		print (([[<span class="category">%s</span>]]):format(k))
+	if #info.authors > 0 then
+	  print(plural('<div class="authors">author%s: ',#info.authors))
+	  	for _,k in ipairs(info.authors) do
+	  		print (([[<span class="author">%s</span>]]):format(k))
 	  	end
 	  print [[</div>]]
 	end
@@ -105,12 +110,26 @@ function print_pkg(name,info,print)
 	  	end
 	  print [[</div>]]
 	end
-	print [[<div class="versions">versions: ]]
+	if #info.categories > 0 then
+	  print(plural('<div class="categories">categorie%s: ',#info.categories))
+	  	for _,k in ipairs(info.categories) do
+	  		print (([[<span class="category">%s</span>]]):format(k))
+	  	end
+	  print [[</div>]]
+	end
+	if #info.keywords > 0 then
+	  print(plural('<div class="keywords">keyword%s: ',#info.keywords))
+	  	for _,k in ipairs(info.keywords) do
+	  		print (([[<span class="keyword">%s</span>]]):format(k))
+	  	end
+	  print [[</div>]]
+	end
+	print(plural('<div class="versions">version%s: ',#info.versions))
 	for _,k in ipairs(info.versions) do
 	 	print (([[<span class="version">%s</span>]]):format(k))
 	end
 	print [[</div>]]
-	print [[<div class="suites">suites: ]]
+	print(plural('<div class="suites">suite%s: ',#info.suites))
 	for _,k in ipairs(info.suites) do
 	 	print (([[<span class="suite">%s</span>]]):format(k))
 	end
