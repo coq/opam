@@ -1,6 +1,7 @@
 opam-version: "1.1" 
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/corn.git;a=tree"
+homepage: "http://corn.cs.ru.nl/"
+doc: "http://corn.cs.ru.nl/"
 license: "GPL 2"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]

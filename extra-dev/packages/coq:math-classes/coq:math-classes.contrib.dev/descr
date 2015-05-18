@@ -1,4 +1,4 @@
-Math Classes
+A library of abstract interfaces for mathematical structures in Coq.
 
 We have been working on a new set of foundational interfaces for formalized constructive mathematics in Coq, heavily based on Coq's new type classes, used in a systematic way in order to achieve:
 * elegant and mathematically sound abstract interfaces for algebraic and numeric structures up to and including rationals (with practical use of universal algebra and category theory);
