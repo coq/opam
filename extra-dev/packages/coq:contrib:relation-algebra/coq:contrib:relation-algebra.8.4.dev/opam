@@ -13,3 +13,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:relation algebra" "keyword:kleene algebra with tests" "keyword:kat" "keyword:allegories" "keyword:residuated structures" "keyword:automata" "keyword:regular expressions" "keyword:matrices" "category:Mathematics/Algebra" ]
+authors: [ "Damien Pous <Damien.Pous@ens-lyon.fr>" ]

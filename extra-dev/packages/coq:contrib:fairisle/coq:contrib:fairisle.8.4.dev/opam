@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:circuits" "keyword:automata" "keyword:co induction" "keyword:dependent types" "category:Computer Science/Architecture" "date:15/12/2005" ]
+authors: [ "Solange Coupet-Grimal <{Solange.Coupet,Line.Jakubiec}@lif.univ-mrs.fr>" "Line Jakubiec-Jamet <http://www.dil.univ-mrs.fr/~jakubiec/>" ]

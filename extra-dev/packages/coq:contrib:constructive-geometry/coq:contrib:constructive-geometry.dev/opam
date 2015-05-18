@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:constructive mathematics" "keyword:geometry" "category:Mathematics/Geometry/General" ]
+authors: [ "Gilles Kahn <>" ]

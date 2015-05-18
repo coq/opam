@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:recursive functions" "keyword:well founded recursion" "keyword:well foundedness" "category:Miscellaneous/Coq Extensions" "date:2002" ]
+authors: [ "Antonia Balaa  <>" "Yves Bertot <>" ]

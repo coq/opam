@@ -13,3 +13,4 @@ depends: [
   "coq:contrib:int-map"
 ]
 tags: [ "keyword:graphs" "keyword:graph theory" "keyword:cycle detection" "keyword:paths" "keyword:constraints" "keyword:inequalities" "keyword:reflection" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category:Miscellaneous/Extracted Programs/Combinatorics" ]
+authors: [ "Jean Goubault  <>" ]

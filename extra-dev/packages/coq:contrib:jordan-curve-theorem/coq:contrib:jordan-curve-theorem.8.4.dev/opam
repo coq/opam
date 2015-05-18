@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:combinatorial hypermaps" "keyword:genus" "keyword:planarity" "keyword:euler formula" "keyword:discrete jordan curve theorem" "category:Mathematics/Geometry/General" "date:2008" ]
+authors: [ "Jean-François Dufourd <dufourd@lsiit.u-strasbg.fr>" ]

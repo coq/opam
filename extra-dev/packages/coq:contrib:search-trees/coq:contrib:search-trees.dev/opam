@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:binary search trees" "category:Computer Science/Data Types and Data Structures" "category:Miscellaneous/Extracted Programs/Data structures" ]
+authors: [ "Pierre Castéran <>" ]

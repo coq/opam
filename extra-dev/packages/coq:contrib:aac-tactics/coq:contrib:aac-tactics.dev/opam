@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:reflexive tactic" "keyword:rewriting" "keyword:rewriting modulo associativity and commutativity" "keyword:rewriting modulo ac" "keyword:reflexive decision procedure" "category:Miscellaneous/Coq Extensions" ]
+authors: [ "Damien Pous <damien.pous@inria.fr>" "Thomas Braibant <thomas.braibant@gmail.com>" ]

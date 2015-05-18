@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:polyhedron" "keyword:hypermap" "keyword:genus" "keyword:euler formula" "keyword:assisted proofs" "category:Mathematics/Geometry/See also" "date:September 2006" ]
+authors: [ "Jean-François Dufourd <dufourd@dpt-info.u-strasbg.fr>" ]

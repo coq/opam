@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:dimension one ramsey theorem" "keyword:constructive mathematics" "keyword:almost full sets" "category:Mathematics/Logic/See also" "category:Mathematics/Combinatorics and Graph Theory" "category:Miscellaneous/Extracted Programs/Combinatorics" ]
+authors: [ "Marc Bezem <>" ]

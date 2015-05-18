@@ -14,3 +14,4 @@ depends: [
   "camlp5"
 ]
 tags: [ "keyword:first order unification" "keyword:robinson" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category:Miscellaneous/Extracted Programs/Type checking unification and normalization" ]
+authors: [ "Jocelyne Rouyer <>" ]

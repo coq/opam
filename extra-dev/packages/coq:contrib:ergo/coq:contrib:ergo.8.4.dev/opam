@@ -16,3 +16,4 @@ depends: [
   "coq:contrib:nfix" {= "8.4.dev"}
 ]
 tags: [ "keyword:reflexive decision procedure" "keyword:satisfiability modulo theories" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
+authors: [ "Stéphane Lescuyer <>" ]

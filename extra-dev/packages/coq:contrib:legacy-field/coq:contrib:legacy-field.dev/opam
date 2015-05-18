@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
   "coq:contrib:legacy-ring"
 ]
+authors: [ "David Delahaye and Micaela Mayero (?) <>" ]

@@ -13,3 +13,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:bdd" "keyword:bdt" "keyword:finite sets" "keyword:model checking" "keyword:binary decision diagrams" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category:Miscellaneous/Extracted Programs/Decision procedures" ]
+authors: [ "Emmanuel Ledinot <>" ]

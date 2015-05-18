@@ -13,3 +13,4 @@ depends: [
   "coq:contrib:int-map" {= "8.4.dev"}
 ]
 tags: [ "keyword:bdd" "keyword:binary decision diagrams" "keyword:classical logic" "keyword:propositional logic" "keyword:garbage collection" "keyword:modal mu calculus" "keyword:model checking" "keyword:symbolic model checking" "keyword:reflection" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:November 2002" ]
+authors: [ "Kumar Neeraj Verma <verma@lsv.ens-cachan.fr>" ]

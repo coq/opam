@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:classical realizability" "keyword:krivine's realizability" "keyword:primitive datatype" "keyword:non determinism" "keyword:quote" "keyword:axiom of countable choice" "keyword:real numbers" "category:Mathematics/Logic/Foundations" ]
+authors: [ "Lionel Rieg <lionel.rieg@ens-lyon.org>" ]

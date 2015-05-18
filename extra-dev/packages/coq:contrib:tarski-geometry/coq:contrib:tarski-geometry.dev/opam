@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:geometry" "keyword:tarski's geometry" "keyword:congruence" "keyword:between property" "keyword:orthogonality" "category:Mathematics/Geometry/General" "date:March 2006" ]
+authors: [ "Julien Narboux <Julien.Narboux@dpt-info.u-strasbg.fr>" ]

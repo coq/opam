@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:probability theory" "keyword:markov" "keyword:lebesgue integral" "keyword:measures" "keyword:sigma algebras" "keyword:measurability" "keyword:borel" "category:Mathematics/Real Calculus and Topology" "date:January 5, 2008" ]
+authors: [ "Robert Kam <rkam2001@hotmail.com>" ]

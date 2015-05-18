@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:set theory" "keyword:ordinal" "keyword:cardinal" "keyword:category theory" "keyword:functor" "keyword:natural transformation" "keyword:limit" "keyword:colimit" "category:Mathematics/Logic/Set theory" "category:Mathematics/Category Theory" "date:October 10th 2004" ]
+authors: [ "Carlos Simpson <carlos@math.unice.fr>" ]

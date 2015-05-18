@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:rational numbers" "keyword:arithmetic" "keyword:field tactic" "keyword:binary lists" "keyword:stern brocot" "category:Mathematics/Arithmetic and Number Theory/Rational numbers" "category:Miscellaneous/Extracted Programs/Arithmetic" "date:2003" ]
+authors: [ "Milad Niqui <>" "Yves Bertot <>" ]

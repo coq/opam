@@ -13,3 +13,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:boolean formula" "keyword:tautology checker" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category:Miscellaneous/Extracted Programs/Decision procedures" "date:2000" ]
+authors: [ "Laurent Théry <>" "Pierre Letouzey <>" ]

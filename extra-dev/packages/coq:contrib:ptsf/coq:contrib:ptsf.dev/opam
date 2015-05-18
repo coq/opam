@@ -13,3 +13,4 @@ depends: [
   "coq:contrib:ptsatr"
 ]
 tags: [ "keyword:pure type systems" "keyword:judgmental equality" "keyword:explicit equality proofs" "keyword:proof relevance" "category:Mathematics/Logic/Type theory" ]
+authors: [ "Herman Geuvers <herman@cs.ru.nl>" "Floris van Doorn <fpv@andrew.cmu.edu>" "Freek Wiedijk <freek@cs.ru.nl>" ]

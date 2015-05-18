@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:reynolds paradox" "keyword:burali forti paradox" "keyword:diaconescu paradox" "keyword:set theory" "keyword:system u" "keyword:inconsistency" "keyword:hurkens paradox" "category:Mathematics/Logic/Foundations" ]
+authors: [ "Bruno Barras <>" "Benjamin Werner <>" "Hugo Herbelin <>" "Thierry Coquand <>" ]

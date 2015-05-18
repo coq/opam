@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:otway rees" "keyword:protocols" "keyword:cryptography" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" ]
+authors: [ "Dominique Bolignano and Valérie Ménissier-Morain <>" ]

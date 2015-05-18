@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:pocklington" "keyword:number theory" "keyword:prime numbers" "keyword:primality" "keyword:fermat's little theorem" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:November 2000" ]
+authors: [ "Martijn Oostdijk <>" "Olga Caprotti <>" ]

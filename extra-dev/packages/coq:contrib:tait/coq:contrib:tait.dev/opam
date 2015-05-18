@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:normalization" "keyword:lambda calculus" "keyword:extraction" "keyword:tait proof" "keyword:normalization by evalution" "keyword:type theory" "category:Mathematics/Logic/Type theory" "category:Computer Science/Lambda Calculi" "category:Miscellaneous/Extracted Programs/Type checking unification and normalization" "date:2004" ]
+authors: [ "Helmut Schwichtenberg <>" "Pierre Letouzey <>" ]

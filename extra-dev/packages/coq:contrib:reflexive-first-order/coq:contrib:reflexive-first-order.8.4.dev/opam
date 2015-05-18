@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:computationnal reflection" "keyword:interpretation" "keyword:first order logic" "keyword:equational reasoning" "category:Miscellaneous/Coq Extensions" "date:05/2005" ]
+authors: [ "Pierre Corbineau <pierre.corbineau@lri.fr>" ]

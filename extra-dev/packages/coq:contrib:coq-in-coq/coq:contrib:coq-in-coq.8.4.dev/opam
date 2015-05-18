@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:calculus of constructions" "category:Mathematics/Logic/Type theory" "category:Miscellaneous/Extracted Programs/Type checking unification and normalization" ]
+authors: [ "Bruno Barras <>" ]

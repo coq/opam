@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:denotational semantics" "keyword:compilation" "category:Computer Science/Semantics and Compilation/Semantics" ]
+authors: [ "Eduardo Giménez and Emmanuel Ledinot  <>" ]

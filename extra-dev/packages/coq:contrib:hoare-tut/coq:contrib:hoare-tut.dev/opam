@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:hoare logic" "keyword:imperative program" "keyword:weakest precondition" "keyword:reflection" "category:Mathematics/Logic/See also" "category:Computer Science/Semantics and Compilation/Semantics" "date:2007" ]
+authors: [ "Sylvain Boulmé <Sylvain.Boulme@imag.fr>" ]

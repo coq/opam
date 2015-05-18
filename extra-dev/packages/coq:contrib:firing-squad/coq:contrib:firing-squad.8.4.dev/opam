@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:concurrency" "keyword:synchronization" "keyword:finite state machines" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" "category:Miscellaneous/Extracted Programs/Automata and protocols" ]
+authors: [ "Jean Duprat <>" ]

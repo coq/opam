@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:maps" "keyword:dependent maps" "keyword:domain" "category:Computer Science/Data Types and Data Structures" ]
+authors: [ "Lionel Rieg <lionel.rieg@college-de-france.fr>" ]

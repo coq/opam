@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:intuitionistic set theory" "keyword:pointed graphs" "keyword:type theory" "keyword:intuitionistic choice operator" "keyword:set theory" "keyword:zermelo fraenkel" "category:Mathematics/Logic/Set theory" "date:February 2003" ]
+authors: [ "Alexandre Miquel <Alexandre.Miquel@pps.jussieu.fr>" ]

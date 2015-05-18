@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:lambda sigma lift calculus" "keyword:explicit substitution" "keyword:newman's lemma" "keyword:yokouchi's lemma" "keyword:confluence" "keyword:rewriting" "category:Computer Science/Lambda Calculi" ]
+authors: [ "Amokrane Saïbi <>" ]

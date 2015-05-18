@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:data structures" "keyword:type classes" "category:Computer Science/Data Types and Data Structures" ]
+authors: [ "Stéphane Lescuyer <>" ]

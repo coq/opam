@@ -13,3 +13,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:hardware verification" "keyword:comparator circuit" "category:Computer Science/Architecture" "category:Miscellaneous/Extracted Programs/Hardware" ]
+authors: [ "Solange Coupet-Grimal & Line Jakubiec <>" ]

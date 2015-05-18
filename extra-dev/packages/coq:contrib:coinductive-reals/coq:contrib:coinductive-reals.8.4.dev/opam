@@ -13,3 +13,4 @@ depends: [
   "coq:contrib:qarith-stern-brocot" {= "8.4.dev"}
 ]
 tags: [ "keyword:real numbers" "keyword:co inductive types" "keyword:co recursion" "keyword:exact arithmetic" "category:Mathematics/Arithmetic and Number Theory/Real numbers" "date:24 April 2007" ]
+authors: [ "Milad Niqui <milad@cs.ru.nl>" ]

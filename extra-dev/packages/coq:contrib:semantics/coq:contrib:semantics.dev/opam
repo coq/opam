@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:natural semantics" "keyword:denotational semantics" "keyword:axiomatic" "keyword:semantics" "keyword:hoare logic" "keyword:dijkstra weakest pre condition calculus" "keyword:abstract interpretation" "keyword:intervals" "category:Computer Science/Semantics and Compilation/Semantics" "date:July 5, 2007" ]
+authors: [ "Yves Bertot <Yves.Bertot@sophia.inria.fr>" ]

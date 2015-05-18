@@ -14,3 +14,4 @@ depends: [
   "coq:contrib:int-map" {= "8.4.dev"}
 ]
 tags: [ "keyword:bdd" "keyword:binary decision diagrams" "keyword:classical logic" "keyword:propositional logic" "keyword:validity" "keyword:satisfiability" "keyword:model checking" "keyword:reflection" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category:Miscellaneous/Extracted Programs/Decision procedures" "date:May-July 1999" ]
+authors: [ "Kumar Neeraj Verma <>" ]

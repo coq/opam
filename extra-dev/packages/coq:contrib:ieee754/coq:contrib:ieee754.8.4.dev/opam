@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:floating point arithmetic" "keyword:floats" "keyword:ieee" "category:Computer Science/Data Types and Data Structures" "category:Computer Science/Semantics and Compilation/Semantics" ]
+authors: [ "Patrick Loiseleur <>" ]

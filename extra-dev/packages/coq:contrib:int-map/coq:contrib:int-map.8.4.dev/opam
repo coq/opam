@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:finite sets" "keyword:maps" "keyword:binary integers" "keyword:efficient data structures" "keyword:data structures" "category:Computer Science/Data Types and Data Structures" "date:around 1999 (integrated within Coq 7.0)" ]
+authors: [ "Jean Goubault <goubault [@] lsv.ens-cachan.fr>" ]

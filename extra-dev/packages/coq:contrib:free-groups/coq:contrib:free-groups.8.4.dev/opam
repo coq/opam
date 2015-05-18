@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:free group" "category:Mathematics/Algebra" ]
+authors: [ "Daniel Schepler <dschepler@gmail.com>" ]

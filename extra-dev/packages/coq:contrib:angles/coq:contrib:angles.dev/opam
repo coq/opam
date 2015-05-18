@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:pcoq" "keyword:geometry" "keyword:plane geometry" "keyword:oriented angles" "category:Mathematics/Geometry/General" "date:15 janvier 2002" ]
+authors: [ "Frédérique Guilhot <Frederique.Guilhot@sophia.inria.fr>" ]

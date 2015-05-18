@@ -14,3 +14,4 @@ depends: [
   "coq:contrib:lin-alg"
 ]
 tags: [ "keyword:orbit" "keyword:stabilizer" "keyword:inclusion exclusion" "category:Mathematics/Algebra" "date:January 5, 2008" ]
+authors: [ "Robert Kam <rkam2001@hotmail.com>" ]

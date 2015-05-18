@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:maple" "keyword:simplification" "keyword:field tactic" "category:Miscellaneous/Coq Extensions" "date:March 2002" ]
+authors: [ "David Delahaye <>" "Micaela Mayero <>" ]

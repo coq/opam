@@ -13,3 +13,4 @@ depends: [
   "coq:contrib:ssreflect"
 ]
 tags: [ "keyword:lemma overloading" "keyword:proof automation" "keyword:hoare type theory" "keyword:canonical structures" "category:Computer Science/Data Types and Data Structures" ]
+authors: [ "Derek Dreyer <dreyer@mpi-sws.org>" "Georges Gonthier <gonthier@microsoft.com>" "Beta Ziliani <beta@mpi-sws.org>" "Aleksandar Nanevski <aleks.nanevski@imdea.org>" ]

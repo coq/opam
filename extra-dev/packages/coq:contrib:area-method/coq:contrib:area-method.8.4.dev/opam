@@ -12,3 +12,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:geometry" "keyword:chou gao zhang area method" "keyword:decision procedure" "keyword:automatic theorem proving" "date:2004-2010" ]
+authors: [ "Julien Narboux <>" ]
