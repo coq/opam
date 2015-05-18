@@ -6,7 +6,8 @@ MAILTO=root
 LOG=/tmp/coq-opam-archive.log
 
 notify() {
-(echo "OPAM $1 on repo $2 failed:"; cat $LOG) | mail -s 'OPAM alert' $MAILTO
+(echo "OPAM $1 on repo $2 failed:"; tail $LOG) | mail -s 'OPAM alert' $MAILTO
+echo "OPAM $1 on repo $2 failed:"; tail $LOG
 }
 
 for repo in $@; do
