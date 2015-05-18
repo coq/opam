@@ -1,0 +1,16 @@
+opam-version: "1.1" 
+maintainer: "dev@clarus.me"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/topology.git;a=tree"
+license: "LGPL"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Topology"]
+depends: [
+  "coq" {>= "8.4" & < "8.5"}
+  "coq:zorns-lemma" {= "8.4.dev"}
+]
+tags: [ "keyword:topology" "keyword:filters" "keyword:nets" "keyword:metric spaces" "keyword:real analysis" "keyword:urysohn's lemma" "keyword:tietze extension theorem" "category:Mathematics/Real Calculus and Topology" ]
+authors: [ "Daniel Schepler <dschepler@gmail.com>" ]
