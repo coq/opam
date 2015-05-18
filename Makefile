@@ -3,6 +3,10 @@ SUITES= core-dev  extra-dev  released  stable-8.4  stable-8.5
 
 pp = cd $(COQWEB); yamlpp-0.3/yamlpp $(abspath $(1)) -o $(abspath $(2))
 
+ifeq "$(shell test ! -z '$(COQWEB)' -a -d $(COQWEB) || echo false)" "false"
+$(error "Please use 'make COQWEB=path/to/coq/www'")
+endif
+
 # refresh opam indexes + generate website
 all: check-deps
 	@./scripts/refresh-opam-indexes $(SUITES)
