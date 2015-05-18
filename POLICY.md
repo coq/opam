@@ -57,7 +57,7 @@ edge and users not familiar with the OPAM tool.
 A package is eligible if all the following constraints are satisfied.
 
  1. Maintained: by the Coq team or by an external author (contact email
-    address in the `author:` field in opam metadata)
+    address in the `author:` field in OPAM metadata)
  1. Released: has a version number and a tar ball (that is mirrored on the Coq
     OPAM archive website)
  1. Change log: comes with a document that lists all changes between any
@@ -71,7 +71,7 @@ A package is eligible if all the following constraints are satisfied.
  1. Quality: ML code should not use unsafe features and is reviewed by a Coq
     developer
  1. Quality: documentation should be available (see the `doc:` field in the
-    opam metadata)
+    OPAM metadata)
 
 In any case the Coq developers keep the right to remove any package at any time.
 
