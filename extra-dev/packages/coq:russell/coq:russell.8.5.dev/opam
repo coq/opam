@@ -11,7 +11,7 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Russell"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Lambda"]
 depends: [
   "coq" {>= "8.5beta1"}
 ]
