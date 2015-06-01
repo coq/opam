@@ -89,6 +89,10 @@ function plural(s,n,...)
 	if n >= 2 then return string.format(s,"s",...)
 	else return string.format(s,"",...) end
 end
+function pluraly(s,n,...)
+	if n >= 2 then return string.format(s,"ies",...)
+	else return string.format(s,"y",...) end
+end
 
 function print_pkg(name,info,print)
 	print [[ <tr class="package"><td> ]]
@@ -112,7 +116,7 @@ function print_pkg(name,info,print)
 	  print [[</div>]]
 	end
 	if #info.categories > 0 then
-	  print(plural('<div class="categories">categorie%s: ',#info.categories))
+	  print(pluraly('<div class="categories">categor%s: ',#info.categories))
 	  	for _,k in ipairs(info.categories) do
 	  		print (([[<span class="category">%s</span>]]):format(k))
 	  	end
