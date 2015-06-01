@@ -61,19 +61,20 @@ A package is eligible if all the following constraints are satisfied.
  1. _Released_ with a version number and a tar ball (that is mirrored on the Coq
     OPAM archive website)
  1. Includes a _Changelog_ that lists all changes between any
-    two version part of this archive
+    two versions part of this archive
  1. The _License_ must allow free redistribution, not necessarily free as in
     free software or free beer
- 1. The maintainer or author of the packaged software is informed his software
-    is part of the archive and does not oppose
+ 1. The maintainer or author of the packaged software is informed that
+    his software is part of the archive and he does not oppose
  1. _No_ _Admitted_ proofs
- 1. All _Axioms_ are documented
+ 1. All _Axioms_ used are documented
  1. ML code should use _no_ _unsafe_ _features_ and is _reviewed_ by a Coq
     developer
  1. _Documentation_ should be available (see the `doc:` field in the
     OPAM metadata)
 
-In any case the Coq developers keep the right to remove any package at any time.
+In any case the Coq developers keep the right to remove any non compliant
+package at any time.
 
 ### 2.3 Updating to a new version of a package already there
 
@@ -86,11 +87,10 @@ In any case the Coq developers keep the right to remove any package at any time.
     transition strategy (a document helping a user to perform the switch: e.g.
     documenting all renamings).  If such a document is impossible to be
     written, then it is a sign the update is going to break too many things.
- 1. The old version stays there
+ 1. The old version stays there.
 
 ### 2.4 Going from stable-$VERSION to stable-$VERSION+1
 
- 1. stable-$VERSION+1 is initially empty
- 1. only 1 version of each package is in there initially, i.e.
-    the most recent one in stable-$VERSION
-    
+ 1. stable-$VERSION+1 is initially empty.
+ 1. Only 1 version of each package is in there initially, i.e.
+    the most recent one in stable-$VERSION.
