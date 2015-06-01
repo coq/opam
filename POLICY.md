@@ -12,7 +12,7 @@ set of packages that comply with the policy described in section 2.
 The repository is self contained , i.e. all packages' dependencies can be
 resolved inside this repository or the standard OPAM repository.
 The repository is intended to be used by regular Coq users, possibly via
-the [opam coq shell](https://github.com/coq/opam-coq-shell).
+the simplified [opam coq shell](https://github.com/coq/opam-coq-shell).
 
 ### released
 
@@ -47,8 +47,8 @@ rights in the main Coq software repository.
 The repository shall contain software that works with Coq $VERSION and that
 won't break for the whole lifetime of Coq $VERSION.  Coq extensions packages
 are maintained by their corresponding authors or by the Coq team.  Updates are
-accepted only if they don't break anything (like for Coq pl releases) or if a
-transition strategy is provided by the authors of the extension.  
+accepted only if they don't break anything (like for Coq patch level releases)
+or if a transition strategy is provided (more on that in section 2.3).  
 The repository is intended to be used by users preferring stability to bleeding
 edge and users not familiar with the OPAM tool.
 
@@ -56,21 +56,21 @@ edge and users not familiar with the OPAM tool.
 
 A package is eligible if all the following constraints are satisfied.
 
- 1. Maintained: by the Coq team or by an external author (contact email
+ 1. _Maintained_ by the Coq team or by an external author (contact email
     address in the `author:` field in OPAM metadata)
- 1. Released: has a version number and a tar ball (that is mirrored on the Coq
+ 1. _Released_ with a version number and a tar ball (that is mirrored on the Coq
     OPAM archive website)
- 1. Change log: comes with a document that lists all changes between any
+ 1. Includes a _Changelog_ that lists all changes between any
     two version part of this archive
- 1. License: must allow free redistribution, not necessarily free as in free
-    software or free beer
+ 1. The _License_ must allow free redistribution, not necessarily free as in
+    free software or free beer
  1. The maintainer or author of the packaged software is informed his software
     is part of the archive and does not oppose
- 1. Quality: no Admitted proofs
- 1. Quality: all Axioms used are documented
- 1. Quality: ML code should not use unsafe features and is reviewed by a Coq
+ 1. _No_ _Admitted_ proofs
+ 1. All _Axioms_ are documented
+ 1. ML code should use _no_ _unsafe_ _features_ and is _reviewed_ by a Coq
     developer
- 1. Quality: documentation should be available (see the `doc:` field in the
+ 1. _Documentation_ should be available (see the `doc:` field in the
     OPAM metadata)
 
 In any case the Coq developers keep the right to remove any package at any time.
@@ -78,12 +78,14 @@ In any case the Coq developers keep the right to remove any package at any time.
 ### 2.3 Updating to a new version of a package already there
 
  1. The new version must satisfy all the requirements above
- 1. The transition from the old to the new version must be eased by a
-    transition strategy (a document helping a user to perform the switch)
  1. All packages in the repository depending on the old version
     must be ported to the new version and enter the repository
     at the same time.  These requirements apply, recursively, to
     these packages.
+ 1. The transition from the old to the new version must be eased by a
+    transition strategy (a document helping a user to perform the switch: e.g.
+    documenting all renamings).  If such a document is impossible to be
+    written, then it is a sign the update is going to break too many things.
  1. The old version stays there
 
 ### 2.4 Going from stable-$VERSION to stable-$VERSION+1
