@@ -2,7 +2,7 @@ opam-version: "1.2"
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://github.com/mattam82/Russell"
 license: "LGPL"
-dev-repo: "https://github.com/mattam82/Russell"
+dev-repo: "https://github.com/mattam82/Russell.git"
 bug-reports: "https://github.com/mattam82/Russell/issues"
 build: [
   ["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
@@ -15,5 +15,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Lambda"]
 depends: [
   "coq" {>= "8.5beta1"}
 ]
-tags: [ "keyword:metatheory" "category:Miscellaneous/Coq Extensions" ]
+tags: [ "keyword:metatheory" "category:Miscellaneous/Coq Extensions" "category:CS/Lambda Calculi" ]
 authors: [ "Matthieu Sozeau <matthieu.sozeau@inria.fr>" ]
