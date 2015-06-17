@@ -1,2 +1,2 @@
-http: "https://github.com/clarus/io-evaluate/archive/1.0.0.tar.gz"
-checksum: "8aa8b3bd850ba881602dc96d3d1644c8"
+http: "https://github.com/coq-io/evaluate/archive/1.0.0.tar.gz"
+checksum: "f244d76d068bbf4c894a0ad8058179c9"

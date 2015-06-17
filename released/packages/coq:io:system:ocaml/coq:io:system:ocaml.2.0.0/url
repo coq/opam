@@ -1,2 +1,2 @@
-http: "https://github.com/clarus/io-system-ocaml/archive/2.0.0.tar.gz"
-checksum: "6cb89ce76ae7ca4343c0170f9c41999c"
+http: "https://github.com/coq-io/system-ocaml/archive/2.0.0.tar.gz"
+checksum: "41fcedd859501b31e3113d216763077d"
