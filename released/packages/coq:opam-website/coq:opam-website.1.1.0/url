@@ -1,2 +1,2 @@
-http: "https://github.com/clarus/coq-opam-website/archive/1.1.0.tar.gz"
-checksum: "e0319aaa71735094adf894b6c07acdba"
+http: "https://github.com/coq-io/opam-website/archive/1.1.0.tar.gz"
+checksum: "9795d882323f159984373b4d6889419f"
