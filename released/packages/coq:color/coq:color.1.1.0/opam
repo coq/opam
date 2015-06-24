@@ -4,7 +4,7 @@ homepage: "http://color.inria.fr/"
 license: "CeCILL"
 build: [
   [make "-j%{jobs}%"]
-  [make "install"]
+  [make -f Makefile.coq "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
 depends: [
