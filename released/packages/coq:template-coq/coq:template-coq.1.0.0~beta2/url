@@ -1,1 +1,2 @@
-git: "https://github.com/gmalecha/template-coq.git#coq-8.5"
+http: "https://github.com/gmalecha/template-coq/archive/v1.0.0-beta2.tar.gz"
+checksum: "135f3f26a302ed3b497e9d5d356f329a"

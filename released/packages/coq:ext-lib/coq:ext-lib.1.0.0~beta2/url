@@ -1,1 +1,2 @@
-http: "https://github.com/coq-ext-lib/coq-ext-lib/archive/1.0.0beta2.tar.gz"
+http: "https://github.com/coq-ext-lib/coq-ext-lib/archive/v1.0.0-beta2.tar.gz"
+checksum: "a5ba82316433760606fa17535591382a"
