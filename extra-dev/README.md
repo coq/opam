@@ -1,22 +1,7 @@
-# Unstable Repository
-The repository for development packages. Use it at your own risks. Powered by [OPAM](http://opam.ocamlpro.com/).
+# Extra-Dev repository
+The repository for the development packages. Use it at your own risks.
 
-## Usage
-Enable this repository:
+    opam repo add coq-released https://coq.inria.fr/opam/released
+    opam repo add coq-extra-dev https://coq.inria.fr/opam/extra-dev
 
-    opam repo add coq-unstable https://github.com/coq/repo-unstable.git
-
-You might also want the stable repository:
-
-    opam repo add coq-stable https://github.com/coq/repo-stable.git
-
-To install a package:
-
-    opam search coq:that-package
-    opam install coq:that-package
-
-## Publish
-If you want to add your package, please do a pull-request to this repository. Read this [tutorial](http://coq-blog.clarus.me/make-a-coq-package.html) to get an example.
-
-## Bench
-The central place for benchmarks is [Coq bench](https://coq-bench.github.io/). We test different versions of Coq and machine configurations, and update the results as often as possible.
+If you want to add your package, please do a pull-request to this repository.

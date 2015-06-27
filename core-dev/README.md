@@ -1,15 +1,6 @@
-# Coqs repository
-The repository for non-stable Coq versions.
+# Core-Dev repository
+The repository for the development versions of Coq. Use it at your own risks.
 
-## Usage
-Enable this repository:
+    opam repo add coq-core-dev https://coq.inria.fr/opam/core-dev
 
-    opam repo add coqs https://github.com/coq/repo-coqs.git
-
-Install a new Coq version, for example the latest `trunk`:
-
-    opam install coq.dev
-
-Test the 8.5 first beta:
-
-    opam install coq.8.5beta1
+If you want to add your Coq version, please do a pull-request to this repository.
