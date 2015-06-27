@@ -3,6 +3,26 @@
 All OPAM repositories for Coq packages live here.
 Packages are organized according to the [policy](POLICY.md).
 
+## Repositories
+
+If you want to use the distribution mechanism (a selected subset of compatible packages), see [Coq Shell](https://github.com/coq/opam-coq-shell).
+
+To activate the repositories:
+* all the released packages:
+
+
+    opam repo add coq-released https://coq.inria.fr/opam/released
+
+* development versions:
+
+
+    opam repo add coq-extra-dev https://coq.inria.fr/opam/extra-dev
+
+* develoment versions of Coq:
+
+
+    opam repo add coq-core-dev https://coq.inria.fr/opam/core-dev
+
 ## Website preprocessor
 
 We follow the model of the Coq website.
