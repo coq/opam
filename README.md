@@ -20,7 +20,7 @@ To activate the repositories:
     opam repo add coq-extra-dev https://coq.inria.fr/opam/extra-dev
     ```
 
-* develoment versions of Coq:
+* development versions of Coq:
 
     ```
     opam repo add coq-core-dev https://coq.inria.fr/opam/core-dev
