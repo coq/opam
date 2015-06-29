@@ -13,6 +13,6 @@ depends: [
   "coq" {>= "8.4pl4"}
   "coq:io" {>= "3.0.0"}
   "coq:io:exception" {>= "1.0.0"}
-  "coq:io:system" {>= "2.2.0"}
+  "coq:io:system" {>= "2.2.0" & < "2.3.0"}
   "coq:list-string" {>= "2.1.0"}
 ]
