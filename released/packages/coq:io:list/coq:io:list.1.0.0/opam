@@ -12,5 +12,5 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/List.vo"]
 depends: [
   "coq" {>= "8.4pl4"}
-  "coq:io" {>= "3.0.0"}
+  "coq:io" {>= "3.0.0" & < "3.1.0"}
 ]
