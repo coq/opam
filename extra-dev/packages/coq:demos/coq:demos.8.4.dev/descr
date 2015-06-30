@@ -1,4 +1,4 @@
-Demos of some Coq tools appeared in version V6.0
+Demos of some Coq tools appeared in version V6.0.
 
 Example of sorting algorithms defined using the Cases
 (pattern-matching) construction. Demo of the decision tactic Tauto for

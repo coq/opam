@@ -1,4 +1,4 @@
-BDD algorithms and proofs in Coq, by reflection
+BDD algorithms and proofs in Coq, by reflection.
 
 Provides BDD algorithms running under Coq.
 (BDD are Binary Decision Diagrams.)

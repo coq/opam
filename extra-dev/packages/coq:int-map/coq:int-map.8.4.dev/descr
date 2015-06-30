@@ -1,4 +1,4 @@
-Maps indexed by binary integers : IntMap
+Maps indexed by binary integers : IntMap.
 
 
 This library contains a data structure for finite sets implemented by

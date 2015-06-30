@@ -1,4 +1,4 @@
-Specification of Eratosthene Sieve 
+Specification of Eratosthene Sieve .
 
 Proof of Eratosthene Sieve formalised using streams
 encoded as greatest fixpoints. See paper:

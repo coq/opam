@@ -1,4 +1,4 @@
-A theorem prover for first-order intuitionistic logic
+A theorem prover for first-order intuitionistic logic.
 
 JProver is a theorem prover for first-order intuitionistic logic.
 It is originally implemented by Stephan Schmitt and then integrated into

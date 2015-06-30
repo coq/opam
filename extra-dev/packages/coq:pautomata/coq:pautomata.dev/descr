@@ -1,4 +1,4 @@
-Parameterized automata
+Parameterized automata.
 
 This contribution is a modelisation in Coq of the p-automata
 designed in the CALIFE project (http://www.loria.fr/calife).

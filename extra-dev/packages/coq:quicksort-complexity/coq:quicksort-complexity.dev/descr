@@ -1,4 +1,4 @@
-Proofs of Quicksort's worst- and average-case complexity
+Proofs of Quicksort's worst- and average-case complexity.
 
 The development contains:
 - a set of monads and monad transformers for measuring a (possibly nondeterministic) algorithm's use of designated operations;

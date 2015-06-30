@@ -1,4 +1,4 @@
-a Coq toolkit for graph theory
+a Coq toolkit for graph theory.
 
 This library offers inductive definitions of basics
 in graph theory. The goal is to offer the possibility to write proofs

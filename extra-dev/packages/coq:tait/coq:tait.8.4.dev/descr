@@ -1,4 +1,4 @@
-A normalization proof a la Tait for simply-typed lambda-calculus
+A normalization proof a la Tait for simply-typed lambda-calculus.
 
 
 This is a formalization of Berger's TLCA'93 paper, with complete proofs

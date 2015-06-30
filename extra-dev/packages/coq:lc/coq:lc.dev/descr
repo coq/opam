@@ -1,4 +1,4 @@
-Modules over monads and lambda-calculi
+Modules over monads and lambda-calculi.
 
 We define a notion of module over a monad and use it to
 propose a new definition (or semantics) for abstract

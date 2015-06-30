@@ -1,4 +1,4 @@
-A Maple Mode for Coq
+A Maple Mode for Coq.
 
 This contribution is an interface between Coq and Maple. In
 particular, this exports the functions simplify/factor/expand/normal giving

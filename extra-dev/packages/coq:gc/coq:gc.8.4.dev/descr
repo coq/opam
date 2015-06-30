@@ -1,4 +1,4 @@
-Formal Verification of an Incremental Garbage Collector
+Formal Verification of an Incremental Garbage Collector.
 
 We specify an incremental garbage collection algorithm and we give a formal proof of its
 correctness. The algorithm is represented as an infinite transition system and we establish safety

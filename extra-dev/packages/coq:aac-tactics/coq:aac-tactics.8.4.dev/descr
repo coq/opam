@@ -1,3 +1,3 @@
-AAC tactics
+AAC tactics.
 
 This Coq plugin provides tactics for rewriting universally quantified equations, modulo associative (and possibly commutative) operators:

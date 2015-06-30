@@ -1,4 +1,4 @@
-A direct constructive proof of Higman's Lemma
+A direct constructive proof of Higman's Lemma.
 
 
 This development formalizes in Coq the Coquand-Friedlender proof of

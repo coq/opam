@@ -1,4 +1,4 @@
-A toolkit to reason with programs raising exceptions
+A toolkit to reason with programs raising exceptions.
 
 We show a way of developing correct functionnal programs
 raising exceptions. This is made possible using a Continuation

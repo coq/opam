@@ -1,4 +1,4 @@
-A certification of Peterson's algorithm for managing mutual exclusion
+A certification of Peterson's algorithm for managing mutual exclusion.
 
 This is a proof of certification of Peterson's algorithm
 for managing mutual exclusion. The case of two processes is treated

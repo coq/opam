@@ -1,4 +1,4 @@
-Associative Arrays
+Associative Arrays.
 
 We define the associative array (key -> value associations)
 datatype as list of couples, providing definitions of standards

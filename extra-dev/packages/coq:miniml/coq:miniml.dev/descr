@@ -1,4 +1,4 @@
-Correctness of the compilation of Mini-ML into the Categorical Abstract Machine
+Correctness of the compilation of Mini-ML into the Categorical Abstract Machine.
 
 A formalisation of Mini-ML and of the Categorical
 Abstract Machine (C.A.M) in natural semantics. It also contains the

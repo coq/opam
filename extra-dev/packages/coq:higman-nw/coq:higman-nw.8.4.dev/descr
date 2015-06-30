@@ -1,4 +1,4 @@
-A program from an A-translated impredicative proof of Higman's Lemma
+A program from an A-translated impredicative proof of Higman's Lemma.
 
 
 The file Higman.v formalizes an A-translated version of

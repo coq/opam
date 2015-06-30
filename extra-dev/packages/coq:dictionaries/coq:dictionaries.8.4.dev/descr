@@ -1,4 +1,4 @@
-Dictionaries (with modules)
+Dictionaries (with modules).
 
 This file contains a specification for dictionaries, and
 an implementation using binary search trees. Coq's module system,

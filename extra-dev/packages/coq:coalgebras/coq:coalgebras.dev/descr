@@ -1,3 +1,3 @@
-Coalgebras, bisimulation and lambda-coiteration
+Coalgebras, bisimulation and lambda-coiteration.
 
 This contribution contains a formalisation of coalgebras, bisimulation on coalgebras, weakly final coalgebras, lambda-coiteration definition scheme (including primitive corecursion) and a version of lambda-bisimulation. The formalisation is modular. The implementation of the module types for streams and potentially infinite Peano numbers are provided using the coinductive types.

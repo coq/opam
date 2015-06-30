@@ -1,4 +1,4 @@
-Tarski's geometry
+Tarski's geometry.
 
 This is a formalization of geometry using a simplified version of Tarski's axiom system. The development contains a formalization of the chapters 1-8 of the book "Metamathematische Methoden in der Geometrie" by W. Schwabhäuser, W. Szmielew and A. Tarski.
 This includes between properties, congruence properties,

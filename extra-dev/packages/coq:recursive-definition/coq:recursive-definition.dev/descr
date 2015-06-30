@@ -1,4 +1,4 @@
-ML-like recursive definitions
+ML-like recursive definitions.
 
 This module provides a facility to define recursive functions in
 an ML-like style, giving a fixpoint equation, a variant and a

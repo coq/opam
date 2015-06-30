@@ -1,4 +1,4 @@
-Semantics of a subset of the C language
+Semantics of a subset of the C language.
 
 This contribution defines the denotational semantics of MiniC, a
 sub-set of the C language. This sub-set is sufficiently large to

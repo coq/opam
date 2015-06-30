@@ -1,4 +1,4 @@
-Pi-calculus in Coq
+Pi-calculus in Coq.
 
 This is a HOAS-based encoding of the pi-calculus (as originally
 conceived by Milner, Parrow and Walker in "A Calculus of Mobile

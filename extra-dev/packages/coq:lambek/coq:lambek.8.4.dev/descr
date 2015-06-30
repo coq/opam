@@ -1,4 +1,4 @@
-A Coq Toolkit for Lambek Calculus
+A Coq Toolkit for Lambek Calculus.
 
 This library contains some definitions concerning Lambek calculus.
 Three formalisations of this calculus are proposed, and also some certified

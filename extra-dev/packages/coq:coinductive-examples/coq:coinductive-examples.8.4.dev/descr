@@ -1,4 +1,4 @@
-Some simple examples about co-inductive types and co-induction
+Some simple examples about co-inductive types and co-induction.
 
 This directory containts some simple examples about
 the use of co-inductive types in Coq. Directory ARITH

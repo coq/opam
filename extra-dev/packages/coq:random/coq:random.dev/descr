@@ -1,4 +1,4 @@
-Interpretation of random programs
+Interpretation of random programs.
 
 This contribution is a modelisation of random programs
 as measures in Coq. It started in 2004 in the context
