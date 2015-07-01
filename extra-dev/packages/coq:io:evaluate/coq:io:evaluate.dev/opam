@@ -13,5 +13,6 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/Evaluate.vo"]
 depends: [
   "coq" {>= "8.4pl4"}
   "coq:function-ninjas"
+  "coq:monad"
   "coq:io"
 ]
