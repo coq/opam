@@ -12,4 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:extraction" "keyword:inductive relations" "keyword:semantics" "category:Computer Science/Semantics and Compilation/Compilation" "date:2011" ]
-authors: [ "Catherine Dubois, David Delahaye, Pierre-Nicolas Tollitte <>" ]
+authors: [ "Catherine Dubois <>" "David Delahaye <>" "Pierre-Nicolas Tollitte <>" ]
