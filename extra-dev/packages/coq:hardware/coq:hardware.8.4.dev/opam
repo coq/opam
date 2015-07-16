@@ -1,4 +1,4 @@
-opam-version: "1.1" 
+opam-version: "1.1"
 maintainer: "dev@clarus.me"
 homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/hardware.git;a=tree"
 license: "LGPL 2"
@@ -13,4 +13,4 @@ depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
 tags: [ "keyword:hardware verification" "keyword:comparator circuit" "category:Computer Science/Architecture" "category:Miscellaneous/Extracted Programs/Hardware" ]
-authors: [ "Solange Coupet-Grimal & Line Jakubiec <>" ]
+authors: [ "Solange Coupet-Grimal <>" "Line Jakubiec <>" ]
