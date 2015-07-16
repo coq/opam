@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PiCalc"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
-tags: [ "keyword:process algebras" "keyword:pi calculus" "keyword:concurrency" "keyword:formal verification" "keyword:higher order syntax" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:July 1998" ]
+tags: [ "keyword:process algebra" "keyword:pi calculus" "keyword:concurrency" "keyword:formal verification" "keyword:higher order syntax" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:July 1998" ]
 authors: [ "Ivan Scagnetto <scagnett@dimi.uniud.it>" ]

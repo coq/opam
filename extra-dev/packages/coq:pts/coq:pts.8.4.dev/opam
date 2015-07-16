@@ -1,4 +1,4 @@
-opam-version: "1.1" 
+opam-version: "1.1"
 maintainer: "dev@clarus.me"
 homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/pts.git;a=tree"
 license: "Proprietary"
@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PTS"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
-tags: [ "keyword:calculus of constructions" "keyword:coq" "keyword:pts" "keyword:pure type systems" "keyword:metatheory" "category:Computer Science/Lambda Calculi" "date:March 2007" ]
+tags: [ "keyword:calculus of constructions" "keyword:coq" "keyword:pure type systems" "keyword:metatheory" "category:Computer Science/Lambda Calculi" "date:March 2007" ]
 authors: [ "Bruno Barras <>" ]
