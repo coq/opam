@@ -1,4 +1,4 @@
-opam-version: "1.1" 
+opam-version: "1.1"
 maintainer: "dev@clarus.me"
 homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/gc.git;a=tree"
 license: "Proprietary"
@@ -12,4 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:linear temporal logic" "keyword:finite sets" "keyword:co induction" "keyword:garbage collection" "category:Computer Science/Semantics and Compilation/Compilation" "date:9 Mai 2003" ]
-authors: [ "Solange Coupet-Grimal and Catherine Nouvet <>" ]
+authors: [ "Solange Coupet-Grimal <>" "Catherine Nouvet <>" ]
