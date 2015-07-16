@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coalgebras"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
-tags: [ "keyword:coalgebra" "keyword:bisimulation" "keyword:weakly final" "keyword:coiteration" "keyword:coinductive" "category:Mathematics/Category Theory" "date:October 2008" ]
+tags: [ "keyword:coalgebra" "keyword:bisimulation" "keyword:weakly final" "keyword:coiteration" "keyword:coinductive types" "category:Mathematics/Category Theory" "date:October 2008" ]
 authors: [ "Milad Niqui <M.Niqui@cwi.nl>" ]

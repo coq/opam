@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ABP"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
-tags: [ "keyword:alternating bit protocol" "keyword:process calculi" "keyword:reactive systems" "keyword:co inductive types" "keyword:co induction" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" ]
+tags: [ "keyword:alternating bit protocol" "keyword:process calculi" "keyword:reactive systems" "keyword:coinductive types" "keyword:coinduction" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" ]
 authors: [ "Eduardo Giménez <>" ]

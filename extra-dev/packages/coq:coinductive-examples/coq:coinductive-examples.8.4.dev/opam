@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoinductiveExamples"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
-tags: [ "keyword:co inductive types" "keyword:co induction" "category:Miscellaneous/Coq Use Examples" ]
+tags: [ "keyword:coinductive types" "keyword:coinduction" "category:Miscellaneous/Coq Use Examples" ]
 authors: [ "Eduardo Giménez <>" ]

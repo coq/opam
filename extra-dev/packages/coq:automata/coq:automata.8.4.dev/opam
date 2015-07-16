@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Automata"]
 depends: [
   "coq" {>= "8.4" & < "8.5"}
 ]
-tags: [ "keyword:formal language theory" "keyword:finite automatas" "keyword:push down automatas" "keyword:rational langages" "keyword:kleene" "category:Computer Science/Formal Languages Theory and Automata" "date:June-July 1993" ]
+tags: [ "keyword:formal language theory" "keyword:finite automata" "keyword:push down automatas" "keyword:rational langages" "keyword:kleene" "category:Computer Science/Formal Languages Theory and Automata" "date:June-July 1993" ]
 authors: [ "Jean-Christophe Filliâtre <>" "Judicaël Courant <>" ]

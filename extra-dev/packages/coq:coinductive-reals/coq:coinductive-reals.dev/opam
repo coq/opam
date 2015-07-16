@@ -12,5 +12,5 @@ depends: [
   "coq" {>= "8.5"}
   "coq:qarith-stern-brocot"
 ]
-tags: [ "keyword:real numbers" "keyword:co inductive types" "keyword:co recursion" "keyword:exact arithmetic" "category:Mathematics/Arithmetic and Number Theory/Real numbers" "date:24 April 2007" ]
+tags: [ "keyword:real numbers" "keyword:coinductive types" "keyword:co recursion" "keyword:exact arithmetic" "category:Mathematics/Arithmetic and Number Theory/Real numbers" "date:24 April 2007" ]
 authors: [ "Milad Niqui <milad@cs.ru.nl>" ]

@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GC"]
 depends: [
   "coq" {>= "8.5"}
 ]
-tags: [ "keyword:linear temporal logic" "keyword:finite sets" "keyword:co induction" "keyword:garbage collection" "category:Computer Science/Semantics and Compilation/Compilation" "date:9 Mai 2003" ]
+tags: [ "keyword:linear temporal logic" "keyword:finite sets" "keyword:coinduction" "keyword:garbage collection" "category:Computer Science/Semantics and Compilation/Compilation" "date:9 Mai 2003" ]
 authors: [ "Solange Coupet-Grimal <>" "Catherine Nouvet <>" ]
