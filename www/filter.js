@@ -101,7 +101,6 @@ function removeDiacritics (str) {
     });
 }
 
-
 var data = [];
 
 function filter_init() {
@@ -154,7 +153,7 @@ function filter_init() {
      .replace(/Decision Procedures and Certified Algorithms/,'Algo')
      .replace(/Mathematics/,'Math'));
   }
-  
+
   categories = sort_unique(categories);
   var f_categories = document.getElementById('f-categories');
   for (var c in categories) {
@@ -167,6 +166,8 @@ function filter_init() {
     span.appendChild(popup('Remove','from','popup-remove',categories[c]));
     f_categories.appendChild(span);
   }
+  sort_children(f_categories); // sort again, to account for shortening
+
   keywords = sort_unique(keywords);
   var f_keywords = document.getElementById('f-keywords');
   for (var c in keywords) {
@@ -179,6 +180,7 @@ function filter_init() {
     span.appendChild(popup('Remove','from','popup-remove',keywords[c]));
     f_keywords.appendChild(span);
   }
+
   suites = sort_unique(suites);
   var f_suites = document.getElementById('f-suites');
   for (var c in suites) {
@@ -293,7 +295,7 @@ function update_filter() {
   }  
 }
 
-function sort_childs(o) {
+function sort_children(o) {
   var tmp = [];
   for (var i in o.childNodes) {
     var node = o.childNodes[i];
@@ -316,11 +318,11 @@ function move(span,origin,destination) {
   if (origin.contains(span) ){
     origin.removeChild(span);
     destination.appendChild(span);
-    sort_childs(destination);
+    sort_children(destination);
   } else {
     destination.removeChild(span);
     origin.appendChild(span);
-    sort_childs(origin);
+    sort_children(origin);
   }
   update_filter();
 }
