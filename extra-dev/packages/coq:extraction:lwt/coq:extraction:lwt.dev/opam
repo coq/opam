@@ -14,4 +14,5 @@ depends: [
   "coq" {>= "8.4pl4"}
   "coq:extraction:big-int"
   "coq:extraction:string"
+  "coq:extraction:lwt:ocaml"
 ]

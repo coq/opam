@@ -13,4 +13,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Extraction/String.vo"]
 depends: [
   "coq" {>= "8.4pl4"}
   "coq:list-string"
+  "coq:extraction:string:ocaml"
 ]
