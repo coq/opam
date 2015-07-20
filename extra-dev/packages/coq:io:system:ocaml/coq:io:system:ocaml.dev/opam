@@ -5,11 +5,12 @@ bug-reports: "https://github.com/clarus/io-system-ocaml/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
-  [make "-j%{jobs}%"]
-  [make "install"]
+  [make "-j%{jobs}%" "install"]
 ]
 remove: [make "uninstall"]
 depends: [
   "ocamlfind"
-  "lwt"
+  "coq:extraction:loop:ocaml"
+  "coq:extraction:lwt:ocaml"
+  "coq:extraction:sys:ocaml"
 ]
