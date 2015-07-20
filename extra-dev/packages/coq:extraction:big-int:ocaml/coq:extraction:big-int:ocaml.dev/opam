@@ -9,3 +9,6 @@ build: [
   [make "install"]
 ]
 remove: [make "uninstall"]
+depends: [
+  "ocamlfind"
+]
