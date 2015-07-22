@@ -10,8 +10,8 @@ build: [
   [make "install"]
 ]
 remove: [
-  "rm" "%{lib}%/coq/user-contrib/Extraction/BigInt.vo"
-  "sh" "-c" "rmdir %{lib}%/coq/user-contrib/Extraction; true"
+  ["rm" "%{lib}%/coq/user-contrib/Extraction/BigInt.vo"]
+  ["sh" "-c" "rmdir %{lib}%/coq/user-contrib/Extraction; true"]
 ]
 depends: [
   "coq" {>= "8.4pl4"}
