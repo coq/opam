@@ -9,7 +9,10 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Extraction/String.vo"]
+remove: [
+  "rm" "%{lib}%/coq/user-contrib/Extraction/String.vo"
+  "sh" "-c" "rmdir %{lib}%/coq/user-contrib/Extraction; true"
+]
 depends: [
   "coq" {>= "8.4pl4"}
   "coq:list-string"
