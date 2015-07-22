@@ -10,7 +10,6 @@ build: [
 remove: [make "uninstall"]
 depends: [
   "ocamlfind"
-  "coq:extraction:loop:ocaml"
   "coq:extraction:lwt:ocaml"
   "coq:extraction:sys:ocaml"
 ]
