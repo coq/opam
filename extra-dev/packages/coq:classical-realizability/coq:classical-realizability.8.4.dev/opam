@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ClassicalRealizability"]
 depends: [
-  "coq" {>= "8.4" & < "8.5"}
+  "coq" {>= "8.4" & < "8.5~beta1"}
 ]
 tags: [ "keyword:classical realizability" "keyword:krivine's realizability" "keyword:primitive datatype" "keyword:non determinism" "keyword:quote" "keyword:axiom of countable choice" "keyword:real numbers" "category:Mathematics/Logic/Foundations" ]
 authors: [ "Lionel Rieg <lionel.rieg@ens-lyon.org>" ]

@@ -10,7 +10,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/JProver"]
 depends: [
-  "coq" {>= "8.4" & < "8.5"}
+  "coq" {>= "8.4" & < "8.5~beta1"}
 ]
 tags: [ "keyword:decision procedure" "keyword:first order logic" "keyword:intuitionistic logic" "keyword:theorem proving" "keyword:proof search" "category:Miscellaneous/Coq Extensions" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:April 2002 (contribution since January 2009)" ]
 authors: [ "Huang Guan-Shieng <>" ]

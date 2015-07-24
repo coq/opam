@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Streams"]
 depends: [
-  "coq" {>= "8.4" & < "8.5"}
+  "coq" {>= "8.4" & < "8.5~beta1"}
 ]
 tags: [ "keyword:streams" "keyword:eratosthene sieve" "keyword:prime numbers" "keyword:number theory" "keyword:primality" "category:Mathematics/Arithmetic and Number Theory/Number theory" ]
 authors: [ "François Leclerc <>" "Christine Paulin-Mohring <>" ]

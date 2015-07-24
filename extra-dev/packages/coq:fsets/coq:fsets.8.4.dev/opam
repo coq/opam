@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FSets"]
 depends: [
-  "coq" {>= "8.4" & < "8.5"}
+  "coq" {>= "8.4" & < "8.5~beta1"}
 ]
 tags: [ "keyword:finite sets" "keyword:sorted lists" "keyword:balanced trees" "keyword:red black trees" "keyword:avl" "keyword:functors" "keyword:data structures" "category:Computer Science/Data Types and Data Structures" "category:Miscellaneous/Extracted Programs/Data structures" ]
 authors: [ "Jean-Christophe Filliâtre <>" "Pierre Letouzey <>" ]

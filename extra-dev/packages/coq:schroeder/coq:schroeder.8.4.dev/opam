@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Schroeder"]
 depends: [
-  "coq" {>= "8.4" & < "8.5"}
+  "coq" {>= "8.4" & < "8.5~beta1"}
 ]
 tags: [ "keyword:schroeder bernstein" "keyword:set theory" "category:Mathematics/Logic/Set theory" ]
 authors: [ "Hugo Herbelin <>" ]

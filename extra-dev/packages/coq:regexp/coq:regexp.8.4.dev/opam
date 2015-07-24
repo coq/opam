@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RegExp"]
 depends: [
-  "coq" {>= "8.4" & < "8.5"}
+  "coq" {>= "8.4" & < "8.5~beta1"}
 ]
 tags: [ "keyword:regular expressions" "keyword:kleene algebra" "category:Computer Science/Formal Languages Theory and Automata" ]
 authors: [ "Takashi Miyamoto <tmiya@bu.iij4u.or.jp>" ]

@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coqoban"]
 depends: [
-  "coq" {>= "8.4" & < "8.5"}
+  "coq" {>= "8.4" & < "8.5~beta1"}
 ]
 tags: [ "keyword:sokoban" "keyword:puzzles" "category:Miscellaneous/Logical Puzzles and Entertainment" "date:19 september 2003" ]
 authors: [ "Jasper Stein <>" ]
