@@ -5,7 +5,6 @@ bug-reports: "https://github.com/clarus/coq-list-string/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
-  ["ruby" "pp.rb"]
   ["./configure.sh"]
   [make "-j%{jobs}%"]
   [make "install"]
@@ -15,4 +14,5 @@ depends: [
   "coq" {>= "8.4pl4"}
   "coq:error-handlers"
   "coq:list-plus"
+  "coq:cunit"
 ]
