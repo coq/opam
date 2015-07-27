@@ -1,0 +1,19 @@
+opam-version: "1.1" 
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/coq-of-ocaml"
+bug-reports: "https://github.com/clarus/coq-of-ocaml/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["sh" "-c" "cd CoqOfOCaml && ./configure.sh"]
+  ["sh" "-c" "cd CoqOfOCaml && make -j%{jobs}%"]
+  ["sh" "-c" "cd CoqOfOCaml && make install"]
+  [make "-j%{jobs}%"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoqOfOCaml"]
+depends: [
+  "coq"
+  "yojson"
+  "smart-print"
+]
+ocaml-version: [>= "4.02.0"]
