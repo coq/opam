@@ -12,7 +12,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoqOfOCaml"]
 depends: [
-  "coq"
+  "coq" {>= "8.4.5"}
   "yojson"
   "smart-print"
 ]
