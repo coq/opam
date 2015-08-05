@@ -25,7 +25,6 @@ run: all
 	@echo "It is accessible at: http://localhost:8000"
 	@cd www && python -m SimpleHTTPServer 8000
 
-
 check-deps: \
 	which-opam which-lua5.1 pkg-lua-filesystem opam-config which-markdown
 

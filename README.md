@@ -51,7 +51,7 @@ In particular we use the `tags` field of the `opam` file as follows:
  2. strings beginning with `category:` are considered as `categories`
  3. a string beginning with `date:` is the date the software was last updated
     (not the package)
- 
+
 Example:
 
     tags: [ "keyword:cool" "keyword:stuff" "category:Some/Category" "date:1/1/1970" ]

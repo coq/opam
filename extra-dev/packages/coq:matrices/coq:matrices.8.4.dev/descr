@@ -1,7 +1,5 @@
 Ring properties for square matrices .
 
-
-
 This contribution contains an operational formalization of square matrices.
 (m,n)-Matrices are represented as vectors of length n. Each vector
 (a row) is itself a vector whose length is m.

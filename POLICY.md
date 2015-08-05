@@ -27,7 +27,7 @@ tool.
 
 The repository contains package for development versions of Coq.  Typically
 .dev packages for Coq branches.  The repository is self contained.  The
-repository is intended to be used by developers only. 
+repository is intended to be used by developers only.
 
 ### extra-dev
 
@@ -35,7 +35,7 @@ The repository contains packages for development versions of external
 contributions to Coq.  Typically .dev packages following the branches of the
 extension.  The repository is not self contained, i.e. a package may depend on
 a development version of Coq part of the `core-dev` repository.  The repository
-is intended to be used by developers only. 
+is intended to be used by developers only.
 
 ## 2. Policy for stable-$VERSION
 
@@ -48,7 +48,7 @@ The repository shall contain software that works with Coq $VERSION and that
 won't break for the whole lifetime of Coq $VERSION.  Coq extensions packages
 are maintained by their corresponding authors or by the Coq team.  Updates are
 accepted only if they don't break anything (like for Coq patch level releases)
-or if a transition strategy is provided (more on that in section 2.3).  
+or if a transition strategy is provided (more on that in section 2.3).
 The repository is intended to be used by users preferring stability to bleeding
 edge and users not familiar with the OPAM tool.
 

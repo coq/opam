@@ -1,6 +1,5 @@
 Intuitionistic Propositional Checker.
 
-
 This development treats proof search in intuitionistic propositional logic,
 a fragment of any constructive type theory. We present new and more
 efficient decision procedures for intuitionistic propositional

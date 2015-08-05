@@ -16,4 +16,3 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Mtac"]
 depends: [
   "coq" {>= "8.5"}
 ]
-

@@ -1,6 +1,5 @@
 Icharate: A logical Toolkit for Multimodal Categorial Grammars.
 
-
 The logical toolkit ICHARATE is built upon a formalization of
 multimodal categorial grammars in Coq proof assistant.
 This toolkit aims at facilitating the study of these

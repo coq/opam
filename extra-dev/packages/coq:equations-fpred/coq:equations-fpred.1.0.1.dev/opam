@@ -1,4 +1,4 @@
-opam-version: "1.2" 
+opam-version: "1.2"
 author: ["Matthieu Sozeau <matthieu.sozeau@inria.fr>" "Cyprien Mangin <cyprien.mangin@m4x.org>"]
 bug-reports: "mailto:matthieu.sozeau@inria.fr"
 maintainer: "matthieu.sozeau@inria.fr"

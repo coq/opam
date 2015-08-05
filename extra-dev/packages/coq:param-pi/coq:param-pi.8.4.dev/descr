@@ -1,6 +1,5 @@
 Coding of a typed monadic pi-calculus using parameters for free names.
 
-
 This development contains the specification for a monadic
 pi-calculus using the same coding method for names than
 J. Mc Kinna and R. Pollack used for PTS in LEGO:

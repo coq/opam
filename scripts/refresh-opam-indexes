@@ -25,5 +25,4 @@ for repo in $@; do
 		fi
 	fi
 	cd ..
-done	
-
+done

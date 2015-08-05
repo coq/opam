@@ -96,8 +96,8 @@ for (var i=0; i < defaultDiacriticsRemovalap.length; i++){
 }
 
 function removeDiacritics (str) {
-    return str.replace(/[^\u0000-\u007E]/g, function(a){ 
-       return diacriticsMap[a] || a; 
+    return str.replace(/[^\u0000-\u007E]/g, function(a){
+       return diacriticsMap[a] || a;
     });
 }
 
@@ -107,25 +107,25 @@ function filter_init() {
   var data_root = document.getElementById('data');
 
   var categories_elems = data_root.getElementsByClassName('category');
-  var categories = []; 
+  var categories = [];
   for (var e in categories_elems) {
     if (categories_elems[e].innerHTML !== undefined)
     categories.push(categories_elems[e].innerHTML);
   }
   var keywords_elems = data_root.getElementsByClassName('keyword');
-  var keywords = []; 
+  var keywords = [];
   for (var e in keywords_elems) {
     if (keywords_elems[e].innerHTML !== undefined)
       keywords.push(keywords_elems[e].innerHTML);
   }
   var suites_elems = data_root.getElementsByClassName('suite');
-  var suites = []; 
+  var suites = [];
   for (var e in suites_elems) {
     if (suites_elems[e].innerHTML !== undefined)
       suites.push(suites_elems[e].innerHTML);
   }
   var f_selected = document.getElementById('f-selected');
-  
+
   function popup(action,prep,style,txt) {
     var popup = document.createElement('div');
     popup.appendChild(document.createTextNode(action + ' '));
@@ -211,13 +211,13 @@ function update_filter() {
   function array_exists(a,p) {
     var b = false;
     for (var i = 0; i < a.length && !b; i++) {
-      b = p(a[i]); 
+      b = p(a[i]);
     }
     return b;
   }
 
   function any_field(node,re) {
-    return (re.test(node.querySelector('.package .description').innerHTML) || 
+    return (re.test(node.querySelector('.package .description').innerHTML) ||
 	    re.test(node.querySelector('.package .name').innerHTML) ||
             array_exists(node.querySelectorAll('.package .category'),
 		    function(c) { return re.test(c.innerHTML) }) ||
@@ -292,7 +292,7 @@ function update_filter() {
     if (filter(data[i])) {
       data_root.appendChild(data[i]);
     }
-  }  
+  }
 }
 
 function sort_children(o) {

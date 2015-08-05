@@ -14,4 +14,3 @@ end
 if #authors > 0 then
   print(string.format("authors: [ %s ]",table.concat(authors,' ')))
 end
-

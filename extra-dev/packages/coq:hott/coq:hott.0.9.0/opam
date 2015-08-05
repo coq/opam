@@ -17,5 +17,5 @@ depends: [
 (*  Due to limitations in coq_Makefile, we need to build the whole coq, the stdlib and HoTT/HoTT at the same time.
     We hope for a better solution in the future.
     https://github.com/HoTT/HoTT/blob/master/INSTALL.txt *)
-   "coq" {= "hott" | >= "8.5"} 
+   "coq" {= "hott" | >= "8.5"}
 ]

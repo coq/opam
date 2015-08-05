@@ -1,6 +1,5 @@
 The Theorem of Schroeder-Bernstein.
 
-
 Fraenkel's proof of Schroeder-Bernstein theorem on decidable sets
 is formalized in a constructive variant of set theory based on
 stratified universes (the one defined in the Ensemble library).
