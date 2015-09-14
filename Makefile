@@ -1,5 +1,5 @@
 COQWEB=~/COQ/www/
-SUITES= core-dev  extra-dev  released  stable-8.4  stable-8.5
+SUITES= core-dev  extra-dev  released  stable-8.5
 
 pp = cd $(COQWEB); yamlpp-0.3/yamlpp $(abspath $(1)) -o $(abspath $(2))
 
@@ -26,7 +26,7 @@ run: all
 	@cd www && python -m SimpleHTTPServer 8000
 
 check-deps: \
-	which-opam which-lua5.1 pkg-lua-filesystem opam-config which-markdown
+	which-opam which-lua5.1 opam-config which-markdown
 
 which-%:
 	@which $* > /dev/null || (echo "Please install $*"; false)
