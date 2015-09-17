@@ -1,1 +1,2 @@
-git: "git://github.com/coq/coq#V8.5beta2"
+http: "https://github.com/coq/coq/archive/V8.5beta2.tar.gz"
+checksum: "be8258862e60dfddb5030574d546d6bd"
