@@ -17,5 +17,6 @@ build: [
   [make "install"]
 ]
 depends: [
+  "ocamlfind"
   "camlp5"
 ]
