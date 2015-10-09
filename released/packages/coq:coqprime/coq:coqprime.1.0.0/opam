@@ -1,0 +1,17 @@
+opam-version: "1.1"
+maintainer: ""
+homepage: "http://coqprime.gforge.inria.fr/"
+bug-reports: "http://coqprime.gforge.inria.fr/"
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coqprime"]
+depends: [
+  "coq" {>= "8.5~"}
+]
+
+
+
