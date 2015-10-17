@@ -3,8 +3,9 @@ maintainer: "dev@clarus.me"
 homepage: "http://compcert.inria.fr/"
 license: "INRIA Non-Commercial License Agreement"
 build: [
-  ["./configure" "ia32-linux"]
+  ["./configure" "ia32-linux" "-bindir" "%{bin}%" "-libdir" "%{lib}%/compcert"]
   [make "-j%{jobs}%"]
+  [make "install"]
 ]
 depends: [
   "coq" {>= "8.4pl4" & < "8.5~"}
