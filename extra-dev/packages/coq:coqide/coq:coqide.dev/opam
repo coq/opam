@@ -13,4 +13,5 @@ depends: [
   "camlp5"
   "coq" {= "dev"}
   "lablgtk"
+  "conf-gtksourceview"
 ]
