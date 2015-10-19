@@ -26,7 +26,10 @@ run: all
 	@cd www && python -m SimpleHTTPServer 8000
 
 check-deps: \
-	which-opam which-lua5.1 opam-config which-markdown
+	which-opam which-lua5.1 opam-config which-markdown yamlpp
+
+yamlpp:
+	cd $(COQWEB); make yamlpp-0.3/yamlpp
 
 which-%:
 	@which $* > /dev/null || (echo "Please install $*"; false)
