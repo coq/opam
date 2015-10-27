@@ -1,4 +1,4 @@
-opam-version: "1.1" 
+opam-version: "1.1"
 maintainer: "dev@clarus.me"
 homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/sum-of-two-square.git;a=tree"
 license: "LGPL 2"
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SumOfTwoSquare"]
 depends: [
-  "coq" {>= "8.4" & < "8.5"}
+  "coq" {>= "8.4" & < "8.5~beta1"}
 ]
 tags: [ "keyword:number theory" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:13/12/2004" ]
-authors: [ "Laurent Thery <>" ]
+authors: [ "Laurent Théry <>" ]

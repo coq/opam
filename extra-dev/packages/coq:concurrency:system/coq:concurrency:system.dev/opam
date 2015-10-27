@@ -1,11 +1,10 @@
-opam-version: "1.1" 
+opam-version: "1.1"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-concurrency/system"
 bug-reports: "https://github.com/coq-concurrency/system/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
-  ["ruby" "pp.rb"]
   ["./configure.sh"]
   [make "-j%{jobs}%"]
   [make "install"]

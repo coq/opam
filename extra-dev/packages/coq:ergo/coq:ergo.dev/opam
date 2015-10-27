@@ -14,5 +14,5 @@ depends: [
   "coq:counting"
   "coq:nfix"
 ]
-tags: [ "keyword:reflexive decision procedure" "keyword:satisfiability modulo theories" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
+tags: [ "keyword:reflexive tactic" "keyword:decision procedure" "keyword:satisfiability modulo theories" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
 authors: [ "Stéphane Lescuyer <>" ]

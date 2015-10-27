@@ -1,4 +1,4 @@
-opam-version: "1.0" 
+opam-version: "1.0"
 maintainer: "frederic.blanqui@inria.fr"
 homepage: "http://color.inria.fr/"
 license: "CeCILL"
@@ -8,5 +8,5 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
 depends: [
-  "coq" {>= "8.4pl2" & < "8.5"}
+  "coq" {>= "8.4pl2" & < "8.5~beta1"}
 ]

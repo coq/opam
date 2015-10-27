@@ -1,4 +1,4 @@
-opam-version: "1.1" 
+opam-version: "1.1"
 maintainer: "dev@clarus.me"
 homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/atbr.git;a=tree"
 license: "LGPL"
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ATBR"]
 depends: [
-  "coq" {>= "8.4" & < "8.5"}
+  "coq" {>= "8.4" & < "8.5~beta1"}
 ]
-tags: [ "keyword:kleene algebra" "keyword:finite automata" "keyword:semiring" "keyword:matrices" "keyword:decision procedures" "keyword:reflexive tactic" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:June 2009" ]
+tags: [ "keyword:kleene algebra" "keyword:finite automata" "keyword:semiring" "keyword:matrices" "keyword:decision procedure" "keyword:reflexive tactic" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:June 2009" ]
 authors: [ "Damien Pous <damien.pous@inria.fr>" "Thomas Braibant <thomas.braibant@gmail.com>" ]

@@ -12,10 +12,9 @@ import tarfile
 import pickle
 import simplejson as json
 
-
-# 
+#
 # Parsing description files
-# 
+#
 
 # The keys occurring in description files
 NAMEKEY='Name'
@@ -94,9 +93,9 @@ def parse_description(dir):
       elif key in [INSTKEY, EMAILKEY, HOMEPAGEKEY, ADDRESSKEY]:
         # One INSTKEY may reports to many authors
         for a in last_authors:
-          if not res[AUTHORKEY][a].has_key(key): 
+          if not res[AUTHORKEY][a].has_key(key):
             res[AUTHORKEY][a][key] = rem
-            if key != INSTKEY: 
+            if key != INSTKEY:
               break
       elif key == URLKEY:
         # Check if rem if a valid url
@@ -110,7 +109,7 @@ def parse_description(dir):
 
       last_key = key
     else:
-      # This is a continuation line, appends it to the last key 
+      # This is a continuation line, appends it to the last key
       if last_key != "":
         if last_key in [KWKEY, CATKEY, REQUIREKEY]:
           # rem may be a list of strings
@@ -132,7 +131,7 @@ def parse_description(dir):
 
   fdesc.close()
   return res
-  
+
 def descr_to_json(d):
     x = parse_description(d)
     print(json.dumps(x))

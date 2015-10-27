@@ -1,7 +1,6 @@
 A survey of semantics styles, from natural semantics through structural operational, axiomatic, and denotational semantics, to.
 abstract interpretation.
 
-
 This is a survey of programming language semantics styles
 for a miniature example of a programming language, with their encoding
 in Coq, the proofs of equivalence of different styles, and the proof

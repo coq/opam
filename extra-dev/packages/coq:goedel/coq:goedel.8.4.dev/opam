@@ -1,4 +1,4 @@
-opam-version: "1.1" 
+opam-version: "1.1"
 maintainer: "dev@clarus.me"
 homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/goedel.git;a=tree"
 license: "Proprietary"
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Goedel"]
 depends: [
-  "coq" {>= "8.4" & < "8.5"}
+  "coq" {>= "8.4" & < "8.5~beta1"}
   "coq:pocklington" {= "8.4.dev"}
 ]
 tags: [ "keyword:goedel" "keyword:rosser" "keyword:incompleteness" "keyword:logic" "keyword:hilbert" "category:Mathematics/Logic/Foundations" "date:2007-04-13" ]

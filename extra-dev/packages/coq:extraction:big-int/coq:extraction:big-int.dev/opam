@@ -1,0 +1,19 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/coq-extraction-big-int"
+bug-reports: "https://github.com/clarus/coq-extraction-big-int/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: [
+  ["rm" "%{lib}%/coq/user-contrib/Extraction/BigInt.vo"]
+  ["sh" "-c" "rmdir %{lib}%/coq/user-contrib/Extraction; true"]
+]
+depends: [
+  "coq" {>= "8.4pl4"}
+  "coq:extraction:big-int:ocaml"
+]

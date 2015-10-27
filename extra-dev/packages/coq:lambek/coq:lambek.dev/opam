@@ -1,4 +1,4 @@
-opam-version: "1.1" 
+opam-version: "1.1"
 maintainer: "dev@clarus.me"
 homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/lambek.git;a=tree"
 license: "LGPL 2"
@@ -12,4 +12,4 @@ depends: [
   "coq" {>= "8.5"}
 ]
 tags: [ "keyword:computational linguistic" "keyword:categorial grammar" "keyword:lambek calculus" "category:Computer Science/Formal Languages Theory and Automata" "date:March-July 2003" ]
-authors: [ "Houda Anoun <anoun@labri.fr> <>" "Pierre Castéran <casteran@labri.fr> <>" ]
+authors: [ "Houda Anoun <anoun@labri.fr>" "Pierre Castéran <casteran@labri.fr>" ]

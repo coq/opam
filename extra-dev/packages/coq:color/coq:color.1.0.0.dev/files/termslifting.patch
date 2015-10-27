@@ -6,5 +6,5 @@
      exists t; try_solve.
 -    inversion H; trivial.
    Qed.
- 
+
    Lemma app_lift_app_aux : forall M (Mapp: isApp M) n k,

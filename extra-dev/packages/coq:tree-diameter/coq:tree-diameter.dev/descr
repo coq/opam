@@ -1,6 +1,5 @@
 Diameter of a binary tree.
 
-
 This contribution contains the verification of a divide-and-conquer
 algorithm to compute the diameter of a binary tree (the
 maxmimal distance between two nodes in the tree).

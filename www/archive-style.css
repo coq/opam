@@ -8,11 +8,11 @@
 
  #packages .frameworkcontent table {
    padding: 2px;
-   border-spacing: 10px; 
+   border-spacing: 10px;
  }
 
  .categories {
-  font-size: small; 
+  font-size: small;
  }
  .author:not(:last-child):after {
    content: ", ";
@@ -55,7 +55,7 @@
  .suite-selector:hover {
    cursor: grab;
  }
-   
+
  .keyword, .keyword-selector {
    font-size: x-small;
    border-radius: 4px;
@@ -65,7 +65,7 @@
    margin: 2px;
    text-indent: 0px;
    line-height: 1.5em;
-  
+
  }
  .keyword {
    display: inline-block;
@@ -157,4 +157,3 @@
  #content {
    width: auto;
  }
-

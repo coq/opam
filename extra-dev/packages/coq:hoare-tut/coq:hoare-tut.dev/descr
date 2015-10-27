@@ -1,6 +1,5 @@
 A Tutorial on Reflecting in Coq the generation of Hoare proof obligations.
 
-
 This work is both an introduction to Hoare logic and a demo
 illustrating Coq nice features. It formalizes the generation of PO
 (proof obligations) in a Hoare logic for a very basic imperative

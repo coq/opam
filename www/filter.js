@@ -96,11 +96,10 @@ for (var i=0; i < defaultDiacriticsRemovalap.length; i++){
 }
 
 function removeDiacritics (str) {
-    return str.replace(/[^\u0000-\u007E]/g, function(a){ 
-       return diacriticsMap[a] || a; 
+    return str.replace(/[^\u0000-\u007E]/g, function(a){
+       return diacriticsMap[a] || a;
     });
 }
-
 
 var data = [];
 
@@ -108,25 +107,25 @@ function filter_init() {
   var data_root = document.getElementById('data');
 
   var categories_elems = data_root.getElementsByClassName('category');
-  var categories = []; 
+  var categories = [];
   for (var e in categories_elems) {
     if (categories_elems[e].innerHTML !== undefined)
     categories.push(categories_elems[e].innerHTML);
   }
   var keywords_elems = data_root.getElementsByClassName('keyword');
-  var keywords = []; 
+  var keywords = [];
   for (var e in keywords_elems) {
     if (keywords_elems[e].innerHTML !== undefined)
       keywords.push(keywords_elems[e].innerHTML);
   }
   var suites_elems = data_root.getElementsByClassName('suite');
-  var suites = []; 
+  var suites = [];
   for (var e in suites_elems) {
     if (suites_elems[e].innerHTML !== undefined)
       suites.push(suites_elems[e].innerHTML);
   }
   var f_selected = document.getElementById('f-selected');
-  
+
   function popup(action,prep,style,txt) {
     var popup = document.createElement('div');
     popup.appendChild(document.createTextNode(action + ' '));
@@ -154,7 +153,7 @@ function filter_init() {
      .replace(/Decision Procedures and Certified Algorithms/,'Algo')
      .replace(/Mathematics/,'Math'));
   }
-  
+
   categories = sort_unique(categories);
   var f_categories = document.getElementById('f-categories');
   for (var c in categories) {
@@ -167,6 +166,8 @@ function filter_init() {
     span.appendChild(popup('Remove','from','popup-remove',categories[c]));
     f_categories.appendChild(span);
   }
+  sort_children(f_categories); // sort again, to account for shortening
+
   keywords = sort_unique(keywords);
   var f_keywords = document.getElementById('f-keywords');
   for (var c in keywords) {
@@ -179,6 +180,7 @@ function filter_init() {
     span.appendChild(popup('Remove','from','popup-remove',keywords[c]));
     f_keywords.appendChild(span);
   }
+
   suites = sort_unique(suites);
   var f_suites = document.getElementById('f-suites');
   for (var c in suites) {
@@ -209,13 +211,13 @@ function update_filter() {
   function array_exists(a,p) {
     var b = false;
     for (var i = 0; i < a.length && !b; i++) {
-      b = p(a[i]); 
+      b = p(a[i]);
     }
     return b;
   }
 
   function any_field(node,re) {
-    return (re.test(node.querySelector('.package .description').innerHTML) || 
+    return (re.test(node.querySelector('.package .description').innerHTML) ||
 	    re.test(node.querySelector('.package .name').innerHTML) ||
             array_exists(node.querySelectorAll('.package .category'),
 		    function(c) { return re.test(c.innerHTML) }) ||
@@ -290,10 +292,10 @@ function update_filter() {
     if (filter(data[i])) {
       data_root.appendChild(data[i]);
     }
-  }  
+  }
 }
 
-function sort_childs(o) {
+function sort_children(o) {
   var tmp = [];
   for (var i in o.childNodes) {
     var node = o.childNodes[i];
@@ -316,11 +318,11 @@ function move(span,origin,destination) {
   if (origin.contains(span) ){
     origin.removeChild(span);
     destination.appendChild(span);
-    sort_childs(destination);
+    sort_children(destination);
   } else {
     destination.removeChild(span);
     origin.appendChild(span);
-    sort_childs(origin);
+    sort_children(origin);
   }
   update_filter();
 }

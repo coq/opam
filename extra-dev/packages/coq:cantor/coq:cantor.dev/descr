@@ -1,6 +1,5 @@
 On Ordinal Notations .
 
-
 This contribution contains data structures for ordinals
 less than Gamma0 under Cantor and Veblen normal
 forms. Well-foundedness is established thanks to RPO with status for

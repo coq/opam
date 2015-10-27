@@ -1,4 +1,4 @@
-opam-version: "1.1" 
+opam-version: "1.1"
 maintainer: "dev@clarus.me"
 homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/prfx.git;a=tree"
 license: "Proprietary"
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Prfx"]
 depends: [
-  "coq" {>= "8.4" & < "8.5"}
+  "coq" {>= "8.4" & < "8.5~beta1"}
 ]
 tags: [ "keyword:first order logic" "keyword:natural deduction" "keyword:reflection" "keyword:proof terms" "keyword:de bruijn indices" "keyword:permutative conversions" "category:Mathematics/Logic/Foundations" "date:April 15, 2005" ]
 authors: [ "Dimitri Hendriks <hendriks@cs.ru.nl>" ]

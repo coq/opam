@@ -20,18 +20,18 @@ index f13a3d1..9e83d0a 100644
 +      match s.[!p] with
 +      | '\000'..'\127' -> nc := 0 (* ascii char *)
 +      | '\128'..'\191' -> nc := 0 (* cannot start with a continuation byte *)
-+      |	'\192'..'\223' -> nc := 1 (* expect 1 continuation byte *)
-+      |	'\224'..'\239' -> nc := 2 (* expect 2 continuation bytes *)
-+      |	'\240'..'\247' -> nc := 3 (* expect 3 continuation bytes *)
-+      |	'\248'..'\251' -> nc := 4 (* expect 4 continuation bytes *)
-+      |	'\252'..'\253' -> nc := 5 (* expect 5 continuation bytes *)
-+      |	'\254'..'\255' -> nc := 0 (* invalid byte *)
++      |  '\192'..'\223' -> nc := 1 (* expect 1 continuation byte *)
++      |  '\224'..'\239' -> nc := 2 (* expect 2 continuation bytes *)
++      |  '\240'..'\247' -> nc := 3 (* expect 3 continuation bytes *)
++      |  '\248'..'\251' -> nc := 4 (* expect 4 continuation bytes *)
++      |  '\252'..'\253' -> nc := 5 (* expect 5 continuation bytes *)
++      |  '\254'..'\255' -> nc := 0 (* invalid byte *)
 +    end ;
 +    incr p ;
 +    while !p < len_b && !nc > 0 do
 +      match s.[!p] with
-+      |	'\128'..'\191' (* next continuation byte *) -> incr p ; decr nc
-+      |	_ (* not a continuation byte *) -> nc := 0
++      |  '\128'..'\191' (* next continuation byte *) -> incr p ; decr nc
++      |  _ (* not a continuation byte *) -> nc := 0
 +    done ;
 +    incr cnt
 +  done ;
@@ -88,7 +88,7 @@ index 0000000..9e5797b
 +  if add_total then e.total <- e.total +. total;
 +  e.local <- e.local +. local;
 +  e.ncalls <- e.ncalls + ncalls;
-+  if add_total then e.max_total <- max e.max_total max_total				       
++  if add_total then e.max_total <- max e.max_total max_total              
 +
 +type treenode = {entry : entry; children : (string, treenode) Hashtbl.t}
 +let stack = ref [{entry=empty_entry(); children=Hashtbl.create 20}]
@@ -134,34 +134,34 @@ index 0000000..9e5797b
 +       | Proof_type.LtacNameCall cst -> Pptactic.pr_ltac_constant cst
 +       | Proof_type.LtacVarCall (id,t) -> Nameops.pr_id id
 +       | Proof_type.LtacAtomCall (te,otac) ->
-+	 (Pptactic.pr_glob_tactic (Global.env())
-+	    (Tacexpr.TacAtom (dummy_loc,te)))
++  (Pptactic.pr_glob_tactic (Global.env())
++     (Tacexpr.TacAtom (dummy_loc,te)))
 +       | Proof_type.LtacConstrInterp (c,(vars,unboundvars)) -> 
-+	 pr_glob_constr_env (Global.env()) c
++  pr_glob_constr_env (Global.env()) c
 +    ) in
 +  for i = 0 to String.length s - 1 do if s.[i] = '\n' then s.[i] <- ' ' done;
 +  let s = try String.sub s 0 (Util.string_index_from s 0 "(*") with Not_found -> s in
 +  Util.strip s
-+	    
++     
 +let do_profile s call_trace f =
 +  if !is_profiling && is_new_call() then
 +    match call_trace with
 +      | (_, _, c) :: _ ->
-+	let s = string_of_call c in
-+	let parent = List.hd !stack in
-+	let node, add_total = try Hashtbl.find on_stack s, false
-+			      with Not_found -> 
-+				   let node = get_node s parent.children in
-+				   Hashtbl.add on_stack s node;
-+				   node, true
-+	in
-+	if not add_total && node = List.hd !stack then f() else (
-+	  stack := node :: !stack;
-+	  let start_time = time() in
-+	  try_finalize f (fun()->
-+			  exit_tactic start_time s add_total
-+			 )
-+	)
++ let s = string_of_call c in
++ let parent = List.hd !stack in
++ let node, add_total = try Hashtbl.find on_stack s, false
++           with Not_found -> 
++          let node = get_node s parent.children in
++          Hashtbl.add on_stack s node;
++          node, true
++ in
++ if not add_total && node = List.hd !stack then f() else (
++   stack := node :: !stack;
++   let start_time = time() in
++   try_finalize f (fun()->
++       exit_tactic start_time s add_total
++      )
++ )
 +      | [] -> f()
 +  else f()
 +
@@ -198,7 +198,7 @@ index 0000000..9e5797b
 +
 +and print_table all_total indent first_level table =
 +  let ls = Hashtbl.fold 
-+	     (fun s n l -> if n.entry.total /. all_total < 0.02 then l else (s, n) :: l) 
++      (fun s n l -> if n.entry.total /. all_total < 0.02 then l else (s, n) :: l) 
 +      table [] in
 +  match ls with
 +  | [(s,n)]  when (not first_level) ->    
@@ -207,10 +207,10 @@ index 0000000..9e5797b
 +     let ls = List.sort (fun (_, n1) (_, n2) -> compare n2.entry.total n1.entry.total) ls in
 +     list_iter_is_last
 +       (fun is_last ->
-+	print_node
-+	  all_total
-+	  (indent^if first_level then "" else if is_last then "  " else " │")
-+	  (indent^if first_level then "─" else if is_last then " └─" else " ├─")
++ print_node
++   all_total
++   (indent^if first_level then "" else if is_last then "  " else " │")
++   (indent^if first_level then "─" else if is_last then " └─" else " ├─")
 +       )
 +       ls
 +
@@ -221,9 +221,9 @@ index 0000000..9e5797b
 +  let rec cumulate table =
 +    Hashtbl.iter 
 +      (fun s node ->
-+	let node' = get_node s global in
-+	add_entry node'.entry true node.entry;
-+	cumulate node.children
++ let node' = get_node s global in
++ add_entry node'.entry true node.entry;
++ cumulate node.children
 +      )
 +      table
 +  in
@@ -262,7 +262,7 @@ index 0000000..9e5797b
 +   msgnl(h 0(
 +      str"total time:           "++padl 11 (format_sec(all_total))
 +    )
-+	);
++ );
 +   msgnl(h 0(
 +      str"time spent in tactic: "++padl 11 (format_sec(tactic_total))
 +    )
@@ -270,7 +270,7 @@ index 0000000..9e5797b
 +  msgnl(str"");
 +  header();
 +  print_table tactic_total "" true table_tactic
-+	      
++       
 +let reset_profile() = stack := [{entry=empty_entry(); children=Hashtbl.create 20}]
 diff --git a/tactics/profile_ltac.mli b/tactics/profile_ltac.mli
 new file mode 100644
@@ -287,7 +287,7 @@ index 0000000..0455e51
 +val print_results : unit -> unit
 +
 +val print_results_tactic : string -> unit
-+			      
++           
 +val reset_profile : unit -> unit
 diff --git a/tactics/profile_ltac_tactics.ml b/tactics/profile_ltac_tactics.ml
 new file mode 100644
@@ -350,13 +350,13 @@ index 9572277..f189dab 100644
  let propagate_trace ist loc id = function
    | VFun (_,lfun,it,b) ->
 @@ -1793,7 +1793,9 @@ and eval_tactic ist = function
- 	  catch_error (push_trace(dloc,call)ist.trace)
- 	    (interp_atomic ist gl) t	in
- 	(* catch error in the evaluation *)
--	catch_error (push_trace(loc,call)ist.trace) tac gl
-+	let trace = push_trace(loc,call)ist.trace in
-+	Profile_ltac.do_profile "eval_tactic:2" trace (fun()->
-+	  catch_error trace tac gl)
+    catch_error (push_trace(dloc,call)ist.trace)
+      (interp_atomic ist gl) t  in
+  (* catch error in the evaluation *)
+- catch_error (push_trace(loc,call)ist.trace) tac gl
++ let trace = push_trace(loc,call)ist.trace in
++ Profile_ltac.do_profile "eval_tactic:2" trace (fun()->
++   catch_error trace tac gl)
    | TacFun _ | TacLetIn _ -> assert false
    | TacMatchGoal _ | TacMatch _ -> assert false
    | TacId s -> fun gl ->
@@ -372,9 +372,9 @@ index 9572277..f189dab 100644
 @@ -1962,7 +1964,7 @@ and eval_with_fail ist is_lazy goal tac =
      (match v with
      | VFun (trace,lfun,[],t) when not is_lazy ->
- 	let tac = eval_tactic {ist with lfun=lfun; trace=trace} t in
--	VRTactic (catch_error trace tac { goal with sigma=sigma })
-+	VRTactic (Profile_ltac.do_profile "eval_with_fail" trace (fun() -> catch_error trace tac { goal with sigma=sigma }))
+  let tac = eval_tactic {ist with lfun=lfun; trace=trace} t in
+- VRTactic (catch_error trace tac { goal with sigma=sigma })
++ VRTactic (Profile_ltac.do_profile "eval_with_fail" trace (fun() -> catch_error trace tac { goal with sigma=sigma }))
      | a -> a)
    with
      | FailError (0,s) | Loc.Exc_located(_, FailError (0,s))
