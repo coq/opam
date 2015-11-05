@@ -1,5 +1,7 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
+homepage: "http://i.imgur.com/fQpmoXE.jpg"
+license: "NA"
 depends: [
-  "coq" {>= "8.4~" & < "8.5~" & != "8.4.6~camlp4"}
+  "coq" {>= "8.4~" & < "8.5~"}
 ]
