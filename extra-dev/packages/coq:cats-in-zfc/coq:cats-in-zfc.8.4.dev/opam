@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CatsInZFC"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~beta1"}
+  "coq" {>= "8.4" & < "8.5~"}
 ]
 tags: [ "keyword:set theory" "keyword:ordinals" "keyword:cardinals" "keyword:category theory" "keyword:functors" "keyword:natural transformation" "keyword:limit" "keyword:colimit" "category:Mathematics/Logic/Set theory" "category:Mathematics/Category Theory" "date:October 10th 2004" ]
 authors: [ "Carlos Simpson <carlos@math.unice.fr>" ]

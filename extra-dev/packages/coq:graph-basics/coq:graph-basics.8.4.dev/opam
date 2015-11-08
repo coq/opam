@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GraphBasics"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~beta1"}
+  "coq" {>= "8.4" & < "8.5~"}
 ]
 tags: [ "keyword:graph theory" "keyword:curry howard's isomorphism" "keyword:inductive" "keyword:definitions" "category:Mathematics/Combinatorics and Graph Theory" "date:April 2001" ]
 authors: [ "Jean Duprat <>" ]

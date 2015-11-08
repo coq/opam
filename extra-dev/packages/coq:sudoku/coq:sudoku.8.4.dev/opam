@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Sudoku"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~beta1"}
+  "coq" {>= "8.4" & < "8.5~"}
 ]
 tags: [ "keyword:sudoku" "keyword:puzzles" "keyword:davis putnam" "category:Miscellaneous/Logical Puzzles and Entertainment" "date:February 2006" ]
 authors: [ "Laurent Théry <thery@sophia.inria.fr>" ]

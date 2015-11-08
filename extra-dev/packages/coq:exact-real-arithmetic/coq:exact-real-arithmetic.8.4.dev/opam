@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ExactRealArithmetic"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~beta1"}
+  "coq" {>= "8.4" & < "8.5~"}
 ]
 tags: [ "keyword:correctness" "keyword:real numbers" "keyword:arithmetic" "category:Mathematics/Arithmetic and Number Theory/Real numbers" ]
 authors: [ "Jérôme Creci <>" ]

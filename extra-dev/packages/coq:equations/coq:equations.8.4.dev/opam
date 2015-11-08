@@ -10,5 +10,5 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Equations"]
 depends: [
-  "coq" {>= "8.4pl4" & < "8.5~beta1"}
+  "coq" {>= "8.4pl4" & < "8.5~"}
 ]

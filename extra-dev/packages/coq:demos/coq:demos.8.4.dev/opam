@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Demos"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~beta1"}
+  "coq" {>= "8.4" & < "8.5~"}
 ]
 tags: [ "keyword:sorting" "keyword:cases" "keyword:tauto" "keyword:autorewrite" "keyword:prolog" "category:Miscellaneous/Coq Use Examples" ]
 authors: [ "Coq group <>" ]

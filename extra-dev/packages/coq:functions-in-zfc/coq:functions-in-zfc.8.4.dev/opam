@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FunctionsInZFC"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~beta1"}
+  "coq" {>= "8.4" & < "8.5~"}
 ]
 tags: [ "keyword:set theory" "keyword:zermelo fraenkel" "keyword:functions" "category:Mathematics/Logic/Set theory" "date:April 2001" ]
 authors: [ "Carlos Simpson <carlos@math.unice.fr>" ]
