@@ -1,5 +1,5 @@
 opam-version: "1.1"
-maintainer: ""
+maintainer: "thery@sophia.inria.fr"
 homepage: "http://coqprime.gforge.inria.fr/"
 bug-reports: "http://coqprime.gforge.inria.fr/"
 license: "MIT"
