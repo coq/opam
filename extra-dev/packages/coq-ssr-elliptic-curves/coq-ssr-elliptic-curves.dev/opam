@@ -15,7 +15,7 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SsrEllipticCurves"]
 depends: [
   "coq" {>= "8.4pl4" & < "8.5~"}
-  "coq:ssreflect" {>= "1.5" & < "1.6"}
-  "coq:math-comp" {>= "1.5" & < "1.6"}
-  "coq:ssr:multinomials" {= "dev"}
+  "coq-ssreflect" {>= "1.5" & < "1.6"}
+  "coq-math-comp" {>= "1.5" & < "1.6"}
+  "coq-ssr:multinomials" {= "dev"}
 ]

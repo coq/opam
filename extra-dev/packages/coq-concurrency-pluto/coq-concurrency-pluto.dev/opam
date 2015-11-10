@@ -11,12 +11,12 @@ build: [
 ]
 depends: [
   "coq" {>= "8.4pl4"}
-  "coq:error-handlers"
-  "coq:function-ninjas"
-  "coq:iterable"
-  "coq:list-string"
-  "coq:moment"
-  "coq:concurrency:proxy"
-  "coq:concurrency:system"
+  "coq-error-handlers"
+  "coq-function-ninjas"
+  "coq-iterable"
+  "coq-list-string"
+  "coq-moment"
+  "coq-concurrency-proxy"
+  "coq-concurrency-system"
   "base64" {= "1.0.0"}
 ]

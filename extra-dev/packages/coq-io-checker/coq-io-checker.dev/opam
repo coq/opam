@@ -11,5 +11,5 @@ build: [
 ]
 depends: [
   "coq" {>= "8.4pl4"}
-  "coq:io:system"
+  "coq-io-system"
 ]

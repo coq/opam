@@ -12,6 +12,6 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/Evaluate.vo"]
 depends: [
   "coq" {>= "8.4pl4"}
-  "coq:monad"
-  "coq:io"
+  "coq-monad"
+  "coq-io"
 ]

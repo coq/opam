@@ -12,7 +12,7 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/Exception.vo"]
 depends: [
   "coq" {>= "8.4pl4"}
-  "coq:function-ninjas"
-  "coq:io:list"
-  "coq:io:evaluate"
+  "coq-function-ninjas"
+  "coq-io-list"
+  "coq-io-evaluate"
 ]

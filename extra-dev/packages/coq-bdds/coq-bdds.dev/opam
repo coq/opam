@@ -11,7 +11,7 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/BDDs"]
 depends: [
   "coq" {>= "8.5"}
-  "coq:int-map"
+  "coq-int-map"
 ]
 tags: [ "keyword:binary decision diagrams" "keyword:classical logic" "keyword:propositional logic" "keyword:validity" "keyword:satisfiability" "keyword:model checking" "keyword:reflection" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category:Miscellaneous/Extracted Programs/Decision procedures" "date:May-July 1999" ]
 authors: [ "Kumar Neeraj Verma <>" ]

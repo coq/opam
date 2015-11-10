@@ -12,7 +12,7 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Concurrency"]
 depends: [
   "coq" {>= "8.4pl4"}
-  "coq:error-handlers"
-  "coq:function-ninjas"
-  "coq:list-string"
+  "coq-error-handlers"
+  "coq-function-ninjas"
+  "coq-list-string"
 ]

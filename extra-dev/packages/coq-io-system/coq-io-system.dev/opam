@@ -12,11 +12,11 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/System"]
 depends: [
   "coq" {>= "8.4pl4"}
-  "coq:function-ninjas"
-  "coq:list-string" {>= "2.0.0"}
-  "coq:io"
-  "coq:extraction:loop"
-  "coq:extraction:lwt"
-  "coq:extraction:sys"
-  "coq:io:system:ocaml"
+  "coq-function-ninjas"
+  "coq-list-string" {>= "2.0.0"}
+  "coq-io"
+  "coq-extraction-loop"
+  "coq-extraction-lwt"
+  "coq-extraction-sys"
+  "coq-io-system-ocaml"
 ]

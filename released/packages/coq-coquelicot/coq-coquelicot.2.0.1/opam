@@ -10,7 +10,7 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coquelicot"]
 depends: [
   "coq" {>= "8.4pl4" & < "8.5~"}
-  "coq:ssreflect" {= "1.5.0"}
+  "coq-ssreflect" {= "1.5.0"}
 ]
 tags: [ "keyword:real analysis" "keyword:topology" "keyword:filters" "keyword:metric spaces" "category:Mathematics/Real Calculus and Topology" ]
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Catherine Lelay <catherine.lelay@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]

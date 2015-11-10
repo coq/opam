@@ -12,8 +12,8 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/Lwt.vo"]
 depends: [
   "coq" {>= "8.4pl4"}
-  "coq:io"
-  "coq:extraction:loop"
-  "coq:extraction:lwt"
-  "coq:extraction:sys"
+  "coq-io"
+  "coq-extraction-loop"
+  "coq-extraction-lwt"
+  "coq-extraction-sys"
 ]

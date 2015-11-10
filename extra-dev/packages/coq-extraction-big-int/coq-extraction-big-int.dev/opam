@@ -15,5 +15,5 @@ remove: [
 ]
 depends: [
   "coq" {>= "8.4pl4"}
-  "coq:extraction:big-int:ocaml"
+  "coq-extraction-big-int-ocaml"
 ]
