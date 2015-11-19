@@ -3,6 +3,7 @@ author: "Frédéric Blanqui"
 maintainer: "frederic.blanqui@inria.fr"
 homepage: "http://color.inria.fr/"
 license: "CeCILL"
+patches: ["color.patch"]
 build: [
 [make "-j%{jobs}%"]
 ]

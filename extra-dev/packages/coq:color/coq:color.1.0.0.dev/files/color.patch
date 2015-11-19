@@ -1,0 +1,52 @@
+diff -u -u -r /Users/mat/tmp/coq:color.1.0.0.dev/RPO/VRPO_Type.v ./RPO/VRPO_Type.v
+--- /Users/mat/tmp/coq:color.1.0.0.dev/RPO/VRPO_Type.v	2015-04-16 14:37:34.000000000 +0200
++++ ./RPO/VRPO_Type.v	2015-11-19 14:37:53.000000000 +0100
+@@ -10,6 +10,8 @@
+ 
+ Require Import VPrecedence Relations ListUtil VTerm RelMidex LogicUtil
+   Morphisms Basics.
++Require Import AccUtil.
++Require Import ListUtil.
+ 
+ Module Type RPO_Model.
+ 
+@@ -63,9 +65,6 @@
+   Parameter mono_axiom : forall f (r : relation term), 
+     forall ss ts, one_less r ss ts -> tau f r ss ts.
+ 
+-  Require Import AccUtil.
+-  Require Import ListUtil.
+-
+   Definition lifting R := forall l, Accs lt l -> Restricted_acc (Accs lt) R l.
+ 
+   Parameter leF_dec : rel_dec leF.
+diff -u -u -r /Users/mat/tmp/coq:color.1.0.0.dev/Util/Vector/VecUtil.v ./Util/Vector/VecUtil.v
+--- /Users/mat/tmp/coq:color.1.0.0.dev/Util/Vector/VecUtil.v	2015-05-12 17:50:59.000000000 +0200
++++ ./Util/Vector/VecUtil.v	2015-11-19 14:27:01.000000000 +0100
+@@ -772,7 +772,7 @@
+   Proof.
+     induction v; simpl. contr.
+     intro H. destruct H. clear IHv. subst x.
+-    exists 0 (@Vnil A) n. exists v (refl_equal (S n)).
++    exists 0, (@Vnil A), n. exists v, (refl_equal (S n)).
+     rewrite Vcast_refl. refl.
+     assert (exists n1 (v1 : vector A n1) n2 (v2 : vector A n2)
+       (H : n1 + S n2 = n), v = Vcast (Vapp v1 (Vcons x v2)) H). exact (IHv H).
+@@ -1773,7 +1773,7 @@
+ 
+   Proof.
+     intros n gen x H. set (w := Vin_nth H). decomp w.
+-    exists x0 x1. rewrite Vbuild_nth in H1. auto.
++    exists x0, x1. rewrite Vbuild_nth in H1. auto.
+   Qed.
+ 
+   Lemma Vbuild_head : forall n (gen : forall i, i < S n -> A),
+@@ -2368,7 +2368,7 @@
+ Proof.
+   induction ks as [|k n ks IH]; intros kks_sorted tsus; simpl.
+   (* Vnil *)
+-  exists 0 (le_refl 0). rewrite !Vsub_nil, !Vforall2_cast. split; refl.
++  exists 0, (le_refl 0). rewrite !Vsub_nil, !Vforall2_cast. split; refl.
+   (* Vcons *)
+   destruct (lt_dec k p).
+   (* k < p *)
