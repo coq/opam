@@ -3,9 +3,7 @@ author: "Frédéric Blanqui"
 maintainer: "frederic.blanqui@inria.fr"
 homepage: "http://color.inria.fr/"
 license: "CeCILL"
-patches: ["termslifting.patch"]
 build: [
-["rm" "Util/Vector/NaryFunction.vo"]
 [make "-j%{jobs}%"]
 ]
 install: [
