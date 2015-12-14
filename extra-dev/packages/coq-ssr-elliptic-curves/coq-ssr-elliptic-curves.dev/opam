@@ -17,5 +17,5 @@ depends: [
   "coq" {>= "8.4pl4" & < "8.5~"}
   "coq-ssreflect" {>= "1.5" & < "1.6"}
   "coq-math-comp" {>= "1.5" & < "1.6"}
-  "coq-ssr:multinomials" {= "dev"}
+  "coq-ssr-multinomials" {= "dev"}
 ]
