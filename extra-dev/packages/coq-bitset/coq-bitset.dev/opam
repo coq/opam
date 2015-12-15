@@ -1,0 +1,21 @@
+opam-version: "1.2"
+name: "coq-bitset"
+maintainer: "Arthur Blot <arthur.blot@ens-lyon.fr>"
+authors: ["Arthur Blot <arthur.blot@ens-lyon.fr>"
+          "Pierre-Évariste Dagand <pierre-evariste.dagand@lip6.fr>"]
+homepage: "https://github.com/artart78/coq-bitset"
+bug-reports: "https://github.com/artart78/coq-bitset"
+license: ""
+build: [
+["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
+[make "-j%{jobs}%"]
+]
+install: [
+[make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Bitset"]
+depends: [
+"coq" {>= "8.5~beta2"}
+"coq-math-comp" {>= "1.5.1~beta2"}
+"coq-bits"
+]
