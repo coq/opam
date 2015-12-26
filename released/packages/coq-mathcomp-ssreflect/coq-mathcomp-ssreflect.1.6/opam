@@ -1,6 +1,6 @@
 opam-version: "1.2"
 name: "coq-mathcomp-ssreflect"
-version: "dev"
+version: "1.6"
 maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
 
 homepage: "http://ssr.msr-inria.inria.fr/"
