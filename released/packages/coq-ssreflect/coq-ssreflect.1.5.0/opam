@@ -10,3 +10,6 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Ssreflect"]
 depends: [
   "coq" {>= "8.4pl4" & < "8.5~" & != "8.4.6~camlp4"}
 ]
+conflicts: [
+  "coq-mathcomp-ssreflect"
+]
