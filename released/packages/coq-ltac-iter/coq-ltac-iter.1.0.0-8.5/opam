@@ -1,0 +1,14 @@
+opam-version: "1.1"
+maintainer: "gmalecha@gmail.com"
+homepage: "https://github.com/gmalecha/coq-ltac-iter"
+bug-reports: "https://github.com/gmalecha/coq-ltac-iter/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: [make "uninstall"]
+depends: [
+  "coq-plugin-utils" {>= "1.1.0-8.5"}
+  "coq" {>= "8.5"}
+]
