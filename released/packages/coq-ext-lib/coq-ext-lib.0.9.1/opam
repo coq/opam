@@ -11,7 +11,11 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ExtLib"]
+remove: [
+  ["rm" "-R" "%{doc}%/user-contrib/ExtLib"]
+  ["sh" "-c" "rmdir %{doc}%/user-contrib || true"]
+  ["rm" "-R" "%{lib}%/coq/user-contrib/ExtLib"]
+]
 depends: [
   "coq" {>= "8.4pl4" & < "8.5~"}
 ]
