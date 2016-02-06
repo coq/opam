@@ -8,7 +8,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/UniMath"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/UniMath/SubstitutionSystems"]
 depends: [
   "coq" {>= "8.5.0"}
   "coq-unimath-category-theory"
