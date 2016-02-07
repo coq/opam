@@ -1,4 +1,4 @@
--R UniMath UniMath
+-R UniMath/Ktheory UniMath.Ktheory
 OTHERFLAGS = "-indices-matter -type-in-type"
 
 UniMath/Ktheory/AbelianGroup.v

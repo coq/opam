@@ -1,4 +1,4 @@
--R UniMath UniMath
+-R UniMath/CategoryTheory UniMath.CategoryTheory
 OTHERFLAGS = "-indices-matter -type-in-type"
 
 UniMath/CategoryTheory/category_hset_structures.v

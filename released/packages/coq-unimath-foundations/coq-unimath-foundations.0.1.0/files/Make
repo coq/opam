@@ -1,4 +1,4 @@
--R UniMath UniMath
+-R UniMath/Foundations UniMath.Foundations
 OTHERFLAGS = "-indices-matter -type-in-type"
 
 UniMath/Foundations/Algebra/Apartness.v

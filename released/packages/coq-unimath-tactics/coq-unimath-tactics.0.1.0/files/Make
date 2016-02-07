@@ -1,4 +1,4 @@
--R UniMath UniMath
+-R UniMath/Tactics UniMath.Tactics
 OTHERFLAGS = "-indices-matter -type-in-type"
 
 UniMath/Tactics/Abmonoids_Tactics.v
