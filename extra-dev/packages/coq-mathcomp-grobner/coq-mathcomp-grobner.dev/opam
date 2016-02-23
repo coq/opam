@@ -1,7 +1,7 @@
 opam-version: "1.2"
 maintainer: "Laurent.Thery@inria.fr"
-homepage: "https://github.com/thery/twoSquare"
-bug-reports: "https://github.com/thery/twoSquare/issues"
+homepage: "https://github.com/thery/grobner"
+bug-reports: "https://github.com/thery/grobner/issues"
 license: "MIT"
 build: [
   ["./configure.sh"]
