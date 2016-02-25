@@ -16,6 +16,7 @@ remove: [
 
 depends: [
    "coq" {>= "8.5"}
+   "ocamlgraph"
 ]
 
 authors: [ "Anne Pacalet" "Yves Bertot"]
