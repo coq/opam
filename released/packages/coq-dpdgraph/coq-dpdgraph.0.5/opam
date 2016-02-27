@@ -6,7 +6,8 @@ license: "LGPL 2.1"
 homepage: "https://github.com/karmaki/coq-dpdgraph"
 build: [
   ["./configure"]
-  [make "-j%{jobs}%"]
+  ["echo" "%{jobs}%" "jobs for the linter"]
+  [make]
   [make "install" "BINDIR=%{bin}%"]
  ]
 remove: [
