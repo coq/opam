@@ -6,7 +6,7 @@ license: "LGPL 2.1"
 homepage: "https://github.com/ybertot/coq-dpdgraph"
 build: [
   ["./configure"]
-  [make]
+  [make "-j%{jobs}%"]
   [make "install" "BINDIR=%{bin}%"]
  ]
 remove: [
