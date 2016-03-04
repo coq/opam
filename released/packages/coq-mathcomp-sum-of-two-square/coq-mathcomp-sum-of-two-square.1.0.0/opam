@@ -1,0 +1,21 @@
+opam-version: "1.2"
+maintainer: "Laurent.Thery@inria.fr"
+homepage: "https://github.com/thery/twoSquare"
+bug-reports: "https://github.com/thery/twoSquare/issues"
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: [
+  ["rm" "-R" "%{lib}%/coq/user-contrib/mathcomp/contrib/sum_of_two_square"]
+  ["sh" "-c" "rmdir %{lib}%/coq/user-contrib/mathcomp/contrib || true"]
+]
+depends: [
+  "coq" {>= "8.5"}
+ ("coq-math-comp" {>= "1.5"} |
+   ("coq-mathcomp-ssreflect" {>= "1.6"} &
+    ("coq-mathcomp-algebra"   {>= "1.6"} &
+     "coq-mathcomp-field"   {>= "1.6"})))
+]

@@ -1,0 +1,10 @@
+-R UniMath/Dedekind UniMath.Dedekind
+OTHERFLAGS = "-indices-matter -type-in-type"
+
+UniMath/Dedekind/Complements.v
+UniMath/Dedekind/DecidableDedekindCuts.v
+UniMath/Dedekind/Fields.v
+UniMath/Dedekind/NonnegativeRationals.v
+UniMath/Dedekind/NonnegativeReals.v
+UniMath/Dedekind/Reals.v
+UniMath/Dedekind/Sets.v

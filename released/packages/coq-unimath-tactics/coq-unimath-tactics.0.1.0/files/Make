@@ -1,0 +1,8 @@
+-R UniMath/Tactics UniMath.Tactics
+OTHERFLAGS = "-indices-matter -type-in-type"
+
+UniMath/Tactics/Abmonoids_Tactics.v
+UniMath/Tactics/Groups_Tactics.v
+UniMath/Tactics/Monoids_Tactics.v
+UniMath/Tactics/Nat_Tactics.v
+UniMath/Tactics/Utilities.v

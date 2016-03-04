@@ -1,0 +1,15 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/subst.git;a=tree"
+license: "Proprietary"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Subst"]
+depends: [
+  "coq" {>= "8.4" & < "8.5~"}
+]
+tags: [ "keyword:lambda sigma lift calculus" "keyword:explicit substitution" "keyword:newman's lemma" "keyword:yokouchi's lemma" "keyword:confluence" "keyword:rewriting" "category:Computer Science/Lambda Calculi" ]
+authors: [ "Amokrane Saïbi <>" ]

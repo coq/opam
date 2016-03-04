@@ -1,0 +1,15 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/lesniewski-mereology.git;a=tree"
+license: "LGPL"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LesniewskiMereology"]
+depends: [
+  "coq" {>= "8.4" & < "8.5~"}
+]
+tags: [ "keyword:mereology" "keyword:protothetic" "keyword:ontology" "keyword:nominalist theory" "keyword:extensionality" "category:Mathematics/Logic/Foundations" ]
+authors: [ "Patrick Barlatier <patrick.barlatier@univ-savoie.fr>" "Richard Dapoigny <richard.dapoigny@univ-savoie.fr>" ]

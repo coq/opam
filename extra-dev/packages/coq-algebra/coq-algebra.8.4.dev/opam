@@ -1,0 +1,15 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/algebra.git;a=tree"
+license: "LGPL 2"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Algebra"]
+depends: [
+  "coq" {>= "8.4" & < "8.5~"}
+]
+tags: [ "keyword:algebra" "category:Mathematics/Algebra" "date:March 99" ]
+authors: [ "Loïc Pottier <>" ]

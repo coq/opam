@@ -1,0 +1,30 @@
+-R UniMath/Foundations UniMath.Foundations
+OTHERFLAGS = "-indices-matter -type-in-type"
+
+UniMath/Foundations/Algebra/Apartness.v
+UniMath/Foundations/Algebra/BinaryOperations.v
+UniMath/Foundations/Algebra/ConstructiveStructures.v
+UniMath/Foundations/Algebra/DivisionRig.v
+UniMath/Foundations/Algebra/Domains_and_Fields.v
+UniMath/Foundations/Algebra/IteratedBinaryOperations.v
+UniMath/Foundations/Algebra/Monoids_and_Groups.v
+UniMath/Foundations/Algebra/Rigs_and_Rings.v
+UniMath/Foundations/Algebra/Tests.v
+UniMath/Foundations/Basics/PartA.v
+UniMath/Foundations/Basics/PartB.v
+UniMath/Foundations/Basics/PartC.v
+UniMath/Foundations/Basics/PartD.v
+UniMath/Foundations/Basics/Preamble.v
+UniMath/Foundations/Basics/Propositions.v
+UniMath/Foundations/Basics/Sets.v
+UniMath/Foundations/Basics/Tests.v
+UniMath/Foundations/Basics/UnivalenceAxiom.v
+UniMath/Foundations/Combinatorics/FiniteSequences.v
+UniMath/Foundations/Combinatorics/FiniteSets.v
+UniMath/Foundations/Combinatorics/OrderedSets.v
+UniMath/Foundations/Combinatorics/StandardFiniteSets.v
+UniMath/Foundations/Combinatorics/Tests.v
+UniMath/Foundations/NumberSystems/Integers.v
+UniMath/Foundations/NumberSystems/NaturalNumbers.v
+UniMath/Foundations/NumberSystems/RationalNumbers.v
+UniMath/Foundations/NumberSystems/Tests.v

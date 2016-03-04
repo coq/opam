@@ -1,0 +1,29 @@
+-R UniMath/Ktheory UniMath.Ktheory
+OTHERFLAGS = "-indices-matter -type-in-type"
+
+UniMath/Ktheory/AbelianGroup.v
+UniMath/Ktheory/AbelianMonoid.v
+UniMath/Ktheory/AffineLine.v
+UniMath/Ktheory/Bifunctor.v
+UniMath/Ktheory/Circle.v
+UniMath/Ktheory/DirectSum.v
+UniMath/Ktheory/Elements.v
+UniMath/Ktheory/Equivalences.v
+UniMath/Ktheory/Group.v
+UniMath/Ktheory/GroupAction.v
+UniMath/Ktheory/Halfline.v
+UniMath/Ktheory/Integers.v
+UniMath/Ktheory/Interval.v
+UniMath/Ktheory/Magma.v
+UniMath/Ktheory/MetricTree.v
+UniMath/Ktheory/Monoid.v
+UniMath/Ktheory/MoreEquivalences.v
+UniMath/Ktheory/Nat.v
+UniMath/Ktheory/Precategories.v
+UniMath/Ktheory/QuotientSet.v
+UniMath/Ktheory/RawMatrix.v
+UniMath/Ktheory/Representation.v
+UniMath/Ktheory/StandardCategories.v
+UniMath/Ktheory/Tactics.v
+UniMath/Ktheory/Test.v
+UniMath/Ktheory/Utilities.v

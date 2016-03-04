@@ -1,0 +1,20 @@
+-R UniMath/SubstitutionSystems UniMath.SubstitutionSystems
+OTHERFLAGS = "-indices-matter -type-in-type"
+
+UniMath/SubstitutionSystems/AdjunctionHomTypesWeq.v
+UniMath/SubstitutionSystems/EndofunctorsMonoidal.v
+UniMath/SubstitutionSystems/GenMendlerIteration.v
+UniMath/SubstitutionSystems/HorizontalComposition.v
+UniMath/SubstitutionSystems/Lam.v
+UniMath/SubstitutionSystems/LamSignature.v
+UniMath/SubstitutionSystems/LiftingInitial.v
+UniMath/SubstitutionSystems/MonadsFromSubstitutionSystems.v
+UniMath/SubstitutionSystems/Notation.v
+UniMath/SubstitutionSystems/PointedFunctors.v
+UniMath/SubstitutionSystems/PointedFunctorsComposition.v
+UniMath/SubstitutionSystems/ProductPrecategory.v
+UniMath/SubstitutionSystems/RightKanExtension.v
+UniMath/SubstitutionSystems/Signatures.v
+UniMath/SubstitutionSystems/SubstitutionSystems_Summary.v
+UniMath/SubstitutionSystems/SubstitutionSystems.v
+UniMath/SubstitutionSystems/SumOfSignatures.v
