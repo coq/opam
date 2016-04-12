@@ -13,5 +13,5 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ExtLib"]
 depends: [
-  "coq" {>= "8.5~beta3" & < "8.5.dev"}
+  "coq" {>= "8.5~beta3" & < "8.5.1"}
 ]
