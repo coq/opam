@@ -1,2 +1,2 @@
-http: "https://github.com/coq/aac-tactics/archive/8.5.0.tar.gz"
+http: "https://github.com/coq/aac-tactics/archive/v8.5.0.tar.gz"
 checksum: "7686e0d53a2f619a51ad4ae73cafe8c6"
