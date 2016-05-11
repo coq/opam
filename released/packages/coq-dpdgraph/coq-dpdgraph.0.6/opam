@@ -13,7 +13,7 @@ build: [
 
 bug-reports: "https://github.com/karmaki/coq-dpdgraph/issues"
 
-dev-repo: "https://github.com/karmaki/coq-dpdgraph"
+dev-repo: "https://github.com/karmaki/coq-dpdgraph.git"
 
 install: [
   [make "install" "BINDIR=%{bin}%"]
