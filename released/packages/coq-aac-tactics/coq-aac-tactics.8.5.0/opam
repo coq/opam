@@ -11,4 +11,4 @@ depends: [
 tags: [ "keyword:reflexive tactic" "keyword:rewriting" "keyword:rewriting modulo associativity and commutativity" "keyword:rewriting modulo ac" "keyword:decision procedure" "category:Miscellaneous/Coq Extensions" ]
 authors: [ "Damien Pous <damien.pous@inria.fr>" "Thomas Braibant <thomas.braibant@gmail.com>" ]
 bug-reports: "coqdev@inria.fr"
-dev-repo: "https://github.com/coq/aac-tactics"
+dev-repo: "git://github.com/coq/aac-tactics"
