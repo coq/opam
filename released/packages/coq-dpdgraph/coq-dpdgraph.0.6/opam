@@ -1,0 +1,32 @@
+opam-version: "1.2"
+
+maintainer: "yves.bertot@inria.fr"
+license: "LGPL 2.1"
+
+homepage: "https://github.com/karmaki/coq-dpdgraph"
+
+build: [
+  ["./configure"]
+  ["echo" "%{jobs}%" "jobs for the linter"]
+  [make]
+ ]
+
+bug-reports: "https://github.com/karmaki/coq-dpdgraph/issues"
+
+dev-repo: "https://github.com/karmaki/coq-dpdgraph"
+
+install: [
+  [make "install" "BINDIR=%{bin}%"]
+]
+
+remove: [
+  ["rm" "%{bin}%/dpd2dot" "%{bin}%/dpdusage"]
+  ["rm" "-R" "%{lib}%/coq/user-contrib/dpdgraph"]
+]
+
+depends: [
+   "coq" {>= "8.5"}
+   "ocamlgraph"
+]
+
+authors: [ "Anne Pacalet" "Yves Bertot"]
