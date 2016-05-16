@@ -1,0 +1,4 @@
+Compute dependencies between Coq objects (definitions, theorems)
+and produce graphs
+
+
