@@ -1,0 +1,8 @@
+Krivine's classical realizability.
+
+The aim of this Coq library is to provide a framework for checking
+proofs in Krivine's classical realizability for second-order Peano arithmetic.
+
+It is designed to be as extensible as the original theory by Krivine and to
+support on-the-fly extensions by new instructions with their evaluation
+rules.

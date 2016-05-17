@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contrib/search-trees"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SearchTrees"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:binary search trees" "category:Computer Science/Data Types and Data Structures" "category:Miscellaneous/Extracted Programs/Data structures" ]
+authors: [ "Pierre Castéran <>" ]
+bug-reports: "https://github.com/coq-contribs/search-trees/issues"
+dev-repo: "https://github.com/coq-contribs/search-trees.git"

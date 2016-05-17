@@ -1,0 +1,17 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/ergo"
+license: "Proprietary"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Ergo"]
+depends: [
+  "coq" {= "8.5.dev"}
+  "coq-containers" {= "8.5.0"}
+  "coq-counting" {= "8.5.0"}
+  "coq-nfix" {= "8.5.0"}
+]
+tags: [ "keyword:reflexive tactic" "keyword:decision procedure" "keyword:satisfiability modulo theories" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
+authors: [ "Stéphane Lescuyer <>" ]
+bug-reports: "https://github.com/coq-contribs/ergo/issues"
+dev-repo: "https://github.com/coq-contribs/ergo.git"
