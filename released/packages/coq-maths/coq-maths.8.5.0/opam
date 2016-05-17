@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contrib/maths"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Maths"]
+depends: [
+  "coq" {>= "8.5" & < "8.6~"}
+]
+tags: [ "keyword:mathematics" "category:Mathematics/Arithmetic and Number Theory/Number theory" ]
+authors: [ "Jean-Christophe Filliâtre <>" ]
+bug-reports: "https://github.com/coq-contribs/maths/issues"
+dev-repo: "https://github.com/coq-contribs/maths.git"

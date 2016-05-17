@@ -1,0 +1,5 @@
+Proof of the Fairisle 4x4 Switch Element .
+
+This library contains the development of general definitions dedicated
+to the verification of sequential synchronous devices (based on Moore and Mealy automata)
+and the formal verification of the Fairisle 4x4 Switch Element.

@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/demos"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Demos"]
+depends: [
+  "coq" {>= "8.5" & < "8.6~"}
+]
+tags: [ "keyword:sorting" "keyword:cases" "keyword:tauto" "keyword:autorewrite" "keyword:prolog" "category:Miscellaneous/Coq Use Examples" ]
+authors: [ "Coq group <>" ]
+bug-reports: "https://github.com/coq-contribs/demos/issues"
+dev-repo: "https://github.com/coq-contribs/demos.git"

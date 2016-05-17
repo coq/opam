@@ -1,0 +1,16 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contrib/orb-stab"
+license: "GNU Lesser Public License"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/OrbStab"]
+depends: [
+  "coq" {>= "8.5" & < "8.6~"}
+  "coq-algebra" {= "8.5.0"}
+  "coq-lin-alg" {= "8.5.0"}
+]
+tags: [ "keyword:orbit" "keyword:stabilizer" "keyword:inclusion exclusion" "category:Mathematics/Algebra" "date:January 5, 2008" ]
+authors: [ "Robert Kam <rkam2001@hotmail.com>" ]
+bug-reports: "https://github.com/coq-contribs/orb-stab/issues"
+dev-repo: "https://github.com/coq-contribs/orb-stab.git"
