@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/zorns-lemma.git;a=tree"
+homepage: "https://github.com/coq-contribs/zorns-lemma"
 license: "LGPL"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZornsLemma"]
 depends: [
-  "coq" {>= "8.5"}
+  "coq" {= "dev"}
 ]
 tags: [ "keyword:set theory" "keyword:cardinals" "keyword:ordinals" "keyword:finite" "keyword:countable" "keyword:quotients" "keyword:well orders" "keyword:zorn's lemma" "category:Mathematics/Logic/Set theory" ]
 authors: [ "Daniel Schepler <dschepler@gmail.com>" ]

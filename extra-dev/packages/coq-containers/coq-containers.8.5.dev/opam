@@ -1,6 +1,6 @@
 opam-version: "1.2"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/containers.git;a=tree"
+homepage: "https://github.com/coq-contribs//coq:containers/coq:containers"
 license: "Proprietary"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]

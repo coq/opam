@@ -15,6 +15,6 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MathClasses"]
 depends: [
-  "coq"
+  "coq" {= "dev"}
 ]
 tags: [ "keyword:type classes" "keyword:algebraic and numeric structures" "keyword:universal algebra" "keyword:category theory" "category:Mathematics/Algebra" ]

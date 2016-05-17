@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/tree-diameter.git;a=tree"
+homepage: "https://github.com/coq-contribs/tree-diameter"
 license: "LGPL 2"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TreeDiameter"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~"}
+  "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:program verification" "keyword:trees" "keyword:paths" "keyword:graphs" "keyword:distance" "keyword:diameter" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" ]
 authors: [ "Jean-Christophe Filliâtre <>" ]

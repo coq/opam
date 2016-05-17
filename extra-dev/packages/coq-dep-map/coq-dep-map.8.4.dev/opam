@@ -1,0 +1,15 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/coq-contribs/dep-map"
+license: "BSD"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/DepMap"]
+depends: [
+  "coq" {= "8.4.dev"}
+]
+tags: [ "keyword:maps" "keyword:dependent maps" "keyword:domain" "category:Computer Science/Data Types and Data Structures" ]
+authors: [ "Lionel Rieg <lionel.rieg@college-de-france.fr>" ]

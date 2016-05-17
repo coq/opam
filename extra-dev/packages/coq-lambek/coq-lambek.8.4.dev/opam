@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/lambek.git;a=tree"
+homepage: "https://github.com/coq-contribs/lambek"
 license: "LGPL 2"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Lambek"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~"}
+  "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:computational linguistic" "keyword:categorial grammar" "keyword:lambek calculus" "category:Computer Science/Formal Languages Theory and Automata" "date:March-July 2003" ]
 authors: [ "Houda Anoun <anoun@labri.fr>" "Pierre Castéran <casteran@labri.fr>" ]

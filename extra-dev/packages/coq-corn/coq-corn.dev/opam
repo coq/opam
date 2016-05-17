@@ -10,7 +10,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoRN"]
 depends: [
-  "coq"
+  "coq" {= "dev"}
   "coq-math-classes"
 ]
 tags: [ "keyword:constructive mathematics" "keyword:algebra" "keyword:real calculus" "keyword:real numbers" "keyword:fundamental theorem of algebra" "category:Mathematics/Algebra" "category:Mathematics/Real Calculus and Topology" ]

@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/firing-squad.git;a=tree"
+homepage: "https://github.com/coq-contribs/firing-squad"
 license: "LGPL 2"
 build: [
 # No "-j%{jobs}%" option.
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FiringSquad"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~"}
+  "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:concurrency" "keyword:synchronization" "keyword:finite state machines" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" "category:Miscellaneous/Extracted Programs/Automata and protocols" ]
 authors: [ "Jean Duprat <>" ]
