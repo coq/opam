@@ -1,0 +1,13 @@
+opam-version: "1.0.1"
+maintainer: "abhishek.anand.iitg@gmail.com"
+homepage: "https://github.com/aa755/SquiggleEq"
+bug-reports: "https://github.com/aa755/SquiggleEq/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SquiggleEq"]
+depends: [
+  "coq" {>= "8.5.0"}
+]
