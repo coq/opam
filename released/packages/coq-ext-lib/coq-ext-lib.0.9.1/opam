@@ -12,8 +12,6 @@ install: [
   [make "install"]
 ]
 remove: [
-  ["rm" "-R" "%{doc}%/user-contrib/ExtLib"]
-  ["sh" "-c" "rmdir %{doc}%/user-contrib || true"]
   ["rm" "-R" "%{lib}%/coq/user-contrib/ExtLib"]
 ]
 depends: [
