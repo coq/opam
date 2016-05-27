@@ -1,7 +1,7 @@
 opam-version: "1.2"
 maintainer: "gmalecha@gmail.com"
-homepage: "https://github.com/beta-ziliani/mtac-plugin" 
-dev-repo: "https://github.com/beta-ziliani/mtac-plugin"
+homepage: "https://github.com/beta-ziliani/mtac-plugin"
+dev-repo: "https://github.com/beta-ziliani/mtac-plugin.git"
 bug-reports: "https://github.com/beta-ziliani/mtac-plugin/issues"
 authors: ["Beta Ziliani"]
 license: "MIT"
