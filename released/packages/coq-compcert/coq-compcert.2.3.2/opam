@@ -2,6 +2,7 @@ opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "http://compcert.inria.fr/"
 dev-repo: "https://github.com/AbsInt/CompCert.git"
+bug-reports: "https://github.com/AbsInt/CompCert/issues"
 license: "INRIA Non-Commercial License Agreement"
 build: [
   ["./configure" "ia32-linux"]

@@ -6,6 +6,8 @@ license: "Kind of MIT"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]
+]
+install: [
   [make "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/UniMath/SubstitutionSystems"]

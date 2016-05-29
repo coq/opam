@@ -7,6 +7,8 @@ authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
   [make "-j%{jobs}%"]
+]
+install: [
   [make "install"]
 ]
 remove: [make "uninstall"]

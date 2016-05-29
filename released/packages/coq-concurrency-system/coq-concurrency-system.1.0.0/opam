@@ -9,6 +9,8 @@ build: [
   ["ruby" "pp.rb"]
   ["./configure.sh"]
   [make "-j%{jobs}%"]
+]
+install: [
   [make "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Concurrency"]
