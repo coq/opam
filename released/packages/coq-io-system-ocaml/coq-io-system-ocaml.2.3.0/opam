@@ -1,6 +1,7 @@
 opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/io-system-ocaml"
+dev-repo: "https://github.com/clarus/io-system-ocaml.git"
 bug-reports: "https://github.com/clarus/io-system-ocaml/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"

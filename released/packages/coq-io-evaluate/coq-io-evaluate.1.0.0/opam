@@ -1,6 +1,7 @@
 opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/io-evaluate"
+dev-repo: "https://github.com/clarus/io-evaluate.git"
 bug-reports: "https://github.com/clarus/io-evaluate/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"

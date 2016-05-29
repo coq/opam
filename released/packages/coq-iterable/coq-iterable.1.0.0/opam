@@ -1,6 +1,7 @@
 opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/coq-iterable"
+dev-repo: "https://github.com/clarus/coq-iterable.git"
 bug-reports: "https://github.com/clarus/coq-iterable/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"

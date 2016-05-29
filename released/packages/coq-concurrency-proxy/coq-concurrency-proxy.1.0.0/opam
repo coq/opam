@@ -1,6 +1,7 @@
 opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-concurrency/proxy"
+dev-repo: "https://github.com/coq-concurrency/proxy.git"
 bug-reports: "https://github.com/coq-concurrency/proxy/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"

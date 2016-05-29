@@ -1,6 +1,7 @@
 opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/cybele"
+dev-repo: "https://github.com/clarus/cybele.git"
 bug-reports: "https://github.com/clarus/cybele/issues"
 license: "MIT"
 build: [

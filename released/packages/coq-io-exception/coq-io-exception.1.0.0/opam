@@ -1,6 +1,7 @@
 opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/io-exception"
+dev-repo: "https://github.com/clarus/io-exception.git"
 bug-reports: "https://github.com/clarus/io-exception/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"

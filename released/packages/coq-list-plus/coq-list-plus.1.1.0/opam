@@ -1,6 +1,7 @@
 opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/coq-list-plus"
+dev-repo: "https://github.com/clarus/coq-list-plus.git"
 bug-reports: "https://github.com/clarus/coq-list-plus/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
