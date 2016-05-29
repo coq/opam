@@ -2,6 +2,7 @@ opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "http://i.imgur.com/fQpmoXE.jpg"
 license: "NA"
+authors: "Guillaume Claret"
 build: [
   ["echo" "%{jobs}%" "jobs for the linter"]
 ]

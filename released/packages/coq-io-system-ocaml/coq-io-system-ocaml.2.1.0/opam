@@ -14,4 +14,4 @@ depends: [
   "ocamlfind"
   "lwt"
 ]
-ocaml-version: [>= "4.00.0"]
+available: [ocaml-version >= "4.00.0"]
