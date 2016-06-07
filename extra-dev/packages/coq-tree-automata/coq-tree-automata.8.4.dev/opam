@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/tree-automata.git;a=tree"
+homepage: "https://github.com/coq-contribs/tree-automata"
 license: "LGPL 2"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TreeAutomata"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~"}
+  "coq" {= "8.4.dev"}
   "coq-int-map" {= "8.4.dev"}
 ]
 tags: [ "keyword:tree automatas" "keyword:bottom up reflexion terms" "category:Computer Science/Formal Languages Theory and Automata" "date:september 1999" ]

@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contrib/ipc"
+license: "Proprietary"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IPC"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:intuitionistic logic" "keyword:proof search" "keyword:proof as programs" "keyword:correct by construction" "keyword:program verification" "keyword:program extraction" "category:Mathematics/Logic/Foundations" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category:Miscellaneous/Extracted Programs/Decision procedures" ]
+authors: [ "Klaus Weich <>" ]
+bug-reports: "https://github.com/coq-contribs/ipc/issues"
+dev-repo: "https://github.com/coq-contribs/ipc.git"

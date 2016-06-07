@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contrib/lazy-pcf"
+license: "Proprietary"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/lazyPCF"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:functional programming" "keyword:lazy evaluation" "keyword:operational" "keyword:semantics" "keyword:type soundness" "keyword:normal forms" "category:Computer Science/Lambda Calculi" ]
+authors: [ "Amy Felty <>" "Jill Seaman <>" ]
+bug-reports: "https://github.com/coq-contribs/lazy-pcf/issues"
+dev-repo: "https://github.com/coq-contribs/lazy-pcf.git"

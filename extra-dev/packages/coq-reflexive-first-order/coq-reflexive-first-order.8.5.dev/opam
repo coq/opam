@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contrib/reflexive-first-order"
+license: "LGPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ReflexiveFirstOrder"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:computationnal reflection" "keyword:interpretation" "keyword:first order logic" "keyword:equational reasoning" "category:Miscellaneous/Coq Extensions" "date:05/2005" ]
+authors: [ "Pierre Corbineau <pierre.corbineau@lri.fr>" ]
+bug-reports: "https://github.com/coq-contribs/reflexive-first-order/issues"
+dev-repo: "https://github.com/coq-contribs/reflexive-first-order.git"

@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contrib/icharate"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Icharate"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:multimodal categorial grammars" "keyword:syntax/semantics interface" "keyword:higher order logic" "keyword:meta linguistics" "category:Computer Science/Formal Languages Theory and Automata" "date:2003-2006." ]
+authors: [ "Houda Anoun <anoun@labri.fr>" "Pierre Castéran <casteran@labri.fr>" ]
+bug-reports: "https://github.com/coq-contribs/icharate/issues"
+dev-repo: "https://github.com/coq-contribs/icharate.git"

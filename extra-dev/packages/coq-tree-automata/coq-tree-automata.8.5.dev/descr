@@ -1,0 +1,5 @@
+Tree automatas.
+
+provides tree automatas algorithms in Coq (merge,
+intersection, vacuity test, deletion of empty states, coaccessiblity test,
+deletion of non coaccessible states)

@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/ccs"
+license: "Proprietary"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CCS"]
+depends: [
+  "coq" {>= "8.5" & < "8.6~"}
+]
+tags: [ "keyword:labelled transitions systems" "keyword:process algebra" "keyword:calculus of concurrent process (ccs)" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" ]
+authors: [ "Solange Coupet-Grimal <>" ]
+bug-reports: "https://github.com/coq-contribs/ccs/issues"
+dev-repo: "https://github.com/coq-contribs/ccs.git"

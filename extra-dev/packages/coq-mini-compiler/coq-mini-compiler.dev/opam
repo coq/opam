@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/mini-compiler.git;a=tree"
+homepage: "https://github.com/coq-contribs/mini-compiler"
 license: "LGPL 2"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MiniCompiler"]
 depends: [
-  "coq" {>= "8.5"}
+  "coq" {= "dev"}
 ]
 tags: [ "keyword:compilation" "keyword:correctness" "keyword:arithmetic" "category:Computer Science/Semantics and Compilation/Compilation" "date:2003" ]
 authors: [ "Jean-Christophe Filliâtre <>" ]

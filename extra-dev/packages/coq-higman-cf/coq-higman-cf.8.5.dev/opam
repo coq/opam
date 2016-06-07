@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contrib/higman-cf"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HigmanCF"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:higman's lemma" "keyword:extraction" "category:Mathematics/Combinatorics and Graph Theory" "category:Miscellaneous/Extracted Programs/Combinatorics" ]
+authors: [ "Stefan Berghofer <>" ]
+bug-reports: "https://github.com/coq-contribs/higman-cf/issues"
+dev-repo: "https://github.com/coq-contribs/higman-cf.git"

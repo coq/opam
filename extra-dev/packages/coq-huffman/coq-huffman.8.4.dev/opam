@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/huffman.git;a=tree"
+homepage: "https://github.com/coq-contribs/huffman"
 license: "LGPL 2"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Huffman"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~"}
+  "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:data compression" "keyword:code" "keyword:huffman tree" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category:Miscellaneous/Extracted Programs/Combinatorics" "date:October 2003" ]
 authors: [ "Laurent Théry <>" ]

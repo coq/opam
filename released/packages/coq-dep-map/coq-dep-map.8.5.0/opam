@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/dep-map"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/DepMap"]
+depends: [
+  "coq" {>= "8.5" & < "8.6~"}
+]
+tags: []
+authors: [ "Lionel Rieg <lionel.rieg@college-de-france.fr>" ]
+bug-reports: "https://github.com/dep-map/dep-map/issues"
+dev-repo: "https://github.com/coq-contribs/dep-map.git"

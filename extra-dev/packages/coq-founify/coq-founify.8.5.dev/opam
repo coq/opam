@@ -1,0 +1,15 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contrib/founify"
+license: "Proprietary"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FOUnify"]
+depends: [
+  "coq" {= "8.5.dev"}
+  "camlp5"
+]
+tags: [ "keyword:first order unification" "keyword:robinson" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category:Miscellaneous/Extracted Programs/Type checking unification and normalization" ]
+authors: [ "Jocelyne Rouyer <>" ]
+bug-reports: "https://github.com/coq-contribs/founify/issues"
+dev-repo: "https://github.com/coq-contribs/founify.git"

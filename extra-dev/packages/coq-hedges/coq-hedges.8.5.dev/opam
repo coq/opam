@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contrib/hedges"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Hedges"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:bisimulation" "keyword:spi calculus" "keyword:hedges" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:20/04/2004" ]
+authors: [ "Sébastien Briais <>" ]
+bug-reports: "https://github.com/coq-contribs/hedges/issues"
+dev-repo: "https://github.com/coq-contribs/hedges.git"

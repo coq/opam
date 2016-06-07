@@ -1,0 +1,4 @@
+Some proofs of hardware (adder, multiplier, memory block instruction).
+
+definition and proof of a combinatorial adder, a
+sequential multiplier, a memory block instruction

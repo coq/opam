@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/mod-red.git;a=tree"
+homepage: "https://github.com/coq-contribs/mod-red"
 license: "GNU Lesser General Public License"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ModRed"]
 depends: [
-  "coq" {>= "8.5"}
+  "coq" {= "dev"}
 ]
 tags: [ "keyword:algorithms" "keyword:performance" "keyword:computer arithmetic" "keyword:modular reduction" "keyword:optimization" "category:Mathematics/Arithmetic and Number Theory/Miscellaneous" "date:December 2007; Updated in April 2009" ]
 authors: [ "Luc Rutten <>" ]
