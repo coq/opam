@@ -1,6 +1,7 @@
-opam-version: "1.1"
+opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-concurrency/pluto"
+dev-repo: "https://github.com/coq-concurrency/pluto.git"
 bug-reports: "https://github.com/coq-concurrency/pluto/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
