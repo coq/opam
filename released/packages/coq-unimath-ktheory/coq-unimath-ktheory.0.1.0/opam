@@ -1,8 +1,10 @@
-opam-version: "1.1"
+opam-version: "1.2"
 maintainer: "opam@clarus.me"
 homepage: "https://github.com/UniMath/UniMath"
+dev-repo: "https://github.com/UniMath/UniMath.git"
 bug-reports: "https://github.com/UniMath/UniMath/issues"
 license: "Kind of MIT"
+authors: ["The UniMath Development Team"]
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]
