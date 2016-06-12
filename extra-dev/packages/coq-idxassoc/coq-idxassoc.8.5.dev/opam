@@ -1,6 +1,6 @@
 opam-version: "1.2"
 maintainer: "matej.kosik@inria.fr"
-homepage: "https://github.com/coq-contrib/idxassoc"
+homepage: "https://github.com/coq-contribs/idxassoc"
 license: "BSD with advertising clause"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

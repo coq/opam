@@ -1,6 +1,6 @@
 opam-version: "1.2"
 maintainer: "matej.kosik@inria.fr"
-homepage: "https://github.com/coq-contrib/square-matrices"
+homepage: "https://github.com/coq-contribs/square-matrices"
 license: "LGPL 2"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
