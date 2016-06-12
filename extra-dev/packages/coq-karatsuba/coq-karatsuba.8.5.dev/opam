@@ -1,6 +1,6 @@
 opam-version: "1.2"
 maintainer: "matej.kosik@inria.fr"
-homepage: "https://github.com/coq-contrib/karatsuba"
+homepage: "https://github.com/coq-contribs/karatsuba"
 license: "Proprietary"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

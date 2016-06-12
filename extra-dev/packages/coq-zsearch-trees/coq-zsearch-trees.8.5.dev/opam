@@ -1,6 +1,6 @@
 opam-version: "1.2"
 maintainer: "matej.kosik@inria.fr"
-homepage: "https://github.com/coq-contrib/zsearch-trees"
+homepage: "https://github.com/coq-contribs/zsearch-trees"
 license: "LGPL 2"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

@@ -1,6 +1,6 @@
 opam-version: "1.2"
 maintainer: "matej.kosik@inria.fr"
-homepage: "https://github.com/coq-contrib/higman-s"
+homepage: "https://github.com/coq-contribs/higman-s"
 license: "LGPL"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

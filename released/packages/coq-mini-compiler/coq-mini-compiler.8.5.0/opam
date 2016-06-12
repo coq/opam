@@ -1,6 +1,6 @@
 opam-version: "1.2"
 maintainer: "matej.kosik@inria.fr"
-homepage: "https://github.com/coq-contrib/mini-compiler"
+homepage: "https://github.com/coq-contribs/mini-compiler"
 license: "LGPL 2"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
