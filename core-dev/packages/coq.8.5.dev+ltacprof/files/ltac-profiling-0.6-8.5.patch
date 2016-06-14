@@ -1,15 +1,3 @@
-diff --git a/.gitignore b/.gitignore
-index 3adb9c6..b0b8ba7 100644
---- a/.gitignore
-+++ b/.gitignore
-@@ -140,6 +140,7 @@ tactics/rewrite.ml
- tactics/eqdecide.ml
- tactics/extratactics.ml
- tactics/extraargs.ml
-+tactics/profile_ltac_tactics.ml
- toplevel/whelp.ml
- ide/coqide_main.ml
- 
 diff --git a/lib/pp.ml b/lib/pp.ml
 index 4f50e3e..dc59cb8 100644
 --- a/lib/pp.ml
@@ -111,17 +99,20 @@ index ff2e1ff..d309d02 100644
 +Profile_ltac_tactics
 diff --git a/tactics/profile_ltac.ml b/tactics/profile_ltac.ml
 new file mode 100644
-index 0000000..bae3e5b
+index 0000000..59568cb
 --- /dev/null
 +++ b/tactics/profile_ltac.ml
-@@ -0,0 +1,282 @@
+@@ -0,0 +1,296 @@
 +open Pp
 +open Printer
 +open Util
 +
 +
++(** [is_profiling] and the profiling info ([stack]) should be synchronized with the document; the rest of the ref cells are either local to individual tactic invocations, or global flags, and need not be synchronized, since no document-level backtracking happens within tactics.  We synchronize is_profiling via an option. *)
 +let is_profiling = ref false
++
 +let set_profiling b = is_profiling := b
++let get_profiling () = !is_profiling
 +
 +let should_display_profile_at_close = ref false
 +let set_display_profile_at_close b = should_display_profile_at_close := b
@@ -153,7 +144,21 @@ index 0000000..bae3e5b
 +  if add_total then e.max_total <- max e.max_total max_total
 +
 +type treenode = {entry : entry; children : (string, treenode) Hashtbl.t}
-+let stack = ref [{entry=empty_entry(); children=Hashtbl.create 20}]
++
++(** Tobias Tebbi wrote some tricky code involving mutation.  Rather than rewriting it in a functional style, we simply freeze the state when we need to by issuing a deep copy of the profiling data. *)
++let deepcopy_entry {total; local; ncalls; max_total} =
++  {total; local; ncalls; max_total}
++
++let rec deepcopy_treenode {entry; children} =
++  {entry = deepcopy_entry entry;
++   children =
++      (let children' = Hashtbl.create (Hashtbl.length children) in
++       Hashtbl.iter
++	 (fun key subtree -> Hashtbl.add children' key (deepcopy_treenode subtree))
++	 children;
++       children')}
++
++let stack = Summary.ref ~freeze:(fun _ -> List.map deepcopy_treenode) [{entry=empty_entry(); children=Hashtbl.create 20}] ~name:"LtacProf-stack"
 +
 +let on_stack = Hashtbl.create 5
 +
@@ -220,22 +225,17 @@ index 0000000..bae3e5b
 +  let s = try String.sub s 0 (CString.string_index_from s 0 "(*") with Not_found -> s in
 +  CString.strip s
 +
-+let exit_tactic option_start_time_add_total c =
-+  (match option_start_time_add_total with
-+    | Some (start_time, add_total) -> begin
-+      try
-+        let node :: stack' = !stack in
-+        let parent = List.hd stack' in
-+        stack := stack';
-+        if add_total then Hashtbl.remove on_stack (string_of_call c);
-+        let diff = time() -. start_time in
-+        parent.entry.local <- parent.entry.local -. diff;
-+        add_entry node.entry add_total {total = diff; local = diff; ncalls = 1; max_total = diff};
-+      with Failure("hd") -> (* oops, our stack is invalid *)
-+	encounter_multi_success_backtracking()
-+    end
-+    | None -> ()
-+  )
++let exit_tactic start_time add_total c =
++  try
++    let node :: stack' = !stack in
++    let parent = List.hd stack' in
++    stack := stack';
++    if add_total then Hashtbl.remove on_stack (string_of_call c);
++    let diff = time() -. start_time in
++    parent.entry.local <- parent.entry.local -. diff;
++    add_entry node.entry add_total {total = diff; local = diff; ncalls = 1; max_total = diff};
++  with Failure("hd") -> (* oops, our stack is invalid *)
++    encounter_multi_success_backtracking()
 +
 +let tclFINALLY tac (finally : unit Proofview.tactic) =
 +  let open Proofview.Notations in
@@ -264,14 +264,16 @@ index 0000000..bae3e5b
 +          Some (start_time, add_total)
 +	)
 +      | [] -> None
-+  else None)) >>= fun option_start_time_add_total ->
-+  tclFINALLY
-+    tac
-+    (Proofview.tclLIFT (Proofview.NonLogical.make (fun () ->
-+      (match call_trace with
-+      | (_, c) :: _ ->
-+        exit_tactic option_start_time_add_total c
-+      | [] -> ()))))
++  else None)) >>= function
++  | Some (start_time, add_total) ->
++    tclFINALLY
++      tac
++      (Proofview.tclLIFT (Proofview.NonLogical.make (fun () ->
++	(match call_trace with
++	| (_, c) :: _ ->
++          exit_tactic start_time add_total c
++	| [] -> ()))))
++  | None -> tac
 +
 +
 +
@@ -399,13 +401,15 @@ index 0000000..bae3e5b
 +let _ = Declaremods.append_end_library_hook do_print_results_at_close
 diff --git a/tactics/profile_ltac.mli b/tactics/profile_ltac.mli
 new file mode 100644
-index 0000000..1f8cc44
+index 0000000..64fb49b
 --- /dev/null
 +++ b/tactics/profile_ltac.mli
-@@ -0,0 +1,15 @@
+@@ -0,0 +1,17 @@
 +val do_profile : string -> ('a * Proof_type.ltac_call_kind) list -> 'b Proofview.tactic -> 'b Proofview.tactic
 +
 +val set_profiling : bool -> unit
++
++val get_profiling : unit -> bool
 +
 +val set_display_profile_at_close : bool -> unit
 +
@@ -420,7 +424,7 @@ index 0000000..1f8cc44
 +val do_print_results_at_close : unit -> unit
 diff --git a/tactics/profile_ltac_tactics.ml4 b/tactics/profile_ltac_tactics.ml4
 new file mode 100644
-index 0000000..565f9a9
+index 0000000..5d96787
 --- /dev/null
 +++ b/tactics/profile_ltac_tactics.ml4
 @@ -0,0 +1,39 @@
@@ -434,34 +438,34 @@ index 0000000..565f9a9
 +   Proofview.tclLIFT (Proofview.NonLogical.make (fun () ->
 +   set_profiling b))
 +
-+TACTIC EXTEND start_profiling
-+  | [ "start" "profiling" ] -> [ tclSET_PROFILING true  ]
++TACTIC EXTEND start_ltac_profiling
++  | [ "start" "ltac" "profiling" ] -> [ tclSET_PROFILING true  ]
 +END
 +
 +TACTIC EXTEND stop_profiling
-+  | [ "stop" "profiling" ] ->  [ tclSET_PROFILING false ]
++  | [ "stop" "ltac" "profiling" ] ->  [ tclSET_PROFILING false ]
 +END;;
 +
++let _ =
++  Goptions.declare_bool_option
++    { optsync  = true;
++      optdepr  = false;
++      optname  = "Ltac Profiling";
++      optkey   = ["Ltac"; "Profiling"];
++      optread  = get_profiling;
++      optwrite = set_profiling }
 +
-+VERNAC COMMAND EXTEND StartProfiling CLASSIFIED AS SIDEFF
-+ [ "Start" "Profiling" ] -> [ reset_profile(); set_profiling true ]
++VERNAC COMMAND EXTEND ResetLtacProfiling CLASSIFIED AS SIDEFF
++ [ "Reset" "Ltac" "Profile" ] -> [ reset_profile() ]
 +END
 +
-+VERNAC COMMAND EXTEND StopProfiling CLASSIFIED AS SIDEFF
-+ [ "Stop" "Profiling" ] -> [ set_profiling false ]
-+ END
-+
-+VERNAC COMMAND EXTEND ResetProfiling CLASSIFIED AS SIDEFF
-+ [ "Reset" "Profile" ] -> [ reset_profile() ]
-+END
-+
-+VERNAC COMMAND EXTEND ShowProfile CLASSIFIED AS QUERY
-+ [ "Show" "Profile" ] -> [ print_results() ]
++VERNAC COMMAND EXTEND ShowLtacProfile CLASSIFIED AS QUERY
++ [ "Show" "Ltac" "Profile" ] -> [ print_results() ]
 +END
 +
 +
-+VERNAC COMMAND EXTEND ShowProfileTactic CLASSIFIED AS QUERY
-+ [ "Show" "Profile" string(s) ] -> [ print_results_tactic s ]
++VERNAC COMMAND EXTEND ShowLtacProfileTactic CLASSIFIED AS QUERY
++ [ "Show" "Ltac" "Profile" string(s) ] -> [ print_results_tactic s ]
 +END
 diff --git a/tactics/tacinterp.ml b/tactics/tacinterp.ml
 index 5ecc46d..2e02efe 100644
@@ -601,20 +605,20 @@ index 2c5edc2..11191e3 100644
  Term_dnet
 diff --git a/test-suite/success/ltacprof.v b/test-suite/success/ltacprof.v
 new file mode 100644
-index 0000000..6b73443
+index 0000000..d555269
 --- /dev/null
 +++ b/test-suite/success/ltacprof.v
 @@ -0,0 +1,8 @@
 +(** Some LtacProf tests *)
 +
-+Start Profiling.
++Set Ltac Profiling.
 +Ltac multi := (idtac + idtac).
 +Goal True.
-+  try (multi; fail). (* Anomaly: Uncaught exception Failure("hd"). Please report. *)
++  try (multi; fail). (* Used to result in: Anomaly: Uncaught exception Failure("hd"). Please report. *)
 +Admitted.
-+Show Profile.
++Show Ltac Profile.
 diff --git a/tools/coqc.ml b/tools/coqc.ml
-index b7910e1..00c616a 100644
+index b7910e1..b2b5737 100644
 --- a/tools/coqc.ml
 +++ b/tools/coqc.ml
 @@ -99,7 +99,7 @@ let parse_args () =
@@ -622,31 +626,31 @@ index b7910e1..00c616a 100644
  (* Options for coqtop : a) options with 0 argument *)
  
 -    | ("-notactics"|"-bt"|"-debug"|"-nolib"|"-boot"|"-time"
-+    | ("-notactics"|"-bt"|"-debug"|"-nolib"|"-boot"|"-time"|"-profileltac"
++    | ("-notactics"|"-bt"|"-debug"|"-nolib"|"-boot"|"-time"|"-profile-ltac"
        |"-batch"|"-noinit"|"-nois"|"-noglob"|"-no-glob"
        |"-q"|"-full"|"-profile"|"-just-parsing"|"-echo" |"-unsafe"|"-quiet"
        |"-silent"|"-m"|"-xml"|"-v7"|"-v8"|"-beautify"|"-strict-implicit"
 diff --git a/toplevel/coqtop.ml b/toplevel/coqtop.ml
-index cfedff0..d3afe94 100644
+index cfedff0..fa71e23 100644
 --- a/toplevel/coqtop.ml
 +++ b/toplevel/coqtop.ml
 @@ -536,6 +536,7 @@ let parse_args arglist =
        else native_compiler := true
      |"-notop" -> unset_toplevel_name ()
      |"-output-context" -> output_context := true
-+    |"-profileltac" -> Profile_ltac.set_profiling true; Profile_ltac.set_display_profile_at_close true
++    |"-profile-ltac" -> Profile_ltac.set_profiling true; Profile_ltac.set_display_profile_at_close true
      |"-q" -> no_load_rc ()
      |"-quiet"|"-silent" -> Flags.make_silent true; Flags.make_warn false
      |"-quick" -> Flags.compilation_mode := BuildVio
 diff --git a/toplevel/usage.ml b/toplevel/usage.ml
-index 4280006..34f13a3 100644
+index 4280006..47134f0 100644
 --- a/toplevel/usage.ml
 +++ b/toplevel/usage.ml
 @@ -77,6 +77,7 @@ let print_usage_channel co command =
  \n                         the directory $COQ_XML_LIBRARY_ROOT (if set) or to\
  \n                         stdout (if unset)\
  \n  -time                  display the time taken by each command\
-+\n  -profileltac           display the time taken by each (sub)tactic\
++\n  -profile-ltac           display the time taken by each (sub)tactic\
  \n  -m, --memory           display total heap size at program exit\
  \n                         (use environment variable\
  \n                          OCAML_GC_STATS=\"/tmp/gclog.txt\"\
