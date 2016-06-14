@@ -87,7 +87,7 @@ index 5019b65..a63d2d6 100644
     It modifies Nametab and performs the [open_object] function for
     every object of the module. *)
 diff --git a/scripts/coqc.ml b/scripts/coqc.ml
-index 5cbb7bd..30e3a49 100644
+index 5cbb7bd..30a6c11 100644
 --- a/scripts/coqc.ml
 +++ b/scripts/coqc.ml
 @@ -139,7 +139,7 @@ let parse_args () =
@@ -110,17 +110,18 @@ index 7d12f9d..570f570 100644
 +Profile_ltac_tactics
 diff --git a/tactics/profile_ltac.ml b/tactics/profile_ltac.ml
 new file mode 100644
-index 0000000..98344cf
+index 0000000..d874a46
 --- /dev/null
 +++ b/tactics/profile_ltac.ml
-@@ -0,0 +1,213 @@
+@@ -0,0 +1,233 @@
 +open Pp
 +open Printer
 +open Util
 +
-+
++(** [is_profiling] and the profiling info ([stack]) should be synchronized with the document; the rest of the ref cells are either local to individual tactic invocations, or global flags, and need not be synchronized, since no document-level backtracking happens within tactics.  We synchronize is_profiling via an option. *)
 +let is_profiling = ref false
 +let set_profiling b = is_profiling := b
++let get_profiling() = !is_profiling
 +
 +let should_display_profile_at_close = ref false
 +let set_display_profile_at_close b = should_display_profile_at_close := b
@@ -139,7 +140,26 @@ index 0000000..98344cf
 +  if add_total then e.max_total <- max e.max_total max_total
 +
 +type treenode = {entry : entry; children : (string, treenode) Hashtbl.t}
++
++let deepcopy_entry {total; local; ncalls; max_total} =
++  {total; local; ncalls; max_total}
++
++let rec deepcopy_treenode {entry; children} =
++  {entry = deepcopy_entry entry;
++   children =
++      (let children' = Hashtbl.create (Hashtbl.length children) in
++       Hashtbl.iter
++	 (fun key subtree -> Hashtbl.add children' key (deepcopy_treenode subtree))
++	 children;
++       children')}
++
 +let stack = ref [{entry=empty_entry(); children=Hashtbl.create 20}]
++
++let _ = Summary.declare_summary "LtacProf-stack"
++          { Summary.freeze_function = (fun () ->
++                                         List.map deepcopy_treenode !stack);
++            Summary.unfreeze_function = (fun stack_val -> stack := stack_val);
++            Summary.init_function = (fun () -> stack := [{entry=empty_entry(); children=Hashtbl.create 20}]) }
 +
 +let on_stack = Hashtbl.create 5
 +
@@ -329,13 +349,15 @@ index 0000000..98344cf
 +let _ = Declaremods.append_end_library_hook do_print_results_at_close
 diff --git a/tactics/profile_ltac.mli b/tactics/profile_ltac.mli
 new file mode 100644
-index 0000000..1954c00
+index 0000000..2603319
 --- /dev/null
 +++ b/tactics/profile_ltac.mli
-@@ -0,0 +1,15 @@
+@@ -0,0 +1,17 @@
 +val do_profile : string -> ('a * 'b * Proof_type.ltac_call_kind) list -> (unit -> 'c) -> 'c
 +
 +val set_profiling : bool -> unit
++
++val get_profiling : unit -> bool
 +
 +val set_display_profile_at_close : bool -> unit
 +
@@ -350,7 +372,7 @@ index 0000000..1954c00
 +val do_print_results_at_close : unit -> unit
 diff --git a/tactics/profile_ltac_tactics.ml4 b/tactics/profile_ltac_tactics.ml4
 new file mode 100644
-index 0000000..7bcc0cd
+index 0000000..ff6250f
 --- /dev/null
 +++ b/tactics/profile_ltac_tactics.ml4
 @@ -0,0 +1,36 @@
@@ -362,33 +384,33 @@ index 0000000..7bcc0cd
 +   set_profiling b; Tacticals.tclIDTAC gl
 +
 +TACTIC EXTEND start_profiling
-+  | [ "start" "profiling" ] -> [ tclSET_PROFILING true  ]
++  | [ "start" "ltac" "profiling" ] -> [ tclSET_PROFILING true  ]
 +END
 +
 +TACTIC EXTEND stop_profiling
-+  | [ "stop" "profiling" ] ->  [ tclSET_PROFILING false ]
++  | [ "stop" "ltac" "profiling" ] ->  [ tclSET_PROFILING false ]
 +END;;
 +
++let _ =
++  Goptions.declare_bool_option
++    { optsync  = true;
++      optdepr  = false;
++      optname  = "Ltac Profiling";
++      optkey   = ["Ltac"; "Profiling"];
++      optread  = get_profiling;
++      optwrite = set_profiling }
 +
-+VERNAC COMMAND EXTEND StartProfiling
-+ [ "Start" "Profiling" ] -> [ reset_profile(); set_profiling true ]
++VERNAC COMMAND EXTEND ResetLtacProfiling
++ [ "Reset" "Ltac" "Profile" ] -> [ reset_profile() ]
 +END
 +
-+VERNAC COMMAND EXTEND StopProfiling
-+ [ "Stop" "Profiling" ] -> [ set_profiling false ]
-+ END
-+
-+VERNAC COMMAND EXTEND ResetProfiling
-+ [ "Reset" "Profile" ] -> [ reset_profile() ]
-+END
-+
-+VERNAC COMMAND EXTEND ShowProfile
-+ [ "Show" "Profile" ] -> [ print_results() ]
++VERNAC COMMAND EXTEND ShowLtacProfile
++ [ "Show" "Ltac" "Profile" ] -> [ print_results() ]
 +END
 +
 +
-+VERNAC COMMAND EXTEND ShowProfileTactic
-+ [ "Show" "Profile" string(s) ] -> [ print_results_tactic s ]
++VERNAC COMMAND EXTEND ShowLtacProfileTactic
++ [ "Show" "Ltac" "Profile" string(s) ] -> [ print_results_tactic s ]
 +END
 diff --git a/tactics/tacinterp.ml b/tactics/tacinterp.ml
 index 9572277..f189dab 100644
@@ -445,7 +467,7 @@ index f132480..da75068 100644
  Evar_tactics
  Autorewrite
 diff --git a/toplevel/coqtop.ml b/toplevel/coqtop.ml
-index 02dd1f2..c09eb4f 100644
+index 02dd1f2..c2934d6 100644
 --- a/toplevel/coqtop.ml
 +++ b/toplevel/coqtop.ml
 @@ -242,6 +242,8 @@ let parse_args arglist =
@@ -458,7 +480,7 @@ index 02dd1f2..c09eb4f 100644
          Flags.compat_version := get_compat_version v; parse rem
      | "-compat" :: []       -> usage ()
 diff --git a/toplevel/usage.ml b/toplevel/usage.ml
-index dac3573..fbb7f5e 100644
+index dac3573..2d055a8 100644
 --- a/toplevel/usage.ml
 +++ b/toplevel/usage.ml
 @@ -72,6 +72,7 @@ let print_usage_channel co command =
