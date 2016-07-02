@@ -10,6 +10,6 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LegacyField"]
 depends: [
   "coq" {= "dev"}
-  "coq-legacy-ring"
+  "coq-legacy-ring" {= "dev"}
 ]
 authors: [ "David Delahaye <>" "Micaela Mayero <>" ]

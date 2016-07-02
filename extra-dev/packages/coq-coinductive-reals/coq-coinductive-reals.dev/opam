@@ -10,7 +10,7 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoinductiveReals"]
 depends: [
   "coq" {= "dev"}
-  "coq-qarith-stern-brocot"
+  "coq-qarith-stern-brocot" {= "dev"}
 ]
 tags: [ "keyword:real numbers" "keyword:coinductive types" "keyword:co recursion" "keyword:exact arithmetic" "category:Mathematics/Arithmetic and Number Theory/Real numbers" "date:24 April 2007" ]
 authors: [ "Milad Niqui <milad@cs.ru.nl>" ]
