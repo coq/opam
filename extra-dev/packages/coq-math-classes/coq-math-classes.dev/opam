@@ -8,11 +8,8 @@ authors: [
   "Robbert Krebbers"
 ]
 license: "Public Domain"
-build: [
-  [ "./configure.sh" ]
-  [ make "-j%{jobs}%" ]
-  [ make "install" ]
-]
+build: [make "-j%{jobs}%"]
+install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MathClasses"]
 depends: [
   "coq" {= "dev"}
