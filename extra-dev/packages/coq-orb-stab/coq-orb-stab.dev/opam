@@ -10,8 +10,8 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/OrbStab"]
 depends: [
   "coq" {= "dev"}
-  "coq-algebra"
-  "coq-lin-alg"
+  "coq-algebra" {= "dev"}
+  "coq-lin-alg" {= "dev"}
 ]
 tags: [ "keyword:orbit" "keyword:stabilizer" "keyword:inclusion exclusion" "category:Mathematics/Algebra" "date:January 5, 2008" ]
 authors: [ "Robert Kam <rkam2001@hotmail.com>" ]

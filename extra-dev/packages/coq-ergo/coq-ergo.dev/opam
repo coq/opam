@@ -10,9 +10,9 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Ergo"]
 depends: [
   "coq" {= "dev"}
-  "coq-containers"
-  "coq-counting"
-  "coq-nfix"
+  "coq-containers" {= "dev"}
+  "coq-counting" {= "dev"}
+  "coq-nfix" {= "dev"}
 ]
 tags: [ "keyword:reflexive tactic" "keyword:decision procedure" "keyword:satisfiability modulo theories" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
 authors: [ "Stéphane Lescuyer <>" ]
