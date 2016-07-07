@@ -1,0 +1,13 @@
+Parameterized automata.
+
+This contribution is a modelisation in Coq of the p-automata
+designed in the CALIFE project (http://www.loria.fr/calife).
+It contains an axiomatisation of time,
+the definition of a p-automaton, the definition of binary and
+arbitrary synchronisation of a family of p-automaton, the semantics of
+a p-automaton as a labelled transition system. The description of the ABR
+algorithm as a p-automaton is also given.
+
+This work is reported in : P. Castéran, E. Freund, C. Paulin and
+D. Rouillard ``Bibliothèques Coq et Isabelle-HOL pour les systèmes de
+transitions et les p-automates''

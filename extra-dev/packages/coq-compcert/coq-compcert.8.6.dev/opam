@@ -1,0 +1,15 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/compcert"
+license: "see LICENSE"
+build: [
+  ["./configure" "ia32-linux"]
+  [make "-j%{jobs}%"]
+]
+depends: [
+  "coq" {= "8.6.dev"}
+]
+tags: [ "keyword:c" "keyword:compiler" "keyword:assembly" "keyword:powerpc" "category:Computer Science/Semantics and Compilation/Compilation" "date:2014-02-24 (release 2.2)" ]
+authors: [ "Xavier Leroy <compcert@yquem.inria.fr>" ]
+bug-reports: "https://github.com/coq-contribs/compcert/issues"
+dev-repo: "https://github.com/coq-contribs/compcert.git"

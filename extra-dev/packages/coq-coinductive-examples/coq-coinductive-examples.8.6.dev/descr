@@ -1,0 +1,9 @@
+Some simple examples about co-inductive types and co-induction.
+
+This directory containts some simple examples about
+the use of co-inductive types in Coq. Directory ARITH
+is about non-standard arithmetic. Directory STREAMS
+contains examples about schemes, including an application
+of the translation method presented in Eduardo Giménez's
+article ``Codifying guarded definitions with recursive
+schemes'' (LNCS no. 996).

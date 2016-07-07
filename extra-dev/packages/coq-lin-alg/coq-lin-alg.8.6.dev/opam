@@ -1,0 +1,15 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/lin-alg"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LinAlg"]
+depends: [
+  "coq" {= "8.6.dev"}
+  "coq-algebra" {= "8.5.dev"}
+]
+tags: [ "keyword:linear algebra" "category:Mathematics/Algebra" "date:19 spetember 2003" ]
+authors: [ "Jasper Stein <jasper@cs.kun.nl>" ]
+bug-reports: "https://github.com/coq-contribs/lin-alg/issues"
+dev-repo: "https://github.com/coq-contribs/lin-alg.git"
