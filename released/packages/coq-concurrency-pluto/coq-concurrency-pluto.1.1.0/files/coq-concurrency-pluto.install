@@ -1,0 +1,4 @@
+bin: [
+  "extraction/pluto.native" {"pluto.native"}
+  "extraction/pluto.byte" {"pluto.byte"}
+]
