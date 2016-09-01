@@ -19,7 +19,6 @@ proceed as follows:
     export OPAMROOT=~/opam-coq.@COQV@ # installation directory
     export OPAMJOBS=2 # number of CPU cores
     opam init -n --comp=@OCAMLV@
-    eval `opam config env`
     opam repo add coq-released http://coq.inria.fr/opam/released
     opam install coq.@COQV@ && opam pin add coq @COQV@
 
