@@ -17,8 +17,7 @@ Once the `opam` command is available, i.e. OPAM is installed, one can
 proceed as follows:
 
     export OPAMROOT=~/opam-coq.@COQV@ # installation directory
-    export OPAMJOBS=2 # number of CPU cores
-    opam init -n --comp=@OCAMLV@
+    opam init -n --comp=@OCAMLV@ -j 2 # 2 is the number of CPU cores
     opam repo add coq-released http://coq.inria.fr/opam/released
     opam install coq.@COQV@ && opam pin add coq @COQV@
 
@@ -32,7 +31,7 @@ files to be available on the system.
 Every time a new shell is opened one has to type in the following lines
 in order to use Coq
 
-    export OPAMROOT=~/opam-coq.@COQV@ OPAMJOBS=2
+    export OPAMROOT=~/opam-coq.@COQV@
     eval `opam config env`
 
 After that `coqc -v` shall run and print the version of Coq.
