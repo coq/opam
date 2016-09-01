@@ -78,7 +78,7 @@ The preliminary step is to lint your `opam` file as follows
 
     opam lint released/coq-foo/coq-foo.1.0.0/opam
 
-Once no more errors are given, the best way to test your package is to add you
+Once no more errors are given, the best way to test your package is to add your
 local clone of `opam-coq-archive` to opam as follows, and then run `opam
 install` on your new package in verbose mode:
 
@@ -91,7 +91,7 @@ to install the package you shall run `opam update`.
 ## Submitting your new package
 
 Submission happens by [creating a pull request](https://help.github.com/articles/creating-a-pull-request/)
- on the [coq-opam-archive repository](https://github.com/coq/opam-coq-archive).
+ on the [opam-coq-archive repository](https://github.com/coq/opam-coq-archive).
 
 First push your changes to you personal fork
 
@@ -113,7 +113,7 @@ _new_ _pull_ _request_ button.
     and the version has to end in `dev` like `mybranch.dev`.
  1. The package name should start with `coq-`, for example `coq-color` or
     `coq-interval`.
- 2. The `tags` field in the `OPAM` file can contain additional metadata
+ 2. The `tags` field in the `opam` file can contain additional metadata
     (like a categorization or the Coq logical path the package populates)
     as described in [CEP3](https://github.com/coq/ceps/blob/master/text/003-opam-metadata.md)
 
@@ -134,7 +134,7 @@ met:
     OPAM archive website)
  1. Includes a _Changelog_ that lists the main changes between any
     two versions part of this archive
- 1. The _License_ must allow free redistribution (even if it not a free
+ 1. The _License_ must allow free redistribution (even if it is not a free
     software license)
  1. _No_ _Admitted_ proofs
  1. All _Axioms_ used are documented
