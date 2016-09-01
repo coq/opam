@@ -1,0 +1,18 @@
+opam-version: "1.2"
+name: "coq-pi-agm"
+version: "1.0.0"
+maintainer: "yves.bertot@inria.fr"
+
+homepage: "http://www-sop.inria.fr/members/Yves.Bertot/"
+bug-reports: "yves.bertot@inria.fr"
+license: "CeCILL-B"
+build: [ make "-j" "%{jobs}%" ]
+install: [ make "install" "DEST='%{lib}%/coq/user-contrib/pi_agm'" ]
+remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/pi_agm'" ]
+depends: [
+  "coq" {>= "8.4pl4" &< "8.5~"}
+  "coq-ssreflect" {= "1.5.0"}
+  "coq-coquelicot" {= "2.0.1"}
+]
+tags: [ "keyword: real analysis" "keyword:pi" "category:Mathematics/Real Calculus and Topology" ]
+authors: [ "Yves Bertot <yves.bertot@inria.fr>" ]
