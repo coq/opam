@@ -1,11 +1,9 @@
 # OPAM archive for Coq
 
 All OPAM repositories for Coq packages live here.
-Packages are organized according to the [policy](POLICY.md).
+Packages are organized according to the [layout](LAYOUT.md).
 
 ## Repositories
-
-If you want to use the distribution mechanism (a selected subset of compatible packages), see [Coq Shell](https://github.com/coq/opam-coq-shell).
 
 To activate the repositories:
 * all the released packages:
@@ -58,3 +56,5 @@ Example:
 
 Finally the `homepage:`, `author:`, `maintainer:` and `doc:` fields are
 also used to generate the package entry.
+
+See also [CEP3](https://github.com/coq/ceps/blob/master/text/003-opam-metadata.md).
