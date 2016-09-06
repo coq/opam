@@ -1,6 +1,0 @@
-bin: [
-  "ccomp"
-]
-lib: [
-  "runtime/libcompcert.a"
-]
