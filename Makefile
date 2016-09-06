@@ -22,8 +22,8 @@ endif
 # refresh opam indexes + generate website
 all: check-deps
 	@./scripts/refresh-opam-indexes $(SUITES)
-	$(H)./scripts/archive2web templates/archive.html.in $(SUITES)
-	$(H)$(call pp,templates/archive.html,www/archive.html)
+	$(H)./scripts/archive2web templates/index.html.in $(SUITES)
+	$(H)$(call pp,templates/index.html,www/index.html)
 	$(H)$(call ppmd,Creating and Submitting a Package,PACKAGING,packaging)
 	$(H)$(call ppmd,Layout of the Coq Package Index,LAYOUT,layout)
 	$(H)$(call ppmd,Installing Coq via OPAM,USING,using)

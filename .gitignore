@@ -2,7 +2,7 @@
 .*.swp
 templates/*html
 www/policy.html
-www/archive.html
+www/index.html
 www/files
 www/styles
 */archives/*
