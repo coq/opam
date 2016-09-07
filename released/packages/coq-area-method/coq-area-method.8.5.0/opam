@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/AreaMethod"]
 depends: [
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:geometry" "keyword:chou gao zhang area method" "keyword:decision procedure" "date:2004-2010" ]
+tags: [ "keyword:geometry" "keyword:chou gao zhang area method" "keyword:decision procedure" "category:Mathematics/Geometry/AutomatedDeduction" "date:2004-2010" ]
 authors: [ "Julien Narboux <>" ]
 bug-reports: "https://github.com/coq-contribs/area-method/issues"
 dev-repo: "https://github.com/coq-contribs/area-method.git"
