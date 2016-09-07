@@ -15,3 +15,4 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GeoCoq"]
 depends: [
   "coq" {>= "8.4pl4" & < "8.5~beta1"}
 ]
+tags: [ "keyword:geometry" "keyword:neutral geometry" "keyword:euclidean geometry" "keyword:foundations" "keyword:Tarski" "keyword:Hilbert" "keyword:Pappus" "keyword:Desargues" "keyword:parallel postulates" "category:Mathematics/Geometry/General" ]
