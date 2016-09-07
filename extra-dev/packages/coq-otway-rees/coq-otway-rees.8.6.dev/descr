@@ -1,0 +1,5 @@
+Otway-Rees cryptographic protocol.
+
+A description and a proof of correctness for
+the Otway-Rees cryptographic protocol, usually used as an example for
+formalisation of such protocols.

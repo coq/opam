@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/shuffle"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Shuffle"]
+depends: [
+  "coq" {= "8.6.dev"}
+]
+tags: [ "keyword:gilbreath's card trick" "keyword:binary sequences" "category:Miscellaneous/Logical Puzzles and Entertainment" ]
+authors: [ "Gérard Huet <>" ]
+bug-reports: "https://github.com/coq-contribs/shuffle/issues"
+dev-repo: "https://github.com/coq-contribs/shuffle.git"

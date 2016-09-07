@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/mini-compiler"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MiniCompiler"]
+depends: [
+  "coq" {>= "8.5" & < "8.6~"}
+]
+tags: [ "keyword:compilation" "keyword:correctness" "keyword:arithmetic" "category:Computer Science/Semantics and Compilation/Compilation" "date:2003" ]
+authors: [ "Jean-Christophe Filliâtre <>" ]
+bug-reports: "https://github.com/coq-contribs/mini-compiler/issues"
+dev-repo: "https://github.com/coq-contribs/mini-compiler.git"

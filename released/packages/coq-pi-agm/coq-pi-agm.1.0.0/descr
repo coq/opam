@@ -1,0 +1,8 @@
+Computing thousands or millions of digits of PI with arithmetic-geometric means
+
+This is a proof of correctness for an algorithm to compute PI to high precision
+using an algorithm based on arithmetic-geometric means.  A first file contains
+the calculus-based proofs for an abstract view of the algorithm, where all
+numbers are real numbers.  A second file describes how to approximate all
+computations using large integers.  The whole development can be used to
+produce mathematically proved and formally verified approximations of PI.

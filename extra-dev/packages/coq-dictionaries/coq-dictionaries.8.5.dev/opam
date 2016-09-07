@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/dictionaries"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Dictionaries"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:modules  functors search trees" "category:Computer Science/Data Types and Data Structures" "category:Miscellaneous/Extracted Programs/Data structures" "date:Feb 6 2003" ]
+authors: [ "Pierre Castéran <casteran@labri.fr>" ]
+bug-reports: "https://github.com/coq-contribs/dictionaries/issues"
+dev-repo: "https://github.com/coq-contribs/dictionaries.git"

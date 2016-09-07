@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/hoare-tut"
+license: "GNU LGPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HoareTut"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:hoare logic" "keyword:imperative program" "keyword:weakest precondition" "keyword:reflection" "category:Computer Science/Semantics and Compilation/Semantics" "date:2007" ]
+authors: [ "Sylvain Boulmé <Sylvain.Boulme@imag.fr>" ]
+bug-reports: "https://github.com/coq-contribs/hoare-tut/issues"
+dev-repo: "https://github.com/coq-contribs/hoare-tut.git"

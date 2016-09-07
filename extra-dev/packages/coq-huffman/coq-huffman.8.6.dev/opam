@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/huffman"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Huffman"]
+depends: [
+  "coq" {= "8.6.dev"}
+]
+tags: [ "keyword:data compression" "keyword:code" "keyword:huffman tree" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category:Miscellaneous/Extracted Programs/Combinatorics" "date:October 2003" ]
+authors: [ "Laurent Théry <>" ]
+bug-reports: "https://github.com/coq-contribs/huffman/issues"
+dev-repo: "https://github.com/coq-contribs/huffman.git"

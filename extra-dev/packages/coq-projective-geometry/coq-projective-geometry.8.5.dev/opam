@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/projective-geometry"
+license: "Proprietary"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ProjectiveGeometry"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:geometry" "keyword:projective" "keyword:fano" "keyword:homogeneous coordinates model" "keyword:flat" "keyword:rank" "keyword:desargues" "keyword:moulton" "category:Mathematics/Geometry/General" "date:October 2009" ]
+authors: [ "Nicolas Magaud <Nicolas.Magaud@lsiit-cnrs.unistra.fr>" "Julien Narboux <Julien.Narboux@lsiit-cnrs.unistra.fr>" "Pascal Schreck <Pascal.Schreck@lsiit-cnrs.unistra.fr>" ]
+bug-reports: "https://github.com/coq-contribs/projective-geometry/issues"
+dev-repo: "https://github.com/coq-contribs/projective-geometry.git"

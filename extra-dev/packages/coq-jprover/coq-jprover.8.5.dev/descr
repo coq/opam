@@ -1,0 +1,6 @@
+A theorem prover for first-order intuitionistic logic.
+
+JProver is a theorem prover for first-order intuitionistic logic.
+It is originally implemented by Stephan Schmitt and then integrated into
+MetaPRL by Aleksey Nogin. After this, Huang Guan-Shieng extracted the
+necessary ML-codes from MetaPRL and then adapted it to Coq.

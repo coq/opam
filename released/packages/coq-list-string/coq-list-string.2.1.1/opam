@@ -1,12 +1,15 @@
-opam-version: "1.1"
+opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/coq-list-string"
+dev-repo: "https://github.com/clarus/coq-list-string.git"
 bug-reports: "https://github.com/clarus/coq-list-string/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
+]
+install: [
   [make "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ListString"]

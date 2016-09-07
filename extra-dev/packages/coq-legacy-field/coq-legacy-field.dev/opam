@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/legacy-field.git;a=tree"
+homepage: "https://github.com/coq-contribs/legacy-field"
 license: "LGPL 2"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LegacyField"]
 depends: [
-  "coq" {>= "8.5"}
-  "coq-legacy-ring"
+  "coq" {= "dev"}
+  "coq-legacy-ring" {= "dev"}
 ]
 authors: [ "David Delahaye <>" "Micaela Mayero <>" ]

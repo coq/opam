@@ -1,6 +1,7 @@
-opam-version: "1.1"
+opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/coq-opam-website"
+dev-repo: "https://github.com/clarus/coq-opam-website.git"
 bug-reports: "https://github.com/clarus/coq-opam-website/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"

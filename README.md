@@ -1,11 +1,9 @@
 # OPAM archive for Coq
 
 All OPAM repositories for Coq packages live here.
-Packages are organized according to the [policy](POLICY.md).
+Packages are organized according to the [layout](LAYOUT.md).
 
 ## Repositories
-
-If you want to use the distribution mechanism (a selected subset of compatible packages), see [Coq Shell](https://github.com/coq/opam-coq-shell).
 
 To activate the repositories:
 * all the released packages:
@@ -33,13 +31,13 @@ One should invoke `make COQWEB=path/to/coq/www` to generate the web pages
 using the same header, footer and `yamlpp` used by the Coq website (it is expected to be in `path/to/coq/www/yamlpp-0.3/yamlpp`.  The
 destination folder is `www/`.
 
-The templates are in `templates/`.  The file `archive.html.in` is first
+The templates are in `templates/`.  The file `index.html.in` is first
 processed by `scripts/archive2web` that fills in `<tr>` entries, then
 `yamlpp` is used to insert the header and footer.
 
 The code in `www/filter.js` is used to interactively browse the contents
-of the packages table in `archive.html`.  The css file
-`www/archive-style.css` is also part of the picture.
+of the packages table in `index.html`.  The css file
+`www/index-style.css` is also part of the picture.
 
 ## Website and OPAM metadata
 
@@ -58,3 +56,5 @@ Example:
 
 Finally the `homepage:`, `author:`, `maintainer:` and `doc:` fields are
 also used to generate the package entry.
+
+See also [CEP3](https://github.com/coq/ceps/blob/master/text/003-opam-metadata.md).

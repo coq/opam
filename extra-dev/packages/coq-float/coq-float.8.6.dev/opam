@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/float"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Float"]
+depends: [
+  "coq" {= "8.6.dev"}
+]
+tags: [ "keyword:floating point arithmetic" "category:Computer Science/Data Types and Data Structures" "date:2001" ]
+authors: [ "Sylvie Boldo <>" "Laurent Théry <>" ]
+bug-reports: "https://github.com/coq-contribs/float/issues"
+dev-repo: "https://github.com/coq-contribs/float.git"

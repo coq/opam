@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/schroeder"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Schroeder"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:schroeder bernstein" "keyword:set theory" "category:Mathematics/Logic/Set theory" ]
+authors: [ "Hugo Herbelin <>" ]
+bug-reports: "https://github.com/coq-contribs/schroeder/issues"
+dev-repo: "https://github.com/coq-contribs/schroeder.git"

@@ -1,0 +1,6 @@
+Some properties of hedges used by hedged bisimulation.
+
+These properties are in section 6.1 of the paper
+"On Bisimulations for the Spi-Calculus" by J. Borgström
+and U. Nestmann.
+However, we consider here an extended message language.

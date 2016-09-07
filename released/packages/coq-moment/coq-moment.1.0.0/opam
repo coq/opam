@@ -1,6 +1,7 @@
-opam-version: "1.1"
+opam-version: "1.2"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/coq-moment"
+dev-repo: "https://github.com/clarus/coq-moment.git"
 bug-reports: "https://github.com/clarus/coq-moment/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
@@ -8,6 +9,8 @@ build: [
   ["ruby" "pp.rb"]
   ["./configure.sh"]
   [make "-j%{jobs}%"]
+]
+install: [
   [make "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Moment"]

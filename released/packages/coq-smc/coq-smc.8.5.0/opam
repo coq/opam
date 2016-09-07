@@ -1,0 +1,15 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/smc"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SMC"]
+depends: [
+  "coq" {>= "8.5" & < "8.6~"}
+  "coq-int-map" {= "8.5.0"}
+]
+tags: [ "keyword:binary decision diagrams" "keyword:classical logic" "keyword:propositional logic" "keyword:garbage collection" "keyword:modal mu calculus" "keyword:model checking" "keyword:symbolic model checking" "keyword:reflection" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:November 2002" ]
+authors: [ "Kumar Neeraj Verma <verma@lsv.ens-cachan.fr>" ]
+bug-reports: "https://github.com/coq-contribs/smc/issues"
+dev-repo: "https://github.com/coq-contribs/smc.git"

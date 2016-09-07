@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/continuations.git;a=tree"
+homepage: "https://github.com/coq-contribs/continuations"
 license: "Proprietary"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Continuations"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~"}
+  "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:exceptions" "keyword:monads" "keyword:continuations" "keyword:cps" "category:Computer Science/Semantics and Compilation/Semantics" "category:Miscellaneous/Extracted Programs/Combinatorics" ]
 authors: [ "Jean-François Monin <>" ]

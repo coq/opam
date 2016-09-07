@@ -1,0 +1,656 @@
+diff --git a/lib/pp.ml b/lib/pp.ml
+index 4f50e3e..dc59cb8 100644
+--- a/lib/pp.ml
++++ b/lib/pp.ml
+@@ -186,6 +186,39 @@ let utf8_length s =
+   done ;
+   !cnt
+ 
++(* Variant of String.sub for UTF8 character positions *)
++let utf8_sub s start_u len_u =
++  let len_b = String.length s
++  and end_u = start_u + len_u
++  and cnt = ref 0
++  and nc = ref 0
++  and p = ref 0 in
++  let start_b = ref len_b in
++  while !p < len_b && !cnt < end_u do
++    if !cnt <= start_u then start_b := !p ;
++    begin
++      match s.[!p] with
++      | '\000'..'\127' -> nc := 0 (* ascii char *)
++      | '\128'..'\191' -> nc := 0 (* cannot start with a continuation byte *)
++      |	'\192'..'\223' -> nc := 1 (* expect 1 continuation byte *)
++      |	'\224'..'\239' -> nc := 2 (* expect 2 continuation bytes *)
++      |	'\240'..'\247' -> nc := 3 (* expect 3 continuation bytes *)
++      |	'\248'..'\251' -> nc := 4 (* expect 4 continuation bytes *)
++      |	'\252'..'\253' -> nc := 5 (* expect 5 continuation bytes *)
++      |	'\254'..'\255' -> nc := 0 (* invalid byte *)
++    end ;
++    incr p ;
++    while !p < len_b && !nc > 0 do
++      match s.[!p] with
++      |	'\128'..'\191' (* next continuation byte *) -> incr p ; decr nc
++      |	_ (* not a continuation byte *) -> nc := 0
++    done ;
++    incr cnt
++  done ;
++  let end_b = !p in
++  String.sub s !start_b (end_b - !start_b)
++
++
+ (* formatting commands *)
+ let str s = Glue.atom(Ppcmd_print (Str_def s))
+ let stras (i, s) = Glue.atom(Ppcmd_print (Str_len (s, i)))
+diff --git a/lib/pp.mli b/lib/pp.mli
+index 2508779..c86084a 100644
+--- a/lib/pp.mli
++++ b/lib/pp.mli
+@@ -185,6 +185,9 @@ val get_id_for_feedback : unit -> Feedback.edit_or_state_id * Feedback.route_id
+ 
+ val string_of_ppcmds : std_ppcmds -> string
+ 
++val utf8_length : string -> int
++val utf8_sub : string -> int -> int -> string
++
+ (** {6 Printing combinators} *)
+ 
+ val pr_comma : unit -> std_ppcmds
+diff --git a/library/declaremods.ml b/library/declaremods.ml
+index 0434841..0b351c7 100644
+--- a/library/declaremods.ml
++++ b/library/declaremods.ml
+@@ -890,7 +890,13 @@ let start_library dir =
+   Lib.start_compilation dir mp;
+   Lib.add_frozen_state ()
+ 
++let extra_end_library_hook = ref ignore
++let append_end_library_hook f =
++  let old_f = !extra_end_library_hook in
++  extra_end_library_hook := fun () -> old_f(); f ()
++
+ let end_library ?except dir =
++  !extra_end_library_hook();
+   let oname = Lib.end_compilation_checks dir in
+   let mp,cenv,ast = Global.export ?except dir in
+   let prefix, lib_stack = Lib.end_compilation oname in
+diff --git a/library/declaremods.mli b/library/declaremods.mli
+index 2b440c0..3917fe8 100644
+--- a/library/declaremods.mli
++++ b/library/declaremods.mli
+@@ -90,6 +90,9 @@ val end_library :
+   ?except:Future.UUIDSet.t -> library_name ->
+     Safe_typing.compiled_library * library_objects * Safe_typing.native_library
+ 
++(** append a function to be executed at end_library *)
++val append_end_library_hook : (unit -> unit) -> unit
++
+ (** [really_import_module mp] opens the module [mp] (in a Caml sense).
+    It modifies Nametab and performs the [open_object] function for
+    every object of the module. Raises [Not_found] when [mp] is unknown
+diff --git a/tactics/hightactics.mllib b/tactics/hightactics.mllib
+index ff2e1ff..d309d02 100644
+--- a/tactics/hightactics.mllib
++++ b/tactics/hightactics.mllib
+@@ -9,3 +9,4 @@ G_rewrite
+ Tauto
+ Eqdecide
+ G_eqdecide
++Profile_ltac_tactics
+diff --git a/tactics/profile_ltac.ml b/tactics/profile_ltac.ml
+new file mode 100644
+index 0000000..59568cb
+--- /dev/null
++++ b/tactics/profile_ltac.ml
+@@ -0,0 +1,296 @@
++open Pp
++open Printer
++open Util
++
++
++(** [is_profiling] and the profiling info ([stack]) should be synchronized with the document; the rest of the ref cells are either local to individual tactic invocations, or global flags, and need not be synchronized, since no document-level backtracking happens within tactics.  We synchronize is_profiling via an option. *)
++let is_profiling = ref false
++
++let set_profiling b = is_profiling := b
++let get_profiling () = !is_profiling
++
++let should_display_profile_at_close = ref false
++let set_display_profile_at_close b = should_display_profile_at_close := b
++
++
++let new_call = ref false
++let entered_call() = new_call := true
++let is_new_call() = let b = !new_call in new_call := false; b
++
++(** LtacProf cannot yet handle backtracking into multi-success tactics.  To properly support this, we'd have to somehow recreate our location in the call-stack, and stop/restart the intervening timers.  This is tricky and possibly expensive, so instead we currently just emit a warning that profiling results will be off. *)
++let encountered_multi_success_backtracking = ref false
++let warn_encountered_multi_success_backtracking() =
++  if !encountered_multi_success_backtracking
++  then msg_warning (str "Ltac Profiler cannot yet handle backtracking into multi-success tactics; profiling results may be wildly inaccurate.")
++let encounter_multi_success_backtracking() =
++  if not !encountered_multi_success_backtracking
++  then begin
++    encountered_multi_success_backtracking := true;
++    warn_encountered_multi_success_backtracking()
++  end
++
++
++type entry = {mutable total : float; mutable local : float; mutable ncalls : int; mutable max_total : float}
++let empty_entry() = {total = 0.; local = 0.; ncalls = 0; max_total = 0.}
++let add_entry e add_total {total; local; ncalls; max_total} =
++  if add_total then e.total <- e.total +. total;
++  e.local <- e.local +. local;
++  e.ncalls <- e.ncalls + ncalls;
++  if add_total then e.max_total <- max e.max_total max_total
++
++type treenode = {entry : entry; children : (string, treenode) Hashtbl.t}
++
++(** Tobias Tebbi wrote some tricky code involving mutation.  Rather than rewriting it in a functional style, we simply freeze the state when we need to by issuing a deep copy of the profiling data. *)
++let deepcopy_entry {total; local; ncalls; max_total} =
++  {total; local; ncalls; max_total}
++
++let rec deepcopy_treenode {entry; children} =
++  {entry = deepcopy_entry entry;
++   children =
++      (let children' = Hashtbl.create (Hashtbl.length children) in
++       Hashtbl.iter
++	 (fun key subtree -> Hashtbl.add children' key (deepcopy_treenode subtree))
++	 children;
++       children')}
++
++let stack = Summary.ref ~freeze:(fun _ -> List.map deepcopy_treenode) [{entry=empty_entry(); children=Hashtbl.create 20}] ~name:"LtacProf-stack"
++
++let on_stack = Hashtbl.create 5
++
++let get_node c table =
++  try Hashtbl.find table c
++  with Not_found ->
++    let new_node = {entry=empty_entry(); children=Hashtbl.create 5} in
++    Hashtbl.add table c new_node;
++    new_node
++
++let rec add_node node node' =
++  add_entry node.entry true node'.entry;
++  Hashtbl.iter
++    (fun s node' -> add_node (get_node s node.children) node')
++    node'.children
++
++let time() =
++  let times = Unix.times() in
++  times.Unix.tms_utime +. times.Unix.tms_stime
++
++let rec print_treenode indent (tn : treenode) =
++  msgnl(str(indent^"{ entry = {"));
++  msg(str(indent^"total = "));
++  msgnl(str (indent^(string_of_float (tn.entry.total))));
++  msg(str(indent^"local = "));
++  msgnl(str (indent^(string_of_float tn.entry.local)));
++  msg(str(indent^"ncalls = "));
++  msgnl(str (indent^(string_of_int tn.entry.ncalls)));
++  msg(str(indent^"max_total = "));
++  msgnl(str (indent^(string_of_float tn.entry.max_total)));
++  msgnl(str(indent^"}"));
++  msgnl(str(indent^"children = {"));
++  Hashtbl.iter
++    (fun s node ->
++      msgnl(str(indent^" "^s^" |-> "));
++      print_treenode (indent^"  ") node
++    )
++    tn.children;
++  msgnl(str(indent^"} }"))
++
++let rec print_stack (st : treenode list) =
++  (match st with
++    | [] -> msgnl(str "[]")
++    | x::xs -> print_treenode "" x; msgnl(str("::")); print_stack xs)
++
++
++let string_of_call ck =
++  let s =
++  string_of_ppcmds
++    (match ck with
++       | Proof_type.LtacNotationCall s -> Names.KerName.print s
++       | Proof_type.LtacNameCall cst -> Pptactic.pr_ltac_constant cst
++       | Proof_type.LtacVarCall (id,t) -> Nameops.pr_id id
++       | Proof_type.LtacAtomCall te ->
++	 (Pptactic.pr_glob_tactic (Global.env())
++	    (Tacexpr.TacAtom (Loc.ghost,te)))
++       | Proof_type.LtacConstrInterp (c,_) ->
++	 pr_glob_constr_env (Global.env()) c
++       | Proof_type.LtacMLCall te ->
++	 (Pptactic.pr_glob_tactic (Global.env())
++            te)
++    ) in
++  for i = 0 to String.length s - 1 do if s.[i] = '\n' then s.[i] <- ' ' done;
++  let s = try String.sub s 0 (CString.string_index_from s 0 "(*") with Not_found -> s in
++  CString.strip s
++
++let exit_tactic start_time add_total c =
++  try
++    let node :: stack' = !stack in
++    let parent = List.hd stack' in
++    stack := stack';
++    if add_total then Hashtbl.remove on_stack (string_of_call c);
++    let diff = time() -. start_time in
++    parent.entry.local <- parent.entry.local -. diff;
++    add_entry node.entry add_total {total = diff; local = diff; ncalls = 1; max_total = diff};
++  with Failure("hd") -> (* oops, our stack is invalid *)
++    encounter_multi_success_backtracking()
++
++let tclFINALLY tac (finally : unit Proofview.tactic) =
++  let open Proofview.Notations in
++  Proofview.tclIFCATCH
++    tac
++    (fun v -> finally <*> Proofview.tclUNIT v)
++    (fun (exn,info) -> finally <*> Proofview.tclZERO ~info exn)
++
++let do_profile s call_trace tac =
++  let open Proofview.Notations in
++  Proofview.tclLIFT (Proofview.NonLogical.make (fun () ->
++  if !is_profiling && is_new_call() then
++    match call_trace with
++      | (_, c) :: _ ->
++	let s = string_of_call c in
++	let parent = List.hd !stack in
++	let node, add_total = try Hashtbl.find on_stack s, false
++			      with Not_found ->
++				   let node = get_node s parent.children in
++				   Hashtbl.add on_stack s node;
++				   node, true
++	in
++	if not add_total && node = List.hd !stack then None else (
++	  stack := node :: !stack;
++	  let start_time = time() in
++          Some (start_time, add_total)
++	)
++      | [] -> None
++  else None)) >>= function
++  | Some (start_time, add_total) ->
++    tclFINALLY
++      tac
++      (Proofview.tclLIFT (Proofview.NonLogical.make (fun () ->
++	(match call_trace with
++	| (_, c) :: _ ->
++          exit_tactic start_time add_total c
++	| [] -> ()))))
++  | None -> tac
++
++
++
++let format_sec x = (Printf.sprintf "%.3fs" x)
++let format_ratio x = (Printf.sprintf "%.1f%%" (100. *. x))
++let padl n s = ws (max 0 (n - utf8_length s)) ++ str s
++let padr n s = str s ++ ws (max 0 (n - utf8_length s))
++let padr_with c n s =
++  let ulength = utf8_length s in
++  str (utf8_sub s 0 n) ++ str(String.make (max 0 (n - ulength)) c)
++
++let rec list_iter_is_last f = function
++  | []      -> ()
++  | [x]     -> f true x
++  | x :: xs -> f false x; list_iter_is_last f xs
++
++let header() =
++  msgnl(str" tactic                                    self  total   calls       max");
++  msgnl(str"────────────────────────────────────────┴──────┴──────┴───────┴─────────┘")
++
++let rec print_node all_total indent prefix (s,n) =
++  let e = n.entry in
++  msgnl(
++    h 0(
++      padr_with '-' 40 (prefix ^ s ^ " ")
++      ++padl 7 (format_ratio (e.local /. all_total))
++      ++padl 7 (format_ratio (e.total /. all_total))
++      ++padl 8 (string_of_int e.ncalls)
++      ++padl 10 (format_sec(e.max_total))
++    )
++    );
++  print_table all_total indent false n.children
++
++and print_table all_total indent first_level table =
++  let ls = Hashtbl.fold
++	     (fun s n l -> if n.entry.total /. all_total < 0.02 then l else (s, n) :: l)
++      table [] in
++  match ls with
++  | [(s,n)]  when (not first_level) ->
++     print_node all_total indent (indent^"└") (s,n)
++  | _ ->
++     let ls = List.sort (fun (_, n1) (_, n2) -> compare n2.entry.total n1.entry.total) ls in
++     list_iter_is_last
++       (fun is_last ->
++	print_node
++	  all_total
++	  (indent^if first_level then "" else if is_last then "  " else " │")
++	  (indent^if first_level then "─" else if is_last then " └─" else " ├─")
++       )
++       ls
++
++let print_results() =
++  let tree = (List.hd !stack).children in
++  let all_total = -. (List.hd !stack).entry.local in
++  let global = Hashtbl.create 20 in
++  let rec cumulate table =
++    Hashtbl.iter
++      (fun s node ->
++	let node' = get_node s global in
++	add_entry node'.entry true node.entry;
++	cumulate node.children
++      )
++      table
++  in
++  cumulate tree;
++  warn_encountered_multi_success_backtracking();
++  msgnl(str"");
++  msgnl(h 0(
++      str"total time: "++padl 11 (format_sec(all_total))
++    )
++       );
++  msgnl(str"");
++  header();
++  print_table all_total "" true global;
++  msgnl(str"");
++  header();
++  print_table all_total "" true tree
++  (* FOR DEBUGGING *)
++  (* ;
++     msgnl(str"");
++     print_stack(!stack)
++  *)
++
++let print_results_tactic tactic =
++  let tree = (List.hd !stack).children in
++  let table_tactic = Hashtbl.create 20 in
++  let rec cumulate table =
++    Hashtbl.iter
++      (fun s node ->
++       if String.sub (s^".") 0 (min (1+String.length s) (String.length tactic)) = tactic
++       then add_node (get_node s table_tactic) node
++       else cumulate node.children
++      )
++      table
++  in
++  cumulate tree;
++  let all_total = -. (List.hd !stack).entry.local in
++  let tactic_total =
++    Hashtbl.fold
++      (fun _ node all_total -> node.entry.total +. all_total)
++      table_tactic 0. in
++  warn_encountered_multi_success_backtracking();
++  msgnl(str"");
++   msgnl(h 0(
++      str"total time:           "++padl 11 (format_sec(all_total))
++    )
++	);
++   msgnl(h 0(
++      str"time spent in tactic: "++padl 11 (format_sec(tactic_total))
++    )
++       );
++  msgnl(str"");
++  header();
++  print_table tactic_total "" true table_tactic
++
++let reset_profile() =
++  stack := [{entry=empty_entry(); children=Hashtbl.create 20}];
++  encountered_multi_success_backtracking := false
++
++let do_print_results_at_close () =
++  if !should_display_profile_at_close
++  then print_results ()
++  else ()
++
++let _ = Declaremods.append_end_library_hook do_print_results_at_close
+diff --git a/tactics/profile_ltac.mli b/tactics/profile_ltac.mli
+new file mode 100644
+index 0000000..64fb49b
+--- /dev/null
++++ b/tactics/profile_ltac.mli
+@@ -0,0 +1,17 @@
++val do_profile : string -> ('a * Proof_type.ltac_call_kind) list -> 'b Proofview.tactic -> 'b Proofview.tactic
++
++val set_profiling : bool -> unit
++
++val get_profiling : unit -> bool
++
++val set_display_profile_at_close : bool -> unit
++
++val entered_call : unit -> unit
++
++val print_results : unit -> unit
++
++val print_results_tactic : string -> unit
++
++val reset_profile : unit -> unit
++
++val do_print_results_at_close : unit -> unit
+diff --git a/tactics/profile_ltac_tactics.ml4 b/tactics/profile_ltac_tactics.ml4
+new file mode 100644
+index 0000000..5d96787
+--- /dev/null
++++ b/tactics/profile_ltac_tactics.ml4
+@@ -0,0 +1,39 @@
++(*i camlp4deps: "grammar/grammar.cma" i*)
++
++open Profile_ltac
++
++DECLARE PLUGIN "profile_ltac_plugin"
++
++let tclSET_PROFILING b =
++   Proofview.tclLIFT (Proofview.NonLogical.make (fun () ->
++   set_profiling b))
++
++TACTIC EXTEND start_ltac_profiling
++  | [ "start" "ltac" "profiling" ] -> [ tclSET_PROFILING true  ]
++END
++
++TACTIC EXTEND stop_profiling
++  | [ "stop" "ltac" "profiling" ] ->  [ tclSET_PROFILING false ]
++END;;
++
++let _ =
++  Goptions.declare_bool_option
++    { optsync  = true;
++      optdepr  = false;
++      optname  = "Ltac Profiling";
++      optkey   = ["Ltac"; "Profiling"];
++      optread  = get_profiling;
++      optwrite = set_profiling }
++
++VERNAC COMMAND EXTEND ResetLtacProfiling CLASSIFIED AS SIDEFF
++ [ "Reset" "Ltac" "Profile" ] -> [ reset_profile() ]
++END
++
++VERNAC COMMAND EXTEND ShowLtacProfile CLASSIFIED AS QUERY
++ [ "Show" "Ltac" "Profile" ] -> [ print_results() ]
++END
++
++
++VERNAC COMMAND EXTEND ShowLtacProfileTactic CLASSIFIED AS QUERY
++ [ "Show" "Ltac" "Profile" string(s) ] -> [ print_results_tactic s ]
++END
+diff --git a/tactics/tacinterp.ml b/tactics/tacinterp.ml
+index 5ecc46d..2e02efe 100644
+--- a/tactics/tacinterp.ml
++++ b/tactics/tacinterp.ml
+@@ -222,9 +222,10 @@ let valueIn t = TacDynamic (Loc.ghost, value_in t)
+ 
+ (** Generic arguments : table of interpretation functions *)
+ 
++(* Some of the code further down depends on the fact that push_trace does not modify sigma (the evar map) *)
+ let push_trace call ist = match TacStore.get ist.extra f_trace with
+-| None -> [call]
+-| Some trace -> call :: trace
++| None -> Proofview.tclUNIT [call]
++| Some trace -> Proofview.tclLIFT (Proofview.NonLogical.make Profile_ltac.entered_call) <*> Proofview.tclUNIT (call :: trace)
+ 
+ let propagate_trace ist loc id v =
+   let v = Value.normalize v in
+@@ -233,10 +234,11 @@ let propagate_trace ist loc id v =
+     match tacv with
+     | VFun (appl,_,lfun,it,b) ->
+         let t = if List.is_empty it then b else TacFun (it,b) in
+-        let ans = VFun (appl,push_trace(loc,LtacVarCall (id,t)) ist,lfun,it,b) in
+-        of_tacvalue ans
+-    | _ ->  v
+-  else v
++        push_trace(loc,LtacVarCall (id,t)) ist >>= fun trace ->
++        let ans = VFun (appl,trace,lfun,it,b) in
++        Proofview.tclUNIT (of_tacvalue ans)
++    | _ ->  Proofview.tclUNIT v
++  else Proofview.tclUNIT v
+ 
+ let append_trace trace v =
+   let v = Value.normalize v in
+@@ -561,8 +563,13 @@ let interp_gen kind ist allow_patvar flags env sigma (c,ce) =
+         match kind with OfType _ -> WithoutTypeConstraint | _ -> kind in
+       intern_gen kind_for_intern ~allow_patvar ~ltacvars env c
+   in
+-  let trace =
+-    push_trace (loc_of_glob_constr c,LtacConstrInterp (c,vars)) ist in
++  (* Jason Gross: To avoid unnecessary modifications to tacinterp, as
++      suggested by Arnaud Spiwack, we run push_trace immediately.  We do
++      this with the kludge of an empty proofview, and rely on the
++      invariant that running the tactic returned by push_trace does
++      not modify sigma. *)
++  let (_, dummy_proofview) = Proofview.init sigma [] in
++  let (trace,_,_,_) = Proofview.apply env (push_trace (loc_of_glob_constr c,LtacConstrInterp (c,vars)) ist) dummy_proofview in
+   let (evd,c) =
+     catch_error trace (understand_ltac flags env sigma vars kind) c
+   in
+@@ -1123,12 +1130,14 @@ let rec val_interp ist ?(appl=UnnamedAppl) (tac:glob_tactic_expr) : typed_generi
+         in
+ 	Ftactic.debug_prompt lev tac eval
+   | _ -> value_interp ist >>= fun v -> return (name_vfun appl v)
+-      
++
+ 
+ and eval_tactic ist tac : unit Proofview.tactic = match tac with
+   | TacAtom (loc,t) ->
+       let call = LtacAtomCall t in
+-      catch_error_tac (push_trace(loc,call) ist) (interp_atomic ist t)
++      push_trace(loc,call) ist >>= fun trace ->
++      Profile_ltac.do_profile "eval_tactic:2" trace
++        (catch_error_tac trace (interp_atomic ist t))
+   | TacFun _ | TacLetIn _ -> assert false
+   | TacMatchGoal _ | TacMatch _ -> assert false
+   | TacId [] -> Proofview.tclLIFT (db_breakpoint (curr_debug ist) [])
+@@ -1336,7 +1345,7 @@ and eval_tactic ist tac : unit Proofview.tactic = match tac with
+       let addvar (x, v) accu = Id.Map.add x v accu in
+       let tac l =
+         let lfun = List.fold_right addvar l ist.lfun in
+-        let trace = push_trace (loc,LtacNotationCall s) ist in
++        Ftactic.lift (push_trace (loc,LtacNotationCall s) ist) >>= fun trace ->
+         let ist = {
+           lfun = lfun;
+           extra = TacStore.set ist.extra f_trace trace; } in
+@@ -1354,7 +1363,7 @@ and eval_tactic ist tac : unit Proofview.tactic = match tac with
+       Ftactic.run tac (fun () -> Proofview.tclUNIT ())
+ 
+   | TacML (loc,opn,l) when List.for_all global_genarg l ->
+-      let trace = push_trace (loc,LtacMLCall tac) ist in
++      push_trace (loc,LtacMLCall tac) ist >>= fun trace ->
+       let ist = { ist with extra = TacStore.set ist.extra f_trace trace; } in
+       (* spiwack: a special case for tactics (from TACTIC EXTEND) when
+          every argument can be interpreted without a
+@@ -1371,7 +1380,7 @@ and eval_tactic ist tac : unit Proofview.tactic = match tac with
+       Proofview.Trace.name_tactic name
+         (catch_error_tac trace (tac args ist))
+   | TacML (loc,opn,l) ->
+-      let trace = push_trace (loc,LtacMLCall tac) ist in
++      push_trace (loc,LtacMLCall tac) ist >>= fun trace ->
+       let ist = { ist with extra = TacStore.set ist.extra f_trace trace; } in
+       Proofview.Goal.nf_enter begin fun gl ->
+         let env = Proofview.Goal.env gl in
+@@ -1405,15 +1414,17 @@ and interp_ltac_reference loc' mustbetac ist r : typed_generic_argument Ftactic.
+         try Id.Map.find id ist.lfun
+         with Not_found -> in_gen (topwit wit_var) id
+       in
+-      Ftactic.bind (force_vrec ist v) begin fun v ->
+-      let v = propagate_trace ist loc id v in
++      let open Ftactic in
++      force_vrec ist v >>= begin fun v ->
++      Ftactic.lift (propagate_trace ist loc id v) >>= fun v ->
+       if mustbetac then Ftactic.return (coerce_to_tactic loc id v) else Ftactic.return v
+       end
+   | ArgArg (loc,r) ->
+       let ids = extract_ids [] ist.lfun in
+       let loc_info = ((if Loc.is_ghost loc' then loc else loc'),LtacNameCall r) in
+-      let extra = TacStore.set ist.extra f_avoid_ids ids in 
+-      let extra = TacStore.set extra f_trace (push_trace loc_info ist) in
++      let extra = TacStore.set ist.extra f_avoid_ids ids in
++      push_trace loc_info ist >>= fun trace ->
++      let extra = TacStore.set extra f_trace trace in
+       let ist = { lfun = Id.Map.empty; extra = extra; } in
+       let appl = GlbAppl[r,[]] in
+       val_interp ~appl ist (Tacenv.interp_ltac r)
+@@ -1542,7 +1553,7 @@ and tactic_of_value ist vle =
+         lfun = lfun;
+         extra = TacStore.set ist.extra f_trace []; } in
+       let tac = name_if_glob appl (eval_tactic ist t) in
+-      catch_error_tac trace tac
++      Profile_ltac.do_profile "tactic_of_value" trace (catch_error_tac trace tac)
+   | (VFun _|VRec _) -> Tacticals.New.tclZEROMSG (str "A fully applied tactic is expected.")
+   else if has_type vle (topwit wit_tactic) then
+     let tac = out_gen (topwit wit_tactic) vle in
+diff --git a/tactics/tactics.mllib b/tactics/tactics.mllib
+index 2c5edc2..11191e3 100644
+--- a/tactics/tactics.mllib
++++ b/tactics/tactics.mllib
+@@ -21,6 +21,7 @@ Hints
+ Auto
+ Tacintern
+ Tactic_matching
++Profile_ltac
+ Tacinterp
+ Evar_tactics
+ Term_dnet
+diff --git a/test-suite/success/ltacprof.v b/test-suite/success/ltacprof.v
+new file mode 100644
+index 0000000..d555269
+--- /dev/null
++++ b/test-suite/success/ltacprof.v
+@@ -0,0 +1,8 @@
++(** Some LtacProf tests *)
++
++Set Ltac Profiling.
++Ltac multi := (idtac + idtac).
++Goal True.
++  try (multi; fail). (* Used to result in: Anomaly: Uncaught exception Failure("hd"). Please report. *)
++Admitted.
++Show Ltac Profile.
+diff --git a/tools/coqc.ml b/tools/coqc.ml
+index b7910e1..b2b5737 100644
+--- a/tools/coqc.ml
++++ b/tools/coqc.ml
+@@ -99,7 +99,7 @@ let parse_args () =
+ 
+ (* Options for coqtop : a) options with 0 argument *)
+ 
+-    | ("-notactics"|"-bt"|"-debug"|"-nolib"|"-boot"|"-time"
++    | ("-notactics"|"-bt"|"-debug"|"-nolib"|"-boot"|"-time"|"-profile-ltac"
+       |"-batch"|"-noinit"|"-nois"|"-noglob"|"-no-glob"
+       |"-q"|"-full"|"-profile"|"-just-parsing"|"-echo" |"-unsafe"|"-quiet"
+       |"-silent"|"-m"|"-xml"|"-v7"|"-v8"|"-beautify"|"-strict-implicit"
+diff --git a/toplevel/coqtop.ml b/toplevel/coqtop.ml
+index cfedff0..fa71e23 100644
+--- a/toplevel/coqtop.ml
++++ b/toplevel/coqtop.ml
+@@ -536,6 +536,7 @@ let parse_args arglist =
+       else native_compiler := true
+     |"-notop" -> unset_toplevel_name ()
+     |"-output-context" -> output_context := true
++    |"-profile-ltac" -> Profile_ltac.set_profiling true; Profile_ltac.set_display_profile_at_close true
+     |"-q" -> no_load_rc ()
+     |"-quiet"|"-silent" -> Flags.make_silent true; Flags.make_warn false
+     |"-quick" -> Flags.compilation_mode := BuildVio
+diff --git a/toplevel/usage.ml b/toplevel/usage.ml
+index 4280006..47134f0 100644
+--- a/toplevel/usage.ml
++++ b/toplevel/usage.ml
+@@ -77,6 +77,7 @@ let print_usage_channel co command =
+ \n                         the directory $COQ_XML_LIBRARY_ROOT (if set) or to\
+ \n                         stdout (if unset)\
+ \n  -time                  display the time taken by each command\
++\n  -profile-ltac           display the time taken by each (sub)tactic\
+ \n  -m, --memory           display total heap size at program exit\
+ \n                         (use environment variable\
+ \n                          OCAML_GC_STATS=\"/tmp/gclog.txt\"\

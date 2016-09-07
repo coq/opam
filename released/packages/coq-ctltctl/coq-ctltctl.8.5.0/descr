@@ -1,0 +1,5 @@
+Computation Tree Logic for Reactive Systems and Timed Computation Tree Logic for Real Time Systems.
+
+This library formalises two logics for reasoning about
+reactive systems (CTL) and real time systems (TCTL) represents using
+timed automatas (timed graphs) with discrete time.

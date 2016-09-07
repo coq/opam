@@ -1,0 +1,5 @@
+A direct constructive proof of Higman's Lemma.
+
+This development formalizes in Coq the Coquand-Friedlender proof of
+Higman's lemma for a two-letter alphabet.
+An efficient program can be extracted from the proof.

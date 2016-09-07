@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/hedges.git;a=tree"
+homepage: "https://github.com/coq-contribs/hedges"
 license: "LGPL 2"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Hedges"]
 depends: [
-  "coq" {>= "8.4" & < "8.5~"}
+  "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:bisimulation" "keyword:spi calculus" "keyword:hedges" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:20/04/2004" ]
 authors: [ "Sébastien Briais <>" ]

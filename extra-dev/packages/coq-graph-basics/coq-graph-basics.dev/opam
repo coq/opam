@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/graph-basics.git;a=tree"
+homepage: "https://github.com/coq-contribs/graph-basics"
 license: "LGPL 2"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GraphBasics"]
 depends: [
-  "coq" {>= "8.5"}
+  "coq" {= "dev"}
 ]
 tags: [ "keyword:graph theory" "keyword:curry howard's isomorphism" "keyword:inductive" "keyword:definitions" "category:Mathematics/Combinatorics and Graph Theory" "date:April 2001" ]
 authors: [ "Jean Duprat <>" ]

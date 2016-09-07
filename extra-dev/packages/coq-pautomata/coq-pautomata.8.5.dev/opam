@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/pautomata"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PAutomata"]
+depends: [
+  "coq" {= "8.5.dev"}
+]
+tags: [ "keyword:p automata" "keyword:abr" "keyword:pgm" "keyword:time" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" ]
+authors: [ "Emmanuel Freund <>" "Christine Paulin <>" ]
+bug-reports: "https://github.com/coq-contribs/pautomata/issues"
+dev-repo: "https://github.com/coq-contribs/pautomata.git"

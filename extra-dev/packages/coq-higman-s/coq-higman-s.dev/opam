@@ -1,6 +1,6 @@
 opam-version: "1.1"
 maintainer: "dev@clarus.me"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/higman-s.git;a=tree"
+homepage: "https://github.com/coq-contribs/higman-s"
 license: "LGPL"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
@@ -9,7 +9,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HigmanS"]
 depends: [
-  "coq" {>= "8.5"}
+  "coq" {= "dev"}
 ]
 tags: [ "keyword:higman's lemma" "keyword:well quasi ordering" "category:Mathematics/Combinatorics and Graph Theory" "date:14/09/2007" ]
 authors: [ "William Delobel <william.delobel@lif.univ-mrs.fr>" ]
