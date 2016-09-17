@@ -95,7 +95,7 @@ index 5cbb7bd..30a6c11 100644
      | "-R" :: s :: t :: rem -> parse (cfiles,t::s::"-R"::args) rem
  
 -    | ("-notactics"|"-debug"|"-nolib"|"-boot"|"-time"
-+    | ("-notactics"|"-debug"|"-nolib"|"-boot"|"-time"|"-profileltac"
++    | ("-notactics"|"-debug"|"-nolib"|"-boot"|"-time"|"-profile-ltac"
        |"-batch"|"-nois"|"-noglob"|"-no-glob"
        |"-q"|"-full"|"-profile"|"-just-parsing"|"-echo" |"-unsafe"|"-quiet"
        |"-silent"|"-m"|"-xml"|"-v7"|"-v8"|"-beautify"|"-strict-implicit"
@@ -113,17 +113,17 @@ new file mode 100644
 index 0000000..d874a46
 --- /dev/null
 +++ b/tactics/profile_ltac.ml
-@@ -0,0 +1,233 @@
+@@ -0,0 +1,218 @@
 +open Pp
 +open Printer
 +open Util
 +
 +(** [is_profiling] and the profiling info ([stack]) should be synchronized with the document; the rest of the ref cells are either local to individual tactic invocations, or global flags, and need not be synchronized, since no document-level backtracking happens within tactics.  We synchronize is_profiling via an option. *)
 +let is_profiling = ref false
-+let set_profiling b = is_profiling := b
-+let get_profiling() = !is_profiling
-+
 +let should_display_profile_at_close = ref false
++
++let set_profiling b = is_profiling := b
++let get_profiling() = !is_profiling || !should_display_profile_at_close
 +let set_display_profile_at_close b = should_display_profile_at_close := b
 +
 +
@@ -144,22 +144,7 @@ index 0000000..d874a46
 +let deepcopy_entry {total; local; ncalls; max_total} =
 +  {total; local; ncalls; max_total}
 +
-+let rec deepcopy_treenode {entry; children} =
-+  {entry = deepcopy_entry entry;
-+   children =
-+      (let children' = Hashtbl.create (Hashtbl.length children) in
-+       Hashtbl.iter
-+	 (fun key subtree -> Hashtbl.add children' key (deepcopy_treenode subtree))
-+	 children;
-+       children')}
-+
 +let stack = ref [{entry=empty_entry(); children=Hashtbl.create 20}]
-+
-+let _ = Summary.declare_summary "LtacProf-stack"
-+          { Summary.freeze_function = (fun () ->
-+                                         List.map deepcopy_treenode !stack);
-+            Summary.unfreeze_function = (fun stack_val -> stack := stack_val);
-+            Summary.init_function = (fun () -> stack := [{entry=empty_entry(); children=Hashtbl.create 20}]) }
 +
 +let on_stack = Hashtbl.create 5
 +
@@ -393,12 +378,12 @@ index 0000000..ff6250f
 +
 +let _ =
 +  Goptions.declare_bool_option
-+    { optsync  = true;
-+      optdepr  = false;
-+      optname  = "Ltac Profiling";
-+      optkey   = ["Ltac"; "Profiling"];
-+      optread  = get_profiling;
-+      optwrite = set_profiling }
++    { Goptions.optsync  = true;
++      Goptions.optdepr  = false;
++      Goptions.optname  = "Ltac Profiling";
++      Goptions.optkey   = ["Ltac"; "Profiling"];
++      Goptions.optread  = get_profiling;
++      Goptions.optwrite = set_profiling }
 +
 +VERNAC COMMAND EXTEND ResetLtacProfiling
 + [ "Reset" "Ltac" "Profile" ] -> [ reset_profile() ]
@@ -474,7 +459,7 @@ index 02dd1f2..c2934d6 100644
  
      | "-time" :: rem -> Vernac.time := true; parse rem
  
-+    | "-profileltac" :: rem -> Profile_ltac.set_profiling true; Profile_ltac.set_display_profile_at_close true; parse rem
++    | "-profile-ltac" :: rem -> Profile_ltac.set_profiling true; Profile_ltac.set_display_profile_at_close true; parse rem
 +
      | "-compat" :: v :: rem ->
          Flags.compat_version := get_compat_version v; parse rem
@@ -487,7 +472,7 @@ index dac3573..2d055a8 100644
  \n  -quality               improve the legibility of the proof terms produced by\
  \n                         some tactics\
  \n  -time                  display the time taken by each command\
-+\n  -profileltac           display the time taken by each (sub)tactic\
++\n  -profile-ltac          display the time taken by each (sub)tactic\
  \n  -h, --help             print this list of options\
  \n"
  
