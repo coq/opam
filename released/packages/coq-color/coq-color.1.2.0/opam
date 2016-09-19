@@ -93,13 +93,13 @@ tags: [
   "keyword:pigeon-hole principle"
   "keyword:Ramsey theorem"
   
-  "category:CS/Algo/Correctness proofs of algorithms"
-  "category:CS/Data Types and Data Structures"
-  "category:CS/Lambda Calculi"
-  "category:Math/Algebra"
-  "category:Combinatorics and Graph Theory"
-  "category:Type theory"
-  "category:Misc/Extracted/Type checking unification and normalization"
+  "category:Computer Science/Algorithms/Correctness proofs of algorithms"
+  "category:Computer Science/Data Types and Data Structures"
+  "category:Computer Science/Lambda Calculi"
+  "category:Mathematics/Algebra"
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "category:Mathematics/Logic/Type theory"
+  "category:Miscellaneous/Extracted Programs/Type checking unification and normalization"
 
   "date:2016-01-26"
   
