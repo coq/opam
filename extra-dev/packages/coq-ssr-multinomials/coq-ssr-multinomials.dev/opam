@@ -17,3 +17,11 @@ depends: [
    ("coq-mathcomp-ssreflect" {>= "1.6"} &
     "coq-mathcomp-algebra"   {>= "1.6"}))
 ]
+tags: [
+  "keyword:multinomials"
+  "keyword:monoid algebra"
+  "category:Math/Algebra/Multinomials"
+  "category:Math/Algebra/Monoid algebra"
+  "date:2016"
+  "logpath:SsrMultinomials"
+]
