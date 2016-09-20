@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Algebra"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:algebra" "category:Mathematics/Algebra" "date:March 99" ]
+tags: [ "keyword:algebra" "category:Mathematics/Algebra" "date:March 1999" ]
 authors: [ "Loïc Pottier <>" ]

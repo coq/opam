@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/WeakUpTo"]
 depends: [
   "coq" {= "8.5.dev"}
 ]
-tags: [ "keyword:weak bisimulation" "keyword:up to techniques" "keyword:termination" "keyword:commutation" "keyword:newman's lemma" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:2005/02/22" ]
+tags: [ "keyword:weak bisimulation" "keyword:up to techniques" "keyword:termination" "keyword:commutation" "keyword:newman's lemma" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:22 February 2005" ]
 authors: [ "Damien Pous <Damien.Pous@ens-lyon.fr>" ]
 bug-reports: "https://github.com/coq-contribs/weak-up-to/issues"
 dev-repo: "https://github.com/coq-contribs/weak-up-to.git"

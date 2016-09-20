@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HigmanS"]
 depends: [
   "coq" {= "dev"}
 ]
-tags: [ "keyword:higman's lemma" "keyword:well quasi ordering" "category:Mathematics/Combinatorics and Graph Theory" "date:14/09/2007" ]
+tags: [ "keyword:higman's lemma" "keyword:well quasi ordering" "category:Mathematics/Combinatorics and Graph Theory" "date:14 September 2007" ]
 authors: [ "William Delobel <william.delobel@lif.univ-mrs.fr>" ]

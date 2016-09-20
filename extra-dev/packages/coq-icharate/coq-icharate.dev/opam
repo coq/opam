@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Icharate"]
 depends: [
   "coq" {= "dev"}
 ]
-tags: [ "keyword:multimodal categorial grammars" "keyword:syntax/semantics interface" "keyword:higher order logic" "keyword:meta linguistics" "category:Computer Science/Formal Languages Theory and Automata" "date:2003-2006." ]
+tags: [ "keyword:multimodal categorial grammars" "keyword:syntax/semantics interface" "keyword:higher order logic" "keyword:meta linguistics" "category:Computer Science/Formal Languages Theory and Automata" "date:2003-2006" ]
 authors: [ "Houda Anoun <anoun@labri.fr>" "Pierre Castéran <casteran@labri.fr>" ]

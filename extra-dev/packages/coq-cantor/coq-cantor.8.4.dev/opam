@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Cantor"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:ordinals" "keyword:well foundedness" "keyword:termination" "keyword:rpo" "keyword:goodstein sequences" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:May 22nd, 2006" ]
+tags: [ "keyword:ordinals" "keyword:well foundedness" "keyword:termination" "keyword:rpo" "keyword:goodstein sequences" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:22 May 2006" ]
 authors: [ "Évelyne Contejean <contejea@lri.fr>" "Pierre Castéran <pierre.casteran@labri.fr>" ]

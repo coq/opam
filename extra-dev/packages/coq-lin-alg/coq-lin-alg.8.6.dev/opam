@@ -9,7 +9,7 @@ depends: [
   "coq" {= "8.6.dev"}
   "coq-algebra"
 ]
-tags: [ "keyword:linear algebra" "category:Mathematics/Algebra" "date:19 spetember 2003" ]
+tags: [ "keyword:linear algebra" "category:Mathematics/Algebra" "date:19 September 2003" ]
 authors: [ "Jasper Stein <jasper@cs.kun.nl>" ]
 bug-reports: "https://github.com/coq-contribs/lin-alg/issues"
 dev-repo: "https://github.com/coq-contribs/lin-alg.git"

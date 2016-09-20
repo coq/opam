@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ParamPi"]
 depends: [
   "coq" {= "8.6.dev"}
 ]
-tags: [ "keyword:pi calculus" "category:Computer Science/Lambda Calculi" "date:Sept 30 1998" ]
+tags: [ "keyword:pi calculus" "category:Computer Science/Lambda Calculi" "date:30 September 1998" ]
 authors: [ "Loïc Henry-Gréard <lhenrygr@cma.inria.fr>" ]
 bug-reports: "https://github.com/coq-contribs/param-pi/issues"
 dev-repo: "https://github.com/coq-contribs/param-pi.git"
