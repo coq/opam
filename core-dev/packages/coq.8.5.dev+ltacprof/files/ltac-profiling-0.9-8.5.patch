@@ -418,6 +418,7 @@ index 0000000..5d96787
 +(*i camlp4deps: "grammar/grammar.cma" i*)
 +
 +open Profile_ltac
++open Goptions
 +
 +DECLARE PLUGIN "profile_ltac_plugin"
 +
@@ -434,7 +435,6 @@ index 0000000..5d96787
 +END;;
 +
 +let _ =
-+  let open Goptions in
 +  declare_bool_option
 +    { optsync  = true;
 +      optdepr  = false;
