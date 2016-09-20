@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Algebra"]
 depends: [
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:algebra" "category:Mathematics/Algebra" "date:March 99" ]
+tags: [ "keyword:algebra" "category:Mathematics/Algebra" "date:March 1999" ]
 authors: [ "Loïc Pottier <>" ]
 bug-reports: "https://github.com/coq-contribs/algebra/issues"
 dev-repo: "https://github.com/coq-contribs/algebra.git"

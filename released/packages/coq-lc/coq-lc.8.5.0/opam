@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/lc"]
 depends: [
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:module" "keyword:monads" "keyword:category theory" "keyword:lambda calculus" "keyword:higher order syntax" "category:Computer Science/Lambda Calculi" "date:2008-09-09" ]
+tags: [ "keyword:module" "keyword:monads" "keyword:category theory" "keyword:lambda calculus" "keyword:higher order syntax" "category:Computer Science/Lambda Calculi" "date:9 September 2008" ]
 authors: [ "André Hirschowitz <ah@math.unice.fr>" "Marco Maggesi <maggesi@math.unifi.it>" ]
 bug-reports: "https://github.com/coq-contribs/lc/issues"
 dev-repo: "https://github.com/coq-contribs/lc.git"
