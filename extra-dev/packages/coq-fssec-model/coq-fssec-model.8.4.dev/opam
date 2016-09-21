@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FSSecModel"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:security" "keyword:filesystem" "keyword:unix" "keyword:mls" "keyword:access control" "category:Computer Science/Operating Systems" "date:24 April 2002" ]
+tags: [ "keyword:security" "keyword:filesystem" "keyword:unix" "keyword:mls" "keyword:access control" "category:Computer Science/Operating Systems" "date:2002-04-24" ]
 authors: [ "Maximiliano Cristiá <>" ]

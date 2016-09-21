@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Markov"]
 depends: [
   "coq" {= "8.5.dev"}
 ]
-tags: [ "keyword:probability theory" "keyword:markov" "keyword:lebesgue integral" "keyword:measures" "keyword:sigma algebras" "keyword:measurability" "keyword:borel" "category:Mathematics/Real Calculus and Topology" "date:5 January 2008" ]
+tags: [ "keyword:probability theory" "keyword:markov" "keyword:lebesgue integral" "keyword:measures" "keyword:sigma algebras" "keyword:measurability" "keyword:borel" "category:Mathematics/Real Calculus and Topology" "date:2008-01-5" ]
 authors: [ "Robert Kam <rkam2001@hotmail.com>" ]
 bug-reports: "https://github.com/coq-contribs/markov/issues"
 dev-repo: "https://github.com/coq-contribs/markov.git"

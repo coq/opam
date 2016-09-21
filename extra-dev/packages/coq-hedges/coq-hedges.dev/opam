@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Hedges"]
 depends: [
   "coq" {= "dev"}
 ]
-tags: [ "keyword:bisimulation" "keyword:spi calculus" "keyword:hedges" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:20 April 2004" ]
+tags: [ "keyword:bisimulation" "keyword:spi calculus" "keyword:hedges" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:2004-04-20" ]
 authors: [ "Sébastien Briais <>" ]

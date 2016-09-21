@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Huffman"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:data compression" "keyword:code" "keyword:huffman tree" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category:Miscellaneous/Extracted Programs/Combinatorics" "date:October 2003" ]
+tags: [ "keyword:data compression" "keyword:code" "keyword:huffman tree" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category:Miscellaneous/Extracted Programs/Combinatorics" "date:2003-10" ]
 authors: [ "Laurent Théry <>" ]

@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/String"]
 depends: [
   "coq" {= "8.6.dev"}
 ]
-tags: [ "keyword:string" "keyword:ascii character" "category:Miscellaneous/Coq Extensions" "date:March 2002" ]
+tags: [ "keyword:string" "keyword:ascii character" "category:Miscellaneous/Coq Extensions" "date:2002-03" ]
 authors: [ "Laurent Théry <>" ]
 bug-reports: "https://github.com/coq-contribs/string/issues"
 dev-repo: "https://github.com/coq-contribs/string.git"

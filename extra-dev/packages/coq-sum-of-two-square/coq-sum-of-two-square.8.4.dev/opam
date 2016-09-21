@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SumOfTwoSquare"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:number theory" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:13 December 2004" ]
+tags: [ "keyword:number theory" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:2004-12-13" ]
 authors: [ "Laurent Théry <>" ]

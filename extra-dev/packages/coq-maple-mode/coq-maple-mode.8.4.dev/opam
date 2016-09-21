@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MapleMode"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:maple" "keyword:simplification" "keyword:field tactic" "category:Miscellaneous/Coq Extensions" "date:March 2002" ]
+tags: [ "keyword:maple" "keyword:simplification" "keyword:field tactic" "category:Miscellaneous/Coq Extensions" "date:2002-03" ]
 authors: [ "David Delahaye <>" "Micaela Mayero <>" ]

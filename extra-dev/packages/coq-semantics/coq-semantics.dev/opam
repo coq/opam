@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Semantics"]
 depends: [
   "coq" {= "dev"}
 ]
-tags: [ "keyword:natural semantics" "keyword:denotational semantics" "keyword:axiomatic" "keyword:semantics" "keyword:hoare logic" "keyword:dijkstra weakest pre condition calculus" "keyword:abstract interpretation" "keyword:intervals" "category:Computer Science/Semantics and Compilation/Semantics" "date:5 July 2007" ]
+tags: [ "keyword:natural semantics" "keyword:denotational semantics" "keyword:axiomatic" "keyword:semantics" "keyword:hoare logic" "keyword:dijkstra weakest pre condition calculus" "keyword:abstract interpretation" "keyword:intervals" "category:Computer Science/Semantics and Compilation/Semantics" "date:2007-07-5" ]
 authors: [ "Yves Bertot <Yves.Bertot@sophia.inria.fr>" ]

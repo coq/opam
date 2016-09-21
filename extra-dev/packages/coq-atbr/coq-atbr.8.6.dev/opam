@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ATBR"]
 depends: [
   "coq" {= "8.6.dev"}
 ]
-tags: [ "keyword:kleene algebra" "keyword:finite automata" "keyword:semiring" "keyword:matrices" "keyword:decision procedure" "keyword:reflexive tactic" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:June 2009" ]
+tags: [ "keyword:kleene algebra" "keyword:finite automata" "keyword:semiring" "keyword:matrices" "keyword:decision procedure" "keyword:reflexive tactic" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:2009-06" ]
 authors: [ "Damien Pous <damien.pous@inria.fr>" "Thomas Braibant <thomas.braibant@gmail.com>" ]
 bug-reports: "https://github.com/coq-contribs/atbr/issues"
 dev-repo: "https://github.com/coq-contribs/atbr.git"

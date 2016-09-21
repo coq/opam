@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HigmanS"]
 depends: [
   "coq" {= "8.6.dev"}
 ]
-tags: [ "keyword:higman's lemma" "keyword:well quasi ordering" "category:Mathematics/Combinatorics and Graph Theory" "date:14 September 2007" ]
+tags: [ "keyword:higman's lemma" "keyword:well quasi ordering" "category:Mathematics/Combinatorics and Graph Theory" "date:2007-09-14" ]
 authors: [ "William Delobel <william.delobel@lif.univ-mrs.fr>" ]
 bug-reports: "https://github.com/coq-contribs/higman-s/issues"
 dev-repo: "https://github.com/coq-contribs/higman-s.git"

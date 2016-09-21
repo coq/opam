@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ReflexiveFirstOrder"]
 depends: [
   "coq" {= "dev"}
 ]
-tags: [ "keyword:computationnal reflection" "keyword:interpretation" "keyword:first order logic" "keyword:equational reasoning" "category:Miscellaneous/Coq Extensions" "date:May 2005" ]
+tags: [ "keyword:computationnal reflection" "keyword:interpretation" "keyword:first order logic" "keyword:equational reasoning" "category:Miscellaneous/Coq Extensions" "date:2005-05" ]
 authors: [ "Pierre Corbineau <pierre.corbineau@lri.fr>" ]

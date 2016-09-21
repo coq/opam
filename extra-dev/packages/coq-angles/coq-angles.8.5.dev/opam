@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Angles"]
 depends: [
   "coq" {= "8.5.dev"}
 ]
-tags: [ "keyword:pcoq" "keyword:geometry" "keyword:plane geometry" "keyword:oriented angles" "category:Mathematics/Geometry/General" "date:15 January 2002" ]
+tags: [ "keyword:pcoq" "keyword:geometry" "keyword:plane geometry" "keyword:oriented angles" "category:Mathematics/Geometry/General" "date:2002-01-15" ]
 authors: [ "Frédérique Guilhot <Frederique.Guilhot@sophia.inria.fr>" ]
 bug-reports: "https://github.com/coq-contribs/angles/issues"
 dev-repo: "https://github.com/coq-contribs/angles.git"

@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CatsInZFC"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:set theory" "keyword:ordinals" "keyword:cardinals" "keyword:category theory" "keyword:functors" "keyword:natural transformation" "keyword:limit" "keyword:colimit" "category:Mathematics/Logic/Set theory" "category:Mathematics/Category Theory" "date:10 October 2004" ]
+tags: [ "keyword:set theory" "keyword:ordinals" "keyword:cardinals" "keyword:category theory" "keyword:functors" "keyword:natural transformation" "keyword:limit" "keyword:colimit" "category:Mathematics/Logic/Set theory" "category:Mathematics/Category Theory" "date:2004-10-10" ]
 authors: [ "Carlos Simpson <carlos@math.unice.fr>" ]

@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/String"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:string" "keyword:ascii character" "category:Miscellaneous/Coq Extensions" "date:March 2002" ]
+tags: [ "keyword:string" "keyword:ascii character" "category:Miscellaneous/Coq Extensions" "date:2002-03" ]
 authors: [ "Laurent Théry <>" ]

@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ReflexiveFirstOrder"]
 depends: [
   "coq" {= "8.5.dev"}
 ]
-tags: [ "keyword:computationnal reflection" "keyword:interpretation" "keyword:first order logic" "keyword:equational reasoning" "category:Miscellaneous/Coq Extensions" "date:May 2005" ]
+tags: [ "keyword:computationnal reflection" "keyword:interpretation" "keyword:first order logic" "keyword:equational reasoning" "category:Miscellaneous/Coq Extensions" "date:2005-05" ]
 authors: [ "Pierre Corbineau <pierre.corbineau@lri.fr>" ]
 bug-reports: "https://github.com/coq-contribs/reflexive-first-order/issues"
 dev-repo: "https://github.com/coq-contribs/reflexive-first-order.git"

@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IdxAssoc"]
 depends: [
   "coq" {= "dev"}
 ]
-tags: [ "keyword:associative arrays" "keyword:search operator" "keyword:data structures" "category:Computer Science/Data Types and Data Structures" "date:April 2001" ]
+tags: [ "keyword:associative arrays" "keyword:search operator" "keyword:data structures" "category:Computer Science/Data Types and Data Structures" "date:2001-04" ]
 authors: [ "Dominique Quatravaux <>" "Gérald Macinenti <>" "François-René Ridaux <>" ]

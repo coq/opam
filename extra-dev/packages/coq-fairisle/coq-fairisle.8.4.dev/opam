@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Fairisle"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:circuits" "keyword:automata" "keyword:coinduction" "keyword:dependent types" "category:Computer Science/Architecture" "date:15 December 2005" ]
+tags: [ "keyword:circuits" "keyword:automata" "keyword:coinduction" "keyword:dependent types" "category:Computer Science/Architecture" "date:2005-12-15" ]
 authors: [ "Solange Coupet-Grimal <Solange.Coupet@lif.univ-mrs.fr>" "Line Jakubiec-Jamet <Line.Jakubiec@lif.univ-mrs.fr>" ]

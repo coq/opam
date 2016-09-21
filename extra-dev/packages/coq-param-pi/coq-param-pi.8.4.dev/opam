@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ParamPi"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:pi calculus" "category:Computer Science/Lambda Calculi" "date:30 September 1998" ]
+tags: [ "keyword:pi calculus" "category:Computer Science/Lambda Calculi" "date:1998-09-30" ]
 authors: [ "Loïc Henry-Gréard <lhenrygr@cma.inria.fr>" ]

@@ -12,5 +12,5 @@ depends: [
   "coq" {= "dev"}
   "coq-algebra" {= "dev"}
 ]
-tags: [ "keyword:linear algebra" "category:Mathematics/Algebra" "date:19 September 2003" ]
+tags: [ "keyword:linear algebra" "category:Mathematics/Algebra" "date:2003-09-19" ]
 authors: [ "Jasper Stein <jasper@cs.kun.nl>" ]
