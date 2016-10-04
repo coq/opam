@@ -1,0 +1,17 @@
+Extensions of MSets for Efficient Execution
+
+Coq's MSet library provides various, reasonably efficient finite set
+implementations. Nevertheless, FireEye was nevertheless struggling
+with performance issues.
+
+This library contains extensions to Coq's MSet library that helped
+the FireEye Formal Methods team (formal-methods@fireeye.com),
+solve these performance issues. There are
+
+- Fold With Abort
+  efficient folding with possibility to  start late and stop early
+
+- Interval Sets
+  a memory efficient representation of sets of numbers
+  
+- Unsorted Lists with Duplicates

@@ -1,0 +1,18 @@
+opam-version: "1.2"
+maintainer: "thomas@tuerk-brechen.de"
+homepage: "https://github.com/thtuerk/MSetsExtra"
+dev-repo: "https://github.com/thtuerk/MSetsExtra.git"
+bug-reports: "https://github.com/thtuerk/MSetsExtra/issues"
+authors: ["FireEye Formal Methods Team <formal-methods@fireeye.com>" "Thomas Tuerk <thomas@tuerk-brechen.de>"]
+license: "LGPL 2.1"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MSetsExtra"]
+depends: [
+  "coq" {>= "8.4.5"}
+]
