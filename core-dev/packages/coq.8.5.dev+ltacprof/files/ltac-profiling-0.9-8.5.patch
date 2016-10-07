@@ -102,7 +102,7 @@ new file mode 100644
 index 0000000..59568cb
 --- /dev/null
 +++ b/tactics/profile_ltac.ml
-@@ -0,0 +1,296 @@
+@@ -0,0 +1,283 @@
 +open Pp
 +open Printer
 +open Util
@@ -145,20 +145,7 @@ index 0000000..59568cb
 +
 +type treenode = {entry : entry; children : (string, treenode) Hashtbl.t}
 +
-+(** Tobias Tebbi wrote some tricky code involving mutation.  Rather than rewriting it in a functional style, we simply freeze the state when we need to by issuing a deep copy of the profiling data. *)
-+let deepcopy_entry {total; local; ncalls; max_total} =
-+  {total; local; ncalls; max_total}
-+
-+let rec deepcopy_treenode {entry; children} =
-+  {entry = deepcopy_entry entry;
-+   children =
-+      (let children' = Hashtbl.create (Hashtbl.length children) in
-+       Hashtbl.iter
-+	 (fun key subtree -> Hashtbl.add children' key (deepcopy_treenode subtree))
-+	 children;
-+       children')}
-+
-+let stack = Summary.ref ~freeze:(fun _ -> List.map deepcopy_treenode) [{entry=empty_entry(); children=Hashtbl.create 20}] ~name:"LtacProf-stack"
++let stack = ref [{entry=empty_entry(); children=Hashtbl.create 20}]
 +
 +let on_stack = Hashtbl.create 5
 +
@@ -427,10 +414,11 @@ new file mode 100644
 index 0000000..5d96787
 --- /dev/null
 +++ b/tactics/profile_ltac_tactics.ml4
-@@ -0,0 +1,39 @@
+@@ -0,0 +1,40 @@
 +(*i camlp4deps: "grammar/grammar.cma" i*)
 +
 +open Profile_ltac
++open Goptions
 +
 +DECLARE PLUGIN "profile_ltac_plugin"
 +
@@ -447,7 +435,7 @@ index 0000000..5d96787
 +END;;
 +
 +let _ =
-+  Goptions.declare_bool_option
++  declare_bool_option
 +    { optsync  = true;
 +      optdepr  = false;
 +      optname  = "Ltac Profiling";
