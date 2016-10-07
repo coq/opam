@@ -20,5 +20,5 @@ depends: [
   "camlp5"
 ]
 patches: [
-  "ltac-profiling-0.8-8.5.patch"
+  "ltac-profiling-0.9-8.5.patch"
 ]
