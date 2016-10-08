@@ -1,0 +1,10 @@
+A series of auxiliary tactics for Coq.
+
+These tactics won't change the proof environment but just give internal information of Coq. These tactics are very useful when you're developing an ML plugin.
+
+Up to now, these tactics are available:
+
+- print_term: print the CiC term
+- print_term_constant: print the target term of CONST term
+- print_goal: print the CiC term of goal
+- print_hyps: print the CiC terms of hypotheses
