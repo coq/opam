@@ -1,0 +1,21 @@
+opam-version: "1.2"
+maintainer: "francois.pottier@inria.fr"
+authors: [
+  "Arthur Charguéraud <arthur.chargueraud@inria.fr>"
+]
+homepage: "https://gforge.inria.fr/projects/tlc/"
+dev-repo: "git+ssh://scm.gforge.inria.fr//gitroot/tlc/tlc.git"
+bug-reports: "tlc-users@lists.gforge.inria.fr"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: [
+  make "uninstall"
+]
+depends: [
+  "coq" {>= "8.5" & < "8.6~"}
+]
