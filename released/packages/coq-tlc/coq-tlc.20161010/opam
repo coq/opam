@@ -6,7 +6,7 @@ authors: [
 homepage: "https://gforge.inria.fr/projects/tlc/"
 dev-repo: "git+ssh://scm.gforge.inria.fr//gitroot/tlc/tlc.git"
 bug-reports: "tlc-users@lists.gforge.inria.fr"
-license: "MIT"
+license: "CeCILL-B"
 build: [
   [make "-j%{jobs}%"]
 ]
