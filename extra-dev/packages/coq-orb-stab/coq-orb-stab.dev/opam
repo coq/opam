@@ -13,5 +13,5 @@ depends: [
   "coq-algebra" {= "dev"}
   "coq-lin-alg" {= "dev"}
 ]
-tags: [ "keyword:orbit" "keyword:stabilizer" "keyword:inclusion exclusion" "category:Mathematics/Algebra" "date:January 5, 2008" ]
+tags: [ "keyword:orbit" "keyword:stabilizer" "keyword:inclusion exclusion" "category:Mathematics/Algebra" "date:2008-01-5" ]
 authors: [ "Robert Kam <rkam2001@hotmail.com>" ]

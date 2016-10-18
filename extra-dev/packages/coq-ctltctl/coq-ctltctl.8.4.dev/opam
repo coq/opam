@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CTLTCTL"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:ctl" "keyword:tctl" "keyword:real time systems" "keyword:reactive systems" "keyword:temporal logic" "keyword:timed automatas" "keyword:timed graphs" "keyword:discrete time" "keyword:modal logic" "category:Mathematics/Logic/Modal logic" "date:February-March 2000." ]
+tags: [ "keyword:ctl" "keyword:tctl" "keyword:real time systems" "keyword:reactive systems" "keyword:temporal logic" "keyword:timed automatas" "keyword:timed graphs" "keyword:discrete time" "keyword:modal logic" "category:Mathematics/Logic/Modal logic" "date:February-March 2000" ]
 authors: [ "Carlos Daniel Luna <>" ]

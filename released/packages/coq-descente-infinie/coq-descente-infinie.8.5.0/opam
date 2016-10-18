@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/DescenteInfinie"]
 depends: [
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:induction" "keyword:infinite descent" "category:Miscellaneous/Coq Extensions" "date:February 2010" ]
+tags: [ "keyword:induction" "keyword:infinite descent" "category:Miscellaneous/Coq Extensions" "date:2010-02" ]
 authors: [ "Li Mengran <limengra@comp.nus.edu.sg>" "Razvan Voicu <razvan@comp.nus.edu.sg>" ]
 bug-reports: "https://github.com/coq-contribs/descente-infinie/issues"
 dev-repo: "https://github.com/coq-contribs/descente-infinie.git"

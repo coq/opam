@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Kildall"]
 depends: [
   "coq" {= "8.5.dev"}
 ]
-tags: [ "keyword:kildall" "keyword:data flow analysis" "keyword:bytecode verification" "category:Computer Science/Semantics and Compilation/Semantics" "date:July 2005" ]
+tags: [ "keyword:kildall" "keyword:data flow analysis" "keyword:bytecode verification" "category:Computer Science/Semantics and Compilation/Semantics" "date:2005-07" ]
 authors: [ "Solange Coupet-Grimal <Solange.Coupet@cmi.univ-mrs.fr>" "William Delobel <delobel@cmi.univ-mrs.fr>" ]
 bug-reports: "https://github.com/coq-contribs/kildall/issues"
 dev-repo: "https://github.com/coq-contribs/kildall.git"

@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coqoban"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:sokoban" "keyword:puzzles" "category:Miscellaneous/Logical Puzzles and Entertainment" "date:19 september 2003" ]
+tags: [ "keyword:sokoban" "keyword:puzzles" "category:Miscellaneous/Logical Puzzles and Entertainment" "date:2003-09-19" ]
 authors: [ "Jasper Stein <>" ]

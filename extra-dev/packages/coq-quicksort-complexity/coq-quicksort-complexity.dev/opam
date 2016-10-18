@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/QuicksortComplexity"]
 depends: [
   "coq" {= "dev"}
 ]
-tags: [ "keyword:quicksort" "keyword:complexity" "keyword:average case" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "date:June 2010" ]
+tags: [ "keyword:quicksort" "keyword:complexity" "keyword:average case" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "date:2010-06" ]
 authors: [ "Eelis <>" ]

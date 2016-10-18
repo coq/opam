@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IZF"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:intuitionistic set theory" "keyword:pointed graphs" "keyword:type theory" "keyword:intuitionistic choice operator" "keyword:set theory" "keyword:zermelo fraenkel" "category:Mathematics/Logic/Set theory" "date:February 2003" ]
+tags: [ "keyword:intuitionistic set theory" "keyword:pointed graphs" "keyword:type theory" "keyword:intuitionistic choice operator" "keyword:set theory" "keyword:zermelo fraenkel" "category:Mathematics/Logic/Set theory" "date:2003-02" ]
 authors: [ "Alexandre Miquel <Alexandre.Miquel@pps.jussieu.fr>" ]
