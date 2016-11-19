@@ -7,7 +7,6 @@ bin: [
   "bin/coqdep"
   "bin/coqchk"
   "bin/coqc"
-  "bin/coqide"
   "bin/coq_makefile"
   "bin/coq-tex"
   "bin/coqworkmgr"
