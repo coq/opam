@@ -23,7 +23,7 @@ remove: ["rm" "-R" "%{lib}%/coq/ide" "%{doc}%/FAQ-CoqIde"]
 dev-repo: "https://scm.gforge.inria.fr/anonscm/git/coq/coq.git"
 depends: [
   "camlp5"
-  "coq" {= "8.6~beta1"}
+  "coq" {= "8.6.dev"}
   "lablgtk"
   "conf-gtksourceview"
 ]
