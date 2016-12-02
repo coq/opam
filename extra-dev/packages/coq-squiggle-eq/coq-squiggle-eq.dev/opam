@@ -3,7 +3,7 @@ maintainer: "abhishek.anand.iitg@gmail.com"
 homepage: "https://github.com/aa755/SquiggleEq"
 authors: ["Abhishek Anand" "Vincent Rahli"]
 bug-reports: "https://github.com/aa755/SquiggleEq/issues"
-dev-repo: "https://github.com/aa755/SquiggleEq"
+dev-repo: "https://github.com/aa755/SquiggleEq.git"
 license: "MIT"
 build: [
   [make "-j%{jobs}%"]
