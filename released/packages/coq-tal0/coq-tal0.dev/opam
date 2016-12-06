@@ -14,5 +14,5 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TAL0"]
 depends: [
-  "coq" {>= "8.5"}
+  "coq" {>= "8.5" & < "8.7~"}
 ]
