@@ -14,4 +14,5 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SquiggleEq"]
 depends: [
   "coq" {>= "8.5.0"}
+  "coq-ext-lib"
 ]
