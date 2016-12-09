@@ -3,7 +3,7 @@ maintainer: "matej.kosik@inria.fr"
 homepage: "http://ssr.msr-inria.inria.fr/"
 license: "CeCILL-B"
 build: [
-  [bash "bash" "-c" "cd mathcomp && make"]
+  [bash "bash" "-c" "cd mathcomp && make -j%{jobs}%"]
 ]
 install: [
   [bash "bash" "-c" "cd mathcomp && make install"]
