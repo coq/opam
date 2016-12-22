@@ -1,0 +1,18 @@
+opam-version: "1.2"
+maintainer: "Julien Narboux <julien@narboux.fr>"
+homepage: "http://geocoq.github.io/GeoCoq/"
+bug-reports: "https://github.com/GeoCoq/GeoCoq/issues"
+authors: ["Gabriel Braun <gabriel.braun@unistra.fr>" "Pierre Boutry <pierre.boutry@unistra.fr>" "Charly Gries <Charly.Gries@etu.unistra.fr>" "Julien Narboux <narboux@unistra.fr>"]
+license: "LGPL 3"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GeoCoq"]
+depends: [
+  "coq" {>= "8.4pl4" & < "8.6~beta1"}
+]
+tags: [ "keyword:geometry" "keyword:neutral geometry" "keyword:euclidean geometry" "keyword:foundations" "keyword:Tarski" "keyword:Hilbert" "keyword:Pappus" "keyword:Desargues" "keyword:parallel postulates" "category:Mathematics/Geometry/General" ]
