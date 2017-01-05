@@ -1,0 +1,28 @@
+opam-version: "1.2"
+maintainer: "lord@crocodile.org"
+homepage: "https://github.com/vzaliva/coq-min-imports"
+dev-repo: "https://github.com/vzaliva/coq-min-imports.git"
+bug-reports: "https://github.com/vzaliva/coq-min-imports/issues"
+authors: ["Vadim Zaliva"]
+license: "MIT"
+build: [
+  ["omake"]
+]
+install: [
+  ["install" "coq_min_imports" "%{bin}%"]
+]
+
+remove: [
+  ["rm" "%{bin}%/coq_min_imports"]
+]
+
+depends: [
+  "coq" {>= "8.5"}
+  "extlib"
+  "batteries"
+  "omake"
+]
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "date:2017-01-04"
+]
