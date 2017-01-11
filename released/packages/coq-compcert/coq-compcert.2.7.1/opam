@@ -9,7 +9,8 @@ build: [
   ["./configure" "ia32-linux" {os = "linux"}
   		 "ia32-macosx" {os = "darwin"}
 		 "ia32-cygwin" {os = "cygwin"}
-  		 "-bindir" "%{bin}%" "-libdir" "%{lib}%/compcert"]
+		 "-bindir" "%{bin}%" "-libdir" "%{lib}%/compcert"
+		 "-clightgen"]
   [make "-j%{jobs}%"]
 ]
 install: [
@@ -17,6 +18,7 @@ install: [
 ]
 remove: [
   ["rm" "%{bin}%/ccomp"]
+  ["rm" "%{bin}%/clightgen"]
   ["rm" "-R" "%{lib}%/compcert"]
   ["rm" "%{share}%/compcert.ini"]
 ]
