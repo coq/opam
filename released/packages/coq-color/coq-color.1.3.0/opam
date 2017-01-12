@@ -1,0 +1,108 @@
+opam-version: "1.3"
+maintainer: "frederic.blanqui@inria.fr"
+homepage: "http://color.inria.fr/"
+license: "CeCILL"
+build: [
+  [make "-j%{jobs}%"]
+  [make "-f" "Makefile.coq" "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
+depends: [
+  "coq" {>= "8.6" & < "8.7"}
+]
+authors: [
+  "Frédéric Blanqui"
+  "Adam Koprowski"
+  "Sébastien Hinderer"
+  "Pierre-Yves Strub"
+  "Sidi Ould Biha"
+  "Solange Coupet-Grimal"
+  "William Delobel"
+  "Hans Zantema"
+  "Stéphane Leroux"
+  "Léo Ducas"
+  "Johannes Waldmann"
+  "Qiand Wang"
+  "Lianyi Zhang"
+  "Sorin Stratulat"
+]
+tags: [
+  "date:2017-01-11"
+  
+  "logpath:CoLoR"
+
+  "category:Computer Science/Algorithms/Correctness proofs of algorithms"
+  "category:Computer Science/Data Types and Data Structures"
+  "category:Computer Science/Lambda Calculi"
+  "category:Mathematics/Algebra"
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "category:Mathematics/Logic/Type theory"
+  "category:Miscellaneous/Extracted Programs/Type checking unification and normalization"
+
+  "keyword:rewriting"
+  "keyword:termination"
+  "keyword:lambda-calculus"
+
+  "keyword:list"
+  "keyword:vector"
+  "keyword:multiset"
+  "keyword:polynom"
+  "keyword:vector"
+  "keyword:matrix"
+  "keyword:FSet"
+  "keyword:FMap"
+  
+  "keyword:term"
+  "keyword:context"
+  "keyword:substitution"
+  "keyword:universal algebra"
+
+  "keyword:varyadic term"
+  "keyword:string"
+
+  "keyword:alpha-equivalence"
+  "keyword:de Bruijn indices"
+  "keyword:simple types"
+  
+  "keyword:matching"
+  "keyword:unification"
+
+  "keyword:relation"
+  "keyword:ordering"
+  "keyword:quasi-ordering"
+  "keyword:lexicographic ordering"
+  
+  "keyword:ring"
+  "keyword:semi-ring"
+
+  "keyword:well-founded"
+  "keyword:noetherian"
+  "keyword:finitely branching"
+  "keyword:dependent choice"
+  "keyword:infinite sequences"
+
+  "keyword:non-termination"
+  "ketword:loop"
+  
+  "keyword:graph"
+  "keyword:path"
+  "keyword:transitive closure"
+  "keyword:strongly connected component"
+  "keyword:topological ordering"
+  
+  "keyword:rpo"
+  "keyword:horpo"
+  "keyword:dependency pair"
+  "keyword:dependency graph"
+  "keyword:semantic labeling"
+
+  "keyword:reducibility"
+  "keyword:Girard"
+  
+  "keyword:fixpoint theorem"
+  "keyword:Tarski"
+
+  "keyword:pigeon-hole principle"
+  "keyword:Ramsey theorem"
+  
+]
