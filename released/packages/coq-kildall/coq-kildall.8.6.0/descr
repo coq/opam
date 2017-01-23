@@ -1,0 +1,7 @@
+Application of the Generic kildall's Data Flow Analysis Algorithm to a Type and Shape Static Analyses of Bytecode.
+
+This Library provides a generic data flow analysis
+algorithm and a proof of its correctness.
+This algorithm is then used to perform type and
+shape analysis at bytecode level
+on a first order functionnal language.

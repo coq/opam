@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/classical-realizability"
+license: "BSD"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ClassicalRealizability"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword:classical realizability" "keyword:krivine's realizability" "keyword:primitive datatype" "keyword:non determinism" "keyword:quote" "keyword:axiom of countable choice" "keyword:real numbers" "category:Mathematics/Logic/Foundations" ]
+authors: [ "Lionel Rieg <lionel.rieg@ens-lyon.org>" ]
+bug-reports: "https://github.com/coq-contribs/classical-realizability/issues"
+dev-repo: "https://github.com/coq-contribs/classical-realizability.git"

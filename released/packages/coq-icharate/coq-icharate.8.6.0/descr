@@ -1,0 +1,10 @@
+Icharate: A logical Toolkit for Multimodal Categorial Grammars.
+
+The logical toolkit ICHARATE is built upon a formalization of
+multimodal categorial grammars in Coq proof assistant.
+This toolkit aims at facilitating the study of these
+complicated formalisms by allowing users to build interactively the
+syntactic derivations of different sentences, compute their
+semantic interpretations and also prove universal properties of entire
+classes of grammars using a collection of already established derived
+rules. Several tactics are defined to ease the interaction with users.

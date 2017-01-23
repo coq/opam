@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/param-pi"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ParamPi"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword:pi calculus" "category:Computer Science/Lambda Calculi" "date:1998-09-30" ]
+authors: [ "Loïc Henry-Gréard <lhenrygr@cma.inria.fr>" ]
+bug-reports: "https://github.com/coq-contribs/param-pi/issues"
+dev-repo: "https://github.com/coq-contribs/param-pi.git"
