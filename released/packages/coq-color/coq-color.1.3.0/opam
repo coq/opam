@@ -1,15 +1,5 @@
-opam-version: "1.3"
+opam-version: "1.2"
 maintainer: "frederic.blanqui@inria.fr"
-homepage: "http://color.inria.fr/"
-license: "CeCILL"
-build: [
-  [make "-j%{jobs}%"]
-  [make "-f" "Makefile.coq" "install"]
-]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
-depends: [
-  "coq" {>= "8.6" & < "8.7~"}
-]
 authors: [
   "Frédéric Blanqui"
   "Adam Koprowski"
@@ -25,6 +15,17 @@ authors: [
   "Qiand Wang"
   "Lianyi Zhang"
   "Sorin Stratulat"
+]
+license: "CeCILL"
+homepage: "http://color.inria.fr/"
+bug-reports: "color@inria.fr"
+build: [
+  [make "-j%{jobs}%"]
+  [make "-f" "Makefile.coq" "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [
   "date:2017-01-11"
@@ -103,6 +104,5 @@ tags: [
   "keyword:Tarski"
 
   "keyword:pigeon-hole principle"
-  "keyword:Ramsey theorem"
-  
+  "keyword:Ramsey theorem"  
 ]
