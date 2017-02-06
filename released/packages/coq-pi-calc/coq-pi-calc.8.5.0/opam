@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PiCalc"]
 depends: [
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:process algebra" "keyword:pi calculus" "keyword:concurrency" "keyword:formal verification" "keyword:higher order syntax" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:July 1998" ]
+tags: [ "keyword:process algebra" "keyword:pi calculus" "keyword:concurrency" "keyword:formal verification" "keyword:higher order syntax" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:1998-07" ]
 authors: [ "Ivan Scagnetto <scagnett@dimi.uniud.it>" ]
 bug-reports: "https://github.com/coq-contribs/pi-calc/issues"
 dev-repo: "https://github.com/coq-contribs/pi-calc.git"

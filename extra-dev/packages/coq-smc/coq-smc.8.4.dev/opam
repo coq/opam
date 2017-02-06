@@ -12,5 +12,5 @@ depends: [
   "coq" {= "8.4.dev"}
   "coq-int-map" {= "8.4.dev"}
 ]
-tags: [ "keyword:binary decision diagrams" "keyword:classical logic" "keyword:propositional logic" "keyword:garbage collection" "keyword:modal mu calculus" "keyword:model checking" "keyword:symbolic model checking" "keyword:reflection" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:November 2002" ]
+tags: [ "keyword:binary decision diagrams" "keyword:classical logic" "keyword:propositional logic" "keyword:garbage collection" "keyword:modal mu calculus" "keyword:model checking" "keyword:symbolic model checking" "keyword:reflection" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:2002-11" ]
 authors: [ "Kumar Neeraj Verma <verma@lsv.ens-cachan.fr>" ]

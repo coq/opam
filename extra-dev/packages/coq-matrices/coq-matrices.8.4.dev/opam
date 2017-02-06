@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Matrices"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:matrices" "keyword:vectors" "keyword:linear algebra" "keyword:coq modules" "category:Mathematics/Algebra" "date:March 2003" ]
+tags: [ "keyword:matrices" "keyword:vectors" "keyword:linear algebra" "keyword:coq modules" "category:Mathematics/Algebra" "date:2003-03" ]
 authors: [ "Nicolas Magaud <>" ]

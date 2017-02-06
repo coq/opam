@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RailroadCrossing"]
 depends: [
   "coq" {= "dev"}
 ]
-tags: [ "keyword:ctl" "keyword:tctl" "keyword:real time systems" "keyword:timed automatas" "keyword:safety" "keyword:concurrency" "keyword:properties" "keyword:invariants" "keyword:nonzeno" "keyword:discrete time" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" "date:February-March 2000." ]
+tags: [ "keyword:ctl" "keyword:tctl" "keyword:real time systems" "keyword:timed automatas" "keyword:safety" "keyword:concurrency" "keyword:properties" "keyword:invariants" "keyword:nonzeno" "keyword:discrete time" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" "date:February-March 2000" ]
 authors: [ "Carlos Daniel Luna <http://www.fing.edu.uy/~cluna>" ]

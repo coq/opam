@@ -7,7 +7,6 @@ authors: [
   "Bas Spitters"
   "Robbert Krebbers"
 ]
-license: "Public Domain"
 license: "LGPL 2"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

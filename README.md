@@ -52,7 +52,7 @@ In particular we use the `tags` field of the `opam` file as follows:
 
 Example:
 
-    tags: [ "keyword:cool" "keyword:stuff" "category:Some/Category" "date:1/1/1970" ]
+    tags: [ "keyword:cool" "keyword:stuff" "category:Some/Category" "date:1992-12-22" ]
 
 Finally the `homepage:`, `author:`, `maintainer:` and `doc:` fields are
 also used to generate the package entry.

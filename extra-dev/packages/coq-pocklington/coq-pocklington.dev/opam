@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Pocklington"]
 depends: [
   "coq" {= "dev"}
 ]
-tags: [ "keyword:pocklington" "keyword:number theory" "keyword:prime numbers" "keyword:primality" "keyword:fermat's little theorem" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:November 2000" ]
+tags: [ "keyword:pocklington" "keyword:number theory" "keyword:prime numbers" "keyword:primality" "keyword:fermat's little theorem" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:2000-11" ]
 authors: [ "Martijn Oostdijk <>" "Olga Caprotti <>" ]
