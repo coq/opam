@@ -1,7 +1,7 @@
 COQWEB=~/COQ/www/
 SUITES= core-dev  extra-dev  released
 H=@
-COQV=8.5.2
+COQV=8.6
 OCAMLV=4.01.0
 
 pp = (cd $(COQWEB); yamlpp-0.3/yamlpp $(abspath $(1)) -o $(abspath $(2)))
