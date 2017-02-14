@@ -1,0 +1,17 @@
+opam-version: "1.2"
+name: "coq-stdpp"
+version: "1.0.0"
+maintainer: "Ralf Jung <jung@mpi-sws.org>"
+homepage: "https://gitlab.mpi-sws.org/robbertkrebbers/coq-stdpp"
+authors: "Robbert Krebbers, Jacques-Henri Jourdan, Ralf Jung"
+bug-reports: "https://gitlab.mpi-sws.org/robbertkrebbers/coq-stdpp/issues"
+license: "BSD"
+dev-repo: "https://gitlab.mpi-sws.org/robbertkrebbers/coq-stdpp.git"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [make "install"]
+remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/stdpp'" ]
+depends: [
+  "coq" { ((>= "8.5.3" & < "8.7~") | (= "dev"))}
+]
