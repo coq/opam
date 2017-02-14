@@ -16,7 +16,7 @@ Clone it locally by typing the following, where `user` is your github user name.
 Note that the correct URL can also be found by clicking on the _clone_ _or_
 _download_ button.  Then create a directory named as follows
 
-    mkdir -p released/coq-foo/coq-foo.1.0.0
+    mkdir -p released/packages/coq-foo/coq-foo.1.0.0
 
 Remark that the package for `foo` is named `coq-foo` and that the directory
 name is the package name followed by a dot followed by the version of the
