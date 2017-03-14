@@ -1,21 +1,21 @@
-opam-version: "1.1"
+opam-version: "1.2"
 maintainer: "pierre-yves@strub.nu"
-homepage: "https://github.com/strub/multinomials-ssr"
-bug-reports: "https://github.com/strub/multinomials-ssr/issues"
+homepage: "https://github.com/math-comp/multinomials-ssr"
+bug-reports: "https://github.com/math-comp/multinomials-ssr/issues"
 license: "CeCILL-B"
 authors: ["Pierre-Yves Strub"]
 build: [
-  [make "fix-script"]
   [make "INSTMODE=global" "config"]
   [make "-j%{jobs}%"]
   [make "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SsrMultinomials"]
 depends: [
-  "coq" {>= "8.4pl4"}
-  ("coq-math-comp" {>= "1.5"} |
-   ("coq-mathcomp-ssreflect" {>= "1.6"} &
-    "coq-mathcomp-algebra"   {>= "1.6"}))
+  "coq" {>= "8.5"}
+  "coq-mathcomp-ssreflect"   {= "dev"}
+  "coq-mathcomp-algebra"     {= "dev"}
+  "coq-mathcomp-real_closed" {= "dev"}
+  "coq-mathcomp-finmap"      {= "dev"}
 ]
 tags: [
   "keyword:multinomials"
