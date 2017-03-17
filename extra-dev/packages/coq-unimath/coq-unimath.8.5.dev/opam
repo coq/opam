@@ -6,8 +6,8 @@ bug-reports: "https://github.com/UniMath/UniMath/issues"
 license: "Kind of MIT"
 authors: ["The UniMath Development Team"]
 build: [make "BUILD_COQ=no" "-j%{jobs}%"]
-install: [make "install"]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/UniMath"]
+install: [make "BUILD_COQ=no" "install"]
+remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/UniMath"]
 depends: [
   "coq" {= "8.5.dev"}
 ]
