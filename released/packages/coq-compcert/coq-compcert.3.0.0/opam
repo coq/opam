@@ -1,0 +1,28 @@
+opam-version: "1.2"
+author: "Xavier Leroy <xavier.leroy@inria.fr>"
+maintainer: "Matej Košík <matej.kosik@inria.fr>"
+homepage: "http://compcert.inria.fr/"
+dev-repo: "https://github.com/AbsInt/CompCert.git"
+bug-reports: "https://github.com/AbsInt/CompCert/issues"
+license: "INRIA Non-Commercial License Agreement"
+build: [
+  ["./configure" "ia32-linux" {os = "linux"}
+  		 "ia32-macosx" {os = "darwin"}
+		 "ia32-cygwin" {os = "cygwin"}
+		 "-bindir" "%{bin}%" "-libdir" "%{lib}%/compcert"
+		 "-clightgen"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: [
+  ["rm" "%{bin}%/ccomp"]
+  ["rm" "%{bin}%/clightgen"]
+  ["rm" "-R" "%{lib}%/compcert"]
+  ["rm" "%{share}%/compcert.ini"]
+]
+depends: [
+  "coq" {>= "8.5" & < "8.6~"}
+  "menhir" {>= "20160303"}
+]
