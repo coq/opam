@@ -1,0 +1,21 @@
+diff -crN CompCert.old/configure CompCert.new/configure
+*** CompCert.old/configure	2017-03-19 19:23:17.418501680 +0100
+--- CompCert.new/configure	2017-03-20 09:18:59.807144359 +0100
+***************
+*** 411,417 ****
+  echo "Testing Coq... " | tr -d '\n'
+  coq_ver=$(${COQBIN}coqc -v 2>/dev/null | sed -n -e 's/The Coq Proof Assistant, version \([^ ]*\).*$/\1/p')
+  case "$coq_ver" in
+!   8.6)
+          echo "version $coq_ver -- good!";;
+    ?.*)
+          echo "version $coq_ver -- UNSUPPORTED"
+--- 411,417 ----
+  echo "Testing Coq... " | tr -d '\n'
+  coq_ver=$(${COQBIN}coqc -v 2>/dev/null | sed -n -e 's/The Coq Proof Assistant, version \([^ ]*\).*$/\1/p')
+  case "$coq_ver" in
+!   trunk)
+          echo "version $coq_ver -- good!";;
+    ?.*)
+          echo "version $coq_ver -- UNSUPPORTED"
+Binary files CompCert.old/.git/index and CompCert.new/.git/index differ
