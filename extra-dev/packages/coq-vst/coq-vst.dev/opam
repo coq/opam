@@ -12,8 +12,8 @@ dev-repo: "https://github.com/PrincetonUniversity/VST.git"
 bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 license: "https://raw.githubusercontent.com/PrincetonUniversity/VST/master/LICENSE"
 build: [make "-j%{jobs}%"]
-install: [make "install"]
-remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/VST"]
+install: []
+remove: []
 depends: [
   "coq" {= "dev"}
 ]
