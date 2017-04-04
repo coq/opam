@@ -1,0 +1,20 @@
+diff -crN VST.orig/Makefile VST.new/Makefile
+*** VST.orig/Makefile	2017-04-04 13:23:50.951525808 +0200
+--- VST.new/Makefile	2017-04-04 13:26:30.867520793 +0200
+***************
+*** 377,383 ****
+  	@$(COQC) $(COQFLAGS) $*.v 
+  endif
+  
+! COQVERSION= 8.5pl1 or-else 8.5pl2 or-else 8.5pl3 or-else 8.6beta1 or-else 8.6
+  COQV=$(shell $(COQC) -v)
+  ifeq ("$(filter $(COQVERSION),$(COQV))","")
+  	$(error FAILURE: You need Coq $(COQVERSION) but you have this version: $(COQV))
+--- 377,383 ----
+  	@$(COQC) $(COQFLAGS) $*.v 
+  endif
+  
+! COQVERSION= 8.5pl1 or-else 8.5pl2 or-else 8.5pl3 or-else 8.6beta1 or-else 8.6 or-else trunk
+  COQV=$(shell $(COQC) -v)
+  ifeq ("$(filter $(COQVERSION),$(COQV))","")
+  	$(error FAILURE: You need Coq $(COQVERSION) but you have this version: $(COQV))
