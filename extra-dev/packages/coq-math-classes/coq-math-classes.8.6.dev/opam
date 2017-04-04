@@ -1,7 +1,9 @@
-opam-version: "1.1"
+opam-version: "1.2"
 maintainer: "b.a.w.spitters@gmail.com"
 homepage: "http://math-classes.org/"
 doc: "http://math-classes.org/"
+bug-reports: "https://github.com/math-classes/math-classes/issues"
+dev-repo: "https://github.com/math-classes/math-classes.git"
 authors: [
   "Eelis van der Weegen"
   "Bas Spitters"

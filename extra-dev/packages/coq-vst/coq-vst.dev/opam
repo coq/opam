@@ -1,0 +1,21 @@
+opam-version: "1.2"
+authors: ["Andrew W. Appel"
+          "Lennart Beringer"
+          "Jean-Marie Madiot"
+          "Qinxiang Cao"
+          "Santiago Cuellar"
+          "Nick Giannarakis"
+         ]
+maintainer: "matej.kosik@inria.fr"
+homepage: "http://vst.cs.princeton.edu/download/"
+dev-repo: "https://github.com/PrincetonUniversity/VST.git"
+bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
+license: "https://raw.githubusercontent.com/PrincetonUniversity/VST/master/LICENSE"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/VST"]
+depends: [
+  "coq" {= "dev"}
+]
+tags: []
+patches: "allow_trunk.diff"

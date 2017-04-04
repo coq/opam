@@ -1,0 +1,18 @@
+opam-version: "1.2"
+authors: [
+  "Adam Chlipala <adamc@csail.mit.edu>"
+  "Benjamin Delaware <bendy@csail.mit.edu>"
+  "Clément Pit-Claudel <cpitcla@csail.mit.edu>"
+  "Jason Gross <jgross@csail.mit.edu>"
+]
+maintainer: "Matej Košík <matej.kosik@inria.fr>"
+homepage: "http://plv.csail.mit.edu/fiat/"
+bug-reports: "https://github.com/mit-plv/fiat/issues"
+license: "MIT"
+build: [make "-j%{jobs}%" "parsers"]
+install: [make "install-parsers"]
+remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Fiat"]
+depends: [
+  "coq" {= "dev"}
+]
+dev-repo: "https://github.com/mit-plv/fiat.git"

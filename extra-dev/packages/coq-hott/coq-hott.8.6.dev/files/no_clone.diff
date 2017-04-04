@@ -1,0 +1,37 @@
+diff -crN HoTT.old/autogen.sh HoTT.new/autogen.sh
+*** HoTT.old/autogen.sh	2017-03-20 09:42:00.000000000 +0100
+--- HoTT.new/autogen.sh	2017-03-20 10:03:17.000000000 +0100
+***************
+*** 31,48 ****
+  	echo 'Error: autoreconf failed, and you are not using git.  Try installing autoconf or autoreconf.'
+      fi
+  fi
+- 
+- if command -v git >/dev/null 2>&1
+- then # git found
+-     if test -d .git
+-     then # we're in a git repository
+- 	git submodule sync # update possibly changed urls
+- 	git submodule update --init --recursive
+-     elif test ! -d etc/coq-scripts/timing
+-     then
+- 	echo 'You are not in a git repo; the timing scripts at ./etc/coq-scripts/timing will not be available.'
+-     fi
+- elif test ! -d etc/coq-scripts/timing
+- then
+-     echo 'You do not have git; the timing scripts at ./etc/coq-scripts/timing will not be available.'
+- fi
+--- 31,33 ----
+diff -crN HoTT.old/.gitmodules HoTT.new/.gitmodules
+*** HoTT.old/.gitmodules	2017-03-20 10:02:39.000000000 +0100
+--- HoTT.new/.gitmodules	1970-01-01 01:00:00.000000000 +0100
+***************
+*** 1,7 ****
+- [submodule "coq-HoTT"]
+- 	path = coq-HoTT
+- 	url = https://github.com/coq/coq.git
+- 	branch = v8.6
+- [submodule "etc/coq-scripts"]
+- 	path = etc/coq-scripts
+- 	url = https://github.com/JasonGross/coq-scripts.git
+--- 0 ----

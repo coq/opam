@@ -4,7 +4,7 @@ authors: [
   "Arthur Charguéraud <arthur.chargueraud@inria.fr>"
 ]
 homepage: "https://gforge.inria.fr/projects/tlc/"
-dev-repo: "git+ssh://scm.gforge.inria.fr//gitroot/tlc/tlc.git"
+dev-repo: "https://scm.gforge.inria.fr/anonscm/git/tlc/tlc.git"
 bug-reports: "tlc-users@lists.gforge.inria.fr"
 license: "CeCILL-B"
 build: [

@@ -1,0 +1,17 @@
+opam-version: "1.2"
+maintainer: "guillaume.melquiond@inria.fr"
+homepage: "http://flocq.gforge.inria.fr/"
+dev-repo: "https://scm.gforge.inria.fr/anonscm/git/flocq/flocq.git"
+license: "LGPL 3"
+build: [
+  ["./autogen.sh"]
+  ["./configure"]
+  ["./remake" "-j%{jobs}%"]
+]
+install: ["./remake" "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Flocq"]
+depends: [
+  "coq" {= "dev"}
+]
+tags: [ "keyword:floating point arithmetic" ]
+authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
