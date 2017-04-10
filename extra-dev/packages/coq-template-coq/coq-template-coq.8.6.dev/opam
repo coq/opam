@@ -1,7 +1,7 @@
 opam-version: "1.2" 
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://github.com/gmalecha/template-coq"
-dev-repo: "https://github.com/gmalecha/template-coq.git#8.5"
+dev-repo: "https://github.com/gmalecha/template-coq.git#8.6"
 bug-reports: "https://github.com/gmalecha/template-coq/issues"
 authors: ["Gregory Malecha"]
 license: "BSD"
@@ -13,5 +13,5 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Template"]
 depends: [
-  "coq" {>= "8.5" & < "8.6" }
+  "coq" {>= "8.6"}
 ]
