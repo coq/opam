@@ -1,0 +1,1 @@
+[PORTING IN PROGRESS] Mostly automated verification of higher-order programs with higher-order separation logic, with a small trusted code base.  Note that somet things are still broken with 8.6, and this is primarily for benchmarking/compatibility testing purposes, at the moment.
