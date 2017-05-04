@@ -11,11 +11,13 @@ homepage: "http://vst.cs.princeton.edu/download/"
 dev-repo: "https://github.com/PrincetonUniversity/VST.git"
 bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 license: "https://raw.githubusercontent.com/PrincetonUniversity/VST/master/LICENSE"
-build: [make "-j%{jobs}%"]
+build: [
+  ["sed" "-i.bak" "s/8.6$/8.6 or-else trunk/" "Makefile"]
+  [make "-j%{jobs}%"]
+]
 install: []
 remove: []
 depends: [
   "coq" {= "dev"}
 ]
 tags: []
-patches: "allow_trunk.diff"
