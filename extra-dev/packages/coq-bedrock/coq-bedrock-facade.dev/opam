@@ -8,7 +8,7 @@ authors: [
 ]
 maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "http://plv.csail.mit.edu/bedrock/"
-bug-reports: "https://github.com/JasonGross/bedrock/issues"
+bug-reports: "https://github.com/mit-plv/bedrock/issues"
 license: "BSD"
 build: [make "-j%{jobs}%" "facade"]
 install: [make "install-facade"]
@@ -16,4 +16,4 @@ remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Bedrock"]
 depends: [
   "coq" {= "dev"}
 ]
-dev-repo: "https://github.com/JasonGross/bedrock.git"
+dev-repo: "https://github.com/mit-plv/bedrock.git"
