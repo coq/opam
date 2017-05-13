@@ -15,5 +15,5 @@ depends: [
   "coq" {= "8.6.dev"}
 ]
 authors: ["The UniMath Development Team"]
-dev-repo: "https://github.com/ejgallego/HoTT.git"
-patches: ["emilio.diff" "no_clone.diff"]
+dev-repo: "https://github.com/HoTT/HoTT.git"
+patches: ["no_clone.diff"]

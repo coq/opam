@@ -1,6 +1,6 @@
-diff -crN HoTT.old/autogen.sh HoTT.new/autogen.sh
-*** HoTT.old/autogen.sh	2017-03-20 09:42:00.000000000 +0100
---- HoTT.new/autogen.sh	2017-03-20 10:03:17.000000000 +0100
+diff -crN HoTT.orig/autogen.sh HoTT.new/autogen.sh
+*** HoTT.orig/autogen.sh	2017-05-13 20:11:46.110704132 +0200
+--- HoTT.new/autogen.sh	2017-05-13 20:13:03.976039073 +0200
 ***************
 *** 31,48 ****
   	echo 'Error: autoreconf failed, and you are not using git.  Try installing autoconf or autoreconf.'
@@ -22,11 +22,11 @@ diff -crN HoTT.old/autogen.sh HoTT.new/autogen.sh
 -     echo 'You do not have git; the timing scripts at ./etc/coq-scripts/timing will not be available.'
 - fi
 --- 31,33 ----
-diff -crN HoTT.old/.gitmodules HoTT.new/.gitmodules
-*** HoTT.old/.gitmodules	2017-03-20 10:02:39.000000000 +0100
+diff -crN HoTT.orig/.gitmodules HoTT.new/.gitmodules
+*** HoTT.orig/.gitmodules	2017-05-13 20:11:46.110704132 +0200
 --- HoTT.new/.gitmodules	1970-01-01 01:00:00.000000000 +0100
 ***************
-*** 1,7 ****
+*** 1,10 ****
 - [submodule "coq-HoTT"]
 - 	path = coq-HoTT
 - 	url = https://github.com/coq/coq.git
@@ -34,4 +34,7 @@ diff -crN HoTT.old/.gitmodules HoTT.new/.gitmodules
 - [submodule "etc/coq-scripts"]
 - 	path = etc/coq-scripts
 - 	url = https://github.com/JasonGross/coq-scripts.git
+- [submodule "etc/coq-dpdgraph"]
+- 	path = etc/coq-dpdgraph
+- 	url = https://github.com/Karmaki/coq-dpdgraph.git
 --- 0 ----
