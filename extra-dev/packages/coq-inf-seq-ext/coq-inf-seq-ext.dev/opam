@@ -1,0 +1,15 @@
+opam-version: "1.2"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/DistributedComponents/InfSeqExt"
+dev-repo: "https://github.com/DistributedComponents/InfSeqExt.git"
+bug-reports: "https://github.com/DistributedComponents/InfSeqExt/issues"
+license: "Proprietary"
+
+build: [ [ "./configure" ] [ make "-j%{jobs}%" ] ]
+install: [ make "install" ]
+remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/InfSeqExt'" ]
+depends: [ "coq" {= "dev"} ]
+
+tags: [ "keyword:temporal logic" "keyword:infinite transition systems" "keyword:coinduction" "category:Mathematics/Logic/Modal logic" ]
+authors: [ "Yuxin Deng <>" "Jean-Francois Monin <>" "Karl Palmskog <>" ]

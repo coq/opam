@@ -1,0 +1,35 @@
+opam-version: "1.2"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/uwplse/verdi"
+dev-repo: "https://github.com/uwplse/verdi.git"
+bug-reports: "https://github.com/uwplse/verdi/issues"
+license: "BSD"
+
+build: [
+  [ "./configure" ]
+  [ make "-j%{jobs}%" ]
+]
+install: [ make "install" ]
+remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/Verdi'" ]
+depends: [
+  "coq" {= "dev"}
+  "coq-mathcomp-ssreflect" {= "dev"}
+  "coq-inf-seq-ext" {= "dev"}
+  "coq-struct-tact" {= "dev"}
+]
+
+tags: [
+  "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
+  "keyword:program verification"
+  "keyword:distributed algorithms"
+]
+authors: [
+  "James Wilcox <>"
+  "Doug Woos <>"
+  "Pavel Panchekha <>"
+  "Zachary Tatlock <>"
+  "Steve Anton <>"
+  "Karl Palmskog <>"
+  "Ryan Doenges <>"
+]
