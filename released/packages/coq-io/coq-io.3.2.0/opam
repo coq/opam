@@ -14,5 +14,5 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io"]
 depends: [
-  "coq" {>= "8.4pl4" & < "8.5~"}
+  "coq" {>= "8.4pl4" & < "8.6~"}
 ]
