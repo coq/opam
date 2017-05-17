@@ -1,0 +1,14 @@
+opam-version: "1.1"
+maintainer: "pierre-marie.pedrot@inria.fr"
+homepage: "http://coqtail.sourceforge.net/?home/en"
+license: "LGPL 3"
+build: [
+  ["sh" "-c" "cd src && ./generate_makedep.sh"]
+  ["sh" "-c" "cd src && ./generate_makefile.sh"]
+  ["sh" "-c" "cd src && make -j%{jobs}%"]
+  ["sh" "-c" "cd src && make install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coqtail"]
+depends: [
+  "coq" {>= "8.4pl4"}
+]

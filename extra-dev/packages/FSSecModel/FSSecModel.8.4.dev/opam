@@ -1,0 +1,15 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/fssec-model.git;a=tree"
+license: "Proprietary"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FSSecModel"]
+depends: [
+  "coq" {>= "8.4" & < "8.5~"}
+]
+tags: [ "keyword:security" "keyword:filesystem" "keyword:unix" "keyword:mls" "keyword:access control" "category:Computer Science/Operating Systems" "date:24/04/02" ]
+authors: [ "Maximiliano Cristiá <>" ]

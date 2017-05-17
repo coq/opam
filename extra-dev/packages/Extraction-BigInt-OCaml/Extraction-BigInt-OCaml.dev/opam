@@ -1,0 +1,14 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/coq-extraction-big-int-ocaml"
+bug-reports: "https://github.com/clarus/coq-extraction-big-int-ocaml/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: [make "uninstall"]
+depends: [
+  "ocamlfind"
+]

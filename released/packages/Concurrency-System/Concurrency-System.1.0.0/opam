@@ -1,0 +1,19 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/coq-concurrency/system"
+bug-reports: "https://github.com/coq-concurrency/system/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["ruby" "pp.rb"]
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Concurrency"]
+depends: [
+  "coq" {>= "8.4pl4"}
+  "coq:error-handlers"
+  "coq:function-ninjas"
+  "coq:list-string" {>= "2.0.0"}
+]

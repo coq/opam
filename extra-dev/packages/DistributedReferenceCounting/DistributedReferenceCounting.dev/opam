@@ -1,0 +1,15 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/distributed-reference-counting.git;a=tree"
+license: "LGPL 2"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/DistributedReferenceCounting"]
+depends: [
+  "coq" {>= "8.5"}
+]
+tags: [ "keyword:garbage collection" "keyword:distributed algorithms" "category:Computer Science/Semantics and Compilation/Compilation" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" ]
+authors: [ "Luc Moreau <>" "Jean Duprat <>" ]

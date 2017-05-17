@@ -1,0 +1,16 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/io-system-ocaml"
+bug-reports: "https://github.com/clarus/io-system-ocaml/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: [make "uninstall"]
+depends: [
+  "ocamlfind"
+  "lwt"
+]
+ocaml-version: [>= "4.00.0"]

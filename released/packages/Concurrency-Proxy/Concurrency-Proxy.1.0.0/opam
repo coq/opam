@@ -1,0 +1,15 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/coq-concurrency/proxy"
+bug-reports: "https://github.com/coq-concurrency/proxy/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+depends: [
+  "base-unix"
+  "lwt" {>= "2.4.5"}
+  "base64" {>= "1.0.0" & < "2"}
+]
+ocaml-version: [>= "4.02.0"]

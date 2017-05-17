@@ -1,0 +1,15 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/falso"
+bug-reports: "https://github.com/clarus/falso/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Falso"]
+depends: [
+  "coq" {>= "8.4pl4"}
+]

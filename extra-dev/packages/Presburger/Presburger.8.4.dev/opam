@@ -1,0 +1,16 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/presburger.git;a=tree"
+license: "LGPL 2"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+# No "-j%{jobs}%" option.
+  [make]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Presburger"]
+depends: [
+  "coq" {>= "8.4" & < "8.5~"}
+]
+tags: [ "keyword:integers" "keyword:arithmetic" "keyword:decision procedure" "keyword:presburger" "category:Mathematics/Logic/Foundations" "category:Mathematics/Arithmetic and Number Theory/Miscellaneous" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:March 2002" ]
+authors: [ "Laurent Théry <>" ]

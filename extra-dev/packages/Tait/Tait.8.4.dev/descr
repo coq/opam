@@ -1,0 +1,4 @@
+A normalization proof a la Tait for simply-typed lambda-calculus.
+
+This is a formalization of Berger's TLCA'93 paper, with complete proofs
+of the axioms and an extraction of a normalization program close to N.B.E.

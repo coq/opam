@@ -1,0 +1,15 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/reflexive-first-order.git;a=tree"
+license: "LGPL"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ReflexiveFirstOrder"]
+depends: [
+  "coq" {>= "8.5"}
+]
+tags: [ "keyword:computationnal reflection" "keyword:interpretation" "keyword:first order logic" "keyword:equational reasoning" "category:Miscellaneous/Coq Extensions" "date:05/2005" ]
+authors: [ "Pierre Corbineau <pierre.corbineau@lri.fr>" ]

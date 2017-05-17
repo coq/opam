@@ -1,0 +1,13 @@
+opam-version: "1.1"
+maintainer: "thomas.braibant@gmail.com"
+homepage: "http://ssr.msr-inria.inria.fr/"
+license: "CeCILL-B"
+build: [
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MathComp"]
+depends: [
+  "coq" {>= "8.4pl4" & < "8.5~"}
+  "coq:ssreflect" {>= "1.5"}
+]

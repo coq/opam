@@ -1,0 +1,15 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/generic-environments.git;a=tree"
+license: "LGPL"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GenericEnvironments"]
+depends: [
+  "coq" {>= "8.5"}
+]
+tags: [ "keyword:generic environments" "keyword:typing" "keyword:type theory" "category:Mathematics/Logic/Type theory" ]
+authors: [ "Emmanuel Polonowski <emmanuel.polonowski@u-pec.fr>" ]

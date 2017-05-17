@@ -1,0 +1,15 @@
+opam-version: "1.1"
+maintainer: "dev@clarus.me"
+homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/ruler-compass-geometry.git;a=tree"
+license: "GNU Lesser Public License"
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RulerCompassGeometry"]
+depends: [
+  "coq" {>= "8.5"}
+]
+tags: [ "keyword:geometry" "keyword:plane geometry" "keyword:ruler and compass geometry" "keyword:euclidian geometry" "keyword:hilbert's axioms" "category:Mathematics/Geometry/General" "date:November 2007" ]
+authors: [ "Jean Duprat <Jean.Duprat@ens-lyon.fr>" ]
