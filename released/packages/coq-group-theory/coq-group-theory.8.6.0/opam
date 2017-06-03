@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/group-theory"
+license: "Proprietary"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GroupTheory"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword:group theory" "category:Mathematics/Algebra" ]
+authors: [ "Gilles Kahn <>" ]
+bug-reports: "https://github.com/coq-contribs/group-theory/issues"
+dev-repo: "https://github.com/coq-contribs/group-theory.git"

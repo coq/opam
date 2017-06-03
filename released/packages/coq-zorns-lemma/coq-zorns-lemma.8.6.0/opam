@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/zorns-lemma"
+license: "LGPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZornsLemma"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword:set theory" "keyword:cardinals" "keyword:ordinals" "keyword:finite" "keyword:countable" "keyword:quotients" "keyword:well orders" "keyword:zorn's lemma" "category:Mathematics/Logic/Set theory" ]
+authors: [ "Daniel Schepler <dschepler@gmail.com>" ]
+bug-reports: "https://github.com/coq-contribs/zorns-lemma/issues"
+dev-repo: "https://github.com/coq-contribs/zorns-lemma.git"

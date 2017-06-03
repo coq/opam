@@ -1,0 +1,15 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/tree-automata"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TreeAutomata"]
+depends: [
+  "coq" {>= "8.5"}
+  "coq-int-map"
+]
+tags: [ "keyword:tree automatas" "keyword:bottom up reflexion terms" "category:Computer Science/Formal Languages Theory and Automata" "date:1999-09" ]
+authors: [ "Xavier Rival <http://www.eleves.ens.fr/home/rival>" ]
+bug-reports: "https://github.com/coq-contribs/tree-automata/issues"
+dev-repo: "https://github.com/coq-contribs/tree-automata.git"

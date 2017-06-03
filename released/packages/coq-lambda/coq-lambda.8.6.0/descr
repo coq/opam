@@ -1,0 +1,8 @@
+Residual Theory in Lambda-Calculus.
+
+We present the complete development in Gallina of the
+residual theory of beta-reduction in pure lambda-calculus. The main
+result is the Prism Theorem, and its corollary Lévy's Cube Lemma, a
+strong form of the parallel-moves lemma, itself a key step towards the
+confluence theorem and its usual corollaries (Church-Rosser,
+uniqueness of normal forms).

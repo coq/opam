@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/qarith-stern-brocot"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/QArithSternBrocot"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword:rational numbers" "keyword:arithmetic" "keyword:field tactic" "keyword:binary lists" "keyword:stern brocot" "category:Mathematics/Arithmetic and Number Theory/Rational numbers" "category:Miscellaneous/Extracted Programs/Arithmetic" "date:2003" ]
+authors: [ "Milad Niqui <>" "Yves Bertot <>" ]
+bug-reports: "https://github.com/coq-contribs/qarith-stern-brocot/issues"
+dev-repo: "https://github.com/coq-contribs/qarith-stern-brocot.git"
