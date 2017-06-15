@@ -23,7 +23,7 @@ name is the package name followed by a dot followed by the version of the
 package.  Such directory has to contain at least 3 files
      
 First, a text file called `url` pointing to the sources archive.
-In our case `released/coq-foo/coq-foo.1.0.0/url` contains:
+In our case `released/packages/coq-foo/coq-foo.1.0.0/url` contains:
 
     http: "https://github.com/user/foo/archive/1.0.0.tar.gz"
     checksum: "d41d8cd98f00b204e9800998ecf8427e"
@@ -34,13 +34,13 @@ The MD5 checksum is mandatory, and can be obtained with:
 
 Second, a text file called `descr` containing a short
 description of the package.  In our case the contents of
-`released/coq-foo/coq-foo.1.0.0/descr` are:
+`released/packages/coq-foo/coq-foo.1.0.0/descr` are:
 
     Foo is a Coq library doing wonders
 
 Third, a text file called `opam` containing some metadata like build
 instructions and dependencies.  In our case
-`released/coq-foo/coq-foo.1.0.0/opam` contains:
+`released/packages/coq-foo/coq-foo.1.0.0/opam` contains:
 
     opam-version: "1.2"
     maintainer: "your@email.address"
@@ -69,14 +69,14 @@ instructions and dependencies.  In our case
 
 One can now git commit the new package
 
-    git add released/coq-foo/coq-foo.1.0.0
+    git add released/packages/coq-foo/coq-foo.1.0.0
     git commit -m 'Packaging foo version 1.0.0'
 
 ## Testing your new package
 
 The preliminary step is to lint your `opam` file as follows
 
-    opam lint released/coq-foo/coq-foo.1.0.0/opam
+    opam lint released/packages/coq-foo/coq-foo.1.0.0/opam
 
 Once no more errors are given, the best way to test your package is to add your
 local clone of `opam-coq-archive` to opam as follows, and then run `opam
