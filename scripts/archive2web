@@ -76,7 +76,7 @@ function do_one_root(suite)
   	end
 		info.authors = authors
 
-  	info.description = info.description or io.open(pkg..'/descr'):read('*a')
+  	info.description = info.description or assert(io.open(pkg..'/descr')):read('*a')
 
   end end
 end
