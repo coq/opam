@@ -1,5 +1,5 @@
 opam-version: "1.2"
-maintainer: "matej.kosik@inria.fr"
+maintainer: "Yishuai Li <yishuai@cis.upenn.edu>"
 homepage: "https://github.com/coq-contribs/paco"
 license: "LGPL 2"
 build: [make "-j%{jobs}%"]
