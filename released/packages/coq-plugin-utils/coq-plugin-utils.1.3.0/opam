@@ -9,5 +9,5 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PluginUtils"]
 depends: [
-  "coq" {>= "8.6" < "8.7"} 
+  "coq" {>= "8.6" < "8.7~"}
 ]
