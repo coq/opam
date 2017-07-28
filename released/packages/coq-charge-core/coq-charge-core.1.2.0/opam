@@ -1,0 +1,20 @@
+opam-version: "1.2"
+maintainer: "gmalecha@gmail.com"
+homepage: "https://github.com/jesper-bengtson/ChargeCore"
+dev-repo: "https://github.com/jesper-bengtson/ChargeCore.git"
+bug-reports: "https://github.com/jesper-bengtson/ChargeCore/issues"
+authors: ["Jesper Bengtson" "Gregory Malecha"]
+license: "APACHE 2.0"
+build: [
+  [make "-j%{jobs}%" "-C" "ChargeCore"]
+]
+install: [
+  [make "-C" "ChargeCore" "install"]
+]
+remove: [
+  ["rm" "-R" "%{doc}%/user-contrib/ChargeCore"]
+]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+  "coq-ext-lib" {>= "0.9.6"}
+]
