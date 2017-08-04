@@ -16,6 +16,8 @@ depends: [
   "coq" {= "dev"}
   "coq-verdi" {= "dev"}
   "coq-struct-tact" {= "dev"}
+  "coq-cheerios" {= "dev"}
+  "coq-verdi-cheerios" {= "dev"}
 ]
 tags: [
   "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
@@ -31,4 +33,5 @@ authors: [
   "Steve Anton <>"
   "Karl Palmskog <>"
   "Ryan Doenges <>"
+  "Justin Adsuara <>"
 ]
