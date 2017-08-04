@@ -7,12 +7,11 @@ build: [
   ["./configure"
     "-configdir" "%{lib}%/coq/config"
     "-mandir" man
-    "-nodoc"
+    "-with-doc" "no"
     "-prefix" prefix
-    "-usecamlp5"
     "-camlp5dir" "%{lib}%/camlp5"
     "-coqide" "no"
-    "-debug"]
+  ]
   [make "-j%{jobs}%"]
   [make "install"]
 ]
