@@ -7,7 +7,7 @@ install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoRN"]
 depends: [
   "coq" {= "8.7.dev"}
-  "coq-math-classes"
+  "coq-math-classes" {= "8.7.dev"}
 ]
 tags: [ "keyword:constructive mathematics" "keyword:algebra" "keyword:real calculus" "keyword:real numbers" "keyword:fundamental theorem of algebra" "category:Mathematics/Algebra" "category:Mathematics/Real Calculus and Topology" ]
 authors: [ "Iris Loeb <>" "Rik van Ginneken <>" "Randy Pollack <>" "Mariusz Giero <>" "Dan Synek <>" "Lionel Mamane <>" "Luís Cruz-Filipe <>" "Milad Niqui <>" "Pierre Letouzey <>" "Herman Geuvers <>" "Freek Wiedijk <>" "Henk Barendregt <>" "Dimitri Hendriks <>" "Bart Kirkels <>" "Russell O'Connor <>" "Bas Spitters <>" "Sébastien Hinderer <>" "Nickolay V. Shmyrev <>" "Jan Zwanenburg <>" ]
