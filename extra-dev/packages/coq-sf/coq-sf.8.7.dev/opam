@@ -1,0 +1,32 @@
+opam-version: "1.2"
+maintainer: "Matej Košík <matej.kosik@inria.fr>"
+homepage: "https://www.cis.upenn.edu/~bcpierce/sf/current/"
+doc: "https://www.cis.upenn.edu/~bcpierce/sf/current/"
+authors: [
+  "Benjamin C. Pierce"
+  "Arthur Azevedo de Amorim"
+  "Chris Casinghino"
+  "Marco Gaboardi"
+  "Michael Greenberg"
+  "Cătălin Hriţcu"
+  "Vilhelm Sjöberg"
+  "Brent Yorgey"
+]
+license: "like MIT"
+
+build: [
+  [sed "sed" "-i" "15i From Coq Require Extraction." "Extraction.v"]
+  [make "-j%{jobs}%"]
+]
+
+install: [
+  [make "install"]
+]
+
+bug-reports: "?"
+dev-repo: "https://www.cis.upenn.edu/~bcpierce/sf/current/sf.tgz"
+remove: []
+depends: [
+  "coq" {= "8.7.dev"}
+]
+tags: []
