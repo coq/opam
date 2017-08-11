@@ -6,9 +6,9 @@ authors: ["Gabriel Braun <gabriel.braun@unistra.fr>" "Pierre Boutry <pierre.bout
 license: "LGPL 3"
 build: [
   ["./configure.sh"]
-  ["sed" "-i" "'/Ch16_coordinates_with_functions\\.v/d'" "Make"]
-  ["sed" "-i" "'/Elements\\/Book_1\\.v/d'" "Make"]
-  ["sed" "-i" "'/Elements\\/Book_3\\.v/d'" "Make"]
+  ["sed" "-i" "/Ch16_coordinates_with_functions\\.v/d" "Make"]
+  ["sed" "-i" "/Elements\\/Book_1\\.v/d" "Make"]
+  ["sed" "-i" "/Elements\\/Book_3\\.v/d" "Make"]
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]
 ]
