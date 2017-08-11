@@ -10,7 +10,7 @@ homepage: "http://plv.csail.mit.edu/fiat/"
 bug-reports: "https://github.com/mit-plv/fiat/issues"
 license: "MIT"
 build: [make "-j%{jobs}%" "parsers" "parsers-examples"]
-install: [make "install-parsers" "install-parsers-examples"]
+install: []
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Fiat"]
 depends: [
   "coq" {= "8.7.dev"}
