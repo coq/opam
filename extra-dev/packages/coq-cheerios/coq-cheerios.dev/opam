@@ -8,6 +8,7 @@ license: "BSD"
 
 build: [
   [ "./configure" ]
+  [ "bash" "-c" "sed -i '1i From Coq Require Extraction.' extraction/*.v runtime/coq/{ExtractPositiveSerializer.v,ExtractTreeSerializer.v}" ]
   [ make "-j%{jobs}%" ]
 ]
 install: [ make "install" ]
