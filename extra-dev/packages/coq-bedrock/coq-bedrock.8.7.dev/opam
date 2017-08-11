@@ -1,0 +1,19 @@
+opam-version: "1.2"
+authors: [
+  "Adam Chlipala <adamc@csail.mit.edu>"
+  "Gregory Malecha <gmalecha@cs.harvard.edu>"
+  "Thomas Braibant <thomas.braibant@inria.fr>"
+  "Patrick Hulin <phulin@mit.edu>"
+  "Edward Z. Yang <ezyang@mit.edu>"
+]
+maintainer: "Matej Košík <matej.kosik@inria.fr>"
+homepage: "http://plv.csail.mit.edu/bedrock/"
+bug-reports: "https://github.com/mit-plv/bedrock/issues"
+license: "BSD"
+build: [make "-j%{jobs}%" "src" "platform" "facade" "examples" "facade-all" "qsfacade" "qsfacade-impl" "qsfacade-compiler"]
+install: [make "install-src" "install-platform" "install-facade" "install-examples" "install-facade-all" "install-qsfacade" "install-qsfacade-impl" "install-qsfacade-compiler"]
+remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Bedrock"]
+depends: [
+  "coq" {= "8.7.dev"}
+]
+dev-repo: "https://github.com/mit-plv/bedrock.git"
