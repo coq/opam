@@ -1,1 +1,1 @@
-git: "git://github.com/coq/coq#v8.7"
+git: "https://github.com/coq/coq.git#v8.7"
