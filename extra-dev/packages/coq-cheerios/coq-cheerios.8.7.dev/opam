@@ -1,5 +1,5 @@
 opam-version: "1.2"
-maintainer: "Matej Košík <matej.kosik@inria.fr>"
+maintainer: "palmskog@gmail.com"
 
 homepage: "https://github.com/uwplse/cheerios"
 dev-repo: "https://github.com/uwplse/cheerios.git"
@@ -8,14 +8,12 @@ license: "BSD"
 
 build: [
   [ "./configure" ]
-  [ "bash" "-c" "sed -i '1i From Coq Require Extraction.' extraction/*.v runtime/coq/{ExtractPositiveSerializer.v,ExtractTreeSerializer.v}" ]
   [ make "-j%{jobs}%" ]
 ]
 install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/Cheerios'" ]
 depends: [
   "coq" {= "8.7.dev"}
-  "coq-mathcomp-ssreflect" {= "8.7.dev"}
   "coq-struct-tact" {= "8.7.dev"}
 ]
 
