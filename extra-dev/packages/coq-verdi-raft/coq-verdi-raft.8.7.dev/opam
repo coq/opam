@@ -1,5 +1,5 @@
 opam-version: "1.2"
-maintainer: "Matej Košík <matej.kosik@inria.fr>"
+maintainer: "palmskog@gmail.com"
 
 homepage: "https://github.com/uwplse/verdi-raft"
 dev-repo: "https://github.com/uwplse/verdi-raft.git"
@@ -8,7 +8,6 @@ license: "BSD"
 
 build: [
   [ "./configure" ]
-  [ "bash" "-c" "sed -i -e '1i Require Import FunInd.' raft/CommonTheorems.v" ]
   [ make "-j%{jobs}%" ]
 ]
 install: [ make "install" ]
