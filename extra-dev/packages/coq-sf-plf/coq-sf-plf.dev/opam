@@ -1,0 +1,32 @@
+opam-version: "1.2"
+maintainer: "Matej Košík <matej.kosik@inria.fr>"
+homepage: "https://softwarefoundations.cis.upenn.edu/"
+doc: "https://softwarefoundations.cis.upenn.edu/"
+authors: [
+  "Benjamin C. Pierce"
+  "Arthur Azevedo de Amorim"
+  "Chris Casinghino"
+  "Marco Gaboardi"
+  "Michael Greenberg"
+  "Cătălin Hriţcu"
+  "Vilhelm Sjöberg"
+  "Andrew Tolmach"
+  "Brent Yorgey"
+]
+license: "like MIT"
+
+build: [
+  [make "-j%{jobs}%"]
+]
+
+install: [
+  [make "install"]
+]
+
+bug-reports: "?"
+dev-repo: "https://www.cis.upenn.edu/~bcpierce/sf/plf-current/plf.tgz"
+remove: []
+depends: [
+  "coq" {= "dev"}
+]
+tags: []
