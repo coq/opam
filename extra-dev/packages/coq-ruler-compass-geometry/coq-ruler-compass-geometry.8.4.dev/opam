@@ -11,5 +11,5 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RulerCompassGeometry"]
 depends: [
   "coq" {= "8.4.dev"}
 ]
-tags: [ "keyword:geometry" "keyword:plane geometry" "keyword:ruler and compass geometry" "keyword:euclidian geometry" "keyword:hilbert's axioms" "category:Mathematics/Geometry/General" "date:2007-11" ]
+tags: [ "keyword:geometry" "keyword:plane geometry" "keyword:ruler and compass geometry" "keyword:euclidean geometry" "keyword:hilbert's axioms" "category:Mathematics/Geometry/General" "date:2007-11" ]
 authors: [ "Jean Duprat <Jean.Duprat@ens-lyon.fr>" ]

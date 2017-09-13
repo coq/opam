@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GC"]
 depends: [
   "coq" {= "8.5.dev"}
 ]
-tags: [ "keyword:linear temporal logic" "keyword:finite sets" "keyword:co-induction" "keyword:garbage collection" "category:Computer Science/Semantics and Compilation/Compilation" ]
+tags: [ "keyword:linear temporal logic" "keyword:finite sets" "keyword:coinduction" "keyword:garbage collection" "category:Computer Science/Semantics and Compilation/Compilation" ]
 authors: [ "Solange Coupet-Grimal and Catherine Nouvet" ]
 bug-reports: "https://github.com/coq-contribs/gc/issues"
 dev-repo: "https://github.com/coq-contribs/gc.git"

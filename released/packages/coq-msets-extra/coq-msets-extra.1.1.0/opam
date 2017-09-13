@@ -21,6 +21,6 @@ tags: [ "keyword:finite sets"
         "keyword:fold with abort"
         "keyword:extracting efficient code"
         "keyword:data structures"
-        "category:CS/Data Types and Data Structures"
-        "category:Misc/Extracted/Data structures"
+        "category:Computer Science/Data Types and Data Structures"
+        "category:Miscellaneous/Extracted Programs/Data structures"
         "date:2016-10-04" ]

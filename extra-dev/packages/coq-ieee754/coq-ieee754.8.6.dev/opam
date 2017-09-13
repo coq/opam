@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IEEE754"]
 depends: [
   "coq" {= "8.6.dev"}
 ]
-tags: [ "keyword:floating-point arithmetic" "keyword:floats" "keyword:IEEE" "keyword:Computer Science/Data Types and Data Structures" "category:Computer Science/Semantics and Compilation/Semantics" ]
+tags: [ "keyword:floating point arithmetic" "keyword:floats" "keyword:IEEE" "category:Computer Science/Data Types and Data Structures" "category:Computer Science/Semantics and Compilation/Semantics" ]
 authors: [ "Eduardo Giménez <>" ]
 bug-reports: "https://github.com/coq-contribs/ieee754/issues"
 dev-repo: "https://github.com/coq-contribs/ieee754.git"
