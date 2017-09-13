@@ -3,7 +3,7 @@ authors: [ "The Coq Development Team" ]
 maintainer: "coqdev@inria.fr"
 homepage: "http://coq.inria.fr/"
 bug-reports: "https://coq.inria.fr/bugs/"
-license: "LGPL 2"
+license: "LGPL 2.1"
 build: [
   ["./configure"
     "-configdir" "%{lib}%/coq/config"
