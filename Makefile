@@ -1,5 +1,5 @@
 COQWEB=~/COQ/www/
-SUITES= core-dev  extra-dev  released
+SUITES= extra-dev  released
 H=@
 COQV=8.6
 OCAMLV=4.01.0
