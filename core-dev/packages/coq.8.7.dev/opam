@@ -15,8 +15,12 @@ build: [
     "-coqide" "no"
     "-debug"]
   [make "-j%{jobs}%"]
+  [make "-j%{jobs}%" "byte"]
 ]
-install: [make "install"]
+install: [
+  [make "install"]
+  [make "install-byte"]
+]
 remove: [
   ["rm" "-R" "%{lib}%/coq"]
   ["rm" "-R" "%{share}%/coq"]
