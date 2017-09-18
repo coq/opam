@@ -1,4 +1,6 @@
 opam-version: "1.2"
+authors: ["The Coq-HoTT Development Team"]
+dev-repo: "https://github.com/HoTT/HoTT.git"
 maintainer: "Matej Košík <matej.kosik@inria.fr>"
 homepage: "http://homotopytypetheory.org/"
 bug-reports: "http://homotopytypetheory.org/"
@@ -9,11 +11,8 @@ build: [
   ["%{make}%" "-j%{jobs}%"]
 ]
 install: ["%{make}%" "install"]
-remove: ["rm" "-R" "%{share}%/hott"]
+remove: ["rm" "-Rf" "%{share}%/hott"]
 depends: [
   "ocamlfind" {build}
-  "coq" {= "8.6.dev"}
+  "coq" { >= "8.6" & < "8.7" }
 ]
-authors: ["The UniMath Development Team"]
-dev-repo: "https://github.com/HoTT/HoTT.git"
-patches: ["no_clone.diff"]
