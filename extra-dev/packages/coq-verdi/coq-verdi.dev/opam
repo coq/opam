@@ -8,16 +8,15 @@ license: "BSD"
 
 build: [
   [ "./configure" ]
-  [ "bash" "-c" "sed -i '1i From Coq Require Extraction.' extraction/*.v" ]
   [ make "-j%{jobs}%" ]
 ]
 install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/Verdi'" ]
 depends: [
   "coq" {= "dev"}
-  "coq-mathcomp-ssreflect" {= "dev"}
   "coq-inf-seq-ext" {= "dev"}
   "coq-struct-tact" {= "dev"}
+  "coq-cheerios" {= "dev"}
 ]
 
 tags: [
@@ -33,4 +32,5 @@ authors: [
   "Steve Anton <>"
   "Karl Palmskog <>"
   "Ryan Doenges <>"
+  "Justin Adsuara <>"
 ]

@@ -17,6 +17,7 @@ depends: [
   "coq-mathcomp-ssreflect" {= "dev"}
   "coq-inf-seq-ext" {= "8.6.dev"}
   "coq-struct-tact" {= "8.6.dev"}
+  "coq-cheerios" {= "8.6.dev"}
 ]
 
 tags: [
@@ -32,4 +33,5 @@ authors: [
   "Steve Anton <>"
   "Karl Palmskog <>"
   "Ryan Doenges <>"
+  "Justin Adsuara <>"
 ]

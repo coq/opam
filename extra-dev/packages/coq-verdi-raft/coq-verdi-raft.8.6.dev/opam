@@ -17,7 +17,6 @@ depends: [
   "coq-verdi" {= "8.6.dev"}
   "coq-struct-tact" {= "8.6.dev"}
   "coq-cheerios" {= "8.6.dev"}
-  "coq-verdi-cheerios" {= "8.6.dev"}
 ]
 tags: [
   "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
