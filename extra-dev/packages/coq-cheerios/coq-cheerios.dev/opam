@@ -8,14 +8,12 @@ license: "BSD"
 
 build: [
   [ "./configure" ]
-  [ "bash" "-c" "sed -i '1i From Coq Require Extraction.' extraction/*.v runtime/coq/{ExtractPositiveSerializer.v,ExtractTreeSerializer.v}" ]
   [ make "-j%{jobs}%" ]
 ]
 install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/Cheerios'" ]
 depends: [
   "coq" {= "dev"}
-  "coq-mathcomp-ssreflect" {= "dev"}
   "coq-struct-tact" {= "dev"}
 ]
 
