@@ -2,7 +2,7 @@ opam-version: "1.2"
 maintainer: "Julien Narboux <julien@narboux.fr>"
 homepage: "http://geocoq.github.io/GeoCoq/"
 bug-reports: "https://github.com/GeoCoq/GeoCoq/issues"
-authors: ["Gabriel Braun <gabriel.braun@unistra.fr>" "Pierre Boutry <pierre.boutry@unistra.fr>" "Julien Narboux <narboux@unistra.fr"]
+authors: ["Michael Beeson" "Gabriel Braun <gabriel.braun@unistra.fr>" "Pierre Boutry <pierre.boutry@unistra.fr>" "Charly Gries <charly.gries@etu.unistra.fr>" "Julien Narboux <narboux@unistra.fr"]
 license: "LGPL 3"
 build: [
   ["./configure.sh"]
@@ -13,5 +13,5 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GeoCoq"]
 depends: [
-  "coq" {>= "8.4pl4"}
+  "coq" {>= "8.5pl3"}
 ]
