@@ -1,0 +1,16 @@
+opam-version: "1.2"
+name: "coq-mathcomp-finmap"
+version: "dev"
+maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
+
+homepage: "http://www.cyrilcohen.fr"
+bug-reports: "Cyril Cohen <cyril.cohen@inria.fr>"
+license: "CeCILL-B"
+
+build: [ make "-j" "%{jobs}%" ]
+install: [ make "install" ]
+remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/finmap'" ]
+depends: [ "coq-mathcomp-ssreflect" { = "dev" } ]
+
+tags: [ "keyword:finmap" "keyword:finset" "keyword:multiset"]
+authors: [ "Cyril Cohen <cyril.cohen@inria.fr>" ]

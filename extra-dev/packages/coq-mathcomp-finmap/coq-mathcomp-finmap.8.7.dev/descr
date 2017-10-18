@@ -1,0 +1,7 @@
+Finite sets, finite maps, finitely supported functions.
+
+This library is under developpment and an extension of mathematical
+component in order to support finite sets and finite maps on
+choicetypes (rather that finite types). This includes support for
+functions with finite support. Multisets are still experimental.
+There also an embryo of generic order and set libary... very experimental.
