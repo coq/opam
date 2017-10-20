@@ -9,6 +9,8 @@ build: [
     "-mandir" man
     "-with-doc" "no"
     "-prefix" prefix
+    "-libdir" "%{lib}%/coq"
+    "-datadir" "%{share}%/coq"
     "-camlp5dir" "%{lib}%/camlp5"
     "-coqide" "no"
   ]
