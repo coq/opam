@@ -14,5 +14,5 @@ depends: [
   "coq-ssreflect" {= "1.5.0"}
   "coq-coquelicot" {= "2.0.1"}
 ]
-tags: [ "keyword: real analysis" "keyword:pi" "category:Mathematics/Real Calculus and Topology" ]
+tags: [ "keyword:real analysis" "keyword:pi" "category:Mathematics/Real Calculus and Topology" ]
 authors: [ "Yves Bertot <yves.bertot@inria.fr>" ]

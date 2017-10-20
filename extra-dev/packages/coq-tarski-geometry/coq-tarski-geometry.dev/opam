@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TarskiGeometry"]
 depends: [
   "coq" {= "dev"}
 ]
-tags: [ "keyword:geometry" "keyword:Tarski's geometry," "keyword:congruence" "keyword:between property" "keyword:orthogonality" "category:Mathematics/Geometry/General" ]
+tags: [ "keyword:geometry" "keyword:Tarski's geometry" "keyword:congruence" "keyword:between property" "keyword:orthogonality" "category:Mathematics/Geometry/General" ]
 authors: [ "Julien Narboux <Julien.Narboux@dpt-info.u-strasbg.fr>" ]
 bug-reports: "https://github.com/coq-contribs/tarski-geometry/issues"
 dev-repo: "https://github.com/coq-contribs/tarski-geometry.git"

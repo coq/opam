@@ -29,14 +29,13 @@ authors: [
 tags: [
   "keyword:rewriting"
   "keyword:termination"
-  "keyword:lambda-calculus"
+  "keyword:lambda calculus"
 
   "keyword:list"
-  "keyword:vector"
   "keyword:multiset"
   "keyword:polynom"
-  "keyword:vector"
-  "keyword:matrix"
+  "keyword:vectors"
+  "keyword:matrices"
   "keyword:FSet"
   "keyword:FMap"
   
@@ -49,7 +48,7 @@ tags: [
   "keyword:string"
 
   "keyword:alpha-equivalence"
-  "keyword:de Bruijn indices"
+  "keyword:de bruijn indices"
   "keyword:simple types"
   
   "keyword:matching"
@@ -61,7 +60,7 @@ tags: [
   "keyword:lexicographic ordering"
   
   "keyword:ring"
-  "keyword:semi-ring"
+  "keyword:semiring"
 
   "keyword:well-founded"
   "keyword:noetherian"

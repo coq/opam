@@ -8,7 +8,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/EuclideanGeometry"]
 depends: [
   "coq" {= "8.6.dev"}
 ]
-tags: [ "keyword:plane geometry" "keyword:euclid" "keyword:ruler and compass" "category:Mathematics/Geometry/General" ]
+tags: [ "keyword:plane geometry" "keyword:euclid" "keyword:ruler and compass geometry" "category:Mathematics/Geometry/General" ]
 authors: [ "Jean Duprat <Jean.Duprat@ens-lyon.fr>" ]
 bug-reports: "https://github.com/coq-contribs/euclidean-geometry/issues"
 dev-repo: "https://github.com/coq-contribs/euclidean-geometry.git"
