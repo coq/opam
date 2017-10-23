@@ -1,0 +1,36 @@
+language: c
+env:
+  global:
+  - NJOBS=2
+  - COMPILER="4.05.0"
+
+cache:
+  apt: true
+  directories:
+  - ${HOME}/opam-cache
+
+install:
+- test -e ${HOME}/opam-cache/cache-${COMPILER}.tgz || scripts/opam-coq-init
+
+script:
+- git diff-tree --no-commit-id --name-only -r master..${TRAVIS_COMMIT} | xargs scripts/opam-coq-lint ${HOME}/opam-cache/cache-${COMPILER}.tgz
+        
+dist: trusty
+sudo: required
+matrix:
+  include:
+  - os: linux
+    addons:
+      apt:
+        sources:
+        - avsm
+        packages:
+        - opam
+        - aspcud
+        - gcc-multilib
+  - os: osx
+    osx_image: xcode7.3
+    before_install:
+    - brew update
+    - brew install opam
+    
