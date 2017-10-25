@@ -1,0 +1,51 @@
+#!/bin/bash
+
+set -e
+#set -x
+
+CACHE=$1
+shift
+
+function setup_root() {
+  echo .Initializing opam root
+  rm -rf $HOME/opam-root
+  tar xzf $CACHE -C /
+  eval $(opam config --root=${HOME}/opam-root env)
+  echo .Add released repo
+  opam repo add released file://$PWD/released
+}
+
+while [ ! -z "$1" ]; do
+  case "$1" in
+  */opam)
+    echo Testing $1
+    setup_root	  
+    PKG_VERSION_DIR=`dirname "$1"`
+    PKG_NAME_VERSION=`basename "$PKG_VERSION_DIR"`
+    PKG_VERSION=`echo $PKG_NAME_VERSION | cut -d . -f 2-`
+    PKG_DIR=`dirname "$PKG_VERSION_DIR"`
+    PKG=`basename "$PKG_DIR"`
+    case "$PKG_VERSION" in
+    *dev)
+      echo .Add dev repos
+      opam repo add core-dev file://$PWD/core-dev
+      opam repo add extra-dev file://$PWD/extra-dev
+    ;;
+    *)
+    ;;
+    esac
+    echo .Linting $1
+    opam lint $1
+    echo .Installing $PKG_NAME_VERSION
+    opam install "$PKG_NAME_VERSION" -y
+    echo .Removing $PKG
+    opam remove "$PKG" -y
+    echo
+  ;;
+  *)
+    echo Ignoring $1
+    echo
+  ;;
+  esac
+  shift
+done
