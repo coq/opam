@@ -13,9 +13,7 @@ install:
 - test -e ${HOME}/opam-cache/cache-${COMPILER}.tgz || scripts/opam-coq-init
 
 script:
-- echo ${TRAVIS_COMMIT_RANGE}
-- echo ${TRAVIS_COMMIT_RANGE:-${TRAVIS_COMMIT}}
-- git diff-tree --no-commit-id --name-only -r ${TRAVIS_COMMIT_RANGE:-${TRAVIS_COMMIT}} | xargs scripts/opam-coq-lint ${HOME}/opam-cache/cache-${COMPILER}.tgz
+- T=${TRAVIS_COMMIT_RANGE:-${TRAVIS_COMMIT}}; echo Treeish ${T/.../ }; git diff-tree --no-commit-id --name-only -r ${T/.../ } | xargs scripts/opam-coq-lint ${HOME}/opam-cache/cache-${COMPILER}.tgz
         
 dist: trusty
 sudo: required
