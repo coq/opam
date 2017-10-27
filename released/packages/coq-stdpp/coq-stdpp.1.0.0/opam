@@ -13,5 +13,5 @@ build: [
 install: [make "install"]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/stdpp'" ]
 depends: [
-  "coq" { ((>= "8.5.3" & < "8.7~") | (= "dev"))}
+  "coq" { ((>= "8.5.3" & < "8.8~") | (= "dev"))}
 ]
