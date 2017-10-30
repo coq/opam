@@ -37,7 +37,7 @@ while [ ! -z "$1" ]; do
     echo .Linting $1
     opam lint $1
     echo .Installing $PKG_NAME_VERSION
-    opam install "$PKG_NAME_VERSION" -y
+    opam install "$PKG_NAME_VERSION" -y -v -v
     echo .Removing $PKG
     opam remove "$PKG" -y
     echo
