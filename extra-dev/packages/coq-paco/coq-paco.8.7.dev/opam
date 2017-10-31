@@ -1,0 +1,18 @@
+opam-version: "1.2"
+maintainer: "Matej Košík <mail@matej-kosik.net>"
+homepage: "https://github.com/coq-contribs/paco"
+license: "BSD"
+build: [
+  [make "-C" "src" "all" "-j%{jobs}%"]
+]
+install: [
+  [make "-C" "src" "-f" "Makefile.coq" "install"]
+]
+remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Paco"]
+depends: [
+  "coq" {= "8.7.dev"}
+]
+tags: [ "keyword:cofix" "keyword:coinduction" "keyword:proof" "keyword:coinductive types" "category:Mathematics/Logic/Foundations" ]
+authors: [ "Georg Neis <neis@mpi-sws.org>" "Chung-Kil Hur <gil@mpi-sws.org>" "Derek Dreyer <dreyer@mpi-sws.org>" "Viktor Vafeiadis <viktor@mpi-sws.org>" ]
+bug-reports: "https://github.com/snu-sf/paco/issues"
+dev-repo: "https://github.com/snu-sf/paco"
