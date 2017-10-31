@@ -13,7 +13,8 @@ install:
 - test -e ${HOME}/opam-cache/cache-${COMPILER}.tgz || scripts/opam-coq-init
 
 script:
-- T=${TRAVIS_COMMIT_RANGE:-${TRAVIS_COMMIT}}; echo Treeish ${T/.../ }; git diff-tree --no-commit-id --name-only -r ${T/.../ } | xargs scripts/opam-coq-lint ${HOME}/opam-cache/cache-${COMPILER}.tgz
+- scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-lint
+- scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-install-remove ${HOME}/opam-cache/cache-${COMPILER}.tgz
         
 dist: trusty
 sudo: required

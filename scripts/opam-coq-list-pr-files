@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+#set -x
+
+echo PR head is: $TRAVIS_COMMIT
+BASE=`git merge-base $TRAVIS_COMMIT $TRAVIS_BRANCH`
+echo Merge base is: $BASE
+git diff-tree --no-commit-id --name-only -r $BASE $TRAVIS_COMMIT
