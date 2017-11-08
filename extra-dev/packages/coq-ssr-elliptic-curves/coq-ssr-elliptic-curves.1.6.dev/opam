@@ -18,5 +18,5 @@ depends: [
   "coq-mathcomp-ssreflect" {>= "1.6" & < "1.7"}
   "coq-mathcomp-algebra"
   "coq-mathcomp-field"
-  "coq-mathcomp-multinomials" {= "1.6.dev"}
+  "coq-mathcomp-multinomials" {= "1.0"}
 ]
