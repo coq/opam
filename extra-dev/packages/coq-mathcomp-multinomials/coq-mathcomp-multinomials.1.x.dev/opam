@@ -11,7 +11,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SsrMultinomials"]
 depends: [
-  "coq" {>= "8.5" & < "8.7"}
+  "coq" {>= "8.5" & < "8.8~"}
   "coq-mathcomp-ssreflect" {>= "1.6" & < "1.7"}
   "coq-mathcomp-algebra"   {>= "1.6" & < "1.7"}
 ]
