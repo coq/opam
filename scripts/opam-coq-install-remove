@@ -16,6 +16,7 @@ function setup_root() {
 }
 
 while [ ! -z "$1" ]; do
+ if [ -e "$1" ]; then
   case "$1" in
   */opam)
     echo Testing $1
@@ -46,5 +47,6 @@ while [ ! -z "$1" ]; do
     echo
   ;;
   esac
-  shift
+ fi
+ shift
 done

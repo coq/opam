@@ -4,6 +4,7 @@ set -e
 #set -x
 
 while [ ! -z "$1" ]; do
+ if [ -e "$1" ]; then
   case "$1" in
   */opam)
     echo Linting $1
@@ -15,5 +16,6 @@ while [ ! -z "$1" ]; do
     echo
   ;;
   esac
-  shift
+ fi
+ shift
 done
