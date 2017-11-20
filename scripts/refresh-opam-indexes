@@ -2,12 +2,12 @@
 #
 # Script to be run on the machine serving the git checkout via HTTP
 
-MAILTO=root
+MAILTO=enrico.tassi@inria.fr
 LOG=/tmp/coq-opam-archive.log
 
 notify() {
-(echo "OPAM $1 on repo $2 failed:"; tail $LOG) | mail -s 'OPAM alert' $MAILTO
-echo "OPAM $1 on repo $2 failed:"; tail $LOG
+(echo "OPAM $1 on repo $2 failed:"; cat $LOG) | mail -s 'OPAM alert' $MAILTO
+echo "OPAM $1 on repo $2 failed:"; cat $LOG
 }
 
 for repo in $@; do
