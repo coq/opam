@@ -1,5 +1,6 @@
 COQWEB=~/COQ/www/
-SUITES= extra-dev  released
+SUITES_COQPKGIDX = extra-dev  released
+SUITES= $(SUITES_COQPKGIDX) core-dev
 H=@
 COQV=8.6
 OCAMLV=4.01.0
@@ -22,7 +23,7 @@ endif
 # refresh opam indexes + generate website
 all: check-deps
 	@./scripts/refresh-opam-indexes $(SUITES)
-	$(H)./scripts/archive2web templates/index.html.in $(SUITES)
+	$(H)./scripts/archive2web templates/index.html.in $(SUITES_COQPKGIDX)
 	$(H)$(call pp,templates/index.html,www/index.html)
 	$(H)$(call ppmd,Creating and Submitting a Package,PACKAGING,packaging)
 	$(H)$(call ppmd,Layout of the Coq Package Index,LAYOUT,layout)
