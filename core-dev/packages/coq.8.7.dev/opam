@@ -1,20 +1,23 @@
 opam-version: "1.2"
-authors: [ "The Coq Development Team" ]
 maintainer: "coqdev@inria.fr"
-homepage: "http://coq.inria.fr/"
-bug-reports: "https://coq.inria.fr/bugs/"
-license: "LGPL 2.1"
+authors: "The Coq development team, INRIA, CNRS, University Paris Sud, University Paris 7, Ecole Polytechnique."
+homepage: "https://coq.inria.fr/"
+bug-reports: "https://github.com/coq/coq/issues"
+dev-repo: "https://github.com/coq/coq.git"
+license: "LGPL-2.1"
 build: [
-  ["./configure"
+  [
+    "./configure"
     "-configdir" "%{lib}%/coq/config"
     "-mandir" man
-    "-with-doc" "no"
+    "-docdir" doc
     "-prefix" prefix
     "-libdir" "%{lib}%/coq"
     "-datadir" "%{share}%/coq"
     "-usecamlp5"
     "-camlp5dir" "%{lib}%/camlp5"
-    "-coqide" "no"]
+    "-coqide" "no"
+  ]
   [make "-j%{jobs}%"]
   [make "-j%{jobs}%" "byte"]
 ]
@@ -23,11 +26,31 @@ install: [
   [make "install-byte"]
 ]
 remove: [
-  ["rm" "-R" "%{lib}%/coq"]
-  ["rm" "-R" "%{share}%/coq"]
+  ["rm" "-R" "%{lib}%/coq" "%{share}%/coq"]
+  ["rm"
+  "%{man}%/man1/coqc.1"
+  "%{man}%/man1/coqchk.1"
+  "%{man}%/man1/coqdep.1"
+  "%{man}%/man1/coqdoc.1"
+  "%{man}%/man1/coqide.1"
+  "%{man}%/man1/coq_makefile.1"
+  "%{man}%/man1/coqmktop.1"
+  "%{man}%/man1/coq-tex.1"
+  "%{man}%/man1/coqtop.1"
+  "%{man}%/man1/coqtop.byte.1"
+  "%{man}%/man1/coqtop.opt.1"
+  "%{man}%/man1/coqwc.1"
+  "%{man}%/man1/gallina.1"
+  "%{share}%/texmf/tex/latex/misc/coqdoc.sty"
+  "%{share}%/emacs/site-lisp/coq-font-lock.el"
+  "%{share}%/emacs/site-lisp/coq-inferior.el"
+  "%{share}%/emacs/site-lisp/gallina-db.el"
+  "%{share}%/emacs/site-lisp/gallina.el"
+  "%{share}%/emacs/site-lisp/gallina-syntax.el"
+  ]
 ]
-dev-repo: "https://scm.gforge.inria.fr/anonscm/git/coq/coq.git"
 depends: [
   "ocamlfind"
   "camlp5"
+  "num"
 ]
