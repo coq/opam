@@ -10,4 +10,5 @@ build: [
 ]
 depends: [
   "camlp5"
+  "num"
 ]
