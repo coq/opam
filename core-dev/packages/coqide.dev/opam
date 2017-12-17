@@ -5,6 +5,15 @@ homepage: "https://coq.inria.fr/"
 bug-reports: "https://github.com/coq/coq/issues"
 dev-repo: "https://github.com/coq/coq.git"
 license: "LGPL-2.1"
+
+available: [ocaml-version >= "4.02.3"]
+depends: [
+  "camlp5"
+  "coq" {= "dev"}
+  "lablgtk"
+  "conf-gtksourceview"
+]
+
 build: [
   [
     "./configure"
@@ -19,12 +28,6 @@ build: [
   [make "-j%{jobs}%" "coqide-files"]
   [make "-j%{jobs}%" "coqide-opt"]
 ]
-depends: [
-  "camlp5"
-  "coq" {= "dev"}
-  "lablgtk"
-  "conf-gtksourceview"
-]
 install: [
   make
   "install-ide-bin"
@@ -32,3 +35,4 @@ install: [
   "install-ide-info"
   "install-ide-devfiles"
 ]
+remove: ["rm" "-rf" "%{lib}%/coq/ide" "%{doc}%/FAQ-CoqIde"]
