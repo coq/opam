@@ -19,7 +19,7 @@ build: [
   [make "-j%{jobs}%" "coqide-files"]
   [make "-j%{jobs}%" "coqide-opt"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/ide" "%{doc}%/FAQ-CoqIde"]
+remove: ["rm" "-rf" "%{lib}%/coq/ide" "%{doc}%/FAQ-CoqIde"]
 depends: [
   "camlp5"
   "coq" {= "8.7.dev"}

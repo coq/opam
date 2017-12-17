@@ -25,8 +25,8 @@ install: [
   [make "install-byte"]
 ]
 remove: [
-  ["rm" "-R" "%{lib}%/coq" "%{share}%/coq"]
-  ["rm"
+  ["rm" "-rf" "%{lib}%/coq" "%{share}%/coq"]
+  ["rm" "-f"
   "%{man}%/man1/coqc.1"
   "%{man}%/man1/coqchk.1"
   "%{man}%/man1/coqdep.1"
