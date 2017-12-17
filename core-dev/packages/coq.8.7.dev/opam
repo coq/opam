@@ -14,7 +14,6 @@ build: [
     "-docdir" doc
     "-libdir" "%{lib}%/coq"
     "-datadir" "%{share}%/coq"
-    "-usecamlp5"
     "-camlp5dir" "%{lib}%/camlp5"
     "-coqide" "no"
   ]
@@ -50,7 +49,8 @@ remove: [
   ]
 ]
 depends: [
-  "ocamlfind"
+  "ocamlfind" {build}
   "camlp5"
   "num"
 ]
+available: [ocaml-version >= "4.02.3"]
