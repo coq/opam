@@ -11,9 +11,9 @@ function setup_root() {
   rm -rf $HOME/opam-root
   tar xzf $CACHE -C /
   eval $(opam config --root=${HOME}/opam-root env)
+  opam update default # make sure we get the latest packages
   echo .Add released repo
   opam repo add released file://$PWD/released
-  opam repository
   opam pin list
 }
 
