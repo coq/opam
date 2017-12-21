@@ -27,8 +27,7 @@ while [ ! -z "$1" ]; do
     PKG_VERSION_DIR=`dirname "$1"`
     PKG_NAME_VERSION=`basename "$PKG_VERSION_DIR"`
     PKG_VERSION=`echo $PKG_NAME_VERSION | cut -d . -f 2-`
-    PKG_DIR=`dirname "$PKG_VERSION_DIR"`
-    PKG=`basename "$PKG_DIR"`
+    PKG_NAME=`echo $PKG_NAME_VERSION | cut -d . -f 1`
     case "$PKG_VERSION" in
     *dev)
       echo Add dev repos
@@ -40,8 +39,8 @@ while [ ! -z "$1" ]; do
     esac
     echo Installing $PKG_NAME_VERSION
     opam install "$PKG_NAME_VERSION" -y -v -v
-    echo Removing $PKG
-    opam remove "$PKG" -y
+    echo Removing $PKG_NAME
+    opam remove "$PKG_NAME" -y
     echo -en "travis_fold:end:$1\\\\r"
   ;;
   *)
