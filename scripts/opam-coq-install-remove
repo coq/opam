@@ -13,6 +13,8 @@ function setup_root() {
   eval $(opam config --root=${HOME}/opam-root env)
   echo .Add released repo
   opam repo add released file://$PWD/released
+  opam repository
+  opam pin list
 }
 
 while [ ! -z "$1" ]; do
