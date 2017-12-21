@@ -5,6 +5,14 @@ homepage: "https://coq.inria.fr/"
 bug-reports: "https://github.com/coq/coq/issues"
 dev-repo: "https://github.com/coq/coq.git"
 license: "LGPL-2.1"
+
+available: [ocaml-version >= "4.02.3"]
+depends: [
+  "ocamlfind" {build}
+  "camlp5"
+  "num"
+]
+
 build: [
   [
     "./configure"
@@ -25,8 +33,8 @@ install: [
   [make "install-byte"]
 ]
 remove: [
-  ["rm" "-R" "%{lib}%/coq" "%{share}%/coq"]
-  ["rm"
+  ["rm" "-rf" "%{lib}%/coq" "%{share}%/coq"]
+  ["rm" "-f"
   "%{man}%/man1/coqc.1"
   "%{man}%/man1/coqchk.1"
   "%{man}%/man1/coqdep.1"
@@ -47,9 +55,4 @@ remove: [
   "%{share}%/emacs/site-lisp/gallina.el"
   "%{share}%/emacs/site-lisp/gallina-syntax.el"
   ]
-]
-depends: [
-  "ocamlfind"
-  "camlp5"
-  "num"
 ]

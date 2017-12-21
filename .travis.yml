@@ -29,6 +29,7 @@ matrix:
         - opam
         - aspcud
         - gcc-multilib
+        - libgtksourceview2.0-dev
   - os: osx
     osx_image: xcode7.3
     before_install:
