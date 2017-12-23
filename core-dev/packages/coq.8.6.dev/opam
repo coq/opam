@@ -25,4 +25,5 @@ dev-repo: "https://scm.gforge.inria.fr/anonscm/git/coq/coq.git"
 depends: [
   "ocamlfind"
   "camlp5"
+  "num"
 ]
