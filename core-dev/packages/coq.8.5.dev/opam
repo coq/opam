@@ -1,6 +1,8 @@
-opam-version: "1.1"
+opam-version: "1.2"
+authors: [ "The Coq Development Team" ]
 maintainer: "dev@clarus.me"
 homepage: "http://coq.inria.fr/"
+dev-repo: "https://github.com/coq/coq.git"
 bug-reports: "https://coq.inria.fr/bugs/"
 license: "LGPL 2"
 build: [
@@ -20,3 +22,6 @@ depends: [
   "camlp5"
   "num"
 ]
+available: [ocaml-version >= "3.12.1" & ocaml-version != "4.02.0"]
+# Checked it works for e.g. 4.06.0
+# Version 4.02.0 would work but with severe performance issues in compilation time
