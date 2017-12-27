@@ -2,6 +2,7 @@ opam-version: "1.2"
 authors: [ "The Coq Development Team" ]
 maintainer: "coqdev@inria.fr"
 homepage: "http://coq.inria.fr/"
+dev-repo: "https://github.com/coq/coq.git"
 bug-reports: "https://coq.inria.fr/bugs/"
 license: "LGPL 2"
 build: [
@@ -21,7 +22,6 @@ remove: [
   ["rm" "-R" "%{lib}%/coq"]
   ["rm" "-R" "%{share}%/coq"]
 ]
-dev-repo: "https://scm.gforge.inria.fr/anonscm/git/coq/coq.git"
 depends: [
   "ocamlfind"
   "camlp5"
