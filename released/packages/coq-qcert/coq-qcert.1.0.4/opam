@@ -6,7 +6,7 @@ bug-reports: "https://github.com/querycert/qcert/issues"
 authors: [ "Josh Auerbach" "Martin Hirzel" "Louis Mandel" "Avi Shinnar" "Jerome Simeon" ]
 license: "Apache-2.0"
 build: [
-  [make "-j%{jobs}% qcert-coq"]
+  [make "-j%{jobs}%" "qcert-coq"]
 ]
 install: [
   [make "install-coq"]
