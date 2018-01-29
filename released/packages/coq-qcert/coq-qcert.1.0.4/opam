@@ -3,7 +3,7 @@ maintainer: "jeromesimeon@me.com"
 homepage: "https://querycert.github.io"
 dev-repo: "https://github.com/querycert/qcert"
 bug-reports: "https://github.com/querycert/qcert/issues"
-authors: ["Josh Auerbach","Martin Hirzel","Louis Mandel","Avi Shinnar","Jerome Simeon"]
+authors: [ "Josh Auerbach" "Martin Hirzel" "Louis Mandel" "Avi Shinnar" "Jerome Simeon" ]
 license: "Apache-2.0"
 build: [
   [make "-j%{jobs}% qcert-coq"]
