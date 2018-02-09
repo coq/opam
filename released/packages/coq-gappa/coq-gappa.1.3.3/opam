@@ -10,7 +10,7 @@ build: [
 install: ["./remake" "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Gappa"]
 depends: [
-  "coq" {>= "8.4pl4" & < "8.6~"}
+  "coq" {>= "8.4pl4" & < "8.8~"}
   "coq-flocq" {>= "2.5" & < "3.0~"}
 ]
 tags: [ "keyword:floating point arithmetic" "keyword:interval arithmetic" "keyword:decision procedure" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
