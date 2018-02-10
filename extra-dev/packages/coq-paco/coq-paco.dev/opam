@@ -1,15 +1,32 @@
-opam-version: "1.1"
-maintainer: "dev@clarus.me"
-homepage: "https://github.com/coq-contribs/paco"
-license: "BSD"
-build: [
-  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
-  [make "-j%{jobs}%"]
-  [make "install"]
+opam-version: "1.2"
+maintainer: "minki.cho@sf.snu.ac.kr"
+homepage: "https://github.com/snu-sf/paco"
+dev-repo: "https://github.com/snu-sf/paco"
+bug-reports: "https://github.com/snu-sf/paco/issues"
+authors: [
+  "Chung-Kil Hur <gil.hur@sf.snu.ac.kr>"
+  "Georg Neis <neis@mpi-sws.org>"
+  "Derek Dreyer <dreyer@mpi-sws.org>"
+  "Viktor Vafeiadis <viktor@mpi-sws.org>"
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Paco"]
+license: "BSD-3"
+build: [
+  [make "-C" "src" "all" "-j%{jobs}%"]
+]
+install: [
+  [make "-C" "src" "-f" "Makefile.coq" "install"]
+]
+remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Paco"]
 depends: [
   "coq" {= "dev"}
 ]
-tags: [ "keyword:cofix" "keyword:coinduction" "keyword:proof" "keyword:coinductive types" "category:Mathematics/Logic/Foundations" ]
-authors: [ "Georg Neis <neis@mpi-sws.org>" "Chung-Kil Hur <gil@mpi-sws.org>" "Derek Dreyer <dreyer@mpi-sws.org>" "Viktor Vafeiadis <viktor@mpi-sws.org>" ]
+tags: [
+  "date:2018-02-11"
+
+  "category:Programming Languages/Formal Definitions and Theory"
+  "category:Mathematical Logic and Foramal Languages/Mathematical Logic"
+
+  "keyword:coinduction"
+  "keyword:simulation"
+  "keyword:parameterized greatest fixed point"
+]
