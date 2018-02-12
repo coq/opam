@@ -21,7 +21,7 @@ for repo in $@; do
 			# opam admin make does not follow symlinks
 			#   https://github.com/ocaml/opam/pull/2138
 			# we rebuild the index by hand
-			tar czhf index.tar.gz packages/
+			tar czhf index.tar.gz packages/ repo
 		fi
 	fi
 	cd ..
