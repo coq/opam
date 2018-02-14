@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "1.2"
 maintainer: "hugo.herbelin@inria.fr"
 authors: ["The Coq Development Team"]
 homepage: "http://coq.inria.fr/"
