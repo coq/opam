@@ -23,6 +23,6 @@ remove: [
   ["rm" "%{share}%/compcert.ini"]
 ]
 depends: [
-  "coq" {>= "8.6" & < "8.8~"}
+  "coq" {>= "8.6" & < "8.8~" & != "8.6.0"}
   "menhir" {>= "20160303"}
 ]
