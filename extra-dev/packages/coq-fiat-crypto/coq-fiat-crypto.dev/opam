@@ -9,7 +9,10 @@ maintainer: "Matej Košík <matej.kosik@inria.fr>"
 homepage: "https://github.com/mit-plv/fiat-crypto"
 bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
 license: "MIT"
-build: [make "-j%{jobs}%" "coq" "selected-specific-display"]
+build: [
+  ["git" "submodule" "update" "--init" "--recursive"]
+  [make "-j%{jobs}%" "coq" "selected-specific-display"]
+]
 install: [make "install"]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Crypto"]
 depends: [
