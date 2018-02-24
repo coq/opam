@@ -11,7 +11,7 @@ bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
 license: "MIT"
 build: [make "-j%{jobs}%" "coq" "selected-specific-display"]
 install: [make "install"]
-remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Fiat"]
+remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Crypto"]
 depends: [
   "coq" {= "dev"}
 ]
