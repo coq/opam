@@ -13,6 +13,7 @@ install:
 - test -e ${HOME}/opam-cache/cache-${COMPILER}.tgz || scripts/opam-coq-init
 
 script:
+- set -o pipefail
 - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-lint
 - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-install-remove ${HOME}/opam-cache/cache-${COMPILER}.tgz
         
