@@ -7,10 +7,10 @@ bug-reports: "https://github.com/AbsInt/CompCert/issues"
 license: "INRIA Non-Commercial License Agreement"
 build: [
   ["./configure" "ia32-linux" {os = "linux"}
-		 "ia32-macosx" {os = "darwin"}
-		 "ia32-cygwin" {os = "cygwin"}
-		 "-bindir" "%{bin}%" "-libdir" "%{lib}%/compcert"
-		 "-clightgen"]
+  "ia32-macosx" {os = "darwin"}
+  "ia32-cygwin" {os = "cygwin"}
+  "-bindir" "%{bin}%" "-libdir" "%{lib}%/compcert"
+  "-clightgen" "-ignore-coq-version"]
   [make "-j%{jobs}%"]
 ]
 install: [
@@ -23,6 +23,6 @@ remove: [
   ["rm" "%{share}%/compcert.ini"]
 ]
 depends: [
-  "coq"  {> "8.6.0" & < "8.8~"}
-  "menhir" {>= "20160303"}
+  "coq"  {> "8.6.0" & <= "8.7.2"}
+  "menhir" {>= "20161201"}
 ]
