@@ -2,7 +2,7 @@ opam-version: "1.1"
 maintainer: ""
 homepage: "http://coqprime.gforge.inria.fr/"
 bug-reports: "http://coqprime.gforge.inria.fr/"
-license: "GLGPL"
+license: "LGPL"
 build: [
   ["./configure.sh"]
   ["make" "-j%{jobs}%"]
