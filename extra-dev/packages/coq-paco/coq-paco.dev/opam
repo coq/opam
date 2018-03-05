@@ -18,7 +18,7 @@ install: [
 ]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Paco"]
 depends: [
-  "coq" {= "dev"}
+  "coq" { ((>= "8.5.dev" & < "8.8~") | (= "dev"))}
 ]
 tags: [
   "date:2018-02-11"
