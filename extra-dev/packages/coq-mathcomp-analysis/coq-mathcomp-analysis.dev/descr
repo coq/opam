@@ -1,0 +1,6 @@
+DRAFT Mathematical Components Library on Analysis
+
+This library contains a DRAFT and UNSTABLE embryo of an analyis
+library inspired from the Coquelicot Library, but compatible with
+the Mathematical Components library. It contains libraries about
+topology, filters, Bachmann-Landay notations and differentiation.
