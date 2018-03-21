@@ -1,6 +1,16 @@
-DRAFT Mathematical Components Library on Analysis
+Mathematical Components Library on Analysis (DRAFT)
 
 This library contains a DRAFT and UNSTABLE embryo of an analyis
-library inspired from the Coquelicot Library, but compatible with
-the Mathematical Components library. It contains libraries about
-topology, filters, Bachmann-Landay notations and differentiation.
+library inspired from the Coquelicot Library, but compatible with the
+Mathematical Components library. It contains libraries about real
+numbers, probability distributions, topology, filters, Bachmann-Landay
+notations, derivative and differentiation.
+
+This library relies on extensionality axioms (propositional and
+functional extentionality) and on classical axioms (excluded middle
+and a custom version of axiom of choice). These axioms are not derived
+from the standard library's axioms in the current draft. Additionally
+we temporarily rely on classical reals from the Coq standard library.
+
+There is also a small number of "Admitted" theorems in this
+development version.
