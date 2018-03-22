@@ -1,6 +1,6 @@
 opam-version: "1.2"
 maintainer: "jeromesimeon@me.com"
-homepage: "https://github.com/querycert/jsast/tree/JsAst"
+homepage: "https://github.com/querycert/jsast"
 dev-repo: "https://github.com/querycert/jsast/tree/JsAst"
 bug-reports: "https://github.com/querycert/jsast/issues"
 authors: [ "Jerome Simeon" ]
