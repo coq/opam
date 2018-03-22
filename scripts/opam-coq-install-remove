@@ -29,7 +29,7 @@ while [ ! -z "$1" ]; do
     PKG_VERSION=`echo $PKG_NAME_VERSION | cut -d . -f 2-`
     PKG_NAME=`echo $PKG_NAME_VERSION | cut -d . -f 1`
     case "$PKG_VERSION" in
-    *dev)
+    *dev|*beta*)
       echo Add dev repos
       opam repo add core-dev file://$PWD/core-dev
       opam repo add extra-dev file://$PWD/extra-dev
