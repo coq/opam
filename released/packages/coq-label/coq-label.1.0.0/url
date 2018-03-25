@@ -1,2 +1,2 @@
-http: "https://github.com/pedagand/coq-label/releases/download/v.1.0.0/coq-label-1.0.0.tar.gz"
+http: "https://github.com/pedagand/coq-label/releases/download/v1.0.0/coq-label-1.0.0.tar.gz"
 checksum: "cfb444d17f4a99a7a6cbde790c3d6fc3"
