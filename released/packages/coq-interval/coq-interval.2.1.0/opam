@@ -10,7 +10,7 @@ build: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Interval"]
 depends: [
   "coq" {>= "8.4pl4"}
-  "coq-flocq" {>= "2.5.0"}
+  "coq-flocq" {>= "2.5.0" & < "3.0~"}
   "coq-ssreflect" {>= "1.5.0"}
   "coq-math-comp" {>= "1.5.0"}
 ]
