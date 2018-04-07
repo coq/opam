@@ -14,5 +14,5 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/JsAst"]
 depends: [
   "coq" {>= "8.7.2"}
-  "coq-flocq" {>= "2.6.0"}
+  "coq-flocq" {>= "2.6.0" & < "3.0~"}
 ]
