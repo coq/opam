@@ -2,7 +2,8 @@ language: c
 env:
   global:
   - NJOBS=2
-  - COMPILER="4.05.0"
+  - COMPILER_MIN="4.02.3"
+  - COMPILER_MAX="4.06.0"
 
 cache:
   apt: true
@@ -22,6 +23,20 @@ sudo: required
 matrix:
   include:
   - os: linux
+    env:
+      - COMPILER=${COMPILER_MIN}
+    addons:
+      apt:
+        sources:
+        - avsm
+        packages:
+        - opam
+        - aspcud
+        - gcc-multilib
+        - libgtksourceview2.0-dev
+  - os: linux
+    env:
+        - COMPILER=${COMPILER_MAX}
     addons:
       apt:
         sources:
@@ -32,6 +47,8 @@ matrix:
         - gcc-multilib
         - libgtksourceview2.0-dev
   - os: osx
+    env:
+      - COMPILER=${COMPILER_MAX}
     osx_image: xcode7.3
     before_install:
     - brew update
