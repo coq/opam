@@ -1,8 +1,1 @@
-(* Once this issue:
-
-     https://github.com/ocaml/opam/issues/2409
-
-   is resolved, we can update this file to refer to the actual SVN repository. *)
-
-http: "https://gforge.inria.fr/frs/download.php/file/36399/color.1.3.0.tar.gz"
-checksum: "f02aa2ff0545df6884f0ad71de7c2a21"
+git: "https://github.com/fblanqui/color.git#master"
