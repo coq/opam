@@ -1,0 +1,24 @@
+opam-version: "1.2"
+name: "coq-fcsl-pcm"
+version: "1.0.0"
+maintainer: "FCSL <fcsl@software.imdea.org>"
+
+homepage: "http://software.imdea.org/fcsl/"
+bug-reports: "https://github.com/imdea-software/fcsl-pcm/issues"
+license: "Apache 2.0"
+
+build: [ make "-j%{jobs}%" ]
+install: [ make "install" ]
+remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/fcsl'" ]
+depends: [
+  "coq" {>= "8.7" & < "8.8"}
+  "coq-mathcomp-ssreflect" {>= "1.6.2" & < "1.7"}
+]
+
+tags: [
+  "keyword:separation logic"
+  "keyword:partial commutative monoid"
+]
+authors: [
+  "Aleksandar Nanevski"
+]
