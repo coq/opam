@@ -1,0 +1,34 @@
+opam-version: "1.2"
+maintainer: "pierre.letouzey@inria.fr"
+homepage: "https://github.com/coq/bignums"
+dev-repo: "https://github.com/coq/bignums.git"
+bug-reports: "https://github.com/coq/bignums/issues"
+authors: [
+  "Laurent Théry"
+  "Benjamin Grégoire"
+  "Arnaud Spiwack"
+  "Evgeny Makarov"
+  "Pierre Letouzey"
+]
+license: "LGPL 2"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Bignums"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [
+  "keyword:integer numbers"
+  "keyword:rational numbers"
+  "keyword:arithmetic"
+  "keyword:arbitrary-precision"
+  "category:Miscellaneous/Coq Extensions"
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "category:Mathematics/Arithmetic and Number Theory/Rational numbers"
+  "date:2017-06-15"
+  "logpath:Bignums"
+]

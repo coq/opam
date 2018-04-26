@@ -1,0 +1,2 @@
+Bignums, the Coq library of arbitrary large numbers
+Provides BigN, BigZ, BigQ that used to be part of Coq standard library < 8.7.
