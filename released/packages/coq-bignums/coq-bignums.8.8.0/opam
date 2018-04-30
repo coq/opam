@@ -1,5 +1,5 @@
 opam-version: "1.2"
-maintainer: "pierre.letouzey@inria.fr"
+maintainer: "Laurent.Thery@inria.fr"
 homepage: "https://github.com/coq/bignums"
 dev-repo: "https://github.com/coq/bignums.git"
 bug-reports: "https://github.com/coq/bignums/issues"
