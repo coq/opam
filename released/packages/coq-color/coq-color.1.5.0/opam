@@ -1,0 +1,108 @@
+opam-version: "1.2"
+maintainer: "frederic.blanqui@inria.fr"
+authors: [
+  "Frédéric Blanqui"
+  "Adam Koprowski"
+  "Sébastien Hinderer"
+  "Pierre-Yves Strub"
+  "Sidi Ould Biha"
+  "Solange Coupet-Grimal"
+  "William Delobel"
+  "Hans Zantema"
+  "Stéphane Leroux"
+  "Léo Ducas"
+  "Johannes Waldmann"
+  "Qiand Wang"
+  "Lianyi Zhang"
+  "Sorin Stratulat"
+]
+license: "CeCILL"
+homepage: "http://color.inria.fr/"
+bug-reports: "color@inria.fr"
+build: [
+  [make "-j%{jobs}%"]
+  [make "-f" "Makefile.coq" "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+  "coq-bignums" {>= "8.8" & < "8.9~"}
+]
+tags: [
+  "date:2017-11-10"
+  
+  "logpath:CoLoR"
+
+  "category:Computer Science/Algorithms/Correctness proofs of algorithms"
+  "category:Computer Science/Data Types and Data Structures"
+  "category:Computer Science/Lambda Calculi"
+  "category:Mathematics/Algebra"
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "category:Mathematics/Logic/Type theory"
+  "category:Miscellaneous/Extracted Programs/Type checking unification and normalization"
+
+  "keyword:rewriting"
+  "keyword:termination"
+  "keyword:lambda calculus"
+
+  "keyword:list"
+  "keyword:multiset"
+  "keyword:polynom"
+  "keyword:vectors"
+  "keyword:matrices"
+  "keyword:FSet"
+  "keyword:FMap"
+  
+  "keyword:term"
+  "keyword:context"
+  "keyword:substitution"
+  "keyword:universal algebra"
+
+  "keyword:varyadic term"
+  "keyword:string"
+
+  "keyword:alpha-equivalence"
+  "keyword:de bruijn indices"
+  "keyword:simple types"
+  
+  "keyword:matching"
+  "keyword:unification"
+
+  "keyword:relation"
+  "keyword:ordering"
+  "keyword:quasi-ordering"
+  "keyword:lexicographic ordering"
+  
+  "keyword:ring"
+  "keyword:semiring"
+
+  "keyword:well-founded"
+  "keyword:noetherian"
+  "keyword:finitely branching"
+  "keyword:dependent choice"
+  "keyword:infinite sequences"
+
+  "keyword:non-termination"
+  "keyword:loop"
+  
+  "keyword:graph"
+  "keyword:path"
+  "keyword:transitive closure"
+  "keyword:strongly connected component"
+  "keyword:topological ordering"
+  
+  "keyword:rpo"
+  "keyword:horpo"
+  "keyword:dependency pair"
+  "keyword:dependency graph"
+  "keyword:semantic labeling"
+
+  "keyword:reducibility"
+  "keyword:Girard"
+  
+  "keyword:fixpoint theorem"
+  "keyword:Tarski"
+
+  "keyword:pigeon-hole principle"
+  "keyword:Ramsey theorem"  
+]
