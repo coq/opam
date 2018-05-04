@@ -29,7 +29,7 @@ depends: [
   "coq-bignums" {>= "8.8" & < "8.9~"}
 ]
 tags: [
-  "date:2017-11-10"
+  "date:2018-05-04"
   
   "logpath:CoLoR"
 
