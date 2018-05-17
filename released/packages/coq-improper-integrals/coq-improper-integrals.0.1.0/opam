@@ -3,6 +3,7 @@ name: "coq-improper-integrals"
 version: "0.1.0"
 maintainer: "yves.bertot@inria.fr"
 homepage: "https://github.com/ybertot/improper_integrals"
+dev-repo: "https://github.com/ybertot/improper_integrals.git"
 bug-reports: "yves.bertot@inria.fr"
 license: "MIT"
 build: [[ "coq_makefile" "-f" "_CoqProject" "-o" "Makefile" ]
@@ -10,7 +11,7 @@ build: [[ "coq_makefile" "-f" "_CoqProject" "-o" "Makefile" ]
 install: [ make "install" "DEST='%{lib}%/coq/user_contrib/improper_integrals'" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/improper_integrals'" ]
 depends: [
-  "coq" {>= "8.7" & < "8.8~"}
+  "coq" {>= "8.7" & < "8.9~"}
   "coq-coquelicot" {>= "3" & < "4~"}
 ]
 tags: [ "keyword:real analysis" "category:Mathematics/Real Calculus and Topology" ]
