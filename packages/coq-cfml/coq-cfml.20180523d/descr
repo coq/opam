@@ -1,0 +1,14 @@
+A tool for proving OCaml programs in Separation Logic
+
+CFML is a tool for carrying out proofs of correctness of OCaml programs with
+respect to specifications expressed in higher-order Separation Logic.
+
+CFML consists of two parts:
+
+- a tool, implemented in OCaml, parses OCaml source code and generates Coq
+  files that contain characteristic formulae, that is, logical descriptions
+  of the behavior of the OCaml code.
+
+- a Coq library exports definitions, lemmas, and tactics that are used
+  to reason inside Coq about the code. In short, these tactics allow
+  the reasoning rules of Separation Logic to be applied to the OCaml code.
