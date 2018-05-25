@@ -1,0 +1,17 @@
+opam-version: "1.2"
+maintainer: "armael.gueneau@inria.fr"
+authors: "Arthur Charguéraud <arthur.chargueraud@inria.fr>"
+homepage: "https://gitlab.inria.fr/charguer/cfml"
+bug-reports: "https://gitlab.inria.fr/charguer/cfml/issues"
+license: "CeCILL-B"
+dev-repo: "https://gitlab.inria.fr/charguer/cfml.git"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: [make "uninstall"]
+depends: [
+  "ocamlbuild" {build}
+  "pprint"
+  "base-bytes"
+  "coq" {>= "8.6"}
+  "coq-tlc" {>= "20171206"}
+]
