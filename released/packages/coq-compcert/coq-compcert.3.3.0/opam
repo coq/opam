@@ -1,16 +1,16 @@
 opam-version: "1.2"
 author: "Xavier Leroy <xavier.leroy@inria.fr>"
-maintainer: "Matej Košík <matej.kosik@inria.fr>"
+maintainer: "Jacques-Henri Jourdan <jacques-Henri.jourdan@normalesup.org>"
 homepage: "http://compcert.inria.fr/"
 dev-repo: "https://github.com/AbsInt/CompCert.git"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
 license: "INRIA Non-Commercial License Agreement"
 build: [
   ["./configure" "ia32-linux" {os = "linux"}
-  		 "ia32-macosx" {os = "darwin"}
-		 "ia32-cygwin" {os = "cygwin"}
-		 "-bindir" "%{bin}%" "-libdir" "%{lib}%/compcert"
-		 "-clightgen"]
+  "ia32-macosx" {os = "darwin"}
+  "ia32-cygwin" {os = "cygwin"}
+  "-bindir" "%{bin}%" "-libdir" "%{lib}%/coq/user-contrib/compcert"
+  "-clightgen" "-ignore-coq-version"]
   [make "-j%{jobs}%"]
 ]
 install: [
@@ -19,10 +19,10 @@ install: [
 remove: [
   ["rm" "%{bin}%/ccomp"]
   ["rm" "%{bin}%/clightgen"]
-  ["rm" "-R" "%{lib}%/compcert"]
+  ["rm" "-R" "%{lib}%/coq/user-contrib/compcert"]
   ["rm" "%{share}%/compcert.ini"]
 ]
 depends: [
-  "coq" {>= "8.5" & < "8.6~"}
-  "menhir" {>= "20160303" & < "20180530"}
+  "coq"  {> "8.6.0" & < "8.9~"}
+  "menhir" {>= "20161201" & < "20180530"}
 ]

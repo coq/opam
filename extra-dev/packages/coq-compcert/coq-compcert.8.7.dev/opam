@@ -20,5 +20,5 @@ remove: [
 ]
 depends: [
   "coq" {= "8.7.dev"}
-  "menhir" {>= "20160303"}
+  "menhir" {>= "20180530"}
 ]
