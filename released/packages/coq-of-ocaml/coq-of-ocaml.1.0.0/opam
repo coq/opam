@@ -13,8 +13,8 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoqOfOCaml"]
 depends: [
-  "coq" {>= "8.4.5"}
+  "coq" {>= "8.4.5" & < "8.6"}
   "yojson"
   "smart-print"
 ]
-available: [ocaml-version >= "4.02.0"]
+available: [ocaml-version >= "4.02.0" & ocaml-version < "4.03.0"]
