@@ -6,7 +6,14 @@ dev-repo: "https://github.com/AbsInt/CompCert.git"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
 license: "INRIA Non-Commercial License Agreement"
 build: [
-  ["./configure" "-ignore-coq-version" "x86_32-linux" "-bindir" "%{bin}%" "-libdir" "%{lib}%/compcert"]
+  ["./configure" "ia32-linux" {os = "linux"}
+         "ia32-macosx" {os = "darwin"}
+         "ia32-cygwin" {os = "cygwin"}
+         "-bindir" "%{bin}%"
+         "-libdir" "%{lib}%/compcert"
+         "-install-coqdev"
+         "-clightgen"
+         "-coqdevdir" "%{lib}%/coq/user-contrib/compcert"]
   [make "-j%{jobs}%"]
 ]
 install: [
