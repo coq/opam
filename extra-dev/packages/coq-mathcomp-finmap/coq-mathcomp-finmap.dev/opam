@@ -10,7 +10,7 @@ license: "CeCILL-B"
 build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/finmap'" ]
-depends: [ "coq-mathcomp-ssreflect" { = "dev" } ]
+depends: [ "coq-mathcomp-ssreflect" { (>= "1.7.0" | = "dev") } ]
 
 tags: [ "keyword:finmap" "keyword:finset" "keyword:multiset"]
 authors: [ "Cyril Cohen <cyril.cohen@inria.fr>" ]
