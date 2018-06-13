@@ -1,6 +1,6 @@
 opam-version: "1.2"
 author: "Xavier Leroy <xavier.leroy@inria.fr>"
-maintainer: "Matej Košík <matej.kosik@inria.fr>"
+maintainer: "Jacques-Henri Jourdan <jacques-Henri.jourdan@normalesup.org>"
 homepage: "http://compcert.inria.fr/"
 dev-repo: "https://github.com/AbsInt/CompCert.git"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
@@ -11,11 +11,15 @@ build: [
   "ia32-cygwin" {os = "cygwin"}
   "-bindir" "%{bin}%"
   "-libdir" "%{lib}%/compcert"
-  "-clightgen" "-ignore-coq-version"]
+  "-install-coqdev"
+  "-clightgen"
+  "-coqdevdir" "%{lib}%/coq/user-contrib/compcert"
+  "-ignore-coq-version"]
   [make "-j%{jobs}%"]
 ]
 install: [
   [make "install"]
+  ["install" "-m" "0644" "VERSION" "%{lib}%/coq/user-contrib/compcert/"]
 ]
 remove: [
   ["rm" "%{bin}%/ccomp"]
