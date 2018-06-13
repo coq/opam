@@ -12,7 +12,7 @@ install: [
   [make "-C" "ChargeCore" "install"]
 ]
 remove: [
-  ["rm" "-R" "%{doc}%/user-contrib/ChargeCore"]
+  ["rm" "-R" "%{lib}%/coq/user-contrib/ChargeCore"]
 ]
 depends: [
   "coq" {>= "8.6" & < "8.7~"}
