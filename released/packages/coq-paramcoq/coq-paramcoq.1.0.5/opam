@@ -11,7 +11,7 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/paramcoq"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Param"]
 depends: [
   "coq" {>= "8.7" & < "8.8~"}
 ]
