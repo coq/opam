@@ -19,7 +19,7 @@ install: [
 ]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Paco"]
 depends: [
-  "coq" {>= "8.3" & <= "8.8.0"}
+  "coq" {>= "8.3" & < "8.9~"}
 ]
 tags: [
   "date:2018-02-11"
