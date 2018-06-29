@@ -1,0 +1,36 @@
+opam-version: "1.2"
+authors: ["Andrew W. Appel"
+  "Lennart Beringer"
+  "Sandrine Blazy"
+  "Qinxiang Cao"
+  "Santiago Cuellar"
+  "Robert Dockins"
+  "Josiah Dodds"
+  "Nick Giannarakis"
+  "Samuel Gruetter"
+  "Aquinas Hobor"
+  "Jean-Marie Madiot"
+  ]
+maintainer: "VST team"
+homepage: "http://vst.cs.princeton.edu/"
+dev-repo: "https://github.com/PrincetonUniversity/VST.git"
+bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
+license: "https://raw.githubusercontent.com/PrincetonUniversity/VST/master/LICENSE"
+build: [
+	[make "-j" "COMPCERT=%{lib}%/coq/user-contrib/compcert" "version.vo" "msl" "veric" "floyd"]
+	]
+install: [
+	["mkdir" "%{lib}%/coq/user-contrib/VST"]
+	["cp" "-r" "msl" "%{lib}%/coq/user-contrib/VST/"]
+	["cp" "-r" "veric" "%{lib}%/coq/user-contrib/VST/"]
+	["cp" "-r" "floyd" "%{lib}%/coq/user-contrib/VST/"]
+	["cp" "-r" "sepcomp" "%{lib}%/coq/user-contrib/VST/"]
+	]
+remove: [
+	["rm" "-fr" "%{lib}%/coq/user-contrib/VST"]
+	]
+depends: [
+  "coq" {>= "8.7.0"}
+  "coq-compcert" {>= "3.3"}
+]
+tags: []
