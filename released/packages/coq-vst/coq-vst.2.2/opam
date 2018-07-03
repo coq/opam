@@ -31,6 +31,6 @@ remove: [
 	]
 depends: [
   "coq" {>= "8.7.0"}
-  "coq-compcert" {>= "3.3"}
+  "coq-compcert" {= "3.3.0"}
 ]
 tags: []
