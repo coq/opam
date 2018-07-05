@@ -18,6 +18,7 @@ build: [
 ]
 depends: [
   "camlp5"
+  "num"
 ]
 patches: [
   "ltac-profiling-0.9-8.5.patch"
