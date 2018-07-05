@@ -3,6 +3,7 @@ maintainer: "thery@sophia.inria.fr"
 homepage: "http://coqprime.gforge.inria.fr/"
 bug-reports: "https://gforge.inria.fr/tracker/?func=add&group_id=163&atid=733"
 license: "MIT"
+authors: ["Laurent Théry"]
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
