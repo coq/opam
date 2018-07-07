@@ -1,4 +1,5 @@
 opam-version: "1.2"
+authors: ["The Coq Development Team"]
 maintainer: "dev@clarus.me"
 homepage: "http://coq.inria.fr/"
 bug-reports: "https://coq.inria.fr/bugs/"
@@ -18,6 +19,7 @@ build: [
 ]
 depends: [
   "camlp5"
+  "num"
 ]
 patches: [
   "ltac-profiling-0.9-8.5.patch"

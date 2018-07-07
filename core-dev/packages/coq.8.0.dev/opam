@@ -12,5 +12,6 @@ build: [
 depends: [
   "camlp5" {>= "5.01" } # This is what INSTALL says; checked for 6.02.3, 6.14
   "lablgtk" {>= "2.10" } # This is what INSTALL says; checked for 2.18.3
+  "num"
 ]
 ocaml-version: [>= "3.06"] # This is what INSTALL says; checked it worked for 3.08.4, 3.12.1, 4.01.0, 4.02.3
