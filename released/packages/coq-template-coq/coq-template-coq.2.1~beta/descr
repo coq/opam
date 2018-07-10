@@ -13,5 +13,5 @@ Template Coq includes:
   checker, and inserting them in the global environment, in the style of
   MetaCoq/MTac.
 - A partial type-checker for the Calculus of Inductive Constructions,
-  runable as a plugin.
+  runnable as a plugin.
 - Example plugins built on top of this.
