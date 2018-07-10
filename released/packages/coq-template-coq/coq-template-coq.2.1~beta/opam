@@ -1,0 +1,23 @@
+opam-version: "1.2"
+version: "2.1~beta"
+maintainer: "matthieu.sozeau@inria.fr"
+homepage: "https://template-coq.github.io/template-coq"
+dev-repo: "https://github.com/Template-Coq/template-coq.git#coq-8.8"
+bug-reports: "https://github.com/Template-Coq/template-coq/issues"
+authors: ["Abhishek Anand <aa755@cs.cornell.edu>"
+          "Simon Boulier <simon.boulier@inria.fr>"
+          "Cyril Cohen <cyril.cohen@inria.fr>"
+          "Gregory Malecha <gmalecha@gmail.com>"
+          "Matthieu Sozeau <matthieu.sozeau@inria.fr>"
+          "Nicolas Tabareau <nicolas.tabareau@inria.fr>"]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Template"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
