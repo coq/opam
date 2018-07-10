@@ -1,4 +1,5 @@
-opam-version: "1.2" 
+opam-version: "1.2"
+version: "2.1~beta"
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://template-coq.github.io/template-coq"
 dev-repo: "https://github.com/Template-Coq/template-coq.git#coq-8.8"
