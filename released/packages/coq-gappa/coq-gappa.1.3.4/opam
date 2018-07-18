@@ -1,0 +1,18 @@
+opam-version: "1.2"
+maintainer: "guillaume.melquiond@inria.fr"
+homepage: "http://gappa.gforge.inria.fr/"
+dev-repo: "https://scm.gforge.inria.fr/anonscm/git/gappa/coq.git"
+license: "LGPL 2.1"
+build: [
+  ["./configure"]
+  ["./remake" "-j%{jobs}%"]
+]
+install: ["./remake" "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Gappa"]
+depends: [
+  "coq" {>= "8.4pl4" & < "8.9~"}
+  "coq-flocq" {>= "2.5" & < "3.0~"}
+]
+conflicts: [ "coq" {="8.8.0"} ]
+tags: [ "keyword:floating point arithmetic" "keyword:interval arithmetic" "keyword:decision procedure" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
+authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
