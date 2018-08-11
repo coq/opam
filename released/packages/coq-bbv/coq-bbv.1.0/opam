@@ -1,0 +1,33 @@
+opam-version: "1.2"
+maintainer: "gmalecha@gmail.com"
+homepage: "https://github.com/mit-plv/bbv"
+dev-repo: "https://github.com/mit-plv/bbv#master"
+bug-reports: "https://github.com/mit-plv/bbv/issues"
+authors: ["Tej Chajed"
+          "Haogang Chen"
+          "Adam Chlipala"
+          "Joonwon Choi"
+          "Andres Erbsen"
+          "Jason Gross"
+          "Samuel Gruetter"
+          "Frans Kaashoek"
+          "Alex Konradi"
+          "Gregory Malecha"
+          "Duckki Oe"
+          "Murali Vijayaraghavan"
+          "Nickolai Zeldovich"
+          "Daniel Ziegler"
+]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: [
+  ["rm" "-R" "%{lib}%/coq/user-contrib/bbv"]
+]
+depends: [
+  "coq" {>= "8.8" < "8.9~"}
+]
