@@ -1,0 +1,24 @@
+opam-version: "1.2"
+maintainer: "llee454@gmail.com"
+homepage: "https://github.com/llee454/functional-algebra"
+dev-repo: "https://github.com/llee454/functional-algebra.git"
+bug-reports: "https://github.com/llee454/functional-algebra/issues"
+authors: ["Larry D. Lee Jr."]
+license: "LGPLv3"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/functional-algebra"]
+depends: [
+  "coq" {>= "8.4"}
+]
+tags: [
+  "keyword:algebra"
+  "keyword:abstract algebra"
+  "category:Miscellaneous/Coq Extensions"
+  "date:2018-08-11"
+  "logpath:functional-algebra"
+]
