@@ -1,0 +1,19 @@
+opam-version: "1.2"
+maintainer: "beta.ziliani@gmail.com"
+homepage: "https://github.com/Mtac2/Mtac2"
+dev-repo: "https://github.com/Mtac2/Mtac2.git"
+bug-reports: "https://github.com/Mtac2/Mtac2/issues"
+authors: ["Beta Ziliani <beta.ziliani@gmail.com>" "Jan-Oliver Kaiser <janno@mpi-sws.org>" "Robbert Krebbers <mail@robbertkrebbers.nl>" "Yann Régis-Gianas <yrg@pps.univ-paris-diderot.fr>" "Derek Dreyer <dreyer@mpi-sws.org>"]
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Mtac2"]
+depends: [
+  "coq" {>= "8.7.0" & < "8.8~"}
+  "coq-unicoq" {>= "1.3~" & < "2~"}
+]
