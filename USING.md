@@ -22,9 +22,13 @@ proceed as follows:
     opam install coq.@COQV@ && opam pin add coq @COQV@
 
 One may also want to install CoqIDE.  Note that this requires GTK+ development
-files to be available on the system.
+files (gtksourceview2) to be available on the system.
 
     opam install coqide
+
+For alternative user interfaces / editors, see instructions on their own
+homepage, e.g. <https://proofgeneral.github.io/#quick-installation-instructions>
+for Proof-General.
 
 ## Running Coq
 
