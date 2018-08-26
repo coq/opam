@@ -1,0 +1,10 @@
+This library provides a stand-alone proof of the Pigeonhole
+principle. The Pigeonhole principle is a fundamental theorem that
+is used widely in Computer Science and Combinatorics, it asserts
+that if you put n things into m containers, and n > m, then at
+least one of the containers contains more than one thing.
+
+For more information about this proof, Please read its Readme file,
+which can be found here: 
+
+https://github.com/llee454/pigeons 
