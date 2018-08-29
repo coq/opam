@@ -1,5 +1,5 @@
 opam-version: "1.2"
-maintainer: "Matej Košík <matej.kosik@inria.fr>"
+maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "http://homotopytypetheory.org/"
 bug-reports: "https://github.com/HoTT/HoTT/issues"
 license: "BSD 2-clause"
