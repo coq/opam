@@ -1,9 +1,9 @@
 opam-version: "1.2"
 authors: ["The Coq-HoTT Development Team"]
 dev-repo: "https://github.com/HoTT/HoTT.git"
-maintainer: "Matej Košík <matej.kosik@inria.fr>"
+maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "http://homotopytypetheory.org/"
-bug-reports: "http://homotopytypetheory.org/"
+bug-reports: "https://github.com/HoTT/HoTT/issues"
 license: "BSD 2-clause"
 build: [
   ["./autogen.sh"]
