@@ -5,7 +5,7 @@ dev-repo: "https://gitlab.inria.fr/flocq/flocq"
 bug-reports: "https://gitlab.inria.fr/flocq/flocq/issues"
 license: "LGPL 3"
 build: [
-  ["./configure"]
+  ["./configure" "--libdir" "%{lib}%/coq/user-contrib/Flocq"]
   ["./remake" "-j%{jobs}%"]
 ]
 install: ["./remake" "install"]
