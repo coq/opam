@@ -16,7 +16,10 @@ license: "CeCILL-A"
 build: [make]
 build-doc: [make "html"]
 install: [make "install"]
-remove: [make "uninstall"]
+remove: [
+  [make "uninstall"]
+  ["rmdir" "%{lib}%/coq/user-contrib/Cecoa"]
+]
 depends: [
   "coq" {>= "8.6.0" & < "8.9.0~"}
   "coq-bellantonicook"
