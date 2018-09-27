@@ -1,0 +1,24 @@
+opam-version: "1.2"
+version: "1.0.0"
+maintainer: "vzaliva@cmu.edu"
+homepage: "https://github.com/vzaliva/coq-switch"
+dev-repo: "https://github.com/vzaliva/coq-switch.git"
+bug-reports: "https://github.com/vzaliva/coq-switch/issues"
+authors: ["Vadim Zaliva <vzaliva@cmu.edu>"]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Switch"]
+depends: [
+  "coq" {>= "8.8"}
+  "coq-template-coq" {>= "2.1~beta3"}
+]
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "date:2018-09-27"
+]
+  
