@@ -1,5 +1,5 @@
-A plugin to imlement functionality similar `switch` operator in other
-languages.
+A plugin to imlement functionality similar to `switch` statement in C
+language.
 
 It allows easier dispatch on several constant values of a type with
 decidable equality. Given a type, boolean equality predicate, and list
