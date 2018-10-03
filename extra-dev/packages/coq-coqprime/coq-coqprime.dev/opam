@@ -2,7 +2,7 @@ opam-version: "1.2"
 maintainer: "thery@sophia.inria.fr"
 homepage: "http://coqprime.gforge.inria.fr/"
 bug-reports: "http://coqprime.gforge.inria.fr/"
-dev-repo: "git+https://github.com/thery/coqprime.git"
+dev-repo: "https://github.com/thery/coqprime.git"
 license: "LGPL"
 authors: ["Laurent Théry"]
 build: [

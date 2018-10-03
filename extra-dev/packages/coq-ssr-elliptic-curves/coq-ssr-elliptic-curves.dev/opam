@@ -2,7 +2,7 @@ opam-version: "1.2"
 maintainer: "pierre-yves@strub.nu"
 homepage: "https://github.com/strub/elliptic-curves-ssr"
 bug-reports: "https://github.com/strub/elliptic-curves-ssr/issues"
-dev-repo: "git+https://github.com/strub/elliptic-curves-ssr.git"
+dev-repo: "https://github.com/strub/elliptic-curves-ssr.git"
 license: "CeCILL-B"
 authors: [
   "Evmorfia-Iro Bartzia"
