@@ -17,10 +17,11 @@ depends: [
   "coq" {= "dev"}
   "coq-ext-lib"
   "coq-mathcomp-ssreflect"
+  "coq-simple-io"
   "ocamlbuild"
   "ocamlfind"
 ]
-available: [ ocaml-version >= "4.04.0" ]
+available: [ ocaml-version >= "4.05.0" ]
 
 authors: [
   "Leonidas Lampropoulos <>"
