@@ -9,7 +9,7 @@ license: "LGPL-2.1"
 available: [ocaml-version >= "4.02.3"]
 depends: [
   "camlp5"
-  "coq" {= "8.8.dev"}
+  "coq" {= "8.9.dev"}
   "lablgtk"
   "conf-gtksourceview"
 ]
