@@ -14,6 +14,7 @@ cache:
   apt: true
   directories:
   - ${HOME}/opam-cache
+  - /usr/local/bin
 
 before_install:
     if [ $TRAVIS_OS_NAME = osx ]; then
@@ -32,7 +33,6 @@ addons:
     sources:
     - avsm
     packages:
-    - opam
     - aspcud
     - gcc-multilib
     - libgtksourceview2.0-dev

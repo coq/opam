@@ -1,9 +1,12 @@
 #!/bin/bash
 
-opam init --root=$HOME/opam-root -j $NJOBS --compiler=$COMPILER -n -y
-eval $(opam config --root=${HOME}/opam-root env)
+curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh > install.sh
+echo | sudo sh install.sh
+
+opam init --disable-sandboxing --root=$HOME/opam-root-$COMPILER -j $NJOBS --compiler=$COMPILER -n -y
+eval $(opam env --root=${HOME}/opam-root-$COMPILER --set-root)
 opam config list
 opam install -j $NJOBS -y camlp5 ocamlfind $EXTRA_OPAM
 opam list
 mkdir -p $HOME/opam-cache
-tar czf $HOME/opam-cache/cache-$COMPILER.tgz $HOME/opam-root
+tar czf $HOME/opam-cache/cache-$COMPILER.tgz $HOME/opam-root-$COMPILER
