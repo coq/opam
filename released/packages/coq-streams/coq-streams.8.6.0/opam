@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/streams"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Streams"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: Streams" "keyword: Eratosthene Sieve" "keyword: prime numbers" "keyword: number theory" "keyword: primality" "category: Mathematics/Arithmetic and Number Theory/Number theory" ]
+authors: [ "François Leclerc, Christine Paulin-Mohring" ]
+bug-reports: "https://github.com/coq-contribs/streams/issues"
+dev-repo: "https://github.com/coq-contribs/streams.git"

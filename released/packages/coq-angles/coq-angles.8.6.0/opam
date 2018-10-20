@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/angles"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Angles"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: Pcoq" "keyword: geometry" "keyword: plane geometry" "keyword: oriented angles" "category: Mathematics/Geometry/General" "date: 2002-01-15" ]
+authors: [ "Frédérique Guilhot <Frederique.Guilhot@sophia.inria.fr>" ]
+bug-reports: "https://github.com/coq-contribs/angles/issues"
+dev-repo: "https://github.com/coq-contribs/angles.git"

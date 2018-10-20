@@ -1,0 +1,7 @@
+A toolkit to reason with programs raising exceptions.
+
+We show a way of developing correct functionnal programs
+raising exceptions. This is made possible using a Continuation
+Passing Style translation, see the contribution "exceptions" from
+P. Casteran at Bordeaux. Things are made easier and more modular using
+some general definitions.

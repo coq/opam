@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/historical-examples"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HistoricalExamples"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: Newman's lemma" "keyword: Tarski's fixpoint theorem" "keyword: line formatting" "keyword: binary-search paradigm" "keyword: square root approximation" "keyword: Calculus of Constructions" "keyword: history of Coq" "category: Miscellaneous/Coq Use Examples" ]
+authors: [ "Gérard Huet" "Christine Paulin" ]
+bug-reports: "https://github.com/coq-contribs/historical-examples/issues"
+dev-repo: "https://github.com/coq-contribs/historical-examples.git"

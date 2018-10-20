@@ -1,0 +1,40 @@
+Interpretation of random programs.
+
+This contribution is a modelisation of random programs
+as measures in Coq. It started in 2004 in the context
+of the AVERROES project (http://www-verimag.imag.fr/AVERROES/).
+It is based on comon work with Philippe Audebaud (ENS Lyon).
+It was last updated in february 2007.
+
+It contains the following elements
+  - an axiomatisation of the interval [0,1] and derived properties
+(files Ubase.v and Uprop.v);
+
+  - a definition of measures on a type A as functions of type
+(A->[0,1])->[0,1] enjoying special stability properties (files
+Monads.v and Probas.v); proofs that these constructions have a
+monadic structure;
+
+  - an interpretation of programs of type A as measures, in particular
+a fixpoint construction; the definition of an axiomatic semantic for
+deriving judgements such as ``the probability of an expression e to
+evaluate to a result satisfying property q belongs to an interval [p,q]''
+(file Prog.v);
+
+  - Proof of probabilistic termination of a linear random walk (file
+Iterflip.v);
+
+  - Proof of a program implementing a bernoulli distribution
+(Proba(bernouilli(p)=true)=p) using a coin flip and the derived binomial
+law (Proba(binomial p n=k)=C(n,k)p^k(1-p)^{n-k}) (file Bernoulli.v);
+
+  - Proof of estimation of the combination of two random executions
+(file Choice.v)
+
+  - Proof of partial termination of parameterized random walk (file Ycart.v)
+
+  - Definition of a measure on traces from a mesure on transitions
+steps (file Nelist.v, Transitions.v)
+
+The document random.pdf contains a short introduction to the library
+associated to the Gallina source code of the library.
