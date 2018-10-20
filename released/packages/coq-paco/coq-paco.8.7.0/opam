@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/paco"
+license: "BSD"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Paco"]
+depends: [
+  "coq" {>= "8.7" & < "8.8~"}
+]
+tags: [ "keyword: cofix" "keyword: coinduction" "keyword: paco" "keyword: proof" "keyword: coinductive" "category: Mathematics/Logic/Foundations" ]
+authors: [ "Chung-Kil Hur <gil@mpi-sws.org>" "Georg Neis <neis@mpi-sws.org>" "Derek Dreyer <dreyer@mpi-sws.org>" "Viktor Vafeiadis <viktor@mpi-sws.org>" ]
+bug-reports: "https://github.com/coq-contribs/paco/issues"
+dev-repo: "https://github.com/coq-contribs/paco.git"

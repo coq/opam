@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/generic-environments"
+license: "LGPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GenericEnvironments"]
+depends: [
+  "coq" {>= "8.7" & < "8.8~"}
+]
+tags: [ "keyword: generic environments" "keyword: typing" "keyword: type theory" "category: Mathematics/Logic/Type theory" ]
+authors: [ "Emmanuel Polonowski <emmanuel.polonowski@u-pec.fr> [http://lacl.u-pec.fr/polonowski/]" ]
+bug-reports: "https://github.com/coq-contribs/generic-environments/issues"
+dev-repo: "https://github.com/coq-contribs/generic-environments.git"

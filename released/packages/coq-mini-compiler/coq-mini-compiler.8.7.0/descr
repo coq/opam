@@ -1,0 +1,6 @@
+Correctness of a tiny compiler for arithmetic expressions.
+
+Tutorial correctness proof of a tiny compiler from
+simple arithmetic expressions (constants, variables and additions) to
+simple assembly-like code (one accumulator, infinitly many registers and
+addition)
