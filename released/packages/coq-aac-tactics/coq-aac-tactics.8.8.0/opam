@@ -1,0 +1,29 @@
+opam-version: "1.2"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/aac-tactics"
+dev-repo: "https://github.com/coq-community/aac-tactics.git"
+bug-reports: "https://github.com/coq-community/aac-tactics/issues"
+license: "LGPL"
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/AAC_tactics"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+
+tags: [
+  "keyword:reflexive tactic"
+  "keyword:rewriting"
+  "keyword:rewriting modulo associativity and commutativity"
+  "keyword:rewriting modulo ac"
+  "keyword:decision procedure"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:AAC_tactics"
+]
+authors: [
+  "Damien Pous <>"
+  "Thomas Braibant <>"
+  "Fabian Kunze <>"
+]
