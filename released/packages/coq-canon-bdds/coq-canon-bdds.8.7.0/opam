@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/canon-bdds"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CanonBDDs"]
+depends: [
+  "coq" {>= "8.7" & < "8.8~"}
+]
+tags: [ "keyword: BDD" "keyword: BDT" "keyword: Finite Sets" "keyword: Model-Checking" "keyword: binary decision diagrams" "category: Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category: Miscellaneous/Extracted Programs/Decision procedures" ]
+authors: [ "Emmanuel Ledinot" ]
+bug-reports: "https://github.com/coq-contribs/canon-bdds/issues"
+dev-repo: "https://github.com/coq-contribs/canon-bdds.git"

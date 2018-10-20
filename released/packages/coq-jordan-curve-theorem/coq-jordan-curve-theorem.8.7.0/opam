@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/jordan-curve-theorem"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/JordanCurveTheorem"]
+depends: [
+  "coq" {>= "8.7" & < "8.8~"}
+]
+tags: [ "keyword: combinatorial hypermaps" "keyword: genus" "keyword: planarity" "keyword: Euler formula" "keyword: Discrete Jordan Curve Theorem" "category: Mathematics/Geometry/General" "date: 2008" ]
+authors: [ "Jean-François Dufourd <dufourd@lsiit.u-strasbg.fr> [http://dpt-info.u-strasbg.fr/~jfd/]" ]
+bug-reports: "https://github.com/coq-contribs/jordan-curve-theorem/issues"
+dev-repo: "https://github.com/coq-contribs/jordan-curve-theorem.git"

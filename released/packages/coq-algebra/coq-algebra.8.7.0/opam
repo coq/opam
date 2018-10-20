@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/algebra"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Algebra"]
+depends: [
+  "coq" {>= "8.7" & < "8.8~"}
+]
+tags: [ "keyword: algebra" "category: Mathematics/Algebra" "date: 1999-03" ]
+authors: [ "Loïc Pottier [http://www-sop.inria.fr/croap/personnel/Loic.Pottier/home.html]" ]
+bug-reports: "https://github.com/coq-contribs/algebra/issues"
+dev-repo: "https://github.com/coq-contribs/algebra.git"

@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/tarski-geometry"
+license: "GPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TarskiGeometry"]
+depends: [
+  "coq" {>= "8.7" & < "8.8~"}
+]
+tags: [ "keyword: geometry" "keyword: Tarski's geometry" "keyword: congruence" "keyword: between property" "keyword: orthogonality" "category: Mathematics/Geometry/General" "date: 2006-03" ]
+authors: [ "Julien Narboux <Julien.Narboux@dpt-info.u-strasbg.fr> [http://dpt-info.u-strasbg.fr/~narboux/]" ]
+bug-reports: "https://github.com/coq-contribs/tarski-geometry/issues"
+dev-repo: "https://github.com/coq-contribs/tarski-geometry.git"
