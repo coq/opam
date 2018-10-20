@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/qarith"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/QArith"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: Q" "keyword: Arithmetic" "keyword: Rational numbers" "keyword: Setoid" "keyword: Ring" "category: Mathematics/Arithmetic and Number Theory/Rational numbers" "category: Miscellaneous/Extracted Programs/Arithmetic" ]
+authors: [ "Pierre Letouzey" ]
+bug-reports: "https://github.com/coq-contribs/qarith/issues"
+dev-repo: "https://github.com/coq-contribs/qarith.git"

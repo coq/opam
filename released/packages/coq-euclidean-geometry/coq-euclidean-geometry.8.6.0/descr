@@ -1,0 +1,5 @@
+Basis of the Euclid's plane geometry.
+
+This is a more recent version of the basis of Euclid's plane geometry, the previous version was the contribution intitled RulerCompassGeometry.
+The plane geometry is defined as a set of points, with two predicates : Clokwise for the orientation and Equidistant for the metric and three constructors, Ruler for the lines, Compass for the circles and Intersection for the points.
+For using it, we suggest to compile the files the name of which begin by a capital letter and a number from A1 to N7 in the lexicographic order and to keep modifiable the files of tacics (from Tactic1 to Tactic4) and the files of examples (Hilbert and Bolyai).

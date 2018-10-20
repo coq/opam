@@ -1,0 +1,11 @@
+On Ordinal Notations.
+
+This contribution contains data structures for ordinals
+less than Gamma0 under Cantor and Veblen normal
+forms. Well-foundedness is established thanks to RPO with status for
+generic terms. This contribution also includes termination proofs of
+Hydra battles and Goodstein sequences as well as a computation of the
+length of the Goodstein sequence starting from 4 in base 2.
+
+This work is supported by INRIA-Futurs (Logical project-team), CNRS
+and the French ANR via the A3PAT project (http://www3.iie.cnam.fr/~urbain/a3pat/).

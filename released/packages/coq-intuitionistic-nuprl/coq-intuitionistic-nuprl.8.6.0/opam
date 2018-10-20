@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/intuitionistic-nuprl"
+license: "GPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IntuitionisticNuprl"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: Nuprl" "keyword: Computational Type Theory" "keyword: Extensional Type Theory" "keyword: Intuitionistic Type Theory" "keyword: Howe's computational equivalence relation" "keyword: Partial Equivalence Relation (PER) semantics" "keyword: Consistency" "keyword: Continuity" "keyword: Bar Induction" "category: Mathematics/Logic/Type theory" ]
+authors: [ "Vincent Rahli <vincent.rahli@gmail.com> [http://www.cs.cornell.edu/~rahli/]" "Abhishek Anand <abhishek.anand.iitg@gmail.com> [http://www.cs.cornell.edu/~aa755/]" "Mark Bickford <mark.concertina@gmail.com> [http://nuprl.org/]" ]
+bug-reports: "https://github.com/coq-contribs/intuitionistic-nuprl/issues"
+dev-repo: "https://github.com/coq-contribs/intuitionistic-nuprl.git"

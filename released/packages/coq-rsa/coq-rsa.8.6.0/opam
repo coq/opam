@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/rsa"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RSA"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: RSA" "keyword: Chinese remainder" "keyword: Fermat's little theorem" "category: Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "date: 1999" ]
+authors: [ "Jose C. Almeida" "Laurent Théry" ]
+bug-reports: "https://github.com/coq-contribs/rsa/issues"
+dev-repo: "https://github.com/coq-contribs/rsa.git"

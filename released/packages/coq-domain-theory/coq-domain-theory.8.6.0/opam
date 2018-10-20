@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/domain-theory"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/DomainTheory"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: Concrete Domains" "category: Computer Science/Lambda Calculi" ]
+authors: [ "Gilles Kahn" ]
+bug-reports: "https://github.com/coq-contribs/domain-theory/issues"
+dev-repo: "https://github.com/coq-contribs/domain-theory.git"
