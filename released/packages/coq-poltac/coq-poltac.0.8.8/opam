@@ -2,7 +2,7 @@ opam-version: "1.2"
 maintainer: "thery@sophia.inria.fr"
 homepage: "https://github.com/thery/PolTac"
 bug-reports: "https://github.com/thery/PolTac"
-dev-repo: "https://github.com/thery/PolTac"
+dev-repo: "git://github.com/thery/PolTac"
 license: "LGPL"
 authors: ["Laurent Théry"]
 build: [
