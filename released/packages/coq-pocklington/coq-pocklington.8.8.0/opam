@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/pocklington"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Pocklington"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: pocklington" "keyword: number theory" "keyword: prime numbers" "keyword: primality" "keyword: fermat's little theorem" "category: Mathematics/Arithmetic and Number Theory/Number theory" "date: 2000-11" ]
+authors: [ "Olga Caprotti" "Martijn Oostdijk" ]
+bug-reports: "https://github.com/coq-contribs/pocklington/issues"
+dev-repo: "https://github.com/coq-contribs/pocklington.git"

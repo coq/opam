@@ -1,0 +1,9 @@
+Pi-calculus in Coq.
+
+http://www.dimi.uniud.it/~scagnett/pi-calculus.html
+
+This is a HOAS-based encoding of the pi-calculus (as originally
+conceived by Milner, Parrow and Walker in "A Calculus of Mobile
+Processes" Parts I-II, Information and Computation n. 100)
+together with the formal verification of a large part of the
+metatheory of Strong Late Bisimilarity.

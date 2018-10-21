@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/coinductive-examples"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoinductiveExamples"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: co-inductive types" "keyword: co-induction" "category: Miscellaneous/Coq Use Examples" ]
+authors: [ "Eduardo Giménez" ]
+bug-reports: "https://github.com/coq-contribs/coinductive-examples/issues"
+dev-repo: "https://github.com/coq-contribs/coinductive-examples.git"

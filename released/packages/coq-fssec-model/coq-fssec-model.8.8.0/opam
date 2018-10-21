@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/fssec-model"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FSSecModel"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: security" "keyword: filesystem" "keyword: UNIX" "keyword: MLS" "keyword: access control" "category: Computer Science/Operating Systems" "date: 2002-04-24" ]
+authors: [ "Maximiliano Cristiá" ]
+bug-reports: "https://github.com/coq-contribs/fssec-model/issues"
+dev-repo: "https://github.com/coq-contribs/fssec-model.git"

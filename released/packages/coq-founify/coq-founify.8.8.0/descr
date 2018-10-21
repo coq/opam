@@ -1,0 +1,6 @@
+Correctness and extraction of the unification algorithm.
+
+A notion of terms based on symbols without fixed arities is defined
+and an extended unification problem is proved solvable on these terms.
+An algorithm, close from Robinson algorithm, can be extracted from the
+proof.
