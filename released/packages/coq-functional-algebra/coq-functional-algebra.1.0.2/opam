@@ -11,7 +11,7 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/functional-algebra"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/functional_algebra"]
 depends: [
   "coq" {>= "8.4"}
 ]
