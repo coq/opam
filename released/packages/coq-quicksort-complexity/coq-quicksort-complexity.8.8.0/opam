@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/quicksort-complexity"
+license: "BSD"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/QuicksortComplexity"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: quicksort" "keyword: complexity" "keyword: average-case" "category: Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "date: 2010-06" ]
+authors: [ "Eelis" ]
+bug-reports: "https://github.com/coq-contribs/quicksort-complexity/issues"
+dev-repo: "https://github.com/coq-contribs/quicksort-complexity.git"

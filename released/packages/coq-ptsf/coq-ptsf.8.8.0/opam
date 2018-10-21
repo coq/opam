@@ -1,0 +1,15 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/ptsf"
+license: "BSD"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PTSF"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+  "coq-ptsatr" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: pure type systems" "keyword: judgmental equality" "keyword: explicit equality proofs" "keyword: proof relevance" "category: Mathematics/Logic/Type theory" ]
+authors: [ "Floris van Doorn <fpv@andrew.cmu.edu> [http://www.andrew.cmu.edu/user/fpv/]" "Herman Geuvers <herman@cs.ru.nl> [http://www.cs.ru.nl/~herman/]" "Freek Wiedijk <freek@cs.ru.nl> [http://www.cs.ru.nl/~freek/]" ]
+bug-reports: "https://github.com/coq-contribs/ptsf/issues"
+dev-repo: "https://github.com/coq-contribs/ptsf.git"

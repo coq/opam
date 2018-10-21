@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/descente-infinie"
+license: "GPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/DescenteInfinie"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: Induction" "keyword: Descente Infinie" "category: Miscellaneous/Coq Extensions" "date: 2010-02" ]
+authors: [ "Razvan Voicu <razvan@comp.nus.edu.sg> [http://www.comp.nus.edu.sg/~razvan/]" "Li Mengran <limengra@comp.nus.edu.sg> [http://www.comp.nus.edu.sg/~limengra]" ]
+bug-reports: "https://github.com/coq-contribs/descente-infinie/issues"
+dev-repo: "https://github.com/coq-contribs/descente-infinie.git"

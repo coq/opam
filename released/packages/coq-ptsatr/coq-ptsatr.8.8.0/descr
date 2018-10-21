@@ -1,0 +1,6 @@
+PTSATR.
+
+http://www.lix.polytechnique.fr/~vsiles/coq/PTSATR.html
+
+Formalization of the proof that PTS and PTS with judgmental equality (PTSe) are equivalent.
+With this equivalence, we are able to derive all the meta-theory of PTSe, like Pi-injectivity or Subject Reduction.

@@ -1,0 +1,5 @@
+Finite Sets overs Ordered Types.
+
+This contribution contains several implementations of finite sets over
+arbitrary ordered types using functors. Currently, there are 3
+implementations: sorted lists, red-black trees and AVLs.

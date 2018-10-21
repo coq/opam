@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/lambda"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Lambda"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: pure lambda-calculus" "keyword: confluence" "keyword: parallel-moves lemma" "keyword: Lévy's Cube Lemma" "keyword: Church-Rosser" "keyword: residual" "keyword: Prism theorem" "category: Computer Science/Lambda Calculi" ]
+authors: [ "Gérard Huet" ]
+bug-reports: "https://github.com/coq-contribs/lambda/issues"
+dev-repo: "https://github.com/coq-contribs/lambda.git"

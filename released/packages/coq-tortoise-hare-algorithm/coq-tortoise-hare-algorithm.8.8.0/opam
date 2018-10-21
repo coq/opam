@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/tortoise-hare-algorithm"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TortoiseHareAlgorithm"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: program verification" "keyword: paths" "keyword: cycle detection" "keyword: graphs" "keyword: graph theory" "keyword: finite sets" "keyword: floyd" "category: Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "date: 2007-02" ]
+authors: [ "Jean-Christophe Filliâtre" ]
+bug-reports: "https://github.com/coq-contribs/tortoise-hare-algorithm/issues"
+dev-repo: "https://github.com/coq-contribs/tortoise-hare-algorithm.git"

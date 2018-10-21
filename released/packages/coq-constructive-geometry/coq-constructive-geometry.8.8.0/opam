@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/constructive-geometry"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ConstructiveGeometry"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: Constructive mathematics" "keyword: Geometry" "category: Mathematics/Geometry/General" ]
+authors: [ "Gilles Kahn" ]
+bug-reports: "https://github.com/coq-contribs/constructive-geometry/issues"
+dev-repo: "https://github.com/coq-contribs/constructive-geometry.git"
