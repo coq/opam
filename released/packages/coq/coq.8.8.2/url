@@ -1,0 +1,3 @@
+http: "https://github.com/coq/coq/archive/V8.8.2.tar.gz"
+checksum: "5d693cd1953a0dd74920b43d183bc26c"
+checksum: "sha512=b0f0480fe052fced6016014cf1872d4e004b0dacb779927376d797c279aca9d5f6f4ed3d0f5ee5d42748bbd5c29b43f7a69748564a12a116bcc7ba3b052d8954"
