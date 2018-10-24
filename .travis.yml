@@ -1,4 +1,7 @@
 language: c
+
+sudo: required
+
 env:
   global:
   - NJOBS=2
@@ -24,7 +27,7 @@ install:
 
 script:
 - curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh > install.sh
-- echo | sudo sh install.sh
+- echo | sh install.sh
 - set -o pipefail
 - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-lint
 - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-install-remove ${HOME}/opam-cache/cache-${COMPILER}.tgz
