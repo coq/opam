@@ -1,5 +1,4 @@
 variables:
-  TRAVIS_BRANCH: "master"
   NJOBS: "2"
 
 cache:
@@ -7,7 +6,6 @@ cache:
     - opam-cache
 
 before_script:
-  - export TRAVIS_COMMIT="$CI_COMMIT_SHA"
   - export HOME=$(pwd)
   - apt-get update -qy
   - apt-get install unzip libgtksourceview2.0-dev -y

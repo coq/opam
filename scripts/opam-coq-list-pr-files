@@ -3,7 +3,7 @@
 set -e
 #set -x
 
-(>&2 echo PR head is: $TRAVIS_COMMIT)
-BASE=`git merge-base $TRAVIS_COMMIT $TRAVIS_BRANCH`
+(>&2 echo PR head is: $CI_COMMIT_SHA)
+BASE=`git merge-base $CI_COMMIT_SHA master`
 (>&2 echo Merge base is: $BASE)
-git diff-tree --no-commit-id --name-only -r $BASE $TRAVIS_COMMIT
+git diff-tree --no-commit-id --name-only -r $BASE $CI_COMMIT_SHA
