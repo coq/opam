@@ -1,3 +1,5 @@
+image: buildpack-deps:stable-scm
+
 variables:
   NJOBS: "2"
 
