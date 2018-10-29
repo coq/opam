@@ -38,8 +38,30 @@ opam-build:4.02.3:
   extends: .opam-build
   variables:
     COMPILER: "4.02.3"
+  except:
+    - web
 
 opam-build:4.06.0:
   extends: .opam-build
   variables:
     COMPILER: "4.06.0"
+  except:
+    - web
+
+opam-build-no-timeout:4.02.3:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.02.3"
+  only:
+    - web
+  tags:
+    - no-timeout
+
+opam-build-no-timeout:4.06.0:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.06.0"
+  only:
+    - web
+  tags:
+    - no-timeout
