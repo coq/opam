@@ -58,3 +58,14 @@ Finally the `homepage:`, `author:`, `maintainer:` and `doc:` fields are
 also used to generate the package entry.
 
 See also [CEP3](https://github.com/coq/ceps/blob/master/text/003-opam-metadata.md).
+
+## Continuous Integration
+
+Incoming pull requests are tested on GitLab CI. **@coqbot** pushes any opened
+or synchonized pull request to a branch named `pr-<number>` on GitLab. It will
+trigger a CI build. If the CI build runs for too long and times out, any
+member of the Coq organization of GitLab can start it again using the "Run
+Pipeline" green button at <https://gitlab.com/coq/opam-coq-archive/pipelines>.
+This will then build only on runners without pre-set timeouts (the Coq Pyrolyse
+server). It may still time out if the build takes longer than the GitLab
+project's timeout setting (10 hours).
