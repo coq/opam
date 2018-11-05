@@ -47,7 +47,6 @@ remove: [
   "%{man}%/man1/coqtop.byte.1"
   "%{man}%/man1/coqtop.opt.1"
   "%{man}%/man1/coqwc.1"
-  "%{man}%/man1/gallina.1"
   "%{share}%/texmf/tex/latex/misc/coqdoc.sty"
   "%{share}%/emacs/site-lisp/coq-font-lock.el"
   "%{share}%/emacs/site-lisp/coq-inferior.el"
