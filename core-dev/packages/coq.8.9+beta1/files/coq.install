@@ -1,5 +1,4 @@
 bin: [
-  "bin/gallina"
   "bin/coqwc"
   "bin/coqtop"
   "bin/coqtop.byte"
