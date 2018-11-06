@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: ["The Coq Development Team"]
 maintainer: "dev@clarus.me"
 homepage: "http://coq.inria.fr/"
@@ -9,10 +9,14 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-depends: [
-  "camlp5"
-  "num"
-]
+depends: ["ocaml" "camlp5" "num"]
 patches: [
   "ltac-profiling-0.8.patch"
 ]
+synopsis: "Formal proof management system."
+extra-files: [
+  "ltac-profiling-0.8.patch" "md5=5c988ce7383a05c5351908a40957bac8"
+]
+url {
+  src: "git+https://github.com/coq/coq#v8.4"
+}

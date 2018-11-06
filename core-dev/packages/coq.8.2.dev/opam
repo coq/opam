@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "hugo.herbelin@inria.fr"
 authors: ["The Coq Development Team"]
 homepage: "http://coq.inria.fr/"
-dev-repo: "https://github.com/coq/coq.git"
+dev-repo: "git+https://github.com/coq/coq.git"
 bug-reports: "https://coq.inria.fr/bugs/"
 license: "LGPL 2"
 build: [
@@ -11,12 +11,20 @@ build: [
   [make "install"]
 ]
 depends: [
-  "camlp5" {>= "5.01" } # This is what INSTALL says; checked for 6.02.3, 6.14
-  "lablgtk" {>= "2.10" } # This is what INSTALL says; checked for 2.18.3
+  "ocaml" {>= "3.07" & != "3.08.3" & != "4.02.0"}
+  "camlp5" {>= "5.01"}
+  "lablgtk" {>= "2.10"}
   "num"
 ]
-available: [ocaml-version >= "3.07" & ocaml-version != "3.08.3" & ocaml-version != "4.02.0"]
-# This is what INSTALL says;
-# Checked it works for 3.08.4, 3.12.1, 4.01.0, 4.02.3, 4.03.0, 4.04.2, 4.06.0
-# It loops (or takes very very long time) when using 3.08.3
-# Version 4.02.0 would work but with severe performance issues in compilation time
+synopsis: "Coq is a formal proof management system."
+description: """
+It provides a formal language to write mathematical definitions,
+executable algorithms and theorems together with an environment for
+semi-interactive development of machine-checked proofs. Typical
+applications are certified programming, mathematical proof
+development, and teaching.
+
+This package includes CoqIDE."""
+url {
+  src: "git+https://github.com/coq/coq#v8.2"
+}

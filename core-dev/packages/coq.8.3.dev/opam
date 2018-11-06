@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: [ "The Coq Development Team" ]
 maintainer: "dev@clarus.me"
 homepage: "http://coq.inria.fr/"
-dev-repo: "https://github.com/coq/coq.git"
+dev-repo: "git+https://github.com/coq/coq.git"
 bug-reports: "https://coq.inria.fr/bugs/"
 license: "LGPL 2"
 build: [
@@ -11,12 +11,11 @@ build: [
   [make "install"]
 ]
 depends: [
+  "ocaml" {>= "3.10.2" & != "4.02.0"}
   "camlp5"
   "num"
 ]
-available: [ocaml-version >= "3.10.2" & ocaml-version != "4.02.0"]
-# Checked it also works for 4.02.1, 4.03.0, 4.04.2, 4.06.0
-# Version 4.02.0 would work but with severe performance issues in compilation time
-# Fails in 4.04.2 because of a conflict with OCaml files matching.ml and lexer.ml
-# (however this conflict is apparently dependent on the order of files
-# in some table, so it might succeeds with further versions of OCaml)
+synopsis: "Formal proof management system."
+url {
+  src: "git+https://github.com/coq/coq#v8.3"
+}

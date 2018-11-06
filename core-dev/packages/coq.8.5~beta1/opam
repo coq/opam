@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: ["The Coq Development Team"]
 maintainer: "dev@clarus.me"
 homepage: "http://coq.inria.fr/"
@@ -16,7 +16,10 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-depends: [
-  "camlp5"
-  "num"
-]
+depends: ["ocaml" "camlp5" "num"]
+synopsis: "Formal proof management system."
+extra-files: ["coq.install" "md5=26c6de669a7d377c2be8592c4e3c0260"]
+url {
+  src: "https://github.com/coq/coq/archive/V8.5beta1.tar.gz"
+  checksum: "md5=1484d167f5b22ee221daf988b36ef8cc"
+}
