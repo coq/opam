@@ -16,7 +16,7 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-depends: ["ocaml" "camlp5" "num"]
+depends: ["ocaml" {< "4.05.0"} "camlp5" "num"]
 synopsis: "Formal proof management system."
 extra-files: ["coq.install" "md5=26c6de669a7d377c2be8592c4e3c0260"]
 url {

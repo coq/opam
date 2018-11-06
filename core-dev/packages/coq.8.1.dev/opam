@@ -14,6 +14,7 @@ depends: [
   "camlp5" {>= "5.01"}
   "lablgtk" {>= "2.10"}
   "num"
+  "ocaml" {< "4.05.0"}
 ]
 synopsis: "Coq is a formal proof management system."
 description: """

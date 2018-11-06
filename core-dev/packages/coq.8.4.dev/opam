@@ -14,6 +14,7 @@ depends: [
   "ocaml" {>= "3.11.2" & != "4.02.0"}
   "camlp5"
   "num"
+  "ocaml" {< "4.05.0"}
 ]
 synopsis: "Formal proof management system."
 url {

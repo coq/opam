@@ -22,7 +22,7 @@ remove: [
   ["rm" "-R" "%{lib}%/coq"]
   ["rm" "-R" "%{share}%/coq"]
 ]
-depends: ["ocaml" "ocamlfind" "camlp5" "num"]
+depends: ["ocaml" {< "4.05.0"} "ocamlfind" "camlp5" "num"]
 synopsis: "Formal proof management system."
 flags: light-uninstall
 extra-files: ["coq.install" "md5=26c6de669a7d377c2be8592c4e3c0260"]

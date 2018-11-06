@@ -22,6 +22,7 @@ depends: [
   "ocaml" {>= "3.12.1" & != "4.02.0"}
   "camlp5"
   "num"
+  "ocaml" {< "4.05.0"}
 ]
 synopsis: "Formal proof management system."
 extra-files: ["coq.install" "md5=26c6de669a7d377c2be8592c4e3c0260"]
