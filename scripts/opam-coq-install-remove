@@ -17,6 +17,11 @@ function setup_root() {
   opam pin list
 }
 
+function tail_log() {
+  tail -c3M $LOG
+}
+trap tail_log ERR 
+
 while [ ! -z "$1" ]; do
  if [ -e "$1" ]; then
   case "$1" in
@@ -28,11 +33,13 @@ while [ ! -z "$1" ]; do
     PKG_NAME_VERSION=`basename "$PKG_VERSION_DIR"`
     PKG_VERSION=`echo $PKG_NAME_VERSION | cut -d . -f 2-`
     PKG_NAME=`echo $PKG_NAME_VERSION | cut -d . -f 1`
+    LOG=log.`echo $1 | tr '/' '-'`
+    > $LOG
     case "$PKG_VERSION" in
     *dev|*beta*)
       echo Add dev repos
-      opam repo add core-dev file://$PWD/core-dev
-      opam repo add extra-dev file://$PWD/extra-dev
+      opam repo add core-dev file://$PWD/core-dev >> $LOG
+      opam repo add extra-dev file://$PWD/extra-dev >> $LOG
     ;;
     *)
     ;;
@@ -40,9 +47,9 @@ while [ ! -z "$1" ]; do
     echo Check if $PKG_NAME_VERSION is compatible with the current environment
     if opam install "$PKG_NAME_VERSION" -y -v -v --show-action; then
       echo Installing $PKG_NAME_VERSION
-      opam install "$PKG_NAME_VERSION" -y -v -v
+      opam install "$PKG_NAME_VERSION" -y -v -v >> $LOG
       echo Removing $PKG_NAME
-      opam remove "$PKG_NAME" -y
+      opam remove "$PKG_NAME" -y >> $LOG
     fi
     echo -en "travis_fold:end:$1\\\\r"
   ;;
