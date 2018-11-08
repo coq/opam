@@ -10,7 +10,7 @@ cache:
 before_script:
   - export HOME=$(pwd)
   - apt-get update -qy
-  - apt-get install unzip libgtksourceview2.0-dev -y
+  - apt-get install unzip libgtksourceview2.0-dev libncurses5-dev -y
   - test -e ${HOME}/opam-cache/cache-${COMPILER}.tgz || scripts/opam-coq-init
   - curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh > install.sh
   - echo | sh install.sh
