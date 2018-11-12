@@ -27,7 +27,6 @@ while [ ! -z "$1" ]; do
   case "$1" in
   */opam)
     echo Testing $1
-    echo -en "travis_fold:start:$1\\\\\r"
     setup_root	  
     PKG_VERSION_DIR=`dirname "$1"`
     PKG_NAME_VERSION=`basename "$PKG_VERSION_DIR"`
@@ -36,10 +35,16 @@ while [ ! -z "$1" ]; do
     LOG=log.`echo $1 | tr '/' '-'`
     > $LOG
     case "$PKG_VERSION" in
+    coq*dev|coq*beta*|coqide*dev|coqide*beta*)
+      echo Add dev repos
+      opam repo add core-dev file://$PWD/core-dev >> $LOG
+      opam update core-dev
+    ;;
     *dev|*beta*)
       echo Add dev repos
       opam repo add core-dev file://$PWD/core-dev >> $LOG
       opam repo add extra-dev file://$PWD/extra-dev >> $LOG
+      opam update core-dev extra-dev
     ;;
     *)
     ;;
@@ -50,8 +55,9 @@ while [ ! -z "$1" ]; do
       opam install "$PKG_NAME_VERSION" -y -v -v >> $LOG
       echo Removing $PKG_NAME
       opam remove "$PKG_NAME" -y >> $LOG
+    else
+      echo Skipping $PKG_NAME_VERSION
     fi
-    echo -en "travis_fold:end:$1\\\\r"
   ;;
   *)
     echo Ignoring $1
