@@ -50,7 +50,7 @@ while [ ! -z "$1" ]; do
     ;;
     esac
     echo Check if $PKG_NAME_VERSION is compatible with the current environment
-    if opam install "$PKG_NAME_VERSION" -y -v -v --show-action; then
+    if opam install "$PKG_NAME_VERSION" -y --show-action; then
       echo Installing $PKG_NAME_VERSION
       opam install "$PKG_NAME_VERSION" -y -v -v >> $LOG
       echo Removing $PKG_NAME
