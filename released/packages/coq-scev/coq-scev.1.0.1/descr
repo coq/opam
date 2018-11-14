@@ -1,0 +1,5 @@
+Scalar evolution is an algebraic theory of recurrences. It has found
+use in modern compilers which use the theory to model loop variables.
+This is an implementation of the scalar evolution theory in Coq. In particular,
+it implements the definitions and simplification lemmas from the
+original "chains of recurrences" paper.
