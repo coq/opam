@@ -1,4 +1,5 @@
 opam-version: "1.2"
+synopsis: "A support library for verified Coq parsers produced by Menhir"
 maintainer: "francois.pottier@inria.fr"
 authors: "Jacques-Henri Jourdan <jacques-henri.jourdan@lri.fr>"
 license: "GPL 2 & INRIA Non-Commercial License Agreement"
