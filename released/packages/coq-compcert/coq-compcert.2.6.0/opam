@@ -1,4 +1,5 @@
 opam-version: "1.2"
+author: "Xavier Leroy <xavier.leroy@inria.fr>"
 maintainer: "dev@clarus.me"
 homepage: "http://compcert.inria.fr/"
 dev-repo: "https://github.com/AbsInt/CompCert.git"
@@ -18,5 +19,5 @@ remove: [
 ]
 depends: [
   "coq" {>= "8.4pl4" & < "8.5~"}
-  "menhir" {>= "20140422"}
+  "menhir" {>= "20151110" & < "20180530"}
 ]

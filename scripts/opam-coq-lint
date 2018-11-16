@@ -8,7 +8,8 @@ while [ ! -z "$1" ]; do
   case "$1" in
   */opam)
     echo Linting $1
-    opam lint $1
+    # 21: incorrect opam version
+    opam lint --warn=-21 $1
     echo
   ;;
   *)

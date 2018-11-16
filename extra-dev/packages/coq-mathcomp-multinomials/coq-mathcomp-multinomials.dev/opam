@@ -2,7 +2,7 @@ opam-version: "1.2"
 maintainer: "pierre-yves@strub.nu"
 homepage: "https://github.com/math-comp/multinomials-ssr"
 bug-reports: "https://github.com/math-comp/multinomials-ssr/issues"
-dev-repo: "git+https://github.com/math-comp/multinomials.git"
+dev-repo: "https://github.com/math-comp/multinomials.git"
 license: "CeCILL-B"
 authors: ["Pierre-Yves Strub"]
 build: [

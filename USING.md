@@ -1,7 +1,7 @@
 
 ## What is OPAM
 
-OPAM is the package manager for the OCaml programming language, the language 
+OPAM is the package manager for the OCaml programming language, the language
 in which Coq is implemented.
 Instructions on
 [how to install OPAM](http://opam.ocaml.org/doc/Install.html)
@@ -14,12 +14,16 @@ Instructions target an OPAM newcomer.
 ## Using OPAM to install Coq
 
 Once the `opam` command is available, i.e. OPAM is installed, one can
-proceed as follows:
+proceed as follows (using opam 2):
 
     export OPAMROOT=~/opam-coq.@COQV@ # installation directory
-    opam init -n --comp=@OCAMLV@ -j 2 # 2 is the number of CPU cores
+    opam init -n --comp=ocaml-base-compiler.@OCAMLV@ -j 2 # 2 is the number of CPU cores
     opam repo add coq-released http://coq.inria.fr/opam/released
     opam install coq.@COQV@ && opam pin add coq @COQV@
+
+If using `opam 1.2`, the `init` command should be:
+
+    opam init -n --comp @OCAMLV@
 
 One may also want to install CoqIDE.  Note that this requires GTK+ development
 files (gtksourceview2) to be available on the system.
@@ -56,4 +60,3 @@ by typing
 One can install the package by typing
 
     opam install coq-sudoku
-

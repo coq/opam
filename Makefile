@@ -2,10 +2,10 @@ COQWEB=~/COQ/www/
 SUITES_COQPKGIDX = extra-dev  released
 SUITES= $(SUITES_COQPKGIDX) core-dev
 H=@
-COQV=8.8.1
+COQV=8.8.2
 OCAMLV=4.02.3
 
-pp = (cd $(COQWEB); yamlpp-0.3/yamlpp $(abspath $(1)) -o $(abspath $(2)))
+pp = (cd $(COQWEB); yamlpp-0.3/yamlpp -l en $(abspath $(1)) -o $(abspath $(2)))
 
 define ppmd
 (echo '<#def TITLE>$(1)</#def>';\

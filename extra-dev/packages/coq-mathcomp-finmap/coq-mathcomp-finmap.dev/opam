@@ -5,6 +5,7 @@ maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
 
 homepage: "http://www.cyrilcohen.fr"
 bug-reports: "Cyril Cohen <cyril.cohen@inria.fr>"
+dev-repo: "https://github.com/math-comp/finmap.git"
 license: "CeCILL-B"
 
 build: [ make "-j" "%{jobs}%" ]

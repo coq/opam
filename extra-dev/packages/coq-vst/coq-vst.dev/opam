@@ -17,7 +17,7 @@ dev-repo: "https://github.com/PrincetonUniversity/VST.git"
 bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 license: "https://raw.githubusercontent.com/PrincetonUniversity/VST/master/LICENSE"
 build: [
-	[make "IGNORECOQVERSION=true" "-j%{jobs}%" "COMPCERT=%{lib}%/coq/user-contrib/compcert" "floyd"] 
+	[make "IGNORECOQVERSION=true" "-j%{jobs}%" "COMPCERT=%{lib}%/coq/user-contrib/compcert" "floyd" "progs"] 
 	]
 install: [
 	["mkdir" "-p" "%{lib}%/coq/user-contrib/VST"]
@@ -25,6 +25,7 @@ install: [
 	["cp" "-r" "veric" "%{lib}%/coq/user-contrib/VST/"]
 	["cp" "-r" "floyd" "%{lib}%/coq/user-contrib/VST/"]
 	["cp" "-r" "sepcomp" "%{lib}%/coq/user-contrib/VST/"]
+	["cp" "-r" "progs" "%{lib}%/coq/user-contrib/VST/"]
 	]
 remove: [
 	["rm" "-fr" "%{lib}%/coq/user-contrib/VST"]

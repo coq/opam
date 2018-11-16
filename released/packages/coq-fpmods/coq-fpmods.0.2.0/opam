@@ -1,4 +1,5 @@
-opam-version: "1.1"
+opam-version: "1.2"
+author: "Cyril Cohen and Anders Mörtberg"
 maintainer: "cohen@crans.org"
 homepage: "http://perso.crans.org/cohen/work/fpmods/"
 license: "MIT"

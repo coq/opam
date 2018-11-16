@@ -19,7 +19,7 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Bignums"]
 depends: [
-  "coq" {>= "8.7"}
+  "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [
   "keyword:integer numbers"

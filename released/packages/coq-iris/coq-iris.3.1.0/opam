@@ -10,7 +10,7 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/iris"]
 depends: [
-  "coq" { (>= "8.6.1" & < "8.8~") | (= "dev") }
-  "coq-mathcomp-ssreflect" { (>= "1.6.1" & < "1.7~") | (= "dev") }
+  "coq" { (>= "8.6.1" & < "8.9~") | (= "dev") }
+  "coq-mathcomp-ssreflect" { (>= "1.6.1" & < "1.8~") | (= "dev") }
   "coq-stdpp" { (= "1.1.0") | (= "dev") }
 ]
