@@ -1,0 +1,26 @@
+opam-version: "1.2"
+maintainer: "siddu.druid@gmail.com"
+homepage: "https://github.com/bollu/SCEV-coq"
+dev-repo: "https://github.com/bollu/SCEV-coq.git"
+bug-reports: "https://github.com/bollu/SCEV-coq/issues"
+authors: ["Siddharth Bhat"]
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SCEV"]
+depends: [
+  "coq" {>= "8.5" & < "8.6~"}
+]
+tags: [
+  "keyword:math"
+  "category:Miscellaneous/Coq Extensions"
+  "date:2016-09-01"
+  "logpath:coq-scev"
+]
+synopsis: "Proofs and simplification lemmas of an algebraic theory of recurrences"
+
