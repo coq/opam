@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/izf"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IZF"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: Intuitionistic set theory" "keyword: pointed graphs" "keyword: type theory" "keyword: intuitionistic choice operator" "keyword: set theory" "keyword: Zermelo-Fraenkel" "category: Mathematics/Logic/Set theory" "date: 2003-02" ]
+authors: [ "Alexandre Miquel <Alexandre.Miquel@pps.jussieu.fr> [http://www.pps.jussieu.fr/~miquel]" ]
+bug-reports: "https://github.com/coq-contribs/izf/issues"
+dev-repo: "https://github.com/coq-contribs/izf.git"

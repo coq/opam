@@ -1,3 +1,5 @@
 dblib.
 
+http://gallium.inria.fr/~fpottier/dblib/README
+
 The dblib library offers facilities for working with de Bruijn indices.

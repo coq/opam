@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/counting"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Counting"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: statistics" "category: Miscellaneous/Coq Extensions" ]
+authors: [ "Stéphane Lescuyer" ]
+bug-reports: "https://github.com/coq-contribs/counting/issues"
+dev-repo: "https://github.com/coq-contribs/counting.git"

@@ -1,0 +1,8 @@
+Historical examples developed in the (pure) Calculus of Constructions.
+
+This is a collection of historical examples developed in
+system CoC that implemented Coquand's Calculus of Constructions.
+Newman.v and Tarski.v originate in version 1.10, Manna.v and
+Format.v are from version 4.3. Their evolution to the Calculus of
+Inductive Constructions (up to Coq V6.3) are in MannaCIC.v and
+FormatCIC.v. (Collection by Hugo Herbelin.)

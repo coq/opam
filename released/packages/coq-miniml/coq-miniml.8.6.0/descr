@@ -1,0 +1,6 @@
+Correctness of the compilation of Mini-ML into the Categorical Abstract Machine.
+
+A formalisation of Mini-ML and of the Categorical
+Abstract Machine (C.A.M) in natural semantics. It also contains the
+definition of the translation from Mini-ML to the CAM and the proof
+that this translation is correct
