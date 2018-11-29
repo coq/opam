@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/fermat4"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Fermat4"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: Diophantus" "keyword: Fermat" "keyword: Arithmetic" "keyword: Infinite Descent" "category: Mathematics/Arithmetic and Number Theory/Number theory" "date: 2005-07" ]
+authors: [ "David Delahaye" "Micaela Mayero" ]
+bug-reports: "https://github.com/coq-contribs/fermat4/issues"
+dev-repo: "https://github.com/coq-contribs/fermat4.git"

@@ -1,0 +1,67 @@
+image: buildpack-deps:stable-scm
+
+variables:
+  NJOBS: "2"
+
+cache:
+  paths:
+    - opam-cache
+
+before_script:
+  - export HOME=$(pwd)
+  - apt-get update -qy
+  - apt-get install unzip libgtksourceview2.0-dev libncurses5-dev -y
+  - test -e ${HOME}/opam-cache/cache-${COMPILER}.tgz || scripts/opam-coq-init
+  - curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh > install.sh
+  - echo | sh install.sh
+  - set -o pipefail
+
+.opam-lint:
+  script:
+    - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-lint
+
+.opam-build:
+  script:
+    - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-install-remove ${HOME}/opam-cache/cache-${COMPILER}.tgz
+
+opam-lint:4.02.3:
+  extends: .opam-lint
+  variables:
+    COMPILER: "4.02.3"
+
+opam-lint:4.06.0:
+  extends: .opam-lint
+  variables:
+    COMPILER: "4.06.0"
+
+opam-build:4.02.3:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.02.3"
+  except:
+    - web
+
+opam-build:4.06.0:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.06.0"
+  except:
+    - web
+
+opam-build-no-timeout:4.02.3:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.02.3"
+  only:
+    - web
+  tags:
+    - no-timeout
+
+opam-build-no-timeout:4.06.0:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.06.0"
+  only:
+    - web
+  tags:
+    - no-timeout

@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/lambek"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Lambek"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: Computational linguistic" "keyword: categorial grammar" "keyword: Lambek calculus..." "category: Computer Science/Formal Languages Theory and Automata" "date: March-July 2003" ]
+authors: [ "Houda Anoun <anoun@labri.fr>" "Pierre Castéran <casteran@labri.fr>" ]
+bug-reports: "https://github.com/coq-contribs/lambek/issues"
+dev-repo: "https://github.com/coq-contribs/lambek.git"

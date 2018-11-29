@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/jprover"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/JProver"]
+depends: [
+  "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [ "keyword: Decision procedures" "keyword: First-order logic" "keyword: Intuitionistic logic" "keyword: Theorem proving" "keyword: Proof search" "category: Miscellaneous/Coq Extensions and Computer Science/Decision Procedures" "date: 2002-04 (contribution since January 2009)" ]
+authors: [ "Huang Guan-Shieng" ]
+bug-reports: "https://github.com/coq-contribs/jprover/issues"
+dev-repo: "https://github.com/coq-contribs/jprover.git"

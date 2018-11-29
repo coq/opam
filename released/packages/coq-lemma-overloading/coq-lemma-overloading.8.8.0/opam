@@ -1,0 +1,31 @@
+opam-version: "1.2"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/lemma-overloading"
+dev-repo: "https://github.com/coq-community/lemma-overloading.git"
+bug-reports: "https://github.com/coq-community/lemma-overloading/issues"
+license: "GPL 3"
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LemmaOverloading"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+  "coq-mathcomp-ssreflect" {>= "1.6.2" & < "1.8~"}
+]
+
+tags: [
+  "keyword:canonical structures"
+  "keyword:proof automation"
+  "keyword:hoare type theory"
+  "keyword:lemma overloading"
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2018-07-24"
+  "logpath:LemmaOverloading"
+]
+authors: [
+  "Georges Gonthier"
+  "Beta Ziliani"
+  "Aleksandar Nanevski"
+  "Derek Dreyer"
+]

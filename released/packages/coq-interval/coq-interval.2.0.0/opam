@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "1.2"
 maintainer: "guillaume.melquiond@inria.fr"
 homepage: "http://coq-interval.gforge.inria.fr/"
 license: "CeCILL-C"
