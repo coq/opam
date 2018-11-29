@@ -2,6 +2,7 @@ opam-version: "1.2"
 maintainer: "Laurent Théry"
 homepage: "https://github.com/thery/GeometricAlgebra"
 bug-reports: "https://github.com/thery/GeometricAlgebra"
+dev-repo : "https://github.com/thery/GeometricAlgebra.git"
 authors : "Laurent Théry"
 license: "LGPL"
 build: [
