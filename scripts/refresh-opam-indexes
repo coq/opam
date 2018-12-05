@@ -10,19 +10,27 @@ notify() {
 echo "OPAM $1 on repo $2 failed:"; cat $LOG
 }
 
+OPAM1=opam
+OPAM2=/usr/local/bin/opam2
+OPAM=$OPAM1
+
 for repo in $@; do
-	cd $repo
-	opam admin check > $LOG 2>&1
-	if [ "$?" != "0" ]; then notify check $repo;
-	else
-		opam admin make > $LOG 2>&1
-		if [ "$?" != "0" ]; then notify make $repo;
-		else
-			# opam admin make does not follow symlinks
-			#   https://github.com/ocaml/opam/pull/2138
-			# we rebuild the index by hand
-			tar czhf index.tar.gz packages/ repo
-		fi
-	fi
-	cd ..
+        cd $repo
+        if [ "$repo" = "core-dev" ];
+        then OPAM=$OPAM2
+        else OPAM=$OPAM1
+        fi
+        $OPAM admin check > $LOG 2>&1
+        if [ "$?" != "0" ]; then notify check $repo;
+        else
+                $OPAM admin make > $LOG 2>&1
+                if [ "$?" != "0" ]; then notify make $repo;
+                else
+                        # opam admin make does not follow symlinks
+                        #   https://github.com/ocaml/opam/pull/2138
+                        # we rebuild the index by hand
+                        tar czhf index.tar.gz packages/ repo
+                fi
+        fi
+        cd ..
 done
