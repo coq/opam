@@ -1,0 +1,22 @@
+opam-version: "2.0"
+authors: [ "The Coq Development Team" ]
+maintainer: "dev@clarus.me"
+homepage: "http://coq.inria.fr/"
+dev-repo: "git+https://github.com/coq/coq.git"
+bug-reports: "https://coq.inria.fr/bugs/"
+license: "LGPL 2"
+build: [
+  ["./configure" "-camlp5dir" "%{lib}%/camlp5" "-prefix" prefix "-with-doc" "no" "-coqide" "no"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+depends: [
+  "ocaml" {>= "3.10.2" & != "4.02.0"}
+  "camlp5"
+  "num"
+  "ocaml" {< "4.05.0"}
+]
+synopsis: "Formal proof management system."
+url {
+  src: "git+https://github.com/coq/coq#v8.3"
+}

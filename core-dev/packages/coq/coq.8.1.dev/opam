@@ -1,0 +1,30 @@
+opam-version: "2.0"
+maintainer: "hugo.herbelin@inria.fr"
+authors: ["The Coq Development Team"]
+homepage: "http://coq.inria.fr/"
+bug-reports: "https://coq.inria.fr/bugs/"
+license: "LGPL 2"
+build: [
+  ["./configure" "-opt" "-camlp5dir" "%{lib}%/camlp5" "-prefix" prefix "-lablgtkdir" "%{lib}%/lablgtk2" "-reals" "all"]
+  [make "world"]
+  [make "install"]
+]
+depends: [
+  "ocaml" {>= "3.07"}
+  "camlp5" {>= "5.01"}
+  "lablgtk" {>= "2.10"}
+  "num"
+  "ocaml" {< "4.05.0"}
+]
+synopsis: "Coq is a formal proof management system."
+description: """
+It provides a formal language to write mathematical definitions,
+executable algorithms and theorems together with an environment for
+semi-interactive development of machine-checked proofs. Typical
+applications are certified programming, mathematical proof
+development, and teaching.
+
+This package includes CoqIDE."""
+url {
+  src: "git+https://github.com/coq/coq#v8.1"
+}

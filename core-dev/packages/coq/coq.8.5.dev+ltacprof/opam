@@ -1,0 +1,31 @@
+opam-version: "2.0"
+authors: ["The Coq Development Team"]
+maintainer: "dev@clarus.me"
+homepage: "http://coq.inria.fr/"
+bug-reports: "https://coq.inria.fr/bugs/"
+license: "LGPL 2"
+build: [
+  ["./configure"
+    "-configdir" "%{lib}%/coq/config"
+    "-mandir" man
+    "-with-doc" "no"
+    "-prefix" prefix
+    "-usecamlp5"
+    "-camlp5dir" "%{lib}%/camlp5"
+    "-coqide" "no"
+    "-debug"]
+  [make "-j%{jobs}%"]
+  [make "install"]
+]
+depends: ["ocaml" "camlp5" "num"]
+patches: [
+  "ltac-profiling-0.9-8.5.patch"
+]
+synopsis: "Formal proof management system."
+extra-files: [
+  ["ltac-profiling-0.9-8.5.patch" "md5=f18bf949805fc87d119a441d1d3b1556"]
+  ["coq.install" "md5=26c6de669a7d377c2be8592c4e3c0260"]
+]
+url {
+  src: "git://github.com/coq/coq#v8.5"
+}
