@@ -10,7 +10,6 @@ build: [
   [make "-j%{jobs}%"]
   [make "install"]
 ]
-logpath: "RelationAlgebra"
 remove: [ "sh" "-exc" "rm -r '%{lib}%/coq/user-contrib/RelationAlgebra'" ]
 tags: [
   "keyword:relation algebra"
@@ -21,7 +20,8 @@ tags: [
   "keyword:automata"
   "keyword:regular expressions"
   "keyword:matrices"
-  "category:Mathematics/Algebra" ]
+  "category:Mathematics/Algebra"
+  "logpath:RelationAlgebra" ]
 authors: [
   "Damien Pous <Damien.Pous@ens-lyon.fr>"
   "Christian Doczkal <christian.doczkal@ens-lyon.fr>"
