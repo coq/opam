@@ -1,8 +1,8 @@
 opam-version: "1.2"
-maintainer: "minki.cho@sf.snu.ac.kr"
-homepage: "https://github.com/snu-sf/paco"
-dev-repo: "https://github.com/snu-sf/paco"
-bug-reports: "https://github.com/snu-sf/paco/issues"
+maintainer: "paco@sf.snu.ac.kr"
+homepage: "https://github.com/snu-sf/paco/"
+dev-repo: "git+https://github.com/snu-sf/paco.git"
+bug-reports: "https://github.com/snu-sf/paco/issues/"
 authors: [
   "Chung-Kil Hur <gil.hur@sf.snu.ac.kr>"
   "Georg Neis <neis@mpi-sws.org>"
@@ -18,8 +18,9 @@ install: [
 ]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Paco"]
 depends: [
-  "coq" { ((>= "8.5.dev" & < "8.8~") | (= "dev"))}
+  "coq" { ((>= "8.5.dev" & < "8.9~") | (= "dev"))}
 ]
+synopsis: "Coq library implementing parameterized coinduction"
 tags: [
   "date:2018-02-11"
 
