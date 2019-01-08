@@ -9,14 +9,10 @@ maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "https://github.com/mit-plv/fiat-crypto"
 bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
 license: "MIT"
-build: [
-  ["git" "submodule" "update" "--init" "--recursive"]
-  [make "-j%{jobs}%" "coq" "coqprime-all"]
-]
+build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Crypto"]
 depends: [
-  "coq" {= "8.8.dev"}
-  "coq-bignums"
+  "coq" {= "8.6.dev"}
 ]
 dev-repo: "https://github.com/mit-plv/fiat-crypto.git"

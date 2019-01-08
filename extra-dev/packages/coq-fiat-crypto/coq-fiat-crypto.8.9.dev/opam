@@ -11,7 +11,7 @@ bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
 license: "MIT"
 build: [
   ["git" "submodule" "update" "--init" "--recursive"]
-  [make "-j%{jobs}%" "coq" "selected-specific-display" "coqprime-all"]
+  [make "-j%{jobs}%" "coq" "coqprime-all"]
 ]
 install: [make "install"]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Crypto"]
