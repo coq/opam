@@ -11,12 +11,12 @@ bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
 license: "MIT"
 build: [
   ["git" "submodule" "update" "--init" "--recursive"]
-  [make "-j%{jobs}%" "coq" "coqprime-all"]
+  [make "-j%{jobs}%" "coq" "selected-specific-display" "coqprime-all"]
 ]
 install: [make "install"]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Crypto"]
 depends: [
-  "coq" {= "8.8.dev"}
+  "coq" {= "dev"}
   "coq-bignums"
 ]
 dev-repo: "https://github.com/mit-plv/fiat-crypto.git"
