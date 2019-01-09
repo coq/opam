@@ -1,0 +1,37 @@
+opam-version: "1.2"
+name: "coq-libvalidsdp"
+version: "0.5"
+maintainer: [
+  "Pierre Roux <pierre.roux@onera.fr>"
+  "Érik Martin-Dorel <erik.martin-dorel@irit.fr>"
+]
+
+homepage: "https://sourcesup.renater.fr/validsdp/"
+dev-repo: "https://github.com/validsdp/validsdp.git"
+bug-reports: "https://github.com/validsdp/validsdp/issues"
+license: "LGPL"
+
+build: [
+  ["./configure"]
+  [make "-j%{jobs}%"]
+]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/libValidSDP"]
+depends: [
+  "coq" {>= "8.7" & < "8.9~"} "coq-interval" {>= "3" & < "4~"} "coq-mathcomp-field" {>= "1.7" & < "1.8~"} "ocamlfind" "camlp4" "coq-flocq" {>= "3" & < "4~"} "coq-bignums"
+]
+synopsis: "LibValidSDP"
+  
+tags: [
+  "keyword:libValidSDP"
+  "keyword:ValidSDP"
+  "keyword:floating-point arithmetic"
+  "keyword:Cholesky decomposition"
+  "category:libValidSDP"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:libValidSDP"
+]
+authors: [
+  "Pierre Roux <pierre.roux@onera.fr>"
+  "Érik Martin-Dorel <erik.martin-dorel@irit.fr>"
+]
