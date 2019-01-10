@@ -6,7 +6,7 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TreeAutomata"]
 depends: [
-  "coq" {>= "8.5"}
+  "coq" {>= "8.5" & < "8.6~"}
   "coq-int-map"
 ]
 tags: [ "keyword:tree automatas" "keyword:bottom up reflexion terms" "category:Computer Science/Formal Languages Theory and Automata" "date:1999-09" ]
