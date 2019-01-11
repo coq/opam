@@ -16,7 +16,7 @@ build: [
 install: [make "install"]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Crypto"]
 depends: [
-  "coq" {= "8.7.dev"}
+  "coq" {= "8.8.dev"}
   "coq-bignums"
 ]
 dev-repo: "https://github.com/mit-plv/fiat-crypto.git"

@@ -5,7 +5,7 @@ authors: [
   "Jade Philipoom <jadep@mit.edu> <jade.philipoom@gmail.com>"
   "Massachusetts Institute of Technology"
 ]
-maintainer: "Matej Košík <matej.kosik@inria.fr>"
+maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "https://github.com/mit-plv/fiat-crypto"
 bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
 license: "MIT"
