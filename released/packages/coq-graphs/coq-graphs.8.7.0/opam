@@ -1,0 +1,15 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/graphs"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Graphs"]
+depends: [
+  "coq" {>= "8.7" & < "8.8~"}
+  "coq-int-map" {>= "8.7" & < "8.8~"}
+]
+tags: [ "keyword: graphs" "keyword: graph theory" "keyword: cycle detection" "keyword: paths" "keyword: constraints" "keyword: inequalities" "keyword: reflection" "category: Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category: Miscellaneous/Extracted Programs/Combinatorics" ]
+authors: [ "Jean Goubault" ]
+bug-reports: "https://github.com/coq-contribs/graphs/issues"
+dev-repo: "https://github.com/coq-contribs/graphs.git"

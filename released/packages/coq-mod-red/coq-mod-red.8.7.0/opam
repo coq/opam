@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/mod-red"
+license: "GNU Lesser General Public License"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ModRed"]
+depends: [
+  "coq" {>= "8.7" & < "8.8~"}
+]
+tags: [ "keyword: Algorithms" "keyword: Performance" "keyword: Computer Arithmetic" "keyword: Modular Reduction" "keyword: Optimization" "category: Mathematics/Arithmetic and Number Theory/Miscellaneous" "date: 2007-12; Updated in April 2009" ]
+authors: [ "Luc Rutten" ]
+bug-reports: "https://github.com/coq-contribs/mod-red/issues"
+dev-repo: "https://github.com/coq-contribs/mod-red.git"

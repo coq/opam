@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/automata"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Automata"]
+depends: [
+  "coq" {>= "8.7" & < "8.8~"}
+]
+tags: [ "keyword: formal language theory" "keyword: finite automatas" "keyword: push-down automatas" "keyword: rational langages" "keyword: kleene" "category: Computer Science/Formal Languages Theory and Automata" "date: June-July 1993" ]
+authors: [ "Judicaël Courant" "Jean-Christophe Filliâtre" ]
+bug-reports: "https://github.com/coq-contribs/automata/issues"
+dev-repo: "https://github.com/coq-contribs/automata.git"

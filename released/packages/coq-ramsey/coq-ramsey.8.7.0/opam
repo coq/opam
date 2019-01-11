@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/ramsey"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Ramsey"]
+depends: [
+  "coq" {>= "8.7" & < "8.8~"}
+]
+tags: [ "keyword: dimension one Ramsey theorem" "keyword: constructive mathematics" "keyword: almost full sets" "category: Mathematics/Logic/See also" "category: Mathematics/Combinatorics and Graph Theory" "category: Miscellaneous/Extracted Programs/Combinatorics" ]
+authors: [ "Marc Bezem" ]
+bug-reports: "https://github.com/coq-contribs/ramsey/issues"
+dev-repo: "https://github.com/coq-contribs/ramsey.git"
