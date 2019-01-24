@@ -24,7 +24,6 @@ install: [
 ]
 
 bug-reports: "?"
-dev-repo: "https://www.cis.upenn.edu/~bcpierce/sf/lf-current/lf.tgz"
 depends: [
   "ocaml"
   "coq" {= "dev"}
@@ -32,7 +31,6 @@ depends: [
 synopsis: "Logical Foundations (Volume 1 of Software Foundations)"
 description:
   "Logical Foundations, serves as the entry-point to the series. It covers functional programming, basic concepts of logic, computer-assisted theorem proving, and Coq."
-flags: light-uninstall
 url {
   src: "https://www.cis.upenn.edu/~bcpierce/sf/lf-current/lf.tgz"
 }

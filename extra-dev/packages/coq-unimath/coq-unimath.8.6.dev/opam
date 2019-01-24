@@ -12,7 +12,7 @@ depends: [
   "ocaml"
   "coq" {= "8.6.dev"}
 ]
-synopsis: ""
+synopsis: "UniMath"
 flags: light-uninstall
 url {
   src: "git+https://github.com/UniMath/UniMath.git#master"

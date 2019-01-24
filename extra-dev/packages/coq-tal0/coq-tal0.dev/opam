@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: "ankitkumar.itbhu@gmail.com"
 homepage: "https://ankitku.github.io/posts/2016-10-30-Mechanizing-Metatheory-of-TAL-0.html"
-dev-repo: "https://github.com/ankitku/TAL0"
+dev-repo: "git+https://github.com/ankitku/TAL0"
 bug-reports: "https://github.com/ankitku/TAL0/issues"
 authors: ["Ankit Kumar"]
 license: "MIT"

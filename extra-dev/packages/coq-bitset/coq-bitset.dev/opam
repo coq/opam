@@ -5,7 +5,7 @@ authors: ["Arthur Blot <arthur.blot@ens-lyon.fr>"
           "Pierre-Évariste Dagand <pierre-evariste.dagand@lip6.fr>"]
 homepage: "https://github.com/artart78/coq-bitset"
 bug-reports: "https://github.com/artart78/coq-bitset"
-license: ""
+license: "Apache-2.0"
 build: [
 ["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
 [make "-j%{jobs}%"]

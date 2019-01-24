@@ -17,7 +17,6 @@ install: [
 ]
 
 bug-reports: "?"
-dev-repo: "https://www.cis.upenn.edu/~bcpierce/sf/vfa-current/vfa.tgz"
 depends: [
   "ocaml"
   "coq" {= "dev"}
@@ -25,7 +24,6 @@ depends: [
 synopsis: "Verified Functional Algorithms (Volume 3 of Software Foundations)"
 description:
   "Verified Functional Algorithms, shows how a variety of fundamental data structures can be mechanically verified."
-flags: light-uninstall
 url {
   src: "https://www.cis.upenn.edu/~bcpierce/sf/vfa-current/vfa.tgz"
 }

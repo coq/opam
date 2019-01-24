@@ -24,7 +24,6 @@ install: [
 ]
 
 bug-reports: "?"
-dev-repo: "https://www.cis.upenn.edu/~bcpierce/sf/plf-current/plf.tgz"
 depends: [
   "ocaml"
   "coq" {= "dev"}
@@ -33,7 +32,6 @@ synopsis:
   "Programming Language Foundations (Volume 2 of Software Foundations)"
 description:
   "Programming Language Foundations, surveys the theory of programming languages, including operational semantics, Hoare logic, and static type systems."
-flags: light-uninstall
 url {
   src: "https://www.cis.upenn.edu/~bcpierce/sf/plf-current/plf.tgz"
 }
