@@ -1,2 +1,2 @@
-http: "https://gitlab.mpi-sws.org/FP/iris-coq/repository/archive.tar.gz?ref=iris-3.0.0"
-checksum: "8eb6b30526e0bb5de1c54642446b786b"
+http: "https://gitlab.mpi-sws.org/iris/iris/repository/iris-3.0.0/archive.tar.gz"
+checksum: "57b3384834a5347db223220cdcd9eb9e"
