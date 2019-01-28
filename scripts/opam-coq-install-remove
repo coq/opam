@@ -34,13 +34,13 @@ while [ ! -z "$1" ]; do
     PKG_NAME=`echo $PKG_NAME_VERSION | cut -d . -f 1`
     LOG=log.`echo $1 | tr '/' '-'`
     > $LOG
-    case "$PKG_VERSION" in
-    coq*dev|coq*beta*|coqide*dev|coqide*beta*)
+    case "$PKG_VERSION_DIR" in
+    *core-dev*)
       echo Add dev repos
       opam repo add core-dev file://$PWD/core-dev >> $LOG
       opam update core-dev
     ;;
-    *dev|*beta*)
+    *extra-dev*)
       echo Add dev repos
       opam repo add core-dev file://$PWD/core-dev >> $LOG
       opam repo add extra-dev file://$PWD/extra-dev >> $LOG
