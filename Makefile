@@ -7,15 +7,6 @@ OCAMLV=4.02.3
 
 pp = (cd $(COQWEB); yamlpp-0.3/yamlpp -l en $(abspath $(1)) -o $(abspath $(2)))
 
-define ppmd
-(echo '<#def TITLE>$(1)</#def>';\
- echo '<#include "incl/header.html">';\
- markdown $(2).md;\
- echo '<#include "incl/footer.html">') > templates/$(3).html;\
-$(call pp,templates/$(3).html,www/$(3).html);\
-sed -i -e 's/@COQV@/$(COQV)/g' -e 's/@OCAMLV@/$(OCAMLV)/g' www/$(3).html
-endef
-
 ifeq "$(shell test ! -z '$(COQWEB)' -a -d $(COQWEB) || echo false)" "false"
 $(error "Please use 'make COQWEB=path/to/coq/www'")
 endif
@@ -25,9 +16,6 @@ all: check-deps
 	@./scripts/refresh-opam-indexes $(SUITES)
 	$(H)./scripts/archive2web templates/index.html.in $(SUITES_COQPKGIDX)
 	$(H)$(call pp,templates/index.html,www/index.html)
-	$(H)$(call ppmd,Creating and Submitting a Package,PACKAGING,packaging)
-	$(H)$(call ppmd,Layout of the Coq Package Index,LAYOUT,layout)
-	$(H)$(call ppmd,Installing Coq via OPAM,USING,using)
 	$(H)ln -sf $(COQWEB)/styles www/styles
 	$(H)ln -sf $(COQWEB)/files www/files
 
