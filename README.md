@@ -1,7 +1,7 @@
 # OPAM archive for Coq
 
 All OPAM repositories for Coq packages live here.
-Packages are organized according to the [layout](LAYOUT.md).
+Packages are organized according to the [layout](https://coq.inria.fr/opam-layout.html).
 
 ## Repositories
 
