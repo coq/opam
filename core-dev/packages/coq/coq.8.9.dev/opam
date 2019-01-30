@@ -49,7 +49,7 @@ remove: [
   "%{share}%/texmf/tex/latex/misc/coqdoc.sty"
   ]
 ]
-synopsis: "Formal proof management system."
+synopsis: "Formal proof management system"
 flags: light-uninstall
 extra-files: ["coq.install" "md5=a5d0f9a35ef24aa3948a6960e657b206"]
 url {
