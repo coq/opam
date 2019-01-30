@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/lambek"
 license: "LGPL 2"
@@ -9,7 +9,20 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Lambek"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:computational linguistic" "keyword:categorial grammar" "keyword:lambek calculus" "category:Computer Science/Formal Languages Theory and Automata" "date:March-July 2003" ]
 authors: [ "Houda Anoun <anoun@labri.fr>" "Pierre Castéran <casteran@labri.fr>" ]
+synopsis: "A Coq Toolkit for Lambek Calculus."
+description: """
+This library contains some definitions concerning Lambek calculus.
+Three formalisations of this calculus are proposed, and also some certified
+functions which translate derivations from one formalism to another.
+Several derived properties are proved and also some meta-theorems.
+Users can define their own lexicons and use the defined tactics to prove the
+derivation of sentences in a particular system (L, NL, LP, NLP ...)"""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/lambek.git#master"
+}

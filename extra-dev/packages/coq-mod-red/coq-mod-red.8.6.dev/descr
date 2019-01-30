@@ -1,3 +1,0 @@
-Efficient Reduction of Large Integers by Small Moduli.
-
-Fast reduction of integers by moduli up to 2^(w-1), where w is a processor's word size.

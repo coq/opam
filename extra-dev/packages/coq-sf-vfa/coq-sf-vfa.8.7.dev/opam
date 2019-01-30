@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Matej Košík <matej.kosik@inria.fr>"
 homepage: "https://softwarefoundations.cis.upenn.edu/"
 doc: "https://softwarefoundations.cis.upenn.edu/"
@@ -18,8 +18,14 @@ install: [
 
 bug-reports: "?"
 dev-repo: "https://www.cis.upenn.edu/~bcpierce/sf/vfa-current/vfa.tgz"
-remove: []
 depends: [
+  "ocaml"
   "coq" {= "8.7.dev"}
 ]
-tags: []
+synopsis: "Verified Functional Algorithms (Volume 3 of Software Foundations)"
+description:
+  "Verified Functional Algorithms, shows how a variety of fundamental data structures can be mechanically verified."
+flags: light-uninstall
+url {
+  src: "https://www.cis.upenn.edu/~bcpierce/sf/vfa-current/vfa.tgz"
+}

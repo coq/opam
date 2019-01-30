@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/mutual-exclusion"
 license: "LGPL 2"
@@ -9,7 +9,19 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MutualExclusion"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:mutual exclusion" "keyword:concurrency" "keyword:peterson's algorithm" "keyword:coinductive types" "keyword:coinduction" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" "category:Miscellaneous/Extracted Programs/Automata and protocols" ]
 authors: [ "Eduardo Giménez <>" ]
+synopsis:
+  "A certification of Peterson's algorithm for managing mutual exclusion."
+description: """
+This is a proof of certification of Peterson's algorithm
+for managing mutual exclusion. The case of two processes is treated
+in the directory called ``binary'' (see the README file in this
+directory). The case of n processes will be available soon."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/mutual-exclusion.git#master"
+}

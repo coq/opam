@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://github.com/mattam82/Russell"
 license: "LGPL"
-dev-repo: "https://github.com/mattam82/Russell.git"
+dev-repo: "git+https://github.com/mattam82/Russell.git"
 bug-reports: "https://github.com/mattam82/Russell/issues"
 build: [
   ["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
@@ -13,7 +13,15 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Lambda"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5~"}
 ]
 tags: [ "keyword:metatheory" "category:Miscellaneous/Coq Extensions" "category:Computer Science/Lambda Calculi" ]
 authors: [ "Matthieu Sozeau <matthieu.sozeau@inria.fr>" ]
+synopsis: "Russell Metatheoretic Study."
+description:
+  "This development prove subject reduction of the Russell language (CC with prop, set and coercion of subset types) using the TPOSR machinery. This includes an equivalence of judgmental and definitional presentations of the system."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/mattam82/Russell.git"
+}

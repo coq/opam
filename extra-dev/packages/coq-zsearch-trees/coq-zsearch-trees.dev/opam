@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/zsearch-trees"
 license: "LGPL 2"
@@ -9,7 +9,15 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZSearchTrees"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:binary search trees" "category:Computer Science/Data Types and Data Structures" "category:Miscellaneous/Extracted Programs/Data structures" ]
 authors: [ "Pierre Castéran <>" ]
+synopsis: "Binary Search Trees."
+description:
+  "Algorithms for collecting, searching, inserting and deleting elements in binary search trees on nat"
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/zsearch-trees.git#master"
+}

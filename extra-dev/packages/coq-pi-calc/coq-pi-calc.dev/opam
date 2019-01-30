@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/pi-calc"
 license: "Proprietary"
@@ -9,7 +9,19 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PiCalc"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:process algebra" "keyword:pi calculus" "keyword:concurrency" "keyword:formal verification" "keyword:higher order syntax" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:1998-07" ]
 authors: [ "Ivan Scagnetto <scagnett@dimi.uniud.it>" ]
+synopsis: "Pi-calculus in Coq."
+description: """
+This is a HOAS-based encoding of the pi-calculus (as originally
+conceived by Milner, Parrow and Walker in "A Calculus of Mobile
+Processes" Parts I-II, Information and Computation n. 100)
+together with the formal verification of a large part of the
+metatheory of Strong Late Bisimilarity."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/pi-calc.git#master"
+}

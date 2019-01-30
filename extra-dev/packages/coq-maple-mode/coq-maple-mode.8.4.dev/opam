@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/maple-mode"
 license: "Proprietary"
@@ -9,7 +9,19 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MapleMode"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:maple" "keyword:simplification" "keyword:field tactic" "category:Miscellaneous/Coq Extensions" "date:2002-03" ]
 authors: [ "David Delahaye <>" "Micaela Mayero <>" ]
+synopsis: "A Maple Mode for Coq."
+description: """
+This contribution is an interface between Coq and Maple. In
+particular, this exports the functions simplify/factor/expand/normal giving
+the corresponding tactics Simplify/Factor/Expand/Normal. The manipulations
+carried out by these tactics are proved thanks to the tactic Field. These
+tactics can be also used as functions by means of the Eval ... In command."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/maple-mode.git#v8.4"
+}

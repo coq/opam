@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/ptsf"
 license: "BSD"
@@ -9,8 +9,16 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PTSF"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
   "coq-ptsatr" {= "dev"}
 ]
 tags: [ "keyword:pure type systems" "keyword:judgmental equality" "keyword:explicit equality proofs" "keyword:proof relevance" "category:Mathematics/Logic/Type theory" ]
 authors: [ "Herman Geuvers <herman@cs.ru.nl>" "Floris van Doorn <fpv@andrew.cmu.edu>" "Freek Wiedijk <freek@cs.ru.nl>" ]
+synopsis: "Explicit Convertibility Proofs in Pure Type Systems."
+description:
+  "Formalization of the proof that PTS and PTS with explicit convertibility proofs (PTSf) are equivalent."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/ptsf.git#master"
+}

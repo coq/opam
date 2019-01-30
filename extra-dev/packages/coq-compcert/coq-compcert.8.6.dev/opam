@@ -1,19 +1,24 @@
-opam-version: "1.2"
-author: "Xavier Leroy <xavier.leroy@inria.fr>"
+opam-version: "2.0"
 maintainer: "Jacques-Henri Jourdan <jacques-Henri.jourdan@normalesup.org>"
 homepage: "http://compcert.inria.fr/"
-dev-repo: "https://github.com/AbsInt/CompCert.git"
+dev-repo: "git+https://github.com/AbsInt/CompCert.git"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
 license: "INRIA Non-Commercial License Agreement"
 build: [
-  ["./configure" "ia32-linux" {os = "linux"}
-  "ia32-macosx" {os = "darwin"}
-  "ia32-cygwin" {os = "cygwin"}
-  "-bindir" "%{bin}%"
-  "-libdir" "%{lib}%/compcert"
-  "-install-coqdev"
-  "-clightgen"
-  "-coqdevdir" "%{lib}%/coq/user-contrib/compcert"]
+  [
+    "./configure"
+    "ia32-linux" {os = "linux"}
+    "ia32-macosx" {os = "macos"}
+    "ia32-cygwin" {os = "cygwin"}
+    "-bindir"
+    "%{bin}%"
+    "-libdir"
+    "%{lib}%/compcert"
+    "-install-coqdev"
+    "-clightgen"
+    "-coqdevdir"
+    "%{lib}%/coq/user-contrib/compcert"
+  ]
   [make "-j%{jobs}%"]
 ]
 install: [
@@ -27,6 +32,13 @@ remove: [
   ["rm" "%{share}%/compcert.ini"]
 ]
 depends: [
+  "ocaml"
   "coq" {= "8.6.dev"}
   "menhir" {>= "20180530"}
 ]
+synopsis: "The CompCert C compiler."
+authors: "Xavier Leroy <xavier.leroy@inria.fr>"
+flags: light-uninstall
+url {
+  src: "git+https://github.com/AbsInt/CompCert.git"
+}

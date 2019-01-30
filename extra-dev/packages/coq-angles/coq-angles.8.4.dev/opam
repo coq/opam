@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/angles"
 license: "Proprietary"
@@ -9,7 +9,23 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Angles"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:pcoq" "keyword:geometry" "keyword:plane geometry" "keyword:oriented angles" "category:Mathematics/Geometry/General" "date:2002-01-15" ]
 authors: [ "Frédérique Guilhot <Frederique.Guilhot@sophia.inria.fr>" ]
+synopsis: "Formalization of the oriented angles theory."
+description: """
+The basis of the contribution is a formalization of the
+theory of oriented angles of non-zero vectors. Then, we prove some
+classical plane geometry theorems: the theorem which gives a necessary
+and sufficient condition so that four points are cocyclic, the one
+which shows that the reflected points with respect to the sides of a
+triangle orthocenter are on its circumscribed circle, the Simson's
+theorem and the Napoleon's theorem. The reader can refer to the
+associated research report (http://www-sop.inria.fr/lemme/FGRR.ps) and
+the README file of the contribution."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/angles.git#v8.4"
+}

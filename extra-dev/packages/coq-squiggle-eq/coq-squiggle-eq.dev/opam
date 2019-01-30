@@ -1,9 +1,9 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "abhishek.anand.iitg@gmail.com"
 homepage: "https://github.com/aa755/SquiggleEq"
 authors: ["Abhishek Anand" "Vincent Rahli"]
 bug-reports: "https://github.com/aa755/SquiggleEq/issues"
-dev-repo: "https://github.com/aa755/SquiggleEq.git"
+dev-repo: "git+https://github.com/aa755/SquiggleEq.git"
 license: "MIT"
 build: [
   [make "-j%{jobs}%"]
@@ -13,6 +13,14 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SquiggleEq"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5.0"}
   "coq-ext-lib"
 ]
+synopsis: "A formalization of Howe's Squiggle equality"
+description:
+  "Howe, Douglas J. “Equality in Lazy Computation Systems.” In LICS, 198–203, 1989."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/aa755/SquiggleEq"
+}

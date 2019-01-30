@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: [ "The Coq Development Team" ]
 maintainer: "coqdev@inria.fr"
 homepage: "https://coq.inria.fr/"
@@ -20,10 +20,17 @@ build: [
 ]
 install: [make "install-ide-bin" "install-ide-files" "install-ide-info" "install-ide-devfiles"]
 remove: ["rm" "-R" "%{lib}%/coq/ide" "%{doc}%/FAQ-CoqIde"]
-dev-repo: "https://scm.gforge.inria.fr/anonscm/git/coq/coq.git"
+dev-repo: "git+https://scm.gforge.inria.fr/anonscm/git/coq/coq.git"
 depends: [
+  "ocaml"
   "camlp5"
   "coq" {= "8.6.dev"}
   "lablgtk"
   "conf-gtksourceview"
 ]
+synopsis: "IDE of the Coq formal proof management system."
+flags: light-uninstall
+extra-files: ["coq-coqide.install" "md5=d005cda8cb7888fbea94c5416dcb31bc"]
+url {
+  src: "git://github.com/coq/coq#v8.6"
+}

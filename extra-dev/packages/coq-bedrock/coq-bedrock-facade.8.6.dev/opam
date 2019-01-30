@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: [
   "Adam Chlipala <adamc@csail.mit.edu>"
   "Gregory Malecha <gmalecha@cs.harvard.edu>"
@@ -14,6 +14,13 @@ build: [make "-j%{jobs}%" "facade"]
 install: [make "install-facade"]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Bedrock"]
 depends: [
+  "ocaml"
   "coq" {= "8.6.dev"}
 ]
-dev-repo: "https://github.com/mit-plv/bedrock.git"
+dev-repo: "git+https://github.com/mit-plv/bedrock.git"
+synopsis:
+  "[PORTING IN PROGRESS] Mostly automated verification of higher-order programs with higher-order separation logic, with a small trusted code base.  Note that somet things are still broken with 8.6, and this is primarily for benchmarking/compatibility testing purposes, at the moment."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/mit-plv/bedrock.git#master"
+}

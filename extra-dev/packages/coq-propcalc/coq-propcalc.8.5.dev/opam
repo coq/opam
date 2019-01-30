@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/abp"
 license: "BSD"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PropCalc"]
 depends: [
+  "ocaml"
   "coq" {= "8.5.dev"}
 ]
 tags: [ "keyword:propositional calculus" "keyword:classical logic" "keyword:completeness" "keyword:natural deduction" "keyword:sequent calculus" "keyword:cut elimination" "category:Mathematics/Logic/Foundations" ]
 authors: [ "Floris van Doorn <fpvdoorn@gmail.com>" ]
 bug-reports: "https://github.com/coq-contribs/propcalc/issues"
-dev-repo: "https://github.com/coq-contribs/propcalc.git"
+dev-repo: "git+https://github.com/coq-contribs/propcalc.git"
+synopsis: "Propositional Calculus"
+description: """
+Formalization of basic theorems about classical propositional logic. The main theorems are (1) the soundness and completeness of natural deduction calculus, (2) the equivalence between natural deduction calculus, Hilbert systems and sequent calculus and (3) cut elimination for sequent calculus.
+Keywords: propositional calculus, classical logic, completeness, natural deduction, sequent calculus, cut elimination."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/propcalc.git#v8.5"
+}

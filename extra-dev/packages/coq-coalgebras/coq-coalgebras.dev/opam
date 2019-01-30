@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/coalgebras"
 license: "LGPL"
@@ -9,7 +9,15 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coalgebras"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:coalgebra" "keyword:bisimulation" "keyword:weakly final" "keyword:coiteration" "keyword:coinductive types" "category:Mathematics/Category Theory" "date:2008-10" ]
 authors: [ "Milad Niqui <M.Niqui@cwi.nl>" ]
+synopsis: "Coalgebras, bisimulation and lambda-coiteration."
+description:
+  "This contribution contains a formalisation of coalgebras, bisimulation on coalgebras, weakly final coalgebras, lambda-coiteration definition scheme (including primitive corecursion) and a version of lambda-bisimulation. The formalisation is modular. The implementation of the module types for streams and potentially infinite Peano numbers are provided using the coinductive types."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/coalgebras.git#master"
+}

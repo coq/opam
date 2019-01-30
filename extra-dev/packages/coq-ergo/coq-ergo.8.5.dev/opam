@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/ergo"
 license: "Proprietary"
@@ -6,6 +6,7 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Ergo"]
 depends: [
+  "ocaml"
   "coq" {= "8.5.dev"}
   "coq-containers" {= "8.5.dev"}
   "coq-counting" {= "8.5.dev"}
@@ -14,4 +15,12 @@ depends: [
 tags: [ "keyword:reflexive tactic" "keyword:decision procedure" "keyword:satisfiability modulo theories" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
 authors: [ "Stéphane Lescuyer <>" ]
 bug-reports: "https://github.com/coq-contribs/ergo/issues"
-dev-repo: "https://github.com/coq-contribs/ergo.git"
+dev-repo: "git+https://github.com/coq-contribs/ergo.git"
+synopsis:
+  "Ergo: a Coq plugin for reification of term with arbitrary signature."
+description:
+  "This library provides a tactic that performs SMT solving (SAT + congruence closure + arithmetic)."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/ergo.git#v8.5"
+}

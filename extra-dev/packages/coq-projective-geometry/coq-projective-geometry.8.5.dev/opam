@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/projective-geometry"
 license: "Proprietary"
@@ -6,9 +6,25 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ProjectiveGeometry"]
 depends: [
+  "ocaml"
   "coq" {= "8.5.dev"}
 ]
 tags: [ "keyword:geometry" "keyword:projective" "keyword:fano" "keyword:homogeneous coordinates model" "keyword:flat" "keyword:rank" "keyword:desargues" "keyword:moulton" "category:Mathematics/Geometry/General" "date:2009-10" ]
 authors: [ "Nicolas Magaud <Nicolas.Magaud@lsiit-cnrs.unistra.fr>" "Julien Narboux <Julien.Narboux@lsiit-cnrs.unistra.fr>" "Pascal Schreck <Pascal.Schreck@lsiit-cnrs.unistra.fr>" ]
 bug-reports: "https://github.com/coq-contribs/projective-geometry/issues"
-dev-repo: "https://github.com/coq-contribs/projective-geometry.git"
+dev-repo: "git+https://github.com/coq-contribs/projective-geometry.git"
+synopsis: "Projective Geometry."
+description: """
+This contributions contains elements of formalization of projective geometry.
+In the plane:
+Two axiom systems are shown equivalent. We prove some results about the
+decidability of the the incidence and equality predicates. The classic
+notion of duality between points and lines is formalized thanks to a
+functor. The notion of 'flat' is defined and flats are characterized.
+Fano's plane, the smallest projective plane is defined. We show that Fano's plane is desarguesian.
+In the space:
+We prove Desargues' theorem."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/projective-geometry.git#v8.5"
+}

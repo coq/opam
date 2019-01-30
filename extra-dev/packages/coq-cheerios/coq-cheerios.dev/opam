@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "palmskog@gmail.com"
 
 homepage: "https://github.com/uwplse/cheerios"
-dev-repo: "https://github.com/uwplse/cheerios.git"
+dev-repo: "git+https://github.com/uwplse/cheerios.git"
 bug-reports: "https://github.com/uwplse/cheerios/issues"
 license: "BSD"
 
@@ -13,10 +13,10 @@ build: [
 install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/Cheerios'" ]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
   "coq-struct-tact" {= "dev"}
 ]
-
 tags: [ "keyword:serialization" ]
 authors: [
   "Keith Simmons <>"
@@ -25,3 +25,7 @@ authors: [
   "Justin Adsuara <>"
   "Karl Palmskog <>"
 ]
+synopsis: "Cheerios is a Coq library for serialization."
+url {
+  src: "git+https://github.com/uwplse/cheerios.git#dev"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/topology"
 license: "LGPL"
@@ -9,8 +9,16 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Topology"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
   "coq-zorns-lemma" {= "8.4.dev"}
 ]
 tags: [ "keyword:topology" "keyword:filters" "keyword:nets" "keyword:metric spaces" "keyword:real analysis" "keyword:urysohn's lemma" "keyword:tietze extension theorem" "category:Mathematics/Real Calculus and Topology" ]
 authors: [ "Daniel Schepler <dschepler@gmail.com>" ]
+synopsis: "General Topology."
+description:
+  "This library develops some of the basic concepts and results of general topology."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/topology.git#v8.4"
+}

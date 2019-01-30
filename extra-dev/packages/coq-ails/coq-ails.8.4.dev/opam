@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/ails"
 license: "LGPL 2"
@@ -9,7 +9,17 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/AILS"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:ails" "keyword:aircraft" "keyword:trajectory" "keyword:conflict" "keyword:collision" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "date:2002" ]
 authors: [ "Olivier Desmettre <>" ]
+synopsis: "Proof of AILS algorithm."
+description: """
+An aircraft trajectory modeling and analysis using the AILS
+algorithm (Airborne Information for Lateral Spacing) to warn
+against possible collisions."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/ails.git#v8.4"
+}

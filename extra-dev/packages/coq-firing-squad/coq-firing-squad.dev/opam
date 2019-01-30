@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/firing-squad"
 license: "LGPL 2"
@@ -9,7 +9,16 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FiringSquad"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:concurrency" "keyword:synchronization" "keyword:finite state machines" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" "category:Miscellaneous/Extracted Programs/Automata and protocols" ]
 authors: [ "Jean Duprat <>" ]
+synopsis: "Firing Squad Synchronization Problem."
+description: """
+This contribution is a formal verification of a solution
+of the firing squad synchronization problem."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/firing-squad.git#master"
+}

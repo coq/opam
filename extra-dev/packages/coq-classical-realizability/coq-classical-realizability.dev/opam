@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/classical-realizability"
 license: "BSD"
@@ -9,7 +9,21 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ClassicalRealizability"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:classical realizability" "keyword:krivine's realizability" "keyword:primitive datatype" "keyword:non determinism" "keyword:quote" "keyword:axiom of countable choice" "keyword:real numbers" "category:Mathematics/Logic/Foundations" ]
 authors: [ "Lionel Rieg <lionel.rieg@ens-lyon.org>" ]
+synopsis: "Krivine's classical realizability."
+description: """
+The aim of this Coq library is to provide a framework for checking
+proofs in Krivine's classical realizability for second-order Peano arithmetic.
+
+It is designed to be as extensible as the original theory by Krivine and to
+support on-the-fly extensions by new instructions with their evaluation
+rules."""
+flags: light-uninstall
+url {
+  src:
+    "git+https://github.com/coq-contribs/classical-realizability.git#master"
+}

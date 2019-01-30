@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Matej Košík <matej.kosik@inria.fr>"
 homepage: "https://softwarefoundations.cis.upenn.edu/"
 doc: "https://softwarefoundations.cis.upenn.edu/"
@@ -25,8 +25,15 @@ install: [
 
 bug-reports: "?"
 dev-repo: "https://www.cis.upenn.edu/~bcpierce/sf/plf-current/plf.tgz"
-remove: []
 depends: [
+  "ocaml"
   "coq" {= "8.7.dev"}
 ]
-tags: []
+synopsis:
+  "Programming Language Foundations (Volume 2 of Software Foundations)"
+description:
+  "Programming Language Foundations, surveys the theory of programming languages, including operational semantics, Hoare logic, and static type systems."
+flags: light-uninstall
+url {
+  src: "https://www.cis.upenn.edu/~bcpierce/sf/plf-current/plf.tgz"
+}

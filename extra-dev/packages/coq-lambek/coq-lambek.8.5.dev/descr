@@ -1,8 +1,0 @@
-A Coq Toolkit for Lambek Calculus.
-
-This library contains some definitions concerning Lambek calculus.
-Three formalisations of this calculus are proposed, and also some certified
-functions which translate derivations from one formalism to another.
-Several derived properties are proved and also some meta-theorems.
-Users can define their own lexicons and use the defined tactics to prove the
-derivation of sentences in a particular system (L, NL, LP, NLP ...)

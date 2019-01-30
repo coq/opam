@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/fssec-model"
 license: "Proprietary"
@@ -9,7 +9,14 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FSSecModel"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:security" "keyword:filesystem" "keyword:unix" "keyword:mls" "keyword:access control" "category:Computer Science/Operating Systems" "date:2002-04-24" ]
 authors: [ "Maximiliano Cristiá <>" ]
+synopsis:
+  "Formal verification of an extension of a UNIX compatible, secure filesystem."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/fssec-model.git#v8.4"
+}

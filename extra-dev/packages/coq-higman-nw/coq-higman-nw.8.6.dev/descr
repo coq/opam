@@ -1,6 +1,0 @@
-A program from an A-translated impredicative proof of Higman's Lemma.
-
-The file Higman.v formalizes an A-translated version of
-Nash-Williams impredicative and classical proof of Higman's lemma
-for a two-letter alphabet.
-A constructive and impredicative program can be extracted from the proof.

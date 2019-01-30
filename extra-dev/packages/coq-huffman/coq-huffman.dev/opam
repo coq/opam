@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/huffman"
 license: "LGPL 2"
@@ -9,7 +9,20 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Huffman"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:data compression" "keyword:code" "keyword:huffman tree" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category:Miscellaneous/Extracted Programs/Combinatorics" "date:2003-10" ]
 authors: [ "Laurent Théry <>" ]
+synopsis: "A correctness proof of Huffman algorithm."
+description: """
+This directory contains the proof of correctness of Huffman algorithm
+as described in:
+
+David A. Huffman,
+"A Method for the Construction of Minimum-Redundancy Codes,"
+Proc. IRE, pp. 1098-1101, September 1952."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/huffman.git#master"
+}

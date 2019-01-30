@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/ctltctl"
 license: "LGPL 2"
@@ -6,9 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CTLTCTL"]
 depends: [
+  "ocaml"
   "coq" {= "8.5.dev"}
 ]
 tags: [ "keyword:ctl" "keyword:tctl" "keyword:real time systems" "keyword:reactive systems" "keyword:temporal logic" "keyword:timed automatas" "keyword:timed graphs" "keyword:discrete time" "keyword:modal logic" "category:Mathematics/Logic/Modal logic" "date:February-March 2000" ]
 authors: [ "Carlos Daniel Luna <>" ]
 bug-reports: "https://github.com/coq-contribs/ctltctl/issues"
-dev-repo: "https://github.com/coq-contribs/ctltctl.git"
+dev-repo: "git+https://github.com/coq-contribs/ctltctl.git"
+synopsis:
+  "Computation Tree Logic for Reactive Systems and Timed Computation Tree Logic for Real Time Systems."
+description: """
+This library formalises two logics for reasoning about
+reactive systems (CTL) and real time systems (TCTL) represents using
+timed automatas (timed graphs) with discrete time."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/ctltctl.git#v8.5"
+}

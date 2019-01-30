@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: [ "Matthieu Sozeau <matthieu.sozeau@inria.fr>" "Cyprien Mangin <cyprien.mangin@m4x.org>" ]
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://mattam82.github.io/Coq-Equations"
-dev-repo: "https://github.com/mattam82/Coq-Equations.git"
+dev-repo: "git+https://github.com/mattam82/Coq-Equations.git"
 bug-reports: "https://github.com/mattam82/Coq-Equations/issues"
 license: "LGPL 2.1"
 build: [
@@ -14,5 +14,11 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Equations"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
+synopsis: "A function definition package for Coq"
+flags: light-uninstall
+url {
+  src: "git+https://github.com/mattam82/Coq-Equations#8.6"
+}

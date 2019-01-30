@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: [
   "Andres Erbsen <andreser@mit.edu>"
   "Google Inc."
@@ -13,6 +13,13 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Crypto"]
 depends: [
+  "ocaml"
   "coq" {= "8.6.dev"}
 ]
-dev-repo: "https://github.com/mit-plv/fiat-crypto.git"
+dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
+synopsis:
+  "Cryptographic Primitive Code Generation in Fiat (legacy pipeline)."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/mit-plv/fiat-crypto.git#v8.6"
+}

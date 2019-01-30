@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/domain-theory"
 license: "Proprietary"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/DomainTheory"]
 depends: [
+  "ocaml"
   "coq" {= "8.5.dev"}
 ]
 tags: [ "keyword:concrete domains" "category:Computer Science/Lambda Calculi" ]
 authors: [ "Gilles Kahn <>" ]
 bug-reports: "https://github.com/coq-contribs/domain-theory/issues"
-dev-repo: "https://github.com/coq-contribs/domain-theory.git"
+dev-repo: "git+https://github.com/coq-contribs/domain-theory.git"
+synopsis: "Elements of Domain Theory."
+description: """
+Domain theory as devised by Scott and Plotkin and
+following Kahn and Plotkin paper on Concrete Domains"""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/domain-theory.git#v8.5"
+}

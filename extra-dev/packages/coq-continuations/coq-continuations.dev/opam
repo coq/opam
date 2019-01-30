@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/continuations"
 license: "Proprietary"
@@ -9,7 +9,19 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Continuations"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:exceptions" "keyword:monads" "keyword:continuations" "keyword:cps" "category:Computer Science/Semantics and Compilation/Semantics" "category:Miscellaneous/Extracted Programs/Combinatorics" ]
 authors: [ "Jean-François Monin <>" ]
+synopsis: "A toolkit to reason with programs raising exceptions."
+description: """
+We show a way of developing correct functionnal programs
+raising exceptions. This is made possible using a Continuation
+Passing Style translation, see the contribution "exceptions" from
+P. Casteran at Bordeaux. Things are made easier and more modular using
+some general definitions."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/continuations.git#master"
+}

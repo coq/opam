@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/zfc"
 license: "LGPL 2"
@@ -9,7 +9,32 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZFC"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:set theory" "keyword:zermelo fraenkel" "keyword:calculus of inductive constructions" "category:Mathematics/Logic/Set theory" ]
 authors: [ "Benjamin Werner <>" ]
+synopsis: "An encoding of Zermelo-Fraenkel Set Theory in Coq."
+description: """
+The encoding of Zermelo-Fraenkel Set Theory is largely inspired by
+Peter Aczel's work dating back to the eighties. A type Ens is defined,
+which represents sets. Two predicates IN and EQ stand for membership
+and extensional equality between sets. The axioms of ZFC are then
+proved and thus appear as theorems in the development.
+
+A main motivation for this work is the comparison of the respective
+expressive power of Coq and ZFC.
+
+A non-computational type-theoretical axiom of choice is necessary to
+prove the replacement schemata and the set-theoretical AC.
+
+The main difference between this work and Peter Aczel's is that
+propositions are defined on the impredicative level Prop. Since the
+definition of Ens is, however, still unchanged, I also added most of
+Peter Aczel's definition. The main advantage of Aczel's approach is a
+more constructive vision of the existential quantifier (which gives
+the set-theoretical axiom of choice for free)."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/zfc.git#v8.4"
+}

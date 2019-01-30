@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs://github.com/coq-contribs/intuitionistic-nuprl"
 license: "GPL"
@@ -6,9 +6,44 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IntuitionisticNUPRL"]
 depends: [
+  "ocaml"
   "coq" {= "8.6.dev"}
 ]
 tags: [ "Nuprl" ]
 authors: [ "Vincent Rahli <vincent.rahli@gmail.com>" "Abhishek Anand <abhishek.anand.iitg@gmail.com>" "Mark Bickford <mark.concertina@gmail.com>" ]
 bug-reports: "https://github.com/coq-contribs/intuitionistic-nuprl/issues"
-dev-repo: "https://github.com/coq-contribs/intuitionistic-nuprl.git"
+dev-repo: "git+https://github.com/coq-contribs/intuitionistic-nuprl.git"
+synopsis: "An Impredicative Model of Nuprl's Constructive Type Theory"
+description: """
+http://www.nuprl.org/html/Nuprl2Coq/
+
+This library formalizes Nuprl's Constructive Type Theory (CTT) as of
+2015.  CTT is an extensional type theory originally inspired by
+Martin-Lof's extensional type theory, and that has since then been
+extended with several new types such as: intersection types, union
+types, image types, partial types, set types, quotient types, partial
+equivalence relation (per) types, simulation and bisimulation types,
+an atom type, and the "Base" type.
+
+Our formalization includes a definition of Nuprl's computation system,
+a definition of Howe's computational equivalence relation and a proof
+that it is a congruence, an impredicative definition of Nuprl's type
+system using Allen's PER semantics (using Prop's impredicativity, we
+can formalize Nuprl's infinite hierarchy of universes), definitions of
+most (but not all) of Nuprl's inference rules and proofs that these
+rules are valid w.r.t. Allen's PER semantics, and a proof of Nuprl's
+consistency.
+
+In addition to the standard introduction and elimination rules for
+Nuprl's types, we have also proved several Brouwerian rules.  Our
+computation system also contains: (1) free choice sequences that we
+used to prove Bar Induction rules; (2) named exceptions and a "fresh"
+operator to generate fresh names, that we used to prove a continuity
+rule.
+
+More information can be found here: http://www.nuprl.org/html/Nuprl2Coq/
+Feel free to send questions to the authors or to nuprl@cs.cornell.edu"""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/intuitionistic-nuprl.git#v8.6"
+}

@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "palmskog@gmail.com"
 
 homepage: "https://github.com/uwplse/verdi"
-dev-repo: "https://github.com/uwplse/verdi.git"
+dev-repo: "git+https://github.com/uwplse/verdi.git"
 bug-reports: "https://github.com/uwplse/verdi/issues"
 license: "BSD"
 
@@ -13,12 +13,12 @@ build: [
 install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/Verdi'" ]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
   "coq-inf-seq-ext" {= "dev"}
   "coq-struct-tact" {= "dev"}
   "coq-cheerios" {= "dev"}
 ]
-
 tags: [
   "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
   "keyword:program verification"
@@ -34,3 +34,8 @@ authors: [
   "Ryan Doenges <>"
   "Justin Adsuara <>"
 ]
+synopsis:
+  "Verdi is a framework for verification of implementations of distributed systems in Coq."
+url {
+  src: "git+https://github.com/uwplse/verdi.git#dev"
+}

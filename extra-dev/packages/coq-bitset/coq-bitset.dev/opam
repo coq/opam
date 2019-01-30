@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-bitset"
 maintainer: "Arthur Blot <arthur.blot@ens-lyon.fr>"
 authors: ["Arthur Blot <arthur.blot@ens-lyon.fr>"
@@ -15,8 +15,15 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Bitset"]
 depends: [
-"coq" {>= "8.5"}
-"coq-mathcomp-algebra" {>= "1.6"}
-"coq-mathcomp-ssreflect" {>= "1.6"}
-"coq-bits"
+  "ocaml"
+  "coq" {>= "8.5"}
+  "coq-mathcomp-algebra" {>= "1.6"}
+  "coq-mathcomp-ssreflect" {>= "1.6"}
+  "coq-bits"
 ]
+synopsis:
+  "A library used to prove algorithms working on OCaml native integers using representations with SSReflect's finite sets."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/artart78/coq-bitset"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/demos"
 license: "LGPL 2"
@@ -9,7 +9,18 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Demos"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:sorting" "keyword:cases" "keyword:tauto" "keyword:autorewrite" "keyword:prolog" "category:Miscellaneous/Coq Use Examples" ]
 authors: [ "Coq group <>" ]
+synopsis: "Demos of some Coq tools appeared in version V6.0."
+description: """
+Example of sorting algorithms defined using the Cases
+(pattern-matching) construction. Demo of the decision tactic Tauto for
+intuitionistic propositional calculus. Demo of the AutoRewrite tactic. Demo of
+the Prolog tactic applied to the compilation of miniML programs."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/demos.git#v8.4"
+}

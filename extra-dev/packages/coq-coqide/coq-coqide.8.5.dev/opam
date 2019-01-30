@@ -1,4 +1,4 @@
-opam-version: "1"
+opam-version: "2.0"
 maintainer: "coqdev@inria.fr"
 homepage: "https://coq.inria.fr/"
 license: "LGPL-2.1"
@@ -10,8 +10,15 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/ide" "%{doc}%/FAQ-CoqIde"]
 depends: [
+  "ocaml"
   "camlp5"
   "coq" {>= "8.5" & < "8.6"}
   "lablgtk"
   "conf-gtksourceview"
 ]
+synopsis: "IDE of the Coq formal proof management system."
+flags: light-uninstall
+extra-files: ["coq-coqide.install" "md5=d005cda8cb7888fbea94c5416dcb31bc"]
+url {
+  src: "git://github.com/coq/coq#v8.5"
+}

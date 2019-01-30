@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/constructive-geometry"
 license: "Proprietary"
@@ -9,7 +9,14 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ConstructiveGeometry"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:constructive mathematics" "keyword:geometry" "category:Mathematics/Geometry/General" ]
 authors: [ "Gilles Kahn <>" ]
+synopsis: "Elements of Constructive Geometry."
+description: "Constructive Geometry following Jan von Plato."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/constructive-geometry.git#master"
+}

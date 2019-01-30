@@ -1,6 +1,6 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: ["The Coq-HoTT Development Team"]
-dev-repo: "https://github.com/HoTT/HoTT.git"
+dev-repo: "git+https://github.com/HoTT/HoTT.git"
 maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "http://homotopytypetheory.org/"
 bug-reports: "https://github.com/HoTT/HoTT/issues"
@@ -13,6 +13,13 @@ build: [
 install: ["%{make}%" "install"]
 remove: ["rm" "-Rf" "%{share}%/hott"]
 depends: [
+  "ocaml"
   "ocamlfind" {build}
-  "coq" { >= "8.6" & < "8.7" }
+  "coq" {>= "8.6" & < "8.7"}
 ]
+synopsis: "The Homotopy Type Theory library."
+flags: light-uninstall
+extra-files: ["no_clone.diff" "md5=f8d0a59fdae76c438a7e817b8f33eef8"]
+url {
+  src: "git+https://github.com/HoTT/HoTT.git#V8.6"
+}

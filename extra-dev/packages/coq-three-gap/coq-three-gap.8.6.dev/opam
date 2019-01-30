@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/three-gap"
 license: "LGPL 2"
@@ -6,9 +6,16 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ThreeGap"]
 depends: [
+  "ocaml"
   "coq" {= "8.6.dev"}
 ]
 tags: [ "keyword:real numbers" "keyword:steinhaus" "keyword:three gap theorem" "category:Mathematics/Geometry/General" "category:Mathematics/Arithmetic and Number Theory/Miscellaneous" ]
 authors: [ "Micaela Mayero <>" ]
 bug-reports: "https://github.com/coq-contribs/three-gap/issues"
-dev-repo: "https://github.com/coq-contribs/three-gap.git"
+dev-repo: "git+https://github.com/coq-contribs/three-gap.git"
+synopsis: "A Proof of the Three Gap Theorem (Steinhaus Conjecture)."
+description: "This proof uses the real numbers. It is a classical proof."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/three-gap.git#v8.6"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Matej Košík <matej.kosik@inria.fr>"
 homepage: "https://softwarefoundations.cis.upenn.edu/"
 doc: "https://softwarefoundations.cis.upenn.edu/"
@@ -25,8 +25,14 @@ install: [
 
 bug-reports: "?"
 dev-repo: "https://www.cis.upenn.edu/~bcpierce/sf/lf-current/lf.tgz"
-remove: []
 depends: [
+  "ocaml"
   "coq" {= "8.7.dev"}
 ]
-tags: []
+synopsis: "Logical Foundations (Volume 1 of Software Foundations)"
+description:
+  "Logical Foundations, serves as the entry-point to the series. It covers functional programming, basic concepts of logic, computer-assisted theorem proving, and Coq."
+flags: light-uninstall
+url {
+  src: "https://www.cis.upenn.edu/~bcpierce/sf/lf-current/lf.tgz"
+}

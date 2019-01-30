@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/generic-environments"
 license: "LGPL"
@@ -9,7 +9,15 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GenericEnvironments"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:generic environments" "keyword:typing" "keyword:type theory" "category:Mathematics/Logic/Type theory" ]
 authors: [ "Emmanuel Polonowski <emmanuel.polonowski@u-pec.fr>" ]
+synopsis: "Generic_Environments."
+description:
+  "Generic_Environments is a library which provides an abstract data type of environments, as a functor parameterized by a module defining variables, and a function which builds environments for such variables with any Type of type. Usual operations over environments are defined, along with an extensive set of basic and more advanced properties. Moreover, an implementation using lists satisfying and all the required properties is provided."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/generic-environments.git#v8.4"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/lambda"
 license: "LGPL 2"
@@ -6,9 +6,22 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Lambda"]
 depends: [
+  "ocaml"
   "coq" {= "8.6.dev"}
 ]
 tags: [ "keyword:pure lambda calculus" "keyword:confluence" "keyword:parallel moves lemma" "keyword:lévy's cube lemma" "keyword:church rosser" "keyword:residual" "keyword:prism theorem" "category:Computer Science/Lambda Calculi" ]
 authors: [ "Gérard Huet <>" ]
 bug-reports: "https://github.com/coq-contribs/lambda/issues"
-dev-repo: "https://github.com/coq-contribs/lambda.git"
+dev-repo: "git+https://github.com/coq-contribs/lambda.git"
+synopsis: "Residual Theory in Lambda-Calculus."
+description: """
+We present the complete development in Gallina of the
+residual theory of beta-reduction in pure lambda-calculus. The main
+result is the Prism Theorem, and its corollary Lévy's Cube Lemma, a
+strong form of the parallel-moves lemma, itself a key step towards the
+confluence theorem and its usual corollaries (Church-Rosser,
+uniqueness of normal forms)."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/lambda.git#v8.6"
+}

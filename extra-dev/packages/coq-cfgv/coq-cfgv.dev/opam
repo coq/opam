@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/cfgv"
 license: "LGPL"
@@ -9,7 +9,14 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CFGV"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:generic programming" "keyword:variable bindings" "keyword:context free grammars" "keyword:substitution" "keyword:alpha equality" "keyword:equivariance" "category:Computer Science/Lambda Calculi" ]
 authors: [ "Vincent Rahli <vincent.rahli@gmail.com>" "Abhishek <abhishek.anand.iitg@gmail.com>" ]
+synopsis: "Generic Proofs about Alpha Equality and Substitution."
+description: "Please read the following paper"
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/cfgv.git#master"
+}

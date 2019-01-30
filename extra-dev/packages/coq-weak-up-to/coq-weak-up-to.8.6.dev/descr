@@ -1,9 +1,0 @@
-New Up-to Techniques for Weak Bisimulation.
-
-This contribution is the formalisation of a paper that appeared in
-Proc. of ICALP 2005: "Up-to Techniques for Weak Bisimulation".
-First we define a framework for defining up-to techniques for weak
-bisimulation in a modular way. Then we prove the correctness of some
-new up-to techniques, based on termination guarantees. Notably, a
-generalisation of Newman's Lemma to commutation results is
-established.

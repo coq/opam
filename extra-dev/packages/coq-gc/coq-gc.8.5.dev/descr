@@ -1,7 +1,0 @@
-Formal Verification of an Incremental Garbage Collector
-
-We specify an incremental garbage collection algorithm and we give a formal proof of its
-correctness. The algorithm is represented as an infinite transition system and we establish safety
-and liveness properties. This work relies on an axiomatization of LTL and is based on a co-inductive
-representation of programs executions. Although motivated by integrating the dynamic memory
-management to the Java Card platform, this study applies more generally to real-time embedded systems and to devices with virtually infinite memory.

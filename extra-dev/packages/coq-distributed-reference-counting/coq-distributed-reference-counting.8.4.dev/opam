@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/distributed-reference-counting"
 license: "LGPL 2"
@@ -9,7 +9,17 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/DistributedReferenceCounting"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:garbage collection" "keyword:distributed algorithms" "category:Computer Science/Semantics and Compilation/Compilation" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" ]
 authors: [ "Luc Moreau <>" "Jean Duprat <>" ]
+synopsis: "A Construction of Distributed Reference Counting."
+description: """
+This library contains the constructive proof of correctness of
+several variants of a distributed reference counting algorithm."""
+flags: light-uninstall
+url {
+  src:
+    "git+https://github.com/coq-contribs/distributed-reference-counting.git#v8.4"
+}

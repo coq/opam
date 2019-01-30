@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/groups"
 license: "LGPL 2"
@@ -9,7 +9,13 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Groups"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:group theory" "category:Miscellaneous/Coq Use Examples" ]
 authors: [ "Pierre Castéran <>" ]
+synopsis: "An exercise on groups."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/groups.git#v8.4"
+}

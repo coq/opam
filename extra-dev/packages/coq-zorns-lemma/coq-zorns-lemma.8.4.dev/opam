@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/zorns-lemma"
 license: "LGPL"
@@ -9,7 +9,15 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZornsLemma"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:set theory" "keyword:cardinals" "keyword:ordinals" "keyword:finite" "keyword:countable" "keyword:quotients" "keyword:well orders" "keyword:zorn's lemma" "category:Mathematics/Logic/Set theory" ]
 authors: [ "Daniel Schepler <dschepler@gmail.com>" ]
+synopsis: "Zorn's Lemma."
+description:
+  "This library develops some basic set theory. The main purpose I had in writing it was as support for the Topology library."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/zorns-lemma.git#v8.4"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/pts"
 license: "Proprietary"
@@ -6,9 +6,27 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PTS"]
 depends: [
+  "ocaml"
   "coq" {= "8.5.dev"}
 ]
 tags: [ "keyword:calculus of constructions" "keyword:coq" "keyword:pure type systems" "keyword:metatheory" "category:Computer Science/Lambda Calculi" "date:2007-03" ]
 authors: [ "Bruno Barras <>" ]
 bug-reports: "https://github.com/coq-contribs/pts/issues"
-dev-repo: "https://github.com/coq-contribs/pts.git"
+dev-repo: "git+https://github.com/coq-contribs/pts.git"
+synopsis: "A formalisation of Pure Type Systems."
+description: """
+This contrib is a formalization of Pure Type Systems. It includes most
+of the basic metatheoretical properties: weakening, substitution,
+subject-reduction, decidability of type-checking (for strongly normalizing
+PTSs). Strengtheningis not proven here.
+
+The kernel of a very simple proof checker is automatically generated from
+the proofs. A small interface allows interacting with this kernel, making
+up a standalone proof system.
+
+The Makefile has a special target "html" that produces html files from the
+sources and main.html that gives a short overview."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/pts.git#v8.5"
+}

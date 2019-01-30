@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Laurent.Thery@inria.fr"
 homepage: "https://github.com/thery/Plouffe"
 bug-reports: "https://github.com/thery/Plouffe/issues"
@@ -10,5 +10,13 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Plouffe"]
 depends: [
-  "coq" {>= "8.4pl4"} "coq-ssreflect" "coq-coquelicot"
+  "ocaml"
+  "coq" {>= "8.4pl4"}
+  "coq-ssreflect"
+  "coq-coquelicot"
 ]
+synopsis: "A Coq formalization of Plouffe formula."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/thery/Plouffe"
+}

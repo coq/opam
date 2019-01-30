@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/nfix"
 license: "Proprietary"
@@ -9,7 +9,15 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Nfix"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:mutual fixpoint functions" "category:Miscellaneous/Coq Extensions" ]
 authors: [ "Stéphane Lescuyer <>" ]
+synopsis: "Nfix: a Coq extension for fixpoints on nested inductives."
+description:
+  "This plugin provides a syntactic extension that allows one to write mutual fixpoints over nested inductives."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/nfix.git#v8.4"
+}

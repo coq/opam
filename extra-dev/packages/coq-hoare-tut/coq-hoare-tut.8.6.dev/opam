@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/hoare-tut"
 license: "GNU LGPL"
@@ -6,9 +6,27 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HoareTut"]
 depends: [
+  "ocaml"
   "coq" {= "8.6.dev"}
 ]
 tags: [ "keyword:hoare logic" "keyword:imperative program" "keyword:weakest precondition" "keyword:reflection" "category:Computer Science/Semantics and Compilation/Semantics" "date:2007" ]
 authors: [ "Sylvain Boulmé <Sylvain.Boulme@imag.fr>" ]
 bug-reports: "https://github.com/coq-contribs/hoare-tut/issues"
-dev-repo: "https://github.com/coq-contribs/hoare-tut.git"
+dev-repo: "git+https://github.com/coq-contribs/hoare-tut.git"
+synopsis:
+  "A Tutorial on Reflecting in Coq the generation of Hoare proof obligations."
+description: """
+This work is both an introduction to Hoare logic and a demo
+illustrating Coq nice features. It formalizes the generation of PO
+(proof obligations) in a Hoare logic for a very basic imperative
+programming language. It proves the soundness and the completeness of
+the PO generation both in partial and total correctness. At last, it
+examplifies on a very simple example (a GCD computation) how the PO
+generation can simplify concrete proofs. Coq is indeed able to compute
+PO on concrete programs: we say here that the generation of proof
+obligations is reflected in Coq. Technically, the PO generation is
+here performed through Dijkstra's weakest-precondition calculus."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/hoare-tut.git#v8.6"
+}

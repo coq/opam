@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "pierre-yves@strub.nu"
 homepage: "https://github.com/math-comp/analysis"
 bug-reports: "https://github.com/math-comp/analysis/issues"
-dev-repo: "https://github.com/math-comp/analysis.git"
+dev-repo: "git+https://github.com/math-comp/analysis.git"
 license: "CeCILL-C"
 authors: [
   "Reynald Affeldt"
@@ -18,9 +18,30 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/mathcomp/analysis"]
 depends: [
-  "coq" { (>= "8.7" & < "8.9~") }
-  "coq-mathcomp-ssreflect"   {= "1.7.0"}
-  "coq-mathcomp-algebra"     {= "1.7.0"}
+  "ocaml"
+  "coq" {(>= "8.7" & < "8.9~")}
+  "coq-mathcomp-ssreflect" {= "1.7.0"}
+  "coq-mathcomp-algebra" {= "1.7.0"}
   "coq-mathcomp-real-closed" {= "dev"}
-  "coq-mathcomp-finmap"      {= "dev"}
+  "coq-mathcomp-finmap" {= "dev"}
 ]
+synopsis: "Mathematical Components Library on Analysis (DRAFT)"
+description: """
+This library contains a DRAFT and UNSTABLE embryo of an analyis
+library inspired from the Coquelicot Library, but compatible with the
+Mathematical Components library. It contains libraries about real
+numbers, probability distributions, topology, filters, Bachmann-Landay
+notations, derivative and differentiation.
+
+This library relies on extensionality axioms (propositional and
+functional extentionality) and on classical axioms (excluded middle
+and a custom version of axiom of choice). These axioms are not derived
+from the standard library's axioms in the current draft. Additionally
+we temporarily rely on classical reals from the Coq standard library.
+
+There is also a small number of "Admitted" theorems in this
+development version."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/math-comp/analysis.git"
+}

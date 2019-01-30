@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "ankitkumar.itbhu@gmail.com"
 homepage: "https://ankitku.github.io/posts/2016-10-30-Mechanizing-Metatheory-of-TAL-0.html"
 dev-repo: "https://github.com/ankitku/TAL0"
@@ -14,5 +14,13 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TAL0"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.7~"}
 ]
+synopsis:
+  "Based on the paper \"Typed Assembly Language\" by Greg Morrisett , TAL-0 is the design of a RISC-style typed assembly language which focuses on control-flow safety. This package provides a mechanized metatheory, particularly a machine checked proof of soundness of the TAL-0 type system as proposed by the author in section 4.2.10 of the book Advanced Topics in Types and Programming Languages."
+flags: light-uninstall
+url {
+  src: "https://github.com/ankitku/TAL0/archive/1.0.0.tar.gz"
+  checksum: "md5=ba4eccfaf467de9087819e11dc15e987"
+}

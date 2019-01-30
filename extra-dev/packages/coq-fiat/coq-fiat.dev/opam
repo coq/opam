@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "bendy@csail.mit.edu"
 homepage: "https://github.com/mit-plv/fiat"
 bug-reports: "https://github.com/mit-plv/fiat/issues"
@@ -8,6 +8,10 @@ build: [
   [make "install"]
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Fiat"]
-depends: [
-  "coq"
-]
+depends: ["ocaml" "coq"]
+synopsis:
+  "Coq library for synthesizing efficient correct-by-construction programs from declarative specifications."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/mit-plv/fiat"
+}

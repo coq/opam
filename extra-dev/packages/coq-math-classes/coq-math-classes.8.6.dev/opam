@@ -1,9 +1,9 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "b.a.w.spitters@gmail.com"
 homepage: "http://math-classes.org/"
 doc: "http://math-classes.org/"
 bug-reports: "https://github.com/math-classes/math-classes/issues"
-dev-repo: "https://github.com/math-classes/math-classes.git"
+dev-repo: "git+https://github.com/math-classes/math-classes.git"
 authors: [
   "Eelis van der Weegen"
   "Bas Spitters"
@@ -14,6 +14,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MathClasses"]
 depends: [
+  "ocaml"
   "coq" {= "8.6.dev"}
 ]
 tags: [ "keyword:type classes" "keyword:algebraic and numeric structures" "keyword:universal algebra" "keyword:category theory" "category:Mathematics/Algebra" ]
+synopsis:
+  "A library of abstract interfaces for mathematical structures in Coq."
+description: """
+We have been working on a new set of foundational interfaces for formalized constructive mathematics in Coq, heavily based on Coq's new type classes, used in a systematic way in order to achieve:
+* elegant and mathematically sound abstract interfaces for algebraic and numeric structures up to and including rationals (with practical use of universal algebra and category theory);
+* a very flexible purely predicate-based representation of algebraic structures that makes sharing, multiple inheritance, and derived inheritance, all trivial;
+* clean expression terms that neither refer to proofs nor require deeply nested record projections;
+* fluent rewriting;
+* easy and flexible replacement and specialization of data representations and operations with more efficient versions;
+* ordinary mathematical notation and overloaded names not reliant on Coq's notation scopes."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/math-classes/math-classes#v8.6"
+}

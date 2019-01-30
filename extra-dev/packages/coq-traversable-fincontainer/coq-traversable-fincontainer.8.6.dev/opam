@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/traversable-fincontainer"
 license: "ASL"
@@ -6,9 +6,17 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TraversableFincontainer"]
 depends: [
+  "ocaml"
   "coq" {= "8.6.dev"}
 ]
 tags: [ "keyword:finitary container" "keyword:traversable functor" "category:Computer Science/Data Types and Data Structures" ]
 authors: [ "Russell O'Connor <oconnorr@google.com>" ]
 bug-reports: "https://github.com/coq-contribs/traversable-fincontainer/issues"
-dev-repo: "https://github.com/coq-contribs/traversable-fincontainer.git"
+dev-repo: "git+https://github.com/coq-contribs/traversable-fincontainer.git"
+synopsis:
+  "A Coq proof that all Traversable functors are isomorphic to finitary containers."
+flags: light-uninstall
+url {
+  src:
+    "git+https://github.com/coq-contribs/traversable-fincontainer.git#v8.6"
+}

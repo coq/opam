@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/canon-bdds"
 license: "Proprietary"
@@ -10,7 +10,16 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/canon-bdds"]
 depends: [
+  "ocaml"
   "coq" {= "8.4.dev"}
 ]
 tags: [ "keyword:bdt" "keyword:finite sets" "keyword:model checking" "keyword:binary decision diagrams" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category:Miscellaneous/Extracted Programs/Decision procedures" ]
 authors: [ "Emmanuel Ledinot <>" ]
+synopsis: "Canonicity of Binary Decision Dags."
+description: """
+A proof of unicity and canonicity of Binary Decision Trees and
+Binary Decision Dags. This contrib contains also a development on finite sets."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/canon-bdds.git#v8.4"
+}

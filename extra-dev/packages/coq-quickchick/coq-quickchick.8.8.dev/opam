@@ -1,10 +1,10 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-quickchick"
 version: "8.8.dev"
 maintainer: "llamp@seas.upenn.edu"
 
 homepage: "https://github.com/QuickChick/QuickChick"
-dev-repo: "https://github.com/QuickChick/QuickChick.git"
+dev-repo: "git+https://github.com/QuickChick/QuickChick.git"
 bug-reports: "https://github.com/QuickChick/QuickChick/issues"
 license: "MIT"
 
@@ -14,15 +14,14 @@ remove: [ [ "rm" "-rf" "%{lib}%/coq/user-contrib/QuickChick" ]
           [ "rm" "%{bin}%/quickChick"] ]
 
 depends: [
-  "coq" {>= "8.8" < "8.9"}
+  "ocaml" {>= "4.04.0"}
+  "coq" {>= "8.8" & < "8.9"}
   "coq-ext-lib"
   "coq-mathcomp-ssreflect"
   "ocamlbuild"
   "ocamlfind"
-  "coq-simple-io" {>= "0.2" < "0.3"}
+  "coq-simple-io" {>= "0.2" & < "0.3"}
 ]
-available: [ ocaml-version >= "4.04.0" ]
-
 authors: [
   "Leonidas Lampropoulos <>"
   "Zoe Paraskevopoulou <>"
@@ -34,4 +33,8 @@ authors: [
   "Li-Yao Xia <>"
   "Yishuai Li <>"
 ]
-
+synopsis: "QuickChick is a random property-based testing library for Coq."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/QuickChick/QuickChick.git#8.8"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/coq-in-coq"
 license: "LGPL 2"
@@ -9,7 +9,13 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoqInCoq"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:calculus of constructions" "category:Mathematics/Logic/Type theory" "category:Miscellaneous/Extracted Programs/Type checking unification and normalization" ]
 authors: [ "Bruno Barras <>" ]
+synopsis: "A formalisation of the Calculus of Construction."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/coq-in-coq.git#master"
+}

@@ -1,1 +1,0 @@
-StructTact is a Coq library of "structural tactics" as well as Coq libraries containing lemmas about lists and finite types that use the tactics library.

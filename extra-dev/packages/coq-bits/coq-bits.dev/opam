@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-bits"
 maintainer: "Arthur Blot <arthur.blot@ens-lyon.fr>"
 authors: ["Andrew Kennedy <akenn@microsoft.com>"
@@ -16,7 +16,14 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Bits"]
 depends: [
-"coq" {>= "8.5"}
-"coq-mathcomp-algebra" {>= "1.6"}
-"coq-mathcomp-ssreflect" {>= "1.6"}
+  "ocaml"
+  "coq" {>= "8.5"}
+  "coq-mathcomp-algebra" {>= "1.6"}
+  "coq-mathcomp-ssreflect" {>= "1.6"}
 ]
+synopsis:
+  "A formalization of bitset operations in Coq and the corresponding axiomatization and extraction to OCaml native integers."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/artart78/coq-bits.git"
+}

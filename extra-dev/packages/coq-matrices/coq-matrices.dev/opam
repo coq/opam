@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/matrices"
 license: "LGPL 2"
@@ -9,7 +9,29 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Matrices"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:matrices" "keyword:vectors" "keyword:linear algebra" "keyword:coq modules" "category:Mathematics/Algebra" "date:2003-03" ]
 authors: [ "Nicolas Magaud <>" ]
+synopsis: "Ring properties for square matrices ."
+description: """
+This contribution contains an operational formalization of square matrices.
+(m,n)-Matrices are represented as vectors of length n. Each vector
+(a row) is itself a vector whose length is m.
+Vectors are actually implemented as dependent lists.
+
+We define basic operations for this datatype (addition, product, neutral
+elements O_n and I_n). We then prove the ring properties for these
+operations. The development uses Coq modules to specify the interface
+(the ring structure properties) as a signature.
+
+This development deals with dependent types and partial functions.
+Most of the functions are defined by dependent case analysis
+and some functions such as getting a column require
+the use of preconditions (to check whether we are within the
+bounds of the matrix)."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/matrices.git#master"
+}

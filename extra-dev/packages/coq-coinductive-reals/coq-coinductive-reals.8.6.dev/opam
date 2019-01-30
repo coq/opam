@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/coinductive-reals"
 license: "LGPL"
@@ -6,10 +6,17 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoinductiveReals"]
 depends: [
+  "ocaml"
   "coq" {= "8.6.dev"}
   "coq-qarith-stern-brocot"
 ]
 tags: [ "keyword:real numbers" "keyword:coinductive types" "keyword:co recursion" "keyword:exact arithmetic" "category:Mathematics/Arithmetic and Number Theory/Real numbers" "date:2007-04-24" ]
 authors: [ "Milad Niqui <milad@cs.ru.nl>" ]
 bug-reports: "https://github.com/coq-contribs/coinductive-reals/issues"
-dev-repo: "https://github.com/coq-contribs/coinductive-reals.git"
+dev-repo: "git+https://github.com/coq-contribs/coinductive-reals.git"
+synopsis: "Real numbers as coinductive ternary streams."
+description: "See the README file"
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/coinductive-reals.git#v8.6"
+}
