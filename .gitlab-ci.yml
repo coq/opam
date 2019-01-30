@@ -10,7 +10,7 @@ cache:
 before_script:
   - export HOME=$(pwd)
   - apt-get update -qy
-  - apt-get install unzip libgtksourceview2.0-dev libncurses5-dev -y
+  - apt-get install unzip libgtksourceview2.0-dev libncurses5-dev curl jq -y
   - test -e ${HOME}/opam-cache/cache-${COMPILER}.tgz || scripts/opam-coq-init
   - curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh > install.sh
   - echo | sh install.sh
@@ -21,8 +21,18 @@ before_script:
     - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-lint
 
 .opam-build:
-  script:
-    - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-install-remove ${HOME}/opam-cache/cache-${COMPILER}.tgz
+  script: |
+    PR=${CI_BUILD_REF_NAME##pr-};
+    echo "Github PR number: $PR";
+    SKIP=$(set +o pipefail; curl https://api.github.com/repos/coq/opam-coq-archive/issues/$PR | jq -rc .body | grep ^ci-skip: | cat );
+    echo "SKIP packages per user request: $SKIP";
+    scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-install-remove ${HOME}/opam-cache/cache-${COMPILER}.tgz $SKIP --
+  artifacts:
+    name: "$CI_JOB_NAME"
+    when: on_failure
+    paths:
+      - log/
+    expire_in: 1 week
 
 opam-lint:4.02.3:
   extends: .opam-lint

@@ -1,69 +1,97 @@
 #!/bin/bash
 
+# Usage:
+# opam-coq-install-remove CACHE_FILE SKIP1 .. SKIPN -- FILE1 .. FILEN
+
 set -e
 #set -x
 
 CACHE=$1
 shift
+declare -A SKIP
+while [ $1 != "--" ]; do
+	SKIP[$1]=1
+	shift
+done
+shift # for --
 
 function setup_root() {
   echo .Initializing opam root
   rm -rf $HOME/opam-root-$COMPILER
   tar xzf $CACHE -C /
   eval $(opam env --root=${HOME}/opam-root-$COMPILER --set-root)
-  opam update default # make sure we get the latest packages
+  opam update default >> $1
   echo .Add released repo
-  opam repo add released file://$PWD/released
+  opam repo add released --all-switches file://$PWD/released >> $1
   opam pin list
 }
 
-function tail_log() {
-  tail -c3M $LOG
-}
-trap tail_log ERR 
+RC=0
+FAILURES=
+SUCCESSES=
+
+mkdir -p log
 
 while [ ! -z "$1" ]; do
  if [ -e "$1" ]; then
   case "$1" in
   */opam)
+  echo "Failures so far:$FAILURES"
+  echo "Successes so far:$SUCCESSES"
+  LOG=log/`echo $1 | tr '/' '-'`
+  PKG_VERSION_DIR=`dirname "$1"`
+  PKG_NAME_VERSION=`basename "$PKG_VERSION_DIR"`
+  PKG_VERSION=`echo $PKG_NAME_VERSION | cut -d . -f 2-`
+  PKG_NAME=`echo $PKG_NAME_VERSION | cut -d . -f 1`
+  if [ ! -z "${SKIP[$PKG_NAME_VERSION]}" ]; then
+    echo Skip $1
+  else
     echo Testing $1
-    setup_root	  
-    PKG_VERSION_DIR=`dirname "$1"`
-    PKG_NAME_VERSION=`basename "$PKG_VERSION_DIR"`
-    PKG_VERSION=`echo $PKG_NAME_VERSION | cut -d . -f 2-`
-    PKG_NAME=`echo $PKG_NAME_VERSION | cut -d . -f 1`
-    LOG=log.`echo $1 | tr '/' '-'`
     > $LOG
+    setup_root $LOG
     case "$PKG_VERSION_DIR" in
     *core-dev*)
       echo Add dev repos
-      opam repo add core-dev file://$PWD/core-dev >> $LOG
-      opam update core-dev
+      opam repo add core-dev --all-switches file://$PWD/core-dev >> $LOG
+      opam update core-dev >> $LOG
     ;;
     *extra-dev*)
       echo Add dev repos
-      opam repo add core-dev file://$PWD/core-dev >> $LOG
-      opam repo add extra-dev file://$PWD/extra-dev >> $LOG
-      opam update core-dev extra-dev
+      opam repo add core-dev --all-switches file://$PWD/core-dev >> $LOG
+      opam repo add extra-dev --all-switches file://$PWD/extra-dev >> $LOG
+      opam update core-dev extra-dev >> $LOG
     ;;
     *)
     ;;
     esac
     echo Check if $PKG_NAME_VERSION is compatible with the current environment
     if opam install "$PKG_NAME_VERSION" -y --show-action; then
+      set +e
       echo Installing $PKG_NAME_VERSION
       opam install "$PKG_NAME_VERSION" -y -v -v >> $LOG
+      if [ $? != 0 ]; then
+	      RC=1;
+	      FAILURES="$FAILURES $PKG_NAME_VERSION";
+      else
+	      SUCCESSES="$SUCCESSES $PKG_NAME_VERSION";
+      fi
       echo Removing $PKG_NAME
       opam remove "$PKG_NAME" -y >> $LOG
+      set -e
     else
       echo Skipping $PKG_NAME_VERSION
     fi
+  fi
   ;;
   *)
-    echo Ignoring $1
-    echo
+  echo Ignoring $1
+  echo
   ;;
   esac
  fi
  shift
 done
+
+echo "Packages that failed to install:$FAILURES"
+echo "Packages that succeeded to install:$SUCCESSES"
+exit $RC
