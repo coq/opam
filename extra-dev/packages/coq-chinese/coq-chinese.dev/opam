@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/chinese"
 license: "Proprietary"
@@ -9,7 +9,15 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Chinese"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:number theory" "keyword:chinese remainder" "keyword:primality" "keyword:prime numbers" "category:Mathematics/Arithmetic and Number Theory/Number theory" ]
 authors: [ "Valérie Ménissier-Morain <>" ]
+synopsis: "A proof of the Chinese Remainder Lemma."
+description:
+  "This is a rewriting of the contribution chinese-lemma using Zarith"
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/chinese.git#master"
+}

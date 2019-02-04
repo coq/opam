@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/bdds"
 license: "LGPL 2"
@@ -10,8 +10,22 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/BDDs"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
   "coq-int-map" {= "dev"}
 ]
 tags: [ "keyword:binary decision diagrams" "keyword:classical logic" "keyword:propositional logic" "keyword:validity" "keyword:satisfiability" "keyword:model checking" "keyword:reflection" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category:Miscellaneous/Extracted Programs/Decision procedures" "date:May-July 1999" ]
 authors: [ "Kumar Neeraj Verma <>" ]
+synopsis: "BDD algorithms and proofs in Coq, by reflection."
+description: """
+Provides BDD algorithms running under Coq.
+(BDD are Binary Decision Diagrams.)
+Allows one to do classical validity checking by
+reflection in Coq using BDDs, can also be used
+to get certified BDD algorithms by extraction.
+First step towards actual symbolic model-checkers
+in Coq. See file README for operation."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/bdds.git#master"
+}

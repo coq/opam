@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: [
   "Ben Sherman <sherm@mit.edu>"
 ]
@@ -10,7 +10,13 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Prob"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
   "coq-corn"
 ]
-dev-repo: "https://github.com/bmsherman/topology.git"
+dev-repo: "git+https://github.com/bmsherman/topology.git"
+synopsis: "A programming language for topology and probability in Coq."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/bmsherman/topology.git#ci"
+}

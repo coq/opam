@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-itree"
 version: "dev"
 maintainer: "Li-yao Xia <lysxia@gmail.com>"
@@ -13,11 +13,7 @@ build: [ make "-j%{jobs}%" ]
 install: [ make "install" ]
 remove: [ "rm" "-rf" "%{lib}%/coq/user-contrib/ITree" ]
 
-depends: [
-  "coq-ext-lib"
-  "coq-paco"
-]
-
+depends: ["ocaml" "coq-ext-lib" "coq-paco"]
 authors: [
   "Li-yao Xia <lysxia@gmail.com>"
   "Gregory Malecha <gmalecha@gmail.com>"
@@ -25,3 +21,7 @@ authors: [
 ]
 
 tags: "org:deepspec"
+flags: light-uninstall
+url {
+  src: "git+https://github.com/DeepSpec/InteractionTrees"
+}

@@ -1,17 +1,28 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-mathcomp-odd-order"
 version: "dev"
 maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
 
 homepage: "https://math-comp.github.io/math-comp/"
 bug-reports: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
-dev-repo: "https://github.com/math-comp/odd-order.git"
+dev-repo: "git+https://github.com/math-comp/odd-order.git"
 license: "CeCILL-B"
 
 build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/odd_order'" ]
-depends: [ "coq-mathcomp-character" { = "dev" } ]
-
+depends: [
+  "ocaml"
+  "coq-mathcomp-character" {= "dev"}
+]
 tags: [ "keyword:Feit Thompson theorem" "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" ]
 authors: [ "Jeremy Avigad <>" "Andrea Asperti <>" "Stephane Le Roux <>" "Yves Bertot <>" "Laurence Rideau <>" "Enrico Tassi <>" "Ioana Pasca <>" "Georges Gonthier <>" "Sidi Ould Biha <>" "Cyril Cohen <>" "Francois Garillot <>" "Alexey Solovyev <>" "Russell O'Connor <>" "Laurent Théry <>" "Assia Mahboubi <>" ]
+synopsis: "Odd Order Theorem"
+description: """
+This library contains the complete formal proof of the Odd Order
+Theorem (aka Feit Thompson Theorem).
+The file stripped_odd_order_theorem.v contains a proof of a self
+contained statement of the odd order."""
+url {
+  src: "git+https://github.com/math-comp/odd-order.git"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/cours-de-coq"
 license: "Proprietary"
@@ -9,7 +9,14 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoursDeCoq"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:coq" "keyword:examples" "category:Miscellaneous/Coq Use Examples" ]
 authors: [ "Frédéric Prost <>" "Gilles Kahn <>" ]
+synopsis: "Various examples of Coq proofs."
+description: "Various simple examples of Coq proofs"
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/cours-de-coq.git#master"
+}

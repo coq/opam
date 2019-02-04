@@ -1,4 +1,0 @@
-A certified Sudoku solver.
-
-A formalisation of Sudoku in Coq. It implements a naive
-Davis-Putnam procedure to solve sudokus.

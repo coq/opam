@@ -1,3 +1,0 @@
-Counting: a Coq plugin for measuring definitions/proofs.
-
-This plugin keeps the count of the size of definitions and proofs in the current Coq session.

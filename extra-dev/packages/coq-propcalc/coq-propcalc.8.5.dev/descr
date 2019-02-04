@@ -1,4 +1,0 @@
-Propositional Calculus
-
-Formalization of basic theorems about classical propositional logic. The main theorems are (1) the soundness and completeness of natural deduction calculus, (2) the equivalence between natural deduction calculus, Hilbert systems and sequent calculus and (3) cut elimination for sequent calculus.
-Keywords: propositional calculus, classical logic, completeness, natural deduction, sequent calculus, cut elimination.

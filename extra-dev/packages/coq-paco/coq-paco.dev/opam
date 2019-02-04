@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "paco@sf.snu.ac.kr"
 homepage: "https://github.com/snu-sf/paco/"
 dev-repo: "git+https://github.com/snu-sf/paco.git"
@@ -18,7 +18,8 @@ install: [
 ]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Paco"]
 depends: [
-  "coq" { ((>= "8.5.dev" & < "8.10") | (= "dev"))}
+  "ocaml"
+  "coq" {((>= "8.5.dev" & < "8.10") | (= "dev"))}
 ]
 synopsis: "Coq library implementing parameterized coinduction"
 tags: [
@@ -31,3 +32,7 @@ tags: [
   "keyword:simulation"
   "keyword:parameterized greatest fixed point"
 ]
+flags: light-uninstall
+url {
+  src: "git+https://github.com/snu-sf/paco.git#master"
+}

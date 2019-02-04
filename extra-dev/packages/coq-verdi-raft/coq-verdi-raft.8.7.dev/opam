@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "palmskog@gmail.com"
 
 homepage: "https://github.com/uwplse/verdi-raft"
-dev-repo: "https://github.com/uwplse/verdi-raft.git"
+dev-repo: "git+https://github.com/uwplse/verdi-raft.git"
 bug-reports: "https://github.com/uwplse/verdi-raft/issues"
 license: "BSD"
 
@@ -13,6 +13,7 @@ build: [
 install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/VerdiRaft'" ]
 depends: [
+  "ocaml"
   "coq" {= "8.7.dev"}
   "coq-verdi" {= "8.7.dev"}
   "coq-struct-tact" {= "8.7.dev"}
@@ -34,3 +35,8 @@ authors: [
   "Ryan Doenges <>"
   "Justin Adsuara <>"
 ]
+synopsis:
+  "Verdi Raft is a verified implementation of the Raft distributed consensus protocol in Coq."
+url {
+  src: "git+https://github.com/uwplse/verdi-raft.git#v8.7"
+}

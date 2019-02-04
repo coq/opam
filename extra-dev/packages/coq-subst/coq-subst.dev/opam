@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/subst"
 license: "Proprietary"
@@ -9,7 +9,17 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Subst"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:lambda sigma lift calculus" "keyword:explicit substitution" "keyword:newman's lemma" "keyword:yokouchi's lemma" "keyword:confluence" "keyword:rewriting" "category:Computer Science/Lambda Calculi" ]
 authors: [ "Amokrane Saïbi <>" ]
+synopsis: "The confluence of Hardin-Lévy lambda-sigma-lift-calcul."
+description: """
+The confluence of Hardin-Lévy lambda-sigma-lift-calcul is
+proven. By the way, several standard definition and results about
+rewriting systems are proven (Newman's lemma, Yokouchi's lemma, ...)."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/subst.git#master"
+}

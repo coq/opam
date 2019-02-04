@@ -1,3 +1,0 @@
-Russell Metatheoretic Study.
-
-This development prove subject reduction of the Russell language (CC with prop, set and coercion of subset types) using the TPOSR machinery. This includes an equivalence of judgmental and definitional presentations of the system.

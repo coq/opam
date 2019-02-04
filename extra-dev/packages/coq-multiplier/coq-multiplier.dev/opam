@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/multiplier"
 license: "LGPL 2"
@@ -9,7 +9,13 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Multiplier"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:hardware verification" "keyword:circuit" "category:Computer Science/Architecture" "category:Miscellaneous/Extracted Programs/Hardware" ]
 authors: [ "Christine Paulin <>" ]
+synopsis: "Proof of a multiplier circuit."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/multiplier.git#master"
+}

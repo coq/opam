@@ -1,5 +1,4 @@
-opam-version: "1.2"
-author: ["Matthieu Sozeau <matthieu.sozeau@inria.fr>" "Cyprien Mangin <cyprien.mangin@m4x.org>"]
+opam-version: "2.0"
 bug-reports: "mailto:matthieu.sozeau@inria.fr"
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "http://equations-fpred.gforge.inria.fr/"
@@ -13,7 +12,18 @@ install: [
 ]
 remove: [make "uninstall"]
 depends: [
+  "ocaml"
   "coq" {= "8.5.dev"}
   "coq-equations" {= "8.5.dev"}
   "coq-color" {= "1.0.0.dev"}
 ]
+synopsis:
+  "A formalization of Predicative System F, including a computable normalization function."
+authors: [
+  "Matthieu Sozeau <matthieu.sozeau@inria.fr>"
+  "Cyprien Mangin <cyprien.mangin@m4x.org>"
+]
+url {
+  src: "http://equations-fpred.gforge.inria.fr/equations-fpred-1.0.1.tgz"
+  checksum: "md5=0b01d3fb26a961b117e1463f827e9078"
+}

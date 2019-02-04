@@ -1,4 +1,4 @@
-opam-version: "1.1"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-contribs/zf"
 license: "Proprietary"
@@ -9,7 +9,13 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZF"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:set theory" "keyword:zermelo fraenkel" "category:Mathematics/Logic/Set theory" ]
 authors: [ "Guillaume Alexandre <>" ]
+synopsis: "An axiomatisation of intuitionistic Zermelo-Fraenkel set theory."
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/zf.git#master"
+}

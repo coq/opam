@@ -1,3 +1,0 @@
-Markov's inequality.
-
-A proof of Markov's inequality, restricted to probability spaces, based on the Wikipedia proof. Defines Lebesgue integral and associated concepts such as measurability, measure functions, and sigma algebras. Extended real numbers did not need to be defined because we are working in a probability space with measure 1. Nonconstructive; uses classic, Extensionality_Ensembles, axiomatized real numbers from Coq standard library.

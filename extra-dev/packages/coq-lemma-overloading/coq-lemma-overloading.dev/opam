@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/lemma-overloading"
 license: "GPL"
@@ -6,10 +6,42 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LemmaOverloading"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
   "coq-mathcomp-ssreflect"
 ]
 tags: [ "keyword:lemma overloading" "keyword:proof automation" "keyword:hoare type theory" "keyword:canonical structures" "category:Computer Science/Data Types and Data Structures" ]
 authors: [ "Derek Dreyer <dreyer@mpi-sws.org>" "Georges Gonthier <gonthier@microsoft.com>" "Beta Ziliani <beta@mpi-sws.org>" "Aleksandar Nanevski <aleks.nanevski@imdea.org>" ]
 bug-reports: "https://github.com/coq-contribs/lemma-overloading/issues"
-dev-repo: "https://github.com/coq-contribs/lemma-overloading.git"
+dev-repo: "git+https://github.com/coq-contribs/lemma-overloading.git"
+synopsis: "How to Make Ad Hoc Proof Automation Less Ad Hoc."
+description: """
+Most interactive theorem provers provide support for some form of
+user-customizable proof automation. In a number of popular systems,
+such as Coq and Isabelle, this automation is achieved primarily
+through *tactics*, which are programmed in a separate language
+from that of the prover's base logic. While tactics are clearly
+useful in practice, they can be difficult to maintain and compose
+because, unlike lemmas, their behavior cannot be specified within the
+expressive type system of the prover itself.
+
+We propose a novel approach to proof automation in Coq that allows the
+user to specify the behavior of custom automated routines in terms of
+Coq's own type system. Our approach involves a sophisticated
+application of Coq's *canonical structures*, which generalize Haskell
+type classes and facilitate a flexible style of dependently-typed
+logic programming. Specifically, just as Haskell type classes are
+used to infer the canonical implementation of an overloaded term at a
+given type, canonical structures can be used to infer the canonical
+*proof* of an overloaded *lemma* for a given instantiation of its
+parameters. We present a series of design patterns for canonical
+structure programming that enable one to carefully and predictably
+coax Coq's type inference engine into triggering the execution of
+user-supplied algorithms during unification, and we illustrate these
+patterns through several realistic examples drawn from Hoare Type
+Theory. We assume no prior knowledge of Coq and describe the relevant
+aspects of Coq type inference from first principles."""
+flags: light-uninstall
+url {
+  src: "git+https://github.com/coq-contribs/lemma-overloading.git#master"
+}

@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "guillaume.melquiond@inria.fr"
 homepage: "http://flocq.gforge.inria.fr/"
-dev-repo: "https://scm.gforge.inria.fr/anonscm/git/flocq/flocq.git"
+dev-repo: "git+https://scm.gforge.inria.fr/anonscm/git/flocq/flocq.git"
 license: "LGPL 3"
 build: [
   ["./autogen.sh"]
@@ -11,7 +11,13 @@ build: [
 install: ["./remake" "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Flocq"]
 depends: [
+  "ocaml"
   "coq" {= "dev"}
 ]
 tags: [ "keyword:floating point arithmetic" ]
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
+synopsis: "A floating-point formalization for the Coq system."
+flags: light-uninstall
+url {
+  src: "git+https://gitlab.inria.fr/flocq/flocq.git#master"
+}
