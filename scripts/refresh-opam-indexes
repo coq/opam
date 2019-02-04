@@ -17,7 +17,7 @@ OPAMCHECKOPTS=
 
 for repo in $@; do
         cd $repo
-        if [ "$repo" = "core-dev" ];
+        if [ "$repo" = "core-dev" -o "$repo" = "extra-dev"  ];
         then
             OPAM=$OPAM2
             OPAMCHECKOPTS=--cycles
