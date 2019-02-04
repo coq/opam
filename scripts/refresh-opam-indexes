@@ -23,6 +23,7 @@ for repo in $@; do
             OPAMCHECKOPTS=--cycles
         else
             OPAM=$OPAM1
+            OPAMCHECKOPTS=
         fi
         $OPAM admin check $OPAMCHECKOPTS > $LOG 2>&1
         if [ "$?" != "0" ]; then notify check $repo;
