@@ -54,7 +54,7 @@ function do_one_root(suite)
 		else pkg = root..p..'/'..p..'.'..curv end
 
   	local opam = assert(io.open(pkg..'/opam')):read('*a')
-  	local tags = opam:match('tags: *(%b[])') or ""
+  	local tags = opam:match('tags:%s*(%b[])') or ""
 
   	local keywords = info.keywords or {}
   	local dates = info.dates or {}
@@ -67,16 +67,16 @@ function do_one_root(suite)
   	info.categories = categories
   	info.keywords = keywords
   	info.dates = dates
-  	info.homepage = info.homepage or opam:match('homepage: *"([^"]*)"')
+  	info.homepage = info.homepage or opam:match('homepage:%s*"([^"]*)"')
 
-		local authors_txt = opam:match('authors: *(%b[])') or ""
+		local authors_txt = opam:match('authors:%s*(%b[])') or ""
 		local authors = info.authors or {}
   	for author in authors_txt:gmatch('(%b"")') do
   		add_uniq(authors, author:match('"([^<"]*)'):gsub(' *$',''))
   	end
 		info.authors = authors
 
-  	info.description = info.description or assert(io.open(pkg..'/descr')):read('*a')
+  	info.description = info.description or opam:match('description:%s*(%b"")') or opam:match('synopsis:%s*(%b"")') or assert(io.open(pkg..'/descr')):read('*a')
 
   end end
 end
