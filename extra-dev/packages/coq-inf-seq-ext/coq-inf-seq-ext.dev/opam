@@ -14,7 +14,7 @@ depends: [
   "coq" {= "dev"}
 ]
 tags: [ "keyword:temporal logic" "keyword:infinite transition systems" "keyword:coinduction" "category:Mathematics/Logic/Modal logic" ]
-authors: [ "Yuxin Deng <>" "Jean-Francois Monin <>" "Karl Palmskog <>" ]
+authors: [ "Yuxin Deng <>" "Jean-Francois Monin <>" "Karl Palmskog <>" "Ryan Doenges <>" ]
 synopsis:
   "InfSeqExt is a collection of Coq libraries for reasoning inductively and coinductively on infinite sequences, using modal operators similar to those in linear temporal logic (LTL)."
 url {

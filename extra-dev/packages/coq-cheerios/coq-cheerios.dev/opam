@@ -14,8 +14,8 @@ install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/Cheerios'" ]
 depends: [
   "ocaml"
-  "coq" {= "8.7.dev"}
-  "coq-struct-tact" {= "8.7.dev"}
+  "coq" {= "dev"}
+  "coq-struct-tact" {= "dev"}
 ]
 tags: [ "keyword:serialization" ]
 authors: [
@@ -27,5 +27,5 @@ authors: [
 ]
 synopsis: "Cheerios is a Coq library for serialization."
 url {
-  src: "git+https://github.com/uwplse/cheerios.git#v8.7"
+  src: "git+https://github.com/uwplse/cheerios.git#master"
 }

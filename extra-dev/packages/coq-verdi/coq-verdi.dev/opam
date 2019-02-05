@@ -37,5 +37,5 @@ authors: [
 synopsis:
   "Verdi is a framework for verification of implementations of distributed systems in Coq."
 url {
-  src: "git+https://github.com/uwplse/verdi.git#dev"
+  src: "git+https://github.com/uwplse/verdi.git#master"
 }
