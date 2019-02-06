@@ -1,0 +1,5 @@
+Explicit Convertibility Proofs in Pure Type Systems.
+
+http://www.andrew.cmu.edu/user/fpv/ptsf/
+
+Formalization of the proof that PTS and PTS with explicit convertibility proofs (PTSf) are equivalent.

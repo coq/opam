@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/ieee754"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IEEE754"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: floating-point arithmetic" "keyword: floats" "keyword: IEEE" "category: Computer Science/Data Types and Data Structures" "category: Computer Science/Semantics and Compilation/Semantics" "date: 1997" ]
+authors: [ "Patrick Loiseleur" ]
+bug-reports: "https://github.com/coq-contribs/ieee754/issues"
+dev-repo: "https://github.com/coq-contribs/ieee754.git"

@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/lesniewski-mereology"
+license: "LGPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LesniewskiMereology"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: mereology" "keyword: protothetic" "keyword: ontology" "keyword: nominalist theory" "keyword: extensionality" "category: Mathematics/Logic/Foundations" ]
+authors: [ "Richard Dapoigny <richard.dapoigny@univ-savoie.fr> [https://www.researchgate.net/profile/Richard_Dapoigny]" "Patrick Barlatier <patrick.barlatier@univ-savoie.fr> [https://www.researchgate.net/profile/Patrick_Barlatier]" ]
+bug-reports: "https://github.com/coq-contribs/lesniewski-mereology/issues"
+dev-repo: "https://github.com/coq-contribs/lesniewski-mereology.git"

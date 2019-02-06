@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/ruler-compass-geometry"
+license: "GNU Lesser Public License"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RulerCompassGeometry"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: geometry" "keyword: plane geometry" "keyword: ruler and compass geometry" "keyword: Euclidian geometry" "keyword: Hilbert's axioms" "category: Mathematics/Geometry/General" "date: 2007-11" ]
+authors: [ "Jean Duprat <Jean.Duprat@ens-lyon.fr>" ]
+bug-reports: "https://github.com/coq-contribs/ruler-compass-geometry/issues"
+dev-repo: "https://github.com/coq-contribs/ruler-compass-geometry.git"

@@ -1,0 +1,6 @@
+A certified Sudoku solver.
+
+ftp://ftp-sop.inria.fr/lemme/Laurent.Thery/Sudoku.zip
+
+A formalisation of Sudoku in Coq. It implements a naive
+Davis-Putnam procedure to solve sudokus.

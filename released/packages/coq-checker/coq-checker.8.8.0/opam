@@ -1,0 +1,14 @@
+opam-version: "1.2"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/checker"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Checker"]
+depends: [
+  "coq" {>= "8.8" & < "8.9~"}
+]
+tags: [ "keyword: checker" "keyword: dominos" "keyword: puzzles" "category: Miscellaneous/Logical Puzzles and Entertainment" ]
+authors: [ "Gérard Huet" ]
+bug-reports: "https://github.com/coq-contribs/checker/issues"
+dev-repo: "https://github.com/coq-contribs/checker.git"
