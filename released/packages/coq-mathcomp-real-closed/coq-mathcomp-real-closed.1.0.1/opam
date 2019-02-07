@@ -1,0 +1,18 @@
+opam-version: "1.2"
+name: "coq-mathcomp-real-closed"
+version: "1.0.1"
+maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+
+homepage: "http://math-comp.github.io/math-comp/"
+bug-reports: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+dev-repo: "https://github.com/math-comp/real-closed.git"
+license: "CeCILL-B"
+
+build: [ make "-j" "%{jobs}%" ]
+install: [ make "install" ]
+remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/real_closed'" ]
+depends: [ "coq-mathcomp-field" { = "1.7.0" } ]
+
+tags: [ "keyword:real closed field" "keyword:small scale reflection" "keyword:mathematical components" ]
+authors: [ "Cyril Cohen <>" "Assia Mahboubi <>" ]
+synopsis: "Mathematical Components Library on real closed fields"
