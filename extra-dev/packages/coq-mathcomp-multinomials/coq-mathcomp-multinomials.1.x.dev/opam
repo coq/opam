@@ -15,9 +15,11 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SsrMultinomials"]
 depends: [
   "ocaml"
-  "coq" {>= "8.5" & < "8.8~"}
-  "coq-mathcomp-ssreflect" {>= "1.6" & < "1.7"}
-  "coq-mathcomp-algebra" {>= "1.6" & < "1.7"}
+  "coq" {(>= "8.5" | = "dev")}
+  "coq-mathcomp-ssreflect" {>= "1.6" & < "1.8.0~"}
+  "coq-mathcomp-algebra" {>= "1.6" & < "1.8.0~"}
+  "coq-mathcomp-bigenough" {>= "1.0.0" & < "1.1.0~"}
+  "coq-mathcomp-finmap"    {>= "1.1.0" & < "1.2.0~"}
 ]
 tags: [
   "keyword:multinomials"
@@ -27,8 +29,8 @@ tags: [
   "date:2016"
   "logpath:SsrMultinomials"
 ]
-synopsis: "A Multinomial Library for the Mathematical Components Library."
+synopsis: "A multivariate polynomial library for the Mathematical Components Library."
 flags: light-uninstall
 url {
-  src: "git+https://github.com/math-comp/multinomials.git#v1.x"
+  src: "git+https://github.com/math-comp/multinomials.git"
 }
