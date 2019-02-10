@@ -19,6 +19,6 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MathClasses"]
 depends: [
-  "coq" {>= "8.6" & < "8.9~"}
+  "coq" {>= "8.6" & < "8.10~"}
   "coq-bignums"
 ]
