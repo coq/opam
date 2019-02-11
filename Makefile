@@ -1,6 +1,6 @@
 COQWEB=~/COQ/www/
 SUITES_COQPKGIDX = released
-SUITES= $(SUITES_COQPKGIDX) core-dev
+SUITES= $(SUITES_COQPKGIDX) core-dev extra-dev
 H=@
 COQV=8.8.2
 OCAMLV=4.02.3
