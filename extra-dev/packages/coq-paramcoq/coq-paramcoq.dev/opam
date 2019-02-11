@@ -1,0 +1,42 @@
+opam-version: "2.0"
+name: "coq-paramcoq"
+version: "dev"
+maintainer: "Pierre Roux <pierre.roux@onera.fr>"
+
+homepage: "https://github.com/coq-community/paramcoq"
+bug-reports: "https://github.com/coq-community/paramcoq/issues"
+dev-repo: "git+https://github.com/coq-community/paramcoq.git"
+license: "MIT"
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Param"]
+depends: [
+  "coq" {= "dev"}
+]
+
+tags: [
+  "keyword:paramcoq"
+  "keyword:parametricity"
+  "keyword:ocaml module"
+  "category:paramcoq"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:Param"
+]
+authors: [
+  "Chantal Keller (Inria, École polytechnique)"
+  "Marc Lasson (ÉNS de Lyon)"
+  "Abhishek Anand"
+  "Pierre Roux"
+  "Emilio Jesús Gallego Arias"
+  "Cyril Cohen"
+  "Matthieu Sozeau"
+]
+synopsis: "Paramcoq"
+description: """
+The plugin is still in an experimental state. It is not very user
+friendly (lack of good error messages) and still contains bugs. But is
+useable enough to "translate" a large chunk of standard library."""
+url {
+  src: "git+https://github.com/coq-community/paramcoq.git"
+}
