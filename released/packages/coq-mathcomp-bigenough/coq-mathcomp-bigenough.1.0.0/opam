@@ -6,7 +6,7 @@ maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
 homepage: "https://github.com/math-comp/bigenough"
 bug-reports: "https://github.com/math-comp/bigenough/issues"
 license: "CeCILL-B"
-dev-repo: "https://github.com/math-comp/bigenough"
+dev-repo: "git+https://github.com/math-comp/bigenough"
 
 build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]

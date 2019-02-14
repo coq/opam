@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: "abhishek.anand.iitg@gmail.com"
 homepage: "https://github.com/aa755/SquiggleEq"
-dev-repo: "https://github.com/aa755/SquiggleEq"
+dev-repo: "git+https://github.com/aa755/SquiggleEq"
 authors: ["Abhishek Anand" "Vincent Rahli"]
 bug-reports: "https://github.com/aa755/SquiggleEq/issues"
 license: "MIT"

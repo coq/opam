@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: "b.a.w.spitters@gmail.com"
 homepage: "https://math-classes.github.io/"
-dev-repo: "https://github.com/coq-community/math-classes/"
+dev-repo: "git+https://github.com/coq-community/math-classes/"
 bug-reports: "https://github.com/coq-community/math-classes/issues"
 doc: "https://math-classes.github.io/"
 authors: [
