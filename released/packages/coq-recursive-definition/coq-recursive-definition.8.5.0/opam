@@ -13,7 +13,7 @@ tags: [ "keyword:recursive functions" "keyword:well founded recursion" "keyword:
 authors: [ "Antonia Balaa <>" "Yves Bertot <>" ]
 bug-reports: "https://github.com/coq-contribs/recursive-definition/issues"
 dev-repo: "git+https://github.com/coq-contribs/recursive-definition.git"
-synopsis: "ML-like recursive definitions."
+synopsis: "ML-like recursive definitions"
 description: """
 This module provides a facility to define recursive functions in
 an ML-like style, giving a fixpoint equation, a variant and a

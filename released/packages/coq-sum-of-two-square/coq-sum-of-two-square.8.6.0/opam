@@ -13,7 +13,7 @@ tags: [ "keyword: number theory" "category: Mathematics/Arithmetic and Number Th
 authors: [ "Laurent Thery" ]
 bug-reports: "https://github.com/coq-contribs/sum-of-two-square/issues"
 dev-repo: "git+https://github.com/coq-contribs/sum-of-two-square.git"
-synopsis: "Numbers equal to the sum of two square numbers."
+synopsis: "Numbers equal to the sum of two square numbers"
 description: """
 A proof that a number n can be written as the
 sum of two square numbers if and only if each prime factor p of n

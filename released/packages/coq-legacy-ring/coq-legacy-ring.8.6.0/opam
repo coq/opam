@@ -13,7 +13,7 @@ tags: [ "date: 1998-5" ]
 authors: [ "Patrick Loiseleur" ]
 bug-reports: "https://github.com/coq-contribs/legacy-ring/issues"
 dev-repo: "git+https://github.com/coq-contribs/legacy-ring.git"
-synopsis: "The former implementation of the ring tactic."
+synopsis: "The former implementation of the ring tactic"
 description: """
 Tactics to decide equality and simplify polynomial
 expressions over an arbitrary commutative ring. This generalizes a

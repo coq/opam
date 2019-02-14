@@ -13,7 +13,7 @@ tags: [ "keyword: geometry" "keyword: teaching" "keyword: high-school" "category
 authors: [ "Frédérique Guilhot <Frederique.Guilhot@sophia.inria.fr> [http://www-sop.inria.fr/lemme/Frederique.Guilhot/index.html]" ]
 bug-reports: "https://github.com/coq-contribs/high-school-geometry/issues"
 dev-repo: "git+https://github.com/coq-contribs/high-school-geometry.git"
-synopsis: "Geometry for French high-school."
+synopsis: "Geometry for French high-school"
 description: """
 This library is dedicated to high-shool geometry teaching.
 The axiomatisation for affine euclidean space is in a non analytic setting."""

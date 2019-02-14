@@ -13,7 +13,7 @@ tags: [ "keyword: algebra" "category: Mathematics/Algebra" "date: 1999-03" ]
 authors: [ "Loïc Pottier [http://www-sop.inria.fr/croap/personnel/Loic.Pottier/home.html]" ]
 bug-reports: "https://github.com/coq-contribs/algebra/issues"
 dev-repo: "git+https://github.com/coq-contribs/algebra.git"
-synopsis: "Basics notions of algebra."
+synopsis: "Basics notions of algebra"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/algebra/archive/v8.7.0.tar.gz"

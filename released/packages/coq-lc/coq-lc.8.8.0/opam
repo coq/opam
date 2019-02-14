@@ -13,7 +13,7 @@ tags: [ "keyword: Module" "keyword: Monad" "keyword: Category" "keyword: Lambda-
 authors: [ "André Hirschowitz <ah@math.unice.fr> [http://math.unice.fr/~ah/]" "Marco Maggesi <maggesi@math.unifi.it> [http://www.math.unifi.it/~maggesi/]" ]
 bug-reports: "https://github.com/coq-contribs/lc/issues"
 dev-repo: "git+https://github.com/coq-contribs/lc.git"
-synopsis: "Modules over monads and lambda-calculi."
+synopsis: "Modules over monads and lambda-calculi"
 description: """
 http://www.math.unifi.it/~/maggesi/mechanized/
 

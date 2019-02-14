@@ -18,7 +18,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
 ]
-synopsis: "A library of Coq definitions, theorems, and tactics."
+synopsis: "A library of Coq definitions, theorems, and tactics"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-ext-lib/coq-ext-lib/archive/v0.9.1.tar.gz"

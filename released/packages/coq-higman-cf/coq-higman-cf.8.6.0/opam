@@ -13,7 +13,7 @@ tags: [ "keyword: Higman's Lemma" "keyword: Extraction" "category: Mathematics/C
 authors: [ "Stefan Berghofer" ]
 bug-reports: "https://github.com/coq-contribs/higman-cf/issues"
 dev-repo: "git+https://github.com/coq-contribs/higman-cf.git"
-synopsis: "A direct constructive proof of Higman's Lemma."
+synopsis: "A direct constructive proof of Higman's Lemma"
 description: """
 This development formalizes in Coq the Coquand-Friedlender proof of
 Higman's lemma for a two-letter alphabet.

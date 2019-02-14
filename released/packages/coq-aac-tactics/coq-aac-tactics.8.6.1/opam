@@ -13,7 +13,7 @@ tags: [ "keyword:reflexive tactic" "keyword:rewriting" "keyword:rewriting modulo
 authors: [ "Damien Pous <damien.pous@inria.fr>" "Thomas Braibant <thomas.braibant@gmail.com>" ]
 bug-reports: "coqdev@inria.fr"
 dev-repo: "git+https://github.com/coq-contribs/aac-tactics.git"
-synopsis: "AAC tactics."
+synopsis: "AAC tactics"
 description:
   "This Coq plugin provides tactics for rewriting universally quantified equations, modulo associative (and possibly commutative) operators:"
 flags: light-uninstall

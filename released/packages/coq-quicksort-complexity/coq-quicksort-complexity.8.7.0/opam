@@ -13,7 +13,7 @@ tags: [ "keyword: quicksort" "keyword: complexity" "keyword: average-case" "cate
 authors: [ "Eelis" ]
 bug-reports: "https://github.com/coq-contribs/quicksort-complexity/issues"
 dev-repo: "git+https://github.com/coq-contribs/quicksort-complexity.git"
-synopsis: "Proofs of Quicksort's worst- and average-case complexity."
+synopsis: "Proofs of Quicksort's worst- and average-case complexity"
 description: """
 The development contains:
 - a set of monads and monad transformers for measuring a (possibly nondeterministic) algorithm's use of designated operations;

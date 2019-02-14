@@ -13,8 +13,7 @@ tags: [ "keyword:hardware verification" "category:Computer Science/Architecture"
 authors: [ "Laurent Arditi <>" ]
 bug-reports: "https://github.com/coq-contribs/circuits/issues"
 dev-repo: "git+https://github.com/coq-contribs/circuits.git"
-synopsis:
-  "Some proofs of hardware (adder, multiplier, memory block instruction)."
+synopsis: "Some proofs of hardware (adder, multiplier, memory block instruction)"
 description: """
 definition and proof of a combinatorial adder, a
 sequential multiplier, a memory block instruction"""

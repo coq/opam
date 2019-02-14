@@ -13,7 +13,7 @@ tags: [ "keyword:functional programming" "keyword:lazy evaluation" "keyword:oper
 authors: [ "Amy Felty <>" "Jill Seaman <>" ]
 bug-reports: "https://github.com/coq-contribs/lazy-pcf/issues"
 dev-repo: "git+https://github.com/coq-contribs/lazy-pcf.git"
-synopsis: "Subject Reduction for Lazy-PCF."
+synopsis: "Subject Reduction for Lazy-PCF"
 description: """
 An Operational Semantics of Lazy Evaluation and a Proof
 of Subject Reduction"""

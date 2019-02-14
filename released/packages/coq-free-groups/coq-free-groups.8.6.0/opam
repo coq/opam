@@ -13,7 +13,7 @@ tags: [ "keyword: free group" "category: Mathematics/Algebra" ]
 authors: [ "Daniel Schepler <dschepler@gmail.com>" ]
 bug-reports: "https://github.com/coq-contribs/free-groups/issues"
 dev-repo: "git+https://github.com/coq-contribs/free-groups.git"
-synopsis: "Free Groups."
+synopsis: "Free Groups"
 description:
   "This small contribution is a formalization of van der Waerden's proof of the construction of a free group on a set of generators, as the reduced words where a letter is a generator or its formal inverse."
 flags: light-uninstall

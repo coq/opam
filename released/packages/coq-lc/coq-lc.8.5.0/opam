@@ -13,7 +13,7 @@ tags: [ "keyword:module" "keyword:monads" "keyword:category theory" "keyword:lam
 authors: [ "André Hirschowitz <ah@math.unice.fr>" "Marco Maggesi <maggesi@math.unifi.it>" ]
 bug-reports: "https://github.com/coq-contribs/lc/issues"
 dev-repo: "git+https://github.com/coq-contribs/lc.git"
-synopsis: "Modules over monads and lambda-calculi."
+synopsis: "Modules over monads and lambda-calculi"
 description: """
 We define a notion of module over a monad and use it to
 propose a new definition (or semantics) for abstract

@@ -13,7 +13,7 @@ tags: [ "keyword: denotational semantics" "keyword: compilation" "category: Comp
 authors: [ "Eduardo Giménez and Emmanuel Ledinot" ]
 bug-reports: "https://github.com/coq-contribs/minic/issues"
 dev-repo: "git+https://github.com/coq-contribs/minic.git"
-synopsis: "Semantics of a subset of the C language."
+synopsis: "Semantics of a subset of the C language"
 description: """
 This contribution defines the denotational semantics of MiniC, a
 sub-set of the C language. This sub-set is sufficiently large to

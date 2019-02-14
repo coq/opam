@@ -14,7 +14,7 @@ authors: [ "Luc Moreau <>" "Jean Duprat <>" ]
 bug-reports: "https://github.com/coq-contribs/distributed-reference-counting/issues"
 dev-repo:
   "git+https://github.com/coq-contribs/distributed-reference-counting.git"
-synopsis: "A Construction of Distributed Reference Counting."
+synopsis: "A Construction of Distributed Reference Counting"
 description: """
 This library contains the constructive proof of correctness of
 several variants of a distributed reference counting algorithm."""

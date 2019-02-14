@@ -13,7 +13,7 @@ tags: [ "keyword: concurrency" "keyword: synchronization" "keyword: finite-state
 authors: [ "Jean Duprat" ]
 bug-reports: "https://github.com/coq-contribs/firing-squad/issues"
 dev-repo: "git+https://github.com/coq-contribs/firing-squad.git"
-synopsis: "Firing Squad Synchronization Problem."
+synopsis: "Firing Squad Synchronization Problem"
 description: """
 This contribution is a formal verification of a solution
 of the firing squad synchronization problem."""

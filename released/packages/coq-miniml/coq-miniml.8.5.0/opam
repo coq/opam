@@ -13,8 +13,7 @@ tags: [ "keyword:functional programming" "keyword:categorical abstract machine" 
 authors: [ "Samuel Boutin <>" ]
 bug-reports: "https://github.com/coq-contribs/miniml/issues"
 dev-repo: "git+https://github.com/coq-contribs/miniml.git"
-synopsis:
-  "Correctness of the compilation of Mini-ML into the Categorical Abstract Machine."
+synopsis: "Correctness of the compilation of Mini-ML into the Categorical Abstract Machine"
 description: """
 A formalisation of Mini-ML and of the Categorical
 Abstract Machine (C.A.M) in natural semantics. It also contains the

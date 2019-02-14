@@ -14,7 +14,7 @@ tags: [ "keyword:pure type systems" "keyword:judgmental equality" "keyword:expli
 authors: [ "Herman Geuvers <herman@cs.ru.nl>" "Floris van Doorn <fpv@andrew.cmu.edu>" "Freek Wiedijk <freek@cs.ru.nl>" ]
 bug-reports: "https://github.com/coq-contribs/ptsf/issues"
 dev-repo: "git+https://github.com/coq-contribs/ptsf.git"
-synopsis: "Explicit Convertibility Proofs in Pure Type Systems."
+synopsis: "Explicit Convertibility Proofs in Pure Type Systems"
 description:
   "Formalization of the proof that PTS and PTS with explicit convertibility proofs (PTSf) are equivalent."
 flags: light-uninstall

@@ -13,8 +13,7 @@ tags: [ "keyword:hardware verification" "keyword:comparator circuit" "category:C
 authors: [ "Solange Coupet-Grimal <>" "Line Jakubiec <>" ]
 bug-reports: "https://github.com/coq-contribs/hardware/issues"
 dev-repo: "git+https://github.com/coq-contribs/hardware.git"
-synopsis:
-  "Verification and synthesis of hardware linear arithmetic structures."
+synopsis: "Verification and synthesis of hardware linear arithmetic structures"
 description: """
 Verification and synthesis of hardware linear arithmetic
 structures. Example of a left-to-right comparator.

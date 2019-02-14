@@ -13,7 +13,7 @@ tags: [ "keyword:arithmetic" "keyword:rational numbers" "keyword:setoid" "keywor
 authors: [ "Pierre Letouzey <>" ]
 bug-reports: "https://github.com/coq-contribs/qarith/issues"
 dev-repo: "git+https://github.com/coq-contribs/qarith.git"
-synopsis: "A Library for Rational Numbers (QArith)."
+synopsis: "A Library for Rational Numbers (QArith)"
 description: """
 This contribution is a proposition of a library formalizing
 rational number in Coq."""

@@ -13,7 +13,7 @@ tags: [ "keyword: exceptions" "keyword: continuations" "category: Computer Scien
 authors: [ "Pierre Castéran" ]
 bug-reports: "https://github.com/coq-contribs/exceptions/issues"
 dev-repo: "git+https://github.com/coq-contribs/exceptions.git"
-synopsis: "Pro[gramm,v]ing with continuations:A development in Coq."
+synopsis: "Pro[gramm,v]ing with continuations:A development in Coq"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/exceptions/archive/v8.8.0.tar.gz"

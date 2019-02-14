@@ -27,7 +27,7 @@ authors: [
   "Lianyi Zhang"
   "Sorin Stratulat"
 ]
-synopsis: "A library on rewriting theory and termination."
+synopsis: "A library on rewriting theory and termination"
 flags: light-uninstall
 url {
   src:

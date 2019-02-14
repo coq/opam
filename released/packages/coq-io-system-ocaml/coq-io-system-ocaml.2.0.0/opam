@@ -17,7 +17,7 @@ depends: [
   "ocamlfind"
   "lwt"
 ]
-synopsis: "Coq system effects for extraction to OCaml."
+synopsis: "Coq system effects for extraction to OCaml"
 url {
   src: "https://github.com/coq-io/system-ocaml/archive/2.0.0.tar.gz"
   checksum: "md5=41fcedd859501b31e3113d216763077d"

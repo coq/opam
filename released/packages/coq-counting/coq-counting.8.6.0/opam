@@ -13,7 +13,7 @@ tags: [ "keyword: statistics" "category: Miscellaneous/Coq Extensions" ]
 authors: [ "Stéphane Lescuyer" ]
 bug-reports: "https://github.com/coq-contribs/counting/issues"
 dev-repo: "git+https://github.com/coq-contribs/counting.git"
-synopsis: "Counting: a Coq plugin for measuring definitions/proofs."
+synopsis: "Counting: a Coq plugin for measuring definitions/proofs"
 description:
   "This plugin keeps the count of the size of definitions and proofs in the current Coq session."
 flags: light-uninstall

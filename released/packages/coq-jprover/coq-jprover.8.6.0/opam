@@ -13,7 +13,7 @@ tags: [ "keyword: Decision procedures" "keyword: First-order logic" "keyword: In
 authors: [ "Huang Guan-Shieng" ]
 bug-reports: "https://github.com/coq-contribs/jprover/issues"
 dev-repo: "git+https://github.com/coq-contribs/jprover.git"
-synopsis: "A theorem prover for first-order intuitionistic logic."
+synopsis: "A theorem prover for first-order intuitionistic logic"
 description: """
 JProver is a theorem prover for first-order intuitionistic logic.
 It is originally implemented by Stephan Schmitt and then integrated into

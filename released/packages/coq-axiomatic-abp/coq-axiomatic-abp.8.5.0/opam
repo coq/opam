@@ -13,8 +13,7 @@ tags: [ "keyword:alternating bit protocol" "keyword:process calculi" "keyword:re
 authors: [ "Jan Friso Groote <>" ]
 bug-reports: "https://github.com/coq-contribs/axiomatic-abp/issues"
 dev-repo: "git+https://github.com/coq-contribs/axiomatic-abp.git"
-synopsis:
-  "Verification of an axiomatisation of the Alternating Bit Protocol."
+synopsis: "Verification of an axiomatisation of the Alternating Bit Protocol"
 description: """
 The Alternating Bit Protocol is expressed in an axiomatized calculi of process.
 Correctness is proven."""

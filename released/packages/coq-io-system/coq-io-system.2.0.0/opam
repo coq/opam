@@ -21,7 +21,7 @@ depends: [
   "coq-io" {< "2.1.0"}
   "coq-io-system-ocaml"
 ]
-synopsis: "System effects for Coq."
+synopsis: "System effects for Coq"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-io/system/archive/2.0.0.tar.gz"

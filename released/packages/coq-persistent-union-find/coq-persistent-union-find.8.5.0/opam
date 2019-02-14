@@ -13,7 +13,7 @@ tags: [ "keyword:program verification" "keyword:union find" "keyword:data struct
 authors: [ "Jean-Christophe Filliâtre <>" ]
 bug-reports: "https://github.com/coq-contribs/persistent-union-find/issues"
 dev-repo: "git+https://github.com/coq-contribs/persistent-union-find.git"
-synopsis: "Persistent Union Find."
+synopsis: "Persistent Union Find"
 description: """
 Correctness proof of the Ocaml implementation of a persistent union-find
 data structure. See http://www.lri.fr/~filliatr/puf/ for more details."""

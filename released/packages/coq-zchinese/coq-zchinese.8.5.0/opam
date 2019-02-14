@@ -13,7 +13,7 @@ tags: [ "keyword:number theory" "keyword:chinese remainder" "keyword:primality" 
 authors: [ "Valérie Ménissier-Morain" ]
 bug-reports: "https://github.com/coq-contribs/zchinese/issues"
 dev-repo: "git+https://github.com/coq-contribs/zchinese.git"
-synopsis: "A proof of the Chinese Remainder Lemma."
+synopsis: "A proof of the Chinese Remainder Lemma"
 description:
   "This is a rewriting of the contribution chinese-lemma using Zarith."
 flags: light-uninstall

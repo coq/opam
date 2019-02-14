@@ -13,7 +13,7 @@ tags: [ "keyword: Multimodal Categorial Grammars" "keyword: Syntax/Semantics Int
 authors: [ "Houda Anoun <anoun@labri.fr>" "Pierre Casteran <casteran@labri.fr>" ]
 bug-reports: "https://github.com/coq-contribs/icharate/issues"
 dev-repo: "git+https://github.com/coq-contribs/icharate.git"
-synopsis: "Icharate: A logical Toolkit for Multimodal Categorial Grammars."
+synopsis: "Icharate: A logical Toolkit for Multimodal Categorial Grammars"
 description: """
 http://www.labri.fr/perso/anoun/Icharate
 

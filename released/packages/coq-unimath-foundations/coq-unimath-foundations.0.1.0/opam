@@ -20,8 +20,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.5.0"}
 ]
-synopsis:
-  "Aims to formalize a substantial body of mathematics using the univalent point of view."
+synopsis: "Aims to formalize a substantial body of mathematics using the univalent point of view"
 extra-files: ["Make" "md5=a6a04d4d56f0d1edf996019e353ca316"]
 url {
   src: "https://github.com/UniMath/UniMath/archive/v0.1.tar.gz"

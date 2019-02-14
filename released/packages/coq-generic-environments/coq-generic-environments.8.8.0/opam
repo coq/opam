@@ -13,7 +13,7 @@ tags: [ "keyword: generic environments" "keyword: typing" "keyword: type theory"
 authors: [ "Emmanuel Polonowski <emmanuel.polonowski@u-pec.fr> [http://lacl.u-pec.fr/polonowski/]" ]
 bug-reports: "https://github.com/coq-contribs/generic-environments/issues"
 dev-repo: "git+https://github.com/coq-contribs/generic-environments.git"
-synopsis: "Generic_Environments."
+synopsis: "Generic_Environments"
 description: """
 http://lacl.u-pec.fr/polonowski/Develop/Generic_Env/gen-env.html
 

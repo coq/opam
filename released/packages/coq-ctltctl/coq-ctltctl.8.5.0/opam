@@ -13,8 +13,7 @@ tags: [ "keyword:ctl" "keyword:tctl" "keyword:real time systems" "keyword:reacti
 authors: [ "Carlos Daniel Luna <>" ]
 bug-reports: "https://github.com/coq-contribs/ctltctl/issues"
 dev-repo: "git+https://github.com/coq-contribs/ctltctl.git"
-synopsis:
-  "Computation Tree Logic for Reactive Systems and Timed Computation Tree Logic for Real Time Systems."
+synopsis: "Computation Tree Logic for Reactive Systems and Timed Computation Tree Logic for Real Time Systems"
 description: """
 This library formalises two logics for reasoning about
 reactive systems (CTL) and real time systems (TCTL) represents using

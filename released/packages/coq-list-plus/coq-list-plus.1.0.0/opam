@@ -17,7 +17,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.4pl4"}
 ]
-synopsis: "More functions on lists."
+synopsis: "More functions on lists"
 flags: light-uninstall
 url {
   src: "https://github.com/clarus/coq-list-plus/archive/1.0.0.tar.gz"

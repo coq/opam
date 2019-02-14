@@ -28,8 +28,7 @@ authors: [
   "Thomas Braibant <>"
   "Fabian Kunze <>"
 ]
-synopsis:
-  "This Coq plugin provides tactics for rewriting universally quantified equations, modulo associative (and possibly commutative) operators."
+synopsis: "This Coq plugin provides tactics for rewriting universally quantified equations, modulo associative (and possibly commutative) operators"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-community/aac-tactics/archive/v8.8.0.tar.gz"

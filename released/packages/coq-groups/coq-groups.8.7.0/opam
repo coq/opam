@@ -13,7 +13,7 @@ tags: [ "keyword: group theory" "category: Miscellaneous/Coq Use Examples" ]
 authors: [ "Pierre Castéran" ]
 bug-reports: "https://github.com/coq-contribs/groups/issues"
 dev-repo: "git+https://github.com/coq-contribs/groups.git"
-synopsis: "An exercise on groups."
+synopsis: "An exercise on groups"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/groups/archive/v8.7.0.tar.gz"

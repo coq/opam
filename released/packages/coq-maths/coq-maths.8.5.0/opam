@@ -13,7 +13,7 @@ tags: [ "keyword:mathematics" "category:Mathematics/Arithmetic and Number Theory
 authors: [ "Jean-Christophe Filliâtre <>" ]
 bug-reports: "https://github.com/coq-contribs/maths/issues"
 dev-repo: "git+https://github.com/coq-contribs/maths.git"
-synopsis: "Basic mathematics."
+synopsis: "Basic mathematics"
 description: """
 Basic mathematics (gcd, primality, etc.) from
 French ``Mathematiques Superieures'' (first year of preparation to

@@ -14,7 +14,7 @@ tags: [ "keyword: Goedel Rosser Incompleteness Logic Hilbert" "category: Mathema
 authors: [ "Russell O'Connor <roconnor@alumni.uwaterloo.ca> [http://r6.ca]" ]
 bug-reports: "https://github.com/coq-contribs/goedel/issues"
 dev-repo: "git+https://github.com/coq-contribs/goedel.git"
-synopsis: "The Gödel-Rosser 1st incompleteness theorem."
+synopsis: "The Gödel-Rosser 1st incompleteness theorem"
 description: """
 http://r6.ca/goedel1.html
 

@@ -13,7 +13,7 @@ tags: [ "keyword:grobner basis" "keyword:polynomial ideal" "keyword:buchberger's
 authors: [ "Henrik Persson <>" "Laurent Théry <>" ]
 bug-reports: "https://github.com/coq-contribs/buchberger/issues"
 dev-repo: "git+https://github.com/coq-contribs/buchberger.git"
-synopsis: "Proof of Buchberger's algorithm."
+synopsis: "Proof of Buchberger's algorithm"
 description: """
 A machine-checked implementation of Buchberger's.
 It computes the Grobner basis associated to a

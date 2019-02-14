@@ -13,8 +13,7 @@ tags: [ "keyword:security" "keyword:filesystem" "keyword:unix" "keyword:mls" "ke
 authors: [ "Maximiliano Cristiá <>" ]
 bug-reports: "https://github.com/coq-contribs/fssec-model/issues"
 dev-repo: "git+https://github.com/coq-contribs/fssec-model.git"
-synopsis:
-  "Formal verification of an extension of a UNIX compatible, secure filesystem."
+synopsis: "Formal verification of an extension of a UNIX compatible, secure filesystem"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/fssec-model/archive/v8.5.0.tar.gz"

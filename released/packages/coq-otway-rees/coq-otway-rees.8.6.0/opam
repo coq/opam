@@ -13,7 +13,7 @@ tags: [ "keyword: Otway-Rees" "keyword: protocols" "keyword: cryptography" "cate
 authors: [ "Dominique Bolignano and Valérie Ménissier-Morain" ]
 bug-reports: "https://github.com/coq-contribs/otway-rees/issues"
 dev-repo: "git+https://github.com/coq-contribs/otway-rees.git"
-synopsis: "Otway-Rees cryptographic protocol."
+synopsis: "Otway-Rees cryptographic protocol"
 description: """
 A description and a proof of correctness for
 the Otway-Rees cryptographic protocol, usually used as an example for

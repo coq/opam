@@ -15,7 +15,7 @@ depends: [
   "coq" {= "8.5~beta2"}
 ]
 tags: [ "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" "date:Feb 2014" ]
-synopsis: "The Small Scale Reflection extension."
+synopsis: "The Small Scale Reflection extension"
 flags: light-uninstall
 url {
   src: "http://ssr.msr-inria.inria.fr/FTP/ssreflect-1.5.coq85beta2.tar.gz"

@@ -21,8 +21,7 @@ depends: [
   "coq" {>= "8.6"}
   "coq-bignums" {>= "8.6"}
 ]
-synopsis:
-  "A library of abstract interfaces for mathematical structures in Coq."
+synopsis: "A library of abstract interfaces for mathematical structures in Coq"
 flags: light-uninstall
 url {
   src: "https://github.com/math-classes/math-classes/archive/1.0.7.zip"

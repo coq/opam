@@ -21,7 +21,7 @@ depends: [
   "coq-function-ninjas"
   "coq-list-string" {>= "2.0.0"}
 ]
-synopsis: "Experimental library to write concurrent applications in Coq."
+synopsis: "Experimental library to write concurrent applications in Coq"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-concurrency/system/archive/1.0.0.tar.gz"

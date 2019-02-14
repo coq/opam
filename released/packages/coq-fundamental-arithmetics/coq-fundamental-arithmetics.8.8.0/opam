@@ -13,7 +13,7 @@ tags: [ "keyword: arithmetic" "keyword: number theory" "category: Mathematics/Ar
 authors: [ "Sébastien Briais <sebastien.briais at ens-lyon.fr> [http://perso.ens-lyon.fr/sebastien.briais/]" ]
 bug-reports: "https://github.com/coq-contribs/fundamental-arithmetics/issues"
 dev-repo: "git+https://github.com/coq-contribs/fundamental-arithmetics.git"
-synopsis: "Fundamental theorems of arithmetic."
+synopsis: "Fundamental theorems of arithmetic"
 description:
   "http://perso.ens-lyon.fr/sebastien.briais/tools/Arith_080201.tar.gz"
 flags: light-uninstall

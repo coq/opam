@@ -13,7 +13,7 @@ tags: [ "keyword: Higman's lemma" "keyword: well quasi-ordering" "category: Math
 authors: [ "William Delobel <william.delobel@lif.univ-mrs.fr>" ]
 bug-reports: "https://github.com/coq-contribs/higman-s/issues"
 dev-repo: "git+https://github.com/coq-contribs/higman-s.git"
-synopsis: "Higman's lemma on an unrestricted alphabet."
+synopsis: "Higman's lemma on an unrestricted alphabet"
 description:
   "This proof is more or less the proof given by Monika Seisenberger in \"An Inductive Version of Nash-Williams' Minimal-Bad-Sequence Argument for Higman's Lemma\"."
 flags: light-uninstall

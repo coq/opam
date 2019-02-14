@@ -13,7 +13,7 @@ tags: [ "keyword: BDD" "keyword: BDT" "keyword: Finite Sets" "keyword: Model-Che
 authors: [ "Emmanuel Ledinot" ]
 bug-reports: "https://github.com/coq-contribs/canon-bdds/issues"
 dev-repo: "git+https://github.com/coq-contribs/canon-bdds.git"
-synopsis: "Canonicity of Binary Decision Dags."
+synopsis: "Canonicity of Binary Decision Dags"
 description: """
 A proof of unicity and canonicity of Binary Decision Trees and
 Binary Decision Dags. This contrib contains also a development on finite sets."""

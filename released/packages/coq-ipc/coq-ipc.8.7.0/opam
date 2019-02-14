@@ -13,7 +13,7 @@ tags: [ "keyword: intuitionistic logic " "keyword: proof search " "keyword: proo
 authors: [ "Klaus Weich" ]
 bug-reports: "https://github.com/coq-contribs/ipc/issues"
 dev-repo: "git+https://github.com/coq-contribs/ipc.git"
-synopsis: "Intuitionistic Propositional Checker."
+synopsis: "Intuitionistic Propositional Checker"
 description: """
 This development treats proof search in intuitionistic propositional logic,
 a fragment of any constructive type theory. We present new and more

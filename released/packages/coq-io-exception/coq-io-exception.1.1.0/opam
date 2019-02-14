@@ -21,7 +21,7 @@ depends: [
   "coq-io-list"
   "coq-io-evaluate"
 ]
-synopsis: "Abstract your errors into exceptions."
+synopsis: "Abstract your errors into exceptions"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-io/exception/archive/1.1.0.tar.gz"

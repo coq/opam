@@ -13,7 +13,7 @@ tags: [ "keyword:streams" "keyword:eratosthene sieve" "keyword:prime numbers" "k
 authors: [ "François Leclerc <>" "Christine Paulin-Mohring <>" ]
 bug-reports: "https://github.com/coq-contribs/streams/issues"
 dev-repo: "git+https://github.com/coq-contribs/streams.git"
-synopsis: "Specification of Eratosthene Sieve ."
+synopsis: "Specification of Eratosthene Sieve "
 description: """
 Proof of Eratosthene Sieve formalised using streams
 encoded as greatest fixpoints. See paper:

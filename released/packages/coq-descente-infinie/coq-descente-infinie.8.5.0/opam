@@ -13,7 +13,7 @@ tags: [ "keyword:induction" "keyword:infinite descent" "category:Miscellaneous/C
 authors: [ "Li Mengran <limengra@comp.nus.edu.sg>" "Razvan Voicu <razvan@comp.nus.edu.sg>" ]
 bug-reports: "https://github.com/coq-contribs/descente-infinie/issues"
 dev-repo: "git+https://github.com/coq-contribs/descente-infinie.git"
-synopsis: "The Descente Infinie Tactic."
+synopsis: "The Descente Infinie Tactic"
 description:
   "This is a tactic plugin for coq. The tactic helps to prove inductive lemmas by fixpoint functions. A manual for the tactic can be found on its homepage listed above."
 flags: light-uninstall

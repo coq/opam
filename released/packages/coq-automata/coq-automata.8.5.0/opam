@@ -13,7 +13,7 @@ tags: [ "keyword:formal language theory" "keyword:finite automata" "keyword:push
 authors: [ "Jean-Christophe Filliâtre <>" "Judicaël Courant <>" ]
 bug-reports: "https://github.com/coq-contribs/automata/issues"
 dev-repo: "git+https://github.com/coq-contribs/automata.git"
-synopsis: "Beginning of formal language theory."
+synopsis: "Beginning of formal language theory"
 description: """
 This library formalises the beginning of formal language theory:
 finite automata and rational languages, context-free grammars

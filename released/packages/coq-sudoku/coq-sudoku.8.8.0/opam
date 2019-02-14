@@ -13,7 +13,7 @@ tags: [ "keyword: sudoku" "keyword: puzzles" "keyword: Davis-Putnam" "category: 
 authors: [ "Laurent Théry <thery@sophia.inria.fr> [http://www-sop.inria.fr/lemme/personnel/Laurent.Thery/me.html]" ]
 bug-reports: "https://github.com/coq-contribs/sudoku/issues"
 dev-repo: "git+https://github.com/coq-contribs/sudoku.git"
-synopsis: "A certified Sudoku solver."
+synopsis: "A certified Sudoku solver"
 description: """
 ftp://ftp-sop.inria.fr/lemme/Laurent.Thery/Sudoku.zip
 

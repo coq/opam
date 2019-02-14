@@ -13,7 +13,7 @@ tags: [ "keyword:constructive mathematics" "keyword:geometry" "category:Mathemat
 authors: [ "Gilles Kahn <>" ]
 bug-reports: "https://github.com/coq-contribs/constructive-geometry/issues"
 dev-repo: "git+https://github.com/coq-contribs/constructive-geometry.git"
-synopsis: "Elements of Constructive Geometry."
+synopsis: "Elements of Constructive Geometry"
 description: "Constructive Geometry following Jan von Plato."
 flags: light-uninstall
 url {

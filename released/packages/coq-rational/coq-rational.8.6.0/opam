@@ -13,7 +13,7 @@ tags: [ "keyword: Integers" "keyword: rational numbers" "keyword: quotient types
 authors: [ "Samuel Boutin" ]
 bug-reports: "https://github.com/coq-contribs/rational/issues"
 dev-repo: "git+https://github.com/coq-contribs/rational.git"
-synopsis: "A definition of rational numbers."
+synopsis: "A definition of rational numbers"
 description: """
 Definition of integers as the usual symetric
 completion of a semi-group and of rational numbers as the product of

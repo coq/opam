@@ -12,7 +12,7 @@ depends: [
   "coq" {>= "8.4pl4" & < "8.5~"}
   "coq-coqeal-theory" {>= "0.9.0"}
 ]
-synopsis: "A short constructive formalization of finitely presented modules."
+synopsis: "A short constructive formalization of finitely presented modules"
 authors: "Cyril Cohen and Anders Mörtberg"
 flags: light-uninstall
 url {

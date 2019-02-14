@@ -13,7 +13,7 @@ tags: [ "keyword:algorithms" "keyword:performance" "keyword:computer arithmetic"
 authors: [ "Luc Rutten <>" ]
 bug-reports: "https://github.com/coq-contribs/mod-red/issues"
 dev-repo: "git+https://github.com/coq-contribs/mod-red.git"
-synopsis: "Efficient Reduction of Large Integers by Small Moduli."
+synopsis: "Efficient Reduction of Large Integers by Small Moduli"
 description:
   "Fast reduction of integers by moduli up to 2^(w-1), where w is a processor's word size."
 flags: light-uninstall

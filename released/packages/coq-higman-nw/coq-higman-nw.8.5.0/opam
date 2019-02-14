@@ -13,8 +13,7 @@ tags: [ "keyword:a translation" "keyword:higman's lemma" "keyword:impredicativit
 authors: [ "Hugo Herbelin <>" ]
 bug-reports: "https://github.com/coq-contribs/higman-nw/issues"
 dev-repo: "git+https://github.com/coq-contribs/higman-nw.git"
-synopsis:
-  "A program from an A-translated impredicative proof of Higman's Lemma."
+synopsis: "A program from an A-translated impredicative proof of Higman's Lemma"
 description: """
 The file Higman.v formalizes an A-translated version of
 Nash-Williams impredicative and classical proof of Higman's lemma

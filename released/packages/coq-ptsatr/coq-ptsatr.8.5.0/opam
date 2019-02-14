@@ -13,7 +13,7 @@ tags: [ "keyword:pure type systems" "keyword:judgmental equality" "keyword:chruc
 authors: [ "Vincent Siles <vincent.siles@ens-lyon.org>" "Hugo Herbelin <hugo.herbelin@inria.fr>" ]
 bug-reports: "https://github.com/coq-contribs/ptsatr/issues"
 dev-repo: "git+https://github.com/coq-contribs/ptsatr.git"
-synopsis: "PTSATR."
+synopsis: "PTSATR"
 description: """
 Formalization of the proof that PTS and PTS with judgmental equality (PTSe) are equivalent.
 With this equivalence, we are able to derive all the meta-theory of PTSe, like Pi-injectivity or Subject Reduction."""

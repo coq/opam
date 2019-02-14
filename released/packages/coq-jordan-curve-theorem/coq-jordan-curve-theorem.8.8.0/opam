@@ -13,7 +13,7 @@ tags: [ "keyword: combinatorial hypermaps" "keyword: genus" "keyword: planarity"
 authors: [ "Jean-François Dufourd <dufourd@lsiit.u-strasbg.fr> [http://dpt-info.u-strasbg.fr/~jfd/]" ]
 bug-reports: "https://github.com/coq-contribs/jordan-curve-theorem/issues"
 dev-repo: "git+https://github.com/coq-contribs/jordan-curve-theorem.git"
-synopsis: "Hypermaps, planarity and discrete Jordan curve theorem."
+synopsis: "Hypermaps, planarity and discrete Jordan curve theorem"
 description: """
 http://dpt-info.u-strasbg.fr/~jfd/Downloads/JORDAN_Contrib_Coq.tar.gz
 

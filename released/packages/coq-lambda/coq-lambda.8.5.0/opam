@@ -13,7 +13,7 @@ tags: [ "keyword:pure lambda calculus" "keyword:confluence" "keyword:parallel mo
 authors: [ "Gérard Huet <>" ]
 bug-reports: "https://github.com/coq-contribs/lambda/issues"
 dev-repo: "git+https://github.com/coq-contribs/lambda.git"
-synopsis: "Residual Theory in Lambda-Calculus."
+synopsis: "Residual Theory in Lambda-Calculus"
 description: """
 We present the complete development in Gallina of the
 residual theory of beta-reduction in pure lambda-calculus. The main

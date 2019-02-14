@@ -13,7 +13,7 @@ tags: [ "keyword: matrices" "keyword: vectors" "keyword: linear algebra" "keywor
 authors: [ "Nicolas Magaud" ]
 bug-reports: "https://github.com/coq-contribs/matrices/issues"
 dev-repo: "git+https://github.com/coq-contribs/matrices.git"
-synopsis: "Ring properties for square matrices."
+synopsis: "Ring properties for square matrices"
 description: """
 This contribution contains an operational formalization of square matrices.
 (m,n)-Matrices are represented as vectors of length n. Each vector

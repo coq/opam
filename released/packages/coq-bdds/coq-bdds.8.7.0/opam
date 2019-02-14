@@ -14,7 +14,7 @@ tags: [ "keyword: BDD" "keyword: binary decision diagrams" "keyword: classical l
 authors: [ "Kumar Neeraj Verma" ]
 bug-reports: "https://github.com/coq-contribs/bdds/issues"
 dev-repo: "git+https://github.com/coq-contribs/bdds.git"
-synopsis: "BDD algorithms and proofs in Coq, by reflection."
+synopsis: "BDD algorithms and proofs in Coq, by reflection"
 description: """
 Provides BDD algorithms running under Coq.
 (BDD are Binary Decision Diagrams.)

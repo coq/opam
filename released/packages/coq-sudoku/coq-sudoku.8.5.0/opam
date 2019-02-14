@@ -13,7 +13,7 @@ tags: [ "keyword:sudoku" "keyword:puzzles" "keyword:davis putnam" "category:Misc
 authors: [ "Laurent Théry <thery@sophia.inria.fr>" ]
 bug-reports: "https://github.com/coq-contribs/sudoku/issues"
 dev-repo: "git+https://github.com/coq-contribs/sudoku.git"
-synopsis: "A certified Sudoku solver."
+synopsis: "A certified Sudoku solver"
 description: """
 A formalisation of Sudoku in Coq. It implements a naive
 Davis-Putnam procedure to solve sudokus."""

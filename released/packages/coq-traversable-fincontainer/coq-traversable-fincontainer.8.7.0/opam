@@ -13,7 +13,7 @@ tags: [ "keyword: finitary container" "keyword: traversable functor" "category: 
 authors: [ "Russell O'Connor <oconnorr@google.com>" ]
 bug-reports: "https://github.com/coq-contribs/traversable-fincontainer/issues"
 dev-repo: "git+https://github.com/coq-contribs/traversable-fincontainer.git"
-synopsis: "Traversable Functors are Finitary Containers."
+synopsis: "Traversable Functors are Finitary Containers"
 description: """
 https://github.com/oconnorr/traversable-fincontainer
 

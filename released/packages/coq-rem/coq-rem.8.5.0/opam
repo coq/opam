@@ -13,7 +13,7 @@ tags: [ "keyword:rem theorem" "keyword:baire space" "category:Mathematics/Real C
 authors: [ "Henk Barendregt <>" ]
 bug-reports: "https://github.com/coq-contribs/rem/issues"
 dev-repo: "git+https://github.com/coq-contribs/rem.git"
-synopsis: "Rem Theorem in Baire space."
+synopsis: "Rem Theorem in Baire space"
 description: "A formalisation of Rem Theorem in Baire space"
 flags: light-uninstall
 url {

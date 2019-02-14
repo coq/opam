@@ -16,7 +16,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.5~beta2" & < "8.5~beta3"}
 ]
-synopsis: "A quoting library for Coq."
+synopsis: "A quoting library for Coq"
 flags: light-uninstall
 url {
   src: "https://github.com/gmalecha/template-coq/archive/v1.1.0-beta2.tar.gz"

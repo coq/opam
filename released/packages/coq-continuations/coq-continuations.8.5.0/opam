@@ -13,7 +13,7 @@ tags: [ "keyword:exceptions" "keyword:monads" "keyword:continuations" "keyword:c
 authors: [ "Jean-François Monin <>" ]
 bug-reports: "https://github.com/coq-contribs/continuations/issues"
 dev-repo: "git+https://github.com/coq-contribs/continuations.git"
-synopsis: "A toolkit to reason with programs raising exceptions."
+synopsis: "A toolkit to reason with programs raising exceptions"
 description: """
 We show a way of developing correct functionnal programs
 raising exceptions. This is made possible using a Continuation

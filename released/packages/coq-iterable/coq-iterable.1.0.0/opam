@@ -18,7 +18,7 @@ depends: [
   "coq" {>= "8.4pl4"}
   "coq-function-ninjas"
 ]
-synopsis: "Generic definition of iterators."
+synopsis: "Generic definition of iterators"
 flags: light-uninstall
 url {
   src: "https://github.com/clarus/coq-iterable/archive/1.0.0.tar.gz"

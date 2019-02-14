@@ -13,7 +13,7 @@ tags: [ "keyword: abstract syntax" "keyword: binders" "keyword: de Bruijn indice
 authors: [ "Francois Pottier <francois.pottier@inria.fr> [http://gallium.inria.fr/~fpottier/]" ]
 bug-reports: "https://github.com/coq-contribs/dblib/issues"
 dev-repo: "git+https://github.com/coq-contribs/dblib.git"
-synopsis: "dblib."
+synopsis: "Dblib"
 description: """
 http://gallium.inria.fr/~fpottier/dblib/README
 

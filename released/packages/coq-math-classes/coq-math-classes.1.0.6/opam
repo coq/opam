@@ -18,8 +18,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7"}
 ]
-synopsis:
-  "A library of abstract interfaces for mathematical structures in Coq."
+synopsis: "A library of abstract interfaces for mathematical structures in Coq"
 flags: light-uninstall
 url {
   src: "https://github.com/math-classes/math-classes/archive/1.0.6.tar.gz"

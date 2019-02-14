@@ -13,7 +13,7 @@ tags: [ "keyword: Set Theory" "keyword: Zermelo-Fraenkel" "keyword: Calculus of 
 authors: [ "Benjamin Werner" ]
 bug-reports: "https://github.com/coq-contribs/zfc/issues"
 dev-repo: "git+https://github.com/coq-contribs/zfc.git"
-synopsis: "An encoding of Zermelo-Fraenkel Set Theory in Coq."
+synopsis: "An encoding of Zermelo-Fraenkel Set Theory in Coq"
 description: """
 The encoding of Zermelo-Fraenkel Set Theory is largely inspired by
 Peter Aczel's work dating back to the eighties. A type Ens is defined,

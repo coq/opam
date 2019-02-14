@@ -10,7 +10,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.5~" & < "8.6~"}
 ]
-synopsis: "Force the use of Coq 8.5 versions."
+synopsis: "Force the use of Coq 8.5 versions"
 url {
   src: "http://i.imgur.com/fQpmoXE.jpg"
   checksum: "md5=5674a5a69adeaf7f58147a6962369c35"

@@ -13,7 +13,7 @@ tags: [ "keyword: ordinals" "keyword: well-foundedness" "keyword: termination" "
 authors: [ "Pierre Castéran <pierre.casteran@labri.fr> [http://www.labri.fr/~casteran/]" "Évelyne Contejean <contejea@lri.fr> [http://www.lri.fr/~contejea]" ]
 bug-reports: "https://github.com/coq-contribs/cantor/issues"
 dev-repo: "git+https://github.com/coq-contribs/cantor.git"
-synopsis: "On Ordinal Notations."
+synopsis: "On Ordinal Notations"
 description: """
 This contribution contains data structures for ordinals
 less than Gamma0 under Cantor and Veblen normal

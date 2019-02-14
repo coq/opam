@@ -19,8 +19,7 @@ depends: [
   "coq-unimath-category-theory"
   "coq-unimath-foundations"
 ]
-synopsis:
-  "Aims to formalize a substantial body of mathematics using the univalent point of view."
+synopsis: "Aims to formalize a substantial body of mathematics using the univalent point of view"
 flags: light-uninstall
 extra-files: ["Make" "md5=ba645952ced22f5cf37e29da5175d432"]
 url {

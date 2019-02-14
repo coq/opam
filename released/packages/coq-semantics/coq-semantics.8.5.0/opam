@@ -13,8 +13,7 @@ tags: [ "keyword:natural semantics" "keyword:denotational semantics" "keyword:ax
 authors: [ "Yves Bertot <Yves.Bertot@sophia.inria.fr>" ]
 bug-reports: "https://github.com/coq-contribs/semantics/issues"
 dev-repo: "git+https://github.com/coq-contribs/semantics.git"
-synopsis:
-  "A survey of semantics styles, from natural semantics through structural operational, axiomatic, and denotational semantics, to."
+synopsis: "A survey of semantics styles, from natural semantics through structural operational, axiomatic, and denotational semantics, to"
 description: """
 abstract interpretation.
 

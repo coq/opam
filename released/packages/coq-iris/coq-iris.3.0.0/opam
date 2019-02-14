@@ -17,8 +17,7 @@ depends: [
   "coq" {((>= "8.5.1" & < "8.7~") | (= "dev"))}
   "coq-mathcomp-ssreflect" {((>= "1.6.1" & < "1.7~") | (= "dev"))}
 ]
-synopsis:
-  "Iris is a Higher-Order Concurrent Separation Logic for reasoning about fine-grained concurrent programs, building logical relations, and more.  It features an interactive proof mode for carrying out separation logic proofs in Coq."
+synopsis: "Iris is a Higher-Order Concurrent Separation Logic for reasoning about fine-grained concurrent programs, building logical relations, and more.  It features an interactive proof mode for carrying out separation logic proofs in Coq"
 url {
   src:
     "https://gitlab.mpi-sws.org/iris/iris/repository/iris-3.0.0/archive.tar.gz"

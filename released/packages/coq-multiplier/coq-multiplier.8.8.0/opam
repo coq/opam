@@ -13,7 +13,7 @@ tags: [ "keyword: hardware verification" "keyword: circuit" "category: Computer 
 authors: [ "Christine Paulin" ]
 bug-reports: "https://github.com/coq-contribs/multiplier/issues"
 dev-repo: "git+https://github.com/coq-contribs/multiplier.git"
-synopsis: "Proof of a multiplier circuit."
+synopsis: "Proof of a multiplier circuit"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/multiplier/archive/v8.8.0.tar.gz"

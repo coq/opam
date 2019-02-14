@@ -13,7 +13,7 @@ depends: [
   "coq-math-comp" {>= "1.5"} |
   ("coq-mathcomp-ssreflect" {>= "1.6"} & "coq-mathcomp-algebra" {>= "1.6"})
 ]
-synopsis: "The theory needed by the refinement framework library."
+synopsis: "The theory needed by the refinement framework library"
 authors:
   "Guillaume Cano, Cyril Cohen, Maxime Dénès, Anders Mörtberg and Vincent Siles"
 flags: light-uninstall

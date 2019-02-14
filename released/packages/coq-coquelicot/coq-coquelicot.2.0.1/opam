@@ -15,8 +15,7 @@ depends: [
 ]
 tags: [ "keyword:real analysis" "keyword:topology" "keyword:filters" "keyword:metric spaces" "category:Mathematics/Real Calculus and Topology" ]
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Catherine Lelay <catherine.lelay@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
-synopsis:
-  "A Coq formalization of real analysis compatible with the standard library."
+synopsis: "A Coq formalization of real analysis compatible with the standard library"
 flags: light-uninstall
 url {
   src:

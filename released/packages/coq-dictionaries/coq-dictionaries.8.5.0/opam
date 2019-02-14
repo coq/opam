@@ -13,7 +13,7 @@ tags: [ "keyword:modules  functors search trees" "category:Computer Science/Data
 authors: [ "Pierre Castéran <casteran@labri.fr>" ]
 bug-reports: "https://github.com/coq-contribs/dictionaries/issues"
 dev-repo: "git+https://github.com/coq-contribs/dictionaries.git"
-synopsis: "Dictionaries (with modules)."
+synopsis: "Dictionaries (with modules)"
 description: """
 This file contains a specification for dictionaries, and
 an implementation using binary search trees. Coq's module system,

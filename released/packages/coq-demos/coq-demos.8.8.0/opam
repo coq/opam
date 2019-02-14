@@ -13,7 +13,7 @@ tags: [ "keyword: sorting" "keyword: Cases" "keyword: Tauto" "keyword: AutoRewri
 authors: [ "Coq group" ]
 bug-reports: "https://github.com/coq-contribs/demos/issues"
 dev-repo: "git+https://github.com/coq-contribs/demos.git"
-synopsis: "Demos of some Coq tools appeared in version V6.0."
+synopsis: "Demos of some Coq tools appeared in version V6.0"
 description: """
 Example of sorting algorithms defined using the Cases
 (pattern-matching) construction. Demo of the decision tactic Tauto for

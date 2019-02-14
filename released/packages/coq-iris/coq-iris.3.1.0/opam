@@ -15,7 +15,7 @@ depends: [
   "coq-mathcomp-ssreflect" {(>= "1.6.1" & < "1.8~") | (= "dev")}
   "coq-stdpp" {(= "1.1.0") | (= "dev")}
 ]
-synopsis: "This is the Coq development of the Iris Project."
+synopsis: "This is the Coq development of the Iris Project"
 flags: light-uninstall
 url {
   src:

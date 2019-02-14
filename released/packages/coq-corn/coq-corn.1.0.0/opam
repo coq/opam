@@ -15,7 +15,7 @@ depends: [
   "coq" {>= "8.4pl4" & < "8.5~"}
   "coq-math-classes"
 ]
-synopsis: "The CoRN library."
+synopsis: "The CoRN library"
 flags: light-uninstall
 url {
   src:

@@ -13,7 +13,7 @@ tags: [ "keyword: Set Theory" "keyword: Zermelo-Fraenkel" "category: Mathematics
 authors: [ "Guillaume Alexandre" ]
 bug-reports: "https://github.com/coq-contribs/zf/issues"
 dev-repo: "git+https://github.com/coq-contribs/zf.git"
-synopsis: "An axiomatisation of intuitionistic Zermelo-Fraenkel set theory."
+synopsis: "An axiomatisation of intuitionistic Zermelo-Fraenkel set theory"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/zf/archive/v8.7.0.tar.gz"

@@ -16,7 +16,7 @@ depends: [
 ]
 tags: [ "keyword:finmap" "keyword:finset" "keyword:multiset" "keyword:order"]
 authors: [ "Cyril Cohen <cyril.cohen@inria.fr>" ]
-synopsis: "Finite sets, finite maps, finitely supported functions, orders."
+synopsis: "Finite sets, finite maps, finitely supported functions, orders"
 description: """
 This library is an extension of mathematical component in order to
 support finite sets and finite maps on choicetypes (rather that finite

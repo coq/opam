@@ -13,7 +13,7 @@ tags: [ "keyword: dimension one Ramsey theorem" "keyword: constructive mathemati
 authors: [ "Marc Bezem" ]
 bug-reports: "https://github.com/coq-contribs/ramsey/issues"
 dev-repo: "git+https://github.com/coq-contribs/ramsey.git"
-synopsis: "Ramsey Theory."
+synopsis: "Ramsey Theory"
 description: """
 For dimension one, the Infinite Ramsey Theorem states that, for any
 subset A of the natural numbers nat, either A or nat\\A is

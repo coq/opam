@@ -13,7 +13,7 @@ tags: [ "keyword:multimodal categorial grammars" "keyword:syntax/semantics inter
 authors: [ "Houda Anoun <anoun@labri.fr>" "Pierre Castéran <casteran@labri.fr>" ]
 bug-reports: "https://github.com/coq-contribs/icharate/issues"
 dev-repo: "git+https://github.com/coq-contribs/icharate.git"
-synopsis: "Icharate: A logical Toolkit for Multimodal Categorial Grammars."
+synopsis: "Icharate: A logical Toolkit for Multimodal Categorial Grammars"
 description: """
 The logical toolkit ICHARATE is built upon a formalization of
 multimodal categorial grammars in Coq proof assistant.

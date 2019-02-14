@@ -17,8 +17,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-synopsis:
-  "A Coq plugin for simpler proofs by reflection or OCaml certificates."
+synopsis: "A Coq plugin for simpler proofs by reflection or OCaml certificates"
 flags: light-uninstall
 url {
   src: "https://github.com/clarus/cybele/archive/1.3.0.tar.gz"

@@ -13,7 +13,7 @@ tags: [ "keyword: set theory" "keyword: cardinals" "keyword: ordinals" "keyword:
 authors: [ "Daniel Schepler <dschepler@gmail.com>" ]
 bug-reports: "https://github.com/coq-contribs/zorns-lemma/issues"
 dev-repo: "git+https://github.com/coq-contribs/zorns-lemma.git"
-synopsis: "Zorn's Lemma."
+synopsis: "Zorn's Lemma"
 description:
   "This library develops some basic set theory. The main purpose I had in writing it was as support for the Topology library."
 flags: light-uninstall

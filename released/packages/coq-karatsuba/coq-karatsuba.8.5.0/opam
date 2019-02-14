@@ -13,7 +13,7 @@ tags: [ "keyword:karatsuba multiplication" "keyword:binary ring" "category:Mathe
 authors: [ "Russell O'Connor <r.oconnor@cs.ru.nl>" ]
 bug-reports: "https://github.com/coq-contribs/karatsuba/issues"
 dev-repo: "git+https://github.com/coq-contribs/karatsuba.git"
-synopsis: "Karatsuba's Multiplication."
+synopsis: "Karatsuba's Multiplication"
 description: "An implementation of Karatsuba's Multiplication algorithm"
 flags: light-uninstall
 url {

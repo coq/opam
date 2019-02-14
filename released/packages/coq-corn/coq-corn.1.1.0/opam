@@ -19,7 +19,7 @@ depends: [
   "coq" {>= "8.5" & <= "8.5.2"}
   "coq-math-classes"
 ]
-synopsis: "The CoRN library. A library for constructive analysis."
+synopsis: "The CoRN library. A library for constructive analysis"
 flags: light-uninstall
 url {
   src: "https://github.com/c-corn/corn/archive/v8.5.zip"

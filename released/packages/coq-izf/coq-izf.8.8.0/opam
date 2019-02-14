@@ -13,7 +13,7 @@ tags: [ "keyword: Intuitionistic set theory" "keyword: pointed graphs" "keyword:
 authors: [ "Alexandre Miquel <Alexandre.Miquel@pps.jussieu.fr> [http://www.pps.jussieu.fr/~miquel]" ]
 bug-reports: "https://github.com/coq-contribs/izf/issues"
 dev-repo: "git+https://github.com/coq-contribs/izf.git"
-synopsis: "Intuitionistic Zermelo-Fraenkel Set Theory in Coq."
+synopsis: "Intuitionistic Zermelo-Fraenkel Set Theory in Coq"
 description: """
 This development contains the set-as-pointed-graph
 interpretation of Intuitionistic Zermelo Frankel set theory in system

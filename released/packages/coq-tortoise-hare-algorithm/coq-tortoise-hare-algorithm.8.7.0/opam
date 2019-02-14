@@ -13,7 +13,7 @@ tags: [ "keyword: program verification" "keyword: paths" "keyword: cycle detecti
 authors: [ "Jean-Christophe Filliâtre" ]
 bug-reports: "https://github.com/coq-contribs/tortoise-hare-algorithm/issues"
 dev-repo: "git+https://github.com/coq-contribs/tortoise-hare-algorithm.git"
-synopsis: "Tortoise and the hare algorithm."
+synopsis: "Tortoise and the hare algorithm"
 description: """
 Correctness proof of Floyd's cycle-finding algorithm, also known as
 the "tortoise and the hare"-algorithm.

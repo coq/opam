@@ -12,7 +12,7 @@ depends: [
 authors: [ "Lionel Rieg <lionel.rieg@college-de-france.fr>" ]
 bug-reports: "https://github.com/dep-map/dep-map/issues"
 dev-repo: "git+https://github.com/coq-contribs/dep-map.git"
-synopsis: "Demos of some Coq tools appeared in version V6.0."
+synopsis: "Demos of some Coq tools appeared in version V6.0"
 description: """
 Example of sorting algorithms defined using the Cases
 (pattern-matching) construction. Demo of the decision tactic Tauto for

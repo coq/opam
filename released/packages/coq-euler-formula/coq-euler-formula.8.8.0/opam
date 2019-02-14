@@ -13,7 +13,7 @@ tags: [ "keyword: polyhedron" "keyword: hypermap" "keyword: genus" "keyword: Eul
 authors: [ "Jean-François Dufourd <dufourd@dpt-info.u-strasbg.fr> [http://dpt-info.u-strasbg.fr/~jfd/]" ]
 bug-reports: "https://github.com/coq-contribs/euler-formula/issues"
 dev-repo: "git+https://github.com/coq-contribs/euler-formula.git"
-synopsis: "Hypermaps, Genus Theorem and Euler Formula."
+synopsis: "Hypermaps, Genus Theorem and Euler Formula"
 description:
   "This library formalizes the combinatorial hypermaps and their properties in a constructive way. It gives the proofs of the Genus Theorem and of the Euler Formula for the polyhedra."
 flags: light-uninstall

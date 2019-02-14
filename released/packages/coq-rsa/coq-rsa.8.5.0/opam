@@ -13,7 +13,7 @@ tags: [ "keyword:rsa" "keyword:chinese remainder" "keyword:fermat's little theor
 authors: [ "Laurent Théry <>" "Jose C. Almeida <>" ]
 bug-reports: "https://github.com/coq-contribs/rsa/issues"
 dev-repo: "git+https://github.com/coq-contribs/rsa.git"
-synopsis: "Correctness of RSA algorithm."
+synopsis: "Correctness of RSA algorithm"
 description: """
 This directory contains the proof of correctness
 of RSA algorithm. It contains a proof of Fermat's little theorem"""

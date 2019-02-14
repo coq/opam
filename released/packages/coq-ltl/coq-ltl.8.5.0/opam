@@ -13,7 +13,7 @@ tags: [ "keyword:temporal logic" "keyword:infinite transition systems" "keyword:
 authors: [ "Solange Coupet-Grimal <>" ]
 bug-reports: "https://github.com/coq-contribs/ltl/issues"
 dev-repo: "git+https://github.com/coq-contribs/ltl.git"
-synopsis: "Linear Temporal Logic."
+synopsis: "Linear Temporal Logic"
 description: """
 This contribution contains a shallow embedding of Linear
 Temporal Logic (LTL) based on a co-inductive representation of program

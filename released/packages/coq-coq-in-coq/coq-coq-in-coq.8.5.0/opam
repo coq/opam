@@ -13,7 +13,7 @@ tags: [ "keyword:calculus of constructions" "category:Mathematics/Logic/Type the
 authors: [ "Bruno Barras <>" ]
 bug-reports: "https://github.com/coq-contribs/coq-in-coq/issues"
 dev-repo: "git+https://github.com/coq-contribs/coq-in-coq.git"
-synopsis: "A formalisation of the Calculus of Construction."
+synopsis: "A formalisation of the Calculus of Construction"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/coq-in-coq/archive/v8.5.0.tar.gz"

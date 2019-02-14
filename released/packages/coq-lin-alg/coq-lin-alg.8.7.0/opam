@@ -14,7 +14,7 @@ tags: [ "keyword: linear algebra" "category: Mathematics/Algebra" "date: 19 spet
 authors: [ "Jasper Stein <jasper@cs.kun.nl>" ]
 bug-reports: "https://github.com/coq-contribs/lin-alg/issues"
 dev-repo: "git+https://github.com/coq-contribs/lin-alg.git"
-synopsis: "Linear Algebra."
+synopsis: "Linear Algebra"
 description: """
 A development of some preliminary linear algebra
 based on Chapter 1 of "Linear Algebra" by Friedberg, Insel and Spence"""

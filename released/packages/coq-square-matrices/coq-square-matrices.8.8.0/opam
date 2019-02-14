@@ -13,7 +13,7 @@ tags: [ "keyword: exponentiation" "keyword: vectors" "keyword: matrices" "keywor
 authors: [ "Jean-Christophe Filliâtre" ]
 bug-reports: "https://github.com/coq-contribs/square-matrices/issues"
 dev-repo: "git+https://github.com/coq-contribs/square-matrices.git"
-synopsis: "From Fast Exponentiation to Square Matrices."
+synopsis: "From Fast Exponentiation to Square Matrices"
 description: """
 This development is a formalization of Chris Okasaki's article
 ``From Fast Exponentiation to Square Matrices: An Adventure in Types''"""

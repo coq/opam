@@ -13,7 +13,7 @@ tags: [ "keyword: First-order Unification" "keyword: Robinson" "category: Comput
 authors: [ "Jocelyne Rouyer" ]
 bug-reports: "https://github.com/coq-contribs/founify/issues"
 dev-repo: "git+https://github.com/coq-contribs/founify.git"
-synopsis: "Correctness and extraction of the unification algorithm."
+synopsis: "Correctness and extraction of the unification algorithm"
 description: """
 A notion of terms based on symbols without fixed arities is defined
 and an extended unification problem is proved solvable on these terms.

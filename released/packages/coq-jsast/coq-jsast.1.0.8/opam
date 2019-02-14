@@ -17,8 +17,7 @@ depends: [
   "coq" {>= "8.7.2"}
   "coq-flocq" {>= "2.6.0" & < "3.0~"}
 ]
-synopsis:
-  "A minimal JavaScript syntax tree carved out of the JsCert project."
+synopsis: "A minimal JavaScript syntax tree carved out of the JsCert project"
 flags: light-uninstall
 url {
   src: "https://github.com/querycert/jsast/archive/v1.0.8.tar.gz"

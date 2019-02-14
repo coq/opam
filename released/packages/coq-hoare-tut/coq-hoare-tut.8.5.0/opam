@@ -13,8 +13,7 @@ tags: [ "keyword:hoare logic" "keyword:imperative program" "keyword:weakest prec
 authors: [ "Sylvain Boulmé <Sylvain.Boulme@imag.fr>" ]
 bug-reports: "https://github.com/coq-contribs/hoare-tut/issues"
 dev-repo: "git+https://github.com/coq-contribs/hoare-tut.git"
-synopsis:
-  "A Tutorial on Reflecting in Coq the generation of Hoare proof obligations."
+synopsis: "A Tutorial on Reflecting in Coq the generation of Hoare proof obligations"
 description: """
 This work is both an introduction to Hoare logic and a demo
 illustrating Coq nice features. It formalizes the generation of PO

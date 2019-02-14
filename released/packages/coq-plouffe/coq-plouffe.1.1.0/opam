@@ -15,7 +15,7 @@ depends: [
   "coq-ssreflect"
   "coq-coquelicot" {>= "2.1.0"}
 ]
-synopsis: "A Coq formalization of Plouffe formula."
+synopsis: "A Coq formalization of Plouffe formula"
 authors: "Laurent Thery"
 flags: light-uninstall
 url {

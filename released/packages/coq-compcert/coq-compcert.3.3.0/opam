@@ -40,7 +40,7 @@ depends: [
   "coq" {> "8.6.0" & < "8.8.1"}
   "menhir" {>= "20161201" & < "20180530"}
 ]
-synopsis: "The CompCert C compiler."
+synopsis: "The CompCert C compiler"
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
 url {
   src: "https://github.com/AbsInt/CompCert/archive/v3.3.tar.gz"

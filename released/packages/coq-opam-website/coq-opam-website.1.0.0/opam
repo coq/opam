@@ -18,7 +18,7 @@ depends: [
   "coq-io-system" {>= "2.2.0" & < "2.3.0"}
   "coq-list-string" {>= "2.1.0"}
 ]
-synopsis: "Generation of a Coq website for OPAM: http://coq.io/opam/ ."
+synopsis: "Generation of a Coq website for OPAM: http://coq.io/opam/ "
 url {
   src: "https://github.com/clarus/coq-opam-website/archive/1.0.0.tar.gz"
   checksum: "md5=8e5485ebaf730a661cf7cd35976c407c"

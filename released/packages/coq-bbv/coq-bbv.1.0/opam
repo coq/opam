@@ -32,7 +32,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
-synopsis: "An implementation of bitvectors in Coq."
+synopsis: "An implementation of bitvectors in Coq"
 flags: light-uninstall
 url {
   src: "https://github.com/mit-plv/bbv/archive/v1.0.tar.gz"

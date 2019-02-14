@@ -13,7 +13,7 @@ tags: [ "keyword: Nuprl" "keyword: Computational Type Theory" "keyword: Extensio
 authors: [ "Vincent Rahli <vincent.rahli@gmail.com> [http://www.cs.cornell.edu/~rahli/]" "Abhishek Anand <abhishek.anand.iitg@gmail.com> [http://www.cs.cornell.edu/~aa755/]" "Mark Bickford <mark.concertina@gmail.com> [http://nuprl.org/]" ]
 bug-reports: "https://github.com/coq-contribs/intuitionistic-nuprl/issues"
 dev-repo: "git+https://github.com/coq-contribs/intuitionistic-nuprl.git"
-synopsis: "An Impredicative Model of Nuprl's Constructive Type Theory."
+synopsis: "An Impredicative Model of Nuprl's Constructive Type Theory"
 description: """
 http://www.nuprl.org/html/Nuprl2Coq/
 

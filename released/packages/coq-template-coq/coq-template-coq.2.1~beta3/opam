@@ -26,7 +26,7 @@ depends: [
   "ocaml" {> "4.02.3"}
   "coq" {>= "8.8" & < "8.9~"}
 ]
-synopsis: "A quoting and unquoting library for Coq in Coq."
+synopsis: "A quoting and unquoting library for Coq in Coq"
 description: """
 Template Coq is a quoting library for Coq. It takes Coq terms and
 constructs a representation of their syntax tree as a Coq inductive data

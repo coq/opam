@@ -13,7 +13,7 @@ tags: [ "keyword: alternating bit protocol" "keyword: process calculi" "keyword:
 authors: [ "Eduardo Giménez" ]
 bug-reports: "https://github.com/coq-contribs/abp/issues"
 dev-repo: "git+https://github.com/coq-contribs/abp.git"
-synopsis: "A verification of the alternating bit protocol expressed in CBS."
+synopsis: "A verification of the alternating bit protocol expressed in CBS"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/abp/archive/v8.6.0.tar.gz"

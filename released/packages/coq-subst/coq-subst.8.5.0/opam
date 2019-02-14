@@ -13,7 +13,7 @@ tags: [ "keyword:lambda sigma lift calculus" "keyword:explicit substitution" "ke
 authors: [ "Amokrane Saïbi <>" ]
 bug-reports: "https://github.com/coq-contribs/subst/issues"
 dev-repo: "git+https://github.com/coq-contribs/subst.git"
-synopsis: "The confluence of Hardin-Lévy lambda-sigma-lift-calcul."
+synopsis: "The confluence of Hardin-Lévy lambda-sigma-lift-calcul"
 description: """
 The confluence of Hardin-Lévy lambda-sigma-lift-calcul is
 proven. By the way, several standard definition and results about

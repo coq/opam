@@ -13,7 +13,7 @@ tags: [ "keyword:integers" "keyword:arithmetic" "keyword:decision procedure" "ke
 authors: [ "Laurent Théry <>" ]
 bug-reports: "https://github.com/coq-contribs/presburger/issues"
 dev-repo: "git+https://github.com/coq-contribs/presburger.git"
-synopsis: "Presburger's algorithm."
+synopsis: "Presburger's algorithm"
 description: """
 A formalization of Presburger's algorithm as stated in
 the initial paper by Presburger."""

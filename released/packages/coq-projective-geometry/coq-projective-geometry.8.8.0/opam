@@ -13,7 +13,7 @@ tags: [ "keyword: geometry" "keyword: projective" "keyword: fano" "keyword: homo
 authors: [ "Nicolas Magaud <Nicolas.Magaud@lsiit-cnrs.unistra.fr>" "Julien Narboux <Julien.Narboux@lsiit-cnrs.unistra.fr>" "Pascal Schreck <Pascal.Schreck@lsiit-cnrs.unistra.fr>" ]
 bug-reports: "https://github.com/coq-contribs/projective-geometry/issues"
 dev-repo: "git+https://github.com/coq-contribs/projective-geometry.git"
-synopsis: "Projective Geometry."
+synopsis: "Projective Geometry"
 description: """
 This contributions contains elements of formalization of projective geometry.
 In the plane:

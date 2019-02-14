@@ -13,7 +13,7 @@ tags: [ "keyword:binary search trees" "category:Computer Science/Data Types and 
 authors: [ "Pierre Castéran <>" ]
 bug-reports: "https://github.com/coq-contribs/search-trees/issues"
 dev-repo: "git+https://github.com/coq-contribs/search-trees.git"
-synopsis: "Binary Search Trees."
+synopsis: "Binary Search Trees"
 description:
   "Algorithms for collecting, searching, inserting and deleting elements in binary search trees on Z"
 flags: light-uninstall

@@ -13,7 +13,7 @@ tags: [ "keyword:randomized algorithms" "keyword:monads" "keyword:probability" "
 authors: [ "Christine Paulin <>" ]
 bug-reports: "https://github.com/coq-contribs/random/issues"
 dev-repo: "git+https://github.com/coq-contribs/random.git"
-synopsis: "Interpretation of random programs."
+synopsis: "Interpretation of random programs"
 description: """
 This contribution is a modelisation of random programs
 as measures in Coq. It started in 2004 in the context

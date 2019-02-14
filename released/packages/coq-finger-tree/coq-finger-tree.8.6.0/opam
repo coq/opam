@@ -13,7 +13,7 @@ tags: [ "keyword: data structures" "keyword: dependent types" "keyword: Finger T
 authors: [ "Matthieu Sozeau <mattam@mattam.org> [http://mattam.org]" ]
 bug-reports: "https://github.com/coq-contribs/finger-tree/issues"
 dev-repo: "git+https://github.com/coq-contribs/finger-tree.git"
-synopsis: "Dependent Finger Trees."
+synopsis: "Dependent Finger Trees"
 description: """
 http://mattam.org/research/russell/fingertrees.en.html
 

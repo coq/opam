@@ -13,7 +13,7 @@ tags: [ "keyword:boolean formula" "keyword:tautology checker" "category:Computer
 authors: [ "Laurent Théry <>" "Pierre Letouzey <>" ]
 bug-reports: "https://github.com/coq-contribs/stalmarck/issues"
 dev-repo: "git+https://github.com/coq-contribs/stalmarck.git"
-synopsis: "Proof of Stalmarck's algorithm."
+synopsis: "Proof of Stalmarck's algorithm"
 description: """
 A two-level approach to prove tautology
 using Stalmarck's algorithm."""

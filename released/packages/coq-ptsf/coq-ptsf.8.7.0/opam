@@ -14,7 +14,7 @@ tags: [ "keyword: pure type systems" "keyword: judgmental equality" "keyword: ex
 authors: [ "Floris van Doorn <fpv@andrew.cmu.edu> [http://www.andrew.cmu.edu/user/fpv/]" "Herman Geuvers <herman@cs.ru.nl> [http://www.cs.ru.nl/~herman/]" "Freek Wiedijk <freek@cs.ru.nl> [http://www.cs.ru.nl/~freek/]" ]
 bug-reports: "https://github.com/coq-contribs/ptsf/issues"
 dev-repo: "git+https://github.com/coq-contribs/ptsf.git"
-synopsis: "Explicit Convertibility Proofs in Pure Type Systems."
+synopsis: "Explicit Convertibility Proofs in Pure Type Systems"
 description: """
 http://www.andrew.cmu.edu/user/fpv/ptsf/
 

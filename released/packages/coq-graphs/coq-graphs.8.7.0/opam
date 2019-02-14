@@ -14,8 +14,7 @@ tags: [ "keyword: graphs" "keyword: graph theory" "keyword: cycle detection" "ke
 authors: [ "Jean Goubault" ]
 bug-reports: "https://github.com/coq-contribs/graphs/issues"
 dev-repo: "git+https://github.com/coq-contribs/graphs.git"
-synopsis:
-  "Satisfiability of inequality constraints and detection of cycles with negative weight in graphs."
+synopsis: "Satisfiability of inequality constraints and detection of cycles with negative weight in graphs"
 description:
   "*******************************************************************"
 flags: light-uninstall

@@ -13,7 +13,7 @@ tags: [ "keyword:geometry" "keyword:plane geometry" "keyword:ruler and compass g
 authors: [ "Jean Duprat <Jean.Duprat@ens-lyon.fr>" ]
 bug-reports: "https://github.com/coq-contribs/ruler-compass-geometry/issues"
 dev-repo: "git+https://github.com/coq-contribs/ruler-compass-geometry.git"
-synopsis: "Ruler and compass geometry axiomatization."
+synopsis: "Ruler and compass geometry axiomatization"
 description: """
 This library contains an axiomatization of the ruler and
 compass euclidian geometry. Files A1 to A6 contain the axioms and the

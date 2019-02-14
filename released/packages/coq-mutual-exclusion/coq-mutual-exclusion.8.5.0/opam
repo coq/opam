@@ -13,8 +13,7 @@ tags: [ "keyword:mutual exclusion" "keyword:concurrency" "keyword:peterson's alg
 authors: [ "Eduardo Giménez <>" ]
 bug-reports: "https://github.com/coq-contribs/mutual-exclusion/issues"
 dev-repo: "git+https://github.com/coq-contribs/mutual-exclusion.git"
-synopsis:
-  "A certification of Peterson's algorithm for managing mutual exclusion."
+synopsis: "A certification of Peterson's algorithm for managing mutual exclusion"
 description: """
 This is a proof of certification of Peterson's algorithm
 for managing mutual exclusion. The case of two processes is treated

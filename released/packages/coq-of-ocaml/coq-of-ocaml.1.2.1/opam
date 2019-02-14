@@ -18,7 +18,7 @@ depends: [
   "yojson"
   "smart-print"
 ]
-synopsis: "Compile OCaml to Coq."
+synopsis: "Compile OCaml to Coq"
 flags: light-uninstall
 extra-files: ["coq-of-ocaml.install" "md5=aaa1f52ec40bedefd2674f46a44cd578"]
 url {

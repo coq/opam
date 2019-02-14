@@ -13,7 +13,7 @@ tags: [ "keyword: Real Numbers" "keyword: Steinhaus" "keyword: Three Gap Theorem
 authors: [ "Micaela Mayero" ]
 bug-reports: "https://github.com/coq-contribs/three-gap/issues"
 dev-repo: "git+https://github.com/coq-contribs/three-gap.git"
-synopsis: "A Proof of the Three Gap Theorem (Steinhaus Conjecture)."
+synopsis: "A Proof of the Three Gap Theorem (Steinhaus Conjecture)"
 description: "This proof uses the real numbers. It is a classical proof."
 flags: light-uninstall
 url {

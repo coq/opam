@@ -15,7 +15,7 @@ depends: [
   "coq" {>= "8.4pl4"}
   "coq-io-system" {>= "2.3.0"}
 ]
-synopsis: "A Hello World program in Coq."
+synopsis: "A Hello World program in Coq"
 extra-files: [
   "coq-io-hello-world.install" "md5=63d2dca2628eb17acf4b57b72d248663"
 ]

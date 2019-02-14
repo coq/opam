@@ -14,8 +14,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~beta1"}
 ]
-synopsis:
-  "A formalization of geometry in Coq based on Tarski's axiom system."
+synopsis: "A formalization of geometry in Coq based on Tarski's axiom system"
 flags: light-uninstall
 url {
   src: "https://github.com/GeoCoq/GeoCoq/archive/v2.0.0.tar.gz"

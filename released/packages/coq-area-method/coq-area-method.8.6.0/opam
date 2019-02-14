@@ -13,7 +13,7 @@ tags: [ "keyword: geometry" "keyword: Chou Gao Zhang area method" "keyword: deci
 authors: [ "Julien Narboux" ]
 bug-reports: "https://github.com/coq-contribs/area-method/issues"
 dev-repo: "git+https://github.com/coq-contribs/area-method.git"
-synopsis: "The Chou, Gao and Zhang area method."
+synopsis: "The Chou, Gao and Zhang area method"
 description: """
 This contribution is the implementation of the Chou, Gao and Zhang's area method decision procedure for euclidean plane geometry.
 This development contains a partial formalization of the book "Machine Proofs in Geometry, Automated Production of Readable Proofs for Geometry Theorems" by Chou, Gao and Zhang.

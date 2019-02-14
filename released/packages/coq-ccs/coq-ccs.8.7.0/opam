@@ -13,7 +13,7 @@ tags: [ "keyword: Labelled Transitions Systems" "keyword: Process Algebra" "keyw
 authors: [ "Solange Coupet-Grimal" ]
 bug-reports: "https://github.com/coq-contribs/ccs/issues"
 dev-repo: "git+https://github.com/coq-contribs/ccs.git"
-synopsis: "Equivalence notions on labelled transitions systems."
+synopsis: "Equivalence notions on labelled transitions systems"
 description: """
 We give the specification of three different notions of equivalence
 classically defined on labelled transitions systems underlying the

@@ -13,7 +13,7 @@ tags: [ "keyword: pocklington" "keyword: number theory" "keyword: prime numbers"
 authors: [ "Olga Caprotti" "Martijn Oostdijk" ]
 bug-reports: "https://github.com/coq-contribs/pocklington/issues"
 dev-repo: "git+https://github.com/coq-contribs/pocklington.git"
-synopsis: "Pocklington's criterion."
+synopsis: "Pocklington's criterion"
 description: """
 Pocklington's criterion for checking primality for
 large natural numbers. Includes a proof of Fermat's

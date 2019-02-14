@@ -17,7 +17,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.4pl4"}
 ]
-synopsis: "Simple functional combinators."
+synopsis: "Simple functional combinators"
 flags: light-uninstall
 url {
   src: "https://github.com/clarus/coq-function-ninjas/archive/1.0.0.tar.gz"

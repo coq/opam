@@ -29,7 +29,7 @@ tags: [
   "date:2016"
   "logpath:SsrMultinomials"
 ]
-synopsis: "A multivariate polynomial library for the Mathematical Components Library."
+synopsis: "A multivariate polynomial library for the Mathematical Components Library"
 flags: light-uninstall
 url {
   src: "https://github.com/math-comp/multinomials/archive/1.1.tar.gz"

@@ -13,7 +13,7 @@ tags: [ "keyword: mereology" "keyword: protothetic" "keyword: ontology" "keyword
 authors: [ "Richard Dapoigny <richard.dapoigny@univ-savoie.fr> [https://www.researchgate.net/profile/Richard_Dapoigny]" "Patrick Barlatier <patrick.barlatier@univ-savoie.fr> [https://www.researchgate.net/profile/Patrick_Barlatier]" ]
 bug-reports: "https://github.com/coq-contribs/lesniewski-mereology/issues"
 dev-repo: "git+https://github.com/coq-contribs/lesniewski-mereology.git"
-synopsis: "Knowledge-based Dependently Typed Language (KDTL)."
+synopsis: "Knowledge-based Dependently Typed Language (KDTL)"
 description: """
 http://www.polytech.univ-savoie.fr/index.php?id=listic-logiciels-coq&L=1
 

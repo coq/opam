@@ -13,7 +13,7 @@ tags: [ "keyword: Maps" "keyword: Dependent maps" "keyword: domain" "category: C
 authors: [ "Lionel Rieg <lionel.rieg@college-de-france.fr>" ]
 bug-reports: "https://github.com/coq-contribs/dep-map/issues"
 dev-repo: "git+https://github.com/coq-contribs/dep-map.git"
-synopsis: "Dependent Maps."
+synopsis: "Dependent Maps"
 description:
   "A rudimentary library for dependent maps that contain their domain in the type."
 flags: light-uninstall

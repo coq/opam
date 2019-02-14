@@ -13,7 +13,7 @@ tags: [ "keyword:normalization" "keyword:lambda calculus" "keyword:extraction" "
 authors: [ "Helmut Schwichtenberg <>" "Pierre Letouzey <>" ]
 bug-reports: "https://github.com/coq-contribs/tait/issues"
 dev-repo: "git+https://github.com/coq-contribs/tait.git"
-synopsis: "A normalization proof a la Tait for simply-typed lambda-calculus."
+synopsis: "A normalization proof a la Tait for simply-typed lambda-calculus"
 description: """
 This is a formalization of Berger's TLCA'93 paper, with complete proofs
 of the axioms and an extraction of a normalization program close to N.B.E."""

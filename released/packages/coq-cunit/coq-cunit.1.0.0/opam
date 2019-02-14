@@ -17,7 +17,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.4pl4"}
 ]
-synopsis: "Convenience functions for unit testing in Coq."
+synopsis: "Convenience functions for unit testing in Coq"
 flags: light-uninstall
 url {
   src: "https://github.com/clarus/coq-cunit/archive/1.0.0.tar.gz"

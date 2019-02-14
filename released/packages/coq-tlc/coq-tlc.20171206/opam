@@ -20,7 +20,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.6"}
 ]
-synopsis: "A general-purpose alternative to Coq's standard library."
+synopsis: "A general-purpose alternative to Coq's standard library"
 description: """
 TLC relies on the axioms of functional extensionality, propositional
 extensionality, and indefinite description (also known as Hilbert's epsilon

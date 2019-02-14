@@ -13,8 +13,7 @@ tags: [ "keyword: Hoare logic" "keyword: imperative program" "keyword: weakest p
 authors: [ "Sylvain Boulmé <Sylvain.Boulme@imag.fr> [http://www-verimag.imag.fr/~boulme]" ]
 bug-reports: "https://github.com/coq-contribs/hoare-tut/issues"
 dev-repo: "git+https://github.com/coq-contribs/hoare-tut.git"
-synopsis:
-  "A Tutorial on Reflecting in Coq the generation of Hoare proof obligations."
+synopsis: "A Tutorial on Reflecting in Coq the generation of Hoare proof obligations"
 description: """
 http://www-verimag.imag.fr/~boulme/HOARE_LOGIC_TUTORIAL/
 

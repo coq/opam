@@ -13,7 +13,7 @@ tags: [ "keyword: first-order logic" "keyword: natural deduction" "keyword: refl
 authors: [ "Dimitri Hendriks <hendriks@cs.ru.nl> [http://www.cs.ru.nl/~hendriks/]" ]
 bug-reports: "https://github.com/coq-contribs/prfx/issues"
 dev-repo: "git+https://github.com/coq-contribs/prfx.git"
-synopsis: "Proof Reflection in Coq."
+synopsis: "Proof Reflection in Coq"
 description: """
 http://www.cs.ru.nl/~hendriks/coq/prfx/
 

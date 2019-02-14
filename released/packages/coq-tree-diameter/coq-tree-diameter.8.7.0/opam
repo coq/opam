@@ -13,7 +13,7 @@ tags: [ "keyword: program verification" "keyword: trees" "keyword: paths" "keywo
 authors: [ "Jean-Christophe Filliâtre" ]
 bug-reports: "https://github.com/coq-contribs/tree-diameter/issues"
 dev-repo: "git+https://github.com/coq-contribs/tree-diameter.git"
-synopsis: "Diameter of a binary tree."
+synopsis: "Diameter of a binary tree"
 description: """
 This contribution contains the verification of a divide-and-conquer
 algorithm to compute the diameter of a binary tree (the

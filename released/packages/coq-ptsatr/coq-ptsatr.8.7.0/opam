@@ -13,7 +13,7 @@ tags: [ "keyword: Pure Type Systems" "keyword: Judgmental Equality" "keyword: Ch
 authors: [ "Vincent Siles <vincent.siles@ens-lyon.org> [http://www.lix.polytechnique.fr/~vsiles]" "Hugo Herbelin <hugo.herbelin@inria.fr> [http://pauillac.inria.fr/~herbelin/]" ]
 bug-reports: "https://github.com/coq-contribs/ptsatr/issues"
 dev-repo: "git+https://github.com/coq-contribs/ptsatr.git"
-synopsis: "PTSATR."
+synopsis: "PTSATR"
 description: """
 http://www.lix.polytechnique.fr/~vsiles/coq/PTSATR.html
 

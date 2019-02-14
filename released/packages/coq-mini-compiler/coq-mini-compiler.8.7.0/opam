@@ -13,7 +13,7 @@ tags: [ "keyword: compilation" "keyword: correctness" "keyword: arithmetic" "cat
 authors: [ "Jean-Christophe Filliâtre" ]
 bug-reports: "https://github.com/coq-contribs/mini-compiler/issues"
 dev-repo: "git+https://github.com/coq-contribs/mini-compiler.git"
-synopsis: "Correctness of a tiny compiler for arithmetic expressions."
+synopsis: "Correctness of a tiny compiler for arithmetic expressions"
 description: """
 Tutorial correctness proof of a tiny compiler from
 simple arithmetic expressions (constants, variables and additions) to

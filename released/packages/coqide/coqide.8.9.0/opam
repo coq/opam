@@ -35,7 +35,7 @@ install: [
   "install-ide-devfiles"
 ]
 remove: ["rm" "-rf" "%{lib}%/coq/ide" "%{doc}%/FAQ-CoqIde"]
-synopsis: "IDE of the Coq formal proof management system."
+synopsis: "IDE of the Coq formal proof management system"
 flags: light-uninstall
 extra-files: ["coqide.install" "md5=d005cda8cb7888fbea94c5416dcb31bc"]
 url {

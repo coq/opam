@@ -13,7 +13,7 @@ tags: [ "keyword: propositional calculus" "keyword: classical logic" "keyword: c
 authors: [ "Floris van Doorn <fpvdoorn@gmail.com> [http://www.contrib.andrew.cmu.edu/~fpv/]" ]
 bug-reports: "https://github.com/coq-contribs/propcalc/issues"
 dev-repo: "git+https://github.com/coq-contribs/propcalc.git"
-synopsis: "Propositional Calculus."
+synopsis: "Propositional Calculus"
 description: """
 http://arxiv.org/abs/1503.08744
 

@@ -13,7 +13,7 @@ tags: [ "keyword: Kleene algebra" "keyword: finite automata" "keyword: semiring"
 authors: [ "Thomas Braibant <thomas.braibant@gmail.com> [http://sardes.inrialpes.fr/~braibant]" "Damien Pous <damien.pous@inria.fr> [http://sardes.inrialpes.fr/~pous]" ]
 bug-reports: "https://github.com/coq-contribs/atbr/issues"
 dev-repo: "git+https://github.com/coq-contribs/atbr.git"
-synopsis: "A tactic for deciding Kleene algebras."
+synopsis: "A tactic for deciding Kleene algebras"
 description: """
 http://sardes.inrialpes.fr/~braibant/atbr
 

@@ -13,7 +13,7 @@ tags: [ "keyword: graph theory" "keyword: Curry-Howard's isomorphism" "keyword: 
 authors: [ "Jean Duprat" ]
 bug-reports: "https://github.com/coq-contribs/graph-basics/issues"
 dev-repo: "git+https://github.com/coq-contribs/graph-basics.git"
-synopsis: "a Coq toolkit for graph theory."
+synopsis: "A Coq toolkit for graph theory"
 description: """
 This library offers inductive definitions of basics
 in graph theory. The goal is to offer the possibility to write proofs

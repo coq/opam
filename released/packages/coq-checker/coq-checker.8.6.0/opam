@@ -13,7 +13,7 @@ tags: [ "keyword: checker" "keyword: dominos" "keyword: puzzles" "category: Misc
 authors: [ "Gérard Huet" ]
 bug-reports: "https://github.com/coq-contribs/checker/issues"
 dev-repo: "git+https://github.com/coq-contribs/checker.git"
-synopsis: "The Mutilated Checkerboard."
+synopsis: "The Mutilated Checkerboard"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/checker/archive/v8.6.0.tar.gz"

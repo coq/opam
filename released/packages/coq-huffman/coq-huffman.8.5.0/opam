@@ -13,7 +13,7 @@ tags: [ "keyword:data compression" "keyword:code" "keyword:huffman tree" "catego
 authors: [ "Laurent Théry <>" ]
 bug-reports: "https://github.com/coq-contribs/huffman/issues"
 dev-repo: "git+https://github.com/coq-contribs/huffman.git"
-synopsis: "A correctness proof of Huffman algorithm."
+synopsis: "A correctness proof of Huffman algorithm"
 description: """
 This directory contains the proof of correctness of Huffman algorithm
 as described in:

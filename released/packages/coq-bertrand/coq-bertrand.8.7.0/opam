@@ -13,7 +13,7 @@ tags: [ "keyword: Knuth's algorithm" "keyword: prime numbers" "keyword: Bertrand
 authors: [ "Laurent Théry" ]
 bug-reports: "https://github.com/coq-community/bertrand/issues"
 dev-repo: "git+https://github.com/coq-community/bertrand.git"
-synopsis: "Correctness of Knuth's algorithm for prime numbers."
+synopsis: "Correctness of Knuth's algorithm for prime numbers"
 description: """
 A proof of correctness of the algorithm as described in
 `The Art of Computer Programming: Fundamental Algorithms'

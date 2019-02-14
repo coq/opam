@@ -13,7 +13,7 @@ tags: [ "keyword: string" "keyword: ascii character" "category: Miscellaneous/Co
 authors: [ "Laurent Théry" ]
 bug-reports: "https://github.com/coq-contribs/string/issues"
 dev-repo: "git+https://github.com/coq-contribs/string.git"
-synopsis: "Definition of strings in Coq."
+synopsis: "Definition of strings in Coq"
 description: "Strings as list of characters."
 flags: light-uninstall
 url {

@@ -12,7 +12,7 @@ depends: [
   "coq" {>= "8.4pl4" & < "8.5~"}
   "coq-coqeal-theory" {>= "0.9.0"}
 ]
-synopsis: "A refinement framework (for algebra)."
+synopsis: "A refinement framework (for algebra)"
 authors:
   "Guillaume Cano, Cyril Cohen, Maxime Dénès, Anders Mörtberg and Vincent Siles"
 flags: light-uninstall

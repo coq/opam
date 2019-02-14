@@ -21,7 +21,7 @@ depends: [
   "coq-function-ninjas"
   "coq-list-string" {>= "2.0.0"}
 ]
-synopsis: "Parse, manipulate and pretty-print times and dates in Coq."
+synopsis: "Parse, manipulate and pretty-print times and dates in Coq"
 flags: light-uninstall
 url {
   src: "https://github.com/clarus/coq-moment/archive/1.0.0.tar.gz"

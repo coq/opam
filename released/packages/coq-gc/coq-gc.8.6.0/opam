@@ -13,7 +13,7 @@ tags: [ "keyword: Linear temporal logic" "keyword: finite sets" "keyword: co-ind
 authors: [ "Solange Coupet-Grimal and Catherine Nouvet" ]
 bug-reports: "https://github.com/coq-contribs/gc/issues"
 dev-repo: "git+https://github.com/coq-contribs/gc.git"
-synopsis: "Formal Verification of an Incremental Garbage Collector."
+synopsis: "Formal Verification of an Incremental Garbage Collector"
 description: """
 We specify an incremental garbage collection algorithm and we give a formal proof of its
 correctness. The algorithm is represented as an infinite transition system and we establish safety

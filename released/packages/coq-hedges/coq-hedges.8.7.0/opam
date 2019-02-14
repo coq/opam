@@ -13,7 +13,7 @@ tags: [ "keyword: bisimulation" "keyword: spi-calculus" "keyword: hedges" "categ
 authors: [ "Sébastien Briais" ]
 bug-reports: "https://github.com/coq-contribs/hedges/issues"
 dev-repo: "git+https://github.com/coq-contribs/hedges.git"
-synopsis: "Some properties of hedges used by hedged bisimulation."
+synopsis: "Some properties of hedges used by hedged bisimulation"
 description: """
 These properties are in section 6.1 of the paper
    "On Bisimulations for the Spi-Calculus" by J. Borgström

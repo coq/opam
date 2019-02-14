@@ -13,7 +13,7 @@ tags: [ "keyword: CTL" "keyword: TCTL" "keyword: Real Time Systems" "keyword: Ti
 authors: [ "Carlos Daniel Luna [http://www.fing.edu.uy/~cluna]" ]
 bug-reports: "https://github.com/coq-contribs/railroad-crossing/issues"
 dev-repo: "git+https://github.com/coq-contribs/railroad-crossing.git"
-synopsis: "The Railroad Crossing Example."
+synopsis: "The Railroad Crossing Example"
 description: """
 This library present the specification and verification of
 one real time system: the Railroad Crossing Problem, which has been

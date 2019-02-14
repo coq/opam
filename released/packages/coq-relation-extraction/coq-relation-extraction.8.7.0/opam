@@ -13,7 +13,7 @@ tags: [ "keyword: extraction" "keyword: inductive relations" "keyword: semantics
 authors: [ "Catherine Dubois, David Delahaye, Pierre-Nicolas Tollitte" ]
 bug-reports: "https://github.com/coq-contribs/relation-extraction/issues"
 dev-repo: "git+https://github.com/coq-contribs/relation-extraction.git"
-synopsis: "Functions extraction from inductive relations."
+synopsis: "Functions extraction from inductive relations"
 description: """
 This plugin introduces a new set of extraction commands that
 generates functional code form inductive specifications."""

@@ -21,7 +21,7 @@ depends: [
   "coq-ext-lib" {>= "0.9.2"}
   "coq-plugin-utils"
 ]
-synopsis: "A framework for computational reflection."
+synopsis: "A framework for computational reflection"
 flags: light-uninstall
 url {
   src: "https://github.com/gmalecha/mirror-core/archive/v1.0.2.tar.gz"

@@ -13,7 +13,7 @@ tags: [ "keyword:reynolds paradox" "keyword:burali forti paradox" "keyword:diaco
 authors: [ "Bruno Barras <>" "Benjamin Werner <>" "Hugo Herbelin <>" "Thierry Coquand <>" ]
 bug-reports: "https://github.com/coq-contribs/paradoxes/issues"
 dev-repo: "git+https://github.com/coq-contribs/paradoxes.git"
-synopsis: "Paradoxes in Set Theory and Type Theory."
+synopsis: "Paradoxes in Set Theory and Type Theory"
 description: """
 A formalisation of Burali-Forti paradox in system U (the
 existence of an ordinal of ordinals is inconsistent), of Diaconescu

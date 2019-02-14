@@ -13,7 +13,7 @@ tags: [ "keyword: p-automata" "keyword: ABR" "keyword: PGM" "keyword: time" "cat
 authors: [ "Emmanuel Freund & Christine Paulin" ]
 bug-reports: "https://github.com/coq-contribs/pautomata/issues"
 dev-repo: "git+https://github.com/coq-contribs/pautomata.git"
-synopsis: "Parameterized automata."
+synopsis: "Parameterized automata"
 description: """
 This contribution is a modelisation in Coq of the p-automata
 designed in the CALIFE project (http://www.loria.fr/calife).

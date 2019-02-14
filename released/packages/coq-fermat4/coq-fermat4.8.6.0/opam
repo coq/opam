@@ -13,7 +13,7 @@ tags: [ "keyword: Diophantus" "keyword: Fermat" "keyword: Arithmetic" "keyword: 
 authors: [ "David Delahaye" "Micaela Mayero" ]
 bug-reports: "https://github.com/coq-contribs/fermat4/issues"
 dev-repo: "git+https://github.com/coq-contribs/fermat4.git"
-synopsis: "Diophantus' 20th Problem and Fermat's Last Theorem for n = 4."
+synopsis: "Diophantus' 20th Problem and Fermat's Last Theorem for n = 4"
 description: """
 This contribution presents the formalization of Fermat's proofs of
 Diophantus' 20th Problem and Fermat's Last Theorem for n = 4. The proofs are

@@ -13,8 +13,7 @@ depends: [
   "ocaml"
   "coq" {(>= "8.6" & < "8.9~") | (= "dev")}
 ]
-synopsis:
-  "This project contains an extended \"Standard Library\" for Coq called coq-std++."
+synopsis: "This project contains an extended \"Standard Library\" for Coq called coq-std++"
 description: """
 The key features of this library are as follows:
 

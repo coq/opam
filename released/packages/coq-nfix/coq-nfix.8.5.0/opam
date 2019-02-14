@@ -13,7 +13,7 @@ tags: [ "keyword:mutual fixpoint functions" "category:Miscellaneous/Coq Extensio
 authors: [ "Stéphane Lescuyer <>" ]
 bug-reports: "https://github.com/coq-contribs/nfix/issues"
 dev-repo: "git+https://github.com/coq-contribs/nfix.git"
-synopsis: "Nfix: a Coq extension for fixpoints on nested inductives."
+synopsis: "Nfix: a Coq extension for fixpoints on nested inductives"
 description:
   "This plugin provides a syntactic extension that allows one to write mutual fixpoints over nested inductives."
 flags: light-uninstall

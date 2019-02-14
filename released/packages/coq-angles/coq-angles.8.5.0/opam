@@ -13,7 +13,7 @@ tags: [ "keyword:pcoq" "keyword:geometry" "keyword:plane geometry" "keyword:orie
 authors: [ "Frédérique Guilhot <Frederique.Guilhot@sophia.inria.fr>" ]
 bug-reports: "https://github.com/coq-contribs/angles/issues"
 dev-repo: "git+https://github.com/coq-contribs/angles.git"
-synopsis: "Formalization of the oriented angles theory."
+synopsis: "Formalization of the oriented angles theory"
 description: """
 The basis of the contribution is a formalization of the
 theory of oriented angles of non-zero vectors. Then, we prove some

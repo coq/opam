@@ -13,7 +13,7 @@ tags: [ "keyword: co-inductive types" "keyword: co-induction" "category: Miscell
 authors: [ "Eduardo Giménez" ]
 bug-reports: "https://github.com/coq-contribs/coinductive-examples/issues"
 dev-repo: "git+https://github.com/coq-contribs/coinductive-examples.git"
-synopsis: "Some simple examples about co-inductive types and co-induction."
+synopsis: "Some simple examples about co-inductive types and co-induction"
 description: """
 This directory containts some simple examples about
 the use of co-inductive types in Coq. Directory ARITH

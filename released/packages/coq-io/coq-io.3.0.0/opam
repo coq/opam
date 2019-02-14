@@ -17,7 +17,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.4pl4"}
 ]
-synopsis: "A library for effects in Coq."
+synopsis: "A library for effects in Coq"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-io/io/archive/3.0.0.tar.gz"

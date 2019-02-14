@@ -20,7 +20,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-synopsis: "A general-purpose library."
+synopsis: "A general-purpose library"
 url {
   src: "http://tlc.gforge.inria.fr/releases/tlc-20171128.tar.gz"
   checksum: "md5=5ae3203e3545b46331c8cdf424c7a89d"

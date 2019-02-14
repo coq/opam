@@ -13,8 +13,7 @@ tags: [ "keyword: Kildall" "keyword: data flow analysis" "keyword: bytecode veri
 authors: [ "Solange Coupet-Grimal <Solange.Coupet@cmi.univ-mrs.fr>" "William Delobel <delobel@cmi.univ-mrs.fr>" ]
 bug-reports: "https://github.com/coq-contribs/kildall/issues"
 dev-repo: "git+https://github.com/coq-contribs/kildall.git"
-synopsis:
-  "Application of the Generic kildall's Data Flow Analysis Algorithm to a Type and Shape Static Analyses of Bytecode."
+synopsis: "Application of the Generic kildall's Data Flow Analysis Algorithm to a Type and Shape Static Analyses of Bytecode"
 description: """
 http://www.lif-sud.univ-mrs.fr/Rapports/24-2005.html
 

@@ -13,7 +13,7 @@ tags: [ "keyword:sokoban" "keyword:puzzles" "category:Miscellaneous/Logical Puzz
 authors: [ "Jasper Stein <>" ]
 bug-reports: "https://github.com/coq-contribs/coqoban/issues"
 dev-repo: "git+https://github.com/coq-contribs/coqoban.git"
-synopsis: "Coqoban (Sokoban)."
+synopsis: "Coqoban (Sokoban)"
 description: """
 A Coq implementation of Sokoban, the Japanese warehouse
 keepers' game"""

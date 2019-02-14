@@ -14,7 +14,7 @@ tags: [ "keyword:real numbers" "keyword:coinductive types" "keyword:co recursion
 authors: [ "Milad Niqui <milad@cs.ru.nl>" ]
 bug-reports: "https://github.com/coq-contribs/coinductive-reals/issues"
 dev-repo: "git+https://github.com/coq-contribs/coinductive-reals.git"
-synopsis: "Real numbers as coinductive ternary streams."
+synopsis: "Real numbers as coinductive ternary streams"
 description: "See the README file"
 flags: light-uninstall
 url {

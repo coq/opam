@@ -13,7 +13,7 @@ tags: [ "keyword:computational linguistic" "keyword:categorial grammar" "keyword
 authors: [ "Houda Anoun <anoun@labri.fr>" "Pierre Castéran <casteran@labri.fr>" ]
 bug-reports: "https://github.com/coq-contribs/lambek/issues"
 dev-repo: "git+https://github.com/coq-contribs/lambek.git"
-synopsis: "A Coq Toolkit for Lambek Calculus."
+synopsis: "A Coq Toolkit for Lambek Calculus"
 description: """
 This library contains some definitions concerning Lambek calculus.
 Three formalisations of this calculus are proposed, and also some certified

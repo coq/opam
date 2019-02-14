@@ -18,8 +18,7 @@ depends: [
   "coq" {>= "8.5.0"}
   "coq-unimath-foundations"
 ]
-synopsis:
-  "Aims to formalize a substantial body of mathematics using the univalent point of view."
+synopsis: "Aims to formalize a substantial body of mathematics using the univalent point of view"
 flags: light-uninstall
 extra-files: ["Make" "md5=a92a35b43ed15f53e6e5fe7a49b6428a"]
 url {

@@ -13,7 +13,7 @@ tags: [ "keyword: geometry" "keyword: Tarski's geometry" "keyword: congruence" "
 authors: [ "Julien Narboux <Julien.Narboux@dpt-info.u-strasbg.fr> [http://dpt-info.u-strasbg.fr/~narboux/]" ]
 bug-reports: "https://github.com/coq-contribs/tarski-geometry/issues"
 dev-repo: "git+https://github.com/coq-contribs/tarski-geometry.git"
-synopsis: "Tarski's geometry."
+synopsis: "Tarski's geometry"
 description: """
 http://dpt-info.u-strasbg.fr/~narboux/tarski.html
 

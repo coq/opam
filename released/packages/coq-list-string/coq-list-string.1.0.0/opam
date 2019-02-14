@@ -17,7 +17,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
 ]
-synopsis: "Strings implemented as lists."
+synopsis: "Strings implemented as lists"
 flags: light-uninstall
 url {
   src: "https://github.com/clarus/coq-list-string/archive/1.0.0.tar.gz"

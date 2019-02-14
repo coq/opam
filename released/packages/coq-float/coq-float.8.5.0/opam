@@ -13,7 +13,7 @@ tags: [ "keyword:floating point arithmetic" "category:Computer Science/Data Type
 authors: [ "Sylvie Boldo <>" "Laurent Théry <>" ]
 bug-reports: "https://github.com/coq-contribs/float/issues"
 dev-repo: "git+https://github.com/coq-contribs/float.git"
-synopsis: "Library for floating point numbers."
+synopsis: "Library for floating point numbers"
 description: "A library for floating point numbers."
 flags: light-uninstall
 url {

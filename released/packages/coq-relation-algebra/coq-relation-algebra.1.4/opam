@@ -14,7 +14,7 @@ depends: [
 ]
 tags: [ "keyword:relation algebra" "keyword:kleene algebra with tests" "keyword:kat" "keyword:allegories" "keyword:residuated structures" "keyword:automata" "keyword:regular expressions" "keyword:matrices" "category:Mathematics/Algebra" ]
 authors: [ "Damien Pous <Damien.Pous@ens-lyon.fr>" ]
-synopsis: "Relation Algebra and KAT."
+synopsis: "Relation Algebra and KAT"
 description:
   "A modular library about relation algebra, from idempotent semirings to residuated Kleene allegories, including a decision tactic for Kleene algebra with Tests (KAT)."
 flags: light-uninstall

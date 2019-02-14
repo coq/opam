@@ -13,7 +13,7 @@ tags: [ "keyword:calculus of constructions" "keyword:coq" "keyword:pure type sys
 authors: [ "Bruno Barras <>" ]
 bug-reports: "https://github.com/coq-contribs/pts/issues"
 dev-repo: "git+https://github.com/coq-contribs/pts.git"
-synopsis: "A formalisation of Pure Type Systems."
+synopsis: "A formalisation of Pure Type Systems"
 description: """
 This contrib is a formalization of Pure Type Systems. It includes most
 of the basic metatheoretical properties: weakening, substitution,

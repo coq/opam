@@ -12,7 +12,7 @@ depends: [
 authors: [ "Bruno Barras" "Benjamin Gregoire" ]
 bug-reports: "https://github.com/coq-contribs/legacy-ring/issues"
 dev-repo: "git+https://github.com/coq-contribs/legacy-ring.git"
-synopsis: "The former implementation of the ring tactic."
+synopsis: "The former implementation of the ring tactic"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/legacy-ring/archive/v8.5.0.tar.gz"

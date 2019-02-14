@@ -15,7 +15,7 @@ depends: [
 conflicts: [
   "coq-mathcomp-ssreflect"
 ]
-synopsis: "The Small Scale Reflection extension."
+synopsis: "The Small Scale Reflection extension"
 flags: light-uninstall
 url {
   src: "http://ssr.msr-inria.inria.fr/FTP/ssreflect-1.5.tar.gz"

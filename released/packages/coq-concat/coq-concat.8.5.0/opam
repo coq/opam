@@ -13,7 +13,7 @@ tags: [ "keyword:category theory" "category:Mathematics/Category Theory" ]
 authors: [ "Amokrane Saïbi <>" ]
 bug-reports: "https://github.com/coq-contribs/concat/issues"
 dev-repo: "git+https://github.com/coq-contribs/concat.git"
-synopsis: "Constructive Category Theory."
+synopsis: "Constructive Category Theory"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/concat/archive/v8.5.0.tar.gz"

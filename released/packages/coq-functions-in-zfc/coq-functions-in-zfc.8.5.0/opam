@@ -13,7 +13,7 @@ tags: [ "keyword:set theory" "keyword:zermelo fraenkel" "keyword:functions" "cat
 authors: [ "Carlos Simpson <carlos@math.unice.fr>" ]
 bug-reports: "https://github.com/coq-contribs/functions-in-zfc/issues"
 dev-repo: "git+https://github.com/coq-contribs/functions-in-zfc.git"
-synopsis: "Functions in classical ZFC."
+synopsis: "Functions in classical ZFC"
 description: """
 This mostly repeats Guillaume Alexandre's contribution `zf',
 but in classical logic and with a different proof style. We start with a

@@ -21,7 +21,7 @@ depends: [
   "coq" {>= "8.4pl4" & < "8.5~"}
   "menhir" {>= "20151110" & < "20180530"}
 ]
-synopsis: "The CompCert C compiler."
+synopsis: "The CompCert C compiler"
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
 flags: light-uninstall
 url {

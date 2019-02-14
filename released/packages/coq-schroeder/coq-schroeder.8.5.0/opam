@@ -13,7 +13,7 @@ tags: [ "keyword:schroeder bernstein" "keyword:set theory" "category:Mathematics
 authors: [ "Hugo Herbelin <>" ]
 bug-reports: "https://github.com/coq-contribs/schroeder/issues"
 dev-repo: "git+https://github.com/coq-contribs/schroeder.git"
-synopsis: "The Theorem of Schroeder-Bernstein."
+synopsis: "The Theorem of Schroeder-Bernstein"
 description: """
 Fraenkel's proof of Schroeder-Bernstein theorem on decidable sets
 is formalized in a constructive variant of set theory based on

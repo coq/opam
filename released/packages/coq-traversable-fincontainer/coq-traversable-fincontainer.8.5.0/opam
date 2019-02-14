@@ -13,8 +13,7 @@ tags: [ "keyword:finitary container" "keyword:traversable functor" "category:Com
 authors: [ "Russell O'Connor <oconnorr@google.com>" ]
 bug-reports: "https://github.com/coq-contribs/traversable-fincontainer/issues"
 dev-repo: "git+https://github.com/coq-contribs/traversable-fincontainer.git"
-synopsis:
-  "A Coq proof that all Traversable functors are isomorphic to finitary containers."
+synopsis: "A Coq proof that all Traversable functors are isomorphic to finitary containers"
 flags: light-uninstall
 url {
   src:

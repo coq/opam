@@ -13,7 +13,7 @@ tags: [ "keyword:classical realizability" "keyword:krivine's realizability" "key
 authors: [ "Lionel Rieg <lionel.rieg@ens-lyon.org>" ]
 bug-reports: "https://github.com/coq-contribs/classical-realizability/issues"
 dev-repo: "git+https://github.com/coq-contribs/classical-realizability.git"
-synopsis: "Krivine's classical realizability."
+synopsis: "Krivine's classical realizability"
 description: """
 The aim of this Coq library is to provide a framework for checking
 proofs in Krivine's classical realizability for second-order Peano arithmetic.

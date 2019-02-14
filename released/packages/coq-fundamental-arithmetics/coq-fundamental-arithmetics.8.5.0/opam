@@ -13,7 +13,7 @@ tags: [ "keyword:arithmetic" "keyword:number theory" "category:Mathematics/Arith
 authors: [ "Sébastien Briais <sebastien.briais at ens-lyon.fr>" ]
 bug-reports: "https://github.com/coq-contribs/fundamental-arithmetics/issues"
 dev-repo: "git+https://github.com/coq-contribs/fundamental-arithmetics.git"
-synopsis: "Fundamental theorems of arithmetic."
+synopsis: "Fundamental theorems of arithmetic"
 flags: light-uninstall
 url {
   src:

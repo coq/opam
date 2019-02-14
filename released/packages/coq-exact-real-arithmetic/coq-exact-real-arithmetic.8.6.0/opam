@@ -13,7 +13,7 @@ tags: [ "keyword: correctness" "keyword: real numbers" "keyword: arithmetic" "ca
 authors: [ "Jérôme Creci" ]
 bug-reports: "https://github.com/coq-contribs/exact-real-arithmetic/issues"
 dev-repo: "git+https://github.com/coq-contribs/exact-real-arithmetic.git"
-synopsis: "Exact Real Arithmetic."
+synopsis: "Exact Real Arithmetic"
 description: """
 This contribution contains a proof of correctness
 of some exact real arithmetic algorithms from the PhD thesis of

@@ -16,8 +16,7 @@ tags: [ "keyword: reflexive decision procedure" "keyword: satisfiability modulo 
 authors: [ "Stéphane Lescuyer" ]
 bug-reports: "https://github.com/coq-contribs/ergo/issues"
 dev-repo: "git+https://github.com/coq-contribs/ergo.git"
-synopsis:
-  "Ergo: a Coq plugin for reification of term with arbitrary signature."
+synopsis: "Ergo: a Coq plugin for reification of term with arbitrary signature"
 description:
   "This library provides a tactic that performs SMT solving (SAT + congruence closure + arithmetic)."
 flags: light-uninstall

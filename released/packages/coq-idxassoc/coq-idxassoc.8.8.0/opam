@@ -13,7 +13,7 @@ tags: [ "keyword: associative arrays" "keyword: search operator" "keyword: data 
 authors: [ "Dominique Quatravaux" "François-René Ridaux" "Gérald Macinenti" ]
 bug-reports: "https://github.com/coq-contribs/idxassoc/issues"
 dev-repo: "git+https://github.com/coq-contribs/idxassoc.git"
-synopsis: "Associative Arrays."
+synopsis: "Associative Arrays"
 description: """
 We define the associative array (key -> value associations)
 datatype as list of couples, providing definitions of standards

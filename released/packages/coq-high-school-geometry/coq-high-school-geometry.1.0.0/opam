@@ -14,7 +14,7 @@ depends: [
 ]
 tags: [ "keyword:geometry" "keyword:teaching" "keyword:high school" "category:Mathematics/Geometry/General" "date:2004-01" ]
 authors: [ "Frédérique Guilhot <Frederique.Guilhot@sophia.inria.fr>" ]
-synopsis: "Geometry for French high-school."
+synopsis: "Geometry for French high-school"
 description: """
 This library is dedicated to high-shool geometry teaching.
 The axiomatisation for affine euclidean space is in a non analytic setting."""

@@ -13,7 +13,7 @@ tags: [ "keyword: Maple" "keyword: simplification" "keyword: field tactic" "cate
 authors: [ "David Delahaye" "Micaela Mayero" ]
 bug-reports: "https://github.com/coq-contribs/maple-mode/issues"
 dev-repo: "git+https://github.com/coq-contribs/maple-mode.git"
-synopsis: "A Maple Mode for Coq."
+synopsis: "A Maple Mode for Coq"
 description: """
 This contribution is an interface between Coq and Maple. In
 particular, this exports the functions simplify/factor/expand/normal giving

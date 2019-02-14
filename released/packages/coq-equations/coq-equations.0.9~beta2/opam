@@ -17,7 +17,7 @@ depends: [
   "ocaml"
   "coq" {= "8.5~beta2"}
 ]
-synopsis: "A plugin for Coq to add dependent pattern-matching."
+synopsis: "A plugin for Coq to add dependent pattern-matching"
 flags: light-uninstall
 url {
   src: "https://github.com/mattam82/Coq-Equations/archive/0.9.tar.gz"

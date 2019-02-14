@@ -13,8 +13,7 @@ tags: [ "keyword:pi calculus" "category:Computer Science/Lambda Calculi" "date:1
 authors: [ "Loïc Henry-Gréard <lhenrygr@cma.inria.fr>" ]
 bug-reports: "https://github.com/coq-contribs/param-pi/issues"
 dev-repo: "git+https://github.com/coq-contribs/param-pi.git"
-synopsis:
-  "Coding of a typed monadic pi-calculus using parameters for free names."
+synopsis: "Coding of a typed monadic pi-calculus using parameters for free names"
 description: """
 This development contains the specification for a monadic
 pi-calculus using the same coding method for names than

@@ -13,7 +13,7 @@ tags: [ "keyword:group theory" "category:Mathematics/Algebra" ]
 authors: [ "Gilles Kahn <>" ]
 bug-reports: "https://github.com/coq-contribs/group-theory/issues"
 dev-repo: "git+https://github.com/coq-contribs/group-theory.git"
-synopsis: "Elements of Group Theory."
+synopsis: "Elements of Group Theory"
 description:
   "Group Theory following the book \"Group Theory\" from W.R. Scott."
 flags: light-uninstall

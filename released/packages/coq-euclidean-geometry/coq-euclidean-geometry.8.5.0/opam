@@ -13,7 +13,7 @@ tags: [ "keyword:plane geometry" "keyword:euclid" "keyword:ruler and compass geo
 authors: [ "Jean Duprat <Jean.Duprat@ens-lyon.fr>" ]
 bug-reports: "https://github.com/coq-contribs/euclidean-geometry/issues"
 dev-repo: "git+https://github.com/coq-contribs/euclidean-geometry.git"
-synopsis: "Basis of the Euclid's plane geometry."
+synopsis: "Basis of the Euclid's plane geometry"
 description: """
 This is a more recent version of the basis of Euclid's plane geometry, the previous version was the contribution intitled RulerCompassGeometry.
 The plane geometry is defined as a set of points, with two predicates : Clokwise for the orientation and Equidistant for the metric and three constructors, Ruler for the lines, Compass for the circles and Intersection for the points.

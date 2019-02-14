@@ -13,8 +13,7 @@ tags: [ "keyword:kildall" "keyword:data flow analysis" "keyword:bytecode verific
 authors: [ "Solange Coupet-Grimal <Solange.Coupet@cmi.univ-mrs.fr>" "William Delobel <delobel@cmi.univ-mrs.fr>" ]
 bug-reports: "https://github.com/coq-contribs/kildall/issues"
 dev-repo: "git+https://github.com/coq-contribs/kildall.git"
-synopsis:
-  "Application of the Generic kildall's Data Flow Analysis Algorithm to a Type and Shape Static Analyses of Bytecode."
+synopsis: "Application of the Generic kildall's Data Flow Analysis Algorithm to a Type and Shape Static Analyses of Bytecode"
 description: """
 This Library provides a generic data flow analysis
 algorithm and a proof of its correctness.

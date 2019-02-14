@@ -18,8 +18,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
 ]
-synopsis:
-  "A library of abstract interfaces for mathematical structures in Coq."
+synopsis: "A library of abstract interfaces for mathematical structures in Coq"
 flags: light-uninstall
 url {
   src:

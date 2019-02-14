@@ -13,7 +13,7 @@ tags: [ "keyword:weak bisimulation" "keyword:up to techniques" "keyword:terminat
 authors: [ "Damien Pous <Damien.Pous@ens-lyon.fr>" ]
 bug-reports: "https://github.com/coq-contribs/weak-up-to/issues"
 dev-repo: "git+https://github.com/coq-contribs/weak-up-to.git"
-synopsis: "New Up-to Techniques for Weak Bisimulation."
+synopsis: "New Up-to Techniques for Weak Bisimulation"
 description: """
 This contribution is the formalisation of a paper that appeared in
 Proc. of ICALP 2005: "Up-to Techniques for Weak Bisimulation".

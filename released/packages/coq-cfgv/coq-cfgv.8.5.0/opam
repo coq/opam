@@ -13,7 +13,7 @@ tags: [ "keyword:generic programming" "keyword:variable bindings" "keyword:conte
 authors: [ "Vincent Rahli <vincent.rahli@gmail.com>" "Abhishek <abhishek.anand.iitg@gmail.com>" ]
 bug-reports: "https://github.com/coq-contribs/cfgv/issues"
 dev-repo: "git+https://github.com/coq-contribs/cfgv.git"
-synopsis: "Generic Proofs about Alpha Equality and Substitution."
+synopsis: "Generic Proofs about Alpha Equality and Substitution"
 description: "Please read the following paper"
 flags: light-uninstall
 url {

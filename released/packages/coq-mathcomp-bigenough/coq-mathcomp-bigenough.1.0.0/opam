@@ -17,7 +17,7 @@ depends: [
 ]
 tags: [ "keyword:bigenough" "keyword:asymptotic reasonning" "keyword:small scale reflection" "keyword:mathematical components" ]
 authors: [ "Cyril Cohen <cyril.cohen@inria.fr>" ]
-synopsis: "A small library to do epsilon - N reasonning."
+synopsis: "A small library to do epsilon - N reasonning"
 description: """
 The package contains a package to reasoning with big enough objects
 (mostly natural numbers). This package is essentially for backward

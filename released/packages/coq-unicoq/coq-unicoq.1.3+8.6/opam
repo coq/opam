@@ -17,7 +17,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.6.0" & < "8.7~"}
 ]
-synopsis: "An enhanced unification algorithm for Coq."
+synopsis: "An enhanced unification algorithm for Coq"
 flags: light-uninstall
 url {
   src: "https://github.com/unicoq/unicoq/archive/v1.3-8.6.tar.gz"

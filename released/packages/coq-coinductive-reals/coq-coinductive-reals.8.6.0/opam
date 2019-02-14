@@ -14,7 +14,7 @@ tags: [ "keyword: real numbers" "keyword: co-inductive types" "keyword: co-recur
 authors: [ "Milad Niqui <milad@cs.ru.nl> [http://www.cs.ru.nl/~milad]" ]
 bug-reports: "https://github.com/coq-contribs/coinductive-reals/issues"
 dev-repo: "git+https://github.com/coq-contribs/coinductive-reals.git"
-synopsis: "Real numbers as coinductive ternary streams."
+synopsis: "Real numbers as coinductive ternary streams"
 description: """
 http://www.cs.ru.nl/~milad/ETrees/coinductive-field/
 

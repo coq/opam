@@ -13,7 +13,7 @@ tags: [ "keyword: karatsuba multiplication" "keyword: binary ring" "category: Ma
 authors: [ "Russell O'Connor <r.oconnor@cs.ru.nl> [http://r6.ca/]" ]
 bug-reports: "https://github.com/coq-contribs/karatsuba/issues"
 dev-repo: "git+https://github.com/coq-contribs/karatsuba.git"
-synopsis: "Karatsuba's Multiplication."
+synopsis: "Karatsuba's Multiplication"
 description: """
 http://r6.ca/Karatsuba/
 

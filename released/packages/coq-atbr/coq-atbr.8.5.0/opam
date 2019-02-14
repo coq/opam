@@ -13,7 +13,7 @@ tags: [ "keyword:kleene algebra" "keyword:finite automata" "keyword:semiring" "k
 authors: [ "Damien Pous <damien.pous@inria.fr>" "Thomas Braibant <thomas.braibant@gmail.com>" ]
 bug-reports: "https://github.com/coq-contribs/atbr/issues"
 dev-repo: "git+https://github.com/coq-contribs/atbr.git"
-synopsis: "A tactic for deciding Kleene algebras."
+synopsis: "A tactic for deciding Kleene algebras"
 description: """
 This library provides algebraic tools for working with
 binary relations. The main tactic we provide is a reflexive tactic for

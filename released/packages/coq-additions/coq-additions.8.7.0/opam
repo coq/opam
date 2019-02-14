@@ -13,7 +13,7 @@ tags: [ "keyword: addition chains" "category: Computer Science/Decision Procedur
 authors: [ "Pierre Castéran" ]
 bug-reports: "https://github.com/coq-contribs/additions/issues"
 dev-repo: "git+https://github.com/coq-contribs/additions.git"
-synopsis: "Addition Chains."
+synopsis: "Addition Chains"
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/additions/archive/v8.7.0.tar.gz"

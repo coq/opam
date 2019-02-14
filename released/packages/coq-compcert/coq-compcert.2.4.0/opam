@@ -13,7 +13,7 @@ depends: [
   "coq" {>= "8.4pl4" & < "8.5~"}
   "menhir" {>= "20140422"}
 ]
-synopsis: "The CompCert C compiler."
+synopsis: "The CompCert C compiler"
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
 extra-files: ["coq-compcert.install" "md5=a7efe759bff32c6aac2c2ca483d5a266"]
 url {

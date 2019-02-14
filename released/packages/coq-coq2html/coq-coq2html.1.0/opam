@@ -18,8 +18,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.5"}
 ]
-synopsis:
-  "Generates HTML documentation from Coq source files.  Alternative to coqdoc."
+synopsis: "Generates HTML documentation from Coq source files.  Alternative to coqdoc"
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
 flags: light-uninstall
 url {
