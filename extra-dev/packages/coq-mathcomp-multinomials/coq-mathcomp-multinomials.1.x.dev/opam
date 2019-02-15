@@ -16,10 +16,10 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SsrMultinomials"]
 depends: [
   "ocaml"
   "coq" {(>= "8.5" | = "dev")}
-  "coq-mathcomp-ssreflect" {>= "1.6" & < "1.8.0~"}
-  "coq-mathcomp-algebra" {>= "1.6" & < "1.8.0~"}
+  "coq-mathcomp-ssreflect" {(>= "1.6" & < "1.8.0~") | (= "dev")}
+  "coq-mathcomp-algebra" {(>= "1.6" & < "1.8.0~") | (= "dev")}
+  "coq-mathcomp-finmap" {(>= "1.1.0" & < "1.2.0~") | (= "dev")}
   "coq-mathcomp-bigenough" {>= "1.0.0" & < "1.1.0~"}
-  "coq-mathcomp-finmap"    {>= "1.1.0" & < "1.2.0~"}
 ]
 tags: [
   "keyword:multinomials"
