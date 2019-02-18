@@ -20,3 +20,7 @@ tags: [ "keyword:finmap" "keyword:finset" "keyword:multiset"]
 authors: [ "Cyril Cohen <cyril.cohen@inria.fr>" ]
 
 synopsis: "A finset and finmap library"
+
+url {
+  src: "git+https://github.com/math-comp/finmap.git#master"
+}
