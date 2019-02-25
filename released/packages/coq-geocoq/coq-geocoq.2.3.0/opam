@@ -7,7 +7,7 @@ authors: ["Michael Beeson"
 	  "Pierre Boutry <pierre.boutry@unistra.fr>"
 	  "Charly Gries <Charly.Gries@etu.unistra.fr>"
 	  "Julien Narboux <narboux@unistra.fr>"]
-synopsis: "A formalization of foundations of geometry in Coq."
+synopsis: "A formalization of foundations of geometry in Coq"
 license: "LGPL 3"
 build: [
   ["./configure.sh"]
