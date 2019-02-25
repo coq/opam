@@ -7,6 +7,7 @@ authors: ["Michael Beeson"
 	  "Pierre Boutry <pierre.boutry@unistra.fr>"
 	  "Charly Gries <Charly.Gries@etu.unistra.fr>"
 	  "Julien Narboux <narboux@unistra.fr>"]
+synopsis: "A formalization of foundations of geometry in Coq."
 license: "LGPL 3"
 build: [
   ["./configure.sh"]
@@ -17,7 +18,7 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GeoCoq"]
 depends: [
-  "coq" { (>= "8.5" & < "8.6~") | (>= "8.6.1" & <= "8.9~") }
+  "coq" { (>= "8.5" & < "8.6~") | (>= "8.6.1" & <= "8.10~") }
 ]
 tags: [ "keyword:geometry"
         "keyword:neutral geometry"
