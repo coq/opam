@@ -22,7 +22,6 @@ depends: [
   "ocamlfind"
 ]
 synopsis: "QuickChick is a random property-based testing library for Coq"
-
 authors: [
   "Leonidas Lampropoulos <>"
   "Zoe Paraskevopoulou <>"

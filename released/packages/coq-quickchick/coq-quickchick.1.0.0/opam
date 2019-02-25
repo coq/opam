@@ -18,8 +18,6 @@ depends: [
   "coq-ext-lib"
   "coq-mathcomp-ssreflect" {>= "1.6" & < "1.7~"}
 ]
-synopsis: "QuickChick is a random property-based testing library for Coq"
-
 authors: [
   "Leonidas Lampropoulos <>"
   "Zoe Paraskevopoulou <>"
@@ -31,6 +29,7 @@ authors: [
   "Li-Yao Xia <>"
   "Yishuai Li <>"
 ]
+synopsis: "QuickChick is a random property-based testing library for Coq."
 flags: light-uninstall
 url {
   src: "https://github.com/QuickChick/QuickChick/archive/v1.0.0.tar.gz"

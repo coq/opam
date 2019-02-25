@@ -34,6 +34,7 @@ tags: [ "keyword:geometry"
 	"keyword:parallel postulates"
 	"category:Mathematics/Geometry/General"
 	"date:2017-09-30"  ]
+synopsis: "A formalization of foundations of geometry in Coq."
 flags: light-uninstall
 url {
   src: "https://github.com/GeoCoq/GeoCoq/archive/v2.3.0.tar.gz"

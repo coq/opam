@@ -20,10 +20,9 @@ depends: [
   "coq-mathcomp-ssreflect"
   "ocamlbuild"
   "ocamlfind"
-  "coq-simple-io" {>= "0.2" < "0.3"}
+  "coq-simple-io" {>= "0.2" & < "0.3"}
 ]
 synopsis: "QuickChick is a random property-based testing library for Coq"
-
 authors: [
   "Leonidas Lampropoulos <>"
   "Zoe Paraskevopoulou <>"
