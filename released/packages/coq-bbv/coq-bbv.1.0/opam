@@ -1,7 +1,7 @@
 opam-version: "1.2"
 maintainer: "gmalecha@gmail.com"
 homepage: "https://github.com/mit-plv/bbv"
-dev-repo: "https://github.com/mit-plv/bbv#master"
+dev-repo: "git://git@github.com:mit-plv/bbv.git"
 bug-reports: "https://github.com/mit-plv/bbv/issues"
 authors: ["Tej Chajed"
           "Haogang Chen"
