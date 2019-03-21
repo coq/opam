@@ -1,0 +1,36 @@
+opam-version: "1.2"
+author: "Xavier Leroy <xavier.leroy@inria.fr>"
+maintainer: "Jacques-Henri Jourdan <jacques-Henri.jourdan@normalesup.org>"
+homepage: "http://compcert.inria.fr/"
+dev-repo: "https://github.com/AbsInt/CompCert.git"
+bug-reports: "https://github.com/AbsInt/CompCert/issues"
+license: "INRIA Non-Commercial License Agreement"
+build: [
+  ["./configure" "ia32-linux" {os = "linux"}
+  "ia32-macosx" {os = "darwin"}
+  "ia32-cygwin" {os = "cygwin"}
+  "-bindir" "%{bin}%"
+  "-libdir" "%{lib}%/compcert"
+  "-install-coqdev"
+  "-clightgen"
+  "-coqdevdir" "%{lib}%/coq/user-contrib/compcert"
+  "-ignore-coq-version"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+  ["install" "-m" "0644" "VERSION" "%{lib}%/coq/user-contrib/compcert/"]
+]
+remove: [
+  ["rm" "%{bin}%/ccomp"]
+  ["rm" "%{bin}%/clightgen"]
+  ["rm" "-R" "%{lib}%/compcert"]
+  ["rm" "-R" "%{lib}%/coq/user-contrib/compcert"]
+  ["rm" "%{share}%/compcert.ini"]
+  ["rm" "%{share}%/man/man1/ccomp.1"]
+  ["sh" "-c" "rmdir -p %{share}%/man/man1 || true"]
+]
+depends: [
+  "coq"  {>= "8.8.1" & <= "8.8.2"}
+  "menhir" {>= "20180530" & < "20181006"}
+]
