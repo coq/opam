@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/int-map"
 license: "Unknown"
@@ -6,9 +6,25 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IntMap"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: finite sets" "keyword: maps" "keyword: binary integers" "keyword: efficient data structures" "keyword: data structures" "category: Computer Science/Data Types and Data Structures" "date: around 1999 (integrated within Coq 7.0)" ]
 authors: [ "Jean Goubault <goubault [@] lsv.ens-cachan.fr>" ]
 bug-reports: "https://github.com/coq-contribs/int-map/issues"
-dev-repo: "https://github.com/coq-contribs/int-map.git"
+dev-repo: "git+https://github.com/coq-contribs/int-map.git"
+synopsis: "Maps indexed by binary integers : IntMap."
+description: """
+This library contains a data structure for finite sets implemented by
+an efficient structure of map (trees indexed by binary integers).
+It was initially developed by Jean Goubault.
+
+This user contribution used to be part of Coq Standard Library.
+It is now considered to be obsolete and subsumed by the new
+FSets/FMap library. IntMap can be now seen as a particular
+implementation of FMapInterface, see file FMapIntMap."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/int-map/archive/v8.8.0.tar.gz"
+  checksum: "md5=8fe4794955fcd652395c3cc687a584d6"
+}

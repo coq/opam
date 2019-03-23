@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "guillaume.melquiond@inria.fr"
 homepage: "http://coquelicot.saclay.inria.fr/"
 license: "LGPL 3"
@@ -9,8 +9,17 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coquelicot"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4"}
   "coq-ssreflect" {>= "1.5.0"}
 ]
 tags: [ "keyword:real analysis" "keyword:topology" "keyword:filters" "keyword:metric spaces" "category:Mathematics/Real Calculus and Topology" ]
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Catherine Lelay <catherine.lelay@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
+synopsis:
+  "A Coq formalization of real analysis compatible with the standard library."
+flags: light-uninstall
+url {
+  src:
+    "https://gforge.inria.fr/frs/download.php/file/34663/coquelicot-2.1.0.tar.gz"
+  checksum: "md5=eac4d9717150b22a416b4b286ff3d9db"
+}

@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/coq-list-string"
-dev-repo: "https://github.com/clarus/coq-list-string.git"
+dev-repo: "git+https://github.com/clarus/coq-list-string.git"
 bug-reports: "https://github.com/clarus/coq-list-string/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
@@ -14,5 +14,12 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ListString"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
 ]
+synopsis: "Strings implemented as lists."
+flags: light-uninstall
+url {
+  src: "https://github.com/clarus/coq-list-string/archive/1.0.0.tar.gz"
+  checksum: "md5=3ab8dc558cf29eda1da74c8f6c560b15"
+}

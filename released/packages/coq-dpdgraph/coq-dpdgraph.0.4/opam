@@ -1,5 +1,4 @@
-opam-version: "1.2"
-
+opam-version: "2.0"
 maintainer: "yves.bertot@inria.fr"
 license: "LGPL 2.1"
 
@@ -16,8 +15,16 @@ remove: [
 ]
 
 depends: [
-   "coq" {>= "8.5" & < "8.6~"}
-   "ocamlgraph"
+  "ocaml"
+  "coq" {>= "8.5" & < "8.6~"}
+  "ocamlgraph"
 ]
-
 authors: [ "Anne Pacalet" "Yves Bertot"]
+synopsis:
+  "Computing dependencies between Coq objects (definitions, theorems)"
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/ybertot/coq-dpdgraph/archive/release-for-8.5-0.4-rc1.zip"
+  checksum: "md5=fe9f172750906b2acfea71661e408906"
+}

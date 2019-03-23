@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/free-groups"
 license: "LGPL"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FreeGroups"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: free group" "category: Mathematics/Algebra" ]
 authors: [ "Daniel Schepler <dschepler@gmail.com>" ]
 bug-reports: "https://github.com/coq-contribs/free-groups/issues"
-dev-repo: "https://github.com/coq-contribs/free-groups.git"
+dev-repo: "git+https://github.com/coq-contribs/free-groups.git"
+synopsis: "Free Groups."
+description:
+  "This small contribution is a formalization of van der Waerden's proof of the construction of a free group on a set of generators, as the reduced words where a letter is a generator or its formal inverse."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/free-groups/archive/v8.7.0.tar.gz"
+  checksum: "md5=b34b500e8faf74bc9e7cd9dcfc88f955"
+}

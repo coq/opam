@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/groups"
 license: "LGPL 2"
@@ -6,9 +6,16 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Groups"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:group theory" "category:Miscellaneous/Coq Use Examples" ]
 authors: [ "Pierre Castéran <>" ]
 bug-reports: "https://github.com/coq-contribs/groups/issues"
-dev-repo: "https://github.com/coq-contribs/groups.git"
+dev-repo: "git+https://github.com/coq-contribs/groups.git"
+synopsis: "An exercise on groups."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/groups/archive/v8.5.0.tar.gz"
+  checksum: "md5=55565c9fd90c95c546b02f41f9932873"
+}

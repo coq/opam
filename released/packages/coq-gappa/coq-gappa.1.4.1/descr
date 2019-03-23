@@ -1,2 +1,0 @@
-A Coq tactic for discharging goals about floating-point arithmetic and
-round-off errors using the Gappa prover.

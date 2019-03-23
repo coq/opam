@@ -1,4 +1,0 @@
-This script will try to remove unnecessary module imports from Coq
-sources. It examines modules listed in "Require Import" statements one
-by one and tries to recompile to see if their removal would cause
-compilation errors.

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Julien Narboux <julien@narboux.fr>"
 homepage: "http://cl-informatik.uibk.ac.at/cek/coqhammer/"
 bug-reports: "mailto://lukaszcz@mimuw.edu.pl"
@@ -18,8 +18,16 @@ remove: [
 	["rm" "%{prefix}%/bin/predict"]
 ]
 depends: [
-  "coq" { (>= "8.6" & < "8.7~") }
+  "ocaml"
+  "coq" {(>= "8.6" & < "8.7~")}
 ]
 tags: [ "keyword:automation"
 	"category:Misc/Coq Extensions"
 	"date:2017-09-30"  ]
+synopsis: "Automation for Dependent Type Theory"
+flags: light-uninstall
+url {
+  src:
+    "http://cl-informatik.uibk.ac.at/cek/coqhammer/coqhammer-1.0.3-coq8.6.tar.gz"
+  checksum: "md5=4d0fb044c9ddecac60b6aea7310a2379"
+}

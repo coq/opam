@@ -1,10 +1,10 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "armael.gueneau@inria.fr"
 authors: [
   "Armaël Guéneau <armael.gueneau@inria.fr>"
 ]
 homepage: "https://github.com/Armael/coq-procrastination"
-dev-repo: "https://github.com/Armael/coq-procrastination.git"
+dev-repo: "git+https://github.com/Armael/coq-procrastination.git"
 bug-reports: "https://github.com/Armael/coq-procrastination/issues"
 license: "LGPL"
 build: [
@@ -15,5 +15,13 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Procrastination"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5"}
 ]
+synopsis:
+  "A small library for collecting side conditions and deferring their proof"
+flags: light-uninstall
+url {
+  src: "https://github.com/Armael/coq-procrastination/archive/v1.0.zip"
+  checksum: "md5=fd1dde79b57b81ebfae4f442e13ae56d"
+}

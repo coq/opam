@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 version: "2.1~beta3"
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://template-coq.github.io/template-coq"
-dev-repo: "https://github.com/Template-Coq/template-coq.git#coq-8.8"
+dev-repo: "git+https://github.com/Template-Coq/template-coq.git#coq-8.8"
 bug-reports: "https://github.com/Template-Coq/template-coq/issues"
 authors: ["Abhishek Anand <aa755@cs.cornell.edu>"
           "Simon Boulier <simon.boulier@inria.fr>"
@@ -23,8 +23,28 @@ remove: [
   ["rm" "-R" "%{lib}%/coq/user-contrib/TemplateExtraction"]
 ]
 depends: [
+  "ocaml" {> "4.02.3"}
   "coq" {>= "8.8" & < "8.9~"}
 ]
-available: [
-  ocaml-version > "4.02.3" # Bug in ocamlc -open in that version
-]
+synopsis: "A quoting and unquoting library for Coq in Coq."
+description: """
+Template Coq is a quoting library for Coq. It takes Coq terms and
+constructs a representation of their syntax tree as a Coq inductive data
+type. The representation is based on the kernel's term representation.
+
+In addition to a complete reification and denotation of CIC terms,
+Template Coq includes:
+
+- Reification of the environment structures, for constant and inductive declarations.
+- Denotation of terms and global declarations
+- A monad for manipulating global declarations, calling the type
+  checker, and inserting them in the global environment, in the style of
+  MetaCoq/MTac.
+- A partial type-checker for the Calculus of Inductive Constructions,
+  runnable as a plugin.
+- Example plugins built on top of this."""
+flags: light-uninstall
+url {
+  src: "https://github.com/MetaCoq/metacoq/archive/v2.1-beta3.tar.gz"
+  checksum: "md5=e81b8ecabef788a10337a39b095d54f3"
+}

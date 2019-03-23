@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/io"
-dev-repo: "https://github.com/clarus/io.git"
+dev-repo: "git+https://github.com/clarus/io.git"
 bug-reports: "https://github.com/clarus/io/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
@@ -14,5 +14,12 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
 ]
+synopsis: "A library for effects in Coq."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-io/io/archive/3.2.0.tar.gz"
+  checksum: "md5=e2cecb304942df8ecfcde4d6bbaf6217"
+}

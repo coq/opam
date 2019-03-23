@@ -1,8 +1,0 @@
-Proofs of Quicksort's worst- and average-case complexity.
-
-The development contains:
-- a set of monads and monad transformers for measuring a (possibly nondeterministic) algorithm's use of designated operations;
-- monadically expressed deterministic and nondeterministic implementations of Quicksort;
-- proofs of these implementations' worst- and average case complexity.
-
-Most of the development is documented in the TYPES 2008 paper "A Machine-Checked Proof of the Average-Case Complexity of Quicksort in Coq", available at the homepage.

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/ruler-compass-geometry"
 license: "GNU Lesser Public License"
@@ -6,9 +6,24 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RulerCompassGeometry"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: geometry" "keyword: plane geometry" "keyword: ruler and compass geometry" "keyword: Euclidian geometry" "keyword: Hilbert's axioms" "category: Mathematics/Geometry/General" "date: 2007-11" ]
 authors: [ "Jean Duprat <Jean.Duprat@ens-lyon.fr>" ]
 bug-reports: "https://github.com/coq-contribs/ruler-compass-geometry/issues"
-dev-repo: "https://github.com/coq-contribs/ruler-compass-geometry.git"
+dev-repo: "git+https://github.com/coq-contribs/ruler-compass-geometry.git"
+synopsis: "Ruler and compass geometry axiomatization."
+description: """
+This library contains an axiomatization of the ruler and
+compass euclidian geometry. Files A1 to A6 contain the axioms and the
+basic constructions. The other files build the proof that this
+axiomatization induces the whole plane geometry except the continuity
+axiom. For that the proofs of the Hilbert's axioms conclude this work in
+the files E1 to E5."""
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/ruler-compass-geometry/archive/v8.7.0.tar.gz"
+  checksum: "md5=26740cfd7f1874e13d65bc916db276d0"
+}

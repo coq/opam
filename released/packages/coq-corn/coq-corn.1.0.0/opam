@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "b.a.w.spitters@gmail.com"
 homepage: "http://corn.cs.ru.nl/"
 doc: "http://corn.cs.ru.nl/"
@@ -11,6 +11,14 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoRN"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
   "coq-math-classes"
 ]
+synopsis: "The CoRN library."
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/c-corn/corn/archive/e9162eaba7e705e793aad4dbbffdb606aba9b3bb.tar.gz"
+  checksum: "md5=868d1b9114497c6d92d7f75a9470b64d"
+}

@@ -1,14 +1,15 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Li-yao Xia <lysxia@gmail.com>"
 authors: "Li-yao Xia"
 homepage: "https://github.com/Lysxia/coq-simple-io"
-dev-repo: "https://github.com/Lysxia/coq-simple-io.git"
+dev-repo: "git+https://github.com/Lysxia/coq-simple-io.git"
 bug-reports: "https://github.com/Lysxia/coq-simple-io/issues"
 license: "MIT"
 build: [ make "build" ]
 install: [ make "install" ]
 remove: [ make "uninstall" ]
 depends: [
+  "ocaml"
   "coq"
   "ocamlbuild" {build & >= "0.9.0"}
   "ocamlfind"
@@ -19,3 +20,8 @@ tags: [
   "keyword:extraction"
   "keyword:effects"
 ]
+synopsis: "IO monad for Coq"
+url {
+  src: "https://github.com/Lysxia/coq-simple-io/archive/0.1.tar.gz"
+  checksum: "md5=fe4c5a0b60b36b57feec1d6d6aada662"
+}

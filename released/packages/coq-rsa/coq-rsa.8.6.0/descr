@@ -1,4 +1,0 @@
-Correctness of RSA algorithm.
-
-This directory contains the proof of correctness
-of RSA algorithm. It contains a proof of Fermat's little theorem

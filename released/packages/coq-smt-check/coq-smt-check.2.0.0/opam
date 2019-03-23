@@ -1,5 +1,4 @@
-opam-version: "1.2"
-author: "Gregory Malecha"
+opam-version: "2.0"
 maintainer: "gmalecha@gmail.com"
 homepage: "https://github.com/gmalecha/coq-smt-check"
 bug-reports: "https://github.com/gmalecha/coq-smt-check/issues"
@@ -10,6 +9,14 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SMTC"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
   "coq-plugin-utils" {>= "1.1.0" & < "2.0.0"}
 ]
+synopsis: "Invoke SMT solvers to check goals."
+authors: "Gregory Malecha"
+flags: light-uninstall
+url {
+  src: "https://github.com/gmalecha/coq-smt-check/archive/v2.0.0.tar.gz"
+  checksum: "md5=38b70fb0b30f9aa09c71af33d4f2d361"
+}

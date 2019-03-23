@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://github.com/gmalecha/template-coq"
-dev-repo: "https://github.com/gmalecha/template-coq.git#8.5"
+dev-repo: "git+https://github.com/gmalecha/template-coq.git#8.5"
 bug-reports: "https://github.com/gmalecha/template-coq/issues"
 authors: ["Gregory Malecha"]
 license: "BSD"
@@ -13,5 +13,12 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Template"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5~beta2" & < "8.5~beta3"}
 ]
+synopsis: "A quoting library for Coq."
+flags: light-uninstall
+url {
+  src: "https://github.com/gmalecha/template-coq/archive/v1.0.0-beta2.tar.gz"
+  checksum: "md5=135f3f26a302ed3b497e9d5d356f329a"
+}

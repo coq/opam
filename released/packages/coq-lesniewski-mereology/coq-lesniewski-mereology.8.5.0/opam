@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/lesniewski-mereology"
 license: "LGPL"
@@ -6,9 +6,19 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Top"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:mereology" "keyword:protothetic" "keyword:ontology" "keyword:nominalist theory" "keyword:extensionality" "category:Mathematics/Logic/Foundations" ]
 authors: [ "Patrick Barlatier <patrick.barlatier@univ-savoie.fr>" "Richard Dapoigny <richard.dapoigny@univ-savoie.fr>" ]
 bug-reports: "https://github.com/coq-contribs/lesniewski-mereology/issues"
-dev-repo: "https://github.com/coq-contribs/lesniewski-mereology.git"
+dev-repo: "git+https://github.com/coq-contribs/lesniewski-mereology.git"
+synopsis: "KDTL."
+description:
+  "LesniewskiMereology is a Coq library created by R. Dapoigny and P. Barlatier whose purpose is to implement the alternative to Set Theory of Stanislaw Lesniewski. It is part of an on-going project using the Coq language and called KDTL (Knowledge-based Dependently Typed Language) to build an alternative to Description Logics. The developed theory is close to the analysis of Denis Mieville (1984) in his book \"Un developpement des systemes logiques de Stanislaw Lesniewski\". It is a theoretical construct which relies on three dependent levels, logic (a.k.a. Protothetic), the Lesniewski Ontologie (LO) and mereology. Each level incorporates a minimal collection of axioms, protothetic and ontologic definitions and a set of theorems together with their intuitionist proofs."
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/lesniewski-mereology/archive/v8.5.0.tar.gz"
+  checksum: "md5=041e319347fce2f14d215b1e104a4dba"
+}

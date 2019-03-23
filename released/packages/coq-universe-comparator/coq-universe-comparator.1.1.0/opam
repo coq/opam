@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "amin.timany@cs.kuleuven.be"
 homepage: "https://amintimany.github.io/UniverseComparator/html/test.html"
 bug-reports: "https://github.com/amintimany/UniverseComparator/issues"
@@ -11,5 +11,13 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/UniverseComparator"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5~beta3" & < "8.6~"}
 ]
+synopsis: "A tool to compare universe levels in Coq."
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/amintimany/UniverseComparator/archive/v1.1.0.tar.gz"
+  checksum: "md5=a51655b3c9c43e99da10a5b112bf0833"
+}

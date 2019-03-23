@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "frederic.blanqui@inria.fr"
 authors: [
   "Frédéric Blanqui"
@@ -23,6 +23,7 @@ build: [make "-j%{jobs}%"]
 install: [make "-f" "Makefile.coq" "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
 depends: [
+  "ocaml"
   "coq" {>= "8.9" & < "8.10~"}
   "coq-bignums" {>= "8.9" & < "8.10~"}
 ]
@@ -104,3 +105,10 @@ tags: [
   "keyword:pigeon-hole principle"
   "keyword:Ramsey theorem"  
 ]
+synopsis: "A library on rewriting theory and termination."
+flags: light-uninstall
+url {
+  src:
+    "https://gforge.inria.fr/frs/download.php/file/37902/color.1.6.0.tar.gz"
+  checksum: "md5=8cb1be3cb3f3f2e5d1039c33fef4288d"
+}

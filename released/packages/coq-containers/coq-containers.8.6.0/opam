@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/containers"
 license: "Unknown"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Containers"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: data structures" "keyword: type classes" "category: Computer Science/Data Types and Data Structures" ]
 authors: [ "Stéphane Lescuyer" ]
 bug-reports: "https://github.com/coq-contribs/containers/issues"
-dev-repo: "https://github.com/coq-contribs/containers.git"
+dev-repo: "git+https://github.com/coq-contribs/containers.git"
+synopsis: "Containers: a typeclass-based library of finite sets/maps."
+description:
+  "This is a reimplementation of the FSets/FMaps library from the standard library, using typeclasses. See tests files for usage. A new vernacular command is provided by Generate.v and the plugin to automatically generate ordered types for user-defined inductive types."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/containers/archive/v8.6.0.tar.gz"
+  checksum: "md5=f954255c939acdebd61f245a70250a7d"
+}

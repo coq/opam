@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/coq-opam-website"
-dev-repo: "https://github.com/clarus/coq-opam-website.git"
+dev-repo: "git+https://github.com/clarus/coq-opam-website.git"
 bug-reports: "https://github.com/clarus/coq-opam-website/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
@@ -11,9 +11,15 @@ build: [
   ["sh" "-c" "cd extraction && make"]
 ]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4"}
   "coq-io" {>= "3.1.0"}
   "coq-io-exception" {>= "1.0.0"}
   "coq-io-system" {>= "2.3.0"}
   "coq-list-string" {>= "2.1.0"}
 ]
+synopsis: "Generation of a Coq website for OPAM: http://coq.io/opam/ ."
+url {
+  src: "https://github.com/coq-io/opam-website/archive/1.3.2.tar.gz"
+  checksum: "md5=861185b02cdb15a15a1de3127abe0454"
+}

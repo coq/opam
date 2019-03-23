@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "gmalecha@gmail.com"
 homepage: "https://github.com/beta-ziliani/mtac-plugin"
-dev-repo: "https://github.com/beta-ziliani/mtac-plugin.git"
+dev-repo: "git+https://github.com/beta-ziliani/mtac-plugin.git"
 bug-reports: "https://github.com/beta-ziliani/mtac-plugin/issues"
 authors: ["Beta Ziliani"]
 license: "MIT"
@@ -14,5 +14,12 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Mtac"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6"}
 ]
+synopsis: "Typed Tactics for Coq 8.5"
+flags: light-uninstall
+url {
+  src: "https://github.com/beta-ziliani/mtac-plugin/archive/v1.3.0.tar.gz"
+  checksum: "md5=3e5b17dca8c533fee2a08bf6ab437f1b"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-bellantonicook"
 version: "1.0.0"
 maintainer: "David Nowak <david.nowak@univ-lille.fr>"
@@ -7,14 +7,17 @@ authors: [
   "David Nowak"
 ]
 homepage: "https://github.com/davidnowak/bellantonicook"
-dev-repo: "https://github.com/davidnowak/bellantonicook.git"
+dev-repo: "git+https://github.com/davidnowak/bellantonicook.git"
 bug-reports: "https://github.com/davidnowak/bellantonicook/issues"
 license: "CeCILL-A"
-build: [make]
-build-doc: [make "html"]
+build: [
+  [make]
+  [make "html"] {with-doc}
+]
 install: [make "install"]
 remove: [make "uninstall"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6.0" & < "8.9.0~"}
 ]
 tags: [
@@ -24,3 +27,9 @@ tags: [
   "logpath:BellantoniCook"
   "date:2018-09-06"
 ]
+synopsis:
+  "Deep embedding of Bellantoni and Cook's syntactic characterization of polytime functions"
+url {
+  src: "https://github.com/davidnowak/bellantonicook/archive/v1.0.0.tar.gz"
+  checksum: "md5=55be4b1d1eeeba344faa5212adc1dc80"
+}

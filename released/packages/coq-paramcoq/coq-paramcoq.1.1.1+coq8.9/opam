@@ -1,11 +1,11 @@
-opam-version: "1.2"
+opam-version: "2.0"
 synopsis: "Paramcoq"
 name: "coq-paramcoq"
 version: "1.1.1+coq8.9"
 maintainer: "Pierre Roux <pierre.roux@onera.fr>"
 
 homepage: "https://github.com/coq-community/paramcoq"
-dev-repo: "https://github.com/coq-community/paramcoq.git"
+dev-repo: "git+https://github.com/coq-community/paramcoq.git"
 bug-reports: "https://github.com/coq-community/paramcoq/issues"
 license: "MIT"
 
@@ -13,9 +13,9 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Param"]
 depends: [
+  "ocaml"
   "coq" {>= "8.9" & < "8.10~"}
 ]
-
 tags: [
   "keyword:paramcoq"
   "keyword:parametricity"
@@ -33,3 +33,9 @@ authors: [
   "Cyril Cohen"
   "Matthieu Sozeau"
 ]
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-community/paramcoq/archive/v1.1.1+coq8.9.tar.gz"
+  checksum: "md5=e0ca9436a81fd47e676541254d28e8bb"
+}

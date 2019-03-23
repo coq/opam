@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/finger-tree"
 license: "LGPL"
@@ -6,9 +6,17 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FingerTree"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:data structures" "keyword:dependent types" "keyword:finger trees" "category:Computer Science/Data Types and Data Structures" "date:2009-02" ]
 authors: [ "Matthieu Sozeau <mattam@mattam.org>" ]
 bug-reports: "https://github.com/coq-contribs/finger-tree/issues"
-dev-repo: "https://github.com/coq-contribs/finger-tree.git"
+dev-repo: "git+https://github.com/coq-contribs/finger-tree.git"
+synopsis: "Dependent Finger Trees."
+description: "A verified generic implementation of Finger Trees"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/finger-tree/archive/v8.5.0.tar.gz"
+  checksum: "md5=2e6ac43bdbddaa8882a0d6fc2effaa09"
+}

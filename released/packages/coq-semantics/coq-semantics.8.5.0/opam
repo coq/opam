@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/semantics"
 license: "LGPL"
@@ -6,9 +6,29 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Semantics"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:natural semantics" "keyword:denotational semantics" "keyword:axiomatic" "keyword:semantics" "keyword:hoare logic" "keyword:dijkstra weakest pre condition calculus" "keyword:abstract interpretation" "keyword:intervals" "category:Computer Science/Semantics and Compilation/Semantics" "date:2007-07-5" ]
 authors: [ "Yves Bertot <Yves.Bertot@sophia.inria.fr>" ]
 bug-reports: "https://github.com/coq-contribs/semantics/issues"
-dev-repo: "https://github.com/coq-contribs/semantics.git"
+dev-repo: "git+https://github.com/coq-contribs/semantics.git"
+synopsis:
+  "A survey of semantics styles, from natural semantics through structural operational, axiomatic, and denotational semantics, to."
+description: """
+abstract interpretation.
+
+This is a survey of programming language semantics styles
+for a miniature example of a programming language, with their encoding
+in Coq, the proofs of equivalence of different styles, and the proof
+of soundess of tools obtained from axiomatic semantics or abstract
+interpretation. The tools can be run inside Coq, thus making them
+available for proof by reflection, and the code can also be extracted
+and connected to a yacc-based parser, thanks to the use of a functor
+parameterized by a module type of strings. A hand-written parser is
+also provided in Coq, but there are no proofs associated."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/semantics/archive/v8.5.0.tar.gz"
+  checksum: "md5=f1c1f0202ab55262e3e8317ef4cbec68"
+}

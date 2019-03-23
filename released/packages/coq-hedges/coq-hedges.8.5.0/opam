@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/hedges"
 license: "LGPL 2"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Hedges"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:bisimulation" "keyword:spi calculus" "keyword:hedges" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:2004-04-20" ]
 authors: [ "Sébastien Briais <>" ]
 bug-reports: "https://github.com/coq-contribs/hedges/issues"
-dev-repo: "https://github.com/coq-contribs/hedges.git"
+dev-repo: "git+https://github.com/coq-contribs/hedges.git"
+synopsis: "Some properties of hedges used by hedged bisimulation."
+description: """
+These properties are in section 6.1 of the paper
+"On Bisimulations for the Spi-Calculus" by J. Borgström
+and U. Nestmann.
+However, we consider here an extended message language."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/hedges/archive/v8.5.0.tar.gz"
+  checksum: "md5=5051e9bbbbbd98f4f1c5b2061e7ca66e"
+}

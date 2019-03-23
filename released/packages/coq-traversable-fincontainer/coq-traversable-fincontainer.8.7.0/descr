@@ -1,5 +1,0 @@
-Traversable Functors are Finitary Containers.
-
-https://github.com/oconnorr/traversable-fincontainer
-
-A Coq proof that all Traversable functors are isomorphic to finitary containers.

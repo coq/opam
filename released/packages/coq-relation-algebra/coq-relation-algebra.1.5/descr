@@ -1,3 +1,0 @@
-Relation Algebra and KAT.
-
-A modular library about relation algebra, from idempotent semirings to residuated Kleene allegories, including a decision tactic for Kleene algebra with Tests (KAT).

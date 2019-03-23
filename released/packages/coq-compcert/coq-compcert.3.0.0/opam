@@ -1,16 +1,21 @@
-opam-version: "1.2"
-author: "Xavier Leroy <xavier.leroy@inria.fr>"
+opam-version: "2.0"
 maintainer: "Matej Košík <matej.kosik@inria.fr>"
 homepage: "http://compcert.inria.fr/"
-dev-repo: "https://github.com/AbsInt/CompCert.git"
+dev-repo: "git+https://github.com/AbsInt/CompCert.git"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
 license: "INRIA Non-Commercial License Agreement"
 build: [
-  ["./configure" "ia32-linux" {os = "linux"}
-  		 "ia32-macosx" {os = "darwin"}
-		 "ia32-cygwin" {os = "cygwin"}
-		 "-bindir" "%{bin}%" "-libdir" "%{lib}%/compcert"
-		 "-clightgen"]
+  [
+    "./configure"
+    "ia32-linux" {os = "linux"}
+    "ia32-macosx" {os = "macos"}
+    "ia32-cygwin" {os = "cygwin"}
+    "-bindir"
+    "%{bin}%"
+    "-libdir"
+    "%{lib}%/compcert"
+    "-clightgen"
+  ]
   [make "-j%{jobs}%"]
 ]
 install: [
@@ -25,6 +30,14 @@ remove: [
   ["sh" "-c" "rmdir -p %{share}%/man/man1 || true"]
 ]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
   "menhir" {>= "20160303" & < "20180530"}
 ]
+synopsis: "The CompCert C compiler."
+authors: "Xavier Leroy <xavier.leroy@inria.fr>"
+extra-files: ["fix-coq-version.patch" "md5=5b955f6f0c955b6f5b39ff661fa71a60"]
+url {
+  src: "https://github.com/AbsInt/CompCert/archive/v3.0.tar.gz"
+  checksum: "md5=8590239f6219f8bbc48c4e91f5d16921"
+}

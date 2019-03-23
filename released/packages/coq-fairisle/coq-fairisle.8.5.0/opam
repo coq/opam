@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/fairisle"
 license: "LGPL 2"
@@ -6,9 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Fairisle"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:circuits" "keyword:automata" "keyword:coinduction" "keyword:dependent types" "category:Computer Science/Architecture" "date:2005-12-15" ]
 authors: [ "Solange Coupet-Grimal <Solange.Coupet@lif.univ-mrs.fr>" "Line Jakubiec-Jamet <Line.Jakubiec@lif.univ-mrs.fr>" ]
 bug-reports: "https://github.com/coq-contribs/fairisle/issues"
-dev-repo: "https://github.com/coq-contribs/fairisle.git"
+dev-repo: "git+https://github.com/coq-contribs/fairisle.git"
+synopsis: "Proof of the Fairisle 4x4 Switch Element ."
+description: """
+This library contains the development of general definitions dedicated
+to the verification of sequential synchronous devices (based on Moore and Mealy automata)
+and the formal verification of the Fairisle 4x4 Switch Element."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/fairisle/archive/v8.5.0.tar.gz"
+  checksum: "md5=af82647c890367387306e0c91b25f456"
+}

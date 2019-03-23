@@ -1,8 +1,7 @@
-opam-version: "1.2"
-author: "Xavier Leroy <xavier.leroy@inria.fr>"
+opam-version: "2.0"
 maintainer: "thomas.braibant@gmail.com"
 homepage: "http://compcert.inria.fr/"
-dev-repo: "https://github.com/AbsInt/CompCert.git"
+dev-repo: "git+https://github.com/AbsInt/CompCert.git"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
 license: "INRIA Non-Commercial License Agreement"
 build: [
@@ -10,5 +9,13 @@ build: [
   [make "-j%{jobs}%"]
 ]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
 ]
+synopsis: "The CompCert C compiler."
+authors: "Xavier Leroy <xavier.leroy@inria.fr>"
+extra-files: ["coq-compcert.install" "md5=a7efe759bff32c6aac2c2ca483d5a266"]
+url {
+  src: "http://compcert.inria.fr/release/compcert-2.0.tgz"
+  checksum: "md5=931325ad6a1faf22df73c249509c0b9f"
+}

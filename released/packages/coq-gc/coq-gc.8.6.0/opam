@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/gc"
 license: "Unknown"
@@ -6,9 +6,22 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GC"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: Linear temporal logic" "keyword: finite sets" "keyword: co-induction" "keyword: garbage collection" "category: Computer Science/Semantics and Compilation/Compilation" "date: 2003-05-9" ]
 authors: [ "Solange Coupet-Grimal and Catherine Nouvet" ]
 bug-reports: "https://github.com/coq-contribs/gc/issues"
-dev-repo: "https://github.com/coq-contribs/gc.git"
+dev-repo: "git+https://github.com/coq-contribs/gc.git"
+synopsis: "Formal Verification of an Incremental Garbage Collector."
+description: """
+We specify an incremental garbage collection algorithm and we give a formal proof of its
+correctness. The algorithm is represented as an infinite transition system and we establish safety
+and liveness properties. This work relies on an axiomatization of LTL and is based on a co-inductive
+representation of programs executions. Although motivated by integrating the dynamic memory
+management to the Java Card platform, this study applies more generally to real-time embedded systems and to devices with virtually infinite memory."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/gc/archive/v8.6.0.tar.gz"
+  checksum: "md5=6287287a153433dcbbfc7d7f988f35e3"
+}

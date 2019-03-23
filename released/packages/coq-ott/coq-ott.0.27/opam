@@ -1,19 +1,28 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "palmskog@gmail.com"
 authors: [ "Peter Sewell" "Francesco Zappa Nardelli" "Scott Owens" ]
 
 homepage: "http://www.cl.cam.ac.uk/~pes20/ott/"
-dev-repo: "https://github.com/ott-lang/ott.git"
+dev-repo: "git+https://github.com/ott-lang/ott.git"
 bug-reports: "https://github.com/ott-lang/ott/issues"
 license: "part BSD3, part LGPL 2.1"
 
 build: [ make "-j%{jobs}%" "-C" "coq" ]
 install: [ make "-C" "coq" "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/Ott'" ]
-depends: [ "coq" {((>= "8.5" & < "8.6~") | (>= "8.6" & < "8.7~") | (>= "8.7" & < "8.8~"))} ]
-
+depends: [
+  "ocaml"
+  "coq"
+    {((>= "8.5" & < "8.6~") | (>= "8.6" & < "8.7~") | (>= "8.7" & < "8.8~"))}
+]
 tags: [
   "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword:abstract syntax"
   "date:2017-11-27"
 ]
+synopsis:
+  "Auxiliary library for Ott, a tool for writing definitions of programming languages and calculi"
+url {
+  src: "https://github.com/ott-lang/ott/archive/0.27.tar.gz"
+  checksum: "md5=e05eea1b975d8612c68feec068c4b963"
+}

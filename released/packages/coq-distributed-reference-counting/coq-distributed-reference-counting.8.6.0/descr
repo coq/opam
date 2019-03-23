@@ -1,4 +1,0 @@
-A Construction of Distributed Reference Counting.
-
-This library contains the constructive proof of correctness of
-several variants of a distributed reference counting algorithm.

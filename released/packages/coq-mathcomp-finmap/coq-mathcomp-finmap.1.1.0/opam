@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-mathcomp-finmap"
 maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
 
@@ -9,7 +9,20 @@ license: "CeCILL-B"
 build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/finmap'" ]
-depends: [ "coq-mathcomp-ssreflect" { (>= "1.7.0" | = "dev") } ]
-
+depends: [
+  "ocaml"
+  "coq-mathcomp-ssreflect" {(>= "1.7.0" | = "dev")}
+]
 tags: [ "keyword:finmap" "keyword:finset" "keyword:multiset" "keyword:order"]
 authors: [ "Cyril Cohen <cyril.cohen@inria.fr>" ]
+synopsis: "Finite sets, finite maps, finitely supported functions, orders."
+description: """
+This library is an extension of mathematical component in order to
+support finite sets and finite maps on choicetypes (rather that finite
+types). This includes support for functions with finite support and
+multisets. The library also contains a generic order and set libary,
+which will be used to subsume notations for finite sets, eventually."""
+url {
+  src: "https://github.com/math-comp/finmap/archive/1.1.0.tar.gz"
+  checksum: "md5=f8bca7e64d16fdc61bf6b09af5e0b99b"
+}

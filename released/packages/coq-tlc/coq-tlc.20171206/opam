@@ -1,10 +1,10 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "francois.pottier@inria.fr"
 authors: [
   "Arthur Charguéraud <arthur.chargueraud@inria.fr>"
 ]
 homepage: "https://gitlab.inria.fr/charguer/tlc"
-dev-repo: "https://gitlab.inria.fr/charguer/tlc.git"
+dev-repo: "git+https://gitlab.inria.fr/charguer/tlc.git"
 bug-reports: "tlc-users@lists.gforge.inria.fr"
 license: "CeCILL-B"
 build: [
@@ -17,5 +17,28 @@ remove: [
   [make "uninstall"]
 ]
 depends: [
-  "coq" { >= "8.6" }
+  "ocaml"
+  "coq" {>= "8.6"}
 ]
+synopsis: "A general-purpose alternative to Coq's standard library."
+description: """
+TLC relies on the axioms of functional extensionality, propositional
+extensionality, and indefinite description (also known as Hilbert's epsilon
+operator). The consequences of these axioms include the law of the excluded
+middle as well as proof irrelevance. Accepting these axioms often makes life
+significantly simpler.
+
+TLC takes advantage of Coq's type class mechanism. In particular, this allows
+for common operators and lemma names for all container data structures and all
+order relations.
+
+TLC includes the optimal fixed point combinator, which allows
+arbitrarily-complex recursive and co-recursive definitions.
+
+TLC provides a collection of tactics that enhance the default tactics provided
+by Coq. These tactics help construct more concise and more robust proof
+scripts."""
+url {
+  src: "http://tlc.gforge.inria.fr/releases/tlc-20171206.tar.gz"
+  checksum: "md5=15266112d338c2d3031231e4ee1d36ac"
+}

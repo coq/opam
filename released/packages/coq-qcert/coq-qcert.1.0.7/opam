@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "jeromesimeon@me.com"
 homepage: "https://querycert.github.io"
 dev-repo: "https://github.com/querycert/qcert"
@@ -13,7 +13,14 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Qcert"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7.2"}
   "coq-flocq" {>= "2.6.0" & < "3.0~"}
   "coq-jsast" {>= "1.0.7"}
 ]
+synopsis: "Verified compiler for data-centric languages"
+flags: light-uninstall
+url {
+  src: "https://github.com/querycert/qcert/archive/v1.0.7.tar.gz"
+  checksum: "md5=36fd7cda0fae7887d8c17bb4822e599b"
+}

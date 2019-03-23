@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/ieee754"
 license: "LGPL 2.1"
@@ -6,9 +6,27 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IEEE754"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: floating-point arithmetic" "keyword: floats" "keyword: IEEE" "category: Computer Science/Data Types and Data Structures" "category: Computer Science/Semantics and Compilation/Semantics" "date: 1997" ]
 authors: [ "Patrick Loiseleur" ]
 bug-reports: "https://github.com/coq-contribs/ieee754/issues"
-dev-repo: "https://github.com/coq-contribs/ieee754.git"
+dev-repo: "git+https://github.com/coq-contribs/ieee754.git"
+synopsis: "A formalisation of the IEEE754 norm on floating-point arithmetic."
+description: """
+This library contains a non-verified implementation of
+binary floating-point addition and multiplication operators inspired
+by the IEEE-754 standard. It is today outdated.
+
+See the attached 1997 report rapport-stage-dea.ps.gz for a discussion
+(in French) of this work.
+
+For the state of the art at the time of updating this notice, see
+e.g. "Flocq: A Unified Library for Proving Floating-point Algorithms
+in Coq" by S. Boldo and G. Melquiond, 2011."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/ieee754/archive/v8.8.0.tar.gz"
+  checksum: "md5=88242efad7f91cd7e1f4edef34915567"
+}

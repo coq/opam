@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/zchinese"
 license: "Unknown"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZChinese"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: number theory" "keyword: chinese remainder" "keyword: primality" "keyword: prime numbers" "category: Mathematics/Arithmetic and Number Theory/Number theory" "category: Miscellaneous/Extracted Programs/Arithmetic" ]
 authors: [ "Valérie Ménissier-Morain" ]
 bug-reports: "https://github.com/coq-contribs/zchinese/issues"
-dev-repo: "https://github.com/coq-contribs/zchinese.git"
+dev-repo: "git+https://github.com/coq-contribs/zchinese.git"
+synopsis: "A proof of the Chinese Remainder Lemma."
+description:
+  "This is a rewriting of the contribution chinese-lemma using Zarith"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/zchinese/archive/v8.8.0.tar.gz"
+  checksum: "md5=46cbe3ab4981c19e25fd19410d63ab03"
+}

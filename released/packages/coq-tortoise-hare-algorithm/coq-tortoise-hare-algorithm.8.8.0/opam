@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/tortoise-hare-algorithm"
 license: "Unknown"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TortoiseHareAlgorithm"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: program verification" "keyword: paths" "keyword: cycle detection" "keyword: graphs" "keyword: graph theory" "keyword: finite sets" "keyword: floyd" "category: Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "date: 2007-02" ]
 authors: [ "Jean-Christophe Filliâtre" ]
 bug-reports: "https://github.com/coq-contribs/tortoise-hare-algorithm/issues"
-dev-repo: "https://github.com/coq-contribs/tortoise-hare-algorithm.git"
+dev-repo: "git+https://github.com/coq-contribs/tortoise-hare-algorithm.git"
+synopsis: "Tortoise and the hare algorithm."
+description: """
+Correctness proof of Floyd's cycle-finding algorithm, also known as
+the "tortoise and the hare"-algorithm.
+See http://en.wikipedia.org/wiki/Floyd's_cycle-finding_algorithm"""
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/tortoise-hare-algorithm/archive/v8.8.0.tar.gz"
+  checksum: "md5=5fdf82dd175770a66c50d9e6213309c4"
+}

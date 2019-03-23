@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/tree-automata"
 license: "LGPL 2.1"
@@ -6,10 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TreeAutomata"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
   "coq-int-map" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: tree automatas" "keyword: bottom up reflexion terms" "category: Computer Science/Formal Languages Theory and Automata" "date: september 1999" ]
 authors: [ "Xavier Rival [http://www.eleves.ens.fr/home/rival]" ]
 bug-reports: "https://github.com/coq-contribs/tree-automata/issues"
-dev-repo: "https://github.com/coq-contribs/tree-automata.git"
+dev-repo: "git+https://github.com/coq-contribs/tree-automata.git"
+synopsis: "Tree automatas."
+description: """
+provides tree automatas algorithms in Coq (merge,
+intersection, vacuity test, deletion of empty states, coaccessiblity test,
+deletion of non coaccessible states)"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/tree-automata/archive/v8.7.0.tar.gz"
+  checksum: "md5=b2806890af1a4839734a01e00423efdf"
+}

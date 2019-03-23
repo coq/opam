@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/streams"
 license: "LGPL 2"
@@ -6,9 +6,29 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Streams"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:streams" "keyword:eratosthene sieve" "keyword:prime numbers" "keyword:number theory" "keyword:primality" "category:Mathematics/Arithmetic and Number Theory/Number theory" ]
 authors: [ "François Leclerc <>" "Christine Paulin-Mohring <>" ]
 bug-reports: "https://github.com/coq-contribs/streams/issues"
-dev-repo: "https://github.com/coq-contribs/streams.git"
+dev-repo: "git+https://github.com/coq-contribs/streams.git"
+synopsis: "Specification of Eratosthene Sieve ."
+description: """
+Proof of Eratosthene Sieve formalised using streams
+encoded as greatest fixpoints. See paper:
+@InProceedings{LePa94,
+author = "F. Leclerc and C. Paulin-Mohring",
+title = "Programming with Streams in {Coq}. A case study : The Sieve of Eratosthenes",
+editor = "H. Barendregt and T. Nipkow",
+volume = 806,
+series = "LNCS",
+booktitle = "{Types for Proofs and Programs, Types' 93}",
+year = 1994,
+publisher = "Springer-Verlag"
+}"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/streams/archive/v8.5.0.tar.gz"
+  checksum: "md5=8ffa1a972e67e7b4a3a586f4fe4b5743"
+}

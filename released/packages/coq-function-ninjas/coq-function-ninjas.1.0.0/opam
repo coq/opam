@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/coq-function-ninjas"
-dev-repo: "https://github.com/clarus/coq-function-ninjas.git"
+dev-repo: "git+https://github.com/clarus/coq-function-ninjas.git"
 bug-reports: "https://github.com/clarus/coq-function-ninjas/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
@@ -14,5 +14,12 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FunctionNinjas"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4"}
 ]
+synopsis: "Simple functional combinators."
+flags: light-uninstall
+url {
+  src: "https://github.com/clarus/coq-function-ninjas/archive/1.0.0.tar.gz"
+  checksum: "md5=fbdd292f94c143b5393ad0d2e67a2766"
+}

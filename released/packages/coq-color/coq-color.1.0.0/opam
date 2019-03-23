@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "frederic.blanqui@inria.fr"
 homepage: "http://color.inria.fr/"
 license: "CeCILL"
@@ -8,6 +8,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl2" & < "8.5~"}
 ]
 authors: [
@@ -26,3 +27,10 @@ authors: [
   "Lianyi Zhang"
   "Sorin Stratulat"
 ]
+synopsis: "A library on rewriting theory and termination."
+flags: light-uninstall
+url {
+  src:
+    "https://gforge.inria.fr/frs/download.php/file/35472/color.1.0.0.tar.gz"
+  checksum: "md5=5277b9cfe0cb609f32dd5deb7795fb45"
+}

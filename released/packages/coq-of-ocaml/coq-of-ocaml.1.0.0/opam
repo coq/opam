@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/coq-of-ocaml"
-dev-repo: "https://github.com/clarus/coq-of-ocaml.git"
+dev-repo: "git+https://github.com/clarus/coq-of-ocaml.git"
 bug-reports: "https://github.com/clarus/coq-of-ocaml/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
@@ -13,8 +13,15 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoqOfOCaml"]
 depends: [
+  "ocaml" {>= "4.02.0" & < "4.03.0"}
   "coq" {>= "8.4.5" & < "8.6"}
   "yojson"
   "smart-print"
 ]
-available: [ocaml-version >= "4.02.0" & ocaml-version < "4.03.0"]
+synopsis: "Compile OCaml to Coq."
+flags: light-uninstall
+extra-files: ["coq-of-ocaml.install" "md5=aaa1f52ec40bedefd2674f46a44cd578"]
+url {
+  src: "https://github.com/clarus/coq-of-ocaml/archive/1.0.0.tar.gz"
+  checksum: "md5=c73a021327b2e4b72c95859549ce9ae2"
+}

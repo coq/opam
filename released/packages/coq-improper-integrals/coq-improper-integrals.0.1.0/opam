@@ -1,9 +1,9 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-improper-integrals"
 version: "0.1.0"
 maintainer: "yves.bertot@inria.fr"
 homepage: "https://github.com/ybertot/improper_integrals"
-dev-repo: "https://github.com/ybertot/improper_integrals.git"
+dev-repo: "git+https://github.com/ybertot/improper_integrals.git"
 bug-reports: "yves.bertot@inria.fr"
 license: "MIT"
 build: [[ "coq_makefile" "-f" "_CoqProject" "-o" "Makefile" ]
@@ -11,8 +11,21 @@ build: [[ "coq_makefile" "-f" "_CoqProject" "-o" "Makefile" ]
 install: [ make "install" "DEST='%{lib}%/coq/user_contrib/improper_integrals'" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/improper_integrals'" ]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.9~"}
   "coq-coquelicot" {>= "3" & < "4~"}
 ]
 tags: [ "keyword:real analysis" "category:Mathematics/Real Calculus and Topology" ]
 authors: [ "Yves Bertot <yves.bertot@inria.fr>" ]
+synopsis:
+  "Additions to the coquelicot library for handling improper integrals"
+description: """
+This package contains a few theorems whose use case was discovered when
+making experiments, for instance in the pi-agm package.  These theorems
+should probably integrated in coquelicot in the long run, but having this
+package makes them easily available while waiting for any necessary cleanup
+and discussion to happen."""
+url {
+  src: "https://github.com/ybertot/improper_integrals/archive/v0.1.0.zip"
+  checksum: "md5=7b5ac26e73f78d774302d37f840fb1a9"
+}

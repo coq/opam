@@ -1,22 +1,24 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "palmskog@gmail.com"
 
 homepage: "https://github.com/lukaszcz/coqhammer"
-dev-repo: "https://github.com/lukaszcz/coqhammer.git"
+dev-repo: "git+https://github.com/lukaszcz/coqhammer.git"
 bug-reports: "https://github.com/lukaszcz/coqhammer/issues"
 license: "LGPL-2.1-only"
 
-build: [ make "-j%{jobs}%" ]
-build-test: [ make "tests" ]
+build: [
+  [make "-j%{jobs}%"]
+  [make "tests"] {with-test}
+]
 install: [ make "install" ]
 remove: [
   ["sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/Hammer'"]
   ["sh" "-c" "rm -f '%{bin}%/predict' '%{bin}%/htimeout'"]
 ]
 depends: [
+  "ocaml"
   "coq" {>= "8.9" & < "8.10~"}
 ]
-
 tags: [
   "category:Miscellaneous/Coq Extensions"
   "keyword:automation"
@@ -30,3 +32,8 @@ authors: [
   "Cezary Kaliszyk <cezary.kaliszyk@uibk.ac.at>"
   "Burak Ekici <burak.ekici@uibk.ac.at>"
 ]
+synopsis: "Automation for Dependent Type Theory"
+url {
+  src: "https://github.com/lukaszcz/coqhammer/archive/v1.1-coq8.9.tar.gz"
+  checksum: "md5=76a72dd942b2f6d4f6392b0a9f44af02"
+}

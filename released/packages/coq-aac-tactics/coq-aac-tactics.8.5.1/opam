@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/aac-tactics"
 license: "LGPL"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/AAC_tactics"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:reflexive tactic" "keyword:rewriting" "keyword:rewriting modulo associativity and commutativity" "keyword:rewriting modulo ac" "keyword:decision procedure" "category:Miscellaneous/Coq Extensions" ]
 authors: [ "Damien Pous <damien.pous@inria.fr>" "Thomas Braibant <thomas.braibant@gmail.com>" ]
 bug-reports: "https://github.com/coq-contribs/aac-tactics/issues"
-dev-repo: "https://github.com/coq-contribs/aac-tactics.git"
+dev-repo: "git+https://github.com/coq-contribs/aac-tactics.git"
+synopsis: "AAC tactics."
+description:
+  "This Coq plugin provides tactics for rewriting universally quantified equations, modulo associative (and possibly commutative) operators."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/aac-tactics/archive/v8.5.1.tar.gz"
+  checksum: "md5=30bef1d940f0a13246318883bcc29baf"
+}

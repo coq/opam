@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "b.a.w.spitters@gmail.com"
 homepage: "https://math-classes.github.io/"
 dev-repo: "https://github.com/coq-community/math-classes/"
@@ -19,6 +19,14 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MathClasses"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.10~"}
   "coq-bignums"
 ]
+synopsis:
+  "A library of abstract interfaces for mathematical structures in Coq."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-community/math-classes/archive/8.8.1.zip"
+  checksum: "md5=a82e0e3e13b04cbb4d383c11ef5796f3"
+}

@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/io-system"
-dev-repo: "https://github.com/clarus/io-system.git"
+dev-repo: "git+https://github.com/clarus/io-system.git"
 bug-reports: "https://github.com/clarus/io-system/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
@@ -14,9 +14,16 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/System"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
   "coq-function-ninjas"
   "coq-list-string" {>= "2.0.0"}
   "coq-io" {< "2.1.0"}
   "coq-io-system-ocaml"
 ]
+synopsis: "System effects for Coq."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-io/system/archive/2.0.0.tar.gz"
+  checksum: "md5=9cc821d7fb35a0b20ce55642dae034cb"
+}

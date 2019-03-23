@@ -1,10 +1,10 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-quickchick"
 version: "1.0.2"
 maintainer: "llamp@seas.upenn.edu"
 
 homepage: "https://github.com/QuickChick/QuickChick"
-dev-repo: "https://github.com/QuickChick/QuickChick.git"
+dev-repo: "git+https://github.com/QuickChick/QuickChick.git"
 bug-reports: "https://github.com/QuickChick/QuickChick/issues"
 license: "MIT"
 
@@ -35,3 +35,8 @@ authors: [
   "Li-Yao Xia <>"
   "Yishuai Li <>"
 ]
+flags: light-uninstall
+url {
+  src: "https://github.com/QuickChick/QuickChick/archive/v1.0.2.tar.gz"
+  checksum: "md5=9b2f0b0ae00cda11c4131cd3dc5c8a08"
+}

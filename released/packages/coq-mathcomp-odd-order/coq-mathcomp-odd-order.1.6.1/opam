@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-mathcomp-odd-order"
 version: "1.6.1"
 maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
@@ -18,14 +18,37 @@ remove: [
      ["sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/field/finfield.v'"]
      ["sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/field/finfield.vo'"]
 ]
-depends: [ 
-  "coq-mathcomp-algebra" { = "1.6.1" }
-  "coq-mathcomp-character" { = "1.6.1" }
-  "coq-mathcomp-field" { = "1.6.1" }
-  "coq-mathcomp-fingroup" { = "1.6.1" }
-  "coq-mathcomp-solvable" { = "1.6.1" }
-  "coq-mathcomp-ssreflect" { = "1.6.1" }
- ]
-
+depends: [
+  "ocaml"
+  "coq-mathcomp-algebra" {= "1.6.1"}
+  "coq-mathcomp-character" {= "1.6.1"}
+  "coq-mathcomp-field" {= "1.6.1"}
+  "coq-mathcomp-fingroup" {= "1.6.1"}
+  "coq-mathcomp-solvable" {= "1.6.1"}
+  "coq-mathcomp-ssreflect" {= "1.6.1"}
+]
 tags: [ "keyword:finite groups" "keyword:Feit Thompson theorem" "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" ]
 authors: [ "Jeremy Avigad <>" "Andrea Asperti <>" "Stephane Le Roux <>" "Yves Bertot <>" "Laurence Rideau <>" "Enrico Tassi <>" "Ioana Pasca <>" "Georges Gonthier <>" "Sidi Ould Biha <>" "Cyril Cohen <>" "Francois Garillot <>" "Alexey Solovyev <>" "Russell O'Connor <>" "Laurent Théry <>" "Assia Mahboubi <>" ]
+synopsis: ""
+description: """
+The formal proof of the Feit-Thompson theorem.
+
+From mathcomp Require Import all_ssreflect all_fingroup all_solvable PFsection14.
+
+Check Feit_Thompson.
+   : forall (gT : finGroupType) (G : {group gT}), odd #|G| -> solvable G
+
+From mathcomp Require Import all_ssreflect all_fingroup 
+                             all_solvable stripped_odd_order_theorem.
+
+Check stripped_Odd_Order.
+   : forall (T : Type) (mul : T -> T -> T) (one : T) (inv : T -> T)
+         (G : T -> Type) (n : natural),
+       group_axioms T mul one inv ->
+       group T mul one inv G ->
+       finite_of_order T G n -> odd n -> solvable_group T mul one inv G"""
+url {
+  src:
+    "https://github.com/math-comp/math-comp/archive/mathcomp-odd-order.1.6.1.tar.gz"
+  checksum: "md5=2303f60bbca5eaa24bef7af5d47694b9"
+}

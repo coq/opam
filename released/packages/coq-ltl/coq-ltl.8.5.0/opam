@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/ltl"
 license: "Proprietary"
@@ -6,9 +6,23 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LTL"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:temporal logic" "keyword:infinite transition systems" "keyword:coinduction" "category:Mathematics/Logic/Modal logic" "date:2002-07" ]
 authors: [ "Solange Coupet-Grimal <>" ]
 bug-reports: "https://github.com/coq-contribs/ltl/issues"
-dev-repo: "https://github.com/coq-contribs/ltl.git"
+dev-repo: "git+https://github.com/coq-contribs/ltl.git"
+synopsis: "Linear Temporal Logic."
+description: """
+This contribution contains a shallow embedding of Linear
+Temporal Logic (LTL) based on a co-inductive representation of program
+executions. Temporal operators are implemented as inductive
+(respectively co-inductive) types when they are least (respectively
+greatest) fixpoints. Several general lemmas,
+that correspond to LTL rules, are proved."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/ltl/archive/v8.5.0.tar.gz"
+  checksum: "md5=4d24eb83fa1ca093dbe5af4701c79776"
+}

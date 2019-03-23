@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/io-list"
-dev-repo: "https://github.com/clarus/io-list.git"
+dev-repo: "git+https://github.com/clarus/io-list.git"
 bug-reports: "https://github.com/clarus/io-list/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
@@ -14,6 +14,13 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/List.vo"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4"}
   "coq-io" {>= "3.0.0" & < "3.1.0"}
 ]
+synopsis: "Generic functions on lists with effects."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-io/list/archive/1.0.0.tar.gz"
+  checksum: "md5=64659a39c8308ef2ee13e605d05e39de"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/icharate"
 license: "LGPL 2.1"
@@ -6,9 +6,27 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Icharate"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: Multimodal Categorial Grammars" "keyword: Syntax/Semantics Interface" "keyword: Higher Order Logic" "keyword: Meta-Linguistics" "category: Computer Science/Formal Languages Theory and Automata" "date: 2003-2006" ]
 authors: [ "Houda Anoun <anoun@labri.fr>" "Pierre Casteran <casteran@labri.fr>" ]
 bug-reports: "https://github.com/coq-contribs/icharate/issues"
-dev-repo: "https://github.com/coq-contribs/icharate.git"
+dev-repo: "git+https://github.com/coq-contribs/icharate.git"
+synopsis: "Icharate: A logical Toolkit for Multimodal Categorial Grammars."
+description: """
+http://www.labri.fr/perso/anoun/Icharate
+
+The logical toolkit ICHARATE is built upon a formalization of
+multimodal categorial grammars in Coq proof assistant.
+This toolkit aims at facilitating the study of these
+complicated formalisms by allowing users to build interactively the
+syntactic derivations of different sentences, compute their
+semantic interpretations and also prove universal properties of entire
+classes of grammars using a collection of already established derived
+rules. Several tactics are defined to ease the interaction with users."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/icharate/archive/v8.8.0.tar.gz"
+  checksum: "md5=ce7028ab36911bdd95f890680f97d1e7"
+}

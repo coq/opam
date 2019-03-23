@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/algebra"
 license: "LGPL 2"
@@ -6,9 +6,16 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Algebra"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:algebra" "category:Mathematics/Algebra" "date:1999-03" ]
 authors: [ "Loïc Pottier <>" ]
 bug-reports: "https://github.com/coq-contribs/algebra/issues"
-dev-repo: "https://github.com/coq-contribs/algebra.git"
+dev-repo: "git+https://github.com/coq-contribs/algebra.git"
+synopsis: "Basics notions of algebra."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/algebra/archive/v8.5.0.tar.gz"
+  checksum: "md5=9ef1b5f1f670d56a55aef37d8c511df9"
+}

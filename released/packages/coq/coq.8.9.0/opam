@@ -1,13 +1,13 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "coqdev@inria.fr"
 authors: "The Coq development team, INRIA, CNRS and contributors."
 homepage: "https://coq.inria.fr/"
 bug-reports: "https://github.com/coq/coq/issues"
-dev-repo: "https://github.com/coq/coq.git"
+dev-repo: "git+https://github.com/coq/coq.git"
 license: "LGPL-2.1"
 
-available: [ocaml-version >= "4.02.3"]
 depends: [
+  "ocaml" {>= "4.02.3"}
   "ocamlfind" {build}
   "camlp5"
   "num"
@@ -50,3 +50,13 @@ remove: [
   "%{share}%/texmf/tex/latex/misc/coqdoc.sty"
   ]
 ]
+synopsis: "Formal proof management system"
+flags: light-uninstall
+extra-files: [
+  ["coq.install" "md5=a5d0f9a35ef24aa3948a6960e657b206"]
+  ["Makefile.checker.patch" "md5=33fe29936deec207f4e197d27073f2e1"]
+]
+url {
+  src: "https://github.com/coq/coq/archive/V8.9.0.tar.gz"
+  checksum: "md5=490c89609c1271fe7f20e6ea1bd107b5"
+}

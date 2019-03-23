@@ -1,6 +1,0 @@
-An abstract formalization of variable bindings (both named and de-bruijn),
-based on ideas in the following paper:
-
-Howe, Douglas J. “Equality in Lazy Computation Systems.” In LICS, 198–203, 1989.
-
-

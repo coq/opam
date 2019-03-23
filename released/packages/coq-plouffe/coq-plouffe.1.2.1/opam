@@ -1,5 +1,4 @@
-opam-version: "1.2"
-author: "Laurent Thery"
+opam-version: "2.0"
 maintainer: "Laurent.Thery@inria.fr"
 homepage: "https://github.com/thery/Plouffe"
 bug-reports: "https://github.com/thery/Plouffe/issues"
@@ -11,7 +10,16 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Plouffe"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5"}
   "coq-mathcomp-ssreflect"
   "coq-coquelicot" {>= "2.1.0" & < "3.~"}
 ]
+synopsis: "A Coq formalization of Plouffe formula."
+authors: "Laurent Thery"
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/thery/Plouffe/archive/Submitted_article_version_nob.zip"
+  checksum: "md5=ff44f9f14fa6ebbe28b7d8c92f8a57a9"
+}

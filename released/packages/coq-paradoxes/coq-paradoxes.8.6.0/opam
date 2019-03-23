@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/paradoxes"
 license: "LGPL 2.1"
@@ -6,9 +6,23 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Paradoxes"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: Reynolds paradox" "keyword: Burali-Forti paradox" "keyword: Diaconescu paradox" "keyword: set theory" "keyword: system U" "keyword: inconsistency" "keyword: Hurkens paradox" "category: Mathematics/Logic/Foundations" ]
 authors: [ "Bruno Barras" "Thierry Coquand" "Hugo Herbelin" "Benjamin Werner" ]
 bug-reports: "https://github.com/coq-contribs/paradoxes/issues"
-dev-repo: "https://github.com/coq-contribs/paradoxes.git"
+dev-repo: "git+https://github.com/coq-contribs/paradoxes.git"
+synopsis: "Paradoxes in Set Theory and Type Theory."
+description: """
+A formalisation of Burali-Forti paradox in system U (the
+existence of an ordinal of ordinals is inconsistent), of Diaconescu
+paradox (axiom of choice implies excluded-middle), of Reynolds paradox
+(there is no set-theoretic model of system F) and Hurkens paradox in
+system U (adapted by H. Geuvers to show the inconsistency of
+Excluded-Middle in impredicative-Set Calculus of Inductive Constructions)."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/paradoxes/archive/v8.6.0.tar.gz"
+  checksum: "md5=81f92590650f2ffc80c01661527d21cc"
+}

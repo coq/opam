@@ -1,7 +1,0 @@
-Additions to the coquelicot library for handling improper integrals
-
-This package contains a few theorems whose use case was discovered when
-making experiments, for instance in the pi-agm package.  These theorems
-should probably integrated in coquelicot in the long run, but having this
-package makes them easily available while waiting for any necessary cleanup
-and discussion to happen.

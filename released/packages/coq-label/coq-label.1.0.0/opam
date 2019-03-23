@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "pierre-evariste.dagand@lip6.fr"
 homepage: "https://github.com/pedagand/coq-label"
-dev-repo: "https://github.com/pedagand/coq-label.git"
+dev-repo: "git+https://github.com/pedagand/coq-label.git"
 bug-reports: "https://github.com/pedagand/coq-label/issues"
 authors: ["Pierre-Évariste Dagand" "Théo Zimmermann" "Pierre-Marie Pédrot"]
 license: "MIT"
@@ -13,5 +13,14 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Label"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
+synopsis:
+  "'label' is a Coq plugin for referring to Propositional hypotheses by their type"
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/pedagand/coq-label/releases/download/v1.0.0/coq-label-1.0.0.tar.gz"
+  checksum: "md5=3ae47300d7985cf2ddb0ba87354d061c"
+}

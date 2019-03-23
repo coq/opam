@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/legacy-ring"
 license: "Unknown"
@@ -6,9 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LegacyRing"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "date: 1998-5" ]
 authors: [ "Patrick Loiseleur" ]
 bug-reports: "https://github.com/coq-contribs/legacy-ring/issues"
-dev-repo: "https://github.com/coq-contribs/legacy-ring.git"
+dev-repo: "git+https://github.com/coq-contribs/legacy-ring.git"
+synopsis: "The former implementation of the ring tactic."
+description: """
+Tactics to decide equality and simplify polynomial
+expressions over an arbitrary commutative ring. This generalizes a
+previous tactics by Samuel Boutin."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/legacy-ring/archive/v8.6.0.tar.gz"
+  checksum: "md5=6c54ffd5bf1e4f816c5d404ca87d079b"
+}

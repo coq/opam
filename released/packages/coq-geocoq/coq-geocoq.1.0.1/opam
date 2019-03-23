@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Julien Narboux <julien@narboux.fr>"
 homepage: "http://geocoq.github.io/GeoCoq/"
 bug-reports: "https://github.com/GeoCoq/GeoCoq/issues"
@@ -11,5 +11,13 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GeoCoq"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
 ]
+synopsis:
+  "A formalization of geometry in Coq based on Tarski's axiom system."
+flags: light-uninstall
+url {
+  src: "https://github.com/GeoCoq/GeoCoq/archive/1.0.1.tar.gz"
+  checksum: "md5=5e656c305b8fd6c2e19a133d899067bd"
+}

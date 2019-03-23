@@ -1,4 +1,0 @@
-BDD based symbolic model checker for the modal mu-calculus.
-
-Provides BDD algorithms, a symbolic model checker for the modal
-mu-calculus based on it, together with a garbage collector

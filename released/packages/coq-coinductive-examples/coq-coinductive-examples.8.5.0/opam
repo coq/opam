@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/coinductive-examples"
 license: "LGPL 2"
@@ -6,9 +6,25 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoinductiveExamples"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:coinductive types" "keyword:coinduction" "category:Miscellaneous/Coq Use Examples" ]
 authors: [ "Eduardo Giménez <>" ]
 bug-reports: "https://github.com/coq-contribs/coinductive-examples/issues"
-dev-repo: "https://github.com/coq-contribs/coinductive-examples.git"
+dev-repo: "git+https://github.com/coq-contribs/coinductive-examples.git"
+synopsis: "Some simple examples about co-inductive types and co-induction."
+description: """
+This directory containts some simple examples about
+the use of co-inductive types in Coq. Directory ARITH
+is about non-standard arithmetic. Directory STREAMS
+contains examples about schemes, including an application
+of the translation method presented in Eduardo Giménez's
+article ``Codifying guarded definitions with recursive
+schemes'' (LNCS no. 996)."""
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/coinductive-examples/archive/v8.5.0.tar.gz"
+  checksum: "md5=7b2698cf70c0a36a3bd30cc69bbf0b4b"
+}

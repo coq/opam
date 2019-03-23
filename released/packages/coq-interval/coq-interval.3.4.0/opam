@@ -1,7 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "guillaume.melquiond@inria.fr"
 homepage: "http://coq-interval.gforge.inria.fr/"
-dev-repo: "https://scm.gforge.inria.fr/anonscm/git/coq-interval/coq-interval.git"
+dev-repo:
+  "git+https://scm.gforge.inria.fr/anonscm/git/coq-interval/coq-interval.git"
 license: "CeCILL-C"
 build: [
   ["./configure"]
@@ -10,6 +11,7 @@ build: [
 install: ["./remake" "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Interval"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.10~"}
   "coq-bignums"
   "coq-flocq" {>= "3.0"}
@@ -19,3 +21,9 @@ depends: [
 tags: [ "keyword:interval arithmetic" "keyword:decision procedure" "keyword:floating point arithmetic" "keyword:reflexive tactic" "keyword:taylor models" "category:Mathematics/Real Calculus and Topology" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
 authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "A Coq tactic for proving bounds on real-valued expressions automatically"
+flags: light-uninstall
+url {
+  src:
+    "https://gforge.inria.fr/frs/download.php/file/37524/interval-3.4.0.tar.gz"
+  checksum: "md5=e8f480d7dc77be6bf7b617606de2b7af"
+}

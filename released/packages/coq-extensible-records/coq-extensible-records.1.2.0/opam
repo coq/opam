@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "gmalecha@gmail.com"
 homepage: "https://github.com/gmalecha/coq-extensible-records"
-dev-repo: "https://github.com/gmalecha/coq-extensible-records.git"
+dev-repo: "git+https://github.com/gmalecha/coq-extensible-records.git"
 bug-reports: "https://github.com/gmalecha/coq-extensible-records/issues"
 authors: ["Gregory Malecha"]
 license: "MIT"
@@ -15,5 +15,14 @@ remove: [
   ["rm" "-R" "%{lib}%/coq/user-contrib/Records"]
 ]
 depends: [
+  "ocaml"
   "coq" {>= "8.5.0"}
 ]
+synopsis:
+  "Definitional (canonical) extensible records in Coq with string keys and arbitrary (non-dependent) types."
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/gmalecha/coq-extensible-records/archive/1.2.0.tar.gz"
+  checksum: "md5=3794e13edcfde118d1cc61bc0858ac6d"
+}

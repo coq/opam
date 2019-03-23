@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Laurent.Thery@inria.fr"
 homepage: "https://github.com/coq/bignums"
-dev-repo: "https://github.com/coq/bignums.git"
+dev-repo: "git+https://github.com/coq/bignums.git"
 bug-reports: "https://github.com/coq/bignums/issues"
 authors: [
   "Laurent Théry"
@@ -19,6 +19,7 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Bignums"]
 depends: [
+  "ocaml"
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
@@ -31,3 +32,11 @@ tags: [
   "category:Mathematics/Arithmetic and Number Theory/Rational numbers"
   "logpath:Bignums"
 ]
+synopsis: "Bignums, the Coq library of arbitrary large numbers"
+description:
+  "Provides BigN, BigZ, BigQ that used to be part of Coq standard library < 8.7."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq/bignums/archive/V8.9.0.tar.gz"
+  checksum: "md5=76a5dcff0dbbfd4eaa5e626c5b003eac"
+}

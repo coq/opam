@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: [ "Jeremy Avigad <>" "Andrea Asperti <>" "Stephane Le Roux <>" "Yves Bertot <>" "Laurence Rideau <>" "Enrico Tassi <>" "Ioana Pasca <>" "Georges Gonthier <>" "Sidi Ould Biha <>" "Cyril Cohen <>" "Francois Garillot <>" "Alexey Solovyev <>" "Russell O'Connor <>" "Laurent Théry <>" "Assia Mahboubi <>" ]
 maintainer: "thomas.braibant@gmail.com"
 homepage: "http://ssr.msr-inria.inria.fr/"
@@ -11,6 +11,13 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Ssreflect"]
 depends: [
+  "ocaml"
   "coq" {= "8.5~beta2"}
 ]
 tags: [ "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" "date:Feb 2014" ]
+synopsis: "The Small Scale Reflection extension."
+flags: light-uninstall
+url {
+  src: "http://ssr.msr-inria.inria.fr/FTP/ssreflect-1.5.coq85beta2.tar.gz"
+  checksum: "md5=c117e9ce15d8e55588e5a4a93decea7b"
+}

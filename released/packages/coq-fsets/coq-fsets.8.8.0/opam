@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/fsets"
 license: "LGPL 2.1"
@@ -6,9 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FSets"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: Finite Sets" "keyword: Sorted lists" "keyword: Balanced trees" "keyword: Red-black trees" "keyword: AVL" "keyword: Functors" "keyword: data structures" "category: Computer Science/Data Types and Data Structures" "category: Miscellaneous/Extracted Programs/Data structures" ]
 authors: [ "Pierre Letouzey" "Jean-Christophe Filliâtre" ]
 bug-reports: "https://github.com/coq-contribs/fsets/issues"
-dev-repo: "https://github.com/coq-contribs/fsets.git"
+dev-repo: "git+https://github.com/coq-contribs/fsets.git"
+synopsis: "Finite Sets overs Ordered Types."
+description: """
+This contribution contains several implementations of finite sets over
+arbitrary ordered types using functors. Currently, there are 3
+implementations: sorted lists, red-black trees and AVLs."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/fsets/archive/v8.8.0.tar.gz"
+  checksum: "md5=3beb91c5796f5255db8ad25588aa3fea"
+}

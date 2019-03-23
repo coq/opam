@@ -1,5 +1,4 @@
-opam-version: "1.2"
-author: "Guillaume Cano, Cyril Cohen, Maxime Dénès, Anders Mörtberg and Vincent Siles"
+opam-version: "2.0"
 maintainer: "cohen@crans.org"
 homepage: "http://www.maximedenes.fr/content/coqeal-coq-effective-algebra-library"
 license: "MIT"
@@ -9,8 +8,17 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoqEAL_theory"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
-  ("coq-math-comp" {>= "1.5"} |
-   ("coq-mathcomp-ssreflect" {>= "1.6"} &
-    "coq-mathcomp-algebra"   {>= "1.6"}))
+  "coq-math-comp" {>= "1.5"} |
+  ("coq-mathcomp-ssreflect" {>= "1.6"} & "coq-mathcomp-algebra" {>= "1.6"})
 ]
+synopsis: "The theory needed by the refinement framework library."
+authors:
+  "Guillaume Cano, Cyril Cohen, Maxime Dénès, Anders Mörtberg and Vincent Siles"
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/Barbichu/CoqEAL/raw/master/release/CoqEAL_theory.0.9.1.tgz"
+  checksum: "md5=3b85194a65e80a763cfc2f067092efc8"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/legacy-ring"
 license: "proprietary"
@@ -6,9 +6,15 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LegacyRing"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ ]
 authors: [ "Bruno Barras" "Benjamin Gregoire" ]
 bug-reports: "https://github.com/coq-contribs/legacy-ring/issues"
-dev-repo: "https://github.com/coq-contribs/legacy-ring.git"
+dev-repo: "git+https://github.com/coq-contribs/legacy-ring.git"
+synopsis: "The former implementation of the ring tactic."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/legacy-ring/archive/v8.5.0.tar.gz"
+  checksum: "md5=968200c2af235a5220fade33ff714b56"
+}

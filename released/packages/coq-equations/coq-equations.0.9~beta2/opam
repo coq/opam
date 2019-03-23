@@ -1,6 +1,6 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: [ "Matthieu Sozeau <matthieu.sozeau@inria.fr>" "Cyprien Mangin <cyprien.mangin@m4x.org>" ]
-dev-repo: "https://github.com/mattam82/Coq-Equations.git"
+dev-repo: "git+https://github.com/mattam82/Coq-Equations.git"
 maintainer: "mattam@mattam.org"
 homepage: "https://github.com/mattam82/Coq-Equations"
 bug-reports: "https://github.com/mattam82/Coq-Equations/issues"
@@ -14,5 +14,12 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Equations"]
 depends: [
+  "ocaml"
   "coq" {= "8.5~beta2"}
 ]
+synopsis: "A plugin for Coq to add dependent pattern-matching."
+flags: light-uninstall
+url {
+  src: "https://github.com/mattam82/Coq-Equations/archive/0.9.tar.gz"
+  checksum: "md5=f560c43d9d68894892827ceee3432f70"
+}

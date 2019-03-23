@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/maths"
 license: "LGPL 2.1"
@@ -6,9 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Maths"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: mathematics" "category: Mathematics/Arithmetic and Number Theory/Number theory" ]
 authors: [ "Jean-Christophe Filliâtre" ]
 bug-reports: "https://github.com/coq-contribs/maths/issues"
-dev-repo: "https://github.com/coq-contribs/maths.git"
+dev-repo: "git+https://github.com/coq-contribs/maths.git"
+synopsis: "Basic mathematics."
+description: """
+Basic mathematics (gcd, primality, etc.) from
+French ``Mathematiques Superieures'' (first year of preparation to
+high schools)"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/maths/archive/v8.6.0.tar.gz"
+  checksum: "md5=77eaaf98412fd0d8040252da485d5eba"
+}

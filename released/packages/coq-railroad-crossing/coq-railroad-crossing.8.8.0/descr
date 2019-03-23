@@ -1,8 +1,0 @@
-The Railroad Crossing Example.
-
-This library present the specification and verification of
-one real time system: the Railroad Crossing Problem, which has been
-proposed as a benchmark for the comparison of real-time formalisms. We
-specify the system using timed automatas (timed graphs) with discrete
-time and we prove invariants, the system safety property and the NonZeno
-property, using the logics CTL and TCTL.

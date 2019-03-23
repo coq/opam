@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/ptsatr"
 license: "LGPL"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PTSATR"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: Pure Type Systems" "keyword: Judgmental Equality" "keyword: Chruch-Rosser" "keyword: Confluence" "keyword: Subject Reduction" "keyword: Pi Injectivity" "category: Mathematics/Logic/Type theory" ]
 authors: [ "Vincent Siles <vincent.siles@ens-lyon.org> [http://www.lix.polytechnique.fr/~vsiles]" "Hugo Herbelin <hugo.herbelin@inria.fr> [http://pauillac.inria.fr/~herbelin/]" ]
 bug-reports: "https://github.com/coq-contribs/ptsatr/issues"
-dev-repo: "https://github.com/coq-contribs/ptsatr.git"
+dev-repo: "git+https://github.com/coq-contribs/ptsatr.git"
+synopsis: "PTSATR."
+description: """
+http://www.lix.polytechnique.fr/~vsiles/coq/PTSATR.html
+
+Formalization of the proof that PTS and PTS with judgmental equality (PTSe) are equivalent.
+With this equivalence, we are able to derive all the meta-theory of PTSe, like Pi-injectivity or Subject Reduction."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/ptsatr/archive/v8.8.0.tar.gz"
+  checksum: "md5=02285e244c70ed9a01e27c1d7dc4de94"
+}

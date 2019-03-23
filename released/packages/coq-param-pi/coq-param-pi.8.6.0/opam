@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/param-pi"
 license: "LGPL 2.1"
@@ -6,9 +6,30 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ParamPi"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: Pi-Calculus" "category: Computer Science/Lambda Calculi" "date: 1998-09-30" ]
 authors: [ "Loïc Henry-Gréard" ]
 bug-reports: "https://github.com/coq-contribs/param-pi/issues"
-dev-repo: "https://github.com/coq-contribs/param-pi.git"
+dev-repo: "git+https://github.com/coq-contribs/param-pi.git"
+synopsis:
+  "Coding of a typed monadic pi-calculus using parameters for free names."
+description: """
+This development contains the specification for a monadic
+pi-calculus using the same coding method for names than
+J. Mc Kinna and R. Pollack used for PTS in LEGO:
+"Some Lambda Calculus and Type Theory Formalized".
+
+The basic, monadic calculus encoded here has a type system
+restraining the direction of communication for processes' names.
+
+A number of lemmas usefull for doing proofs on that coding
+are included, and subject reduction properties for each kind
+of transition is made as an example of actually using the
+coding to mechanize proofs on the pi-calculus."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/param-pi/archive/v8.6.0.tar.gz"
+  checksum: "md5=5a9963254029916664d02ad27216bcb9"
+}

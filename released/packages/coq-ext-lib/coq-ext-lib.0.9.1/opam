@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/coq-ext-lib/coq-ext-lib"
-dev-repo: "https://github.com/coq-ext-lib/coq-ext-lib.git"
+dev-repo: "git+https://github.com/coq-ext-lib/coq-ext-lib.git"
 bug-reports: "https://github.com/coq-ext-lib/coq-ext-lib/issues"
 authors: ["Gregory Malecha"]
 license: "BSD"
@@ -15,5 +15,12 @@ remove: [
   ["rm" "-R" "%{lib}%/coq/user-contrib/ExtLib"]
 ]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
 ]
+synopsis: "A library of Coq definitions, theorems, and tactics."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-ext-lib/coq-ext-lib/archive/v0.9.1.tar.gz"
+  checksum: "md5=062cf7e440b8de59875a408bf4c911b4"
+}

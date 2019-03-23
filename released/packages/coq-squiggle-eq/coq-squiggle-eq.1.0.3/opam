@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "abhishek.anand.iitg@gmail.com"
 homepage: "https://github.com/aa755/SquiggleEq"
 dev-repo: "https://github.com/aa755/SquiggleEq"
@@ -13,6 +13,18 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SquiggleEq"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
   "coq-ext-lib"
 ]
+synopsis:
+  "An abstract formalization of variable bindings (both named and de-bruijn),"
+description: """
+based on ideas in the following paper:
+
+Howe, Douglas J. “Equality in Lazy Computation Systems.” In LICS, 198–203, 1989."""
+flags: light-uninstall
+url {
+  src: "https://github.com/aa755/SquiggleEq/archive/v1.0.3.tar.gz"
+  checksum: "md5=ce58ed27b586b483d359d81099c9908b"
+}

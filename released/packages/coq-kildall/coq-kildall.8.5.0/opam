@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/kildall"
 license: "Proprietary"
@@ -6,9 +6,23 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Kildall"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:kildall" "keyword:data flow analysis" "keyword:bytecode verification" "category:Computer Science/Semantics and Compilation/Semantics" "date:2005-07" ]
 authors: [ "Solange Coupet-Grimal <Solange.Coupet@cmi.univ-mrs.fr>" "William Delobel <delobel@cmi.univ-mrs.fr>" ]
 bug-reports: "https://github.com/coq-contribs/kildall/issues"
-dev-repo: "https://github.com/coq-contribs/kildall.git"
+dev-repo: "git+https://github.com/coq-contribs/kildall.git"
+synopsis:
+  "Application of the Generic kildall's Data Flow Analysis Algorithm to a Type and Shape Static Analyses of Bytecode."
+description: """
+This Library provides a generic data flow analysis
+algorithm and a proof of its correctness.
+This algorithm is then used to perform type and
+shape analysis at bytecode level
+on a first order functionnal language."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/kildall/archive/v8.5.0.tar.gz"
+  checksum: "md5=1fc6f79b8ca4f1b0280fcf47645d4df0"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Julien Narboux <julien@narboux.fr>"
 homepage: "http://geocoq.github.io/GeoCoq/"
 bug-reports: "https://github.com/GeoCoq/GeoCoq/issues"
@@ -13,6 +13,13 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GeoCoq"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~beta1"}
 ]
 tags: [ "keyword:geometry" "keyword:neutral geometry" "keyword:euclidean geometry" "keyword:foundations" "keyword:Tarski" "keyword:hilbert" "keyword:Pappus" "keyword:desargues" "keyword:parallel postulates" "category:Mathematics/Geometry/General" ]
+synopsis: "A formalization of foundations of geometry in Coq."
+flags: light-uninstall
+url {
+  src: "https://github.com/GeoCoq/GeoCoq/archive/v2.1.0.tar.gz"
+  checksum: "md5=49a43be2d060c909bd2775dc33d487b9"
+}

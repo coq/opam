@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/miniml"
 license: "LGPL 2.1"
@@ -6,9 +6,22 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MiniML"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: functional programming" "keyword: Categorical Abstract Machine" "keyword: compilation" "keyword: natural semantics" "category: Computer Science/Semantics and Compilation/Compilation" ]
 authors: [ "Samuel Boutin" ]
 bug-reports: "https://github.com/coq-contribs/miniml/issues"
-dev-repo: "https://github.com/coq-contribs/miniml.git"
+dev-repo: "git+https://github.com/coq-contribs/miniml.git"
+synopsis:
+  "Correctness of the compilation of Mini-ML into the Categorical Abstract Machine."
+description: """
+A formalisation of Mini-ML and of the Categorical
+Abstract Machine (C.A.M) in natural semantics. It also contains the
+definition of the translation from Mini-ML to the CAM and the proof
+that this translation is correct"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/miniml/archive/v8.8.0.tar.gz"
+  checksum: "md5=1f959277c29e7871f1fd00ff65f2ceac"
+}

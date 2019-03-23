@@ -1,21 +1,21 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-fcsl-pcm"
 version: "1.0.0"
 maintainer: "FCSL <fcsl@software.imdea.org>"
 
 homepage: "http://software.imdea.org/fcsl/"
 bug-reports: "https://github.com/imdea-software/fcsl-pcm/issues"
-dev-repo: "https://github.com/imdea-software/fcsl-pcm.git"
+dev-repo: "git+https://github.com/imdea-software/fcsl-pcm.git"
 license: "Apache 2.0"
 
 build: [ make "-j%{jobs}%" ]
 install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/fcsl'" ]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.10~"}
   "coq-mathcomp-ssreflect" {>= "1.6.2" & <= "1.7.0"}
 ]
-
 tags: [
   "keyword:separation logic"
   "keyword:partial commutative monoid"
@@ -23,3 +23,18 @@ tags: [
 authors: [
   "Aleksandar Nanevski"
 ]
+synopsis: "Partial Commutative Monoids"
+description: """
+The PCM library provides a formalisation of Partial Commutative Monoids (PCMs),
+a common algebraic structure used in separation logic for verification of
+pointer-manipulating sequential and concurrent programs.
+The library provides lemmas for mechanised and automated reasoning about PCMs
+in the abstract, but also supports concrete common PCM instances, such as heaps,
+histories and mutexes.
+
+This library relies on extensionality axioms: propositional and
+functional extentionality."""
+url {
+  src: "https://github.com/imdea-software/fcsl-pcm/archive/v1.0.0.tar.gz"
+  checksum: "md5=8ea647b98ab222ae18c329bc75a86827"
+}
