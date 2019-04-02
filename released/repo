@@ -1,3 +1,6 @@
 opam-version: "2.0"
 browse: "https://coq.inria.fr/opam/www/"
 upstream: "https://github.com/coq/opam-coq-archive/tree/master"
+redirect:
+  "https://coq.github.io/opam-coq-archive/released-opam1.2"
+    {opam-version < "2.0~"}
