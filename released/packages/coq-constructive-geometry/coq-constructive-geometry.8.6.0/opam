@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/constructive-geometry"
 license: "Unknown"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ConstructiveGeometry"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: Constructive mathematics" "keyword: Geometry" "category: Mathematics/Geometry/General" ]
 authors: [ "Gilles Kahn" ]
 bug-reports: "https://github.com/coq-contribs/constructive-geometry/issues"
-dev-repo: "https://github.com/coq-contribs/constructive-geometry.git"
+dev-repo: "git+https://github.com/coq-contribs/constructive-geometry.git"
+synopsis: "Elements of Constructive Geometry"
+description: "Constructive Geometry following Jan von Plato."
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/constructive-geometry/archive/v8.6.0.tar.gz"
+  checksum: "md5=8b3bbc2c0f56db39b2e70e244d03d260"
+}

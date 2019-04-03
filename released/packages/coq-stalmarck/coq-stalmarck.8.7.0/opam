@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-community/stalmarck"
 license: "LGPL 2.1"
@@ -6,9 +6,19 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Stalmarck"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: boolean formula" "keyword: tautology checker" "category: Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category: Miscellaneous/Extracted Programs/Decision procedures" "date: 2000" ]
 authors: [ "Pierre Letouzey" "Laurent Théry" ]
 bug-reports: "https://github.com/coq-community/stalmarck/issues"
-dev-repo: "https://github.com/coq-community/stalmarck.git"
+dev-repo: "git+https://github.com/coq-community/stalmarck.git"
+synopsis: "Proof of Stalmarck's algorithm"
+description: """
+A two-level approach to prove tautology
+using Stalmarck's algorithm."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-community/stalmarck/archive/v8.7.0.tar.gz"
+  checksum: "md5=3a81b6524f351cf53552954f64f7c7e0"
+}

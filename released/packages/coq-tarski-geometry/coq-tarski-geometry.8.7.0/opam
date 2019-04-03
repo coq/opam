@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/tarski-geometry"
 license: "GPL"
@@ -6,9 +6,27 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TarskiGeometry"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: geometry" "keyword: Tarski's geometry" "keyword: congruence" "keyword: between property" "keyword: orthogonality" "category: Mathematics/Geometry/General" "date: 2006-03" ]
 authors: [ "Julien Narboux <Julien.Narboux@dpt-info.u-strasbg.fr> [http://dpt-info.u-strasbg.fr/~narboux/]" ]
 bug-reports: "https://github.com/coq-contribs/tarski-geometry/issues"
-dev-repo: "https://github.com/coq-contribs/tarski-geometry.git"
+dev-repo: "git+https://github.com/coq-contribs/tarski-geometry.git"
+synopsis: "Tarski's geometry"
+description: """
+http://dpt-info.u-strasbg.fr/~narboux/tarski.html
+
+This is a formalization of geometry using a simplified version of Tarski's axiom system. The development contains a formalization of the chapters 1-8 of the book "Metamathematische Methoden in der Geometrie" by W. Schwabhäuser, W. Szmielew and A. Tarski.
+This includes between properties, congruence properties,
+  midpoint, perpendicular lines, point reflection, orthogonality ...
+This development aims to be a low level complement for Frédérique Guilhot's development about high-school geometry.
+
+For more information see:
+Mechanical Theorem Proving in Tarski's geometry in the post-proceeding of ADG 2006, F. Botana and T. Recio (Eds.), LNAI 4869, pages 139-156, 2007."""
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/tarski-geometry/archive/v8.7.0.tar.gz"
+  checksum: "md5=e7ef6439d7b26dbeb3dea11929f1e536"
+}

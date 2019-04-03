@@ -1,10 +1,10 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-quickchick"
 version: "1.0.0"
 maintainer: "llamp@seas.upenn.edu"
 
 homepage: "https://github.com/QuickChick/QuickChick"
-dev-repo: "https://github.com/QuickChick/QuickChick.git"
+dev-repo: "git+https://github.com/QuickChick/QuickChick.git"
 bug-reports: "https://github.com/QuickChick/QuickChick/issues"
 license: "MIT"
 
@@ -18,8 +18,6 @@ depends: [
   "coq-ext-lib"
   "coq-mathcomp-ssreflect" {>= "1.6" & < "1.7~"}
 ]
-synopsis: "QuickChick is a random property-based testing library for Coq"
-
 authors: [
   "Leonidas Lampropoulos <>"
   "Zoe Paraskevopoulou <>"
@@ -31,3 +29,9 @@ authors: [
   "Li-Yao Xia <>"
   "Yishuai Li <>"
 ]
+synopsis: "QuickChick is a random property-based testing library for Coq"
+flags: light-uninstall
+url {
+  src: "https://github.com/QuickChick/QuickChick/archive/v1.0.0.tar.gz"
+  checksum: "md5=f64997cb57e609cb0a9b0c4605891311"
+}

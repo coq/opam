@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/tree-diameter"
 license: "LGPL 2.1"
@@ -6,9 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/TreeDiameter"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: program verification" "keyword: trees" "keyword: paths" "keyword: graphs" "keyword: distance" "keyword: diameter" "category: Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" ]
 authors: [ "Jean-Christophe Filliâtre" ]
 bug-reports: "https://github.com/coq-contribs/tree-diameter/issues"
-dev-repo: "https://github.com/coq-contribs/tree-diameter.git"
+dev-repo: "git+https://github.com/coq-contribs/tree-diameter.git"
+synopsis: "Diameter of a binary tree"
+description: """
+This contribution contains the verification of a divide-and-conquer
+algorithm to compute the diameter of a binary tree (the
+maxmimal distance between two nodes in the tree)."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/tree-diameter/archive/v8.7.0.tar.gz"
+  checksum: "md5=828e673a375124912359a2e5c13d2f86"
+}

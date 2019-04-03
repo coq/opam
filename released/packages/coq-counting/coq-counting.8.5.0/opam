@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/counting"
 license: "Proprietary"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Counting"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:statistics" "category:Miscellaneous/Coq Extensions" ]
 authors: [ "Stéphane Lescuyer <>" ]
 bug-reports: "https://github.com/coq-contribs/counting/issues"
-dev-repo: "https://github.com/coq-contribs/counting.git"
+dev-repo: "git+https://github.com/coq-contribs/counting.git"
+synopsis: "Counting: a Coq plugin for measuring definitions/proofs"
+description:
+  "This plugin keeps the count of the size of definitions and proofs in the current Coq session."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/counting/archive/v8.5.0.tar.gz"
+  checksum: "md5=44463f7f336e1bd200a651b051fee094"
+}

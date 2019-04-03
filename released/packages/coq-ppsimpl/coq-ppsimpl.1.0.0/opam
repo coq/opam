@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "frederic.besson@inria.fr"
 homepage: "http://ppsimpl.gforge.inria.fr/"
-dev-repo: "https://scm.gforge.inria.fr/anonscm/git/ppsimpl/ppsimpl.git"
+dev-repo: "git+https://scm.gforge.inria.fr/anonscm/git/ppsimpl/ppsimpl.git"
 authors: ["Frédéric Besson"]
 bug-reports: "frederic.besson@inria.fr"
 license: "LGPL 3"
@@ -15,8 +15,9 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PP"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
-  "coq-bignums" {>= "8.7" & < "8.8~" }
+  "coq-bignums" {>= "8.7" & < "8.8~"}
 ]
 depopts: [ "coq-flocq" "coq-mathcomp-ssreflect" ]		 
 
@@ -25,3 +26,10 @@ tags: [
   "category:Miscellaneous/Coq Extensions"
   "logpath:PP"
 ]
+synopsis: "Ppsimpl is a reflexive tactic for canonising (arithmetic) goals"
+flags: light-uninstall
+url {
+  src:
+    "https://gforge.inria.fr/frs/download.php/file/37427/ppsimpl-09-03-2018.tar.gz"
+  checksum: "md5=e1285aa25e2573056f039c7d501e239d"
+}

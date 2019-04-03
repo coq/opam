@@ -1,2 +1,0 @@
-Iris is a Higher-Order Concurrent Separation Logic for reasoning about fine-grained concurrent programs, building logical relations, and more.  It features an interactive proof mode for carrying out separation logic proofs in Coq.
-

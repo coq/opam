@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/karatsuba"
 license: "Unknown"
@@ -6,9 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Karatsuba"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: karatsuba multiplication" "keyword: binary ring" "category: Mathematics/Arithmetic and Number Theory/Number theory" "date: 2005-09-15" ]
 authors: [ "Russell O'Connor <r.oconnor@cs.ru.nl> [http://r6.ca/]" ]
 bug-reports: "https://github.com/coq-contribs/karatsuba/issues"
-dev-repo: "https://github.com/coq-contribs/karatsuba.git"
+dev-repo: "git+https://github.com/coq-contribs/karatsuba.git"
+synopsis: "Karatsuba's Multiplication"
+description: """
+http://r6.ca/Karatsuba/
+
+An implementation of Karatsuba's Multiplication algorithm"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/karatsuba/archive/v8.8.0.tar.gz"
+  checksum: "md5=baa58e355a4d9a65be7a4ed9f8e1759c"
+}

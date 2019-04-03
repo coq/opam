@@ -1,5 +1,0 @@
-Proof of Buchberger's algorithm.
-
-A machine-checked implementation of Buchberger's.
-It computes the Grobner basis associated to a
-polynomial ideal.

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/markov"
 license: "GNU Lesser Public License"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Markov"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: probability theory" "keyword: markov" "keyword: lebesgue integral" "keyword: measures" "keyword: sigma algebras" "keyword: measurability" "keyword: borel" "category: Mathematics/Real Calculus and Topology" "date: 2008-01-5" ]
 authors: [ "Robert Kam <rkam2001@hotmail.com> [none]" ]
 bug-reports: "https://github.com/coq-contribs/markov/issues"
-dev-repo: "https://github.com/coq-contribs/markov.git"
+dev-repo: "git+https://github.com/coq-contribs/markov.git"
+synopsis: "Markov's inequality"
+description:
+  "A proof of Markov's inequality, restricted to probability spaces, based on the Wikipedia proof. Defines Lebesgue integral and associated concepts such as measurability, measure functions, and sigma algebras. Extended real numbers did not need to be defined because we are working in a probability space with measure 1. Nonconstructive; uses classic, Extensionality_Ensembles, axiomatized real numbers from Coq standard library."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/markov/archive/v8.7.0.tar.gz"
+  checksum: "md5=562f69118aadd4091485ae6698f2e582"
+}

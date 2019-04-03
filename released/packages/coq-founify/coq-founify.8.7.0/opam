@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/founify"
 license: "Unknown"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FOUnify"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: First-order Unification" "keyword: Robinson" "category: Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category: Miscellaneous/Extracted Programs/Type checking unification and normalization" ]
 authors: [ "Jocelyne Rouyer" ]
 bug-reports: "https://github.com/coq-contribs/founify/issues"
-dev-repo: "https://github.com/coq-contribs/founify.git"
+dev-repo: "git+https://github.com/coq-contribs/founify.git"
+synopsis: "Correctness and extraction of the unification algorithm"
+description: """
+A notion of terms based on symbols without fixed arities is defined
+and an extended unification problem is proved solvable on these terms.
+An algorithm, close from Robinson algorithm, can be extracted from the
+proof."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/founify/archive/v8.7.0.tar.gz"
+  checksum: "md5=9603288fc943f869999b73fb04f34604"
+}

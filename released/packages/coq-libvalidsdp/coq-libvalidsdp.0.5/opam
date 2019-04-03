@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-libvalidsdp"
 version: "0.5"
 maintainer: [
@@ -7,7 +7,7 @@ maintainer: [
 ]
 
 homepage: "https://sourcesup.renater.fr/validsdp/"
-dev-repo: "https://github.com/validsdp/validsdp.git"
+dev-repo: "git+https://github.com/validsdp/validsdp.git"
 bug-reports: "https://github.com/validsdp/validsdp/issues"
 license: "LGPL"
 
@@ -18,7 +18,14 @@ build: [
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/libValidSDP"]
 depends: [
-  "coq" {>= "8.7" & < "8.9~"} "coq-interval" {>= "3" & < "4~"} "coq-mathcomp-field" {>= "1.7" & < "1.8~"} "ocamlfind" "camlp4" "coq-flocq" {>= "3" & < "3.1~"} "coq-bignums"
+  "ocaml"
+  "coq" {>= "8.7" & < "8.9~"}
+  "coq-interval" {>= "3" & < "4~"}
+  "coq-mathcomp-field" {>= "1.7" & < "1.8~"}
+  "ocamlfind"
+  "camlp4"
+  "coq-flocq" {>= "3" & < "3.1~"}
+  "coq-bignums"
 ]
 synopsis: "LibValidSDP"
   
@@ -35,3 +42,9 @@ authors: [
   "Pierre Roux <pierre.roux@onera.fr>"
   "Érik Martin-Dorel <erik.martin-dorel@irit.fr>"
 ]
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/validsdp/validsdp/releases/download/v0.5/libvalidsdp.0.5.tgz"
+  checksum: "md5=8804c308899b85fccb54ec6a6b9fc57c"
+}

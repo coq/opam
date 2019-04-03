@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "guillaume.melquiond@inria.fr"
 homepage: "http://gappa.gforge.inria.fr/"
-dev-repo: "https://scm.gforge.inria.fr/anonscm/git/gappa/coq.git"
+dev-repo: "git+https://scm.gforge.inria.fr/anonscm/git/gappa/coq.git"
 license: "LGPL 2.1"
 build: [
   ["./configure"]
@@ -10,9 +10,19 @@ build: [
 install: ["./remake" "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Gappa"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.9~"}
   "coq-flocq" {>= "3.0"}
 ]
 conflicts: [ "coq" {= "8.8.0"} ]
 tags: [ "keyword:floating point arithmetic" "keyword:interval arithmetic" "keyword:decision procedure" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
 authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
+synopsis:
+  "A Coq tactic for discharging goals about floating-point arithmetic and"
+description: "round-off errors using the Gappa prover."
+flags: light-uninstall
+url {
+  src:
+    "https://gforge.inria.fr/frs/download.php/file/37626/gappalib-coq-1.4.0.tar.gz"
+  checksum: "md5=53421c1f38c95c7c25642f80d3f210e4"
+}

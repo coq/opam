@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "palmskog@gmail.com"
 
 homepage: "https://github.com/coq-community/lemma-overloading"
-dev-repo: "https://github.com/coq-community/lemma-overloading.git"
+dev-repo: "git+https://github.com/coq-community/lemma-overloading.git"
 bug-reports: "https://github.com/coq-community/lemma-overloading/issues"
 license: "GPL 3"
 
@@ -10,10 +10,10 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LemmaOverloading"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
   "coq-mathcomp-ssreflect" {>= "1.6.2" & < "1.8~"}
 ]
-
 tags: [
   "keyword:canonical structures"
   "keyword:proof automation"
@@ -29,3 +29,11 @@ authors: [
   "Aleksandar Nanevski"
   "Derek Dreyer"
 ]
+synopsis:
+  "Hoare Type Theory libraries showcasing design patterns for programming with canonical structures"
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-community/lemma-overloading/archive/v8.8.0.tar.gz"
+  checksum: "md5=a7056f6477fc274d2c0ef30dab492bde"
+}

@@ -1,5 +1,4 @@
-opam-version: "1.2"
-author: "Cyril Cohen and Anders Mörtberg"
+opam-version: "2.0"
 maintainer: "cohen@crans.org"
 homepage: "http://perso.crans.org/cohen/work/fpmods/"
 license: "MIT"
@@ -9,6 +8,14 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/fpmods"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
   "coq-coqeal-theory" {>= "0.9.0"}
 ]
+synopsis: "A short constructive formalization of finitely presented modules"
+authors: "Cyril Cohen and Anders Mörtberg"
+flags: light-uninstall
+url {
+  src: "http://perso.crans.org/cohen/work/fpmods/code/fpmods.0.2.tgz"
+  checksum: "md5=431a7352bb66432c307651d7702ecaef"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/reflexive-first-order"
 license: "LGPL"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ReflexiveFirstOrder"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: computationnal reflection" "keyword: interpretation" "keyword: first-order logic" "keyword: equational reasoning" "category: Miscellaneous/Coq Extensions" "date: 2005-05" ]
 authors: [ "Pierre Corbineau <pierre.corbineau@lri.fr> [http://www.cs.ru.nl/~corbineau]" ]
 bug-reports: "https://github.com/coq-contribs/reflexive-first-order/issues"
-dev-repo: "https://github.com/coq-contribs/reflexive-first-order.git"
+dev-repo: "git+https://github.com/coq-contribs/reflexive-first-order.git"
+synopsis: "Reflexive first-order proof interpreter"
+description: """
+This contribution is a package which can be used to interpret firstorder
+proofs provided by an external theorem prover, using computationnal
+reflexion."""
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/reflexive-first-order/archive/v8.8.0.tar.gz"
+  checksum: "md5=1d9a59f1bcae100117c45eefd670e30b"
+}

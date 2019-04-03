@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "frederic.blanqui@inria.fr"
 homepage: "http://color.inria.fr/"
 license: "CeCILL"
@@ -8,6 +8,7 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 authors: [
@@ -104,3 +105,10 @@ tags: [
   
   "logpath:CoLoR"
 ]
+synopsis: "A library on rewriting theory and termination"
+flags: light-uninstall
+url {
+  src:
+    "https://gforge.inria.fr/frs/download.php/file/35820/color.1.2.0.tar.gz"
+  checksum: "md5=3e1541cc57beec0790667ef49bee66ce"
+}

@@ -1,9 +1,0 @@
-A tactic for deciding Kleene algebras.
-
-http://sardes.inrialpes.fr/~braibant/atbr
-
-This library provides algebraic tools for working with
-binary relations. The main tactic we provide is a reflexive tactic for
-solving (in)equations in an arbitrary Kleene algebra. The decision
-procedure goes through standard finite automata constructions, that we
-formalized.

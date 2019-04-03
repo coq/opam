@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/euclidean-geometry"
 license: "LGPL"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/EuclideanGeometry"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:plane geometry" "keyword:euclid" "keyword:ruler and compass geometry" "category:Mathematics/Geometry/General" ]
 authors: [ "Jean Duprat <Jean.Duprat@ens-lyon.fr>" ]
 bug-reports: "https://github.com/coq-contribs/euclidean-geometry/issues"
-dev-repo: "https://github.com/coq-contribs/euclidean-geometry.git"
+dev-repo: "git+https://github.com/coq-contribs/euclidean-geometry.git"
+synopsis: "Basis of the Euclid's plane geometry"
+description: """
+This is a more recent version of the basis of Euclid's plane geometry, the previous version was the contribution intitled RulerCompassGeometry.
+The plane geometry is defined as a set of points, with two predicates : Clokwise for the orientation and Equidistant for the metric and three constructors, Ruler for the lines, Compass for the circles and Intersection for the points.
+For using it, we suggest to compile the files the name of which begin by a capital letter and a number from A1 to N7 in the lexicographic order and to keep modifiable the files of tacics (from Tactic1 to Tactic4) and the files of examples (Hilbert and Bolyai)."""
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/euclidean-geometry/archive/v8.5.0.tar.gz"
+  checksum: "md5=bfd0c53f61b8a85beaa0a347ee7971a7"
+}

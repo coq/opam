@@ -1,14 +1,15 @@
-opam-version: "1.2"
+opam-version: "2.0"
 version: "1.0.1"
 maintainer: "lord@crocodile.org"
 homepage: "https://github.com/vzaliva/coq-min-imports"
-dev-repo: "https://github.com/vzaliva/coq-min-imports.git"
+dev-repo: "git+https://github.com/vzaliva/coq-min-imports.git"
 bug-reports: "https://github.com/vzaliva/coq-min-imports/issues"
 authors: ["Vadim Zaliva"]
 license: "MIT"
 build: ["jbuilder" "build" "-j" jobs "@install"]
 
 depends: [
+  "ocaml"
   "coq" {>= "8.5"}
   "extlib"
   "batteries"
@@ -18,3 +19,13 @@ tags: [
   "category:Miscellaneous/Coq Extensions"
   "date:2018-04-22"
 ]
+synopsis:
+  "This script will try to remove unnecessary module imports from Coq"
+description: """
+sources. It examines modules listed in "Require Import" statements one
+by one and tries to recompile to see if their removal would cause
+compilation errors."""
+url {
+  src: "https://github.com/vzaliva/coq-min-imports/archive/v1.0.1.tar.gz"
+  checksum: "md5=3ffca724f7e8752ce4f1909b360914ab"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/firing-squad"
 license: "LGPL 2.1"
@@ -6,9 +6,19 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FiringSquad"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: concurrency" "keyword: synchronization" "keyword: finite-state machines" "category: Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" "category: Miscellaneous/Extracted Programs/Automata and protocols" ]
 authors: [ "Jean Duprat" ]
 bug-reports: "https://github.com/coq-contribs/firing-squad/issues"
-dev-repo: "https://github.com/coq-contribs/firing-squad.git"
+dev-repo: "git+https://github.com/coq-contribs/firing-squad.git"
+synopsis: "Firing Squad Synchronization Problem"
+description: """
+This contribution is a formal verification of a solution
+of the firing squad synchronization problem."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/firing-squad/archive/v8.7.0.tar.gz"
+  checksum: "md5=e191bd0a64364c862d1b09472000d15b"
+}

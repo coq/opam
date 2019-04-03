@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/exact-real-arithmetic"
 license: "LGPL 2.1"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ExactRealArithmetic"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: correctness" "keyword: real numbers" "keyword: arithmetic" "category: Mathematics/Arithmetic and Number Theory/Real numbers" ]
 authors: [ "Jérôme Creci" ]
 bug-reports: "https://github.com/coq-contribs/exact-real-arithmetic/issues"
-dev-repo: "https://github.com/coq-contribs/exact-real-arithmetic.git"
+dev-repo: "git+https://github.com/coq-contribs/exact-real-arithmetic.git"
+synopsis: "Exact Real Arithmetic"
+description: """
+This contribution contains a proof of correctness
+of some exact real arithmetic algorithms from the PhD thesis of
+Valérie Ménissier-Morain"""
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/exact-real-arithmetic/archive/v8.8.0.tar.gz"
+  checksum: "md5=3ea310ffd2c6637261005ca6fac2b190"
+}

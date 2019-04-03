@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/graphs"
 license: "LGPL 2.1"
@@ -6,10 +6,19 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Graphs"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
   "coq-int-map" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: graphs" "keyword: graph theory" "keyword: cycle detection" "keyword: paths" "keyword: constraints" "keyword: inequalities" "keyword: reflection" "category: Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category: Miscellaneous/Extracted Programs/Combinatorics" ]
 authors: [ "Jean Goubault" ]
 bug-reports: "https://github.com/coq-contribs/graphs/issues"
-dev-repo: "https://github.com/coq-contribs/graphs.git"
+dev-repo: "git+https://github.com/coq-contribs/graphs.git"
+synopsis: "Satisfiability of inequality constraints and detection of cycles with negative weight in graphs"
+description:
+  "*******************************************************************"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/graphs/archive/v8.6.0.tar.gz"
+  checksum: "md5=5cdad4a31bf2de94e2583fe4474f521a"
+}

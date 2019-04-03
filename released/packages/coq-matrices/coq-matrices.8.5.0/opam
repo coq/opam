@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/matrices"
 license: "LGPL 2"
@@ -6,9 +6,32 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Matrices"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:matrices" "keyword:vectors" "keyword:linear algebra" "keyword:coq modules" "category:Mathematics/Algebra" "date:2003-03" ]
 authors: [ "Nicolas Magaud <>" ]
 bug-reports: "https://github.com/coq-contribs/matrices/issues"
-dev-repo: "https://github.com/coq-contribs/matrices.git"
+dev-repo: "git+https://github.com/coq-contribs/matrices.git"
+synopsis: "Ring properties for square matrices "
+description: """
+This contribution contains an operational formalization of square matrices.
+(m,n)-Matrices are represented as vectors of length n. Each vector
+(a row) is itself a vector whose length is m.
+Vectors are actually implemented as dependent lists.
+
+We define basic operations for this datatype (addition, product, neutral
+elements O_n and I_n). We then prove the ring properties for these
+operations. The development uses Coq modules to specify the interface
+(the ring structure properties) as a signature.
+
+This development deals with dependent types and partial functions.
+Most of the functions are defined by dependent case analysis
+and some functions such as getting a column require
+the use of preconditions (to check whether we are within the
+bounds of the matrix)."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/matrices/archive/v8.5.0.tar.gz"
+  checksum: "md5=29685b178fbf91fddc6198940b186c27"
+}

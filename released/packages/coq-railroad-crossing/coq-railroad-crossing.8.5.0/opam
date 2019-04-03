@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/railroad-crossing"
 license: "LGPL 2"
@@ -6,9 +6,24 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RailroadCrossing"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:ctl" "keyword:tctl" "keyword:real time systems" "keyword:timed automatas" "keyword:safety" "keyword:concurrency" "keyword:properties" "keyword:invariants" "keyword:nonzeno" "keyword:discrete time" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" "date:February-March 2000" ]
 authors: [ "Carlos Daniel Luna <http://www.fing.edu.uy/~cluna>" ]
 bug-reports: "https://github.com/coq-contribs/railroad-crossing/issues"
-dev-repo: "https://github.com/coq-contribs/railroad-crossing.git"
+dev-repo: "git+https://github.com/coq-contribs/railroad-crossing.git"
+synopsis: "The Railroad Crossing Example"
+description: """
+This library present the specification and verification of
+one real time system: the Railroad Crossing Problem, which has been
+proposed as a benchmark for the comparison of real-time formalisms. We
+specify the system using timed automatas (timed graphs) with discrete
+time and we prove invariants, the system safety property and the NonZeno
+property, using the logics CTL and TCTL."""
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/railroad-crossing/archive/v8.5.0.tar.gz"
+  checksum: "md5=aa5d5cef3b3a7a723b2040f90219f866"
+}

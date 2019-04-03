@@ -1,10 +1,13 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-relation-algebra"
 synopsis: "Relation Algebra and KAT in Coq"
 maintainer: "Damien Pous <Damien.Pous@ens-lyon.fr>"
 homepage: "http://perso.ens-lyon.fr/damien.pous/ra/"
 license: "LGPL"
-depends: [ "coq" {>= "8.9" & < "8.10~"} ]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
 depopts: [ "coq-mathcomp-ssreflect" ]
 build: [
   ["sh" "-exc" "./configure --%{coq-mathcomp-ssreflect:enable}%-ssr"]
@@ -27,3 +30,8 @@ authors: [
   "Damien Pous <Damien.Pous@ens-lyon.fr>"
   "Christian Doczkal <christian.doczkal@ens-lyon.fr>"
 ]
+url {
+  src:
+    "https://github.com/damien-pous/relation-algebra/archive/v1.7.1.tar.gz"
+  checksum: "md5=1a37b6b785540d56133bf637c858c094"
+}

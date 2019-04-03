@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/dep-map"
 license: "CeCILL-B"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/DepMap"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: Maps" "keyword: Dependent maps" "keyword: domain" "category: Computer Science/Data Types and Data Structures" ]
 authors: [ "Lionel Rieg <lionel.rieg@college-de-france.fr>" ]
 bug-reports: "https://github.com/coq-contribs/dep-map/issues"
-dev-repo: "https://github.com/coq-contribs/dep-map.git"
+dev-repo: "git+https://github.com/coq-contribs/dep-map.git"
+synopsis: "Dependent Maps"
+description:
+  "A rudimentary library for dependent maps that contain their domain in the type."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/dep-map/archive/v8.7.0.tar.gz"
+  checksum: "md5=6576a2b104407940b6b4ca38ffdcd041"
+}

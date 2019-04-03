@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/exceptions"
 license: "LGPL 2.1"
@@ -6,9 +6,16 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Exceptions"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: exceptions" "keyword: continuations" "category: Computer Science/Semantics and Compilation/Semantics" ]
 authors: [ "Pierre Castéran" ]
 bug-reports: "https://github.com/coq-contribs/exceptions/issues"
-dev-repo: "https://github.com/coq-contribs/exceptions.git"
+dev-repo: "git+https://github.com/coq-contribs/exceptions.git"
+synopsis: "Pro[gramm,v]ing with continuations:A development in Coq"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/exceptions/archive/v8.8.0.tar.gz"
+  checksum: "md5=9d9fbeefa7505144adbf58eda6282b03"
+}

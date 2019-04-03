@@ -9,6 +9,7 @@ cache:
 
 before_script:
   - export HOME=$(pwd)
+  - export EXTRA_OPAM="ocamlbuild" # some packages build extracted code this way
   - apt-get update -qy
   - apt-get install unzip libgtksourceview2.0-dev libncurses5-dev curl jq -y
   - test -e ${HOME}/opam-cache/cache-${COMPILER}.tgz || scripts/opam-coq-init

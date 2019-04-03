@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/dblib"
 license: "GPL"
@@ -6,9 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Dblib"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: abstract syntax" "keyword: binders" "keyword: de Bruijn indices" "keyword: shift" "keyword: lift" "keyword: substitution" "category: Computer Science/Lambda Calculi" ]
 authors: [ "Francois Pottier <francois.pottier@inria.fr> [http://gallium.inria.fr/~fpottier/]" ]
 bug-reports: "https://github.com/coq-contribs/dblib/issues"
-dev-repo: "https://github.com/coq-contribs/dblib.git"
+dev-repo: "git+https://github.com/coq-contribs/dblib.git"
+synopsis: "Dblib"
+description: """
+http://gallium.inria.fr/~fpottier/dblib/README
+
+The dblib library offers facilities for working with de Bruijn indices."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/dblib/archive/v8.8.0.tar.gz"
+  checksum: "md5=f3801acc5eccb14676c5c27315c30ee2"
+}

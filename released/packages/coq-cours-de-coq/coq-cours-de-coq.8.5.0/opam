@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/cours-de-coq"
 license: "Proprietary"
@@ -6,9 +6,17 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoursDeCoq"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:coq" "keyword:examples" "category:Miscellaneous/Coq Use Examples" ]
 authors: [ "Frédéric Prost <>" "Gilles Kahn <>" ]
 bug-reports: "https://github.com/coq-contribs/cours-de-coq/issues"
-dev-repo: "https://github.com/coq-contribs/cours-de-coq.git"
+dev-repo: "git+https://github.com/coq-contribs/cours-de-coq.git"
+synopsis: "Various examples of Coq proofs"
+description: "Various simple examples of Coq proofs"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/cours-de-coq/archive/v8.5.0.tar.gz"
+  checksum: "md5=957a863da31a9aa3abdb23491b0051e0"
+}

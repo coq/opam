@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/pautomata"
 license: "LGPL 2.1"
@@ -6,9 +6,28 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PAutomata"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: p-automata" "keyword: ABR" "keyword: PGM" "keyword: time" "category: Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" ]
 authors: [ "Emmanuel Freund & Christine Paulin" ]
 bug-reports: "https://github.com/coq-contribs/pautomata/issues"
-dev-repo: "https://github.com/coq-contribs/pautomata.git"
+dev-repo: "git+https://github.com/coq-contribs/pautomata.git"
+synopsis: "Parameterized automata"
+description: """
+This contribution is a modelisation in Coq of the p-automata
+designed in the CALIFE project (http://www.loria.fr/calife).
+It contains an axiomatisation of time,
+the definition of a p-automaton, the definition of binary and
+arbitrary synchronisation of a family of p-automaton, the semantics of
+a p-automaton as a labelled transition system. The description of the ABR
+algorithm as a p-automaton is also given.
+
+This work is reported in : P. Castéran, E. Freund, C. Paulin and
+D. Rouillard ``Bibliothèques Coq et Isabelle-HOL pour les systèmes de
+transitions et les p-automates''"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/pautomata/archive/v8.7.0.tar.gz"
+  checksum: "md5=d01a398b7d162ee29a9a6e49c583ed2f"
+}

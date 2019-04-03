@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "thery@sophia.inria.fr"
 homepage: "http://coqprime.gforge.inria.fr/"
 bug-reports: "https://gforge.inria.fr/tracker/?func=add&group_id=163&atid=733"
@@ -11,8 +11,13 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coqprime"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5~" & < "8.6~"}
 ]
-
-
-
+synopsis: "Certifying prime numbers in Coq"
+flags: light-uninstall
+url {
+  src:
+    "https://gforge.inria.fr/frs/download.php/file/35520/coqprime_8.5b.zip"
+  checksum: "md5=fea727b4ca765c1408d92baa0c98ce22"
+}

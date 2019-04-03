@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/lesniewski-mereology"
 license: "LGPL"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LesniewskiMereology"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: mereology" "keyword: protothetic" "keyword: ontology" "keyword: nominalist theory" "keyword: extensionality" "category: Mathematics/Logic/Foundations" ]
 authors: [ "Richard Dapoigny <richard.dapoigny@univ-savoie.fr> [https://www.researchgate.net/profile/Richard_Dapoigny]" "Patrick Barlatier <patrick.barlatier@univ-savoie.fr> [https://www.researchgate.net/profile/Patrick_Barlatier]" ]
 bug-reports: "https://github.com/coq-contribs/lesniewski-mereology/issues"
-dev-repo: "https://github.com/coq-contribs/lesniewski-mereology.git"
+dev-repo: "git+https://github.com/coq-contribs/lesniewski-mereology.git"
+synopsis: "Knowledge-based Dependently Typed Language (KDTL)"
+description: """
+http://www.polytech.univ-savoie.fr/index.php?id=listic-logiciels-coq&L=1
+
+LesniewskiMereology is a Coq library created by R. Dapoigny and P. Barlatier whose purpose is to implement the alternative to Set Theory of Stanislaw Lesniewski. It is part of an on-going project using the Coq language and called KDTL (Knowledge-based Dependently Typed Language) to build an alternative to Description Logics. The developed theory is close to the analysis of Denis Mieville (1984) in his book "Un developpement des systemes logiques de Stanislaw Lesniewski". It is a theoretical construct which relies on three dependent levels, logic (a.k.a. Protothetic), the Lesniewski Ontologie (LO) and mereology. Each level incorporates a minimal collection of axioms, protothetic and ontologic definitions and a set of theorems together with their intuitionist proofs."""
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/lesniewski-mereology/archive/v8.8.0.tar.gz"
+  checksum: "md5=24ca05ae88c1a992e3191ad0558f6e62"
+}

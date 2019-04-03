@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/ipc"
 license: "Unknown"
@@ -6,9 +6,26 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IPC"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: intuitionistic logic " "keyword: proof search " "keyword: proof-as-programs " "keyword: correct-by-construction " "keyword: program verification" "keyword: program extraction" "category: Mathematics/Logic/Foundations" "category: Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category: Miscellaneous/Extracted Programs/Decision procedures" ]
 authors: [ "Klaus Weich" ]
 bug-reports: "https://github.com/coq-contribs/ipc/issues"
-dev-repo: "https://github.com/coq-contribs/ipc.git"
+dev-repo: "git+https://github.com/coq-contribs/ipc.git"
+synopsis: "Intuitionistic Propositional Checker"
+description: """
+This development treats proof search in intuitionistic propositional logic,
+a fragment of any constructive type theory. We present new and more
+efficient decision procedures for intuitionistic propositional
+logic. They themselves are given by (non-formal) constructive proofs.
+We take one of them to demonstrate that constructive type theory can
+be used in practice to develop a real, efficient, but error-free proof
+searcher. This was done by formally proving the decidability of
+intuitionistic propositional logic in Coq; the proof searcher was
+automatically extracted."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/ipc/archive/v8.7.0.tar.gz"
+  checksum: "md5=2decb894bffbd256b5b0e6d042da2ae1"
+}

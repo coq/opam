@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/additions"
 license: "LGPL 2.1"
@@ -6,9 +6,16 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Additions"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: addition chains" "category: Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category: Miscellaneous/Extracted Programs/Arithmetic" ]
 authors: [ "Pierre Castéran" ]
 bug-reports: "https://github.com/coq-contribs/additions/issues"
-dev-repo: "https://github.com/coq-contribs/additions.git"
+dev-repo: "git+https://github.com/coq-contribs/additions.git"
+synopsis: "Addition Chains"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/additions/archive/v8.7.0.tar.gz"
+  checksum: "md5=b46a78cd44124acc3b7566eeea6997ca"
+}

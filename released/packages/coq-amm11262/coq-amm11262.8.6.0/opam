@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/amm11262"
 license: "LGPL"
@@ -6,9 +6,22 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/AMM11262"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: american mathematical monthly problem 11262" "date: 2007-04" ]
 authors: [ "Milad Niqui (Coq files) <milad@cs.ru.nl> [http://www.cs.ru.nl/~milad]" "Tonny Hurkens (paper proof) <hurkens@sci.kun.nl>" ]
 bug-reports: "https://github.com/coq-contribs/amm11262/issues"
-dev-repo: "https://github.com/coq-contribs/amm11262.git"
+dev-repo: "git+https://github.com/coq-contribs/amm11262.git"
+synopsis: "Problem 11262 of The American Mathematical Monthly"
+description: """
+http://www.cs.ru.nl/~milad/AMM11262
+
+Formalisation of Tonny Hurkens' proof of the problem
+11262 of The American Mathematical Monthly 113(10), Dec. 2006
+(see the README files)"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/amm11262/archive/v8.6.0.tar.gz"
+  checksum: "md5=63715717436a227b3a2c215c375c18e2"
+}

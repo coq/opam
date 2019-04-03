@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/lazy-pcf"
 license: "Unknown"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/lazyPCF"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: functional programming" "keyword: lazy evaluation" "keyword: operational semantics" "keyword: type soundness" "keyword: normal forms" "category: Computer Science/Lambda Calculi" ]
 authors: [ "Amy Felty" "Jill Seaman" ]
 bug-reports: "https://github.com/coq-contribs/lazy-pcf/issues"
-dev-repo: "https://github.com/coq-contribs/lazy-pcf.git"
+dev-repo: "git+https://github.com/coq-contribs/lazy-pcf.git"
+synopsis: "Subject Reduction for Lazy-PCF"
+description: """
+http://www.cs.bell-labs.com/~felty/abstracts/ppcoq.html
+
+An Operational Semantics of Lazy Evaluation and a Proof
+of Subject Reduction"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/lazy-pcf/archive/v8.6.0.tar.gz"
+  checksum: "md5=be16a0d7429e56bddb5be5340f65cefb"
+}

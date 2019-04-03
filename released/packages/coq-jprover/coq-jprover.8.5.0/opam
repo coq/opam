@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/jprover"
 license: "GPL 2"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/JProver"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:decision procedure" "keyword:first order logic" "keyword:intuitionistic logic" "keyword:theorem proving" "keyword:proof search" "category:Miscellaneous/Coq Extensions" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:April 2002 (contribution since January 2009)" ]
 authors: [ "Huang Guan-Shieng <>" ]
 bug-reports: "https://github.com/coq-contribs/jprover/issues"
-dev-repo: "https://github.com/coq-contribs/jprover.git"
+dev-repo: "git+https://github.com/coq-contribs/jprover.git"
+synopsis: "A theorem prover for first-order intuitionistic logic"
+description: """
+JProver is a theorem prover for first-order intuitionistic logic.
+It is originally implemented by Stephan Schmitt and then integrated into
+MetaPRL by Aleksey Nogin. After this, Huang Guan-Shieng extracted the
+necessary ML-codes from MetaPRL and then adapted it to Coq."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/jprover/archive/v8.5.0.tar.gz"
+  checksum: "md5=219a58c98b9a61b99c625d8c6d5b69ff"
+}

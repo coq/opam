@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/fermat4"
 license: "Proprietary"
@@ -6,9 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Fermat4"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:diophantus" "keyword:fermat" "keyword:arithmetic" "keyword:infinite descent" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:2005-07" ]
 authors: [ "David Delahaye <>" "Micaela Mayero <>" ]
 bug-reports: "https://github.com/coq-contribs/fermat4/issues"
-dev-repo: "https://github.com/coq-contribs/fermat4.git"
+dev-repo: "git+https://github.com/coq-contribs/fermat4.git"
+synopsis: "Diophantus' 20th Problem and Fermat's Last Theorem for n = 4"
+description: """
+This contribution presents the formalization of Fermat's proofs of
+Diophantus' 20th Problem and Fermat's Last Theorem for n = 4. The proofs are
+completed using Fermat's "wonderful" method of infinite descent."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/fermat4/archive/v8.5.0.tar.gz"
+  checksum: "md5=8df337811ec5022a8e99900af7798f75"
+}

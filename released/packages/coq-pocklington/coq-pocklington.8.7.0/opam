@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/pocklington"
 license: "LGPL 2.1"
@@ -6,9 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Pocklington"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: pocklington" "keyword: number theory" "keyword: prime numbers" "keyword: primality" "keyword: fermat's little theorem" "category: Mathematics/Arithmetic and Number Theory/Number theory" "date: 2000-11" ]
 authors: [ "Olga Caprotti" "Martijn Oostdijk" ]
 bug-reports: "https://github.com/coq-contribs/pocklington/issues"
-dev-repo: "https://github.com/coq-contribs/pocklington.git"
+dev-repo: "git+https://github.com/coq-contribs/pocklington.git"
+synopsis: "Pocklington's criterion"
+description: """
+Pocklington's criterion for checking primality for
+large natural numbers. Includes a proof of Fermat's
+little theorem."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/pocklington/archive/v8.7.0.tar.gz"
+  checksum: "md5=6eb0425bbe85565e444a7ae819ed72f3"
+}

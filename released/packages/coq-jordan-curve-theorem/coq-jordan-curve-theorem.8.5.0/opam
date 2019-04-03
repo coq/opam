@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/jordan-curve-theorem"
 license: "Unknown"
@@ -6,9 +6,19 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/JordanCurveTheorem"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:combinatorial hypermaps" "keyword:genus" "keyword:planarity" "keyword:euler formula" "keyword:discrete jordan curve theorem" "category:Mathematics/Geometry/General" "date:2008" ]
 authors: [ "Jean-François Dufourd <dufourd@lsiit.u-strasbg.fr>" ]
 bug-reports: "https://github.com/coq-contribs/jordan-curve-theorem/issues"
-dev-repo: "https://github.com/coq-contribs/jordan-curve-theorem.git"
+dev-repo: "git+https://github.com/coq-contribs/jordan-curve-theorem.git"
+synopsis: "Hypermaps, planarity and discrete Jordan curve theorem"
+description:
+  "Constructive formalization of the combinatorial hypermaps, characterization of the planarity, genus theorem, Euler formula, ring of faces, discrete Jordan curve theorem"
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/jordan-curve-theorem/archive/v8.5.0.tar.gz"
+  checksum: "md5=13d3470735ba88f23b21cdb1ebd5059a"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/smc"
 license: "LGPL 2.1"
@@ -6,10 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SMC"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
   "coq-int-map" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: BDD" "keyword: binary decision diagrams" "keyword: classical logic" "keyword: propositional logic" "keyword: garbage collection" "keyword: modal mu-calculus" "keyword: model checking" "keyword: symbolic model checking" "keyword: reflection" "category: Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date: 2002-11" ]
 authors: [ "Kumar Neeraj Verma <verma@lsv.ens-cachan.fr>" ]
 bug-reports: "https://github.com/coq-contribs/smc/issues"
-dev-repo: "https://github.com/coq-contribs/smc.git"
+dev-repo: "git+https://github.com/coq-contribs/smc.git"
+synopsis: "BDD based symbolic model checker for the modal mu-calculus"
+description: """
+Provides BDD algorithms, a symbolic model checker for the modal
+mu-calculus based on it, together with a garbage collector"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/smc/archive/v8.6.0.tar.gz"
+  checksum: "md5=c2bfecf4de6690b4dddd6b150f284a4a"
+}

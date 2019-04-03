@@ -1,6 +1,0 @@
-Regular Language Representations in the Constructive Type Theory of Coq
-
-We verify translations between different representations of regular
-languages: various forms of automata (deterministic, nondeterministic,
-one-way, two-way), regular expressions, and the logic WS1S. We also
-show various decidability results and closure properties.

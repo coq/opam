@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: ["Andrew W. Appel"
   "Lennart Beringer"
   "Sandrine Blazy"
@@ -13,7 +13,7 @@ authors: ["Andrew W. Appel"
   ]
 maintainer: "VST team"
 homepage: "http://vst.cs.princeton.edu/"
-dev-repo: "https://github.com/PrincetonUniversity/VST.git"
+dev-repo: "git+https://github.com/PrincetonUniversity/VST.git"
 bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 license: "https://raw.githubusercontent.com/PrincetonUniversity/VST/master/LICENSE"
 build: [
@@ -30,7 +30,15 @@ remove: [
 	["rm" "-fr" "%{lib}%/coq/user-contrib/VST"]
 	]
 depends: [
+  "ocaml"
   "coq" {>= "8.7.0"}
   "coq-compcert" {= "3.3.0"}
 ]
-tags: []
+synopsis: "Verified Software Toolchain"
+description:
+  "The software toolchain includes static analyzers to check assertions about your program; optimizing compilers to translate your program to machine language; operating systems and libraries to supply context for your program. The Verified Software Toolchain project assures with machine-checked proofs that the assertions claimed at the top of the toolchain really hold in the machine-language program, running in the operating-system context."
+flags: light-uninstall
+url {
+  src: "https://github.com/PrincetonUniversity/VST/archive/v2.2.tar.gz"
+  checksum: "md5=deb1d112fa078c380ed93f0f7e929481"
+}

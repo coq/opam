@@ -1,11 +1,11 @@
-opam-version: "1.2"
+opam-version: "2.0"
 synopsis: "A general-purpose alternative to Coq's standard library"
 maintainer: "francois.pottier@inria.fr"
 authors: [
   "Arthur Charguéraud <arthur.chargueraud@inria.fr>"
 ]
 homepage: "https://gitlab.inria.fr/charguer/tlc"
-dev-repo: "https://gitlab.inria.fr/charguer/tlc.git"
+dev-repo: "git+https://gitlab.inria.fr/charguer/tlc.git"
 bug-reports: "tlc-users@lists.gforge.inria.fr"
 license: "CeCILL-B"
 build: [
@@ -18,5 +18,10 @@ remove: [
   [make "uninstall"]
 ]
 depends: [
-  "coq" { >= "8.6" }
+  "ocaml"
+  "coq" {>= "8.6"}
 ]
+url {
+  src: "http://tlc.gforge.inria.fr/releases/tlc-20181116.tar.gz"
+  checksum: "md5=6029758d18f26907278e700dee7b750e"
+}

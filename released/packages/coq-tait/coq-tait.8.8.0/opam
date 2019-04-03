@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/tait"
 license: "LGPL 2.1"
@@ -6,9 +6,19 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Tait"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: Normalization" "keyword: Lambda-calculus" "keyword: Extraction" "keyword: Tait proof" "keyword: normalization by evalution" "keyword: type theory" "category: Mathematics/Logic/Type theory" "category: Computer Science/Lambda Calculi" "category: Miscellaneous/Extracted Programs/Type checking unification and normalization" "date: 2004" ]
 authors: [ "Pierre Letouzey" "Helmut Schwichtenberg" ]
 bug-reports: "https://github.com/coq-contribs/tait/issues"
-dev-repo: "https://github.com/coq-contribs/tait.git"
+dev-repo: "git+https://github.com/coq-contribs/tait.git"
+synopsis: "A normalization proof a la Tait for simply-typed lambda-calculus"
+description: """
+This is a formalization of Berger's TLCA'93 paper, with complete proofs
+of the axioms and an extraction of a normalization program close to N.B.E."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/tait/archive/v8.8.0.tar.gz"
+  checksum: "md5=80038b2f71848465399f174be642419f"
+}

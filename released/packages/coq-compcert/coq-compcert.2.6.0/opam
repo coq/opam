@@ -1,8 +1,7 @@
-opam-version: "1.2"
-author: "Xavier Leroy <xavier.leroy@inria.fr>"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "http://compcert.inria.fr/"
-dev-repo: "https://github.com/AbsInt/CompCert.git"
+dev-repo: "git+https://github.com/AbsInt/CompCert.git"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
 license: "INRIA Non-Commercial License Agreement"
 build: [
@@ -18,6 +17,14 @@ remove: [
   ["rm" "%{share}%/compcert.ini"]
 ]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
   "menhir" {>= "20151110" & < "20180530"}
 ]
+synopsis: "The CompCert C compiler"
+authors: "Xavier Leroy <xavier.leroy@inria.fr>"
+flags: light-uninstall
+url {
+  src: "https://github.com/AbsInt/CompCert/archive/v2.6.tar.gz"
+  checksum: "md5=e28b613fb2c1d4ae60f03b1ce4cf9be6"
+}

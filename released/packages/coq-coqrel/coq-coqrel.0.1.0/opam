@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "vzaliva@cmu.edu"
 homepage: "https://github.com/CertiKOS/coqrel"
 bug-reports: "https://github.com/CertiKOS/coqrel/issues"
-dev-repo: "https://github.com/CertiKOS/coqrel.git"
+dev-repo: "git+https://github.com/CertiKOS/coqrel.git"
 license: "MIT"
 authors: ["Jérémie Koenig"]
 build: [
@@ -14,9 +14,16 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/coqrel"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl2" & < "8.6~"}
 ]
 tags: [
   "keyword:relations"
   "category:Mathematics/Logic/Type theory"
 ]
+synopsis: "Binary logical relations library for the Coq proof assistant"
+flags: light-uninstall
+url {
+  src: "https://github.com/CertiKOS/coqrel/archive/v0.1.tar.gz"
+  checksum: "md5=d25871cf2dc6fec590431c642bca45b6"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/sudoku"
 license: "LGPL 2.1"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Sudoku"]
 depends: [
+  "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 tags: [ "keyword: sudoku" "keyword: puzzles" "keyword: Davis-Putnam" "category: Miscellaneous/Logical Puzzles and Entertainment" "date: 2006-02" ]
 authors: [ "Laurent Théry <thery@sophia.inria.fr> [http://www-sop.inria.fr/lemme/personnel/Laurent.Thery/me.html]" ]
 bug-reports: "https://github.com/coq-contribs/sudoku/issues"
-dev-repo: "https://github.com/coq-contribs/sudoku.git"
+dev-repo: "git+https://github.com/coq-contribs/sudoku.git"
+synopsis: "A certified Sudoku solver"
+description: """
+ftp://ftp-sop.inria.fr/lemme/Laurent.Thery/Sudoku.zip
+
+A formalisation of Sudoku in Coq. It implements a naive
+Davis-Putnam procedure to solve sudokus."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/sudoku/archive/v8.8.0.tar.gz"
+  checksum: "md5=1eb2565d4b3bc20e7e1a5a58e7aa5377"
+}

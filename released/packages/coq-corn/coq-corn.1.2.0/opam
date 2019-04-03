@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "b.a.w.spitters@gmail.com"
 homepage: "http://corn.cs.ru.nl/"
-dev-repo: "https://github.com/c-corn/corn.git"
+dev-repo: "git+https://github.com/c-corn/corn.git"
 bug-reports: "https://github.com/c-corn/corn/issues"
 doc: "http://corn.cs.ru.nl/"
 authors: "Corn development team"
@@ -15,6 +15,13 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoRN"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.8~"}
-  "coq-math-classes" {="1.0.7"}
+  "coq-math-classes" {= "1.0.7"}
 ]
+synopsis: "The CoRN library. A library for constructive analysis"
+flags: light-uninstall
+url {
+  src: "https://github.com/c-corn/corn/archive/1.2.0.zip"
+  checksum: "md5=00b0a8cc680146bbcb7933172fcbd04e"
+}

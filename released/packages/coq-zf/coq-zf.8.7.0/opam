@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/zf"
 license: "Unknown"
@@ -6,9 +6,16 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZF"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: Set Theory" "keyword: Zermelo-Fraenkel" "category: Mathematics/Logic/Set theory" ]
 authors: [ "Guillaume Alexandre" ]
 bug-reports: "https://github.com/coq-contribs/zf/issues"
-dev-repo: "https://github.com/coq-contribs/zf.git"
+dev-repo: "git+https://github.com/coq-contribs/zf.git"
+synopsis: "An axiomatisation of intuitionistic Zermelo-Fraenkel set theory"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/zf/archive/v8.7.0.tar.gz"
+  checksum: "md5=612b8eed1b02b04fa35f55be4c3b1171"
+}

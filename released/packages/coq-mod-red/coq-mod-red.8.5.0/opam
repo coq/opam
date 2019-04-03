@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/mod-red"
 license: "GNU Lesser General Public License"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ModRed"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:algorithms" "keyword:performance" "keyword:computer arithmetic" "keyword:modular reduction" "keyword:optimization" "category:Mathematics/Arithmetic and Number Theory/Miscellaneous" "date:December 2007; Updated in April 2009" ]
 authors: [ "Luc Rutten <>" ]
 bug-reports: "https://github.com/coq-contribs/mod-red/issues"
-dev-repo: "https://github.com/coq-contribs/mod-red.git"
+dev-repo: "git+https://github.com/coq-contribs/mod-red.git"
+synopsis: "Efficient Reduction of Large Integers by Small Moduli"
+description:
+  "Fast reduction of integers by moduli up to 2^(w-1), where w is a processor's word size."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/mod-red/archive/v8.5.0.tar.gz"
+  checksum: "md5=caba9cc89341dba2f041a70fbd5652a4"
+}

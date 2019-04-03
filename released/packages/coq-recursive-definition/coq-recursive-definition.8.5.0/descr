@@ -1,7 +1,0 @@
-ML-like recursive definitions.
-
-This module provides a facility to define recursive functions in
-an ML-like style, giving a fixpoint equation, a variant and a
-well-founded relation. A pure function is then generated, together with
-a theorem giving the fixpoint equation.
-THIS IS MAINLY A TEST CONTRIB, BEFORE INTEGRATION IN COQ.

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-cecoa"
 version: "1.0.0"
 maintainer: "David Nowak <david.nowak@univ-lille.fr>"
@@ -10,17 +10,20 @@ authors: [
   "David Nowak"
 ]
 homepage: "https://github.com/davidnowak/cecoa"
-dev-repo: "https://github.com/davidnowak/cecoa.git"
+dev-repo: "git+https://github.com/davidnowak/cecoa.git"
 bug-reports: "https://github.com/davidnowak/cecoa/issues"
 license: "CeCILL-A"
-build: [make]
-build-doc: [make "html"]
+build: [
+  [make]
+  [make "html"] {with-doc}
+]
 install: [make "install"]
 remove: [
   [make "uninstall"]
   ["rmdir" "%{lib}%/coq/user-contrib/Cecoa"]
 ]
 depends: [
+  "ocaml"
   "coq" {>= "8.6.0" & < "8.9.0~"}
   "coq-bellantonicook"
 ]
@@ -32,3 +35,9 @@ tags: [
   "logpath:Cecoa"
   "date:2018-09-10"
 ]
+synopsis:
+  "Implicit-complexity Coq library to prove that some programs are computable in polynomial time"
+url {
+  src: "https://github.com/davidnowak/cecoa/archive/v1.0.0.tar.gz"
+  checksum: "md5=123728805ad3e0a91c38d61f37d0b05d"
+}

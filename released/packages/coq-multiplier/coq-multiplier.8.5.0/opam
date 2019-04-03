@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/multiplier"
 license: "LGPL 2"
@@ -6,9 +6,16 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Multiplier"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:hardware verification" "keyword:circuit" "category:Computer Science/Architecture" "category:Miscellaneous/Extracted Programs/Hardware" ]
 authors: [ "Christine Paulin <>" ]
 bug-reports: "https://github.com/coq-contribs/multiplier/issues"
-dev-repo: "https://github.com/coq-contribs/multiplier.git"
+dev-repo: "git+https://github.com/coq-contribs/multiplier.git"
+synopsis: "Proof of a multiplier circuit"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/multiplier/archive/v8.5.0.tar.gz"
+  checksum: "md5=5dff8fca270a7aaf1752a9fa26efbb30"
+}

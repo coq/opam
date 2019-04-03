@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/higman-s"
 license: "LGPL"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HigmanS"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:higman's lemma" "keyword:well quasi ordering" "category:Mathematics/Combinatorics and Graph Theory" "date:2007-09-14" ]
 authors: [ "William Delobel <william.delobel@lif.univ-mrs.fr>" ]
 bug-reports: "https://github.com/coq-contribs/higman-s/issues"
-dev-repo: "https://github.com/coq-contribs/higman-s.git"
+dev-repo: "git+https://github.com/coq-contribs/higman-s.git"
+synopsis: "Higman's lemma on an unrestricted alphabet"
+description:
+  "This proof is more or less the proof given by Monika Seisenberger in \"An Inductive Version of Nash-Williams' Minimal-Bad-Sequence Argument for Higman's Lemma\"."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/higman-s/archive/v8.5.0.tar.gz"
+  checksum: "md5=3f304e5b60fe9760b55d0d3ed2ca8d51"
+}

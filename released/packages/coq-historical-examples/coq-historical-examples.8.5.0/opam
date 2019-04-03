@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/historical-examples"
 license: "LGPL 2"
@@ -6,9 +6,24 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HistoricalExamples"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:newman's lemma" "keyword:tarski's fixpoint theorem" "keyword:line formatting" "keyword:binary search paradigm" "keyword:square root approximation" "keyword:calculus of constructions" "keyword:history of coq" "category:Miscellaneous/Coq Use Examples" "date:" ]
 authors: [ "Gérard Huet <>" "Christine Paulin <>" ]
 bug-reports: "https://github.com/coq-contribs/historical-examples/issues"
-dev-repo: "https://github.com/coq-contribs/historical-examples.git"
+dev-repo: "git+https://github.com/coq-contribs/historical-examples.git"
+synopsis: "Historical examples developed in the (pure) Calculus of Constructions "
+description: """
+This is a collection of historical examples developed in
+system CoC that implemented Coquand's Calculus of Constructions.
+Newman.v and Tarski.v originate in version 1.10, Manna.v and
+Format.v are from version 4.3. Their evolution to the Calculus of
+Inductive Constructions (up to Coq V6.3) are in MannaCIC.v and
+FormatCIC.v. (Collection by Hugo Herbelin.)"""
+flags: light-uninstall
+url {
+  src:
+    "https://github.com/coq-contribs/historical-examples/archive/v8.5.0.tar.gz"
+  checksum: "md5=e6d195eb40a2a573d4a98fb68054dc86"
+}

@@ -1,7 +1,0 @@
-A small library to do epsilon - N reasonning.
-
-The package contains a package to reasoning with big enough objects
-(mostly natural numbers). This package is essentially for backward
-compatibility purposes as `bigenough` will be subsumed by the near
-tactics. The formalization is based on the Mathematical Components
-library.

@@ -1,2 +1,0 @@
-Utility functions for implementing Coq plugins, e.g. building natural
-numbers, interfacing with Ltac, etc.

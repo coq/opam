@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/circuits"
 license: "LGPL 2"
@@ -6,9 +6,19 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Circuits"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:hardware verification" "category:Computer Science/Architecture" ]
 authors: [ "Laurent Arditi <>" ]
 bug-reports: "https://github.com/coq-contribs/circuits/issues"
-dev-repo: "https://github.com/coq-contribs/circuits.git"
+dev-repo: "git+https://github.com/coq-contribs/circuits.git"
+synopsis: "Some proofs of hardware (adder, multiplier, memory block instruction)"
+description: """
+definition and proof of a combinatorial adder, a
+sequential multiplier, a memory block instruction"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/circuits/archive/v8.5.0.tar.gz"
+  checksum: "md5=97ce38a1a886dc21e7ac44e9168d39ae"
+}

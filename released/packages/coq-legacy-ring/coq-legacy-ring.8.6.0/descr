@@ -1,5 +1,0 @@
-The former implementation of the ring tactic.
-
-Tactics to decide equality and simplify polynomial
-expressions over an arbitrary commutative ring. This generalizes a
-previous tactics by Samuel Boutin.

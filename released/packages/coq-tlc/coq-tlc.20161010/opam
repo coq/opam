@@ -1,10 +1,10 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "francois.pottier@inria.fr"
 authors: [
   "Arthur Charguéraud <arthur.chargueraud@inria.fr>"
 ]
 homepage: "https://gforge.inria.fr/projects/tlc/"
-dev-repo: "https://scm.gforge.inria.fr/anonscm/git/tlc/tlc.git"
+dev-repo: "git+https://scm.gforge.inria.fr/anonscm/git/tlc/tlc.git"
 bug-reports: "tlc-users@lists.gforge.inria.fr"
 license: "CeCILL-B"
 build: [
@@ -17,5 +17,11 @@ remove: [
   [make "uninstall"]
 ]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
+synopsis: "A general-purpose library"
+url {
+  src: "http://gallium.inria.fr/~fpottier/tlc/tlc-20161010.tar.gz"
+  checksum: "md5=a94c07777f0760e109784e7223ebd1a4"
+}

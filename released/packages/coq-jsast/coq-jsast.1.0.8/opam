@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "jeromesimeon@me.com"
 homepage: "https://github.com/querycert/jsast"
-dev-repo: "https://github.com/querycert/jsast/tree/JsAst"
+dev-repo: "git+https://github.com/querycert/jsast/tree/JsAst"
 bug-reports: "https://github.com/querycert/jsast/issues"
 authors: [ "Jerome Simeon" ]
 license: "BSD-2-Clause"
@@ -13,6 +13,13 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/JsAst"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7.2"}
   "coq-flocq" {>= "2.6.0" & < "3.0~"}
 ]
+synopsis: "A minimal JavaScript syntax tree carved out of the JsCert project"
+flags: light-uninstall
+url {
+  src: "https://github.com/querycert/jsast/archive/v1.0.8.tar.gz"
+  checksum: "md5=f30a1e20108cedd28c1370aa068186ed"
+}

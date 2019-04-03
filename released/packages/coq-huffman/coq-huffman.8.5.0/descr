@@ -1,8 +1,0 @@
-A correctness proof of Huffman algorithm.
-
-This directory contains the proof of correctness of Huffman algorithm
-as described in:
-
-David A. Huffman,
-"A Method for the Construction of Minimum-Redundancy Codes,"
-Proc. IRE, pp. 1098-1101, September 1952.

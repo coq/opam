@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/search-trees"
 license: "LGPL 2.1"
@@ -6,9 +6,18 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SearchTrees"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: binary search trees" "category: Computer Science/Data Types and Data Structures" "category: Miscellaneous/Extracted Programs/Data structures" ]
 authors: [ "Pierre Castéran" ]
 bug-reports: "https://github.com/coq-contribs/search-trees/issues"
-dev-repo: "https://github.com/coq-contribs/search-trees.git"
+dev-repo: "git+https://github.com/coq-contribs/search-trees.git"
+synopsis: "Binary Search Trees"
+description:
+  "Algorithms for collecting, searching, inserting and deleting elements in binary search trees on nat"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/search-trees/archive/v8.7.0.tar.gz"
+  checksum: "md5=94756e40ee4dfa26c4d29f310efdc6db"
+}

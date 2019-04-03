@@ -1,8 +1,7 @@
-opam-version: "1.2"
-author: "Xavier Leroy <xavier.leroy@inria.fr>"
+opam-version: "2.0"
 maintainer: "Xavier Leroy <xavier.leroy@inria.fr>"
 homepage: "https://github.com/xavierleroy/coq2html"
-dev-repo: "https://github.com/xavierleroy/coq2html.git"
+dev-repo: "git+https://github.com/xavierleroy/coq2html.git"
 bug-reports: "https://github.com/xavierleroy/coq2html/issues"
 license: "GPL v2 or later"
 build: [
@@ -16,5 +15,13 @@ remove: [
 ]
 
 depends: [
+  "ocaml"
   "coq" {>= "8.5"}
 ]
+synopsis: "Generates HTML documentation from Coq source files.  Alternative to coqdoc"
+authors: "Xavier Leroy <xavier.leroy@inria.fr>"
+flags: light-uninstall
+url {
+  src: "https://github.com/xavierleroy/coq2html/archive/v1.0.tar.gz"
+  checksum: "md5=33d6c09ba1015b3181b2d46c56f9759b"
+}

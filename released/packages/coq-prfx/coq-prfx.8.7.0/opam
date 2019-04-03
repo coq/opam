@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/prfx"
 license: "Unknown"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Prfx"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: first-order logic" "keyword: natural deduction" "keyword: reflection" "keyword: proof terms" "keyword: de bruijn indices" "keyword: permutative conversions" "category: Mathematics/Logic/Foundations" "date: 15 April 2005" ]
 authors: [ "Dimitri Hendriks <hendriks@cs.ru.nl> [http://www.cs.ru.nl/~hendriks/]" ]
 bug-reports: "https://github.com/coq-contribs/prfx/issues"
-dev-repo: "https://github.com/coq-contribs/prfx.git"
+dev-repo: "git+https://github.com/coq-contribs/prfx.git"
+synopsis: "Proof Reflection in Coq"
+description: """
+http://www.cs.ru.nl/~hendriks/coq/prfx/
+
+A formalisation of natural deduction for first-order
+logic with explicit proof terms. Read README."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/prfx/archive/v8.7.0.tar.gz"
+  checksum: "md5=7afc919cb8aece8f2cd7adb9b974421f"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/lc"
 license: "LGPL 2"
@@ -6,9 +6,24 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/lc"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:module" "keyword:monads" "keyword:category theory" "keyword:lambda calculus" "keyword:higher order syntax" "category:Computer Science/Lambda Calculi" "date:2008-09-9" ]
 authors: [ "André Hirschowitz <ah@math.unice.fr>" "Marco Maggesi <maggesi@math.unifi.it>" ]
 bug-reports: "https://github.com/coq-contribs/lc/issues"
-dev-repo: "https://github.com/coq-contribs/lc.git"
+dev-repo: "git+https://github.com/coq-contribs/lc.git"
+synopsis: "Modules over monads and lambda-calculi"
+description: """
+We define a notion of module over a monad and use it to
+propose a new definition (or semantics) for abstract
+syntax (with binding constructions). Using our notion of
+module, we build a category of `exponential' monads,
+which can be understood as the category of
+lambda-calculi, and prove that it has an initial object
+(the pure untyped lambda-calculus)."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/lc/archive/v8.5.0.tar.gz"
+  checksum: "md5=a0d4fc436d446e920d3fdc42893018d4"
+}

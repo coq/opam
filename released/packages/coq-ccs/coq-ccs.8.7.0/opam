@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/ccs"
 license: "Unknown"
@@ -6,9 +6,21 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CCS"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: Labelled Transitions Systems" "keyword: Process Algebra" "keyword: Calculus of Concurrent Process (CCS)" "category: Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" ]
 authors: [ "Solange Coupet-Grimal" ]
 bug-reports: "https://github.com/coq-contribs/ccs/issues"
-dev-repo: "https://github.com/coq-contribs/ccs.git"
+dev-repo: "git+https://github.com/coq-contribs/ccs.git"
+synopsis: "Equivalence notions on labelled transitions systems"
+description: """
+We give the specification of three different notions of equivalence
+classically defined on labelled transitions systems underlying the
+theories of process algebra (and particularly CCS). The fundamentals
+properties of these equivalence notions are proven."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/ccs/archive/v8.7.0.tar.gz"
+  checksum: "md5=a13fbede8302bc09f1d6d8d79c53c378"
+}

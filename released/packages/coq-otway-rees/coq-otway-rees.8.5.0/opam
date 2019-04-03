@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/otway-rees"
 license: "Proprietary"
@@ -6,9 +6,20 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/OtwayRees"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:otway rees" "keyword:protocols" "keyword:cryptography" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" ]
 authors: [ "Dominique Bolignano <>" "Valérie Ménissier-Morain <>" ]
 bug-reports: "https://github.com/coq-contribs/otway-rees/issues"
-dev-repo: "https://github.com/coq-contribs/otway-rees.git"
+dev-repo: "git+https://github.com/coq-contribs/otway-rees.git"
+synopsis: "Otway-Rees cryptographic protocol"
+description: """
+A description and a proof of correctness for
+the Otway-Rees cryptographic protocol, usually used as an example for
+formalisation of such protocols."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/otway-rees/archive/v8.5.0.tar.gz"
+  checksum: "md5=f7837476dd70663f035427486317a9f5"
+}

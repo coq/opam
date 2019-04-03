@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/axiomatic-abp"
 license: "Unknown"
@@ -6,9 +6,19 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/AxiomaticABP"]
 depends: [
+  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [ "keyword: Alternating Bit Protocol" "keyword: Process Calculi" "keyword: reactive systems" "category: Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" ]
 authors: [ "Jan Friso Groote" ]
 bug-reports: "https://github.com/coq-contribs/axiomatic-abp/issues"
-dev-repo: "https://github.com/coq-contribs/axiomatic-abp.git"
+dev-repo: "git+https://github.com/coq-contribs/axiomatic-abp.git"
+synopsis: "Verification of an axiomatisation of the Alternating Bit Protocol"
+description: """
+The Alternating Bit Protocol is expressed in an axiomatized calculi of process.
+Correctness is proven."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/axiomatic-abp/archive/v8.7.0.tar.gz"
+  checksum: "md5=a6310cce3cdc08226943e5e954cb3cd1"
+}

@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/orb-stab"
 license: "GNU Lesser Public License"
@@ -6,6 +6,7 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/OrbStab"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
   "coq-algebra" {>= "8.6" & < "8.7~"}
   "coq-lin-alg" {>= "8.6" & < "8.7~"}
@@ -13,4 +14,12 @@ depends: [
 tags: [ "keyword: orbit" "keyword: stabilizer" "keyword: inclusion-exclusion" "category: Mathematics/Algebra" "date: 2008-01-5" ]
 authors: [ "Robert Kam <rkam2001@hotmail.com> [none]" ]
 bug-reports: "https://github.com/coq-contribs/orb-stab/issues"
-dev-repo: "https://github.com/coq-contribs/orb-stab.git"
+dev-repo: "git+https://github.com/coq-contribs/orb-stab.git"
+synopsis: "Finite orbit-stabilizer theorem"
+description:
+  "Finite orbit-stabilizer theorem, based on Rahbar Virk's lecture notes. A large portion of the work was a simplified version of the inclusion-exclusion principle. Requires Loic Pottier's Algebra contribution, and Jasper Stein's Linear Algebra contribution."
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/orb-stab/archive/v8.6.0.tar.gz"
+  checksum: "md5=03a7499162de42a38e885a77a32cb7e0"
+}

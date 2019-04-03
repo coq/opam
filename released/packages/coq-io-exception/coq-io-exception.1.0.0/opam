@@ -1,7 +1,7 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "dev@clarus.me"
 homepage: "https://github.com/clarus/io-exception"
-dev-repo: "https://github.com/clarus/io-exception.git"
+dev-repo: "git+https://github.com/clarus/io-exception.git"
 bug-reports: "https://github.com/clarus/io-exception/issues"
 authors: ["Guillaume Claret"]
 license: "MIT"
@@ -14,8 +14,15 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/Exception.vo"]
 depends: [
+  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
   "coq-function-ninjas"
   "coq-io" {= "3.0.0"}
   "coq-io-list"
 ]
+synopsis: "Abstract your errors into exceptions"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-io/exception/archive/1.0.0.tar.gz"
+  checksum: "md5=1057b5926d76621b83427c1b016d0005"
+}

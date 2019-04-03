@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
 homepage: "https://github.com/coq-contribs/rem"
 license: "LGPL 2.1"
@@ -6,9 +6,17 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Rem"]
 depends: [
+  "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: Rem Theorem" "keyword: Baire space" "category: Mathematics/Real Calculus and Topology" ]
 authors: [ "Henk Barendregt" ]
 bug-reports: "https://github.com/coq-contribs/rem/issues"
-dev-repo: "https://github.com/coq-contribs/rem.git"
+dev-repo: "git+https://github.com/coq-contribs/rem.git"
+synopsis: "Rem Theorem in Baire space"
+description: "A formalisation of Rem Theorem in Baire space"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/rem/archive/v8.6.0.tar.gz"
+  checksum: "md5=4ca454ebcb292bae250edc73252ac7ca"
+}

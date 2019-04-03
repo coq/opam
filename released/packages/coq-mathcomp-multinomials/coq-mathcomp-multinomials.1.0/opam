@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "pierre-yves@strub.nu"
 homepage: "https://github.com/math-comp/multinomials-ssr"
 bug-reports: "https://github.com/math-comp/multinomials-ssr/issues"
-dev-repo: "https://github.com/math-comp/multinomials.git"
+dev-repo: "git+https://github.com/math-comp/multinomials.git"
 license: "CeCILL-B"
 authors: ["Pierre-Yves Strub"]
 build: [
@@ -14,9 +14,10 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SsrMultinomials"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.8~"}
   "coq-mathcomp-ssreflect" {>= "1.6" & < "1.8.0~"}
-  "coq-mathcomp-algebra"   {>= "1.6" & < "1.8.0~"}
+  "coq-mathcomp-algebra" {>= "1.6" & < "1.8.0~"}
 ]
 tags: [
   "keyword:multinomials"
@@ -26,4 +27,9 @@ tags: [
   "date:2016"
   "logpath:SsrMultinomials"
 ]
-synopsis: "A multivariate polynomial library for the Mathematical Components Library."
+synopsis: "A multivariate polynomial library for the Mathematical Components Library"
+flags: light-uninstall
+url {
+  src: "https://github.com/math-comp/multinomials/archive/1.0.tar.gz"
+  checksum: "md5=2af0c4fad88969e70bcf60ba988f4e08"
+}

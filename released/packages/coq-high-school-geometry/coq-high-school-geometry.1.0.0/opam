@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "thery@sophia.inria.fr"
 homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/high-school-geometry.git;a=tree"
 license: "LGPL 2"
@@ -9,7 +9,17 @@ build: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HighSchoolGeometry"]
 depends: [
+  "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [ "keyword:geometry" "keyword:teaching" "keyword:high school" "category:Mathematics/Geometry/General" "date:2004-01" ]
 authors: [ "Frédérique Guilhot <Frederique.Guilhot@sophia.inria.fr>" ]
+synopsis: "Geometry for French high-school"
+description: """
+This library is dedicated to high-shool geometry teaching.
+The axiomatisation for affine euclidean space is in a non analytic setting."""
+flags: light-uninstall
+url {
+  src: "https://github.com/thery/HighSchoolGeometry/archive/v1.0.0.tar.gz"
+  checksum: "md5=cf03f84a71cee31d4fe870fa567cc3dd"
+}

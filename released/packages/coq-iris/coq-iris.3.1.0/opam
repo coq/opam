@@ -1,16 +1,24 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "coq-iris"
 maintainer: "Ralf Jung <jung@mpi-sws.org>"
 authors: "The Iris Team"
 homepage: "http://iris-project.org/"
 bug-reports: "https://gitlab.mpi-sws.org/FP/iris-coq/issues"
 license: "BSD"
-dev-repo: "https://gitlab.mpi-sws.org/FP/iris-coq.git"
+dev-repo: "git+https://gitlab.mpi-sws.org/FP/iris-coq.git"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/iris"]
 depends: [
-  "coq" { (>= "8.6.1" & < "8.9~") | (= "dev") }
-  "coq-mathcomp-ssreflect" { (>= "1.6.1" & < "1.8~") | (= "dev") }
-  "coq-stdpp" { (= "1.1.0") | (= "dev") }
+  "ocaml"
+  "coq" {(>= "8.6.1" & < "8.9~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {(>= "1.6.1" & < "1.8~") | (= "dev")}
+  "coq-stdpp" {(= "1.1.0") | (= "dev")}
 ]
+synopsis: "This is the Coq development of the Iris Project"
+flags: light-uninstall
+url {
+  src:
+    "https://gitlab.mpi-sws.org/iris/iris/repository/iris-3.1.0/archive.tar.gz"
+  checksum: "md5=3e280893c0189141bb681cc87b7a9401"
+}
