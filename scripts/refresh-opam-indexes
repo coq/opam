@@ -10,21 +10,11 @@ notify() {
 echo "OPAM $1 on repo $2 failed:"; cat $LOG
 }
 
-OPAM1=opam
-OPAM2=/usr/local/bin/opam2
-OPAM=$OPAM1
-OPAMCHECKOPTS=
+OPAM=/usr/local/bin/opam2
+OPAMCHECKOPTS=--cycles
 
 for repo in $@; do
         cd $repo
-        if [ "$repo" = "core-dev" -o "$repo" = "extra-dev"  ];
-        then
-            OPAM=$OPAM2
-            OPAMCHECKOPTS=--cycles
-        else
-            OPAM=$OPAM1
-            OPAMCHECKOPTS=
-        fi
         $OPAM admin check $OPAMCHECKOPTS > $LOG 2>&1
         if [ "$?" != "0" ]; then notify check $repo;
         else
