@@ -19,13 +19,7 @@ for repo in $@; do
         if [ "$?" != "0" ]; then notify check $repo;
         else
                 $OPAM admin make > $LOG 2>&1
-                if [ "$?" != "0" ]; then notify make $repo;
-                else
-                        # opam admin make does not follow symlinks
-                        #   https://github.com/ocaml/opam/pull/2138
-                        # we rebuild the index by hand
-                        tar czhf index.tar.gz packages/ repo
-                fi
+                if [ "$?" != "0" ]; then notify make $repo; fi
         fi
         cd ..
 done
