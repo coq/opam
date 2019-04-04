@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "coq-itree"
-version: "dev"
+version: "1.0.0"
 maintainer: "Li-yao Xia <lysxia@gmail.com>"
 synopsis: "A Library for Representing Recursive and Impure Programs in Coq"
 
@@ -16,7 +16,7 @@ run-test: [ make "-j%{jobs}%" "all" ]
 
 depends: [
   "coq" {>= "8.8" & < "8.10~"}
-  "coq-ext-lib"
+  "coq-ext-lib" {>= "0.10.0" & < "0.10.2"}
   "coq-paco" {>= "2.1.0" & < "2.2"}
   "ocamlbuild" {with-test}
 ]
@@ -33,5 +33,6 @@ authors: [
 tags: "org:deepspec"
 flags: light-uninstall
 url {
-  src: "git+https://github.com/DeepSpec/InteractionTrees"
+  http: "https://github.com/DeepSpec/InteractionTrees/archive/1.0.0.tar.gz"
+  checksum: "ad9859b8e0702703f86347e01840b1af"
 }
