@@ -6,19 +6,20 @@ maintainer: "FCSL <fcsl@software.imdea.org>"
 homepage: "http://software.imdea.org/fcsl/"
 bug-reports: "https://github.com/imdea-software/fcsl-pcm/issues"
 dev-repo: "git+https://github.com/imdea-software/fcsl-pcm.git"
-license: "Apache 2.0"
+license: "Apache-2.0"
 
 build: [ make "-j%{jobs}%" ]
 install: [ make "install" ]
-remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/fcsl'" ]
 depends: [
   "ocaml"
-  "coq" {>= "8.7" & < "8.10~"}
-  "coq-mathcomp-ssreflect" {>= "1.6.2" & <= "1.7.0"}
+  "coq" {(>= "8.7" & < "8.10~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {>= "1.6.2" & < "1.8~"}
 ]
 tags: [
   "keyword:separation logic"
   "keyword:partial commutative monoid"
+  "category:Computer Science/Data Types and Data Structures"
+  "logpath:fcsl"
 ]
 authors: [
   "Aleksandar Nanevski"
@@ -36,5 +37,5 @@ This library relies on extensionality axioms: propositional and
 functional extentionality."""
 url {
   src: "https://github.com/imdea-software/fcsl-pcm/archive/v1.0.0.tar.gz"
-  checksum: "md5=8ea647b98ab222ae18c329bc75a86827"
+  checksum: "sha256=2c47a61af567fd9d53a3b9d36bec3d422173d54516b847e0bae4103951c90b41"
 }
