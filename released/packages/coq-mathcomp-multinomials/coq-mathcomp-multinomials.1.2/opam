@@ -1,4 +1,5 @@
 opam-version: "2.0"
+name: "coq-mathcomp-multinomials"
 maintainer: "pierre-yves@strub.nu"
 homepage: "https://github.com/math-comp/multinomials-ssr"
 bug-reports: "https://github.com/math-comp/multinomials-ssr/issues"
@@ -30,5 +31,6 @@ tags: [
 synopsis: "A multivariate polynomial library for the Mathematical Components Library"
 flags: light-uninstall
 url {
-  src: "git+https://github.com/math-comp/multinomials.git"
+  src: "https://github.com/math-comp/multinomials/archive/1.2.tar.gz"
+  checksum: "sha256=2422aac5dd59589e566bbd5c13030437680183a553f95f6648469b80ea77af71"
 }
