@@ -1,6 +1,8 @@
-opam-version: "1.2"
-maintainer: "paco@sf.snu.ac.kr"
+opam-version: "2.0"
+name: "coq-paco"
 version: "3.0.0"
+maintainer: "paco@sf.snu.ac.kr"
+synopsis: "Coq library implementing parameterized coinduction"
 homepage: "https://github.com/snu-sf/paco/"
 dev-repo: "git+https://github.com/snu-sf/paco.git"
 bug-reports: "https://github.com/snu-sf/paco/issues/"
@@ -9,19 +11,15 @@ authors: [
   "Georg Neis <neis@mpi-sws.org>"
   "Derek Dreyer <dreyer@mpi-sws.org>"
   "Viktor Vafeiadis <viktor@mpi-sws.org>"
+  "Minki Cho <minki.cho@sf.snu.ac.kr>"
 ]
 license: "BSD-3"
-build: [
-  [make "-C" "src" "all" "-j%{jobs}%"]
-]
-install: [
-  [make "-C" "src" "-f" "Makefile.coq" "install"]
-]
+build: [make "-C" "src" "all" "-j%{jobs}%"]
+install: [make "-C" "src" "-f" "Makefile.coq" "install"]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Paco"]
 depends: [
   "coq" {>= "8.5" & < "8.10"}
 ]
-synopsis: "Coq library implementing parameterized coinduction"
 tags: [
   "date:2019-03-25"
 
@@ -32,3 +30,7 @@ tags: [
   "keyword:simulation"
   "keyword:parameterized greatest fixed point"
 ]
+url {
+  http: "https://github.com/snu-sf/paco/archive/v3.0.0.tar.gz"
+  checksum: "3d67b9f416d61263e26f296e6fc4f564"
+}
