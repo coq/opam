@@ -18,7 +18,7 @@ depends: [
 ]
 synopsis: "An enhanced unification algorithm for Coq"
 flags: light-uninstall
-url: {
+url {
   src: "https://github.com/unicoq/unicoq/archive/v1.3-8.10.tar.gz"
   checksum: "md5=06f7a0abf3ba2de4467160d5872bb7b6"
 }
