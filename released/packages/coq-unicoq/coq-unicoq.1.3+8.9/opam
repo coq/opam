@@ -12,7 +12,6 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Unicoq"]
 depends: [
   "ocaml"
   "coq" {>= "8.9.0" & < "8.10~"}
