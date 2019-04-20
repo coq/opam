@@ -11,9 +11,6 @@ build: [
 install: [
   [make "install"]
 ]
-remove: [
-  ["rm" "-R" "%{lib}%/coq/user-contrib/LtacIter"]
-]
 depends: [
   "ocaml"
   "coq" {>= "8.8" & < "8.10~"}
@@ -21,7 +18,7 @@ depends: [
 synopsis:
   "Access hint databases from tactics"
 description: "Provides tactics for performing various forms of iteration over hypotheses, hint databases, and other collections."
-flags: light-uninstall
+
 url {
   src: "https://github.com/gmalecha/coq-ltac-iter/archive/1.1.0.tar.gz"
   checksum: "md5=588a048281d2e05c33abe76bfeb95422"
