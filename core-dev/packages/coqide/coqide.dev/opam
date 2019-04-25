@@ -10,8 +10,7 @@ depends: [
   "ocaml" {>= "4.02.3"}
   "camlp5"
   "coq" {= version}
-  "lablgtk"
-  "conf-gtksourceview"
+  "lablgtk3-sourceview3"
 ]
 build: [
   [
