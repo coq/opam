@@ -35,15 +35,22 @@ before_script:
       - log/
     expire_in: 1 week
 
+    
 opam-lint:4.02.3:
   extends: .opam-lint
   variables:
     COMPILER: "4.02.3"
 
-opam-lint:4.06.0:
+opam-lint:4.05.0:
   extends: .opam-lint
   variables:
-    COMPILER: "4.06.0"
+    COMPILER: "4.05.0"
+
+opam-lint:4.07.1:
+  extends: .opam-lint
+  variables:
+    COMPILER: "4.07.1"
+
 
 opam-build:4.02.3:
   extends: .opam-build
@@ -52,12 +59,20 @@ opam-build:4.02.3:
   except:
     - web
 
-opam-build:4.06.0:
+opam-build:4.05.0:
   extends: .opam-build
   variables:
-    COMPILER: "4.06.0"
+    COMPILER: "4.05.0"
   except:
     - web
+
+opam-build:4.07.1:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.07.1"
+  except:
+    - web
+
 
 opam-build-no-timeout:4.02.3:
   extends: .opam-build
@@ -68,10 +83,19 @@ opam-build-no-timeout:4.02.3:
   tags:
     - no-timeout
 
-opam-build-no-timeout:4.06.0:
+opam-build-no-timeout:4.05.0:
   extends: .opam-build
   variables:
-    COMPILER: "4.06.0"
+    COMPILER: "4.05.0"
+  only:
+    - web
+  tags:
+    - no-timeout
+
+opam-build-no-timeout:4.07.1:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.07.1"
   only:
     - web
   tags:
