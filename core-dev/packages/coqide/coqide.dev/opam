@@ -9,9 +9,8 @@ license: "LGPL-2.1"
 depends: [
   "ocaml" {>= "4.02.3"}
   "camlp5"
-  "coq" {= "dev"}
-  "lablgtk"
-  "conf-gtksourceview"
+  "coq" {= version}
+  "lablgtk3-sourceview3"
 ]
 build: [
   [
@@ -22,7 +21,6 @@ build: [
     "-docdir" doc
     "-libdir" "%{lib}%/coq"
     "-datadir" "%{share}%/coq"
-    "-camlp5dir" "%{lib}%/camlp5"
   ]
   [make "-j%{jobs}%" "coqide-files"]
   [make "-j%{jobs}%" "coqide-opt"]
