@@ -8,7 +8,6 @@ license: "BSD"
 dev-repo: "git+https://gitlab.mpi-sws.org/iris/stdpp.git"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
-remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/stdpp"]
 depends: [
   "coq" {(>= "8.7" & < "8.10~") | (= "dev")}
 ]
@@ -32,7 +31,7 @@ The key features of this library are as follows:
   for proving compatibility of functions with respect to relations, and a solver
   `set_solver` for goals involving set operations.
 - It is entirely dependency- and axiom-free."""
-flags: light-uninstall
+
 url {
   src:
     "https://gitlab.mpi-sws.org/iris/stdpp/repository/coq-stdpp-1.2.0/archive.tar.gz"
