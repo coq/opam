@@ -18,7 +18,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MathClasses"]
 depends: [
   "ocaml"
-  "coq" {>= "8.6"}
+  "coq" {= "8.6"}
   "coq-bignums" {>= "8.6"}
 ]
 synopsis: "A library of abstract interfaces for mathematical structures in Coq"
