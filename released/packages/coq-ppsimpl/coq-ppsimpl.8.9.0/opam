@@ -13,7 +13,6 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PP"]
 depends: [
   "ocaml"
   "coq" {>= "8.9" & < "8.10~"}
@@ -27,7 +26,6 @@ tags: [
   "logpath:PP"
 ]
 synopsis: "Ppsimpl is a reflexive tactic for canonising (arithmetic) goals"
-flags: light-uninstall
 url {
   src: "https://gforge.inria.fr/frs/download.php/file/38014/ppsimpl-03-05-2019.tar.gz"
     checksum: "md5=ced4651a2fc70c0f146cde6eb722cd77"
