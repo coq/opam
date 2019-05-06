@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "coq-quickchick"
 version: "dev"
 maintainer: "llamp@seas.upenn.edu"
 
@@ -10,8 +9,6 @@ license: "MIT"
 
 build: [ make "-j%{jobs}%" ]
 install: [ make "install" ]
-remove: [ [ "rm" "-rf" "%{lib}%/coq/user-contrib/QuickChick" ]
-          [ "rm" "%{bin}%/quickChick"] ]
 
 depends: [
   "ocaml" {>= "4.05.0"}
@@ -34,7 +31,11 @@ authors: [
   "Yishuai Li <>"
 ]
 synopsis: "QuickChick is a random property-based testing library for Coq."
-flags: light-uninstall
+tags: [
+  "keyword:extraction"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:QuickChick"
+]
 url {
   src: "git+https://github.com/QuickChick/QuickChick#master"
 }
