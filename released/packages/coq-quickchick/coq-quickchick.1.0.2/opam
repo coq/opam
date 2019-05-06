@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "coq-quickchick"
 version: "1.0.2"
 maintainer: "llamp@seas.upenn.edu"
 
@@ -10,8 +9,6 @@ license: "MIT"
 
 build: [ make "-j%{jobs}%" ]
 install: [ make "install" ]
-remove: [ [ "rm" "-rf" "%{lib}%/coq/user-contrib/QuickChick" ]
-          [ "rm" "%{bin}%/quickChick"] ]
 
 depends: [
   "ocaml" {>= "4.04.0"}
@@ -34,7 +31,11 @@ authors: [
   "Li-Yao Xia <>"
   "Yishuai Li <>"
 ]
-flags: light-uninstall
+tags: [
+  "keyword:extraction"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:QuickChick"
+]
 url {
   src: "https://github.com/QuickChick/QuickChick/archive/v1.0.2.tar.gz"
   checksum: "md5=9b2f0b0ae00cda11c4131cd3dc5c8a08"
