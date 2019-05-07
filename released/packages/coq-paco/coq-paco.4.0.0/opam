@@ -18,7 +18,7 @@ build: [make "-C" "src" "all" "-j%{jobs}%"]
 install: [make "-C" "src" "-f" "Makefile.coq" "install"]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Paco"]
 depends: [
-  "coq" {>= "8.5" & < "8.10"}
+  "coq" {>= "8.6" & < "8.10"}
 ]
 tags: [
   "date:2019-04-30"
