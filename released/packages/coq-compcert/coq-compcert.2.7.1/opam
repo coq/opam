@@ -36,7 +36,7 @@ patches: "fix-coq-version.patch"
 synopsis: "The CompCert C compiler"
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
 flags: light-uninstall
-extra-files: ["fix-coq-version.patch" "md5=5b955f6f0c955b6f5b39ff661fa71a60"]
+extra-files: ["fix-coq-version.patch" "md5=00fcc55512084b421a97922fb1eb4422"]
 url {
   src: "https://github.com/AbsInt/CompCert/archive/v2.7.1.tar.gz"
   checksum: "md5=e1a36bad26870384912de4b4e9eb43b0"
