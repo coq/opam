@@ -8,9 +8,9 @@ license: "MIT"
 build: [
   ["sh" "-c" "cd CoqOfOCaml && ./configure.sh"]
   ["sh" "-c" "cd CoqOfOCaml && make -j%{jobs}%"]
-  ["sh" "-c" "cd CoqOfOCaml && make install"]
   [make "-j%{jobs}%"]
 ]
+install: ["sh" "-c" "cd CoqOfOCaml && make install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoqOfOCaml"]
 depends: [
   "ocaml" {>= "4.02.0" & < "4.03.0"}

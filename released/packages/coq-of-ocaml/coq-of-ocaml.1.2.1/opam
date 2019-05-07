@@ -8,9 +8,9 @@ license: "MIT"
 build: [
   ["sh" "-c" "cd OCaml && ./configure.sh"]
   ["sh" "-c" "cd OCaml && make -j%{jobs}%"]
-  ["sh" "-c" "cd OCaml && make install"]
   [make "-j%{jobs}%"]
 ]
+install: ["sh" "-c" "cd OCaml && make install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/OCaml"]
 depends: [
   "ocaml" {>= "4.05.0" & < "4.06.0"}
