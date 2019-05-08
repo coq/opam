@@ -7,10 +7,10 @@ authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
   ["sh" "-c" "cd OCaml && ./configure.sh"]
-  ["sh" "-c" "cd OCaml && make -j%{jobs}%"]
+  [make "-C" "OCaml" "-j%{jobs}%"]
   [make "-j%{jobs}%"]
 ]
-install: ["sh" "-c" "cd OCaml && make install"]
+install: [make "-C" "OCaml" "install"]
 depends: [
   "conf-ruby" {build}
   "coq" {>= "8.5"}

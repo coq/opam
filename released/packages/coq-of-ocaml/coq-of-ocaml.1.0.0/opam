@@ -7,10 +7,10 @@ authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
   ["sh" "-c" "cd CoqOfOCaml && ./configure.sh"]
-  ["sh" "-c" "cd CoqOfOCaml && make -j%{jobs}%"]
+  [make "-C" "CoqOfOCaml" "-j%{jobs}%"]
   [make "-j%{jobs}%"]
 ]
-install: ["sh" "-c" "cd CoqOfOCaml && make install"]
+install: [make "-C" "CoqOfOCaml" "install"]
 depends: [
   "conf-ruby" {build}
   "coq" {>= "8.4.5" & < "8.6"}
