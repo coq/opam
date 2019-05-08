@@ -17,6 +17,11 @@ depends: [
   "ocamlfind"
   "num"
 ]
+tags: [
+  "date:2015-04-28"
+  "keyword:effects"
+  "keyword:extraction"
+]
 synopsis: "Extraction to OCaml of system effects"
 url {
   src: "https://github.com/coq-io/system-ocaml/archive/2.3.0.tar.gz"

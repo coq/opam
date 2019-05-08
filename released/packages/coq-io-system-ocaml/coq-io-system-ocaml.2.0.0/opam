@@ -16,6 +16,11 @@ depends: [
   "ocaml" {>= "4.00.0" & < "4.06.0"}
   "ocamlfind"
 ]
+tags: [
+  "date:2015-03-03"
+  "keyword:effects"
+  "keyword:extraction"
+]
 synopsis: "Coq system effects for extraction to OCaml"
 url {
   src: "https://github.com/coq-io/system-ocaml/archive/2.0.0.tar.gz"
