@@ -12,10 +12,11 @@ build: [
 ]
 install: ["sh" "-c" "cd CoqOfOCaml && make install"]
 depends: [
-  "ocaml" {>= "4.02.0" & < "4.03.0"}
+  "conf-ruby" {build}
   "coq" {>= "8.4.5" & < "8.6"}
-  "yojson"
+  "ocaml" {>= "4.02.0" & < "4.03.0"}
   "smart-print"
+  "yojson"
 ]
 synopsis: "Compile OCaml to Coq"
 extra-files: ["coq-of-ocaml.install" "md5=aaa1f52ec40bedefd2674f46a44cd578"]
