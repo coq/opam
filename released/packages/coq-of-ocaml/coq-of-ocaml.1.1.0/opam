@@ -18,6 +18,11 @@ depends: [
   "smart-print"
   "yojson"
 ]
+tags: [
+  "date:2015-08-03"
+  "keyword:compilation"
+  "keyword:ocaml"
+]
 synopsis: "Compile OCaml to Coq"
 extra-files: ["coq-of-ocaml.install" "md5=aaa1f52ec40bedefd2674f46a44cd578"]
 url {
