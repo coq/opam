@@ -1,0 +1,7 @@
+--- a/configure	2019-05-07 16:35:09.064932395 +0200
++++ b/configure	2019-05-07 16:35:04.388932601 +0200
+@@ -273,3 +273,3 @@ coq_ver=$(${COQBIN}coqc -v 2>/dev/null |
+ case "$coq_ver" in
+-  8.5pl2)
++  8.5pl2|8.5pl3)
+         echo "version $coq_ver -- good!";;
