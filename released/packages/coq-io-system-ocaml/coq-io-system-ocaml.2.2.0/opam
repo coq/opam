@@ -12,9 +12,10 @@ install: [
   [make "install"]
 ]
 depends: [
+  "lwt"
   "ocaml" {>= "4.00.0"}
   "ocamlfind"
-  "lwt"
+  "num"
 ]
 synopsis: "Extraction to OCaml of system effects"
 url {

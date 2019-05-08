@@ -12,9 +12,10 @@ install: [
   [make "install"]
 ]
 depends: [
+  "lwt"
+  "num"
   "ocaml" {>= "4.00.0"}
   "ocamlfind"
-  "lwt"
 ]
 synopsis: "Coq system effects for extraction to OCaml"
 url {
