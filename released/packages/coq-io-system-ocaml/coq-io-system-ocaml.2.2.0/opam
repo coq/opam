@@ -1,0 +1,29 @@
+opam-version: "2.0"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/io-system-ocaml"
+dev-repo: "git+https://github.com/clarus/io-system-ocaml.git"
+bug-reports: "https://github.com/clarus/io-system-ocaml/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "lwt"
+  "ocaml" {>= "4.00.0" & < "4.06.0"}
+  "ocamlfind"
+  "num"
+]
+tags: [
+  "date:2015-03-19"
+  "keyword:effects"
+  "keyword:extraction"
+]
+synopsis: "Extraction to OCaml of system effects"
+url {
+  src: "https://github.com/coq-io/system-ocaml/archive/2.2.0.tar.gz"
+  checksum: "md5=14ca13ea6480df063255ebcadc0d4ca6"
+}
