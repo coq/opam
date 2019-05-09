@@ -6,7 +6,10 @@ license: "LGPL 3"
 build: [
   ["./autogen.sh"]
   ["./configure"]
-  ["./remake" "-j%{jobs}%"]
+  ["find" "src" "-name" "*.v" "-fprint" "vfiles"]
+  ["sh" "-c" "cat _CoqProject vfiles > _CoqProject.full"] # how else to add to a file in opam?
+  ["coq_makefile" "-f" "_CoqProject.full" "-o" "Makefile"]
+  ["%{make}%" "-j" "%{jobs}%"]
 ]
 install: ["./remake" "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Flocq"]
