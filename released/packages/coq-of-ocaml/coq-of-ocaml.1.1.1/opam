@@ -19,13 +19,13 @@ depends: [
   "yojson"
 ]
 tags: [
-  "date:2015-08-03"
+  "date:2019-05-09"
   "keyword:compilation"
   "keyword:ocaml"
 ]
 synopsis: "Compile OCaml to Coq"
 extra-files: ["coq-of-ocaml.install" "md5=aaa1f52ec40bedefd2674f46a44cd578"]
 url {
-  src: "https://github.com/clarus/coq-of-ocaml/archive/1.1.0.tar.gz"
-  checksum: "md5=230f3d75b68e4e0c4cb0f08babb3d254"
+  src: "https://github.com/clarus/coq-of-ocaml/archive/1.1.1.tar.gz"
+  checksum: "md5=6148587be3cee4ec577e9909fabd45ce"
 }
