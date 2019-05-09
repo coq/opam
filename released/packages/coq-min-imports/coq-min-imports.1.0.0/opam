@@ -11,11 +11,6 @@ build: [
 install: [
   ["install" "coq_min_imports" "%{bin}%"]
 ]
-
-remove: [
-  ["rm" "%{bin}%/coq_min_imports"]
-]
-
 depends: [
   "ocaml"
   "coq" {>= "8.5"}
@@ -33,7 +28,6 @@ description: """
 sources. It examines modules listed in "Require Import" statements one
 by one and tries to recompile to see if their removal would cause
 compilation errors."""
-flags: light-uninstall
 url {
   src: "https://github.com/vzaliva/coq-min-imports/archive/v1.0.0.tar.gz"
   checksum: "md5=5d66474c9d71dbc46b44c786fb6fef00"
