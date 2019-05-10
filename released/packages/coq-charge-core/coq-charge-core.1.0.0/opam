@@ -1,0 +1,25 @@
+opam-version: "2.0"
+maintainer: "gmalecha@gmail.com"
+homepage: "https://github.com/jesper-bengtson/ChargeCore"
+dev-repo: "git+https://github.com/jesper-bengtson/ChargeCore.git"
+bug-reports: "https://github.com/jesper-bengtson/ChargeCore/issues"
+authors: ["Jesper Bengtson" "Gregory Malecha"]
+license: "APACHE 2.0"
+build: [
+  [make "-j%{jobs}%" "-C" "ChargeCore"]
+]
+install: [
+  [make "-C" "ChargeCore" "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ChargeCore"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.5.0" & < "8.5.1"}
+  "coq-ext-lib" {>= "0.9.2"}
+]
+synopsis: "A framework for embedded logics"
+flags: light-uninstall
+url {
+  src: "https://github.com/jesper-bengtson/ChargeCore/archive/v1.0.0.tar.gz"
+  checksum: "md5=6000cef8464b8f67cf1033002d231002"
+}
