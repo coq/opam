@@ -1,0 +1,24 @@
+opam-version: "2.0"
+maintainer: "armael.gueneau@inria.fr"
+authors: "Arthur Charguéraud <arthur.chargueraud@inria.fr>"
+synopsis: "A tool for proving OCaml programs in Separation Logic"
+homepage: "https://gitlab.inria.fr/charguer/cfml"
+bug-reports: "https://gitlab.inria.fr/charguer/cfml/issues"
+license: "CeCILL-B"
+dev-repo: "git+https://gitlab.inria.fr/charguer/cfml.git"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: [make "uninstall"]
+depends: [
+  "ocaml" {>= "4.03.0" & < "4.07.0"}
+  "ocamlbuild" {build}
+  "pprint"
+  "base-bytes"
+  "coq" {>= "8.6"}
+  "coq-tlc" {>= "20171206"}
+]
+url {
+  src:
+    "https://gitlab.inria.fr/charguer/cfml/repository/20180525/archive.tar.gz"
+  checksum: "md5=84981a5ed6dcd6d4bfc355a263fdc5bd"
+}
