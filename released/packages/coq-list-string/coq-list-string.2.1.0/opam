@@ -15,10 +15,11 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ListString"]
 depends: [
-  "ocaml"
-  "coq" {>= "8.4pl4"}
+  "conf-ruby" {build}
   "coq-error-handlers"
   "coq-list-plus"
+  "coq" {>= "8.4pl4"}
+  "ocaml"
 ]
 synopsis: "Strings implemented as lists"
 flags: light-uninstall
