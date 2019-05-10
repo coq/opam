@@ -1,0 +1,32 @@
+opam-version: "2.0"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/coq-list-string"
+dev-repo: "git+https://github.com/clarus/coq-list-string.git"
+bug-reports: "https://github.com/clarus/coq-list-string/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "conf-ruby" {build}
+  "coq-cunit"
+  "coq-error-handlers"
+  "coq-list-plus"
+  "coq" {>= "8.4pl4"}
+  "ocaml"
+]
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2015-07-25"
+  "logpath:ListString"
+]
+synopsis: "Strings implemented as lists"
+url {
+  src: "https://github.com/clarus/coq-list-string/archive/2.1.1.tar.gz"
+  checksum: "md5=862ce9f8080c7d0aa9c406eceb2ad65c"
+}
