@@ -12,7 +12,6 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/System"]
 depends: [
   "ocaml"
   "coq" {>= "8.4pl4"}
@@ -22,7 +21,6 @@ depends: [
   "coq-io-system-ocaml" {>= "2.2.0" & < "2.3.0"}
 ]
 synopsis: "System effects for Coq"
-flags: light-uninstall
 url {
   src: "https://github.com/coq-io/system/archive/2.2.0.tar.gz"
   checksum: "md5=ca83d1060db9e8365b00ea71f1391592"
