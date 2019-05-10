@@ -20,6 +20,11 @@ depends: [
   "coq" {>= "8.4pl4"}
   "ocaml"
 ]
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2015-07-25"
+  "logpath:ListString"
+]
 synopsis: "Strings implemented as lists"
 url {
   src: "https://github.com/clarus/coq-list-string/archive/2.1.1.tar.gz"
