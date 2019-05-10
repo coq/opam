@@ -13,7 +13,6 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ListString"]
 depends: [
   "conf-ruby" {build}
   "coq-error-handlers"
@@ -22,7 +21,6 @@ depends: [
   "ocaml"
 ]
 synopsis: "Strings implemented as lists"
-flags: light-uninstall
 url {
   src: "https://github.com/clarus/coq-list-string/archive/2.0.0.tar.gz"
   checksum: "md5=c4099d9e6223c5f126de1b173f278390"
