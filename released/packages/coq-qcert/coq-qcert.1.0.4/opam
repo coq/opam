@@ -11,13 +11,11 @@ build: [
 install: [
   [make "install-coq"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Qcert"]
 depends: [
   "ocaml"
   "coq" {>= "8.7.1"}
 ]
 synopsis: "A platform for implementing and verifying query compilers"
-flags: light-uninstall
 url {
   src: "https://github.com/querycert/qcert/archive/v1.0.4.tar.gz"
   checksum: "md5=f14bff99263f5025acc6b92afed1e434"
