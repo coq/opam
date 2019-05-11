@@ -4,7 +4,6 @@ homepage: "https://github.com/coq-contribs/bdds"
 license: "LGPL 2.1"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/BDDs"]
 depends: [
   "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
@@ -23,7 +22,6 @@ reflection in Coq using BDDs, can also be used
 to get certified BDD algorithms by extraction.
 First step towards actual symbolic model-checkers
 in Coq. See file README for operation."""
-flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/bdds/archive/v8.8.0.tar.gz"
   checksum: "md5=8c1827df1a76d18de4ea664bc89ed02c"
