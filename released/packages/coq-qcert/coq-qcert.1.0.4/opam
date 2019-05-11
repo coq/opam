@@ -13,7 +13,7 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.7.1"}
+  "coq" {>= "8.7.1" & < "8.8"}
 ]
 synopsis: "A platform for implementing and verifying query compilers"
 url {
