@@ -11,14 +11,12 @@ build: [
 install: [
   [make "-C" "ChargeCore" "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ChargeCore"]
 depends: [
   "ocaml"
   "coq" {>= "8.5.0" & < "8.5.1"}
-  "coq-ext-lib" {>= "0.9.2"}
+  "coq-ext-lib" {>= "0.9.2" & < "0.9.3"}
 ]
 synopsis: "A framework for embedded logics"
-flags: light-uninstall
 url {
   src: "https://github.com/jesper-bengtson/ChargeCore/archive/v1.0.0.tar.gz"
   checksum: "md5=6000cef8464b8f67cf1033002d231002"
