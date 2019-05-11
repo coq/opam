@@ -7,7 +7,6 @@ license: "CeCILL-B"
 dev-repo: "git+https://gitlab.inria.fr/charguer/cfml.git"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
-remove: [make "uninstall"]
 synopsis: "A tool for proving OCaml programs in Separation Logic"
 depends: [
   "ocaml" {>= "4.03.0"}
