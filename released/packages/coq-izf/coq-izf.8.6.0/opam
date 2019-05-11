@@ -4,7 +4,6 @@ homepage: "https://github.com/coq-contribs/izf"
 license: "LGPL 2.1"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IZF"]
 depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
@@ -21,7 +20,6 @@ F_omega.2++ (F_omega + one extra universe + intuitionistic choice
 operator), which is described in chapter 9 of the author's PhD
 thesis (for IZ) and in the author's CSL'03 paper (for the extension
 IZ -> IZF)."""
-flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/izf/archive/v8.6.0.tar.gz"
   checksum: "md5=8d053efae698a9ebf32f332a527ef5f7"
