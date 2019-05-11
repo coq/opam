@@ -13,7 +13,7 @@ depends: [
   "ocamlbuild" {build}
   "pprint"
   "base-bytes"
-  "coq" {>= "8.6"}
+  "coq" {>= "8.6" & < "8.9"}
   "coq-tlc" {>= "20171206"}
 ]
 url {
