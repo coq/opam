@@ -20,6 +20,12 @@ depends: [
   "coq-io" {>= "2.1.0" & < "3.0.0"}
   "coq-io-system-ocaml" {>= "2.1.0"}
 ]
+tags: [
+  "date:2015-03-11"
+  "keyword:effects"
+  "keyword:extraction"
+  "logpath:Io/System"
+]
 synopsis: "System effects for Coq"
 url {
   src: "https://github.com/coq-io/system/archive/2.1.0.tar.gz"
