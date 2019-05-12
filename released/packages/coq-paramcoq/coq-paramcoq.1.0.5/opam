@@ -13,7 +13,7 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.7" & < "8.8~"}
+  "coq" {>= "8.7" & < "8.7.2"}
 ]
 synopsis: "Keller, Chantal, and Marc Lasson. “Parametricity in an Impredicative Sort.” Computer Science Logic, September 27, 2012. https://doi.org/10.4230/LIPIcs.CSL.2012.399"
 description: "Originally implemented by the above authors."
