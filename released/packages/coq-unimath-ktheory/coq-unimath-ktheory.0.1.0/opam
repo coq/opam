@@ -1,0 +1,26 @@
+opam-version: "2.0"
+maintainer: "opam@clarus.me"
+homepage: "https://github.com/UniMath/UniMath"
+dev-repo: "git+https://github.com/UniMath/UniMath.git"
+bug-reports: "https://github.com/UniMath/UniMath/issues"
+license: "Kind of MIT"
+authors: ["The UniMath Development Team"]
+build: [
+  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.5.0"}
+  "coq-unimath-category-theory"
+  "coq-unimath-foundations"
+]
+synopsis: "Aims to formalize a substantial body of mathematics using the univalent point of view"
+extra-files: ["Make" "md5=ba645952ced22f5cf37e29da5175d432"]
+url {
+  src: "https://github.com/UniMath/UniMath/archive/v0.1.tar.gz"
+  checksum: "md5=1ed57c1028e227a309f428a6dc5f0866"
+}
