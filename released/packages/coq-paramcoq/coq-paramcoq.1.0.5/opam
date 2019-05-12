@@ -1,0 +1,23 @@
+opam-version: "2.0"
+maintainer: "abhishek.anand.iitg@gmail.com"
+homepage: "https://github.com/aa755/paramcoq"
+dev-repo: "git+https://github.com/aa755/paramcoq"
+authors: ["Chantal Keller" "Marc Lasson"]
+bug-reports: "https://github.com/aa755/paramcoq/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.7" & < "8.8~"}
+]
+synopsis: "Keller, Chantal, and Marc Lasson. “Parametricity in an Impredicative Sort.” Computer Science Logic, September 27, 2012. https://doi.org/10.4230/LIPIcs.CSL.2012.399"
+description: "Originally implemented by the above authors."
+url {
+  src: "https://github.com/aa755/paramcoq/archive/v1.0.5.tar.gz"
+  checksum: "md5=fe453f3983c0c711257b73e8f15fc255"
+}
