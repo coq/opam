@@ -16,6 +16,6 @@ conflicts: [
 ]
 synopsis: "The Small Scale Reflection extension"
 url {
-  src: "http://ssr.msr-inria.inria.fr/FTP/ssreflect-1.5.tar.gz"
+  src: "https://github.com/math-comp/math-comp/releases/download/archive/ssreflect-1.5.tar.gz"
   checksum: "md5=19155108bd73f5af98add53b9e418f5a"
 }
