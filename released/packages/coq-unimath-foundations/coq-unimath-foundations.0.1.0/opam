@@ -14,7 +14,7 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.5.0"}
+  "coq" {>= "8.5.0" & < "8.6"}
 ]
 synopsis: "Aims to formalize a substantial body of mathematics using the univalent point of view"
 extra-files: ["Make" "md5=a6a04d4d56f0d1edf996019e353ca316"]
