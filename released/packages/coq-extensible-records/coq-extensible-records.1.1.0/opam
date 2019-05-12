@@ -1,0 +1,23 @@
+opam-version: "2.0"
+maintainer: "gmalecha@gmail.com"
+homepage: "https://github.com/gmalecha/coq-extensible-records"
+dev-repo: "git+https://github.com/gmalecha/coq-extensible-records.git"
+bug-reports: "https://github.com/gmalecha/coq-extensible-records/issues"
+authors: ["Gregory Malecha"]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.5.0"}
+]
+synopsis: "Definitional (canonical) extensible records in Coq with string keys and arbitrary (non-dependent) types"
+url {
+  src:
+    "https://github.com/gmalecha/coq-extensible-records/archive/v1.1.0.tar.gz"
+  checksum: "md5=d2811c4ab38cbd7fa6785bd7d286b9d3"
+}
