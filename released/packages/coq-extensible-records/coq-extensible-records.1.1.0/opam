@@ -13,7 +13,7 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.5.0"}
+  "coq" {>= "8.5.0" & < "8.9"}
 ]
 synopsis: "Definitional (canonical) extensible records in Coq with string keys and arbitrary (non-dependent) types"
 url {
