@@ -1,0 +1,22 @@
+opam-version: "2.0"
+maintainer: "jeromesimeon@me.com"
+homepage: "https://querycert.github.io"
+dev-repo: "git+https://github.com/querycert/qcert"
+bug-reports: "https://github.com/querycert/qcert/issues"
+authors: [ "Josh Auerbach" "Martin Hirzel" "Louis Mandel" "Avi Shinnar" "Jerome Simeon" ]
+license: "Apache-2.0"
+build: [
+  [make "-j%{jobs}%" "qcert-coq"]
+]
+install: [
+  [make "install-coq"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.7.2" & < "8.8"}
+]
+synopsis: "A platform for implementing and verifying query compilers"
+url {
+  src: "https://github.com/querycert/qcert/archive/v1.0.6.tar.gz"
+  checksum: "md5=3ae70334db76c8a994d98ee5a6970fd4"
+}
