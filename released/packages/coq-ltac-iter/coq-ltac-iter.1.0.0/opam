@@ -10,7 +10,7 @@ build: [
 depends: [
   "ocaml"
   "coq-plugin-utils" {>= "1.1.0"}
-  "coq" {>= "8.5"}
+  "coq" {>= "8.5" & < "8.6"}
 ]
 synopsis: "Coq plugin to iterate various collections"
 authors: "Gregory Malecha"
