@@ -1,0 +1,20 @@
+opam-version: "2.0"
+maintainer: "matej.kosik@inria.fr"
+homepage: "https://github.com/coq-contribs/string"
+license: "LGPL 2"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.5" & < "8.6~"}
+]
+tags: [ "keyword:string" "keyword:ascii character" "category:Miscellaneous/Coq Extensions" "date:2002-03" ]
+authors: [ "Laurent Théry <>" ]
+bug-reports: "https://github.com/coq-contribs/string/issues"
+dev-repo: "git+https://github.com/coq-contribs/string.git"
+synopsis: "Definition of strings in Coq"
+description: "Strings as list of characters."
+url {
+  src: "https://github.com/coq-contribs/string/archive/v8.5.0.tar.gz"
+  checksum: "md5=7c066e35b0b7ed1242241a6332e12092"
+}
