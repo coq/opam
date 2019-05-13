@@ -5,7 +5,7 @@ set -e
 curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh > install.sh
 echo | sh install.sh
 
-opam init --disable-sandboxing --root=$HOME/opam-root-$COMPILER -j $NJOBS --compiler=$COMPILER -n -y
+opam init --root=$HOME/opam-root-$COMPILER -j $NJOBS --compiler=$COMPILER -n -y
 eval $(opam env --root=${HOME}/opam-root-$COMPILER --set-root)
 opam config list
 opam install -j $NJOBS -y camlp5 ocamlfind $EXTRA_OPAM
