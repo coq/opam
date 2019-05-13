@@ -14,6 +14,11 @@ depends: [
   "lwt" {>= "2.4.5"}
   "base64" {>= "1.0.0" & < "2"}
 ]
+tags: [
+  "date:2015-01-28"
+  "keyword:effects"
+  "keyword:extraction"
+]
 synopsis: "A proxy to interface concurrent Coq programs with the operating system"
 extra-files: [
   "coq-concurrency-proxy.install" "md5=96f86b964fc4cd99c310011b83de5f61"

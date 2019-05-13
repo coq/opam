@@ -20,6 +20,11 @@ depends: [
   "coq-function-ninjas"
   "coq-list-string" {>= "2.0.0"}
 ]
+tags: [
+  "date:2015-01-28"
+  "keyword:effects"
+  "keyword:extraction"
+]
 synopsis: "Experimental library to write concurrent applications in Coq"
 url {
   src: "https://github.com/coq-concurrency/system/archive/1.0.0.tar.gz"
