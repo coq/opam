@@ -5,8 +5,8 @@ homepage: "http://ssr.msr-inria.inria.fr/"
 license: "CeCILL-B"
 build: [
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~" & != "8.4.6~camlp4"}
