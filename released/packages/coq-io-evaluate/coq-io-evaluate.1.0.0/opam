@@ -1,0 +1,29 @@
+opam-version: "2.0"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/io-evaluate"
+dev-repo: "git+https://github.com/clarus/io-evaluate.git"
+bug-reports: "https://github.com/clarus/io-evaluate/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.4pl4" & < "8.5~"}
+  "coq-function-ninjas"
+  "coq-io" {>= "3.1.0"}
+]
+tags: [
+  "date:2015-06-14"
+  "keyword:effects"
+]
+synopsis: "Generic functions to run effects"
+url {
+  src: "https://github.com/coq-io/evaluate/archive/1.0.0.tar.gz"
+  checksum: "md5=f244d76d068bbf4c894a0ad8058179c9"
+}
