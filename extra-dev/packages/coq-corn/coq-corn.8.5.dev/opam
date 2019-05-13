@@ -20,5 +20,5 @@ depends: [
 ]
 synopsis: "The CoRN library. A library for constructive analysis"
 url {
-  src: "https://github.com/c-corn/corn/archive/v8.5.zip"
+  src: "git+https://github.com/c-corn/corn.git#v8.5"
 }
