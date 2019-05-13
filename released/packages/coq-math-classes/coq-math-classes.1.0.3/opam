@@ -13,13 +13,11 @@ build: [
   [ make "-j%{jobs}%" ]
   [ make "install" ]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MathClasses"]
 depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
 ]
 synopsis: "A library of abstract interfaces for mathematical structures in Coq"
-flags: light-uninstall
 url {
   src:
     "https://github.com/math-classes/math-classes/archive/a3f7f8e20b5fb43e69d4560d9ac1a79a56cd6827.zip"
