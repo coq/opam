@@ -15,6 +15,7 @@ install: [
 ]
 depends: [
   "ocaml"
+  "conf-ruby" {build}
   "coq" {>= "8.4pl4" & < "8.6"}
   "coq-error-handlers"
   "coq-function-ninjas"

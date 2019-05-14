@@ -9,7 +9,7 @@ build: [
   [make "-j%{jobs}%"]
 ]
 depends: [
-  "ocaml" {>= "4.02.0"}
+  "ocaml" {>= "4.02.0" & < "4.06"}
   "base-unix"
   "lwt" {>= "2.4.5"}
   "num"
