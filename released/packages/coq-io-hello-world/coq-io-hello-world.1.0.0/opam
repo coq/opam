@@ -8,7 +8,7 @@ license: "MIT"
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
-  ["sh" "-c" "cd extraction && make"]
+  [make "-C" "extraction"]
 ]
 depends: [
   "ocaml"
