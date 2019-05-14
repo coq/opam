@@ -15,7 +15,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io"]
 depends: [
   "ocaml"
-  "coq" {>= "8.4pl4" & < "8.6~"}
+  "coq" {>= "8.5" & < "8.6~"}
 ]
 synopsis: "A library for effects in Coq"
 flags: light-uninstall
