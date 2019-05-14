@@ -12,7 +12,7 @@ build: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.4pl4"}
+  "coq" {>= "8.4pl4" & < "8.9"}
   "coq-io-system" {>= "2.3.0"}
 ]
 tags: [
