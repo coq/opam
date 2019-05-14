@@ -1,0 +1,38 @@
+opam-version: "2.0"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/coq-concurrency/pluto"
+dev-repo: "git+https://github.com/coq-concurrency/pluto.git"
+bug-reports: "https://github.com/coq-concurrency/pluto/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+  [make "-C" "extraction"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.4pl4"}
+  "coq-error-handlers"
+  "coq-function-ninjas"
+  "coq-iterable"
+  "coq-list-string" {>= "2.0.0"}
+  "coq-moment"
+  "coq-concurrency-proxy"
+  "coq-concurrency-system" {< "1.1.0"}
+  "base64" {= "1.0.0"}
+]
+tags: [
+  "date:2015-01-28"
+  "keyword:effects"
+  "keyword:extraction"
+  "keyword:webserver"
+]
+synopsis: "A web server written in Coq"
+extra-files: [
+  "coq-concurrency-pluto.install" "md5=c191e439136807d785f0d582e0b8783e"
+]
+url {
+  src: "https://github.com/coq-concurrency/pluto/archive/1.0.0.tar.gz"
+  checksum: "md5=58a8fab5208e4ed422c031e8e8ec8af1"
+}

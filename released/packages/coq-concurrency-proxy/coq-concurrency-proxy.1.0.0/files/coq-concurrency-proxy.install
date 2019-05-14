@@ -1,0 +1,4 @@
+bin: [
+  "coqConcurrencyProxy.byte"
+  "coqConcurrencyProxy.native"
+]

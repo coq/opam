@@ -1,0 +1,33 @@
+opam-version: "2.0"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/coq-concurrency/system"
+dev-repo: "git+https://github.com/coq-concurrency/system.git"
+bug-reports: "https://github.com/coq-concurrency/system/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["ruby" "pp.rb"]
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "conf-ruby" {build}
+  "coq" {>= "8.4pl4" & < "8.6"}
+  "coq-error-handlers"
+  "coq-function-ninjas"
+  "coq-list-string" {>= "2.0.0"}
+]
+tags: [
+  "date:2015-11-26"
+  "keyword:effects"
+  "keyword:extraction"
+]
+synopsis: "Experimental library to write concurrent applications in Coq"
+url {
+  src: "https://github.com/coq-concurrency/system/archive/1.1.0.tar.gz"
+  checksum: "md5=ac9441be42d767e1c9d22b487b4ce791"
+}
