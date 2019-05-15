@@ -1,8 +1,8 @@
 opam-version: "2.0"
 maintainer: "guillaume.melquiond@inria.fr"
 homepage: "http://coq-interval.gforge.inria.fr/"
-dev-repo:
-  "git+https://scm.gforge.inria.fr/anonscm/git/coq-interval/coq-interval.git"
+dev-repo: "git+https://gitlab.inria.fr/coqinterval/interval.git"
+bug-reports: "https://gitlab.inria.fr/coqinterval/interval/issues"
 license: "CeCILL-C"
 build: [
   ["./configure"]
@@ -11,7 +11,6 @@ build: [
 install: ["./remake" "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Interval"]
 depends: [
-  "ocaml"
   "coq" {>= "8.5" & < "8.7"}
   "coq-flocq" {>= "2.5.0" & < "3.0~"}
   "coq-mathcomp-ssreflect" {>= "1.6"}
