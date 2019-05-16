@@ -34,5 +34,5 @@ install: [
 extra-files: ["coqide.install" "md5=d005cda8cb7888fbea94c5416dcb31bc"]
 
 url {
-  src: "git+https://github.com/coq/coq.git#master"
+  src: "git+https://github.com/coq/coq.git#v8.10"
 }
