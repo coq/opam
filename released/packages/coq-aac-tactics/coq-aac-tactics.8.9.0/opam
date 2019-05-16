@@ -20,7 +20,7 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
   "ocaml"
-  "coq" {= "dev"}
+  "coq" {>= "8.9" & < "8.10~"}
 ]
 
 tags: [
@@ -32,6 +32,7 @@ tags: [
   "keyword:rewriting modulo ac"
   "keyword:decision procedure"
   "logpath:AAC_tactics"
+  "date:2019-05-16"
 ]
 authors: [
   "Thomas Braibant"
@@ -40,5 +41,6 @@ authors: [
 ]
 
 url {
-  src: "git+https://github.com/coq-community/aac-tactics.git#master"
+  src: "https://github.com/coq-community/aac-tactics/archive/v8.9.0.tar.gz"
+  checksum: "sha256=b4e124ccb2c0a9013af9d3dae6a0deb1962d224b36b64c11ec71c05c23fd2ea6"
 }
