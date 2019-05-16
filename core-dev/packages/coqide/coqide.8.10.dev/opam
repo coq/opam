@@ -5,6 +5,7 @@ homepage: "https://coq.inria.fr/"
 bug-reports: "https://github.com/coq/coq/issues"
 dev-repo: "git+https://github.com/coq/coq.git"
 license: "LGPL-2.1"
+synopsis: "IDE of the Coq formal proof management system"
 
 depends: [
   "coq" {= version}
@@ -30,8 +31,8 @@ install: [
   "install-ide-info"
   "install-ide-devfiles"
 ]
-synopsis: "IDE of the Coq formal proof management system"
 extra-files: ["coqide.install" "md5=d005cda8cb7888fbea94c5416dcb31bc"]
+
 url {
   src: "git+https://github.com/coq/coq.git#v8.10"
 }

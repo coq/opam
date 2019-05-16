@@ -5,6 +5,7 @@ homepage: "https://coq.inria.fr/"
 bug-reports: "https://github.com/coq/coq/issues"
 dev-repo: "git+https://github.com/coq/coq.git"
 license: "LGPL-2.1"
+synopsis: "Formal proof management system"
 
 depends: [
   "ocaml" {>= "4.05.0"}
@@ -29,8 +30,8 @@ install: [
   [make "install"]
   [make "install-byte"]
 ]
-synopsis: "Formal proof management system"
 extra-files: ["coq.install" "md5=a5d0f9a35ef24aa3948a6960e657b206"]
+
 url {
   src: "git+https://github.com/coq/coq.git#master"
 }
