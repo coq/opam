@@ -22,8 +22,8 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
   "ocaml"
-  "coq" {(>= "8.8" & < "8.11~") | (= "dev")}
-  "coq-mathcomp-ssreflect" {(>= "1.7.0" & < "1.9~") | (= "dev")}
+  "coq" {>= "8.8" & < "8.10~"}
+  "coq-mathcomp-ssreflect" {>= "1.7.0" & < "1.9~"}
 ]
 
 tags: [
@@ -33,6 +33,7 @@ tags: [
   "keyword:hoare type theory"
   "keyword:lemma overloading"
   "logpath:LemmaOverloading"
+  "date:2019-05-15"
 ]
 authors: [
   "Georges Gonthier"
@@ -42,5 +43,6 @@ authors: [
 ]
 
 url {
-  src: "git+https://github.com/coq-community/lemma-overloading.git#master"
+  src: "https://github.com/coq-community/lemma-overloading/archive/v8.9.0.tar.gz"
+  checksum: "sha256=7e57155182bac6e9940e2d0c509da702f600c2898efb2e65edad367c9515210d"
 }
