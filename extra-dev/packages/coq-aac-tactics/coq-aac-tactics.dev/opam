@@ -1,22 +1,44 @@
 opam-version: "2.0"
-maintainer: "dev@clarus.me"
-homepage: "https://github.com/coq-contribs/aac-tactics"
-license: "LGPL"
-build: [
-  [make "-j%{jobs}%"]
-  [make "install"]
-]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/AAC_tactics"]
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/aac-tactics"
+dev-repo: "git+https://github.com/coq-community/aac-tactics.git"
+bug-reports: "https://github.com/coq-community/aac-tactics/issues"
+license: "LGPL-3.0-or-later"
+
+synopsis: "This Coq plugin provides tactics for rewriting universally quantified equations, modulo associative (and possibly commutative) operators"
+description: """
+This Coq plugin provides tactics for rewriting universally quantified
+equations, modulo associativity and commutativity of some operator.
+The tactics can be applied for custom operators by registering the
+operators and their properties as type class instances. Many common
+operator instances, such as for Z binary arithmetic and booleans, are
+provided with the plugin.
+"""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:reflexive tactic" "keyword:rewriting" "keyword:rewriting modulo associativity and commutativity" "keyword:rewriting modulo ac" "keyword:decision procedure" "category:Miscellaneous/Coq Extensions" ]
-authors: [ "Damien Pous <damien.pous@inria.fr>" "Thomas Braibant <thomas.braibant@gmail.com>" ]
-synopsis: "AAC tactics."
-description:
-  "This Coq plugin provides tactics for rewriting universally quantified equations, modulo associative (and possibly commutative) operators:"
-flags: light-uninstall
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "keyword:reflexive tactic"
+  "keyword:rewriting"
+  "keyword:rewriting modulo associativity and commutativity"
+  "keyword:rewriting modulo ac"
+  "keyword:decision procedure"
+  "logpath:AAC_tactics"
+]
+authors: [
+  "Thomas Braibant"
+  "Damien Pous"
+  "Fabian Kunze"
+]
+
 url {
-  src: "git+https://github.com/coq-contribs/aac-tactics.git#master"
+  src: "git+https://github.com/coq-community/aac-tactics.git#master"
 }
