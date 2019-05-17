@@ -11,7 +11,10 @@ build: [
 ]
 install: [make "install"]
 remove: [make "uninstall"]
-depends: ["ocaml" "coq"]
+depends: [
+  "coq" {>= "8.6"}
+  "ocaml"
+]
 tags: [
   "date:2018-07-28"
   "logpath:SimpleIO"

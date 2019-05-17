@@ -10,7 +10,7 @@ install: [ make "install" ]
 remove: [ make "uninstall" ]
 depends: [
   "ocaml"
-  "coq"
+  "coq" {>= "8.6"}
   "ocamlbuild" {build & >= "0.9.0"}
   "ocamlfind"
 ]
