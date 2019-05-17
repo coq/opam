@@ -18,6 +18,6 @@ tags: [ "keyword:small scale reflection" "keyword:mathematical components" "keyw
 synopsis: "The Small Scale Reflection extension"
 flags: light-uninstall
 url {
-  src: "http://ssr.msr-inria.inria.fr/FTP/ssreflect-1.5.coq85beta2.tar.gz"
+  src: "https://github.com/math-comp/math-comp/releases/download/archive/ssreflect-1.5.coq85beta2.tar.gz"
   checksum: "md5=c117e9ce15d8e55588e5a4a93decea7b"
 }
