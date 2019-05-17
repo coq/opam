@@ -15,7 +15,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Mtac2"]
 depends: [
   "ocaml"
-  "coq" {>= "8.8.0" & < "8.9~"}
+  "coq" {>= "8.8.2" & < "8.9~"}
   "coq-unicoq" {>= "1.3~" & < "2~"}
 ]
 synopsis: "Mtac2: Typed Tactics for Coq"
