@@ -13,16 +13,14 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Moment"]
 depends: [
   "ocaml"
-  "coq" {>= "8.4pl4"}
+  "coq" {>= "8.4pl4" & < "8.9"}
   "coq-error-handlers"
   "coq-function-ninjas"
   "coq-list-string" {>= "2.0.0"}
 ]
 synopsis: "Parse, manipulate and pretty-print times and dates in Coq"
-flags: light-uninstall
 url {
   src: "https://github.com/clarus/coq-moment/archive/1.0.0.tar.gz"
   checksum: "md5=00e0e6d050d2ddd4b48dfcf5fc47bce0"
