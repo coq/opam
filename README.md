@@ -1,6 +1,6 @@
 # OPAM archive for Coq
 
-All OPAM repositories for Coq packages live here.
+All [OPAM](https://opam.ocaml.org) repositories for Coq packages live here.
 Packages are organized according to the [layout](https://coq.inria.fr/opam-layout.html).
 
 ## Repositories
@@ -41,7 +41,7 @@ of the packages table in `index.html`.  The css file
 
 ## Website and OPAM metadata
 
-The website is statically generated looking at the `opam` and `descr` files.
+The website is statically generated looking at the `opam` files.
 
 In particular we use the `tags` field of the `opam` file as follows:
 
@@ -49,15 +49,25 @@ In particular we use the `tags` field of the `opam` file as follows:
  2. strings beginning with `category:` are considered as `categories`
  3. a string beginning with `date:` is the date the software was last updated
     (not the package)
+ 4. a string beginning with `logpath:` is considered the Coq logical path prefix
 
 Example:
 
-    tags: [ "keyword:cool" "keyword:stuff" "category:Some/Category" "date:1992-12-22" ]
+```
+tags: [
+  "keyword:cool"
+  "keyword:stuff"
+  "category:Some/Category"
+  "date:1992-12-22"
+  "logpath:SomePrefix"
+]
+```
 
 Finally the `homepage:`, `author:`, `maintainer:` and `doc:` fields are
 also used to generate the package entry.
 
-See also [CEP3](https://github.com/coq/ceps/blob/master/text/003-opam-metadata.md).
+See also [CEP3](https://github.com/coq/ceps/blob/master/text/003-opam-metadata.md) and
+the [deployed website](https://coq.inria.fr/opam/www/).
 
 ## Continuous Integration
 
