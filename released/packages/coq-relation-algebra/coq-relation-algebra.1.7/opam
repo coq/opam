@@ -11,8 +11,8 @@ depopts: [ "coq-mathcomp-ssreflect" ]
 build: [
   ["sh" "-exc" "./configure --%{coq-mathcomp-ssreflect:enable}%-ssr"]
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
+install: [make "install"]
 remove: [ "sh" "-exc" "rm -r '%{lib}%/coq/user-contrib/RelationAlgebra'" ]
 tags: [
   "keyword:relation algebra"
