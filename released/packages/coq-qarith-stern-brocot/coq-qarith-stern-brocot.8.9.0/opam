@@ -1,0 +1,41 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/qarith-stern-brocot"
+dev-repo: "git+https://github.com/coq-community/qarith-stern-brocot.git"
+bug-reports: "https://github.com/coq-community/qarith-stern-brocot/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Binary rational numbers"
+description: """
+Development of rational numbers as finite binary lists and defining
+field operations on them in two different ways: strict and lazy.
+"""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.7" & < "8.10~"}
+]
+
+tags: [
+  "category:Mathematics/Arithmetic and Number Theory/Rational numbers"
+  "category:Miscellaneous/Extracted Programs/Arithmetic"
+  "keyword:rational numbers"
+  "keyword:arithmetic"
+  "keyword:field tactic"
+  "keyword:binary lists"
+  "keyword:Stern-Brocot"
+  "logpath:QArithSternBrocot"
+  "date:2019-05-19"
+]
+authors: [
+  "Milad Niqui"
+  "Yves Bertot"
+]
+
+url {
+  src: "https://github.com/coq-community/qarith-stern-brocot/archive/v8.9.0.tar.gz"
+  checksum: "sha256=ed779cf0b395e003591bb828d11e170321ee4ecfbba8566c4a04f661d0378fb7"
+}
