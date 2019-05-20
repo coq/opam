@@ -6,18 +6,17 @@ license: "MIT"
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
-remove: [
-  ["rm" "-R" "%{lib}%/coq/user-contrib/mathcomp/contrib/sum_of_two_square"]
-  ["sh" "-c" "rmdir %{lib}%/coq/user-contrib/mathcomp/contrib || true"]
-]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.8"}
-  "coq-math-comp" {>= "1.7"} |
-  ("coq-mathcomp-ssreflect" {>= "1.7"} &
-   ("coq-mathcomp-algebra" {>= "1.7"} & "coq-mathcomp-field" {>= "1.7"}))
+  "coq-mathcomp-ssreflect" {>= "1.7"}
+  "coq-mathcomp-algebra" {>= "1.7"}
+  "coq-mathcomp-field" {>= "1.7"}
+]
+tags: [
+  "logpath:mathcomp.contrib.sum_of_two_square"
 ]
 synopsis:
   "A proof of Fermat's theorem on sum of two squares. It is the proof that uses gaussian integers. This is done in ssreflect. It contains two file :"
