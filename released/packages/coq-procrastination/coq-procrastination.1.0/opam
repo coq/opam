@@ -13,14 +13,15 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Procrastination"]
 depends: [
   "ocaml"
-  "coq" {>= "8.5"}
+  "coq" {>= "8.7"}
+]
+tags: [
+  "logpath:Procrastination"
 ]
 synopsis:
   "A small library for collecting side conditions and deferring their proof"
-flags: light-uninstall
 url {
   src: "https://github.com/Armael/coq-procrastination/archive/v1.0.zip"
   checksum: "md5=fd1dde79b57b81ebfae4f442e13ae56d"
