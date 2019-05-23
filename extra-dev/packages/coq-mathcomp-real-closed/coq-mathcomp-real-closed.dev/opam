@@ -10,7 +10,8 @@ license: "CeCILL-B"
 build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]
 depends: [
-  "coq-mathcomp-field" { (>= "1.8.0" & < "1.9.0") }
+  "coq" { (>= "8.7" & < "8.10~") }
+  "coq-mathcomp-field" { (>= "1.8.0" & < "1.9.0~") }
   "coq-mathcomp-bigenough"   {(>= "1.0.0" & < "1.1.0~")}
 ]
 
