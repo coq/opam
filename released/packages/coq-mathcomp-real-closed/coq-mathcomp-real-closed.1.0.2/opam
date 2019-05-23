@@ -10,8 +10,7 @@ license: "CeCILL-B"
 build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]
 depends: [
-  "coq" { (>= "8.7" & < "8.10~") }
-  "coq-mathcomp-field" { (>= "1.8.0" & < "1.9.0~") }
+  "coq-mathcomp-field" { (>= "1.8.0" & < "1.9.0") }
   "coq-mathcomp-bigenough"   {(>= "1.0.0" & < "1.1.0~")}
 ]
 
@@ -26,5 +25,6 @@ also contains a proof of decidability of the first order theory of
 real closed field, through quantifier elimination.
 """
 url {
-  src: "git+https://github.com/math-comp/real-closed.git"
+  src: "https://github.com/math-comp/real-closed/archive/1.0.2.tar.gz"
+  checksum: "sha256=b28e30be7de2ad2959021ea9cbc97974d121d37f5104ef0d46c0439b31e5c41f"
 }
