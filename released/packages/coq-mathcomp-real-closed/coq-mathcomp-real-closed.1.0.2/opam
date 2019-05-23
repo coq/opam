@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "coq-mathcomp-real-closed"
-version: "dev"
+version: "1.0.2"
 maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
 
 homepage: "https://github.com/math-comp/real-closed"
@@ -27,5 +27,6 @@ also contains a proof of decidability of the first order theory of
 real closed field, through quantifier elimination.
 """
 url {
-  src: "git+https://github.com/math-comp/real-closed.git"
+  src: "https://github.com/math-comp/real-closed/archive/1.0.2.tar.gz"
+  checksum: "sha256=b28e30be7de2ad2959021ea9cbc97974d121d37f5104ef0d46c0439b31e5c41f"
 }
