@@ -4,12 +4,23 @@ homepage: "https://github.com/coq-contribs/semantics"
 license: "LGPL"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Semantics"]
 depends: [
   "ocaml"
+  "ocamlbuild" {build}
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: natural semantics" "keyword: denotational semantics" "keyword: axiomatic semantics" "keyword: Hoare logic" "keyword: Dijkstra weakest pre-condition calculus" "keyword: abstract interpretation" "keyword: intervals" "category: Computer Science/Semantics and Compilation/Semantics" "date: 2007-07-5" ]
+tags: [
+  "keyword: natural semantics"
+  "keyword: denotational semantics"
+  "keyword: axiomatic semantics"
+  "keyword: Hoare logic"
+  "keyword: Dijkstra weakest pre-condition calculus"
+  "keyword: abstract interpretation"
+  "keyword: intervals"
+  "category: Computer Science/Semantics and Compilation/Semantics"
+  "date: 2007-07-5"
+  "logpath:Semantics"
+]
 authors: [ "Yves Bertot <Yves.Bertot@sophia.inria.fr> [http://www-sop.inria.fr/marelle/Yves.Bertot]" ]
 bug-reports: "https://github.com/coq-contribs/semantics/issues"
 dev-repo: "git+https://github.com/coq-contribs/semantics.git"
@@ -26,7 +37,6 @@ available for proof by reflection, and the code can also be extracted
 and connected to a yacc-based parser, thanks to the use of a functor
 parameterized by a module type of strings. A hand-written parser is
 also provided in Coq, but there are no proofs associated."""
-flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/semantics/archive/v8.7.0.tar.gz"
   checksum: "md5=64a71ef039d1c6a155918c23d92c31c1"
