@@ -4,9 +4,8 @@ homepage: "http://color.inria.fr/"
 license: "CeCILL"
 build: [
   [make "-j%{jobs}%"]
-  [make "-f" "Makefile.coq" "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
+install: [make "-f" "Makefile.coq" "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
@@ -106,7 +105,6 @@ tags: [
   "logpath:CoLoR"
 ]
 synopsis: "A library on rewriting theory and termination"
-flags: light-uninstall
 url {
   src:
     "https://gforge.inria.fr/frs/download.php/file/35820/color.1.2.0.tar.gz"
