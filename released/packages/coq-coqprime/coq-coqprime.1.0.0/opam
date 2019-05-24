@@ -7,15 +7,16 @@ authors: ["Laurent Théry"]
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coqprime"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.5~" & < "8.6~"}
 ]
+tags: [
+  "logpath:Coqprime"
+]
 synopsis: "Certifying prime numbers in Coq"
-flags: light-uninstall
 url {
   src:
     "https://gforge.inria.fr/frs/download.php/file/35520/coqprime_8.5b.zip"
