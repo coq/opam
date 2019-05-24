@@ -7,16 +7,17 @@ authors: ["Laurent Théry"]
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coqprime"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.7~" & < "8.8~"}
   "coq-bignums"
 ]
+tags: [
+  "logpath:Coqprime"
+]
 synopsis: "Certifying prime numbers in Coq"
-flags: light-uninstall
 url {
   src: "https://github.com/thery/coqprime/archive/v8.7.zip"
   checksum: "md5=19e093d4bd8160d61c0ea2e261df9ed6"
