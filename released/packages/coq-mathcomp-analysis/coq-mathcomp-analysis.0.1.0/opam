@@ -18,14 +18,16 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/mathcomp/analysis"]
 depends: [
-  "coq" { ((>= "8.7" & < "8.9~") | = "dev") }
+  "coq" { ((>= "8.8" & < "8.9~") | = "dev") }
   "coq-mathcomp-ssreflect"   {= "1.7.0"}
   "coq-mathcomp-algebra"     {= "1.7.0"}
   "coq-mathcomp-field"       {= "1.7.0"}
   "coq-mathcomp-bigenough"   {(>= "1.0.0" & < "1.1.0~")}
   "coq-mathcomp-finmap"      {(>= "1.1.0" & < "1.2.0~")}
+]
+tags: [
+  "logpath:mathcomp.analysis"
 ]
 synopsis: "An analysis library for mathematical components"
 description: """
@@ -34,7 +36,6 @@ the Coq proof-assistant and using the Mathematical Components library.
 
 It is inspired by the Coquelicot library.
 """
-flags: light-uninstall
 url {
   src: "https://github.com/math-comp/analysis/archive/0.1.0.tar.gz"
   checksum: "sha256=0c3e998b81617a773f0d59db3aaf2ffd05f87ffda383ae6c7bb4a44fd2f4df13"
