@@ -1,0 +1,27 @@
+opam-version: "2.0"
+name: "coq-mathcomp-field"
+version: "1.9.0"
+maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+
+homepage: "https://math-comp.github.io/"
+bug-reports: "https://github.com/math-comp/math-comp/issues"
+dev-repo: "git+https://github.com/math-comp/math-comp.git"
+license: "CeCILL-B"
+
+build: [ make "-C" "mathcomp/field" "-j" "%{jobs}%" ]
+install: [ make "-C" "mathcomp/field" "install" ]
+depends: [ "coq-mathcomp-solvable" { = "1.9.0" } ]
+
+tags: [ "keyword:algebra" "keyword:field" "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" "logpath:mathcomp.field" ]
+authors: [ "Jeremy Avigad <>" "Andrea Asperti <>" "Stephane Le Roux <>" "Yves Bertot <>" "Laurence Rideau <>" "Enrico Tassi <>" "Ioana Pasca <>" "Georges Gonthier <>" "Sidi Ould Biha <>" "Cyril Cohen <>" "Francois Garillot <>" "Alexey Solovyev <>" "Russell O'Connor <>" "Laurent Théry <>" "Assia Mahboubi <>" ]
+
+synopsis: "Mathematical Components Library on Fields"
+description:"""
+This library contains definitions and theorems about field extensions,
+galois theory, algebraic numbers, cyclotomic polynomials...
+"""
+
+url {
+src: "http://github.com/math-comp/math-comp/archive/mathcomp-1.9.0.tar.gz"
+checksum: "sha256=fe3d157a4db7e96f39212f76e701a7fc1e3f125c54b8c38f06a6a387eda61c96"
+}
