@@ -1,0 +1,26 @@
+opam-version: "2.0"
+maintainer: "jeromesimeon@me.com"
+homepage: "https://querycert.github.io"
+dev-repo: "git+https://github.com/querycert/qcert"
+bug-reports: "https://github.com/querycert/qcert/issues"
+authors: [ "Josh Auerbach" "Martin Hirzel" "Louis Mandel" "Avi Shinnar" "Jerome Simeon" ]
+license: "Apache-2.0"
+build: [
+  [make "-j%{jobs}%" "qcert-coq"]
+]
+install: [
+  [make "install-coq"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Qcert"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.8.2"}
+  "coq-flocq" {>= "2.6.1" & < "3.0~"}
+  "coq-jsast" {>= "1.0.8"}
+]
+synopsis: "Verified compiler for data-centric languages"
+flags: light-uninstall
+url {
+  src: "https://github.com/querycert/qcert/archive/v1.3.0.tar.gz"
+  checksum: "5a735514780a29de40f6431ac8c9925f"
+}
