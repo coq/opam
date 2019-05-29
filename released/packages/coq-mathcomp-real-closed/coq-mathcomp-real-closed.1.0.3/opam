@@ -15,7 +15,7 @@ depends: [
   "coq-mathcomp-bigenough"   {(>= "1.0.0" & < "1.1.0~")}
 ]
 
-tags: [ "keyword:real closed field" "keyword:small scale reflection" "keyword:mathematical components" "date:2019-05-23" "logpath:mathcomp"]
+tags: [ "keyword:real closed field" "keyword:small scale reflection" "keyword:mathematical components" "date:2019-05-23" "logpath:mathcomp.real_closed"]
 authors: [ "Cyril Cohen <>" "Assia Mahboubi <>" ]
 synopsis: "Mathematical Components Library on real closed fields"
 description: """
