@@ -10,7 +10,7 @@ notify() {
 echo "OPAM $1 on repo $2 failed:"; cat $LOG
 }
 
-OPAM=/usr/local/bin/opam2
+OPAM=/usr/local/bin/opam
 OPAMCHECKOPTS=--cycles
 
 for repo in $@; do
