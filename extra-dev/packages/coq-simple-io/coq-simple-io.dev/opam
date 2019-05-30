@@ -12,7 +12,7 @@ run-test: [make "test"]
 remove: [make "uninstall"]
 depends: [
   "ocaml"
-  "coq"
+  "coq" {>= "8.8" & < "8.10"}
   "coq-ext-lib" {>= "0.10.0"}
   "ocamlbuild" {with-test & >= "0.9.0"}
   "ocamlfind"
@@ -24,5 +24,5 @@ tags: [
   "keyword:effects"
 ]
 url {
-  src: "git+https://github.com/Lysxia/coq-simple-io#dev"
+  src: "git+https://github.com/Lysxia/coq-simple-io#master"
 }
