@@ -1,28 +1,24 @@
 opam-version: "2.0"
 maintainer: "yves.bertot@inria.fr"
 license: "LGPL 2.1"
-
 homepage: "https://github.com/ybertot/coq-dpdgraph"
 build: [
   ["./configure"]
   ["echo" "%{jobs}%" "jobs for the linter"]
   [make]
-  [make "install" "BINDIR=%{bin}%"]
- ]
-remove: [
-  ["rm" "%{bin}%/dpd2dot"]
-  ["rm" "-R" "%{lib}%/coq/user-contrib/dpdgraph"]
 ]
-
+install: [make "install" "BINDIR=%{bin}%"]
 depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
   "ocamlgraph"
 ]
 authors: [ "Anne Pacalet" "Yves Bertot"]
+tags: [
+  "logpath:dpdgraph"
+]
 synopsis:
   "Computing dependencies between Coq objects (definitions, theorems)"
-flags: light-uninstall
 url {
   src:
     "https://github.com/ybertot/coq-dpdgraph/archive/release-for-8.5-0.4-rc1.zip"
