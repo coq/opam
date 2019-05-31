@@ -6,9 +6,8 @@ license: "MIT"
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Plouffe"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
@@ -16,9 +15,11 @@ depends: [
   "coq-mathcomp-ssreflect"
   "coq-coquelicot" {>= "3.0.0"}
 ]
+tags: [
+  "logpath:Plouffe"
+]
 synopsis: "A Coq formalization of Plouffe formula"
 authors: "Laurent Thery"
-flags: light-uninstall
 url {
   src: "https://github.com/thery/Plouffe/archive/v1.4.0.zip"
   checksum: "md5=30fd47adcc6e06ad1738ecc00c36e3b8"
