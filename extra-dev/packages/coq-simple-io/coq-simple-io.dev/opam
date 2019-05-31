@@ -9,7 +9,6 @@ dev-repo: "git+https://github.com/Lysxia/coq-simple-io.git"
 build: [make "build"]
 install: [make "install"]
 run-test: [make "test"]
-remove: [make "uninstall"]
 depends: [
   "ocaml"
   "coq" {>= "8.8" & < "8.10"}
@@ -18,7 +17,6 @@ depends: [
   "ocamlfind"
 ]
 tags: [
-  "date:2018-07-28"
   "logpath:SimpleIO"
   "keyword:extraction"
   "keyword:effects"
