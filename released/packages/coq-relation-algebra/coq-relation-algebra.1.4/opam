@@ -5,19 +5,28 @@ license: "LGPL"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RelationAlgebra"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.5.1"}
 ]
-tags: [ "keyword:relation algebra" "keyword:kleene algebra with tests" "keyword:kat" "keyword:allegories" "keyword:residuated structures" "keyword:automata" "keyword:regular expressions" "keyword:matrices" "category:Mathematics/Algebra" ]
+tags: [
+  "keyword:relation algebra"
+  "keyword:kleene algebra with tests"
+  "keyword:kat"
+  "keyword:allegories"
+  "keyword:residuated structures"
+  "keyword:automata"
+  "keyword:regular expressions"
+  "keyword:matrices"
+  "category:Mathematics/Algebra"
+  "logpath:RelationAlgebra"
+]
 authors: [ "Damien Pous <Damien.Pous@ens-lyon.fr>" ]
 synopsis: "Relation Algebra and KAT"
 description:
   "A modular library about relation algebra, from idempotent semirings to residuated Kleene allegories, including a decision tactic for Kleene algebra with Tests (KAT)."
-flags: light-uninstall
 url {
   src: "https://github.com/damien-pous/relation-algebra/archive/v1.4.tar.gz"
   checksum: "md5=131ddcaf000cb5ebab381037651e17a5"
