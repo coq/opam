@@ -7,15 +7,16 @@ license: "LGPL 3"
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GeoCoq"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~beta1"}
 ]
+tags: [
+  "logpath:GeoCoq"
+]
 synopsis: "A formalization of geometry in Coq based on Tarski's axiom system"
-flags: light-uninstall
 url {
   src: "https://github.com/GeoCoq/GeoCoq/archive/v2.0.0.tar.gz"
   checksum: "md5=579555f01ff9a9bca93ab0dc8e6d2944"
