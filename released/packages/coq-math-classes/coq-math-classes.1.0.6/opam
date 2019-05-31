@@ -11,15 +11,16 @@ license: "Public Domain"
 build: [
   [ "./configure.sh" ]
   [ make "-j%{jobs}%" ]
-  [ make "install" ]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MathClasses"]
+install: [ make "install" ]
 depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7"}
 ]
+tags: [
+  "logpath:MathClasses"
+]
 synopsis: "A library of abstract interfaces for mathematical structures in Coq"
-flags: light-uninstall
 url {
   src: "https://github.com/math-classes/math-classes/archive/1.0.6.tar.gz"
   checksum: "md5=20d85db5271da7f39d0a2005d766f1a9"
