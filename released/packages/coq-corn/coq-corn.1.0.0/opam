@@ -7,16 +7,17 @@ license: "GPL 2"
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoRN"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
   "coq-math-classes"
 ]
+tags: [
+  "logpath:CoRN"
+]
 synopsis: "The CoRN library"
-flags: light-uninstall
 url {
   src:
     "https://github.com/c-corn/corn/archive/e9162eaba7e705e793aad4dbbffdb606aba9b3bb.tar.gz"
