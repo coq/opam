@@ -5,17 +5,18 @@ bug-reports: "https://github.com/gmalecha/coq-smt-check/issues"
 license: "MIT"
 build: [
   [make]
-  [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SMTC"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
   "coq-plugin-utils" {>= "1.1.0" & < "2.0.0"}
 ]
+tags: [
+  "logpath:SMT"
+]
 synopsis: "Invoke SMT solvers to check goals"
 authors: "Gregory Malecha"
-flags: light-uninstall
 url {
   src: "https://github.com/gmalecha/coq-smt-check/archive/v2.0.0.tar.gz"
   checksum: "md5=38b70fb0b30f9aa09c71af33d4f2d361"
