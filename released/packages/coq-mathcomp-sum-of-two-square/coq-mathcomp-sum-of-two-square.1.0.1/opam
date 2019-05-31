@@ -11,7 +11,7 @@ install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.8"}
-  "coq-mathcomp-ssreflect" {>= "1.7"}
+  "coq-mathcomp-ssreflect" {>= "1.7" & < "1.9~"}
   "coq-mathcomp-algebra" {>= "1.7"}
   "coq-mathcomp-field" {>= "1.7"}
 ]
