@@ -5,18 +5,19 @@ bug-reports: "https://github.com/gmalecha/coq-plugin-utils/issues"
 license: "MIT"
 build: [
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PluginUtils"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
+]
+tags: [
+  "logpath:PluginUtils"
 ]
 synopsis:
   "Utility functions for implementing Coq plugins, e.g. building natural"
 description: "numbers, interfacing with Ltac, etc."
 authors: "Gregory Malecha"
-flags: light-uninstall
 url {
   src: "https://github.com/gmalecha/coq-plugin-utils/archive/v1.3.0.tar.gz"
   checksum: "md5=11ed4235895162a8f56610a5ebe7a494"
