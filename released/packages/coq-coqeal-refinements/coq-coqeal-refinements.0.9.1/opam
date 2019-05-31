@@ -4,18 +4,19 @@ homepage: "http://www.maximedenes.fr/content/coqeal-coq-effective-algebra-librar
 license: "MIT"
 build: [
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoqEAL_refinements"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
   "coq-coqeal-theory" {>= "0.9.0"}
 ]
+tags: [
+  "logpath:CoqEAL_refinements"
+]
 synopsis: "A refinement framework (for algebra)"
 authors:
   "Guillaume Cano, Cyril Cohen, Maxime Dénès, Anders Mörtberg and Vincent Siles"
-flags: light-uninstall
 url {
   src:
     "https://github.com/Barbichu/CoqEAL/raw/master/release/CoqEAL_refinements.0.9.1.tgz"
