@@ -9,7 +9,7 @@ license: "CeCILL-B"
 
 build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]
-depends: [ "coq-mathcomp-algebra" { >= "1.8.0" } ]
+depends: [ "coq-mathcomp-algebra" { >= "1.8.0" & < "1.9" } ]
 
 tags: [ "keyword:Four color theorem" "keyword:small scale reflection" "keyword:mathematical components" ]
 authors: [ "Georges Gonthier" ]
