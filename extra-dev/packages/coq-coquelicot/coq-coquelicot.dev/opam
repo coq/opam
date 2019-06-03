@@ -2,7 +2,7 @@ opam-version: "2.0"
 maintainer: "Matej Košík <matej.kosik@inria.fr>"
 homepage: "http://coquelicot.saclay.inria.fr/"
 dev-repo:
-  "git+https://scm.gforge.inria.fr/anonscm/git/coquelicot/coquelicot.git"
+  "git+https://gitlab.inria.fr/coquelicot/coquelicot.git"
 bug-reports: "coquelicot-friends@lists.gforge.inria.fr"
 license: "LGPL 3"
 build: [
@@ -24,5 +24,5 @@ synopsis:
 flags: light-uninstall
 url {
   src:
-    "git+https://scm.gforge.inria.fr/anonscm/git/coquelicot/coquelicot.git"
+    "git+https://gitlab.inria.fr/coquelicot/coquelicot.git"
 }
