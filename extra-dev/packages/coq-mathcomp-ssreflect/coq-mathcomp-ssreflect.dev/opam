@@ -3,20 +3,18 @@ name: "coq-mathcomp-ssreflect"
 version: "dev"
 maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
 
-homepage: "https://math-comp.github.io/math-comp/"
-bug-reports: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+homepage: "https://math-comp.github.io/"
+bug-reports: "https://github.com/math-comp/math-comp/issues"
 dev-repo: "git+https://github.com/math-comp/math-comp.git"
 license: "CeCILL-B"
 
 build: [ make "-C" "mathcomp/ssreflect" "-j" "%{jobs}%" ]
 install: [ make "-C" "mathcomp/ssreflect" "install" ]
-remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp'" ]
-depends: [
-  "ocaml"
-  "coq" {(>= "8.5" & < "8.11~") | (= "dev")}
-]
-tags: [ "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" ]
+depends: [ "coq" { (>= "8.7" & < "8.11~") | (= "dev") } ]
+
+tags: [ "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" "logpath:mathcomp.ssreflect" ]
 authors: [ "Jeremy Avigad <>" "Andrea Asperti <>" "Stephane Le Roux <>" "Yves Bertot <>" "Laurence Rideau <>" "Enrico Tassi <>" "Ioana Pasca <>" "Georges Gonthier <>" "Sidi Ould Biha <>" "Cyril Cohen <>" "Francois Garillot <>" "Alexey Solovyev <>" "Russell O'Connor <>" "Laurent Théry <>" "Assia Mahboubi <>" ]
+
 synopsis: "Small Scale Reflection"
 description: """
 This library includes the small scale reflection proof language
@@ -24,7 +22,9 @@ extension and the minimal set of libraries to take advantage of it.
 This includes libraries on lists (seq), boolean and boolean
 predicates, natural numbers and types with decidable equality,
 finite types, finite sets, finite functions, finite graphs, basic arithmetics
-and prime numbers, big operators"""
+and prime numbers, big operators
+"""
+
 url {
-  src: "git+https://github.com/math-comp/math-comp.git"
+  src: "git+https://github.com/math-comp/math-comp.git#master"
 }
