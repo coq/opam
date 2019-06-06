@@ -1,0 +1,21 @@
+opam-version: "2.0"
+name: "coq-ltac2"
+maintainer: "Pierre-Marie Pédrot <pierre-marie.pedrot@irif.fr>"
+license: "LGPL 2.1"
+homepage: "https://github.com/coq/ltac2"
+dev-repo: "git+https://github.com/coq/ltac2.git"
+bug-reports: "https://github.com/coq/ltac2/issues"
+build: [
+  [make "COQBIN=\"\"" "-j%{jobs}%"]
+]
+install: [make "install"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+synopsis: "A tactic language for Coq"
+authors: "Pierre-Marie Pédrot <pierre-marie.pedrot@irif.fr>"
+url {
+  src: "https://github.com/coq/ltac2/archive/0.2.tar.gz"
+  checksum: "sha256=20120ace91e3269294926e0ea163a3f0da6a731c327f1276ad7e55b024b8d6f6"
+}
