@@ -11,11 +11,11 @@ build: [
 install: [make "install"]
 depends: [
   "ocaml"
-  "coq" {>= "8.7" & < "8.8~"}
+  "coq" {>= "8.10" & < "8.11~"}
 ]
 synopsis: "A tactic language for Coq"
 authors: "Pierre-Marie Pédrot <pierre-marie.pedrot@irif.fr>"
 url {
-  src: "https://github.com/coq/ltac2/archive/v0.1-8.7.tar.gz"
-  checksum: "md5=748636d22bf0319fed33be80da014d93"
+  src: "https://github.com/coq/ltac2/archive/0.3.tar.gz"
+  checksum: "sha256=e759198cd7bf1145f822bc7dfad7f47a4c682b28bdd67376026276ae88d55feb"
 }
