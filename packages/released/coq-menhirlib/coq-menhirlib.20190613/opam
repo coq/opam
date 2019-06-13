@@ -15,7 +15,9 @@ install: [
 ]
 depends: [
   "coq" { >= "8.6" }
-  "menhir" { = "20190613" }
+]
+conflicts: [
+  "menhir" { != "20190613" }
 ]
 url {
   src:
