@@ -19,6 +19,10 @@ depends: [
 conflicts: [
   "menhir" { != "20190613" }
 ]
+tags: [
+  "date:2019-06-13"
+  "logpath:MenhirLib"
+]
 url {
   src:
     "https://gitlab.inria.fr/fpottier/menhir/repository/20190613/archive.tar.gz"
