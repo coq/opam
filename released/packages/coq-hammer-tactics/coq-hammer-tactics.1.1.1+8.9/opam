@@ -21,6 +21,10 @@ depends: [
   "coq" {>= "8.8" & < "8.10~"}
 ]
 
+conflicts: [
+  "coq-hammer" {< version}
+]
+
 tags: [  
   "keyword:automation"
   "keyword:hammer"
