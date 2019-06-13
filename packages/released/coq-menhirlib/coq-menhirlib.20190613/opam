@@ -13,9 +13,6 @@ build: [
 install: [
   [make "-C" "coq-menhirlib" "install"]
 ]
-remove: [
-  [make "-C" "coq-menhirlib" "uninstall"]
-]
 depends: [
   "coq" { >= "8.6" }
   "menhir" { = "20190613" }
