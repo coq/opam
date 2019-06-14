@@ -8,5 +8,5 @@ REMOTE=$(git rev-parse @{u})
 
 if [ $LOCAL != $REMOTE ]; then
     git pull
-    PATH="/usr/local/bin:$PATH" make COQWEB=/srv/coq-www/www all
+    PATH="/usr/local/bin:$PATH" make COQWEB=/var/deploy/coq-www all
 fi
