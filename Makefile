@@ -28,7 +28,7 @@ check-deps: \
 	which-opam which-lua5.1 opam-config which-markdown yamlpp
 
 yamlpp:
-	cd $(COQWEB); make yamlpp-0.3/yamlpp incl/news/recent.html
+	$(H)ls $(COQWEB)/yamlpp-0.3/yamlpp > /dev/null || (echo "Cannot find yamlpp. Please build the website first"; false)
 
 which-%:
 	$(H)which $* > /dev/null || (echo "Please install $*"; false)
