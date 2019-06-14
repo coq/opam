@@ -16,8 +16,6 @@ all: check-deps
 	@./scripts/refresh-opam-indexes $(SUITES)
 	$(H)./scripts/archive2web templates/index.html.in $(SUITES_COQPKGIDX)
 	$(H)$(call pp,templates/index.html,www/index.html)
-	$(H)ln -sf $(COQWEB)/styles www/styles
-	$(H)ln -sf $(COQWEB)/files www/files
 
 run: all
 	$(H)echo "Starting a local web server for test"
