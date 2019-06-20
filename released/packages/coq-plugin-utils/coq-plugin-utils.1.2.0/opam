@@ -5,16 +5,17 @@ bug-reports: "https://github.com/gmalecha/coq-plugin-utils/issues"
 license: "MIT"
 build: [
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PluginUtils"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
+tags: [
+  "logpath:PluginUtils"
+]
 synopsis: "Utility functions for implementing Coq plugins"
 authors: "Gregory Malecha"
-flags: light-uninstall
 url {
   src: "https://github.com/gmalecha/coq-plugin-utils/archive/v1.2.0.tar.gz"
   checksum: "md5=e42720d5e996c8a4dd326f8a582e5185"
