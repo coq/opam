@@ -100,3 +100,15 @@ opam-build-no-timeout:4.07.1:
     - web
   tags:
     - no-timeout
+
+json-data:
+  image: nixos/nix
+  cache: {}
+  before_script: []
+  script:
+    - nix-shell --run "dune exec archive2web released extra-dev > coq-packages.json"
+  artifacts:
+    name: "$CI_JOB_NAME"
+    paths:
+      - coq-packages.json
+    expire_in: 1 year
