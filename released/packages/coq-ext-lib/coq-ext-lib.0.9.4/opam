@@ -11,15 +11,11 @@ build: [
 install: [
   [make "install"]
 ]
-remove: [
-  ["rm" "-R" "%{lib}%/coq/user-contrib/ExtLib"]
-]
 depends: [
   "ocaml"
   "coq" {>= "8.5.0" & < "8.6~"}
 ]
 synopsis: "A library of Coq definitions, theorems, and tactics"
-flags: light-uninstall
 url {
   src: "https://github.com/coq-ext-lib/coq-ext-lib/archive/v0.9.4.tar.gz"
   checksum: "md5=8e04756e88fb108544fbea9c5d9131eb"
