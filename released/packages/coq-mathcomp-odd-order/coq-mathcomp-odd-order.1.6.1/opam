@@ -8,21 +8,15 @@ bug-reports: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
 license: "CeCILL-B"
 
 build: [ 
-     [make "-C" "mathcomp/field" "-j" "%{jobs}%"]
-     [make "-C" "mathcomp/field" "install"]
-     [make "-C" "mathcomp/odd_order" "-j" "%{jobs}%"]
+  [make "-C" "mathcomp/odd_order" "-j" "%{jobs}%"]
 ]
 install: [ make "-C" "mathcomp/odd_order" "install" ]
-remove: [ 
-     ["sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/odd_order'"]
-     ["sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/field/finfield.v'"]
-     ["sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/field/finfield.vo'"]
-]
 depends: [
   "ocaml"
   "coq-mathcomp-algebra" {= "1.6.1"}
   "coq-mathcomp-character" {= "1.6.1"}
   "coq-mathcomp-field" {= "1.6.1"}
+  "coq-mathcomp-field-extra" {= "1.6.1"}
   "coq-mathcomp-fingroup" {= "1.6.1"}
   "coq-mathcomp-solvable" {= "1.6.1"}
   "coq-mathcomp-ssreflect" {= "1.6.1"}
