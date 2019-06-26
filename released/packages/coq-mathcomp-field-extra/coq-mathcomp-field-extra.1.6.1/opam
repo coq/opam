@@ -1,0 +1,25 @@
+opam-version: "2.0"
+name: "coq-mathcomp-field-extra"
+version: "1.6.1"
+maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+
+homepage: "http://ssr.msr-inria.inria.fr/"
+bug-reports: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+license: "CeCILL-B"
+
+build: [ make "-C" "mathcomp/field" "-j" "%{jobs}%" ]
+install: [ make "-C" "mathcomp/field" "install" ]
+depends: [
+  "ocaml"
+  "coq-mathcomp-field" {= "1.6.1"}
+]
+tags: [ "keyword:algebra" "keyword:field" "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" ]
+authors: [ "Jeremy Avigad <>" "Andrea Asperti <>" "Stephane Le Roux <>" "Yves Bertot <>" "Laurence Rideau <>" "Enrico Tassi <>" "Ioana Pasca <>" "Georges Gonthier <>" "Sidi Ould Biha <>" "Cyril Cohen <>" "Francois Garillot <>" "Alexey Solovyev <>" "Russell O'Connor <>" "Laurent Théry <>" "Assia Mahboubi <>" ]
+synopsis: "Extra Mathematical Components Library on Fields"
+description: """
+This library contains extra definitions and theorems about field extensions,
+galois theory, algebraic numbers, cyclotomic polynomials... needed for coq-mathcomp-odd-order"""
+url {
+  src: "https://github.com/math-comp/math-comp/archive/mathcomp-odd-order.1.6.1.tar.gz"
+  checksum: "md5=2303f60bbca5eaa24bef7af5d47694b9"
+}
