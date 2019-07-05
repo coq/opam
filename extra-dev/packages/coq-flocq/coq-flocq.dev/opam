@@ -1,5 +1,5 @@
 opam-version: "2.0"
-maintainer: "guillaume.melquiond@inria.fr"
+maintainer: "everybody"
 homepage: "http://flocq.gforge.inria.fr/"
 dev-repo: "git+https://scm.gforge.inria.fr/anonscm/git/flocq/flocq.git"
 license: "LGPL 3"
