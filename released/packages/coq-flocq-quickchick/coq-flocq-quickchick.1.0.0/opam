@@ -1,0 +1,24 @@
+opam-version: "2.0"
+name: "coq-flocq-quickchick"
+version: "1.0.0"
+synopsis: "Flocq binary_float generators for QuickChick testing framework"
+maintainer: "Yaroslav Kogevnikov <ykozhevnikov@codeminders.com>"
+authors: "Yaroslav Kogevnikov <ykozhevnikov@codeminders.com>"
+license: "MIT"
+homepage: "https://github.com/digamma-ai/flocq-quickchick"
+bug-reports: "https://github.com/digamma-ai/flocq-quickchick/issues"
+depends: [
+  "coq" {= "8.8.2"}
+  "coq-quickchick" {>= "1.0.2"}
+  "coq-flocq" {>= "3.1.0"}
+]
+build: [
+  ["coq_makefile" "-f" "_CoqProject"  "-o" "Makefile"]
+  [make]
+]
+install: [make "install"]
+dev-repo: "git+https://github.com/digamma-ai/flocq-quickchick.git"
+url {
+  src: "https://github.com/digamma-ai/flocq-quickchick/archive/1.0.0.tar.gz"
+  checksum: "md5=54ce38b1aa1bfbb9dc52709e2be0eb8f"
+}
