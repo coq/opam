@@ -7,6 +7,7 @@ install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Semantics"]
 depends: [
   "ocaml"
+  "ocamlbuild" {build}
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [ "keyword: natural semantics" "keyword: denotational semantics" "keyword: axiomatic semantics" "keyword: Hoare logic" "keyword: Dijkstra weakest pre-condition calculus" "keyword: abstract interpretation" "keyword: intervals" "category: Computer Science/Semantics and Compilation/Semantics" "date: 2007-07-5" ]
