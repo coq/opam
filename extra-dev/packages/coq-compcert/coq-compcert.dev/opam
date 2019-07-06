@@ -35,7 +35,7 @@ remove: [
 depends: [
   "ocaml"
   "coq" {= "dev"}
-  "menhir" {>= "20180530" & <= "20181113"}
+  "menhir" {>= "20190626"}
 ]
 synopsis: "The CompCert C compiler."
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
