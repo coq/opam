@@ -36,7 +36,7 @@ remove: [
   ["sh" "-c" "rmdir -p %{share}%/man/man1 || true"]
 ]
 depends: [
-  "ocaml"
+  "ocaml" {< "4.07.0"}
   "coq" {> "8.6.0" & < "8.8.1"}
   "menhir" {>= "20161201" & < "20180530"}
 ]
