@@ -22,7 +22,7 @@ build: [
 install: [ make "install" ]
 depends: [
   "ocaml"
-  "coq" {(>= "8.7" & < "8.10~") | (= "dev")}
+  "coq" {(>= "8.7" & < "8.11~") | (= "dev")}
   "coq-inf-seq-ext" {= "dev"}
   "coq-struct-tact" {= "dev"}
   "coq-cheerios" {= "dev"}
