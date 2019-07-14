@@ -15,7 +15,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Equations"]
 depends: [
   "ocaml"
-  "coq" {>= "8.8" & < "8.9"}
+  "coq" {>= "8.8.1" & < "8.9"}
 ]
 synopsis: "A function definition package for Coq"
 description: """
