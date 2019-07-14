@@ -27,7 +27,7 @@ install: [
   [make "install"]
 ]
 depends: [
-  "coq" {>= "8.8" & < "8.9~"}
+  "coq" {>= "8.8.1" & < "8.9~"}
 ]
 url {
   src:
