@@ -6,7 +6,7 @@ dev-repo: "git+https://github.com/coq-community/math-classes.git"
 bug-reports: "https://github.com/coq-community/math-classes/issues"
 license: "Public Domain"
 
-synopsis: "A library of abstract interfaces for mathematical structures in Coq."
+synopsis: "A library of abstract interfaces for mathematical structures in Coq"
 description: """
 Math classes is a library of abstract interfaces for mathematical structures, such as
 *  Algebraic hierarchy (groups, rings, fields, …)
