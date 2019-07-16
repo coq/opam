@@ -5,10 +5,12 @@ set -e
 curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh > install.sh
 echo | sh install.sh
 
-opam init --root=$HOME/opam-root-$COMPILER -j $NJOBS --compiler=$COMPILER -n -y
-eval $(opam env --root=${HOME}/opam-root-$COMPILER --set-root)
+if [ ${OPAM_VARIANT} = "plain" ]; then EXTRA_FLAGS=--disable-sandboxing; fi
+
+opam init --root=$HOME/opam-root-$COMPILER-${OPAM_VARIANT} -j $NJOBS --compiler=$COMPILER -n -y $EXTRA_FLAGS
+eval $(opam env --root=${HOME}/opam-root-$COMPILER-${OPAM_VARIANT} --set-root)
 opam config list
 opam install -j $NJOBS -y camlp5 ocamlfind $EXTRA_OPAM
 opam list
 mkdir -p $HOME/opam-cache
-tar czf $HOME/opam-cache/cache-$COMPILER.tgz $HOME/opam-root-$COMPILER
+tar czf $HOME/opam-cache/cache-$COMPILER-${OPAM_VARIANT}.tgz $HOME/opam-root-$COMPILER-${OPAM_VARIANT}

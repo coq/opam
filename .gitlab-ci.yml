@@ -9,10 +9,11 @@ cache:
 
 before_script:
   - export HOME=$(pwd)
+  - export OPAM_VARIANT=$(if [ `hostname` = pyrolise ]; then echo "plain"; else echo "sandbox"; fi)
   - export EXTRA_OPAM="ocamlbuild" # some packages build extracted code this way
   - apt-get update -qy
   - apt-get install unzip libgtksourceview2.0-dev libgtksourceview-3.0-dev libncurses5-dev curl jq ruby bubblewrap -y
-  - test -e ${HOME}/opam-cache/cache-${COMPILER}.tgz || scripts/opam-coq-init
+  - test -e ${HOME}/opam-cache/cache-${COMPILER}-${OPAM_VARIANT}.tgz || scripts/opam-coq-init
   - curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh > install.sh
   - echo | sh install.sh
   - set -o pipefail
@@ -27,7 +28,7 @@ before_script:
     echo "Github PR number: $PR";
     SKIP=$(set +o pipefail; curl https://api.github.com/repos/coq/opam-coq-archive/issues/$PR | jq -rc .body | grep ^ci-skip: | cat );
     echo "SKIP packages per user request: $SKIP";
-    scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-install-remove ${HOME}/opam-cache/cache-${COMPILER}.tgz $SKIP --
+    scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-install-remove ${HOME}/opam-cache/cache-${COMPILER}-${OPAM_VARIANT}.tgz $SKIP --
   artifacts:
     name: "$CI_JOB_NAME"
     when: on_failure
