@@ -31,12 +31,11 @@ remove: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.5" & < "8.6~"}
+  "coq" {>= "8.5.2" & < "8.6~"}
   "menhir" {>= "20160303" & < "20180530"}
 ]
 synopsis: "The CompCert C compiler"
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
-extra-files: ["fix-coq-version.patch" "md5=5b955f6f0c955b6f5b39ff661fa71a60"]
 url {
   src: "https://github.com/AbsInt/CompCert/archive/v3.0.tar.gz"
   checksum: "md5=8590239f6219f8bbc48c4e91f5d16921"
