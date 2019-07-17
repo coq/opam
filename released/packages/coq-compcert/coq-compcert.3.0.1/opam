@@ -35,7 +35,6 @@ depends: [
 synopsis: "The CompCert C compiler"
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
 flags: light-uninstall
-extra-files: ["fix-coq-version.patch" "md5=5b955f6f0c955b6f5b39ff661fa71a60"]
 url {
   src: "https://github.com/AbsInt/CompCert/archive/v3.0.1.tar.gz"
   checksum: "md5=76af0b470261df6b19053a60474fc84a"
