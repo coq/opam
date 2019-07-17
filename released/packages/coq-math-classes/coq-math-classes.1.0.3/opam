@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "b.a.w.spitters@gmail.com"
-homepage: "://github.com/math-classes/"
+homepage: "https://math-classes.github.io"
 doc: "https://github.com/math-classes/"
 authors: [
   "Eelis van der Weegen"
@@ -11,11 +11,15 @@ license: "Public Domain"
 build: [
   [ "./configure.sh" ]
   [ make "-j%{jobs}%" ]
-  [ make "install" ]
 ]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
+]
+tags: [
+  "logpath:MathClasses"
+  "date:2015-05-08"
 ]
 synopsis: "A library of abstract interfaces for mathematical structures in Coq"
 url {
