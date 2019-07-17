@@ -9,7 +9,9 @@ cache:
 
 before_script:
   - export HOME=$(pwd)
+  - echo ${CI_RUNNER_TAGS}
   - export OPAM_VARIANT=$(if [ `hostname` = pyrolyse ]; then echo "plain"; else echo "sandbox"; fi)
+  - echo ${OPAM_VARIANT}
   - export EXTRA_OPAM="ocamlbuild" # some packages build extracted code this way
   - apt-get update -qy
   - apt-get install unzip libgtksourceview2.0-dev libgtksourceview-3.0-dev libncurses5-dev curl jq ruby bubblewrap -y
