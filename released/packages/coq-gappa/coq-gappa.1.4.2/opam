@@ -11,7 +11,7 @@ build: [
 install: ["./remake" "install"]
 depends: [
   "ocaml"
-  "coq" {>= "8.8" & < "8.11~"}
+  "coq" {>= "8.8.1" & < "8.11~"}
   "coq-flocq" {>= "3.0"}
 ]
 tags: [ "keyword:floating point arithmetic" "keyword:interval arithmetic" "keyword:decision procedure" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
