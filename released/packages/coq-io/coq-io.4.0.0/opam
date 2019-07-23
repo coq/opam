@@ -1,0 +1,28 @@
+opam-version: "2.0"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/io"
+dev-repo: "git+https://github.com/clarus/io.git"
+bug-reports: "https://github.com/clarus/io/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.5"}
+]
+synopsis: "A library for effects in Coq"
+tags: [
+  "date:2019-07-23"
+  "keyword:effects"
+  "logpath:Io"
+]
+url {
+  src: "https://github.com/coq-io/io/archive/4.0.0.tar.gz"
+  checksum: "sha512=4530f51f704c09d62870ab68f88705c18cc3a1923ee23382b8c2777b2dcb07b73f0a0a14f80f9b99708c9457065608082b1ebf3b243e2c6cb9c521173e5f2695"
+}
