@@ -17,7 +17,7 @@ depends: [
   "coq" {>= "8.4pl4"}
   "coq-function-ninjas"
   "coq-list-string" {>= "2.0.0"}
-  "coq-io" {>= "3.2.0"}
+  "coq-io" {>= "3.2.0" & < "4"}
   "coq-io-system-ocaml" {>= "2.2.0"}
 ]
 tags: [
