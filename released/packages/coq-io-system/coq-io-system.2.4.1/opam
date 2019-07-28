@@ -1,0 +1,33 @@
+opam-version: "2.0"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/io-system"
+dev-repo: "git+https://github.com/clarus/io-system.git"
+bug-reports: "https://github.com/clarus/io-system/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.5"}
+  "coq-function-ninjas"
+  "coq-list-string" {>= "2.0.0"}
+  "coq-io" {>= "4.0.0"}
+  "coq-io-system-ocaml" {>= "2.3.0"}
+]
+tags: [
+  "date:2019-07-28"
+  "keyword:effects"
+  "keyword:extraction"
+  "logpath:Io/System"
+]
+synopsis: "System effects for Coq"
+url {
+  src: "https://github.com/coq-io/system/archive/2.4.1.tar.gz"
+  checksum: "sha512=b9ff95a7073bec5116d299b4c34013d40c3eb03eea79a11667777e2325f868eb850de30222ab1bd06448fb016a9093a31e4a41ab273ede09e85a05d9ab31dc34"
+}
