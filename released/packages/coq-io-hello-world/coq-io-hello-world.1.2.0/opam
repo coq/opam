@@ -1,0 +1,31 @@
+opam-version: "2.0"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/clarus/coq-hello-world"
+dev-repo: "git+https://github.com/clarus/coq-hello-world.git"
+bug-reports: "https://github.com/clarus/coq-hello-world/issues"
+authors: ["Guillaume Claret"]
+license: "MIT"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+  [make "-C" "extraction"]
+]
+install: [
+  ["install" "-T" "extraction/main.native" "%{bin}%/helloWorld"]
+]
+depends: [
+  "coq" {build}
+  "coq-io" {>= "4.0.0" & build}
+  "coq-io-system" {build}
+  "coq-io-system-ocaml" {>= "2.3.0"}
+]
+tags: [
+  "date:2019-07-30"
+  "keyword:effects"
+  "keyword:extraction"
+]
+synopsis: "A Hello World program in Coq"
+url {
+  src: "https://github.com/coq-io/hello-world/archive/1.2.0.tar.gz"
+  checksum: "sha512=00f1beee8dbb62b6b619d9942f6701ef557ce3de3568f324103c1073968a3f07b7d5fa797e9ca955ec7d7ac36db5e039ef29c5666bfa4a5fe755b03615dface1"
+}
