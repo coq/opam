@@ -15,7 +15,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Unicoq"]
 depends: [
   "ocaml"
-  "coq" {>= "8.5.0" & < "8.6~"}
+  "coq" {>= "8.5.0" & < "8.6~" & != "8.5.2~camlp4"}
 ]
 synopsis: "An enhanced unification algorithm for Coq"
 flags: light-uninstall
