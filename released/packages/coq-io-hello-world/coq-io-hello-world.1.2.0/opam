@@ -14,11 +14,13 @@ install: [
   ["install" "-T" "extraction/main.native" "%{bin}%/helloWorld"]
 ]
 depends: [
-  "coq-io" {>= "4.0.0" build}
+  "coq" {build}
+  "coq-io" {>= "4.0.0" & build}
   "coq-io-system" {build}
   "coq-io-system-ocaml" {>= "2.3.0"}
 ]
 tags: [
+  "date:2019-07-30"
   "keyword:effects"
   "keyword:extraction"
 ]
