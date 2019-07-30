@@ -24,7 +24,7 @@ tags: [
   "date:2015-03-23"
   "keyword:effects"
   "keyword:extraction"
-  "logpath:Io/System"
+  "logpath:Io.System"
 ]
 synopsis: "System effects for Coq"
 url {
