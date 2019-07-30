@@ -7,7 +7,7 @@ install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MapleMode"]
 depends: [
   "ocaml"
-  "coq" {>= "8.5" & < "8.6~"}
+  "coq" {>= "8.5" & < "8.6~" & != "8.5.0~camlp4" & != "8.5.2~camlp4"}
 ]
 tags: [ "keyword:maple" "keyword:simplification" "keyword:field tactic" "category:Miscellaneous/Coq Extensions" "date:2002-03" ]
 authors: [ "David Delahaye <>" "Micaela Mayero <>" ]
