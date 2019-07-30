@@ -9,7 +9,7 @@ build: [
 install: [make "install"]
 depends: [
   "ocaml"
-  "coq" {>= "8.5.1" & < "8.6~"}
+  "coq" {>= "8.5.1" & < "8.6~" & != "8.5.2~camlp4"}
 ]
 tags: [
   "keyword:relation algebra"
