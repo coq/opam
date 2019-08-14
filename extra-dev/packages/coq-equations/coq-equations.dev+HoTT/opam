@@ -4,15 +4,14 @@ maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://mattam82.github.io/Coq-Equations"
 dev-repo: "git+https://github.com/mattam82/Coq-Equations.git"
 bug-reports: "https://github.com/mattam82/Coq-Equations/issues"
-license: "LGPL 2.1"
+license: "LGPL-2.1-or-later"
 build: [
-  ["./configure.sh HoTT"]
+  ["./configure.sh" "HoTT"]
   [make "-j%{jobs}%"]
 ]
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Equations"]
 depends: [
   "ocaml"
   "coq" {= "dev" }
@@ -26,6 +25,12 @@ terms. It automatically derives the clauses equations, the graph of the
 function and its associated elimination principle.
 """
 synopsis: "A function definition package for Coq+HoTT"
+tags: [
+  "keyword:dependent pattern-matching"
+  "keyword:functional elimination"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:Equations"
+]
 url {
   src: "git+https://github.com/mattam82/Coq-Equations#hott-logic"
 }
