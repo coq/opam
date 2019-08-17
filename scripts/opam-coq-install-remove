@@ -23,7 +23,12 @@ function setup_root() {
   opam update default >> $1
   echo .Add released repo
   opam repo add released --all-switches file://$PWD/released >> $1
+  opam config list
+  opam switch list
   opam pin list
+  opam list
+  which ocamlc
+  ocamlc -version
 }
 
 RC=0
