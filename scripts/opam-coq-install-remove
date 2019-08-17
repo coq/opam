@@ -17,9 +17,9 @@ shift # for --
 
 function setup_root() {
   echo .Initializing opam root
-  rm -rf $HOME/opam-root-$COMPILER-${OPAM_VARIANT}
+  rm -rf $OPAM_ROOT_DIR
   tar xzf $CACHE -C /
-  eval $(opam env --root=${HOME}/opam-root-$COMPILER-${OPAM_VARIANT} --set-root)
+  eval $(opam env --root=$OPAM_ROOT_DIR --set-root)
   opam update default >> $1
   echo .Add released repo
   opam repo add released --all-switches file://$PWD/released >> $1
@@ -28,7 +28,6 @@ function setup_root() {
   opam pin list
   opam list
   which ocamlc
-  ocamlc -version
 }
 
 RC=0

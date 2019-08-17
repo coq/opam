@@ -12,11 +12,13 @@ before_script:
   - echo CI_RUNNER_TAGS=${CI_RUNNER_TAGS}
   - export OPAM_VARIANT=$(if echo $CI_RUNNER_TAGS | grep -q no-sandbox; then echo "plain"; else echo "sandbox"; fi)
   - echo OPAM_VARIANT=${OPAM_VARIANT}
-  - export OPAM_VERSION=2.0.4
+  - export OPAM_VERSION=2.0.5
+  - export OPAM_ROOT_DIR=${HOME}/opam-root-${COMPILER}-${OPAM_VERSION}-${OPAM_VARIANT}
+  - export OPAM_ROOT_CACHE=${HOME}/opam-cache/cache-${COMPILER}-${OPAM_VERSION}-${OPAM_VARIANT}.tgz
   - export EXTRA_OPAM="ocamlbuild" # some packages build extracted code this way
   - apt-get update -qy
   - apt-get install unzip libgtksourceview2.0-dev libgtksourceview-3.0-dev libncurses5-dev curl jq ruby bubblewrap -y
-  - test -e ${HOME}/opam-cache/cache-${COMPILER}-${OPAM_VARIANT}.tgz || scripts/opam-coq-init
+  - test -e $OPAM_ROOT_CACHE || scripts/opam-coq-init
   - curl -L https://github.com/ocaml/opam/releases/download/${OPAM_VERSION}/opam-${OPAM_VERSION}-x86_64-linux >/usr/local/bin/opam
   - chmod +x /usr/local/bin/opam
   - set -o pipefail
@@ -31,7 +33,7 @@ before_script:
     echo "Github PR number: $PR";
     SKIP=$(set +o pipefail; curl https://api.github.com/repos/coq/opam-coq-archive/issues/$PR | jq -rc .body | grep ^ci-skip: | cat );
     echo "SKIP packages per user request: $SKIP";
-    scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-install-remove ${HOME}/opam-cache/cache-${COMPILER}-${OPAM_VARIANT}.tgz $SKIP --
+    scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-install-remove $OPAM_ROOT_CACHE $SKIP --
   artifacts:
     name: "$CI_JOB_NAME"
     when: on_failure

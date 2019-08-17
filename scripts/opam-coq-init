@@ -7,10 +7,10 @@ chmod +x /usr/local/bin/opam
 
 if [ ${OPAM_VARIANT} = "plain" ]; then EXTRA_FLAGS=--disable-sandboxing; fi
 
-opam init --root=$HOME/opam-root-$COMPILER-${OPAM_VARIANT} -j $NJOBS --compiler=$COMPILER -n -y $EXTRA_FLAGS
-eval $(opam env --root=${HOME}/opam-root-$COMPILER-${OPAM_VARIANT} --set-root)
+opam init --root=$OPAM_ROOT_DIR -j $NJOBS --compiler=$COMPILER -n -y $EXTRA_FLAGS
+eval $(opam env --root=$OPAM_ROOT_DIR --set-root)
 opam config list
 opam install -j $NJOBS -y camlp5 ocamlfind $EXTRA_OPAM
 opam list
-mkdir -p $HOME/opam-cache
-tar czf $HOME/opam-cache/cache-$COMPILER-${OPAM_VARIANT}.tgz $HOME/opam-root-$COMPILER-${OPAM_VARIANT}
+mkdir -p ${HOME}/opam-cache
+tar czf $OPAM_ROOT_CACHE $OPAM_ROOT_DIR
