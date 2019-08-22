@@ -29,5 +29,5 @@ synopsis: "Finite data structures with extensional reasoning"
 flags: light-uninstall
 url {
   src: "https://github.com/arthuraa/extructures/archive/v0.2.0.tar.gz"
-  checksum: "md5=2f426df50e2262cfefb829715e8283ff"
+  checksum: "sha512=4fee988d4367857dc8cc966998c6a9c97537af480aebaf1d174148ead8c9348776ef238fd01654c66fa6c00d92f43bd484e4d3bd6cf291bda1eb35eac46f107f"
 }
