@@ -15,7 +15,13 @@ depends: [
   "ocaml"
   "coq" {>= "8.9" & < "8.10~"}
 ]
-tags: [ "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:2019-09" ]
+tags: [ 
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "category:Miscellaneous/Coq Extensions"
+  "keyword: smt"
+  "keyword: sat"
+  "keyword: automation"
+]
 authors: [ 
  "Michaël Armand"
  "Valentin Blot"
