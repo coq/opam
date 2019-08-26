@@ -5,7 +5,7 @@ dev-repo: "git+https://github.com/xavierleroy/coq2html.git"
 bug-reports: "https://github.com/xavierleroy/coq2html/issues"
 license: "GPL v2 or later"
 build: [
-  [make "-j%{jobs}%"]
+  [make]
 ]
 install: [
   [make "BINDIR=%{bin}%" "install"]
