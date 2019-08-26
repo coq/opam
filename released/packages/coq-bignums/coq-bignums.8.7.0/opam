@@ -12,7 +12,7 @@ authors: [
 ]
 license: "LGPL 2"
 build: [
-  [make "-j%{jobs}%"]
+  [make]
 ]
 install: [
   [make "install"]
