@@ -1,8 +1,32 @@
 opam-version: "2.0"
-maintainer: "pierre.letouzey@inria.fr"
+maintainer: "Laurent.Thery@inria.fr"
+
 homepage: "https://github.com/coq/bignums"
 dev-repo: "git+https://github.com/coq/bignums.git"
 bug-reports: "https://github.com/coq/bignums/issues"
+license: "LGPL-2.1"
+
+synopsis: "Bignums, the Coq library of arbitrary large numbers"
+description: """
+Provides BigN, BigZ, BigQ that used to be part of Coq standard library
+"""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "ocaml"
+  "coq" {= "dev"}
+]
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "category:Mathematics/Arithmetic and Number Theory/Rational numbers"
+  "keyword:integer numbers"
+  "keyword:rational numbers"
+  "keyword:arithmetic"
+  "keyword:arbitrary-precision"
+  "logpath:Bignums"
+]
 authors: [
   "Laurent Théry"
   "Benjamin Grégoire"
@@ -10,33 +34,3 @@ authors: [
   "Evgeny Makarov"
   "Pierre Letouzey"
 ]
-license: "LGPL 2"
-build: [
-  [make "-j%{jobs}%"]
-]
-install: [
-  [make "install"]
-]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Bignums"]
-depends: [
-  "ocaml"
-  "coq" {= "dev"}
-]
-tags: [
-  "keyword:integer numbers"
-  "keyword:rational numbers"
-  "keyword:arithmetic"
-  "keyword:arbitrary-precision"
-  "category:Miscellaneous/Coq Extensions"
-  "category:Mathematics/Arithmetic and Number Theory/Number theory"
-  "category:Mathematics/Arithmetic and Number Theory/Rational numbers"
-  "date:2017-06-15"
-  "logpath:Bignums"
-]
-synopsis: "Bignums, the Coq library of arbitrary large numbers"
-description:
-  "Provides BigN, BigZ, BigQ that used to be part of Coq standard library < 8.7."
-flags: light-uninstall
-url {
-  src: "git+https://github.com/coq/bignums.git#master"
-}
