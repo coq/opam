@@ -10,7 +10,7 @@ install: [
   ["sh" "-c" "cd src && make install"]
 ]
 depends: [
-  "ocaml"
+  "ocaml" {>= "4.04.0" }
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [ 
