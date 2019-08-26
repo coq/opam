@@ -7,7 +7,7 @@ authors: ["Guillaume Claret"]
 license: "MIT"
 build: [
   ["./configure.sh"]
-  [make "-j%{jobs}%"]
+  [make]
 ]
 install: [
   [make "install"]
