@@ -4,12 +4,10 @@ homepage: "https://smtcoq.github.io/"
 dev-repo: "git+https://github.com/smtcoq/smtcoq.git"
 license: "CECILL-C"
 build: [
-  ["cd" "src"]
-  ["./configure.sh"]
-  [make "-j%{jobs}%"]
+  ["sh" "-c" "cd src && ./configure.sh && make -j%{jobs}%"]
 ]
 install: [
-  [make "install"]
+  ["sh" "-c" "cd src && make install"]
 ]
 depends: [
   "ocaml"
