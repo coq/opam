@@ -7,7 +7,7 @@ bug-reports: "https://github.com/lukaszcz/coqhammer/issues"
 license: "LGPL 2.1"
 
 build: [
-  [make "-j%{jobs}%"]
+  [make]
   [make "tests"] {with-test}
 ]
 install: [ make "install" ]
@@ -17,6 +17,7 @@ remove: [
 ]
 depends: [
   "ocaml"
+  "conf-g++" {build}
   "coq" {= "8.8.0"}
 ]
 tags: [ "keyword:automation"
