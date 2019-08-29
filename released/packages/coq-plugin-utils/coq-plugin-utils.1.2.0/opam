@@ -4,7 +4,7 @@ homepage: "https://github.com/gmalecha/coq-plugin-utils"
 bug-reports: "https://github.com/gmalecha/coq-plugin-utils/issues"
 license: "MIT"
 build: [
-  [make "-j%{jobs}%"]
+  [make]
 ]
 install: [make "install"]
 depends: [
