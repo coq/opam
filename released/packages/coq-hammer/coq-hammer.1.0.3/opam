@@ -8,7 +8,7 @@ license: "LGPL 2.1"
 build: [
   ["sed" "-i" "s|usr\\/local|%{prefix}%|g" "_CoqProject"]
   ["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
-  [make "-j%{jobs}%"]
+  [make]
 ]
 install: [
   [make "install"]
@@ -19,6 +19,7 @@ remove: [
 ]
 depends: [
   "ocaml"
+  "conf-g++" {build}
   "coq" {(>= "8.6" & < "8.7~")}
 ]
 tags: [ "keyword:automation"
