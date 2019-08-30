@@ -6,7 +6,7 @@ homepage: "https://iris-project.org/"
 bug-reports: "https://gitlab.mpi-sws.org/FP/iris-coq/issues"
 license: "BSD"
 dev-repo: "git+https://gitlab.mpi-sws.org/FP/iris-coq.git"
-synopsis: "This is the Coq development of the Iris Project"
+synopsis: "Iris is a Higher-Order Concurrent Separation Logic Framework with support for interactive proofs"
 
 depends: [
   "coq" { (= "8.7.2") | (= "8.8.2") | (>= "8.9" & < "8.11~") | (= "dev") }
