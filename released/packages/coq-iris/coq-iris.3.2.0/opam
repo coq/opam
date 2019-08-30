@@ -6,6 +6,7 @@ homepage: "https://iris-project.org/"
 bug-reports: "https://gitlab.mpi-sws.org/FP/iris-coq/issues"
 license: "BSD"
 dev-repo: "git+https://gitlab.mpi-sws.org/FP/iris-coq.git"
+tags: [ "date:2019-08-29" ]
 synopsis: "Iris is a Higher-Order Concurrent Separation Logic Framework with support for interactive proofs"
 
 depends: [

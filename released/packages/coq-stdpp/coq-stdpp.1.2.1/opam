@@ -6,6 +6,7 @@ authors: "Robbert Krebbers, Jacques-Henri Jourdan, Ralf Jung"
 bug-reports: "https://gitlab.mpi-sws.org/iris/stdpp/issues"
 license: "BSD"
 dev-repo: "git+https://gitlab.mpi-sws.org/iris/stdpp.git"
+tags: [ "date:2019-08-29" ]
 synopsis: "std++ is an extended \"Standard Library\" for Coq"
 description: """
 The key features of this library are as follows:
