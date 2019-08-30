@@ -4,7 +4,7 @@ maintainer: "Laurent.Thery@inria.fr"
 homepage: "https://github.com/coq/bignums"
 dev-repo: "git+https://github.com/coq/bignums.git"
 bug-reports: "https://github.com/coq/bignums/issues"
-license: "LGPL-2.1"
+license: "LGPL-2.1-only"
 
 synopsis: "Bignums, the Coq library of arbitrary large numbers"
 description: """
