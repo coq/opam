@@ -6,8 +6,8 @@ license: "GPL 2"
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
-  [make "install"]
 ]
+install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoRN"]
 depends: [
   "ocaml"
