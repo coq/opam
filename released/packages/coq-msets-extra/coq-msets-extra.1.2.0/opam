@@ -1,0 +1,47 @@
+opam-version: "2.0"
+maintainer: "thomas@tuerk-brechen.de"
+homepage: "https://github.com/thtuerk/MSetsExtra"
+dev-repo: "git+https://github.com/thtuerk/MSetsExtra.git"
+bug-reports: "https://github.com/thtuerk/MSetsExtra/issues"
+authors: ["FireEye Formal Methods Team <formal-methods@fireeye.com>" "Thomas Tuerk <thomas@tuerk-brechen.de>"]
+license: "LGPL 2.1"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MSetsExtra"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+  "coq-mathcomp-ssreflect" {>= "1.6"}
+]
+tags: [ "keyword:finite sets"
+        "keyword:fold with abort"
+        "keyword:extracting efficient code"
+        "keyword:data structures"
+        "category:Computer Science/Data Types and Data Structures"
+        "category:Miscellaneous/Extracted Programs/Data structures"
+        "date:2019-09-19" ]
+synopsis: "Extensions of MSets for Efficient Execution"
+description: """
+Coq's MSet library provides various, reasonably efficient finite set
+implementations. Nevertheless, FireEye was struggling with performance
+issues. This library contains extensions to Coq's MSet library that
+helped the FireEye Formal Methods team (formal-methods@fireeye.com),
+solve these performance issues. There are
+
+- Fold With Abort
+  efficient folding with possibility to start late and stop early
+
+- Interval Sets
+  a memory efficient representation of sets of numbers
+  
+- Unsorted Lists with Duplicates"""
+flags: light-uninstall
+url {
+  src: "https://github.com/thtuerk/MSetsExtra/archive/1.2.0.tar.gz"
+  checksum: "sha256=e886237194cde8602dbf191d3db7b1c28c6231c1c42996ca1b1819db3ab339ef"
+}
