@@ -4,7 +4,7 @@ homepage: "https://github.com/thtuerk/MSetsExtra"
 dev-repo: "git+https://github.com/thtuerk/MSetsExtra.git"
 bug-reports: "https://github.com/thtuerk/MSetsExtra/issues"
 authors: ["FireEye Formal Methods Team <formal-methods@fireeye.com>" "Thomas Tuerk <thomas@tuerk-brechen.de>"]
-license: "LGPL 2.1"
+license: "LGPL-2.1-only"
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
@@ -12,7 +12,6 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MSetsExtra"]
 depends: [
   "ocaml"
   "coq" {>= "8.9" & < "8.10~"}
@@ -24,6 +23,7 @@ tags: [ "keyword:finite sets"
         "keyword:data structures"
         "category:Computer Science/Data Types and Data Structures"
         "category:Miscellaneous/Extracted Programs/Data structures"
+        "logpath:MSetsExtra"
         "date:2019-09-19" ]
 synopsis: "Extensions of MSets for Efficient Execution"
 description: """
@@ -40,7 +40,6 @@ solve these performance issues. There are
   a memory efficient representation of sets of numbers
   
 - Unsorted Lists with Duplicates"""
-flags: light-uninstall
 url {
   src: "https://github.com/thtuerk/MSetsExtra/archive/1.2.0.tar.gz"
   checksum: "sha256=e886237194cde8602dbf191d3db7b1c28c6231c1c42996ca1b1819db3ab339ef"
