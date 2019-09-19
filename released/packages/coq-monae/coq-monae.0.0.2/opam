@@ -1,0 +1,34 @@
+opam-version: "2.0"
+maintainer: "reynald.affeldt@aist.go.jp"
+homepage: "https://github.com/affeldt-aist/monae"
+bug-reports: "https://github.com/affeldt-aist/monae/issues"
+dev-repo: "git+https://github.com/affeldt-aist/monae.git"
+license: "GPLv3"
+authors: [
+  "Reynald Affeldt"
+  "David Nowak"
+  "Takafumi Saikawa"
+  "Jacques Garrigue"
+  "Celestine Sauvage"
+]
+build: [
+  ["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
+  [make]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" { (>= "8.9.1" & < "8.10.0~") }
+  "coq-infotheo" { (>= "0.0.4") }
+]
+synopsis: "Monae"
+description: """
+This repository contains a formalization of monads including several
+models, examples of monadic equational reasoning, and an application
+to program semantics.
+"""
+url {
+  http: "https://github.com/affeldt-aist/monae/archive/0.0.2.tar.gz"
+  checksum: "md5=c7de84a4703db763459fe0f90ec64b13"
+}
