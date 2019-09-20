@@ -18,7 +18,7 @@ install: [
 depends: [
   "coq" {>= "8.8"}
   "coq-ott" {>= "0.29"}
-  "ott"
+  "ott" {build & >= "0.29"}
 ]
 
 tags: [
