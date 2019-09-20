@@ -1,0 +1,37 @@
+opam-version: "2.0"
+synopsis: "A specification of Michelson in Coq to prove properties about smart contracts in Tezos"
+maintainer: "raphael.cauderlier@nomadic-labs.com"
+authors: [ "Raphaël Cauderlier" "Bruno Bernardo" "Julien Tesson" "Arvid Jakobsson" ]
+
+homepage: "https://gitlab.com/nomadic-labs/mi-cho-coq/"
+dev-repo: "git+https://gitlab.com/nomadic-labs/mi-cho-coq/"
+bug-reports: "https://gitlab.com/nomadic-labs/mi-cho-coq/issues"
+license: "MIT"
+
+build: [
+  ["./configure"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  make "install"
+]
+depends: [
+  "coq" {>= "8.8"}
+  "coq-ott"
+  "ott"
+]
+
+tags: [
+  "category:Programming Languages/Formal Definitions and Theory"
+  "keyword:cryptocurrency"
+  "keyword:michelson"
+  "keyword:semantics"
+  "keyword:smart-contract"
+  "keyword:tezos"
+  "logpath:Michocoq"
+  "logpath:Michocott"
+]
+
+url {
+  src: "git+https://gitlab.com/nomadic-labs/mi-cho-coq.git#master"
+}
