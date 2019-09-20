@@ -16,6 +16,7 @@ install: [
   make "install"
 ]
 depends: [
+  "ocaml"
   "coq" {>= "8.8"}
   "coq-ott" {>= "0.29"}
   "ott" {build & >= "0.29"}
