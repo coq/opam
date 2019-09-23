@@ -15,6 +15,8 @@ type package_version = {
   date : string option;
   version : string;
   suite : string;
+  src: string option;
+  checksum: string option;
 } [@@deriving yojson]
 
 type package_info = {
@@ -68,6 +70,10 @@ let digits v =
     | x :: y :: _ -> int_of_string x, int_of_string y, tilde
   with Failure _ -> warning "incomplete version parsing"; 0,0,false
 
+let rec find_section name = function
+  | [] -> None
+  | Section(_,s) :: _ when name = s.section_kind -> Some s
+  | _ :: xs -> find_section name xs
 
 let rec find_var_str name = function
   | [] -> None
@@ -103,6 +109,11 @@ let parse_author_name s =
     Str.matched_string s
   else raise (Invalid_argument "author_name")
 
+let obind o f =
+  match o with
+  | Some x -> f x
+  | None -> None
+
 let extract_package_version_data ~suite ~version opam_file =
   let tags = find_var_str_list "tags" opam_file in
   let date =
@@ -121,6 +132,13 @@ let extract_package_version_data ~suite ~version opam_file =
   let categories = filtermap (has_prefix "category:") tags in
   let authors = find_var_str_list "authors" opam_file in
   let authors = List.map parse_author_name authors in
+  let url = find_section "url" opam_file in
+  let src = obind url (fun sec -> find_var_str "src" sec.section_items) in
+  let src = match src with
+    | None -> obind url (fun sec -> find_var_str "archive" sec.section_items)
+    | Some _ -> src
+  in
+  let checksum = obind url (fun sec -> find_var_str "checksum" sec.section_items) in
   { version;
     homepage;
     keywords;
@@ -129,6 +147,8 @@ let extract_package_version_data ~suite ~version opam_file =
     description;
     date;
     suite;
+    src;
+    checksum;
   }
 
 let do_one_package_version root pname version =
