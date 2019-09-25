@@ -5,10 +5,10 @@ dev-repo: "git+https://github.com/smtcoq/smtcoq.git"
 bug-reports: "https://github.com/smtcoq/smtcoq/issues"
 license: "CECILL-C"
 build: [
-  ["make -j%{jobs}%"]
+  [make "-j%{jobs}%"]
 ]
 install: [
-  ["make install"]
+  [make "install"]
 ]
 depends: [
   "ocaml" {>= "4.04.0" }
