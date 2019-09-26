@@ -10,15 +10,14 @@ homepage: "https://github.com/mit-plv/fiat-crypto"
 bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
 license: "MIT"
 build: [
-  ["git" "submodule" "update" "--init" "--recursive"]
-  [make "-j%{jobs}%" "coq" "coqprime-all"]
+  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "coq" "standalone-ocaml"]
 ]
-install: [make "install"]
+install: [make "EXTERNAL_DEPENDENCIES=1" "install" "install-standalone-ocaml"]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Crypto"]
 depends: [
   "ocaml"
-  "coq" {= "dev"}
-  "coq-bignums"
+  "coq" {>= "8.8~"}
+  "coqprime"
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
 synopsis: "Cryptographic Primitive Code Generation in Fiat."
