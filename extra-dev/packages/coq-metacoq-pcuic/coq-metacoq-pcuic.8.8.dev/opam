@@ -1,5 +1,4 @@
 opam-version: "2.0"
-version: "2.2"
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://metacoq.github.io/metacoq"
 dev-repo: "git+https://github.com/MetaCoq/metacoq.git#coq-8.8"
@@ -37,7 +36,6 @@ The PCUIC module provides a cleaned-up specification of Coq's typing algorithm a
 with a certified typechecker for it. This module includes the standard metatheory of
 PCUIC: Weakening, Substitution, Confluence and Subject Reduction are proven here.
 """
-# url {
-#   src: "https://github.com/MetaCoq/metacoq/archive/v2.1-beta3.tar.gz"
-#   checksum: "md5=e81b8ecabef788a10337a39b095d54f3"
-# }
+url {
+  src: "git+https://github.com/MetaCoq/metacoq#coq-8.8"
+}
