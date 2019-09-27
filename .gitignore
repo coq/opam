@@ -8,3 +8,5 @@ www/styles
 */archives/*
 */index.tar.gz
 */urls.txt
+.DS_Store
+.history
