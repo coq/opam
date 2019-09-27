@@ -1,0 +1,37 @@
+opam-version: "2.0"
+maintainer: "matthieu.sozeau@inria.fr"
+homepage: "https://metacoq.github.io/metacoq"
+dev-repo: "git+https://github.com/MetaCoq/metacoq.git#coq-8.8"
+bug-reports: "https://github.com/MetaCoq/metacoq/issues"
+authors: ["Simon Boulier <simon.boulier@inria.fr>"
+          "Cyril Cohen <cyril.cohen@inria.fr>"
+          "Matthieu Sozeau <matthieu.sozeau@inria.fr>"
+          "Nicolas Tabareau <nicolas.tabareau@inria.fr>"
+          "Théo Winterhalter <theo.winterhalter@inria.fr>"
+]
+license: "MIT"
+build: [
+  ["sh" "./configure.sh"]
+  [make "-j%{jobs}%" "-C" "translations"]
+]
+install: [
+  [make "-C" "translations" "install"]
+]
+depends: [
+  "ocaml" {> "4.02.3"}
+  "coq" {>= "8.8" & < "8.9~"}
+  "coq-metacoq-template" {= version}
+  "coq-metacoq-checker" {= version}
+]
+synopsis: "Implementation and verification of an erasure procedure for Coq"
+description: """
+MetaCoq is a meta-programming framework for Coq.
+
+The Translations modules provides implementation of standard translations 
+from type theory to type theory, e.g. parametricity and the `cross-bool` 
+translation that invalidates functional extensionality.
+"""
+url {
+  src: "https://github.com/MetaCoq/metacoq/archive/1.0-alpha+8.8.tar.gz"
+  checksum: "sha256=c2fe122ad30849e99c1e5c100af5490cef0e94246f8eb83f6df3f2ccf9edfc04"
+}
