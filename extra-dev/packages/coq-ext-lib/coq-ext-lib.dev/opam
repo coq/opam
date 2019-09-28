@@ -16,7 +16,7 @@ remove: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.8" | = "dev"}
+  "coq" {= "dev"}
 ]
 synopsis: "A library of Coq definitions, theorems, and tactics."
 flags: light-uninstall
