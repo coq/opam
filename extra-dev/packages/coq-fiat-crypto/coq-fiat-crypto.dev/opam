@@ -17,7 +17,7 @@ remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Crypto"]
 depends: [
   "ocaml"
   "coq" {>= "8.9~"}
-  "coqprime"
+  "coq-coqprime"
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
 synopsis: "Cryptographic Primitive Code Generation in Fiat."
