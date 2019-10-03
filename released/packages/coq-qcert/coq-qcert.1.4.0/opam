@@ -1,6 +1,4 @@
 opam-version: "2.0"
-name: "coq-qcert"
-version: "1.4.0"
 maintainer: "Jerome Simeon <jeromesimeon@me.com>"
 
 homepage: "https://querycert.github.io"
