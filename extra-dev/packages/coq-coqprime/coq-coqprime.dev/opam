@@ -11,13 +11,14 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["make" "uninstall"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Coqprime"]
 depends: [
   "ocaml"
   "coq" {>= "8.8~"}
   "coq-bignums"
 ]
 synopsis: "Certifying prime numbers in Coq"
+flags: light-uninstall
 url {
   src: "git+https://github.com/thery/coqprime.git"
 }
