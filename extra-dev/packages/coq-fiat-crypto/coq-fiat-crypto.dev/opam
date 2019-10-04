@@ -18,6 +18,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.9~"}
   "coq-coqprime"
+  "coq-bedrock2"
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
 synopsis: "Cryptographic Primitive Code Generation in Fiat."
