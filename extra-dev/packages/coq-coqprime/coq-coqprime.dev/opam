@@ -6,7 +6,6 @@ dev-repo: "git+https://github.com/thery/coqprime.git"
 license: "LGPL"
 authors: ["Laurent Théry"]
 build: [
-  ["./configure.sh"]
   [make "-j%{jobs}%"]
 ]
 install: [
