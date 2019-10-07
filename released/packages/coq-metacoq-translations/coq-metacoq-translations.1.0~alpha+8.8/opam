@@ -19,7 +19,7 @@ install: [
 ]
 depends: [
   "ocaml" {> "4.02.3"}
-  "coq" {>= "8.8" & < "8.9~"}
+  "coq" {>= "8.8.1" & < "8.9~"}
   "coq-metacoq-template" {= version}
   "coq-metacoq-checker" {= version}
 ]
