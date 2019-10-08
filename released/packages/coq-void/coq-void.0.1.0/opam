@@ -1,0 +1,30 @@
+opam-version: "2.0"
+maintainer: "arthur.aa@gmail.com"
+homepage: "https://github.com/arthuraa/coq-void"
+dev-repo: "git+https://github.com/arthuraa/coq-void.git"
+bug-reports: "https://github.com/arthuraa/coq-void/issues"
+authors: ["Arthur Azevedo de Amorim"]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+  "coq-mathcomp-ssreflect" {>= "1.9" & < "1.10~"}
+]
+tags: [
+  "keyword:empty type"
+  "keyword:class instances"
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2019-10-08"
+  "logpath:void"
+]
+synopsis: "MathComp instances for the empty type (Empty_set)"
+url {
+  src: "https://github.com/arthuraa/coq-void/archive/v0.1.0.tar.gz"
+  checksum: "sha512=43184305ef9d76dae9cc2c8a4cfc4cf6f6689aa8c37e113e5ec338868a874821a02909ff3da7a93c92b2640bbd2e4610fe0c7c576f402bce5b73ea623e27ef4e"
+}
