@@ -1,0 +1,33 @@
+opam-version: "2.0"
+maintainer: "Jerome Simeon <jeromesimeon@me.com>"
+
+homepage: "https://querycert.github.io"
+bug-reports: "https://github.com/querycert/qcert/issues"
+dev-repo: "git+https://github.com/querycert/qcert"
+license: "Apache-2.0"
+
+build: [
+  [make "-j%{jobs}%" "qcert-coq"]
+]
+install: [
+  [make "install-coq"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.8.2" & < "8.9~"}
+  "coq-flocq" {>= "2.6.1" & < "3.0~"}
+  "coq-jsast" {>= "1.0.8"}
+]
+
+tags: [ "keyword:databases" "keyword:queries" "keyword:relational" "keyword:compiler" "date:2019-05-29" "logpath:Qcert" ]
+authors: [ "Josh Auerbach <>" "Martin Hirzel <>" "Louis Mandel <>" "Avi Shinnar <>" "Jerome Simeon <>" ]
+
+synopsis: "Verified compiler for data-centric languages"
+description: """
+This is the Coq library for Q*cert, a platform for implementing and verifying query compilers. It includes abstract syntax and semantics for several source query languages (OQL, SQL), for intermediate database representations (nested relational algebra and calculus), and correctness proofs for part of the compilation pipeline to JavaScript and Java.
+"""
+
+url {
+  src: "https://github.com/querycert/qcert/archive/v1.4.1.tar.gz"
+  checksum: "d1534c7a20a749a2fedd81fc30bf0f0b"
+}
