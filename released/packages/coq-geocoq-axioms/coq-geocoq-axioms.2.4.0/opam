@@ -24,7 +24,7 @@ depends: [
 ]
 synopsis : "A formalization of foundations of geometry in Coq"
 description: "This subpackage contains the axioms."
-
+extra-files : [["Make.in" "md5=4012b8ca78abe89ced161b10c93efdc9"]]
 tags: [ "keyword:geometry"
         "keyword:neutral geometry"
 	"keyword:euclidean geometry"
