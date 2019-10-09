@@ -1,0 +1,42 @@
+opam-version: "2.0"
+maintainer: "Julien Narboux <julien@narboux.fr>"
+homepage: "http://geocoq.github.io/GeoCoq/"
+bug-reports: "https://github.com/GeoCoq/GeoCoq/issues"
+dev-repo: "git+https://github.com/GeoCoq/GeoCoq.git"
+authors: [
+      "Michael Beeson"
+      "Gabriel Braun <gabriel.braun@unistra.fr>"
+	  "Pierre Boutry <pierre.boutry@unistra.fr>"
+	  "Charly Gries <Charly.Gries@etu.unistra.fr>"
+	  "Julien Narboux <narboux@unistra.fr>"
+	  "Pascal Schreck <schreck@unistra.fr>"]
+license: "LGPL 3"
+build: [
+  ["./configure-axioms.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" { (>= "8.6.1" & < "8.10~") }
+  "coq-geocoq-coinc" { = "2.4.0" }
+]
+synopsis : "A formalization of foundations of geometry in Coq"
+description: "This subpackage contains the axioms."
+
+tags: [ "keyword:geometry"
+        "keyword:neutral geometry"
+	"keyword:euclidean geometry"
+	"keyword:foundations"
+	"keyword:Tarski"
+	"keyword:Hilbert"
+	"keyword:Euclid"
+	"keyword:Elements"
+	"keyword:parallel postulates"
+	"category:Mathematics/Geometry/General"
+	"date:2018-06-13"  ]
+url {
+  src: "https://github.com/GeoCoq/GeoCoq/archive/v2.4.0.tar.gz"
+  checksum: "md5=4a4ad33b4cad9b815a9b5c6308524c63"
+}
