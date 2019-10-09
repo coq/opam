@@ -7,7 +7,7 @@ install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RSA"]
 depends: [
   "ocaml"
-  "coq" {>= "8.8" & < "8.9~"}
+  "coq" {>= "8.8"}
 ]
 tags: [ "keyword: RSA" "keyword: Chinese remainder" "keyword: Fermat's little theorem" "category: Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "date: 1999" ]
 authors: [ "Jose C. Almeida" "Laurent Théry" ]
