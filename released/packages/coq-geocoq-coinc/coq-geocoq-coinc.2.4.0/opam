@@ -1,0 +1,31 @@
+opam-version: "2.0"
+maintainer: "Julien Narboux <julien@narboux.fr>"
+homepage: "http://geocoq.github.io/GeoCoq/"
+bug-reports: "https://github.com/GeoCoq/GeoCoq/issues"
+dev-repo: "git+https://github.com/GeoCoq/GeoCoq.git"
+authors: [
+      "Pierre Boutry <pierre.boutry@unistra.fr>"
+	  "Julien Narboux <narboux@unistra.fr>"
+	  "Pascal Schreck <schreck@unistra.fr>"]
+license: "LGPL 3"
+build: [
+  ["./configure-coinc.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" { (>= "8.6.1" & < "8.10~") }
+]
+tags: [ "keyword:geometry"
+      	"keyword:automation"
+	"category:Mathematics/Geometry/General"
+	"date:2018-06-13"  ]
+synopsis : "A formalization of foundations of geometry in Coq"
+description: "This subpackage contains some tactics to deal with incidence properties."
+url {
+  src: "https://github.com/GeoCoq/GeoCoq/archive/v2.4.0.tar.gz"
+  checksum: "md5=4a4ad33b4cad9b815a9b5c6308524c63"
+
+}
