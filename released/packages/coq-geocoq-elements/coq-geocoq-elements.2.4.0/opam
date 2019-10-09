@@ -34,3 +34,4 @@ url {
   src: "https://github.com/GeoCoq/GeoCoq/archive/v2.4.0.tar.gz"
   checksum: "md5=4a4ad33b4cad9b815a9b5c6308524c63"
 }
+extra-files : [[ "Make.in" "md5=cac845bd85ad41adeeb32378cf505f1c" ]]
