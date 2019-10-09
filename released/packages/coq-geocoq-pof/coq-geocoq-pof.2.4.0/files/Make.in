@@ -1,0 +1,4 @@
+# Library name
+-R Meta_theory2 GeoCoq.Meta_theory
+
+# Coq files (filled by the configure)

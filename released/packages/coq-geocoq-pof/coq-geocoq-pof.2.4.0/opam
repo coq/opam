@@ -1,0 +1,37 @@
+opam-version: "2.0"
+maintainer: "Julien Narboux <julien@narboux.fr>"
+homepage: "http://geocoq.github.io/GeoCoq/"
+bug-reports: "https://github.com/GeoCoq/GeoCoq/issues"
+dev-repo: "git+https://github.com/GeoCoq/GeoCoq.git"
+authors: ["Pierre Boutry <pierre.boutry@unistra.fr>"
+	  "Cyril Cohen <cyril.cohen@inria.fr>"]
+license: "LGPL 3"
+build: [
+  ["mkdir" "-p" "Meta_theory2/Models"]
+  ["mv" "Meta_theory/Models/POF_to_Tarski.v" "Meta_theory2/Models"]
+  ["./configure-pof.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" { (>= "8.6.1" & < "8.10~") }
+  "coq-geocoq-main" { = "2.4.0" }
+  "coq-mathcomp-field" { >= "1.6.4" }
+]
+tags: [ "keyword:geometry"
+	"keyword:euclidean geometry"
+	"keyword:foundations"
+	"keyword:Tarski"
+	"keyword:model"
+	"keyword:Cartesian space"
+	"category:Mathematics/Geometry/General"
+	"date:2018-06-13"  ]
+synopsis: "A formalization of foundations of geometry in Coq"
+description: "This subpackage contains a model of Tarski's axioms."
+url {
+  src: "https://github.com/GeoCoq/GeoCoq/archive/v2.4.0.tar.gz"
+  checksum: "md5=4a4ad33b4cad9b815a9b5c6308524c63"
+}
+extra-files: [["Make.in" "md5=5d3dc0a3321d9f0070c55129dc9df408"]]
