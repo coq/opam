@@ -10,6 +10,8 @@ authors: ["Gabriel Braun <gabriel.braun@unistra.fr>"
 	  "Pascal Schreck <schreck@unistra.fr>"]
 license: "LGPL 3"
 build: [
+  ["mkdir" "main/"]
+  ["mv" "main.v" "main/"]
   ["./configure-main.sh"]
   [make "-j%{jobs}%"]
 ]
@@ -45,3 +47,4 @@ url {
   src: "https://github.com/GeoCoq/GeoCoq/archive/v2.4.0.tar.gz"
   checksum: "md5=4a4ad33b4cad9b815a9b5c6308524c63"
 }
+extra-files: [["Make.in" "md5=ee7f1852debd8d9621ebafa3c8b25dcc"]]
