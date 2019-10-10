@@ -1,0 +1,20 @@
+opam-version: "2.0"
+synopsis: "Testable properties in Coq"
+maintainer: "Yishuai Li <yishuai@upenn.edu>"
+authors: "Yishuai Li <yishuai@upenn.edu>"
+license: "MIT"
+homepage: "https://github.com/liyishuai/coq-test"
+bug-reports: "https://github.com/liyishuai/coq-test/issues"
+depends: [
+  "coq" {>= "8.7"}
+  "coq-ext-lib"
+]
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+dev-repo: "git+https://github.com/liyishuai/coq-test"
+url {
+  src: "git+https://github.com/liyishuai/coq-test"
+}
+tags: [
+  "logpath:Test"
+]
