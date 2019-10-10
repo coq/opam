@@ -1,0 +1,45 @@
+opam-version: "2.0"
+synopsis: "A formalization of foundations of geometry in Coq"
+description: "This package depends on all subpackages."
+maintainer: "Julien Narboux <julien@narboux.fr>"
+authors: ["Michael Beeson <profbeeson@gmail.com>"
+          "Gabriel Braun <gabriel.braun@unistra.fr>"
+          "Pierre Boutry <pierre.boutry@inria.fr>"
+          "Cyril Cohen <cyril.cohen@inria.fr>"
+          "Charly Gries <charly.gries@etu.unistra.fr>"
+          "Julien Narboux <narboux@unistra.fr>"
+          "Pascal Schreck <schreck@unistra.fr>"
+          "Freek Wiedijk <freek@cs.ru.nl>"]
+license: "LGPL 3"
+homepage: "http://geocoq.github.io/GeoCoq/"
+bug-reports: "https://github.com/GeoCoq/GeoCoq/issues"
+dev-repo: "git+https://github.com/GeoCoq/GeoCoq.git"
+depends: [
+  "coq-geocoq-elements" { = "2.4.0" }
+  "coq-geocoq-pof" { = "2.4.0" }
+]
+tags: [ "keyword:geometry"
+        "keyword:neutral geometry"
+        "keyword:euclidean geometry"
+        "keyword:foundations"
+        "keyword:Tarski"
+        "keyword:Hilbert"
+        "keyword:Euclid"
+        "keyword:Elements"
+        "keyword:Pappus"
+        "keyword:Desargues"
+        "keyword:arithmetization"
+        "keyword:Pythagoras"
+        "keyword:Thales' intercept theorem"
+        "keyword:continuity"
+        "keyword:ruler and compass"
+        "keyword:parallel postulates"
+        "keyword:model"
+        "keyword:Cartesian space"
+        "keyword:automation"
+        "category:Mathematics/Geometry/General"
+        "date:2018-06-13" ]
+url {
+  src: "https://github.com/GeoCoq/GeoCoq/archive/v2.4.0.tar.gz"
+  checksum: "md5=4a4ad33b4cad9b815a9b5c6308524c63"
+}
