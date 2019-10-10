@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: "vzaliva@cmu.edu"
 homepage: "https://github.com/vzaliva/coq-switch"
-dev-repo: "git@github.com:vzaliva/coq-switch.git"
+dev-repo: "git://git@github.com:vzaliva/coq-switch.git"
 bug-reports: "https://github.com/vzaliva/coq-switch/issues"
 authors: ["Vadim Zaliva <vzaliva@cmu.edu>"]
 license: "MIT"
