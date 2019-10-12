@@ -1,0 +1,43 @@
+opam-version: "2.0"
+synopsis: "Coq library for reasoning about probabilistic algorithms"
+description: """
+  ProbHash extends coq-infotheo to support reasoning about probabilistic algorithms,
+  and includes a collection of lemmas on random oracle based hash functions.
+
+  Provides an example implementation of a bloom filter and uses the library to prove
+  the probability of a false positive.
+""" # Longer description, can span several lines
+
+homepage: "https://github.com/certichain/bloom-filter"
+dev-repo: "git+https://github.com/certichain/bloom-filter.git"
+bug-reports: "https://github.com/certichain/bloom-filter/issues"
+maintainer: "kirang@comp.nus.edu.sg"
+authors: [
+  "Kiran Gopinathan",
+  "Ilya Sergey"
+]
+license: "GPLv3" # Make sure this is reflected by a LICENSE file in your sources
+depends: [
+  "coq" {>= "8.9" & < "8.10~"}
+  "coq-mathcomp-ssreflect" {>= "1.9" & < "1.10~"}
+  "coq-mathcomp-analysis" { >= "0.2.0" & < "0.3~" }
+  "coq-infotheo" { >= "0.0.4" & < "0.0.5~" }
+]
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/certichain/bloom-filter/archive/0.0.1.tar.gz"
+  checksum: "sha256="7a805043e10dcc618778c65c3014fbaf52210d22db63554a61eb6021f4633e07"
+}
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "keyword: bloomfilter"
+  "keyword: probability"
+  "date:2019-10-12"
+]
