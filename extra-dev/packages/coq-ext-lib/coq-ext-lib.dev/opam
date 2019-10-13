@@ -1,8 +1,8 @@
 opam-version: "2.0"
 maintainer: "gmalecha@gmail.com"
-homepage: "https://github.com/coq-ext-lib/coq-ext-lib"
-dev-repo: "git+https://github.com/coq-ext-lib/coq-ext-lib.git"
-bug-reports: "https://github.com/coq-ext-lib/coq-ext-lib/issues"
+homepage: "https://github.com/coq-community/coq-ext-lib"
+dev-repo: "git+https://github.com/coq-community/coq-ext-lib.git"
+bug-reports: "https://github.com/coq-community/coq-ext-lib/issues"
 authors: ["Gregory Malecha"]
 license: "BSD"
 build: [
@@ -21,5 +21,5 @@ depends: [
 synopsis: "A library of Coq definitions, theorems, and tactics."
 flags: light-uninstall
 url {
-  src: "git+https://github.com/coq-ext-lib/coq-ext-lib"
+  src: "git+https://github.com/coq-community/coq-ext-lib"
 }
