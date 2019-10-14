@@ -1,8 +1,8 @@
 opam-version: "2.0"
 maintainer: "gmalecha@gmail.com"
-homepage: "https://github.com/coq-ext-lib/coq-ext-lib"
-dev-repo: "git+https://github.com/coq-ext-lib/coq-ext-lib.git"
-bug-reports: "https://github.com/coq-ext-lib/coq-ext-lib/issues"
+homepage: "https://github.com/coq-community/coq-ext-lib"
+dev-repo: "git+https://github.com/coq-community/coq-ext-lib.git"
+bug-reports: "https://github.com/coq-community/coq-ext-lib/issues"
 authors: ["Gregory Malecha"]
 license: "BSD"
 build: [
@@ -19,6 +19,6 @@ synopsis:
   "A basic library of basic Coq datatypes, definitions, theorems, and"
 description: "tactics meant to extend the standard library."
 url {
-  src: "https://github.com/coq-ext-lib/coq-ext-lib/archive/v0.10.0.tar.gz"
+  src: "https://github.com/coq-community/coq-ext-lib/archive/v0.10.0.tar.gz"
   checksum: "md5=6537169306ad2e04f57a367a30bcd4e9"
 }
