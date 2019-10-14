@@ -14,7 +14,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Param"]
 depends: [
   "ocaml"
-  "coq" {(>= "8.7.2" | = "dev")}
+  "coq" {(>= "8.7.2" & < "8.10~") | = "dev"}
 ]
 synopsis: "Coq Parametricity Plugin"
 description: """
