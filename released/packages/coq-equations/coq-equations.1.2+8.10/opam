@@ -32,5 +32,5 @@ depends: [
 url {
   src:
     "https://github.com/mattam82/Coq-Equations/archive/v1.2-8.10.tar.gz"
-  checksum: "md5=6a3a984f16825f959eaf0125652edd4f"
+  checksum: "md5=d91cd11eb2988f48065e9bbd29332870"
 }
