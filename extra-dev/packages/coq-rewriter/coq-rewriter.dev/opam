@@ -1,0 +1,24 @@
+opam-version: "2.0"
+authors: [
+  "Google Inc."
+  "Massachusetts Institute of Technology"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/mit-plv/rewriter"
+bug-reports: "https://github.com/mit-plv/rewriter/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [make "install"]
+remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Rewriter"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9~"}
+]
+dev-repo: "git+https://github.com/mit-plv/rewriter.git"
+synopsis: "Reflective PHOAS rewriting/pattern-matching-compilation framework for simply-typed equalities and let-lifting"
+flags: light-uninstall
+url {
+  src: "git+https://github.com/mit-plv/rewriter.git#master"
+}
