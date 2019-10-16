@@ -1,0 +1,35 @@
+opam-version: "2.0"
+name: "coq-pi-agm"
+version: "1.2.4"
+maintainer: "yves.bertot@inria.fr"
+
+homepage: "http://www-sop.inria.fr/members/Yves.Bertot/"
+bug-reports: "yves.bertot@inria.fr"
+license: "CeCILL-B"
+build: [["coq_makefile" "-f" "_CoqProject" "-o" "Makefile" ]
+       [ make "-j" "%{jobs}%" ]]
+install: [ make "install" "DEST='%{lib}%/coq/user-contrib/pi_agm'" ]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10"}
+  "coq-coquelicot" {>= "3" & < "4~"}
+  "coq-interval" {>= "3.1"}
+]
+tags: [ "keyword:real analysis" "keyword:pi" "category:Mathematics/Real Calculus and Topology" ]
+authors: [ "Yves Bertot <yves.bertot@inria.fr>" ]
+synopsis:
+  "Computing thousands or millions of digits of PI with arithmetic-geometric means"
+description: """
+This is a proof of correctness for two algorithms to compute PI to high
+precision using arithmetic-geometric means.  A first file contains
+the calculus-based proofs for an abstract view of the algorithm, where all
+numbers are real numbers.  A second file describes how to approximate all
+computations using large integers.  Other files describe the second algorithm
+which is close to the one used in mpfr, for instance.
+
+The whole development can be used to produce mathematically proved and
+formally verified approximations of PI."""
+url {
+  src: "https://github.com/ybertot/pi-agm/archive/v1.2.4.zip"
+  checksum: "sha256=eed94de774db29709aa28dabb46a7205574e06aa3c977c2ce478eae89276b9f"
+}
