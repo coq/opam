@@ -12,7 +12,10 @@ license: "LGPL 3"
 homepage: "http://geocoq.github.io/GeoCoq/"
 bug-reports: "https://github.com/GeoCoq/GeoCoq/issues"
 dev-repo: "git+https://github.com/GeoCoq/GeoCoq.git"
-depends: [ "coq-geocoq-coinc" { = "2.4.0" } ]
+depends: [
+  "coq" {>= "8.7"}
+  "coq-geocoq-coinc" { = "2.4.0" }
+]
 build: [
   ["./configure-axioms.sh"]
   [make "-j%{jobs}%"]
