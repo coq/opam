@@ -13,7 +13,7 @@ dev-repo: "git+https://github.com/certichain/bloom-filter.git"
 bug-reports: "https://github.com/certichain/bloom-filter/issues"
 maintainer: "kirang@comp.nus.edu.sg"
 authors: [
-  "Kiran Gopinathan",
+  "Kiran Gopinathan"
   "Ilya Sergey"
 ]
 license: "GPLv3" # Make sure this is reflected by a LICENSE file in your sources
@@ -31,8 +31,8 @@ install: [
 ]
 
 url {
-  src: "https://github.com/certichain/bloom-filter/archive/0.0.1.tar.gz"
-  checksum: "sha256="7a805043e10dcc618778c65c3014fbaf52210d22db63554a61eb6021f4633e07"
+  src: "https://github.com/certichain/probhash/archive/0.0.1.tar.gz"
+  checksum: "sha256=06365f9779104cc43e4f8fb069549c2eafe815512d1f49ef8fc865582510ce66"
 }
 
 tags: [
