@@ -13,7 +13,6 @@ build: [
   [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "coq" "standalone-ocaml"]
 ]
 install: [make "EXTERNAL_DEPENDENCIES=1" "install" "install-standalone-ocaml"]
-remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Crypto"]
 depends: [
   "ocaml"
   "coq" {>= "8.9~"}
@@ -22,7 +21,7 @@ depends: [
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
 synopsis: "Cryptographic Primitive Code Generation in Fiat."
-flags: light-uninstall
+tags: ["logpath:Crypto"]
 url {
   src: "git+https://github.com/mit-plv/fiat-crypto.git#master"
 }

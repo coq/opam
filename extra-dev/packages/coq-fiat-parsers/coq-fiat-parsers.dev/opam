@@ -5,19 +5,18 @@ authors: [
   "Clément Pit-Claudel <cpitcla@csail.mit.edu>"
   "Jason Gross <jgross@csail.mit.edu>"
 ]
-maintainer: "Matej Košík <matej.kosik@inria.fr>"
+maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "http://plv.csail.mit.edu/fiat/"
 bug-reports: "https://github.com/mit-plv/fiat/issues"
 license: "MIT"
 build: [make "-j%{jobs}%" "parsers" "parsers-examples"]
-remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Fiat"]
 depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat.git"
 synopsis: "Mostly automated synthesis of correct-by-construction programs."
-flags: light-uninstall
+tags: ["logpath:Fiat"]
 url {
   src: "git+https://github.com/mit-plv/fiat.git#master"
 }

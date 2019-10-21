@@ -10,7 +10,6 @@ build: [
   ["%{make}%" "-j%{jobs}%"]
 ]
 install: ["%{make}%" "install"]
-remove: ["rm" "-r" "-f" "%{share}%/hott"]
 depends: [
   "ocaml"
   "ocamlfind" {build}
@@ -19,7 +18,7 @@ depends: [
 authors: ["The Coq-HoTT Development Team"]
 dev-repo: "git+https://github.com/HoTT/HoTT.git"
 synopsis: "The Homotopy Type Theory library."
-flags: light-uninstall
+tags: ["logpath:HoTT"]
 url {
   src: "git+https://github.com/HoTT/HoTT.git#V8.8"
 }

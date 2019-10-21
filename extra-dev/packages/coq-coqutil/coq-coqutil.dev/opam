@@ -10,7 +10,6 @@ build: [
   [make "-j%{jobs}%"]
 ]
 install: [make "install"]
-remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/coqutil"]
 depends: [
   "coq" {>= "8.9~"}
 ]
@@ -30,7 +29,7 @@ Contents:
 
 Each feature is intended to be as minimal and as independent of the other features as possible, so that users can pick just what they need.
 """
-flags: light-uninstall
+tags: ["logpath:coqutil"]
 url {
   src: "git+https://github.com/mit-plv/coqutil.git#master"
 }
