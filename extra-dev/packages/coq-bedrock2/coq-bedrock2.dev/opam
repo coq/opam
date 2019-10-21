@@ -9,7 +9,7 @@ homepage: "https://github.com/mit-plv/bedrock2"
 bug-reports: "https://github.com/mit-plv/bedrock2/issues"
 license: "MIT"
 build: [
-  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "bedrock2"]
+  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "bedrock2_ex"]
 ]
 install: [make "EXTERNAL_DEPENDENCIES=1" "install_bedrock2"]
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/bedrock2"]
