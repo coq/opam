@@ -11,14 +11,13 @@ build: [
   [make "-j%{jobs}%"]
 ]
 install: [make "install"]
-remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Rewriter"]
 depends: [
   "ocaml"
   "coq" {>= "8.9~"}
 ]
 dev-repo: "git+https://github.com/mit-plv/rewriter.git"
 synopsis: "Reflective PHOAS rewriting/pattern-matching-compilation framework for simply-typed equalities and let-lifting"
-flags: light-uninstall
+tags: ["logpath:Rewriter"]
 url {
   src: "git+https://github.com/mit-plv/rewriter.git#master"
 }

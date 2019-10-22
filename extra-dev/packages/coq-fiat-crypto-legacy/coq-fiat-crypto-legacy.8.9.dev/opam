@@ -14,7 +14,6 @@ build: [
   [make "-j%{jobs}%" "coq" "selected-specific-display" "coqprime-all"]
 ]
 install: [make "install"]
-remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Crypto"]
 depends: [
   "ocaml"
   "coq" {= "8.9.dev"}
@@ -23,7 +22,7 @@ depends: [
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
 synopsis:
   "Cryptographic Primitive Code Generation in Fiat (legacy pipeline)."
-flags: light-uninstall
+tags: ["logpath:Crypto"]
 url {
   src: "git+https://github.com/mit-plv/fiat-crypto.git#sp2019latest"
 }

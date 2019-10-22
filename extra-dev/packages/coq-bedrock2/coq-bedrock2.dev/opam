@@ -12,14 +12,13 @@ build: [
   [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "bedrock2_ex"]
 ]
 install: [make "EXTERNAL_DEPENDENCIES=1" "install_bedrock2"]
-remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/bedrock2"]
 depends: [
   "coq" {>= "8.9~"}
   "coq-coqutil"
 ]
 dev-repo: "git+https://github.com/mit-plv/bedrock2.git"
 synopsis: "A work-in-progress language and compiler for verified low-level programming"
-flags: light-uninstall
+tags: ["logpath:bedrock2"]
 url {
   src: "git+https://github.com/mit-plv/bedrock2.git#master"
 }

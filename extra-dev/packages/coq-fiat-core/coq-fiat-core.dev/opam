@@ -5,13 +5,12 @@ authors: [
   "Clément Pit-Claudel <cpitcla@csail.mit.edu>"
   "Jason Gross <jgross@csail.mit.edu>"
 ]
-maintainer: "jgross@csail.mit.edu"
+maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "http://plv.csail.mit.edu/fiat/"
 bug-reports: "https://github.com/mit-plv/fiat/issues"
 license: "MIT"
 build: [make "-j%{jobs}%" "fiat-core"]
 install: [make "install-fiat-core"]
-remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Fiat"]
 depends: [
   "ocaml"
   "coq" {= "dev"}
@@ -19,7 +18,7 @@ depends: [
 dev-repo: "git+https://github.com/mit-plv/fiat.git"
 synopsis:
   "Coq library for synthesizing efficient correct-by-construction programs from declarative specifications."
-flags: light-uninstall
+tags: ["logpath:Fiat"]
 url {
   src: "git+https://github.com/mit-plv/fiat"
 }
