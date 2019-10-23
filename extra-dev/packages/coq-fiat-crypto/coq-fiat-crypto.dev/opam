@@ -14,10 +14,12 @@ build: [
 ]
 install: [make "EXTERNAL_DEPENDENCIES=1" "install" "install-standalone-ocaml"]
 depends: [
-  "ocaml"
+  "ocaml" {build}
+  "ocamlfind" {build}
   "coq" {>= "8.9~"}
   "coq-coqprime"
   "coq-bedrock2"
+  "coq-rewriter"
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
 synopsis: "Cryptographic Primitive Code Generation in Fiat."
