@@ -16,7 +16,7 @@ depends: [
 ]
 authors: ["The Coq-HoTT Development Team"]
 dev-repo: "git+https://github.com/HoTT/HoTT.git"
-synopsis: "The Homotopy Type Theory library."
+synopsis: "The Homotopy Type Theory library"
 tags: [ "logpath:HoTT" ]
 url {
   src: "git+https://github.com/HoTT/HoTT.git#V8.10"
