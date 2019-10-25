@@ -9,7 +9,7 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 synopsis: "A tool for proving OCaml programs in Separation Logic"
 depends: [
-  "ocaml" {>= "4.03.0"}
+  "ocaml" {>= "4.03.0" & < "4.08.0"}
   "ocamlbuild" {build}
   "pprint"
   "base-bytes"

@@ -12,7 +12,7 @@ before_script:
   - echo CI_RUNNER_TAGS=${CI_RUNNER_TAGS}
   - export OPAM_VARIANT=$(if echo $CI_RUNNER_TAGS | grep -q no-sandbox; then echo "plain"; else echo "sandbox"; fi)
   - echo OPAM_VARIANT=${OPAM_VARIANT}
-  - export OPAM_VERSION=2.0.5
+  - export OPAM_VERSION=2.0.4
   - export OPAM_ROOT_DIR=${HOME}/opam-root-${COMPILER}-${OPAM_VERSION}-${OPAM_VARIANT}
   - export OPAM_ROOT_CACHE=${HOME}/opam-cache/cache-${COMPILER}-${OPAM_VERSION}-${OPAM_VARIANT}.tgz
   - export EXTRA_OPAM="ocamlbuild" # some packages build extracted code this way

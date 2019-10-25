@@ -72,7 +72,13 @@ while [ ! -z "$1" ]; do
           echo Check if $PKG_NAME_VERSION is installable
           if opam install "$PKG_NAME_VERSION" -y --show-action; then
             set +e
-            echo Installing $PKG_NAME_VERSION
+            echo Installinggggggg $PKG_NAME_VERSION
+            opam install --deps-only "$PKG_NAME_VERSION" -y -v -v >> $LOG
+            opam config list >> $LOG
+            opam switch list >> $LOG
+            opam pin list >> $LOG
+            opam list >> $LOG
+            which ocamlc >> $LOG
             opam install "$PKG_NAME_VERSION" -y -v -v >> $LOG
             if [ $? != 0 ]; then
               RC=1;
