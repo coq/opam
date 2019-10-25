@@ -1,8 +1,8 @@
-opam-version: "1.2"
+opam-version: "2.0"
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
 maintainer: "Jacques-Henri Jourdan <jacques-Henri.jourdan@normalesup.org>"
 homepage: "http://compcert.inria.fr/"
-dev-repo: "https://github.com/AbsInt/CompCert.git"
+dev-repo: "git+https://github.com/AbsInt/CompCert.git"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
 license: "INRIA Non-Commercial License Agreement"
 build: [
@@ -31,7 +31,7 @@ remove: [
   ["sh" "-c" "rmdir -p %{share}%/man/man1 || true"]
 ]
 depends: [
-  "ocaml"
+  "ocaml" {< "4.08.0"}
   "coq"  {>= "8.9.0" & < "8.10"}
   "menhir" {>= "20180530" & <= "20181113"}
 ]
