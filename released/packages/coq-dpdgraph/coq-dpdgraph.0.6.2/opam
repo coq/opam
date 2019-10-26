@@ -23,7 +23,7 @@ remove: [
 ]
 
 depends: [
-  "ocaml"
+  "ocaml" {< "4.08.0"}
   "coq" {>= "8.7" & < "8.8~"}
   "ocamlgraph"
 ]
