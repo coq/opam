@@ -1,0 +1,30 @@
+opam-version: "2.0"
+maintainer: "arthur.aa@gmail.com"
+homepage: "https://github.com/arthuraa/extructures"
+dev-repo: "git+https://github.com/arthuraa/extructures.git"
+bug-reports: "https://github.com/arthuraa/extructures/issues"
+authors: ["Arthur Azevedo de Amorim"]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10" & < "8.11~"}
+  "coq-mathcomp-ssreflect" {>= "1.9" & < "1.10~"}
+]
+tags: [
+  "keyword:finite maps"
+  "keyword:extensionality"
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2019-10-26"
+  "logpath:extructures"
+]
+synopsis: "Finite data structures with extensional reasoning"
+url {
+  src: "https://github.com/arthuraa/extructures/archive/v0.2.1.tar.gz"
+  checksum: "sha512=1798513a2826525c6d0d91c0c5e6a928511e1bea78f9268b24bb2c312a1f735160f51ed95bfc7e1879248e8f95b9fd3e1961203c188535bfa36e0690b2ff8e77"
+}
