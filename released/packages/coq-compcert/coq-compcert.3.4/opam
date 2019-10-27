@@ -36,11 +36,11 @@ remove: [
   ["sh" "-c" "rmdir -p %{share}%/man/man1 || true"]
 ]
 depends: [
-  "ocaml"
+  "ocaml" {< "4.08"}
   "coq" {>= "8.8.1" & <= "8.8.2"}
   "menhir" {>= "20180530" & < "20181006"}
 ]
-synopsis: "The CompCert C compiler."
+synopsis: "The CompCert C compiler"
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
 url {
   src: "https://github.com/AbsInt/CompCert/archive/v3.4.tar.gz"
