@@ -6,8 +6,8 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FiringSquad"]
 depends: [
-  "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
+  "ocaml" {< "4.09"}
 ]
 tags: [ "keyword: concurrency" "keyword: synchronization" "keyword: finite-state machines" "category: Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" "category: Miscellaneous/Extracted Programs/Automata and protocols" ]
 authors: [ "Jean Duprat" ]
