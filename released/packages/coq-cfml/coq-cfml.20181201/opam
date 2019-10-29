@@ -10,10 +10,7 @@ install: [make "install"]
 synopsis: "A tool for proving OCaml programs in Separation Logic"
 depends: [
   "ocaml" {>= "4.03.0" & < "4.08.0"}
-  "ocamlbuild" {build}
-  "base-bytes"
   "coq" {>= "8.6"}
-  "coq-tlc" {>= "20181116"}
 ]
 url {
   src:
