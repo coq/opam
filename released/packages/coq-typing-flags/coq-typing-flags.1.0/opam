@@ -1,0 +1,29 @@
+opam-version: "2.0"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/SimonBoulier/TypingFlags"
+dev-repo: "git+https://github.com/SimonBoulier/TypingFlags.git"
+bug-reports: "https://github.com/SimonBoulier/TypingFlags/issues"
+authors: ["Simon Boulier"]
+license: "Unknown"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" {>= "8.7" & < "8.10~"}
+  "ocaml"
+]
+tags: [
+  "keyword:non-termination"
+  "keyword:type-in-type"
+  "category:Misc/Coq Extensions"
+  "date:2019-11-02"
+  "logpath:TypingFlags"
+]
+synopsis: "A Coq plugin to disable positivity check, guard check and termination check"
+url {
+  src: "https://github.com/SimonBoulier/TypingFlags/archive/v1.0.tar.gz"
+  checksum: "sha512=272748e6c0d505e4cc41d641e44f9088ab93c9412fe632b8ad67e0d223c234ba76059679674b6d170485ff3d24e1c6d35918a6a5c7336815e4ab32f43f581117"
+}
