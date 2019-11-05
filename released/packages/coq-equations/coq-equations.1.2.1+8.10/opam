@@ -35,6 +35,6 @@ depends: [
 depopts: [ "coq-hott" {= "8.10.dev" } ]
 url {
   src:
-    "https://github.com/mattam82/Coq-Equations/archive/v1.2.1-8.10.tar.gz"
-  checksum: "sha512=b0c1771133e25afc915434535d7ff9ee77bb2c3f93b18cbb4d5f1b5270abad83a9c21d06218f47b271f94647fd38fbc688d0d2062f987164dbf7e1454e671a39"
+    "https://github.com/mattam82/Coq-Equations/archive/v1.2.1-8.10-2.tar.gz"
+  checksum: "sha512=f95dc46d905a28e62846991fa9612476019f933ac7bee2117f1d1c17a2ea78c66f925d14dd11534c29526fe9cabc77efd7fea78b0a32c82af0c50360b4a123fb"
 }
