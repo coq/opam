@@ -15,9 +15,12 @@ install: [
   make "install"
 ]
 depends: [
-  "ocaml"
-  "coq" {>= "8.8"}
+  "coq-menhirlib" {>= "20190626"}
   "coq-ott" {>= "0.29"}
+  "coq" {>= "8.8"}
+  "menhir"
+  "zarith"
+  "ocaml" {>= "4.07.1"}
   "ott" {build & >= "0.29"}
 ]
 
