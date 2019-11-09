@@ -3,7 +3,7 @@ maintainer: "reynald.affeldt@aist.go.jp"
 homepage: "https://github.com/affeldt-aist/infotheo"
 bug-reports: "https://github.com/affeldt-aist/infotheo/issues"
 dev-repo: "git+https://github.com/affeldt-aist/infotheo.git"
-license: "GPLv3"
+license: "GPL-3.0-or-later"
 authors: [
   "Reynald Affeldt"
   "Manabu Hagiwara"
@@ -19,7 +19,7 @@ authors: [
 ]
 build: [
   ["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
-  [make]
+  [make "-j%{jobs}%"]
   [make "-C" "extraction" "tests"] {with-test}
 ]
 install: [
@@ -44,7 +44,7 @@ tags: [
 ]
 url {
   http: "https://github.com/affeldt-aist/infotheo/archive/0.0.5.tar.gz"
-  checksum: "43b937f49aafaae9d537e61c77345f8f"
+  checksum: "sha512=0ba8876041b815a624b49721521d31334858c6ecce941b5ba8ba29e374bd9bb300be9dc197dba0478a0def20154c3363e46bfe795dfff736a20d31dd05a8ef9a"
 }
 
 
