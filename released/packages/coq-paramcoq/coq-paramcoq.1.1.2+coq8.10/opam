@@ -1,0 +1,39 @@
+opam-version: "2.0"
+maintainer: "Pierre Roux <pierre.roux@onera.fr>"
+
+homepage: "https://github.com/coq-community/paramcoq"
+dev-repo: "git+https://github.com/coq-community/paramcoq.git"
+bug-reports: "https://github.com/coq-community/paramcoq/issues"
+license: "MIT"
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.10" & < "8.11~"}
+]
+
+tags: [
+  "keyword:paramcoq"
+  "keyword:parametricity"
+  "keyword:ocaml module"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:Param"
+]
+authors: [
+  "Chantal Keller (Inria, École polytechnique)"
+  "Marc Lasson (ÉNS de Lyon)"
+  "Abhishek Anand"
+  "Pierre Roux"
+  "Emilio Jesús Gallego Arias"
+  "Cyril Cohen"
+  "Matthieu Sozeau"
+]
+synopsis: "Plugin for generating parametricity statements to perform refinement proofs"
+description: """
+The plugin is still in an experimental state. It is not very user
+friendly (lack of good error messages) and still contains bugs. But is
+useable enough to "translate" a large chunk of standard library."""
+url {
+  src: "https://github.com/coq-community/paramcoq/archive/v1.1.2+coq8.10.tar.gz"
+  checksum: "sha256=e48c38685ee0efee81002ef916a3856832c9f6712b9e12394a7824f944a8631c"
+}
