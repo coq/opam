@@ -11,7 +11,7 @@ build: [make "-j%{jobs}%" "-C" "Examples"]
 install: [make "-C" "Examples" "install"]
 depends: [
   "ocaml"
-  "coq" {>= "8.7" & < "8.10~"}
+  "coq" {>= "8.7" & < "8.11~"}
   "coq-mathcomp-ssreflect" {>= "1.6.2" & < "1.10~"}
   "coq-fcsl-pcm"
   "coq-disel" {= version}
@@ -32,5 +32,5 @@ authors: [
 
 url {
   src: "https://github.com/DistributedComponents/disel/archive/v2.1.tar.gz"
-  checksum: "md5=b9fb9752949224bab22006d18039c798"
+  checksum: "sha512=8931a36001c2be3aedb0c8872bb13e3dd2932be3e1e8200a7d9de46dbc1185ea1ba5eb4ea9e7523bc2bd326f2fb4486e3eaf63280c4f7021a87cab0f88829f26"
 }
