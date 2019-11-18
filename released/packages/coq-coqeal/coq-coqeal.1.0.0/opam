@@ -1,6 +1,4 @@
 opam-version: "2.0"
-name: "coq-coqeal"
-version: "1.0.0"
 maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
 homepage: "https://github.com/CoqEAL/CoqEAL"
 bug-reports: "https://github.com/CoqEAL/CoqEAL/issues"
@@ -13,20 +11,31 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoqEAL"]
 depends: [
-  "coq" {(>= "8.7" & < "8.10~")}
-  "coq-bignums" {(>= "8.7" & < "8.10~")}
+  "coq" {(>= "8.7" & < "8.11~")}
+  "coq-bignums" {(>= "8.7" & < "8.11~")}
   "coq-paramcoq" {(>= "1.1.1")}
   "coq-mathcomp-multinomials" {(>= "1.2")}
-  "coq-mathcomp-algebra" {(>= "1.8.0" & < "1.9.0~")}
+  "coq-mathcomp-algebra" {(>= "1.8.0" & < "1.10~")}
 ]
 
-tags: [ "keyword:effective algebra" "keyword:elementary divisor rings"
-        "keyword:Smith normal form" "keyword:mathematical components"
-        "keyword: Bareiss" "keyword: Karatsuba" "keyword: refinements"]
-authors: [ "Guillaume Cano" "Cyril Cohen"
-           "Maxime Dénès" "Anders Mörtberg" "Vincent Siles"]
+tags: [
+  "keyword:effective algebra"
+  "keyword:elementary divisor rings"
+  "keyword:Smith normal form"
+  "keyword:mathematical components"
+  "keyword:Bareiss"
+  "keyword:Karatsuba"
+  "keyword:refinements"
+  "logpath:CoqEAL"
+]
+authors: [
+  "Guillaume Cano"
+  "Cyril Cohen"
+  "Maxime Dénès"
+  "Anders Mörtberg"
+  "Vincent Siles"
+]
 
 synopsis: "CoqEAL - The Coq Effective Algebra Library"
 description: """
