@@ -17,7 +17,6 @@ depends: [
   "coq" {>= "8.9.0" & < "8.10~"}
 ]
 synopsis: "An enhanced unification algorithm for Coq"
-flags: light-uninstall
 url {
   src: "https://github.com/unicoq/unicoq/archive/v1.3-8.9.tar.gz"
   checksum: "md5=06f7a0abf3ba2de4467160d5872bb7b6"
