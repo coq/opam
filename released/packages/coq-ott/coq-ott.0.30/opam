@@ -17,12 +17,13 @@ this library.
 build: [make "-j%{jobs}%" "-C" "coq"]
 install: [make "-C" "coq" "install"]
 depends: [
-  "coq" {(>= "8.5" & < "8.12~") | (= "dev")}
+  "coq" {>= "8.5" & < "8.12~"}
 ]
 tags: [
   "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword:abstract syntax"
   "logpath:Ott"
+  "date:2019-11-24"
 ]
 authors: [
   "Peter Sewell"
@@ -31,5 +32,6 @@ authors: [
 ]
 
 url {
-  src: "git+https://github.com/ott-lang/ott.git#master"
+  src: "https://github.com/ott-lang/ott/archive/0.30.tar.gz"
+  checksum: "sha512=0c988502451b442e0d5a5dbce4969723bcf2b6c3add7af3d1aea279caca5a49d5b0d7acadfd6fa17702c0f8cd1511eb445aba14b454c5263f1e0f39b80deaa00"
 }
