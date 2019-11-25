@@ -1,0 +1,32 @@
+opam-version: "2.0"
+maintainer: "Jerome Simeon <jeromesimeon@me.com>"
+
+homepage: "https://github.com/querycert/jsast"
+bug-reports: "https://github.com/querycert/jsast/issues"
+dev-repo: "git+https://github.com/querycert/jsast/tree/JsAst"
+license: "BSD-2-Clause"
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.7.2" & < "8.9~"}
+  "coq-flocq" {>= "2.6.1" & < "3.0~"}
+]
+
+tags: [ "keyword:javascript" "keyword:compiler" "date:2019-11-25" "logpath:JsAst" ]
+authors: [ "Josh Auerbach <>" "Martin Hirzel <>" "Louis Mandel <>" "Avi Shinnar <>" "Jerome Simeon <>" ]
+
+synopsis: "A minimal JavaScript syntax tree carved out of the JsCert project"
+description: """
+A minimal JavaScript syntax tree carved out of the JsCert project, with additional support for let bindings.
+"""
+
+url {
+  src: "https://github.com/querycert/jsast/archive/v1.0.9.tar.gz"
+  checksum: "md5=5006334c6e311299e13e30b85f2bf54b"
+}
