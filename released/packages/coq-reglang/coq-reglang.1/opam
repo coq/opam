@@ -1,6 +1,4 @@
 opam-version: "2.0"
-name: "coq-reglang"              
-version: "1"
 maintainer: "Christian Doczkal <christian.doczkal@ens-lyon.fr>"
 
 homepage: "https://github.com/chdoc/coq-reglang"
@@ -8,11 +6,9 @@ dev-repo: "git+https://github.com/chdoc/coq-reglang.git"
 bug-reports: "https://github.com/chdoc/coq-reglang/issues"
 license: "CeCILL-B"
 
-build: [ make "-j%{jobs}%" "-C" "theories" ]
-install: [ make "-C" "theories" "install" ]
-remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/RegLang'" ]
+build: [make "-j%{jobs}%" "-C" "theories"]
+install: [make "-C" "theories" "install"]
 depends: [
-  "ocaml"
   "coq" {>= "8.6" & < "8.10~"}
   "coq-mathcomp-ssreflect" {>= "1.6" & < "1.8~"}
 ]
@@ -24,11 +20,12 @@ tags: [
   "keyword:monadic second-order logic"
   "category:Computer Science/Formal Languages Theory and Automata"
   "logpath:RegLang"
+  "date:2018-09-18"
 ]
 
 authors: [
   "Christian Doczkal <christian.doczkal@ens-lyon.fr>"
-  "Gert Smolka <>"
+  "Gert Smolka"
 ]
 synopsis:
   "Regular Language Representations in the Constructive Type Theory of Coq"
