@@ -14,11 +14,18 @@ install: [
   [make "install"]
 ]
 depends: [
-  "ocaml"
-  "coq" {>= "8.4pl4" & < "8.9"}
+  "conf-ruby" {build}
   "coq-error-handlers"
   "coq-function-ninjas"
   "coq-list-string" {>= "2.0.0"}
+  "coq" {>= "8.4pl4" & < "8.9"}
+  "ocaml"
+]
+tags: [
+  "date:2015-01-27"
+  "keyword:date"
+  "keyword:time"
+  "logpath:Moment"
 ]
 synopsis: "Parse, manipulate and pretty-print times and dates in Coq"
 url {
