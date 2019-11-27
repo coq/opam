@@ -1,0 +1,23 @@
+opam-version: "2.0"
+authors: [
+  "Google Inc."
+  "Massachusetts Institute of Technology"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/mit-plv/rewriter"
+bug-reports: "https://github.com/mit-plv/rewriter/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%" "perf-Medium" "EXTERNAL_PERF_DEPENDENCIES=1" "TIMED=1"]
+]
+install: []
+depends: [
+  "coq" {>= "8.9~"}
+  "conf-time"
+  "coq-rewriter"
+]
+dev-repo: "git+https://github.com/mit-plv/rewriter.git"
+synopsis: "Extra Performance Benchmark (~ 11h) for Reflective PHOAS rewriting/pattern-matching-compilation framework for simply-typed equalities and let-lifting"
+url {
+  src: "git+https://github.com/mit-plv/rewriter.git#master"
+}
