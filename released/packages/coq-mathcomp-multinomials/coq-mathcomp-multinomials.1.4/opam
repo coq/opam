@@ -29,7 +29,7 @@ tags: [
   "logpath:SsrMultinomials"
 ]
 synopsis: "A Multivariate polynomial Library for the Mathematical Components Library"
-url: {
+url {
   src: "https://github.com/math-comp/multinomials/archive/1.4.tar.gz"
   checksum: "sha512=b8c4f750063b8764275ea3b0ca12b2bbc16d1c52c5b10bd71ef6d6bb0791ecfb1115681c4379ffe286ab8c550c1965ba08cd2c3a1e5600d8b1a17dee627e2aae"
 }
