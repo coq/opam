@@ -1,6 +1,5 @@
 opam-version: "2.0"
 name: "coq-mathcomp-finmap"
-version: "dev"
 maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
 
 homepage: "https://github.com/math-comp/finmap"
@@ -10,13 +9,13 @@ license: "CeCILL-B"
 
 build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]
-remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/finmap'" ]
 depends: [
-  "coq-mathcomp-ssreflect" { (>= "1.8.0" & < "1.11~") | (= "dev")}
+  "coq" { (>= "8.7" & < "8.11~") }
+  "coq-mathcomp-ssreflect" { (>= "1.8.0" & < "1.11~") }
   "coq-mathcomp-bigenough" { (>= "1.0.0" & < "1.1~") }
 ]
-tags: [ "keyword:finmap" "keyword:finset" "keyword:multiset" "keyword:order"]
-authors: [ "Cyril Cohen <cyril.cohen@inria.fr>" ]
+tags: [ "keyword:finmap" "keyword:finset" "keyword:multiset" "keyword:order" "date:2019-11-27" "logpath:mathcomp.finmap"]
+authors: [ "Cyril Cohen <cyril.cohen@inria.fr>" "Kazuhiko Sakaguchi <sakaguchi@coins.tsukuba.ac.jp>" ]
 synopsis: "Finite sets, finite maps, finitely supported functions, orders"
 description: """
 This library is an extension of mathematical component in order to
@@ -25,5 +24,6 @@ types). This includes support for functions with finite support and
 multisets. The library also contains a generic order and set libary,
 which will be used to subsume notations for finite sets, eventually."""
 url {
-  src: "git+https://github.com/math-comp/finmap.git#master"
+  src: "https://github.com/math-comp/finmap/archive/1.4.0.tar.gz"
+  checksum: "sha256=ed145e6b1be9fcc215d4de20a17d64bc8772f0a2afc2372a318733882ea69ad2"
 }
