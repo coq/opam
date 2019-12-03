@@ -21,6 +21,9 @@ depends: [
   "ocaml"
   "ocamlfind" {build}
 ]
+conflicts: [
+  "ocaml-secondary-compiler"
+]
 tags: [
   "date:2019-11-26"
   "keyword:blog"
