@@ -17,6 +17,9 @@ depends: [
   "ocamlfind"
   "num"
 ]
+conflicts: [
+  "ocaml-secondary-compiler"
+]
 tags: [
   "date:2015-04-28"
   "keyword:effects"

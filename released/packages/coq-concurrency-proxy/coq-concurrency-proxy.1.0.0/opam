@@ -15,6 +15,9 @@ depends: [
   "num"
   "base64" {>= "1.0.0" & < "2"}
 ]
+conflicts: [
+  "ocaml-secondary-compiler"
+]
 tags: [
   "date:2015-01-28"
   "keyword:effects"

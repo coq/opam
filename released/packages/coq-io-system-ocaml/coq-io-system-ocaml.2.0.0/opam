@@ -16,6 +16,9 @@ depends: [
   "ocaml" {>= "4.00.0" & < "4.06.0"}
   "ocamlfind"
 ]
+conflicts: [
+  "ocaml-secondary-compiler"
+]
 tags: [
   "date:2015-03-03"
   "keyword:effects"

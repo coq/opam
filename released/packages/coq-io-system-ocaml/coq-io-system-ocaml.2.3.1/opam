@@ -18,6 +18,9 @@ depends: [
   "ocamlfind" {build}
   "num"
 ]
+conflicts: [
+  "ocaml-secondary-compiler"
+]
 tags: [
   "date:2019-07-25"
   "keyword:effects"
