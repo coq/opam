@@ -10,7 +10,7 @@ bug-reports: "https://github.com/GeoCoq/GeoCoq/issues"
 dev-repo: "git+https://github.com/GeoCoq/GeoCoq.git"
 depends: [
   "coq-geocoq-main" { = "2.4.0" }
-  "coq-mathcomp-field" { >= "1.6.4" }
+  "coq-mathcomp-field" { >= "1.6.4" & < "1.10.0" }
 ]
 build: [
   ["mkdir" "-p" "Meta_theory2/Models"]
