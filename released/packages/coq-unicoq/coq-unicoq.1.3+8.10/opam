@@ -19,5 +19,5 @@ depends: [
 synopsis: "An enhanced unification algorithm for Coq"
 url {
   src: "https://github.com/unicoq/unicoq/archive/v1.3-8.10.tar.gz"
-  checksum: "md5=d41d8cd98f00b204e9800998ecf8427e"
+  checksum: "md5=cad6759caf66fe33967fa06c79caf223"
 }
