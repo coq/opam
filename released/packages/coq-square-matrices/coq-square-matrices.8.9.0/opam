@@ -1,0 +1,33 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/square-matrices"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SquareMatrices"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: exponentiation"
+  "keyword: vectors"
+  "keyword: matrices"
+  "keyword: polymorphic recursion"
+  "keyword: nested datatypes"
+  "category: Mathematics/Algebra"
+]
+authors: [
+  "Jean-Christophe Filliâtre"
+]
+bug-reports: "https://github.com/coq-contribs/square-matrices/issues"
+dev-repo: "git+https://github.com/coq-contribs/square-matrices.git"
+synopsis: "From Fast Exponentiation to Square Matrices"
+description: """
+This development is a formalization of Chris Okasaki's article
+``From Fast Exponentiation to Square Matrices: An Adventure in Types''"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/square-matrices/archive/v8.9.0.tar.gz"
+  checksum: "md5=a773a2b2a14e61486df1c68c07accac3"
+}
