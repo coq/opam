@@ -1,0 +1,26 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/http://logical.inria.fr/~saibi/docCatV6.ps"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ConCaT"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: category theory"
+  "category: Mathematics/Category Theory"
+]
+authors: [
+  "Amokrane Saïbi"
+]
+bug-reports: "https://github.com/coq-contribs/concat/issues"
+dev-repo: "git+https://github.com/coq-contribs/concat.git"
+synopsis: "Constructive Category Theory"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/concat/archive/v8.9.0.tar.gz"
+  checksum: "md5=90a2b7512161f3de52ad77dd8c3052dd"
+}

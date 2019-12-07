@@ -1,0 +1,43 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/cantor"
+license: "LGPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Cantor"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: ordinals"
+  "keyword: well-foundedness"
+  "keyword: termination"
+  "keyword: rpo"
+  "keyword: Goodstein sequences"
+  "category: Mathematics/Logic/See also"
+  "category: Mathematics/Arithmetic and Number Theory/Number theory"
+  "date: 2006-05-22"
+]
+authors: [
+  "Pierre Castéran <pierre.casteran@labri.fr> [http://www.labri.fr/~casteran/]"
+  "Évelyne Contejean <contejea@lri.fr> [http://www.lri.fr/~contejea]"
+]
+bug-reports: "https://github.com/coq-contribs/cantor/issues"
+dev-repo: "git+https://github.com/coq-contribs/cantor.git"
+synopsis: "On Ordinal Notations"
+description: """
+This contribution contains data structures for ordinals
+less than Gamma0 under Cantor and Veblen normal
+forms. Well-foundedness is established thanks to RPO with status for
+generic terms. This contribution also includes termination proofs of
+Hydra battles and Goodstein sequences as well as a computation of the
+length of the Goodstein sequence starting from 4 in base 2.
+
+This work is supported by INRIA-Futurs (Logical project-team), CNRS
+and the French ANR via the A3PAT project (http://www3.iie.cnam.fr/~urbain/a3pat/)."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/cantor/archive/v8.9.0.tar.gz"
+  checksum: "md5=00ebfdf7bee8dea49d327079fdcf1048"
+}

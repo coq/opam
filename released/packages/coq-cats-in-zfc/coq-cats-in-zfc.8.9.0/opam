@@ -1,0 +1,41 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/cats-in-zfc"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CatsInZFC"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: set theory"
+  "keyword: ordinal"
+  "keyword: cardinal"
+  "keyword: category theory"
+  "keyword: functor"
+  "keyword: natural transformation"
+  "keyword: limit"
+  "keyword: colimit"
+  "category: Mathematics/Logic/Set theory"
+  "category: Mathematics/Category Theory"
+  "date: 2004-10-10"
+]
+authors: [
+  "Carlos Simpson <carlos@math.unice.fr> [http://math.unice.fr/~carlos/]"
+]
+bug-reports: "https://github.com/coq-contribs/cats-in-zfc/issues"
+dev-repo: "git+https://github.com/coq-contribs/cats-in-zfc.git"
+synopsis: "Category theory in ZFC"
+description: """
+In a ZFC-like environment augmented by reference to the
+ambient type theory, we develop some basic set theory, ordinals, cardinals
+and transfinite induction, and category theory including functors,
+natural transformations, limits and colimits, functor categories,
+and the theorem that functor_cat a b has (co)limits if b does."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/cats-in-zfc/archive/v8.9.0.tar.gz"
+  checksum: "md5=c8be2400164ae30e17cb4b55a851c977"
+}

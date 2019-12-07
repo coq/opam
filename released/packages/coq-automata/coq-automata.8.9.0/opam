@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/automata"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Automata"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: formal language theory"
+  "keyword: finite automatas"
+  "keyword: push-down automatas"
+  "keyword: rational langages"
+  "keyword: kleene"
+  "category: Computer Science/Formal Languages Theory and Automata"
+  "date: June-July 1993"
+]
+authors: [
+  "Judicaël Courant"
+  "Jean-Christophe Filliâtre"
+]
+bug-reports: "https://github.com/coq-contribs/automata/issues"
+dev-repo: "git+https://github.com/coq-contribs/automata.git"
+synopsis: "Beginning of formal language theory"
+description: """
+This library formalises the beginning of formal language theory:
+finite automata and rational languages, context-free grammars
+and push-down automata."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/automata/archive/v8.9.0.tar.gz"
+  checksum: "md5=98caef7226a4a97b79be89f7ef0c742c"
+}

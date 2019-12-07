@@ -1,0 +1,31 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/chinese"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Chinese"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: number theory"
+  "keyword: chinese remainder"
+  "keyword: primality"
+  "keyword: prime numbers"
+  "category: Mathematics/Arithmetic and Number Theory/Number theory"
+]
+authors: [
+  "Valérie Ménissier-Morain"
+]
+bug-reports: "https://github.com/coq-contribs/chinese/issues"
+dev-repo: "git+https://github.com/coq-contribs/chinese.git"
+synopsis: "A proof of the Chinese Remainder Lemma"
+description: """
+OBSOLETE. See rather Zchinese-lemma that uses Z of Zarith."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/chinese/archive/v8.9.0.tar.gz"
+  checksum: "md5=9e8f2a261473384dd19a673e1da76fe3"
+}
