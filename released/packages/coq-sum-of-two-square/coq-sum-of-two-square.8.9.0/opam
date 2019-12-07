@@ -1,0 +1,32 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/sum-of-two-square"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SumOfTwoSquare"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: number theory"
+  "category: Mathematics/Arithmetic and Number Theory/Number theory"
+  "date: 2004-12-13"
+]
+authors: [
+  "Laurent Thery"
+]
+bug-reports: "https://github.com/coq-contribs/sum-of-two-square/issues"
+dev-repo: "git+https://github.com/coq-contribs/sum-of-two-square.git"
+synopsis: "Numbers equal to the sum of two square numbers"
+description: """
+A proof that a number n can be written as the
+sum of two square numbers if and only if each prime factor p of n
+that is equal to 3 modulo 4 has its exponent in the decomposition of n
+that is even."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/sum-of-two-square/archive/v8.9.0.tar.gz"
+  checksum: "md5=d4b26297aa3486791ae8ec78730bea61"
+}

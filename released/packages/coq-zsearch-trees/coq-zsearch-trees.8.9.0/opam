@@ -1,0 +1,29 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/zsearch-trees"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/ZSearchTrees"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: binary search trees"
+  "category: Computer Science/Data Types and Data Structures"
+  "category: Miscellaneous/Extracted Programs/Data structures"
+]
+authors: [
+  "Pierre Castéran"
+]
+bug-reports: "https://github.com/coq-contribs/zsearch-trees/issues"
+dev-repo: "git+https://github.com/coq-contribs/zsearch-trees.git"
+synopsis: "Binary Search Trees"
+description: """
+Algorithms for collecting, searching, inserting and deleting elements in binary search trees on Z"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/zsearch-trees/archive/v8.9.0.tar.gz"
+  checksum: "md5=c5582d97781a59255aafec9ad8276592"
+}
