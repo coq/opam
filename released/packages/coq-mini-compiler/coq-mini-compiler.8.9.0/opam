@@ -1,0 +1,34 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/mini-compiler"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MiniCompiler"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: compilation"
+  "keyword: correctness"
+  "keyword: arithmetic"
+  "category: Computer Science/Semantics and Compilation/Compilation"
+  "date: 2003"
+]
+authors: [
+  "Jean-Christophe Filliâtre"
+]
+bug-reports: "https://github.com/coq-contribs/mini-compiler/issues"
+dev-repo: "git+https://github.com/coq-contribs/mini-compiler.git"
+synopsis: "Correctness of a tiny compiler for arithmetic expressions"
+description: """
+Tutorial correctness proof of a tiny compiler from
+simple arithmetic expressions (constants, variables and additions) to
+simple assembly-like code (one accumulator, infinitly many registers and
+addition)"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/mini-compiler/archive/v8.9.0.tar.gz"
+  checksum: "md5=f5679f730d174e15fa5d5396286c3b43"
+}

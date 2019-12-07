@@ -1,0 +1,34 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/http://www.andrew.cmu.edu/user/fpv/ptsf/"
+license: "BSD"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PTSF"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+  "coq-ptsatr" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: pure type systems"
+  "keyword: judgmental equality"
+  "keyword: explicit equality proofs"
+  "keyword: proof relevance"
+  "category: Mathematics/Logic/Type theory"
+]
+authors: [
+  "Floris van Doorn <fpv@andrew.cmu.edu> [http://www.andrew.cmu.edu/user/fpv/]"
+  "Herman Geuvers <herman@cs.ru.nl> [http://www.cs.ru.nl/~herman/]"
+  "Freek Wiedijk <freek@cs.ru.nl> [http://www.cs.ru.nl/~freek/]"
+]
+bug-reports: "https://github.com/coq-contribs/ptsf/issues"
+dev-repo: "git+https://github.com/coq-contribs/ptsf.git"
+synopsis: "Explicit Convertibility Proofs in Pure Type Systems"
+description: """
+Formalization of the proof that PTS and PTS with explicit convertibility proofs (PTSf) are equivalent."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/ptsf/archive/v8.9.0.tar.gz"
+  checksum: "md5=50a1ba7f563da4d36e0134a706612c4a"
+}

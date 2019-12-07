@@ -1,0 +1,46 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/idxassoc"
+license: "BSD with advertising clause"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/IdxAssoc"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: associative arrays"
+  "keyword: search operator"
+  "keyword: data structures"
+  "category: Computer Science/Data Types and Data Structures"
+  "date: April 2001"
+]
+authors: [
+  "Dominique Quatravaux"
+  "François-René Ridaux"
+  "Gérald Macinenti"
+]
+bug-reports: "https://github.com/coq-contribs/idxassoc/issues"
+dev-repo: "git+https://github.com/coq-contribs/idxassoc.git"
+synopsis: "Associative Arrays"
+description: """
+We define the associative array (key -> value associations)
+datatype as list of couples, providing definitions of standards
+operations such as adding, deleting.
+
+We introduce predicates for membership of a key and of couples.
+
+Finally we define a search operator ("find") which returns the
+value associated with a key or the "none" option (see file
+Option.v which should be part of this contribution) on failure.
+
+Lemmas we prove about these concepts were motivated by our needs
+at the moment we created this file. We hope they'll suit your
+needs too but anyway, feel free to communicate any wish or
+remark."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/idxassoc/archive/v8.9.0.tar.gz"
+  checksum: "md5=ac976353a1ab69384ea642b4aaa9d74a"
+}
