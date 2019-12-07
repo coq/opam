@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/mutual-exclusion"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/MutualExclusion"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10" & < "8.11~"}
+]
+tags: [
+  "keyword: mutual exclusion"
+  "keyword: concurrency"
+  "keyword: Peterson's algorithm"
+  "keyword: co-inductive types"
+  "keyword: co-induction"
+  "category: Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols"
+  "category: Miscellaneous/Extracted Programs/Automata and protocols"
+]
+authors: [
+  "Eduardo Giménez"
+]
+bug-reports: "https://github.com/coq-contribs/mutual-exclusion/issues"
+dev-repo: "git+https://github.com/coq-contribs/mutual-exclusion.git"
+synopsis: "A certification of Peterson's algorithm for managing mutual exclusion"
+description: """
+This is a proof of certification of Peterson's algorithm
+for managing mutual exclusion. The case of two processes is treated
+in the directory called ``binary'' (see the README file in this
+directory). The case of n processes will be available soon."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/mutual-exclusion/archive/v8.10.0.tar.gz"
+  checksum: "md5=6210903f1d550cd32e61b8d0add7b147"
+}
