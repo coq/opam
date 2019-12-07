@@ -1,0 +1,29 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/shuffle"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Shuffle"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10" & < "8.11~"}
+]
+tags: [
+  "keyword: Gilbreath's card trick"
+  "keyword: binary sequences"
+  "category: Miscellaneous/Logical Puzzles and Entertainment"
+]
+authors: [
+  "Gérard Huet"
+]
+bug-reports: "https://github.com/coq-contribs/shuffle/issues"
+dev-repo: "git+https://github.com/coq-contribs/shuffle.git"
+synopsis: "Gilbreath's card trick"
+description: """
+A full axiomatization and proof development of a non-trivial property of binary sequences, inspired from a card trick of N. Gilbreath."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/shuffle/archive/v8.10.0.tar.gz"
+  checksum: "md5=756dfc787f585ddd60b06bdbc87e13b7"
+}

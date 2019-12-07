@@ -1,0 +1,30 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/regexp"
+license: "LGPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RegExp"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10" & < "8.11~"}
+]
+tags: [
+  "keyword: Regular Expression"
+  "keyword: Kleene Algebra"
+  "category: Computer Science/Formal Languages Theory and Automata"
+]
+authors: [
+  "Takashi Miyamoto <tmiya@bu.iij4u.or.jp> [http://study-func-prog.blogspot.com/]"
+]
+bug-reports: "https://github.com/coq-contribs/regexp/issues"
+dev-repo: "git+https://github.com/coq-contribs/regexp.git"
+synopsis: "Regular Expression"
+description: """
+The Library RegExp is a Coq library for regular expression. The implementation is based on the Janusz Brzozowski's algorithm ("Derivatives of Regular Expressions", Journal of the ACM 1964).
+The RegExp library satisfies the axioms of Kleene Algebra. The proofs are shown in the library."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/regexp/archive/v8.10.0.tar.gz"
+  checksum: "md5=faf3b343baa5389f443020f538029a0a"
+}
