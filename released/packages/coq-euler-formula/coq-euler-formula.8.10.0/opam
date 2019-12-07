@@ -1,0 +1,33 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/euler-formula"
+license: "LGPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/EulerFormula"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10" & < "8.11~"}
+]
+tags: [
+  "keyword: polyhedron"
+  "keyword: hypermap"
+  "keyword: genus"
+  "keyword: Euler formula"
+  "keyword: assisted proofs"
+  "category: Mathematics/Geometry/See also"
+  "date: 2006-09"
+]
+authors: [
+  "Jean-François Dufourd <dufourd@dpt-info.u-strasbg.fr> [http://dpt-info.u-strasbg.fr/~jfd/]"
+]
+bug-reports: "https://github.com/coq-contribs/euler-formula/issues"
+dev-repo: "git+https://github.com/coq-contribs/euler-formula.git"
+synopsis: "Hypermaps, Genus Theorem and Euler Formula"
+description: """
+This library formalizes the combinatorial hypermaps and their properties in a constructive way. It gives the proofs of the Genus Theorem and of the Euler Formula for the polyhedra."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/euler-formula/archive/v8.10.0.tar.gz"
+  checksum: "md5=cc0a07d28cdaecb75b1660549d95c0c0"
+}

@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/functions-in-zfc"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FunctionsInZFC"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10" & < "8.11~"}
+]
+tags: [
+  "keyword: Set Theory"
+  "keyword: Zermelo-Fraenkel"
+  "keyword: functions"
+  "category: Mathematics/Logic/Set theory"
+  "date: April 2001"
+]
+authors: [
+  "Carlos Simpson <carlos@math.unice.fr>"
+]
+bug-reports: "https://github.com/coq-contribs/functions-in-zfc/issues"
+dev-repo: "git+https://github.com/coq-contribs/functions-in-zfc.git"
+synopsis: "Functions in classical ZFC"
+description: """
+This mostly repeats Guillaume Alexandre's contribution `zf',
+but in classical logic and with a different proof style. We start with a
+simple axiomatization of some flavor of ZFC (for example Werner's
+implementation of ZFC should provide a model).
+We develop some very basic things like pairs, functions, and a little
+bit about natural numbers, following the standard classical path."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/functions-in-zfc/archive/v8.10.0.tar.gz"
+  checksum: "md5=edb51c470e38728b3a376df99e2e058e"
+}

@@ -1,0 +1,34 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/qarith"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/QArith"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10" & < "8.11~"}
+]
+tags: [
+  "keyword: Q"
+  "keyword: Arithmetic"
+  "keyword: Rational numbers"
+  "keyword: Setoid"
+  "keyword: Ring"
+  "category: Mathematics/Arithmetic and Number Theory/Rational numbers"
+  "category: Miscellaneous/Extracted Programs/Arithmetic"
+]
+authors: [
+  "Pierre Letouzey"
+]
+bug-reports: "https://github.com/coq-contribs/qarith/issues"
+dev-repo: "git+https://github.com/coq-contribs/qarith.git"
+synopsis: "A Library for Rational Numbers (QArith)"
+description: """
+This contribution is a proposition of a library formalizing
+rational number in Coq."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/qarith/archive/v8.10.0.tar.gz"
+  checksum: "md5=f9dfd5677adbbd3893d83f655a71a7fa"
+}
