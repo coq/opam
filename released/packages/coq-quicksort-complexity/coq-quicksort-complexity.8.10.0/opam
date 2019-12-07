@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/quicksort-complexity"
+license: "BSD"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/QuicksortComplexity"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10" & < "8.11~"}
+]
+tags: [
+  "keyword: quicksort"
+  "keyword: complexity"
+  "keyword: average-case"
+  "category: Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
+  "date: 2010-06"
+]
+authors: [
+  "Eelis"
+]
+bug-reports: "https://github.com/coq-contribs/quicksort-complexity/issues"
+dev-repo: "git+https://github.com/coq-contribs/quicksort-complexity.git"
+synopsis: "Proofs of Quicksort's worst- and average-case complexity"
+description: """
+The development contains:
+- a set of monads and monad transformers for measuring a (possibly nondeterministic) algorithm's use of designated operations;
+- monadically expressed deterministic and nondeterministic implementations of Quicksort;
+- proofs of these implementations' worst- and average case complexity.
+
+Most of the development is documented in the TYPES 2008 paper "A Machine-Checked Proof of the Average-Case Complexity of Quicksort in Coq", available at the homepage."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/quicksort-complexity/archive/v8.10.0.tar.gz"
+  checksum: "md5=c3b2ccbc5f13d56f46e99b51fef90a04"
+}

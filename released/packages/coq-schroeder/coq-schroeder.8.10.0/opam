@@ -1,0 +1,33 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/schroeder"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Schroeder"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10" & < "8.11~"}
+]
+tags: [
+  "keyword: Schroeder-Bernstein"
+  "keyword: Set Theory"
+  "category: Mathematics/Logic/Set theory"
+]
+authors: [
+  "Hugo herbelin"
+]
+bug-reports: "https://github.com/coq-contribs/schroeder/issues"
+dev-repo: "git+https://github.com/coq-contribs/schroeder.git"
+synopsis: "The Theorem of Schroeder-Bernstein"
+description: """
+Fraenkel's proof of Schroeder-Bernstein theorem on decidable sets
+is formalized in a constructive variant of set theory based on
+stratified universes (the one defined in the Ensemble library).
+The informal proof can be found for instance in "Axiomatic Set Theory"
+from P. Suppes."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/schroeder/archive/v8.10.0.tar.gz"
+  checksum: "md5=80dc98ed34340e31be9385fcd655e50d"
+}
