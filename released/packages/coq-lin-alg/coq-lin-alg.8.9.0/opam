@@ -1,0 +1,31 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/lin-alg"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/LinAlg"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+  "coq-algebra" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: linear algebra"
+  "category: Mathematics/Algebra"
+  "date: 19 spetember 2003"
+]
+authors: [
+  "Jasper Stein <jasper@cs.kun.nl>"
+]
+bug-reports: "https://github.com/coq-contribs/lin-alg/issues"
+dev-repo: "git+https://github.com/coq-contribs/lin-alg.git"
+synopsis: "Linear Algebra"
+description: """
+A development of some preliminary linear algebra
+based on Chapter 1 of "Linear Algebra" by Friedberg, Insel and Spence"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/lin-alg/archive/v8.9.0.tar.gz"
+  checksum: "md5=91ad67b59d2e256a95f4a9426a353e32"
+}

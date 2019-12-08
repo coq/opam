@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/hardware"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Hardware"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: hardware verification"
+  "keyword: comparator circuit"
+  "category: Computer Science/Architecture"
+  "category: Miscellaneous/Extracted Programs/Hardware"
+]
+authors: [
+  "Solange Coupet-Grimal & Line Jakubiec"
+]
+bug-reports: "https://github.com/coq-contribs/hardware/issues"
+dev-repo: "git+https://github.com/coq-contribs/hardware.git"
+synopsis: "Verification and synthesis of hardware linear arithmetic structures"
+description: """
+Verification and synthesis of hardware linear arithmetic
+structures. Example of a left-to-right comparator.
+Three approaches are tackled :
+- the usual verification of a circuit, consisting in proving that the
+description satisfies the specification,
+- the synthesis of a circuit from its specification using the Coq extractor,
+- the same approach as above but using the Program tactic."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/hardware/archive/v8.9.0.tar.gz"
+  checksum: "md5=abf1df876e6c7d20a4401779c9bb1b30"
+}

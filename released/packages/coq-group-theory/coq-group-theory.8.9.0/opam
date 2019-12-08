@@ -1,0 +1,28 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/group-theory"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GroupTheory"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: Group Theory"
+  "category: Mathematics/Algebra"
+]
+authors: [
+  "Gilles Kahn"
+]
+bug-reports: "https://github.com/coq-contribs/group-theory/issues"
+dev-repo: "git+https://github.com/coq-contribs/group-theory.git"
+synopsis: "Elements of Group Theory"
+description: """
+Group Theory following the book "Group Theory" from W.R. Scott."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/group-theory/archive/v8.9.0.tar.gz"
+  checksum: "md5=7ed117621fc6aa28d4e5e7d350e21f0e"
+}

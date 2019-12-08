@@ -1,0 +1,28 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/http://perso.ens-lyon.fr/sebastien.briais/tools/Arith_080201.tar.gz"
+license: "LGPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FundamentalArithmetics"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: arithmetic"
+  "keyword: number theory"
+  "category: Mathematics/Arithmetic and Number Theory/Miscellaneous"
+  "date: 2008-02-1"
+]
+authors: [
+  "Sébastien Briais <sebastien.briais at ens-lyon.fr> [http://perso.ens-lyon.fr/sebastien.briais/]"
+]
+bug-reports: "https://github.com/coq-contribs/fundamental-arithmetics/issues"
+dev-repo: "git+https://github.com/coq-contribs/fundamental-arithmetics.git"
+synopsis: "Fundamental theorems of arithmetic"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/fundamental-arithmetics/archive/v8.9.0.tar.gz"
+  checksum: "md5=cf730613573d2738cfb63d9c1b887750"
+}

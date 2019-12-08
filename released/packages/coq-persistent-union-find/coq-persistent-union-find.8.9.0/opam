@@ -1,0 +1,32 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/http://www.lri.fr/~filliatr/puf/"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PersistentUnionFind"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: program verification"
+  "keyword: union-find"
+  "keyword: data structures"
+  "keyword: Tarjan"
+  "category: Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
+]
+authors: [
+  "Jean-Christophe Filliâtre"
+]
+bug-reports: "https://github.com/coq-contribs/persistent-union-find/issues"
+dev-repo: "git+https://github.com/coq-contribs/persistent-union-find.git"
+synopsis: "Persistent Union Find"
+description: """
+Correctness proof of the Ocaml implementation of a persistent union-find
+data structure. See http://www.lri.fr/~filliatr/puf/ for more details."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/persistent-union-find/archive/v8.9.0.tar.gz"
+  checksum: "md5=f5d07bbe8c574b3df6591deda25e6533"
+}

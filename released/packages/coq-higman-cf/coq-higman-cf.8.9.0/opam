@@ -1,0 +1,32 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/higman-cf"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/HigmanCF"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: Higman's Lemma"
+  "keyword: Extraction"
+  "category: Mathematics/Combinatorics and Graph Theory"
+  "category: Miscellaneous/Extracted Programs/Combinatorics"
+]
+authors: [
+  "Stefan Berghofer"
+]
+bug-reports: "https://github.com/coq-contribs/higman-cf/issues"
+dev-repo: "git+https://github.com/coq-contribs/higman-cf.git"
+synopsis: "A direct constructive proof of Higman's Lemma"
+description: """
+This development formalizes in Coq the Coquand-Friedlender proof of
+Higman's lemma for a two-letter alphabet.
+An efficient program can be extracted from the proof."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/higman-cf/archive/v8.9.0.tar.gz"
+  checksum: "md5=1ce02b6135e92838aaf98fc5932274bf"
+}

@@ -1,0 +1,35 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/presburger"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Presburger"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: Integers"
+  "keyword: Arithmetic"
+  "keyword: Decision Procedure"
+  "keyword: Presburger"
+  "category: Mathematics/Logic/Foundations"
+  "category: Mathematics/Arithmetic and Number Theory/Miscellaneous"
+  "category: Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "date: March 2002"
+]
+authors: [
+  "Laurent Théry"
+]
+bug-reports: "https://github.com/coq-contribs/presburger/issues"
+dev-repo: "git+https://github.com/coq-contribs/presburger.git"
+synopsis: "Presburger's algorithm"
+description: """
+A formalization of Presburger's algorithm as stated in
+the initial paper by Presburger."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/presburger/archive/v8.9.0.tar.gz"
+  checksum: "md5=f3c4e9c316149a8bc03bde86b6c4a2bf"
+}
