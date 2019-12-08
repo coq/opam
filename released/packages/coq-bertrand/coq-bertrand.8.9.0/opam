@@ -20,5 +20,5 @@ by Knuth, pages 147-149"""
 flags: light-uninstall
 url {
   src: "https://github.com/coq-community/bertrand/archive/v8.9.0.tar.gz"
-  checksum: "md5=460694b8ef13901331fd9486716a14bb"
+  checksum: "md5=56c2e7c6891c650d649866f6ad152505"
 }
