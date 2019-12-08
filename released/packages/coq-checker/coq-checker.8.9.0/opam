@@ -1,0 +1,28 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/checker"
+license: "LGPL 2.1"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Checker"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: checker"
+  "keyword: dominos"
+  "keyword: puzzles"
+  "category: Miscellaneous/Logical Puzzles and Entertainment"
+]
+authors: [
+  "Gérard Huet"
+]
+bug-reports: "https://github.com/coq-contribs/checker/issues"
+dev-repo: "git+https://github.com/coq-contribs/checker.git"
+synopsis: "The Mutilated Checkerboard"
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/checker/archive/v8.9.0.tar.gz"
+  checksum: "md5=dd97034f8e98abcb15c07471906588c5"
+}

@@ -1,0 +1,34 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/http://www.nuprl.org/html/CFGVLFMTP2014/"
+license: "LGPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CFGV"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.10~"}
+]
+tags: [
+  "keyword: generic programming"
+  "keyword: variable bindings"
+  "keyword: context free grammars"
+  "keyword: substitution"
+  "keyword: alpha equality"
+  "keyword: equivariance"
+  "category: Computer Science/Lambda Calculi"
+]
+authors: [
+  "Abhishek <abhishek.anand.iitg@gmail.com> [http://www.cs.cornell.edu/~aa755/]"
+  "Vincent Rahli <vincent.rahli@gmail.com> [http://www.cs.cornell.edu/~rahli/]"
+]
+bug-reports: "https://github.com/coq-contribs/cfgv/issues"
+dev-repo: "git+https://github.com/coq-contribs/cfgv.git"
+synopsis: "Generic Proofs about Alpha Equality and Substitution"
+description: """
+Please read the following paper"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/cfgv/archive/v8.9.0.tar.gz"
+  checksum: "md5=cd43cb9753c4c89e2decf15e76e52525"
+}
