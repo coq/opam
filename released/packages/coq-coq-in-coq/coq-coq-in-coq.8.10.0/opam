@@ -6,6 +6,7 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoqInCoq"]
 depends: [
+  "camlp5"
   "ocaml"
   "coq" {>= "8.10" & < "8.11~"}
 ]
