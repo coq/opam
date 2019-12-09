@@ -30,5 +30,5 @@ reflexion."""
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/reflexive-first-order/archive/v8.10.0.tar.gz"
-  checksum: "md5=3fdf1c1b99cf96e95264e8c26ac5cea5"
+  checksum: "md5=c8cb890148bda32221c64ed8b979d29a"
 }
