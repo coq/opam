@@ -23,7 +23,7 @@ remove: [
   ["rm" "-R" "%{lib}%/coq/user-contrib/TemplateExtraction"]
 ]
 depends: [
-  "ocaml" {> "4.02.3"}
+  "ocaml" {>= "4.05"}
   "coq" {>= "8.8" & < "8.9~"}
 ]
 synopsis: "A quoting and unquoting library for Coq in Coq"
