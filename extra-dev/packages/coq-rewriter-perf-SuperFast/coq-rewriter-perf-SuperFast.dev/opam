@@ -8,7 +8,7 @@ homepage: "https://github.com/mit-plv/rewriter"
 bug-reports: "https://github.com/mit-plv/rewriter/issues"
 license: "MIT"
 build: [
-  [make "-j%{jobs}%" "perf-Medium" "EXTERNAL_PERF_DEPENDENCIES=1" "TIMED=1"]
+  [make "-j%{jobs}%" "perf-SuperFast" "EXTERNAL_PERF_DEPENDENCIES=1" "TIMED=1"]
 ]
 install: []
 depends: [
@@ -17,7 +17,7 @@ depends: [
   "coq-rewriter"
 ]
 dev-repo: "git+https://github.com/mit-plv/rewriter.git"
-synopsis: "Extra Performance Benchmark (~ 11h) for Reflective PHOAS rewriting/pattern-matching-compilation framework for simply-typed equalities and let-lifting"
+synopsis: "Performance Benchmark for Reflective PHOAS rewriting/pattern-matching-compilation framework for simply-typed equalities and let-lifting"
 url {
   src: "git+https://github.com/mit-plv/rewriter.git#master"
 }

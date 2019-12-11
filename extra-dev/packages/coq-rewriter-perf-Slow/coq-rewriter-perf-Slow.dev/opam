@@ -8,7 +8,7 @@ homepage: "https://github.com/mit-plv/rewriter"
 bug-reports: "https://github.com/mit-plv/rewriter/issues"
 license: "MIT"
 build: [
-  [make "-j%{jobs}%" "perf-SuperFast" "perf-Fast" "EXTERNAL_PERF_DEPENDENCIES=1" "TIMED=1"]
+  [make "-j%{jobs}%" "perf-Slow" "EXTERNAL_PERF_DEPENDENCIES=1" "TIMED=1"]
 ]
 install: []
 depends: [
