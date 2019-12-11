@@ -7,6 +7,7 @@ install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Graphs"]
 depends: [
   "ocaml"
+  "camlp5"
   "coq" {>= "8.10" & < "8.11~"}
   "coq-int-map" {>= "8.10" & < "8.11~"}
 ]
