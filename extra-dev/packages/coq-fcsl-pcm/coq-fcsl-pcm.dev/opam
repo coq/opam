@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "coq-fcsl-pcm"
 version: "dev"
 maintainer: "FCSL <fcsl@software.imdea.org>"
 
@@ -12,7 +11,7 @@ build: [ make "-j%{jobs}%" ]
 install: [ make "install" ]
 depends: [
   "ocaml"
-  "coq" {(>= "8.10" & < "8.11~") | (= "dev")}
+  "coq" {(>= "8.10" & < "8.12~") | (= "dev")}
   "coq-mathcomp-ssreflect" {(= "dev")}
 ]
 tags: [

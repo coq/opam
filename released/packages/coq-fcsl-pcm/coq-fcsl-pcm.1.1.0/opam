@@ -1,6 +1,4 @@
 opam-version: "2.0"
-name: "coq-fcsl-pcm"
-version: "1.1.0"
 maintainer: "FCSL <fcsl@software.imdea.org>"
 
 homepage: "http://software.imdea.org/fcsl/"
@@ -12,8 +10,8 @@ build: [ make "-j%{jobs}%" ]
 install: [ make "install" ]
 depends: [
   "ocaml"
-  "coq" {(>= "8.9" & < "8.11~") | (= "dev")}
-  "coq-mathcomp-ssreflect" {(>= "1.7.0" & < "1.10~") | (= "dev")}
+  "coq" {(>= "8.9" & < "8.12~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {>= "1.7.0" & < "1.10~"}
 ]
 tags: [
   "keyword:separation logic"
