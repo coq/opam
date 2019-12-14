@@ -31,6 +31,6 @@ The development contains:
 Most of the development is documented in the TYPES 2008 paper "A Machine-Checked Proof of the Average-Case Complexity of Quicksort in Coq", available at the homepage."""
 flags: light-uninstall
 url {
-  src: "https://github.com/coq-contribs/quicksort-complexity/archive/v8.9.0.tar.gz"
-  checksum: "md5=96fe4ad2de74a065e3e072b72008f0e7"
+  src: "https://github.com/coq-contribs/quicksort-complexity/archive/v8.9.0-1.tar.gz"
+  checksum: "md5=9fa8d740e916e98f6f46d8dc7c2e7f30"
 }
