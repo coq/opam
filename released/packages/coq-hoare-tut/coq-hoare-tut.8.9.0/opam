@@ -27,5 +27,5 @@ here performed through Dijkstra's weakest-precondition calculus."""
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/hoare-tut/archive/v8.9.0.tar.gz"
-  checksum: "md5=19129a0687b1f3e8b410bf271a6cb77c"
+  checksum: "md5=e39496288258577c8c752666fd755b06"
 }
