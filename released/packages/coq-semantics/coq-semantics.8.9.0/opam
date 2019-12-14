@@ -7,6 +7,7 @@ install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Semantics"]
 depends: [
   "ocaml"
+  "ocamlbuild" {build}
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
