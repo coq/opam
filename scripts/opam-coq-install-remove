@@ -84,7 +84,9 @@ while [ ! -z "$1" ]; do
             opam remove "$PKG_NAME" -y >> $LOG
             set -e
           else
-            echo Skipping $PKG_NAME_VERSION since not installable
+            echo Check if $PKG_NAME_VERSION is installable with another compiler
+            opam install "$PKG_NAME_VERSION" -y --show-action --unlock-base
+            echo Skipping $PKG_NAME_VERSION since not installable with the current compiler
           fi
         fi
         ;;
