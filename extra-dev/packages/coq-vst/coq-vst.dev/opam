@@ -32,8 +32,8 @@ remove: [
 	]
 depends: [
   "ocaml"
-  "coq" {>= "8.7.0"}
-  "coq-compcert" {>= "3.3.0"}
+  "coq" {>= "8.10.0"}
+  "coq-compcert" {= "3.5"}
 ]
 synopsis: "Verified Software Toolchain"
 description:
