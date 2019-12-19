@@ -79,6 +79,14 @@ opam-build:4.09.0:
   except:
     - web
 
+opam-build:any:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.09.0"
+    EXTRA_OPAM_OPTION: "--unlock-base"
+  except:
+    - web
+
 
 opam-build-no-timeout:4.05.0:
   extends: .opam-build
@@ -106,6 +114,17 @@ opam-build-no-timeout:4.09.0:
     - web
   tags:
     - no-timeout
+
+opam-build:any:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.09.0"
+    EXTRA_OPAM_OPTION: "--unlock-base"
+  except:
+    - web
+  tags:
+    - no-timeout
+
 
 json-data:
   image: nixos/nix
