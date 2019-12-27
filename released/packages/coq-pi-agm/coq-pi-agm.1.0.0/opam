@@ -28,6 +28,6 @@ computations using large integers.  The whole development can be used to
 produce mathematically proved and formally verified approximations of PI."""
 url {
   src:
-    "http://www.inria.fr/sophia/members/Yves.Bertot/proofs/pi_agm_1_0_0.tar.gz"
+    "http://www-sop.inria.fr/members/Yves.Bertot/proofs/pi_agm_1_0_0.tar.gz"
   checksum: "md5=adf0c47dff6a77a50de98dfec5d56674"
 }
