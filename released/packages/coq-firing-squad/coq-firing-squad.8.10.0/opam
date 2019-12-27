@@ -6,7 +6,7 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/FiringSquad"]
 depends: [
-  "ocaml"
+  "ocaml" {< "4.09"}
   "coq" {>= "8.10" & < "8.11~"}
 ]
 tags: [
