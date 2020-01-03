@@ -7,7 +7,7 @@ bug-reports: "https://github.com/unicoq/unicoq/issues"
 license: "MIT"
 build: [
   ["coq_makefile" "-f" "Make" "-o" "Makefile"]
-  [make "-j%{jobs}%"]
+  [make]
 ]
 install: [
   [make "install"]
