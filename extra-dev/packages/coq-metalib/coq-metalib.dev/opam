@@ -9,11 +9,10 @@ tags: "org:plclub"
 homepage: "https://github.com/plclub/metalib"
 bug-reports: "https://github.com/plclub/metalib/issues"
 depends: [
-  "coq" {>= "8.6"}
+  "coq" {>= "8.10"}
 ]
 build: [make "-j%{jobs}%" "-C" "Metalib"]
 install: [make "-C" "Metalib" "install"]
-remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/Metalib"]
 dev-repo: "git+https://github.com/plclub/metalib"
 url {
   src: "git+https://github.com/plclub/metalib.git"
