@@ -14,7 +14,8 @@ install: [
 depends: [
   "lwt" {< "5"}
   "ocaml" {>= "4.00.0" & < "4.06.0"}
-  "ocamlfind"
+  "ocamlbuild" {build}
+  "ocamlfind" {build}
   "num"
 ]
 conflicts: [
