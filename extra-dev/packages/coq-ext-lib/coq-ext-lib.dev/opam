@@ -4,7 +4,7 @@ homepage: "https://github.com/coq-community/coq-ext-lib"
 dev-repo: "git+https://github.com/coq-community/coq-ext-lib.git"
 bug-reports: "https://github.com/coq-community/coq-ext-lib/issues"
 authors: ["Gregory Malecha"]
-license: "BSD"
+license: "BSD-2-Clause-FreeBSD"
 build: [
   [make "-j%{jobs}%" "theories"]
 ]
