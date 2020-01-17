@@ -19,6 +19,6 @@ tags: [
   "logpath:ExtLib"
 ]
 url {
-  src: "https://github.com/coq-community/coq-ext-lib/archive/v0.10.3.tar.gz"
-  checksum: "sha256=24cdcf7f0bd981be2d002a46de7e76472c3f0505a2631ac6c58386ebc2a08f22"
+  src: "https://github.com/coq-community/coq-ext-lib/archive/v0.11.0.tar.gz"
+  checksum: "sha256=638fdf13868b5f2f89f142eb95f0d1b883625e0e71ad23c27225553721a3616e"
 }
