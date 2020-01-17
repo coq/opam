@@ -15,7 +15,7 @@ build: [
   "-clightgen"
   "-coqdevdir" "%{lib}%/coq/user-contrib/compcert"
   "-ignore-coq-version"]
-  [make "-j%{jobs}%"]
+  [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
 ]
 install: [
   [make "install"]
