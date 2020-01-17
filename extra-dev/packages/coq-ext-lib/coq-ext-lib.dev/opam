@@ -4,22 +4,21 @@ homepage: "https://github.com/coq-community/coq-ext-lib"
 dev-repo: "git+https://github.com/coq-community/coq-ext-lib.git"
 bug-reports: "https://github.com/coq-community/coq-ext-lib/issues"
 authors: ["Gregory Malecha"]
-license: "BSD"
+license: "BSD-2-Clause-FreeBSD"
 build: [
-  [make "-j%{jobs}%"]
+  [make "-j%{jobs}%" "theories"]
+]
+run-test: [
+  [make "-j%{jobs}%" "examples"]
 ]
 install: [
   [make "install"]
-]
-remove: [
-  ["rm" "-R" "%{lib}%/coq/user-contrib/ExtLib"]
 ]
 depends: [
   "ocaml"
   "coq" {>= "8.8" | = "dev"}
 ]
-synopsis: "A library of Coq definitions, theorems, and tactics."
-flags: light-uninstall
+synopsis: "a library of Coq definitions, theorems, and tactics"
 url {
-  src: "git+https://github.com/coq-community/coq-ext-lib"
+  src: "git+https://github.com/coq-community/coq-ext-lib#master"
 }
