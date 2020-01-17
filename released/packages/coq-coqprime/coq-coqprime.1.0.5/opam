@@ -1,0 +1,23 @@
+opam-version: "2.0"
+maintainer: "thery@sophia.inria.fr"
+homepage: "http://coqprime.gforge.inria.fr/"
+bug-reports: "http://coqprime.gforge.inria.fr/"
+dev-repo: "git+https://github.com/thery/coqprime.git"
+license: "LGPL-2.1-only"
+authors: ["Laurent Théry"]
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10~"}
+  "coq-bignums"
+]
+synopsis: "Certifying prime numbers in Coq"
+url {
+  src: "https://github.com/thery/coqprime/archive/v8.10b.zip"
+  checksum: "sha512=8debbad953f083137c5ab73be0615983af42188c34852bfca3eb7cc92f13432bcbeadc4b464ef1c389d354c68bac013fdfc400d1dd49fc370ff8ac5cff612343"
+}
