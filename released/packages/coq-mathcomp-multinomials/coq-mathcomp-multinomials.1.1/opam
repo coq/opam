@@ -15,7 +15,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/SsrMultinomials"]
 depends: [
   "ocaml"
-  "coq" {(>= "8.5" | = "dev")}
+  "coq" {>= "8.5"}
   "coq-mathcomp-ssreflect" {>= "1.6" & < "1.8.0~"}
   "coq-mathcomp-algebra" {>= "1.6" & < "1.8.0~"}
   "coq-mathcomp-bigenough" {>= "1.0.0" & < "1.1.0~"}
