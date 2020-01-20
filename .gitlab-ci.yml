@@ -1,7 +1,7 @@
 image: buildpack-deps:stable-scm
 
 variables:
-  NJOBS: "2"
+  OPAMJOBS: "2"
 
 cache:
   paths:
