@@ -12,7 +12,7 @@ license: "MIT"
 build: [
   [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "coq" "standalone-ocaml"]
 ]
-install: [make "EXTERNAL_DEPENDENCIES=1" "install" "install-standalone-ocaml"]
+install: [make "EXTERNAL_DEPENDENCIES=1" "BINDIR=%{bin}%" "install" "install-standalone-ocaml"]
 depends: [
   "ocaml" {build}
   "ocamlfind" {build}
