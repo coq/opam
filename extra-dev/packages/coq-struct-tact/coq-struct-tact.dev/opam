@@ -5,25 +5,25 @@ homepage: "https://github.com/uwplse/StructTact"
 dev-repo: "git+https://github.com/uwplse/StructTact.git"
 bug-reports: "https://github.com/uwplse/StructTact/issues"
 license: "BSD-2-Clause"
-synopsis: "A Coq library of \"structural tactics\" and utility lemmas about lists and finite types"
+synopsis: "Coq library of \"structural tactics\" and utility lemmas about lists and finite types"
 description: """
-A Coq library of \"structural tactics\" as well as Coq libraries containing
-lemmas about lists and finite types that use the tactics library.
+A Coq library of \"structural tactics\" and lemmas about lists and finite
+types that use the tactics.
 """
 
 build: [
-  [ "./configure" ]
-  [ make "-j%{jobs}%" ]
+  ["./configure"]
+  [make "-j%{jobs}%"]
 ]
-install: [ make "install" ]
+install: [make "install"]
 depends: [
-  "ocaml"
-  "coq" {(>= "8.5" & < "8.11~") | (= "dev")}
+  "coq" {(>= "8.5" & < "8.12~") | (= "dev")}
 ]
 
 tags: [
   "category:Computer Science/Data Types and Data Structures"
   "keyword:proof automation"
+  "keyword:tactics"
   "logpath:StructTact"
 ]
 authors: [

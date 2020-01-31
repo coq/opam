@@ -12,13 +12,12 @@ using modal operators similar to those in linear temporal logic (LTL).
 """
 
 build: [
-  [ "./configure" ]
-  [ make "-j%{jobs}%" ]
+  ["./configure"]
+  [make "-j%{jobs}%"]
 ]
-install: [ make "install" ]
+install: [make "install"]
 depends: [
-  "ocaml"
-  "coq" {(>= "8.5" & < "8.11~") | (= "dev")}
+  "coq" {(>= "8.5" & < "8.12~") | (= "dev")}
 ]
 
 tags: [
