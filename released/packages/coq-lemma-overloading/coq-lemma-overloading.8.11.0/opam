@@ -1,0 +1,47 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/lemma-overloading"
+dev-repo: "git+https://github.com/coq-community/lemma-overloading.git"
+bug-reports: "https://github.com/coq-community/lemma-overloading/issues"
+doc: "https://coq-community.github.io/lemma-overloading/"
+license: "GPL-3.0-or-later"
+
+synopsis: "Libraries demonstrating design patterns for programming and proving with canonical structures in Coq"
+description: """
+This project contains Hoare Type Theory libraries which
+demonstrate a series of design patterns for programming
+with canonical structures that enable one to carefully
+and predictably coax Coq's type inference engine into triggering
+the execution of user-supplied algorithms during unification, and
+illustrates these patterns through several realistic examples drawn
+from Hoare Type Theory. The project also contains typeclass-based
+re-implementations for comparison."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.10" & < "8.12~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {(>= "1.7" & < "1.11~") | (= "dev")}
+]
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "keyword:canonical structures"
+  "keyword:proof automation"
+  "keyword:hoare type theory"
+  "keyword:lemma overloading"
+  "logpath:LemmaOverloading"
+  "date:2020-02-01"
+]
+authors: [
+  "Georges Gonthier"
+  "Beta Ziliani"
+  "Aleksandar Nanevski"
+  "Derek Dreyer"
+]
+
+url {
+  src: "https://github.com/coq-community/lemma-overloading/archive/v8.11.0.tar.gz"
+  checksum: "sha512=58df76ccd7a76da1ca5460d6fc6f8a99fa7f450678098fa45c2e2b92c2cb658586b9abd6c0e3c56177578a28343c287b232ebc07448078f2a218c37db130b3d7"
+}
