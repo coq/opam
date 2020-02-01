@@ -1,0 +1,23 @@
+opam-version: "2.0"
+maintainer: "thery@sophia.inria.fr"
+homepage: "https://github.com/thery/PolTac"
+bug-reports: "https://github.com/thery/PolTac"
+dev-repo: "git://github.com/thery/PolTac"
+license: "LGPL"
+authors: ["Laurent Théry"]
+install: [
+  [make]
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PolTac"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.11~"}
+]
+synopsis:
+  "A set of tactics to deal with inequalities in Coq over N, Z and R:"
+flags: light-uninstall
+url {
+  src: "https://github.com/thery/PolTac/archive/v8.11.zip"
+  checksum: "md5=062ba979ec0402f9bb1e1883a2d10a1a"
+}
