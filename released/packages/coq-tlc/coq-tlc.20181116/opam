@@ -19,7 +19,7 @@ remove: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.6"}
+  "coq" {>= "8.6" & < "8.11"}
 ]
 url {
   src: "http://tlc.gforge.inria.fr/releases/tlc-20181116.tar.gz"
