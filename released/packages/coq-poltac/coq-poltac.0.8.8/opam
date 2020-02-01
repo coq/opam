@@ -12,7 +12,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/PolTac"]
 depends: [
   "ocaml"
-  "coq" {>= "8.8~"}
+  "coq" {>= "8.8~" & < "8.11"}
 ]
 synopsis:
   "A set of tactics to deal with inequalities in Coq over N, Z and R:"
