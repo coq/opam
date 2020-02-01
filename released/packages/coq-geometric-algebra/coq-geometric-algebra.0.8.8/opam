@@ -14,7 +14,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GeometricAlgebra"]
 depends: [
   "ocaml"
-  "coq" {>= "8.8~"}
+  "coq" {>= "8.8~" & < "8.11"}
 ]
 synopsis: "Grassman Cayley and Clifford formalisations"
 flags: light-uninstall
