@@ -1,0 +1,43 @@
+opam-version: "2.0"
+synopsis: "Coq library for reasoning about probabilistic algorithms"
+description: """
+  Ceramist extends coq-infotheo to support reasoning about probabilistic algorithms,
+  and includes a collection of lemmas on random oracle based hash functions.
+
+  Provides an example implementation of a bloom filter and uses the library to prove
+  the probability of a false positive.
+"""
+
+homepage: "https://github.com/certichain/ceramist"
+dev-repo: "git+https://github.com/certichain/ceramist.git"
+bug-reports: "https://github.com/certichain/ceramist/issues"
+maintainer: "kirang@comp.nus.edu.sg"
+authors: [
+  "Kiran Gopinathan"
+  "Ilya Sergey"
+]
+license: "GPL-3.0-or-later"
+depends: [
+  "coq" {>= "8.10.2" & < "8.11~"}
+  "coq-mathcomp-ssreflect" {>= "1.10" & < "1.11~"}
+  "coq-mathcomp-analysis" { >= "0.2.0" & < "0.3~" }
+  "coq-infotheo" { >= "0.0.6" & < "0.0.7~" }
+]
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "keyword: bloomfilter"
+  "keyword: probability"
+  "date:2020-01-25"
+]
+
+url {
+  src: "https://github.com/certichain/ceramist/archive/1.0.0.tar.gz"
+  checksum: "sha512=1d75e229cf3deaa654177464fee009807acb22f8f72cfb54bcf9d5ee16cc318f3ed089a1f4c94c520637b1845ba0e5fccac951cacbe6ca7e62cb9a2047b01c72"
+}
