@@ -11,13 +11,14 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/GeometricAlgebra"]
 depends: [
   "ocaml"
   "coq" {>= "8.11~"}
 ]
 synopsis: "Grassman Cayley and Clifford formalisations"
-flags: light-uninstall
+tags: [
+  "logpath:GeometricAlgebra"
+]
 url {
   src: "https://github.com/thery/GeometricAlgebra/archive/v8,11.zip"
   checksum: "md5=8539a242001444b6ef76f2b3507d4779"
