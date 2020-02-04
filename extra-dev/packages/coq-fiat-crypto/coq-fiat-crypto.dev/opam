@@ -10,15 +10,14 @@ homepage: "https://github.com/mit-plv/fiat-crypto"
 bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
 license: "MIT"
 build: [
-  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "coq" "standalone-ocaml"]
+  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "coq-without-bedrock2" "standalone-ocaml"]
 ]
-install: [make "EXTERNAL_DEPENDENCIES=1" "BINDIR=%{bin}%" "install" "install-standalone-ocaml"]
+install: [make "EXTERNAL_DEPENDENCIES=1" "BINDIR=%{bin}%" "install-without-bedrock2" "install-standalone-ocaml"]
 depends: [
   "ocaml" {build}
   "ocamlfind" {build}
   "coq" {>= "8.9~"}
   "coq-coqprime"
-  "coq-bedrock2"
   "coq-rewriter"
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
