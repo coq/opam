@@ -1,0 +1,43 @@
+opam-version: "2.0"
+maintainer: "reynald.affeldt@aist.go.jp"
+homepage: "https://github.com/affeldt-aist/monae"
+bug-reports: "https://github.com/affeldt-aist/monae/issues"
+dev-repo: "git+https://github.com/affeldt-aist/monae.git"
+license: "GPL-3.0-or-later"
+authors: [
+  "Reynald Affeldt"
+  "David Nowak"
+  "Takafumi Saikawa"
+  "Jacques Garrigue"
+  "Celestine Sauvage"
+  "Kazunari Tanaka"
+]
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" { >= "8.10" & < "8.12~" }
+  "coq-infotheo" { >= "0.0.7" }
+]
+synopsis: "Monae"
+description: """
+This repository contains a formalization of monads including several
+models, examples of monadic equational reasoning, and an application
+to program semantics.
+"""
+tags: [
+  "category:Computer Science/Semantics and Compilation/Semantics"
+  "keyword: monad"
+  "keyword: effect"
+  "keyword: probability"
+  "keyword: nondeterminism"
+  "logpath:monae"
+  "date:2019-12-06"
+]
+url {
+  http: "https://github.com/affeldt-aist/monae/archive/0.0.6.tar.gz"
+  checksum: "sha512=6b4d32e7fe1833c4b481135e2a8e2c70c290d182e9c63fe42ca499f16647a6b24746f246edec136692aa82a2d37e4d3df58440d116022b29cae459413ed7ceb3"
+}
