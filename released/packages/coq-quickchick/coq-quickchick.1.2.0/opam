@@ -11,7 +11,7 @@ license: "MIT"
 build: [ make "-j%{jobs}%" ]
 install: [ make "install" ]
 depends: [
-  "ocaml" {>= "4.04.0"}
+  "ocaml" {>= "4.05.0"}
   "coq" {>= "8.10" < "8.11~"}
   "coq-ext-lib"
   "coq-mathcomp-ssreflect"
