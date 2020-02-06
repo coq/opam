@@ -1,0 +1,41 @@
+opam-version: "2.0"
+maintainer: "leonidas@umd.edu"
+synopsis: "Randomized Property-Based Testing Plugin for Coq"
+
+homepage: "https://github.com/QuickChick/QuickChick"
+dev-repo: "git+https://github.com/QuickChick/QuickChick.git"
+bug-reports: "https://github.com/QuickChick/QuickChick/issues"
+license: "MIT"
+
+build: [ make "-j%{jobs}%" ]
+install: [ make "install" ]
+depends: [
+  "ocaml" {>= "4.05.0"}
+  "coq" {>= "8.10" < "8.11~"}
+  "coq-ext-lib"
+  "coq-mathcomp-ssreflect"
+  "ocamlbuild"
+  "ocamlfind"
+  "coq-simple-io" {>= "1.0.0"}
+]
+
+authors: [
+  "Leonidas Lampropoulos <>"
+  "Zoe Paraskevopoulou <>"
+  "Maxime Denes <>"
+  "Catalin Hritcu <>"
+  "Benjamin Pierce <>"
+  "Li-yao Xia <>"
+  "Arthur Azevedo de Amorim <>"
+  "Yishuai Li <>"
+  "Antal Spector-Zabusky <>"
+]
+tags: [
+  "keyword:extraction"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:QuickChick"
+]
+url {
+  src: "https://github.com/QuickChick/QuickChick/archive/v1.2.0.tar.gz"
+  checksum: "md5=df766e9807b8549576149c635db1c553"
+}
