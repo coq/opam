@@ -1,0 +1,49 @@
+opam-version: "2.0"
+maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
+homepage: "https://github.com/CoqEAL/CoqEAL"
+bug-reports: "https://github.com/CoqEAL/CoqEAL/issues"
+dev-repo: "git+https://github.com/CoqEAL/CoqEAL.git"
+
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" {>= "8.7" & < "8.12~"}
+  "coq-bignums" {>= "8.7" & < "8.12~"}
+  "coq-paramcoq" {>= "1.1.1"}
+  "coq-mathcomp-multinomials" {>= "1.5" & < "1.6~"}
+  "coq-mathcomp-algebra" {>= "1.10.0" & < "1.11~"}
+]
+
+tags: [
+  "keyword:effective algebra"
+  "keyword:elementary divisor rings"
+  "keyword:Smith normal form"
+  "keyword:mathematical components"
+  "keyword:Bareiss"
+  "keyword:Karatsuba"
+  "keyword:refinements"
+  "logpath:CoqEAL"
+]
+authors: [
+  "Guillaume Cano"
+  "Cyril Cohen"
+  "Maxime Dénès"
+  "Anders Mörtberg"
+  "Vincent Siles"
+]
+
+synopsis: "CoqEAL - The Coq Effective Algebra Library"
+description: """
+This library contains a subset of the work that was developed in the context of the ForMath european project (2009-2013). It has two parts:
+- theory (module CoqEAL_theory), which contains formal developments in algebra and optimized algorithms on mathcomp data structures.
+- refinements (module CoqEAL_refinements), which is a framework to ease change of data representation during a proof.
+"""
+url {
+  src: "https://github.com/CoqEAL/CoqEAL/archive/1.0.3.tar.gz"
+  checksum: "sha512=096c5aa7b99bdb00af138e474fd1423fe3a6df12e3e597135266f447fc6e4376077ce3d0cbca21f9cfa034d225a931b70efd316ca11f7e1354fa9ac27b5ec052"
+}
