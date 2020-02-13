@@ -10,7 +10,7 @@ run-test: [make "-j%{jobs}%" "examples"]
 install: [make "install"]
 depends: [
   "ocaml"
-  "coq" {>= "8.8" < "8.11~"}
+  "coq" {>= "8.8" < "8.12~"}
 ]
 synopsis: "A library of Coq definitions, theorems, and tactics"
 description: """
