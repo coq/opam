@@ -11,8 +11,8 @@ build: [make "-j%{jobs}%" "-C" "Examples"]
 install: [make "-C" "Examples" "install"]
 depends: [
   "ocaml"
-  "coq" {>= "8.7" & < "8.11~"}
-  "coq-mathcomp-ssreflect" {>= "1.6.2" & < "1.10~"}
+  "coq" {>= "8.7" & < "8.12~"}
+  "coq-mathcomp-ssreflect" {>= "1.6.2" & < "1.11~"}
   "coq-fcsl-pcm"
   "coq-disel" {= version}
 ]
