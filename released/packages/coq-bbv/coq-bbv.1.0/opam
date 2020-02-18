@@ -25,16 +25,12 @@ build: [
 install: [
   [make "install"]
 ]
-remove: [
-  ["rm" "-R" "%{lib}%/coq/user-contrib/bbv"]
-]
 depends: [
   "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
 synopsis: "An implementation of bitvectors in Coq"
-flags: light-uninstall
 url {
   src: "https://github.com/mit-plv/bbv/archive/v1.0.tar.gz"
-  checksum: "md5=084ceeda42ac1265169a796244cb3db2"
+  checksum: "sha256=e797d4704872a5b9811f41be141a62905bd7bb774772655f998af9c07cce3948"
 }
