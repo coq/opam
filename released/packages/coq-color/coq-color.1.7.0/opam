@@ -24,8 +24,8 @@ install: [make "-f" "Makefile.coq" "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
 depends: [
   "ocaml"
-  "coq" {>= "8.10" & < "8.11~"}
-  "coq-bignums" {>= "8.10" & < "8.11~"}
+  "coq" {>= "8.10" & < "8.12~"}
+  "coq-bignums" {>= "8.10" & < "8.12~"}
 ]
 tags: [
   "date:2019-11-05"
