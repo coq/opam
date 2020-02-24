@@ -1,0 +1,24 @@
+opam-version: "2.0"
+maintainer: "Xavier Leroy <xavier.leroy@inria.fr>"
+homepage: "https://github.com/xavierleroy/coq2html"
+dev-repo: "git+https://github.com/xavierleroy/coq2html.git"
+bug-reports: "https://github.com/xavierleroy/coq2html/issues"
+license: "GPL-2.0-or-later"
+build: [
+  [make]
+]
+install: [
+  [make "BINDIR=%{bin}%" "install"]
+]
+
+depends: [
+  "ocaml"
+  "coq" {>= "8.5"}
+]
+synopsis: "Generates HTML documentation from Coq source files.  Alternative to coqdoc"
+authors: "Xavier Leroy <xavier.leroy@inria.fr>"
+
+url {
+  src: "https://github.com/xavierleroy/coq2html/archive/v1.2.tar.gz"
+  checksum: "sha512=3aeaca8497838331ec9ec0677548ba70101ab89ddb23e3902b8c7a48c2ffdf0de5cd79e38826b5e327457b11f3fa9dfd84ca7c90eabe72f0419ab674e4dc3b6e"
+}
