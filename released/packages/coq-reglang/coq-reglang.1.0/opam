@@ -14,11 +14,11 @@ automata (deterministic, nondeterministic, one-way, two-way),
 regular expressions, and the logic WS1S. It also contains various
 decidability results and closure properties of regular languages."""
 
-build: [make "-j%{jobs}%"]
-install: [make "install"]
+build: [make "-j%{jobs}%" "-C" "theories"]
+install: [make "-C" "theories" "install"]
 depends: [
-  "coq" {>= "8.7" & < "8.12~"}
-  "coq-mathcomp-ssreflect" {>= "1.9" & < "1.11~"}
+  "coq" {>= "8.6" & < "8.10~"}
+  "coq-mathcomp-ssreflect" {>= "1.6" & < "1.8~"}
 ]
 
 tags: [
@@ -29,7 +29,7 @@ tags: [
   "keyword:two-way automata"
   "keyword:monadic second-order logic"
   "logpath:RegLang"
-  "date:2019-11-25"
+  "date:2018-09-18"
 ]
 authors: [
   "Christian Doczkal"
@@ -38,6 +38,6 @@ authors: [
 ]
 
 url {
-  src: "https://github.com/coq-community/reglang/archive/v1.1.tar.gz"
-  checksum: "sha512=e845e0b864c6d0ecde9dc21c47bd902b014b359d83694f6cecb55190581c5148ca06b13c0ec998feb24ebdcf18161c11b893de4df2ffbec02580a47b012acffd"
+  src: "https://github.com/coq-community/reglang/archive/v1.0.tar.gz"
+  checksum: "sha512=f245b4d735725c5256018af293d3e313c48f35178a89d8b8c90c2f4b4bd6bad4038bcfe0d25e10547a0f8d010e7450d223f30457d27b7c6d31a0db7ad7a68477"
 }
