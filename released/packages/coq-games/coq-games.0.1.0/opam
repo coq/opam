@@ -1,0 +1,30 @@
+opam-version: "2.0"
+license: "BSD-2-Clause"
+synopsis: "A library for algorithmic game theory in Ssreflect/Coq"
+maintainer: "Gordon Stewart <gstew5@gmail.com>"
+authors: [
+  "Alexander Bagnall"
+  "Samuel Merten"
+  "Gordon Stewart"
+]
+bug-reports: "https://github.com/gstew5/games/issues"
+dev-repo: "git+https://github.com/gstew5/games.git"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" {(>= "8.7" & < "8.12~")}
+  "coq-mathcomp-algebra" {(>= "1.9.0" & < "1.11~")}
+]
+tags: [
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "keyword:game theory"
+  "logpath:Games"
+]
+url {
+  src: "https://github.com/gstew5/games/archive/0.1.0.tar.gz"
+  checksum: "sha512=b0c0524fb72b65187c4331ea2ee98f88f074db4d133ab2371be630a1d98944e340b3c3b30a23d4674d8e9772f5da8e0ebd31f5b76515f159279b1cbb58990297"
+}
