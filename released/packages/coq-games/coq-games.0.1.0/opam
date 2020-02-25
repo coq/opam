@@ -1,0 +1,11 @@
+license: "BSD-2-Clause"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" {(>= "8.7" & < "8.12~")}
+  "coq-mathcomp-algebra" {(>= "1.9.0" & < "1.11~")}
+]
