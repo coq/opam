@@ -1,0 +1,37 @@
+opam-version: "2.0"
+maintainer: "vovaglad00@gmail.com"
+
+homepage: "https://github.com/coq-community/alea"
+dev-repo: "git+https://github.com/coq-community/alea.git"
+bug-reports: "https://github.com/coq-community/alea/issues"
+license: "LGPL-2.1-only"
+
+synopsis: "Coq library for reasoning on randomized algorithms"
+description: """
+ALEA is a library for reasoning on randomized algorithms
+in Coq, based on interpreting programs inside a monad
+as probability distributions."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.11" & < "8.12~") | (= "dev")}
+]
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "keyword:randomized algorithm"
+  "keyword:probability"
+  "keyword:monad"
+  "logpath:ALEA"
+]
+authors: [
+  "Christine Paulin-Mohring"
+  "David Baelde"
+  "Pierre Courtieu"
+]
+
+url {
+  src: "https://github.com/coq-community/alea/archive/v8.11.0.tar.gz"
+  checksum: "sha512=4c6ac25da844f4f7d17209965283e03f4381ed23d04379a6e9a52430cc94a7c839a5054c2b08283bf4a7fbd27b966a2ffd9306e3b95f1586d4dbd99205460565"
+}
