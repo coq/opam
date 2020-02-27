@@ -28,5 +28,5 @@ the `->` notation. Finally it provides a way to define new vernacular commands
 and new tactics."""
 url {
 src: "https://github.com/LPCIC/coq-elpi/archive/v1.3.0.tar.gz"
-checksum: "sha256=d04f2e3a53e2ec1b872b7ab067b190c615d03ce6f4cddfb5c73a5594c4cd0e35"
+checksum: "sha256=d93545398683231159c1466456ba9d9920fb3ceaecf80c49827be11816762581"
 }
