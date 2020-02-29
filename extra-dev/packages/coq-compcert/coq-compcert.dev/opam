@@ -34,7 +34,7 @@ remove: [
 ]
 depends: [
   "ocaml"
-  "coq" {= "dev"}
+  "coq" {>= "8.8"}
   "menhir" {>= "20190626"}
 ]
 synopsis: "The CompCert C compiler."
