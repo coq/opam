@@ -1,0 +1,46 @@
+opam-version: "2.0"
+authors: "Xavier Leroy <xavier.leroy@inria.fr>"
+maintainer: "Jacques-Henri Jourdan <jacques-Henri.jourdan@normalesup.org>"
+homepage: "http://compcert.inria.fr/"
+dev-repo: "git+https://github.com/AbsInt/CompCert.git"
+bug-reports: "https://github.com/AbsInt/CompCert/issues"
+license: "INRIA Non-Commercial License Agreement"
+build: [
+  ["./configure" "ia32-linux" {os = "linux"}
+  "ia32-macosx" {os = "macos"}
+  "ia32-cygwin" {os = "cygwin"}
+  "-bindir" "%{bin}%"
+  "-libdir" "%{lib}%/compcert"
+  "-install-coqdev"
+  "-clightgen"
+  "-coqdevdir" "%{lib}%/coq/user-contrib/compcert"
+  "-ignore-coq-version"]
+  [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
+]
+install: [
+  [make "install"]
+  ["install" "-m" "0644" "VERSION" "%{lib}%/coq/user-contrib/compcert/"]
+]
+depends: [
+  "ocaml" {< "4.08.0"}
+  # This are the release versions of Coq which include this version of compcert
+  # See compcert_CI_REF in
+  # https://github.com/coq/coq/blob/V8.10.0/dev/ci/ci-basic-overlay.sh
+  # https://github.com/coq/coq/blob/V8.10.1/dev/ci/ci-basic-overlay.sh
+  # https://github.com/coq/coq/blob/V8.10.2/dev/ci/ci-basic-overlay.sh 
+  "coq" {= "8.10.0" | = "8.10.1" | = "8.10.2"}
+  "menhir" {>= "20180530" & <= "20181113"}
+]
+synopsis: "The CompCert C compiler (patched for Coq 8.10.X compatibility)"
+tags: [
+  "category:CS/Semantics and Compilation/Compilation"
+  "category:CS/Semantics and Compilation/Semantics"
+  "keyword:C"
+  "keyword:compiler"
+  "logpath:compcert"
+  "date:2019-02-27"
+]
+url {
+  src: "https://github.com/MSoegtropIMC/CompCert/archive/v3.5_coq_8.10.tar.gz"
+  checksum: "sha256=d810db1c48ba63215415b5d383a622f0c38a79decfb8405e687b63ebfb65a7df"
+}

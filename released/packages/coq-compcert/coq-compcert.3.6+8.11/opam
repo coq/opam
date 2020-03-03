@@ -1,0 +1,48 @@
+opam-version: "2.0"
+authors: "Xavier Leroy <xavier.leroy@inria.fr>"
+maintainer: "Jacques-Henri Jourdan <jacques-Henri.jourdan@normalesup.org>"
+homepage: "http://compcert.inria.fr/"
+dev-repo: "git+https://github.com/AbsInt/CompCert.git"
+bug-reports: "https://github.com/AbsInt/CompCert/issues"
+license: "INRIA Non-Commercial License Agreement"
+build: [
+  ["./configure" "ia32-linux" {os = "linux"}
+  "ia32-macosx" {os = "macos"}
+  "ia32-cygwin" {os = "cygwin"}
+  "-bindir" "%{bin}%"
+  "-libdir" "%{lib}%/compcert"
+  "-install-coqdev"
+  "-clightgen"
+  "-coqdevdir" "%{lib}%/coq/user-contrib/compcert"
+  "-ignore-coq-version"]
+  [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
+]
+patches: "compat-8-11.patch"
+extra-files: ["compat-8-11.patch" "sha256=1d54e39e9cda9ce8a408158580c09d0d76ff2accbd7524d1986aee4a7b0563dd"]
+install: [
+  [make "install"]
+  ["install" "-m" "0644" "VERSION" "%{lib}%/coq/user-contrib/compcert/"]
+]
+depends: [
+  # This are the release versions of Coq which include this version of compcert
+  # See compcert_CI_REF in
+  # https://github.com/coq/coq/blob/V8.11.0/dev/ci/ci-basic-overlay.sh
+  # See make_addon_compcert in
+  # https://github.com/coq/coq/blob/V8.11.0/dev/build/windows/makecoq_mingw.sh
+  "coq" {= "8.11.0"}
+  "menhir" {>= "20190626" & < "20200123"}
+  "ocaml" {>= "4.05.0"}
+]
+synopsis: "The CompCert C compiler (patched for Coq 8.11 compatibility)"
+tags: [
+  "category:CS/Semantics and Compilation/Compilation"
+  "category:CS/Semantics and Compilation/Semantics"
+  "keyword:C"
+  "keyword:compiler"
+  "logpath:compcert"
+  "date:2019-10-02"
+]
+url {
+  src: "https://github.com/AbsInt/CompCert/archive/v3.6.tar.gz"
+  checksum: "sha256=7a77839f6b990ab632ba14feccf4f17da189f0e3b95d6ce2ef0986e4caebc575"
+}
