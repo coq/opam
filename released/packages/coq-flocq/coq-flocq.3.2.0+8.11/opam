@@ -12,6 +12,8 @@ build: [
 install: ["./remake" "install"]
 depends: [
   "coq" {= "8.11.0"}
+  ("conf-g++" {build} | "conf-clang" {build})
+  "conf-autoconf" {build}
 ]
 tags: [ "keyword:floating point arithmetic" "logpath:Flocq" ]
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
