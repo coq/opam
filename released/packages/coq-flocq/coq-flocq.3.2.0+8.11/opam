@@ -1,0 +1,24 @@
+opam-version: "2.0"
+maintainer: "guillaume.melquiond@inria.fr"
+homepage: "http://flocq.gforge.inria.fr/"
+dev-repo: "git+https://gitlab.inria.fr/flocq/flocq.git"
+bug-reports: "https://gitlab.inria.fr/flocq/flocq/issues"
+license: "LGPL-3.0-or-later"
+build: [
+  ["./autogen.sh"]
+  ["./configure"]
+  ["./remake" "-j%{jobs}%"]
+]
+install: ["./remake" "install"]
+depends: [
+  "coq" {= "8.11.0"}
+  ("conf-g++" {build} | "conf-clang" {build})
+  "conf-autoconf" {build}
+]
+tags: [ "keyword:floating point arithmetic" "logpath:Flocq" ]
+authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
+synopsis: "(patched for Coq 8.11 compatibility by MSoegtropIMC) A floating-point formalization for the Coq system"
+url {
+  src: "https://github.com/MSoegtropIMC/flocq/archive/66482a0775e39770dde8bebc4c896d8d47980e1a.tar.gz"
+  checksum: "sha512=46f9f9a0e3005dc6cc90bd6023803a963c828623d6236ac5cbcf158bb1c74153340908c4bcfce938d670625fd94058898b4fac836983fa479a55941c8b34d8e5"
+}
