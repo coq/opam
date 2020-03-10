@@ -35,6 +35,6 @@ safe checker and erasure for PCUIC and example translations.
 See individual packages for more detailed descriptions.
 """
 url {
-  src: "https://github.com/MetaCoq/metacoq/archive/1.0-alpha2+8.10.tar.gz"
+  src: "https://github.com/MetaCoq/metacoq/archive/v1.0-alpha2-8.10.tar.gz"
   checksum: "sha256=94156cb9397b44915c9217a435a812cabc9651684cd229d5069b34332d0792a2"
 }
