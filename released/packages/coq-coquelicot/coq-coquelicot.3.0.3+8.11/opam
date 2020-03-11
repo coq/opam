@@ -3,7 +3,7 @@ maintainer: "guillaume.melquiond@inria.fr"
 homepage: "http://coquelicot.saclay.inria.fr/"
 dev-repo: "git+https://gitlab.inria.fr/coquelicot/coquelicot.git"
 bug-reports: "https://gitlab.inria.fr/coquelicot/coquelicot/issues"
-license: "LGPL 3-only"
+license: "LGPL-3.0-or-later"
 build: [
   ["./autogen.sh"]
   ["./configure"]
