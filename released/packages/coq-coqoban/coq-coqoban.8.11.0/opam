@@ -1,0 +1,35 @@
+opam-version: "2.0"
+maintainer: "erik@martin-dorel.org"
+
+homepage: "https://github.com/coq-community/coqoban"
+dev-repo: "git+https://github.com/coq-community/coqoban.git"
+bug-reports: "https://github.com/coq-community/coqoban/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Coqoban (Sokoban in Coq)"
+description: """
+A Coq implementation of Sokoban, the Japanese warehouse keepers'
+game."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "ocaml" {>= "4.05.0"}
+  "coq" {(>= "8.10" & < "8.12~") | (= "dev")}
+]
+
+tags: [
+  "category:Miscellaneous/Logical Puzzles and Entertainment"
+  "keyword:Sokoban"
+  "keyword:puzzles"
+  "logpath:Coqoban"
+]
+authors: [
+  "Jasper Stein"
+  "Hugo Herbelin"
+]
+
+url {
+  src: "https://github.com/coq-community/coqoban/archive/v8.11.0.tar.gz"
+  checksum: "sha256=07762404f7bf6b57dca178cdf16730bb50b1815b8e6454a0d1a427078b0a9b68"
+}
