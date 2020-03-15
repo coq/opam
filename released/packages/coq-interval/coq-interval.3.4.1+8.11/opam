@@ -1,0 +1,30 @@
+opam-version: "2.0"
+maintainer: "guillaume.melquiond@inria.fr"
+homepage: "http://coq-interval.gforge.inria.fr/"
+dev-repo: "git+https://gitlab.inria.fr/coqinterval/interval.git"
+bug-reports: "https://gitlab.inria.fr/coqinterval/interval/issues"
+license: "CeCILL-C"
+build: [
+  ["./autogen.sh"]
+  ["./configure"]
+  ["./remake" "-j%{jobs}%"]
+]
+patches: "rlist.patch"
+extra-files: ["rlist.patch" "sha512=45d4b23e5a66b4f8d98ee53754974a0d17500e651165f675b9e7e7815aa9e465003fb274950efb66961d5e72bf613bb8502bd3574c139e2ac34173f9b1fcf82d"]
+install: ["./remake" "install"]
+depends: [
+  "coq" {= "8.11.0"}
+  "coq-bignums"
+  "coq-flocq" {= "3.2.0+8.11"}
+  "coq-mathcomp-ssreflect" {>= "1.6"}
+  "coq-coquelicot" {>= "3.0"}
+  ("conf-g++" {build} | "conf-clang" {build})
+  "conf-autoconf" {build}
+]
+tags: [ "keyword:interval arithmetic" "keyword:decision procedure" "keyword:floating point arithmetic" "keyword:reflexive tactic" "keyword:taylor models" "category:Mathematics/Real Calculus and Topology" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "logpath:Interval"]
+authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
+synopsis: "(patched for Coq 8.11 compatibility by MSoegtropIMC) A Coq tactic for proving bounds on real-valued expressions automatically"
+url {
+  src: "https://gitlab.inria.fr/coqinterval/interval/-/archive/839a03e1bddbafab868fbceee59abe678e32a0f3.tar.gz"
+  checksum: "sha512=0365f94286eaa7d401961d80ad7ecc6fdc7b8d2dcb3d0d08c3f44cff951b10379a1ab9f222d4da2a3a8c496e8d400a45d1f1108bb73644a818cce2baee1feba4"
+}
