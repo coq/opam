@@ -6,7 +6,10 @@ license: "BSD"
 homepage: "https://gitlab.mpi-sws.org/iris/stdpp"
 bug-reports: "https://gitlab.mpi-sws.org/iris/stdpp/issues"
 dev-repo: "git+https://gitlab.mpi-sws.org/iris/stdpp.git"
-tags: [ "date:2020-03-18" ]
+tags: [
+  "date:2020-03-18"
+  "logpath:stdpp"
+]
 
 synopsis: "std++ is an extended \"Standard Library\" for Coq"
 description: """
