@@ -1,0 +1,29 @@
+opam-version: "2.0"
+maintainer: "gmalecha@gmail.com"
+homepage: "https://github.com/gmalecha/coq-printf"
+dev-repo: "git+https://github.com/gmalecha/coq-printf"
+bug-reports: "https://github.com/gmalecha/coq-printf/issues"
+authors: ["Gregory Malecha"]
+license: "BSD"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.8" & < "8.12~"}
+]
+tags: [
+  "date:2020-03-18"
+  "logpath:Printf"
+]
+synopsis:
+  "Implementation of sprintf for Coq"
+description: "Library providing implementation of sprintf for Coq"
+
+url {
+  src: "https://github.com/gmalecha/coq-printf/archive/v1.0.1.tar.gz"
+  checksum: "sha512=41870c51fc40f751fbb6e793a5b54b2f9cbddc43efc860758c0af0b291f5a9454583676e87a5584b28a5e72ebdcdd0f903c743160c501b3d940fe232738d718d"
+}
