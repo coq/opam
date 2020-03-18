@@ -13,7 +13,7 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {(>= "8.10" & < "8.11~") | (= "dev")}
+  "coq" {(>= "8.10" & < "8.12~") | (= "dev")}
   "coq-mathcomp-ssreflect" {(>= "1.9" & < "1.10~") | (= "dev")}
   "coq-void" {>= "0.1" | (= "dev")}
   "coq-deriving" {= "dev"}
