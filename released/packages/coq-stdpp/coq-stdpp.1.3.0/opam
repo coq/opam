@@ -1,0 +1,45 @@
+opam-version: "2.0"
+name: "coq-stdpp"
+maintainer: "Ralf Jung <jung@mpi-sws.org>"
+authors: "Robbert Krebbers, Jacques-Henri Jourdan, Ralf Jung"
+license: "BSD"
+homepage: "https://gitlab.mpi-sws.org/iris/stdpp"
+bug-reports: "https://gitlab.mpi-sws.org/iris/stdpp/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/stdpp.git"
+tags: [ "date:2020-03-18" ]
+
+synopsis: "std++ is an extended \"Standard Library\" for Coq"
+description: """
+The key features of this library are as follows:
+
+- It provides a great number of definitions and lemmas for common data
+  structures such as lists, finite maps, finite sets, and finite multisets.
+- It uses type classes for common notations (like `∅`, `∪`, and Haskell-style
+  monad notations) so that these can be overloaded for different data structures.
+- It uses type classes to keep track of common properties of types, like it
+  having decidable equality or being countable or finite.
+- Most data structures are represented in canonical ways so that Leibniz
+  equality can be used as much as possible (for example, for maps we have
+  `m1 = m2` iff `∀ i, m1 !! i = m2 !! i`). On top of that, the library provides
+  setoid instances for most types and operations.
+- It provides various tactics for common tasks, like an ssreflect inspired
+  `done` tactic for finishing trivial goals, a simple breadth-first solver
+  `naive_solver`, an equality simplifier `simplify_eq`, a solver `solve_proper`
+  for proving compatibility of functions with respect to relations, and a solver
+  `set_solver` for goals involving set operations.
+- It is entirely dependency- and axiom-free.
+"""
+
+depends: [
+  "coq" { (= "8.7.2") | (= "8.8.2") | (>= "8.9.1" & < "8.12~") | (= "dev") }
+]
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+
+url {
+  src:
+    "https://gitlab.mpi-sws.org/iris/stdpp/repository/coq-stdpp-1.3.0/archive.tar.gz"
+  checksum:
+    "sha512=82247189f655c0ad60a81864b6f88a10933cacd79c35405dc812b7e6ca1938b3770c5d5339419f9e8252880acf028c767b2191061bbe1bfcdba3c05a960ed001"
+}
