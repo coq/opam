@@ -1,0 +1,38 @@
+opam-version: "2.0"
+maintainer: "Li-yao Xia <lysxia@gmail.com>"
+synopsis: "A Library for Representing Recursive and Impure Programs in Coq"
+
+homepage: "https://github.com/DeepSpec/InteractionTrees"
+dev-repo: "git+https://github.com/DeepSpec/InteractionTrees"
+bug-reports: "https://github.com/DeepSpec/InteractionTrees/issues"
+license: "MIT"
+
+build: [ make "-j%{jobs}%" ]
+install: [ make "install" ]
+run-test: [ make "-j%{jobs}%" "all" ]
+
+depends: [
+  "coq" {>= "8.8" & < "8.12~"}
+  "coq-ext-lib" {>= "0.11.1" & < "0.12"}
+  "coq-paco" {>= "4.0.0" & < "4.1.0"}
+  "ocamlbuild" {with-test}
+]
+authors: [
+  "Li-yao Xia <lysxia@gmail.com>"
+  "Yannick Zakowski <zakowski@seas.upenn.edu>"
+  "Paul He <paulhe@seas.upenn.edu>"
+  "Chung-Kil Hur <gil.hur@gmail.com>"
+  "Gregory Malecha <gmalecha@gmail.com>"
+  "Steve Zdancewic <stevez@cis.upenn.edu>"
+  "Benjamin C. Pierce <bcpierce@cis.upenn.edu>"
+]
+
+tags: [
+  "org:deepspec"
+  "logpath: ITree"
+  "date: 2020-03-23"
+]
+url {
+  http: "https://github.com/DeepSpec/InteractionTrees/archive/3.1.0.tar.gz"
+  checksum: "sha512=cbdaa70c7b8717d1601c138719bb4562ecbf7da89f27e601341bfb93c07a962df4ab1dc8c20ee857f5403ac84d78e9cbaa31f275fcb3aae9792d0fca7b455743"
+}
