@@ -13,7 +13,7 @@ install: [make "install"]
 depends: [
   "ocaml"
   "ocamlfind" {build}
-  "coq" {>= "8.7" & < "8.8"}
+  "coq" {>= "8.7" & < "8.8~"}
 ]
 authors: ["The Coq-HoTT Development Team"]
 dev-repo: "git+https://github.com/HoTT/HoTT.git"
