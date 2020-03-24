@@ -13,7 +13,7 @@ depends: [
   "conf-autoconf" {build}
   "ocaml"
   "ocamlfind" {build}
-  "coq" {>= "8.10" & < "8.11"}
+  "coq" {>= "8.10" & < "8.11~"}
 ]
 authors: ["The Coq-HoTT Development Team"]
 dev-repo: "git+https://github.com/HoTT/HoTT.git"
