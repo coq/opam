@@ -19,6 +19,10 @@ depends: [
   "coq" {>= "8.11" & < "8.12~"}
   "coq-metacoq-template" { >= "1.0~alpha2+8.11" }
 ]
+tags: [
+  "logpath: Lens"
+  "date: 2020-03-29"
+]
 url {
   src: "https://github.com/gmalecha/coq-lens/archive/v1.0.0.tar.gz"
   checksum: "sha256=83e99a20f094098097438aa61253c0ed07ffe63fd4f225a055f411ddd18afe22"
