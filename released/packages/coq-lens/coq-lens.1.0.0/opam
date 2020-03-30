@@ -1,0 +1,29 @@
+opam-version: "2.0"
+synopsis: "Generation of lenses for record datatypes"
+maintainer: "gmalecha@gmail.com"
+authors: [
+  "Gregory Malecha <gmalecha@gmail.com>"
+]
+homepage: "https://github.com/gmalecha/coq-lens"
+dev-repo: "git://github.com/gmalecha/coq-lens.git"
+bug-reports: "https://github.com/gmalecha/coq-lens/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.11" & < "8.12~"}
+  "coq-metacoq-template" { >= "1.0~alpha2+8.11" }
+]
+tags: [
+  "logpath: Lens"
+  "date: 2020-03-29"
+]
+url {
+  src: "https://github.com/gmalecha/coq-lens/archive/v1.0.0.tar.gz"
+  checksum: "sha256=83e99a20f094098097438aa61253c0ed07ffe63fd4f225a055f411ddd18afe22"
+}
