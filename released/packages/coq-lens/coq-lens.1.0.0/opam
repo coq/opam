@@ -5,7 +5,7 @@ authors: [
   "Gregory Malecha <gmalecha@gmail.com>"
 ]
 homepage: "https://github.com/gmalecha/coq-lens"
-dev-repo: "https://github.com/gmalecha/coq-lens.git"
+dev-repo: "git://github.com/gmalecha/coq-lens.git"
 bug-reports: "https://github.com/gmalecha/coq-lens/issues"
 license: "MIT"
 build: [
