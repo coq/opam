@@ -1,0 +1,43 @@
+opam-version: "2.0"
+maintainer: "b.a.w.spitters@gmail.com"
+
+homepage: "https://github.com/coq-community/math-classes"
+dev-repo: "git+https://github.com/coq-community/math-classes.git"
+bug-reports: "https://github.com/coq-community/math-classes/issues"
+license: "Public Domain"
+
+synopsis: "A library of abstract interfaces for mathematical structures in Coq"
+description: """
+Math classes is a library of abstract interfaces for mathematical structures, such as
+*  Algebraic hierarchy (groups, rings, fields, …)
+*  Relations, orders, …
+*  Categories, functors, universal algebra, …
+*  Numbers: N, Z, Q, …
+*  Operations, (shift, power, abs, …)
+It is heavily based on Coq’s new type classes in order to provide: structure inference, multiple inheritance/sharing, convenient algebraic manipulation (e.g. rewriting) and idiomatic use of notations.
+"""
+
+build: [
+  [ "./configure.sh" ]
+  [ make "-j%{jobs}%" ]
+]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.6" & < "8.12~")}
+  "coq-bignums" 
+]
+
+tags: [
+  "logpath:MathClasses"
+  "date:2020-04-01"
+]
+authors: [
+  "Eelis van der Weegen"
+  "Bas Spitters"
+  "Robbert Krebbers"
+]
+
+url {
+  src: "https://github.com/coq-community/math-classes/archive/8.11.0.tar.gz"
+  checksum: "sha256=9d67d17c8568ae7a1d20830c560687af3d9ecd3e323ffb140111e182dd99471c"
+}
