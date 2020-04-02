@@ -14,7 +14,7 @@ Provides an alternative to the core of the Coq standard library, using classic d
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" { >= "8.8" }
+  "coq" { >= "8.10" }
 ]
 
 tags: [
