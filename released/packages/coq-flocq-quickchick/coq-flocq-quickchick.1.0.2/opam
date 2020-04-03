@@ -16,6 +16,10 @@ build: [
 ]
 install: [make "install"]
 dev-repo: "git+https://github.com/digamma-ai/flocq-quickchick.git"
+tags: [
+  "logpath: FlocqQuickChick"
+  "date: 2020-04-01"
+]
 
 url {
   src: "https://github.com/digamma-ai/flocq-quickchick/archive/1.0.2.tar.gz"
