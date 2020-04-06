@@ -18,7 +18,7 @@ authors: [
 ]
 license: "GPL-3.0-or-later"
 depends: [
-  "coq" {>= "8.11.0" & < "8.11.1"}
+  "coq" {>= "8.11.0"}
   "coq-mathcomp-ssreflect" {>= "1.10" & < "1.11~"}
   "coq-mathcomp-analysis" { >= "0.2.3" & < "0.3~" }
   "coq-infotheo" { >= "0.1" & < "0.2~" }
