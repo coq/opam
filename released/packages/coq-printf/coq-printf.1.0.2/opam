@@ -16,7 +16,7 @@ depends: [
   "coq" {>= "8.8" & < "8.12~"}
 ]
 tags: [
-  "date:2020-03-18"
+  "date:2020-04-05"
   "logpath:Printf"
 ]
 synopsis:
@@ -24,6 +24,6 @@ synopsis:
 description: "Library providing implementation of sprintf for Coq"
 
 url {
-  src: "https://github.com/gmalecha/coq-printf/archive/v1.0.1.tar.gz"
-  checksum: "sha512=41870c51fc40f751fbb6e793a5b54b2f9cbddc43efc860758c0af0b291f5a9454583676e87a5584b28a5e72ebdcdd0f903c743160c501b3d940fe232738d718d"
+  src: "https://github.com/gmalecha/coq-printf/archive/v1.0.2.tar.gz"
+  checksum: "sha512=1c26cef48739674e5a286a4e2fd9a85b735c998e43c4c400719b0daaa9117a5f64657e7f6fb43149c3af064436ee4eba7ef79619623ef93af904ea833a84f396"
 }
