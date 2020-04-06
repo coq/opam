@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "coq-mathcomp-finmap"
 version: "dev"
 maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
 
@@ -12,7 +11,8 @@ build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/finmap'" ]
 depends: [
-  "coq-mathcomp-ssreflect" { (>= "1.8.0" & < "1.11~") | (= "dev")}
+  "coq" { (>= "8.7" & < "8.12~") | (= "dev") }
+  "coq-mathcomp-ssreflect" { (>= "1.8.0" & < "1.11~") | (= "dev") }
   "coq-mathcomp-bigenough" { (>= "1.0.0" & < "1.1~") }
 ]
 tags: [ "keyword:finmap" "keyword:finset" "keyword:multiset" "keyword:order"]

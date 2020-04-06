@@ -1,6 +1,4 @@
 opam-version: "2.0"
-name: "coq-mathcomp-finmap"
-version: "1.2.0"
 maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
 
 homepage: "https://github.com/math-comp/finmap"
@@ -10,9 +8,9 @@ license: "CeCILL-B"
 
 build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]
-remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/finmap'" ]
 depends: [
-  "coq-mathcomp-ssreflect" { (>= "1.8.0" & < "1.9.0~") | (= "dev")}
+  "coq" { (>= "8.7" & < "8.11.1") }
+  "coq-mathcomp-ssreflect" { (>= "1.8.0" & < "1.9.0~") }
   "coq-mathcomp-bigenough" { (>= "1.0.0" & < "1.1.0~") }
 ]
 tags: [ "keyword:finmap" "keyword:finset" "keyword:multiset" "keyword:order"]
