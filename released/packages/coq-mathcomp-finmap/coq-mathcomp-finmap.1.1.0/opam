@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "coq-mathcomp-finmap"
 maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
 
 homepage: "http://www.cyrilcohen.fr"
@@ -9,7 +8,6 @@ license: "CeCILL-B"
 build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]
 depends: [
-  "ocaml"
   "coq-mathcomp-ssreflect" {>= "1.7.0" & < "1.8~"}
 ]
 tags: [
