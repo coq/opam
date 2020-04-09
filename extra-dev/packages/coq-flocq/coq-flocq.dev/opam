@@ -4,7 +4,7 @@ homepage: "http://flocq.gforge.inria.fr/"
 dev-repo: "git+https://scm.gforge.inria.fr/anonscm/git/flocq/flocq.git"
 license: "LGPL 3"
 build: [
-  ["./autogen.sh"]
+  ["autoconf"]
   ["./configure"]
   ["./remake" "-j%{jobs}%"]
 ]
