@@ -14,7 +14,7 @@ depends: [
   "pprint"
   "base-bytes"
   "coq" {>= "8.6"}
-  "coq-tlc" {>= "20181116"}
+  "coq-tlc" {>= "20181116" & < "20200328"}
 ]
 url {
   src:
