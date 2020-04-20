@@ -1,0 +1,48 @@
+opam-version: "2.0"
+authors: "Xavier Leroy <xavier.leroy@inria.fr>"
+maintainer: "Jacques-Henri Jourdan <jacques-Henri.jourdan@normalesup.org>"
+homepage: "http://compcert.inria.fr/"
+dev-repo: "git+https://github.com/AbsInt/CompCert.git"
+bug-reports: "https://github.com/AbsInt/CompCert/issues"
+license: "INRIA Non-Commercial License Agreement"
+version: "3.7"
+build: [
+  ["./configure" "ia32-linux" {os = "linux"}
+  "ia32-macosx" {os = "macos"}
+  "ia32-cygwin" {os = "cygwin"}
+  "-bindir" "%{bin}%"
+  "-libdir" "%{lib}%/compcert"
+  "-install-coqdev"
+  "-clightgen"
+  "-coqdevdir" "%{lib}%/coq/user-contrib/compcert"
+  "-ignore-coq-version"]
+  [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
+]
+patches: ["platform-flocq.patch" "copy_ini_to_coqlib.patch"]
+extra-files: [
+  ["platform-flocq.patch" "sha256=36371f28651ac2310b96ea4e3fc6bf2a0c48074e088da46de6cc45458b8b4d82"]
+  ["copy_ini_to_coqlib.patch" "sha256=f461f47a464e6f34eab0160f02b94ff00fa742a647df79e1de09f101800e3bb2"]
+]
+install: [
+  [make "install"]
+  ["install" "-m" "0644" "VERSION" "%{lib}%/coq/user-contrib/compcert/"]
+]
+depends: [
+  "coq" {>= "8.7.0" & < "8.12"}
+  "coq-flocq" {>= "3.2.1"}
+  "menhir" {>= "20190626" & < "20200123"}
+  "ocaml" {>= "4.05.0"}
+]
+synopsis: "The CompCert C compiler (using the platform supplied version of Flocq)"
+tags: [
+  "category:CS/Semantics and Compilation/Compilation"
+  "category:CS/Semantics and Compilation/Semantics"
+  "keyword:C"
+  "keyword:compiler"
+  "logpath:compcert"
+  "date:2020-03-21"
+]
+url {
+  src: "https://github.com/AbsInt/CompCert/archive/v3.7.tar.gz"
+  checksum: "sha256=ceee1b2ed6c2576cb66eb7a0f2669dcf85e65c0fc68385f0781b0ca4edb87eb0"
+}
