@@ -6,7 +6,7 @@ dev-repo:
 bug-reports: "coquelicot-friends@lists.gforge.inria.fr"
 license: "LGPL 3"
 build: [
-  ["./autogen.sh"]
+  ["autoreconf" "-i" "-s"]
   ["./configure"]
   ["./remake" "-j%{jobs}%"]
 ]
