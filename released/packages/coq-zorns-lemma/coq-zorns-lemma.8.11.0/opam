@@ -1,0 +1,38 @@
+opam-version: "2.0"
+maintainer: "miloradovsky@gmail.com"
+
+homepage: "https://github.com/coq-community/zorns-lemma"
+dev-repo: "git+https://github.com/coq-community/zorns-lemma.git"
+bug-reports: "https://github.com/coq-community/zorns-lemma/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "This library develops some basic set theory"
+description: """
+The main purpose the author had in writing it was as support for the Topology library.
+"""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.10" & < "8.12~"}
+]
+
+tags: [
+  "category: Mathematics/Logic/Set theory"
+  "keyword: set theory"
+  "keyword: cardinals"
+  "keyword: ordinals"
+  "keyword: finite"
+  "keyword: countable"
+  "keyword: quotients"
+  "keyword: well-orders"
+  "keyword: Zorn's lemma"
+  "logpath: ZornsLemma"
+]
+authors: [
+  "Daniel Schepler"
+]
+url {
+  archive: "https://github.com/coq-community/zorns-lemma/archive/v8.11.0.tar.gz"
+  checksum: "sha256=af8872b360b5f0f84d6a514f7db1aa855d11460d1ed9394279f19b1399d9da32"
+}
