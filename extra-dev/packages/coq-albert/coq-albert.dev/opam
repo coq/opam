@@ -1,0 +1,43 @@
+opam-version: "2.0"
+synopsis: "A certified compiler for Albert, an intermediate language for compilers targeting Tezos' smart contract language Michelson"
+maintainer: "albert@nomadic-labs.com"
+authors: [ "Raphaël Cauderlier" "Bruno Bernardo" "Julien Tesson" "Arvid Jakobsson" "Basile Pesin" ]
+
+homepage: "https://gitlab.com/nomadic-labs/albert/"
+dev-repo: "git+https://gitlab.com/nomadic-labs/albert/"
+bug-reports: "https://gitlab.com/nomadic-labs/albert/issues"
+license: "MIT"
+
+build: [
+  [ make ]
+  [ make "test" {with-test} ]
+]
+install: [ make "install" ]
+depends: [ "dune" "ott" "menhir" "coq" {>= "8.8.2"} "coq-ott" "coq-menhirlib" "coq-mi-cho-coq"]
+
+description:"""
+Albert is an intermediate smart contract programming language
+targeting Michelson, the language for the Tezos blockchain. Albert is
+an imperative language with variables and records, abstracting the
+Michelson stack. The intent of Albert is to serve as a compilation
+target for high-level smart contract programming languages. The linear
+type system of Albert ensures that an Albert program, compiled to the
+stack-based Michelson language, properly consumes all stack values.
+
+This package contains the ott specification of the language, the
+Albert compiler targeting Michelson written in Coq and extracted to OCaml.
+"""
+
+tags: [
+  "category:Computer Science/Semantics and Compilation/Compilation"
+  "keyword:blockchain"
+  "keyword:albert"
+  "keyword:semantics"
+  "keyword:smart-contract"
+  "keyword:tezos"
+  "logpath:Albert"
+]
+
+url {
+  src: "git+https://gitlab.com/nomadic-labs/albert.git#master"
+}
