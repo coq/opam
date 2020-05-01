@@ -1,3 +1,19 @@
+From e47591667fea0cc22ccd0ba407d8c1463005686b Mon Sep 17 00:00:00 2001
+From: Michael Soegtrop <7895506+MSoegtropIMC@users.noreply.github.com>
+Date: Thu, 30 Apr 2020 16:25:19 +0200
+Subject: [PATCH 3/3] Use Coq platform supplied Flocq
+
+---
+ aarch64/Archi.v     | 2 +-
+ arm/Archi.v         | 2 +-
+ lib/Floats.v        | 2 +-
+ lib/IEEE754_extra.v | 2 +-
+ powerpc/Archi.v     | 2 +-
+ riscV/Archi.v       | 2 +-
+ x86_32/Archi.v      | 2 +-
+ x86_64/Archi.v      | 2 +-
+ 8 files changed, 8 insertions(+), 8 deletions(-)
+
 diff --git a/aarch64/Archi.v b/aarch64/Archi.v
 index aef4ab77..c99569c0 100644
 --- a/aarch64/Archi.v
@@ -102,3 +118,6 @@ index 959d8dc1..59502b4a 100644
  Require Import Binary Bits.
  
  Definition ptr64 := true.
+-- 
+2.24.2 (Apple Git-127)
+

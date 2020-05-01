@@ -19,7 +19,6 @@ build: [
 ]
 install: [
   [make "install"]
-  ["install" "-m" "0644" "VERSION" "%{lib}%/coq/user-contrib/compcert/"]
 ]
 depends: [
   "coq" {>= "8.7.0" & < "8.12"}

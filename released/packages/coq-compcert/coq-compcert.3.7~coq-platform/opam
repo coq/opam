@@ -18,14 +18,16 @@ build: [
   "-ignore-coq-version"]
   [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
 ]
-patches: ["platform-flocq.patch" "copy_ini_to_coqlib.patch"]
+patches: [
+  "0001-Install-compcert.config-file-along-the-Coq-developme.patch"
+  "0003-Use-Coq-platform-supplied-Flocq.patch"
+]
 extra-files: [
-  ["platform-flocq.patch" "sha256=36371f28651ac2310b96ea4e3fc6bf2a0c48074e088da46de6cc45458b8b4d82"]
-  ["copy_ini_to_coqlib.patch" "sha256=f461f47a464e6f34eab0160f02b94ff00fa742a647df79e1de09f101800e3bb2"]
+  ["0001-Install-compcert.config-file-along-the-Coq-developme.patch" "sha256=f9354b4b52f2956842d395b8d26afe91530e7262db539439cd6b0d0f2e756f48"]
+  ["0003-Use-Coq-platform-supplied-Flocq.patch" "sha256=13ad400aa972dacb925376c2168b4b9be28f372b4ba42be35fbeae47c9a6773c"]
 ]
 install: [
   [make "install"]
-  ["install" "-m" "0644" "VERSION" "%{lib}%/coq/user-contrib/compcert/"]
 ]
 depends: [
   "coq" {>= "8.7.0" & < "8.12"}
@@ -33,14 +35,14 @@ depends: [
   "menhir" {>= "20190626" & < "20200123"}
   "ocaml" {>= "4.05.0"}
 ]
-synopsis: "The CompCert C compiler (using the platform supplied version of Flocq)"
+synopsis: "The CompCert C compiler (using coq-platform supplied version of Flocq)"
 tags: [
   "category:CS/Semantics and Compilation/Compilation"
   "category:CS/Semantics and Compilation/Semantics"
   "keyword:C"
   "keyword:compiler"
   "logpath:compcert"
-  "date:2020-03-21"
+  "date:2020-04-29"
 ]
 url {
   src: "https://github.com/AbsInt/CompCert/archive/v3.7.tar.gz"
