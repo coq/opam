@@ -13,7 +13,17 @@ build: [
   [ make "test" {with-test} ]
 ]
 install: [ make "install" ]
-depends: [ "dune" "ott" "menhir" "coq" {>= "8.8.2"} "coq-ott" "coq-menhirlib" "coq-mi-cho-coq"]
+depends: [
+  "dune"
+  "ott"
+  "menhir"
+  "coq" {>= "8.8.2"}
+  "coq-ott"
+  "coq-menhirlib"
+  "coq-mi-cho-coq"
+  "coq-list-string"
+  "coq-moment" {>= "1.2.0"}
+]
 
 description:"""
 Albert is an intermediate smart contract programming language
