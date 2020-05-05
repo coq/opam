@@ -1,7 +1,7 @@
-From e47591667fea0cc22ccd0ba407d8c1463005686b Mon Sep 17 00:00:00 2001
+From 05448adb7642b3c1189139cec18c914b116d5d40 Mon Sep 17 00:00:00 2001
 From: Michael Soegtrop <7895506+MSoegtropIMC@users.noreply.github.com>
 Date: Thu, 30 Apr 2020 16:25:19 +0200
-Subject: [PATCH 3/3] Use Coq platform supplied Flocq
+Subject: [PATCH 11/12] Use Coq platform supplied Flocq
 
 ---
  aarch64/Archi.v     | 2 +-
@@ -15,10 +15,10 @@ Subject: [PATCH 3/3] Use Coq platform supplied Flocq
  8 files changed, 8 insertions(+), 8 deletions(-)
 
 diff --git a/aarch64/Archi.v b/aarch64/Archi.v
-index aef4ab77..c99569c0 100644
+index 24431cb2..6c5655d8 100644
 --- a/aarch64/Archi.v
 +++ b/aarch64/Archi.v
-@@ -13,7 +13,7 @@
+@@ -16,7 +16,7 @@
  (** Architecture-dependent parameters for AArch64 *)
  
  Require Import ZArith List.
@@ -41,7 +41,7 @@ index 16d6c71d..9b4cc96a 100644
  
  Definition ptr64 := false.
 diff --git a/lib/Floats.v b/lib/Floats.v
-index 13350dd0..ea9e220d 100644
+index 6a126c3f..25a55620 100644
 --- a/lib/Floats.v
 +++ b/lib/Floats.v
 @@ -17,7 +17,7 @@

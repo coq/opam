@@ -1,7 +1,7 @@
-From d585a348abe669b57854de2dbaec68ea06e8848a Mon Sep 17 00:00:00 2001
+From b55c97d7930caec06d559faae4684761f258fd0f Mon Sep 17 00:00:00 2001
 From: Michael Soegtrop <7895506+MSoegtropIMC@users.noreply.github.com>
 Date: Thu, 30 Apr 2020 13:50:08 +0200
-Subject: [PATCH 2/3] Added open source build to makefile
+Subject: [PATCH 10/12] Added open source build to makefile
 
 ---
  Makefile | 36 +++++++++++++++++++++++++++++++++---
