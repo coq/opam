@@ -1,0 +1,24 @@
+opam-version: "2.0"
+authors: [
+  "Jason Gross"
+  "Andres Erbsen"
+  "Massachusetts Institute of Technology"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/mit-plv/engine-bench"
+bug-reports: "https://github.com/mit-plv/engine-bench/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%" "coq"]
+  [make "-j%{jobs}%" "coq-perf"]
+]
+install: [make "coq-install"]
+depends: [
+  "coq" {>= "8.11~"}
+]
+dev-repo: "git+https://github.com/mit-plv/engine-bench.git"
+synopsis: "Collection of benchmarks for the proof engine"
+tags: ["logpath:PerformanceExperiments" "logpath:PerformanceDemos"]
+url {
+  src: "git+https://github.com/mit-plv/engine-bench.git#master"
+}
