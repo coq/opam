@@ -1,0 +1,43 @@
+opam-version: "2.0"
+synopsis: "OL libraries"
+description: """
+  Add-ons for the Coq standard library
+"""
+
+homepage: "https://github.com/olaure01/ollibs"
+dev-repo: "git+https://github.com/olaure01/ollibs.git"
+bug-reports: "https://github.com/olaure01/ollibs/issues"
+doc: "https://github.com/olaure01/ollibs/blob/master/README.md"
+maintainer: "olivier.laurent@ens-lyon.fr"
+authors: [
+  "Olivier Laurent"
+]
+license: "LGPL-3.0-or-later"
+
+depends: [
+  "coq" { >= "8.12.0" & < "8.12.1" }
+]
+
+build: [
+  ["./configure"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/olaure01/ollibs/archive/v2.0.0.tar.gz"
+  checksum: "sha256=549f723b292bbed57c2dc0c30bca1e34d43f90523d5c889863072fc058da0f94"
+}
+
+tags: [
+  "keyword:standard library"
+  "keyword:list"
+  "keyword:permutation"
+  "keyword:decidable equality"
+  "keyword:finite multisets"
+  "category:Misc/Coq Extensions"
+  "date:2020-08-04"
+  "logpath:OLlibs"
+]
