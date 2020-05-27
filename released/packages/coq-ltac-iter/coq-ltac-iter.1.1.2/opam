@@ -20,6 +20,6 @@ synopsis:
 description: "Provides tactics for performing various forms of iteration over hypotheses, hint databases, and other collections."
 
 url {
-  src: "https://github.com/gmalecha/coq-ltac-iter/archive/1.1.2.tar.gz"
+  src: "https://github.com/gmalecha/coq-ltac-iter/archive/v1.1.2.tar.gz"
   checksum: "sha512=6cf303e7b528db97cc93f538583fc21a795d794ea7fe12d19a8fe0002d4e387e60596d5cbb8ff51043262edb91ad20da4b504e91c9f2cd140185716985a4008f"
 }
