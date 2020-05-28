@@ -20,6 +20,6 @@ galois theory, algebraic numbers, cyclotomic polynomials...
 """
 
 url {
-src: "http://github.com/math-comp/math-comp/archive/mathcomp-1.11.0+beta1.tar.gz"
-checksum: "sha256=0f71bb8b512416881984e18b922d2bae78bc00819492f4ab28348d2d9488a517"
+src: "https://github.com/math-comp/math-comp/archive/mathcomp-1.11+beta1.tar.gz"
+checksum: "sha256=412e3bd8faae4c52a4e1651a3ea3ad949ae6f93a2ffbb579f0ebd4662d5d418e"
 }
