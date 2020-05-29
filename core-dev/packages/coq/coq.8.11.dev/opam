@@ -18,7 +18,7 @@ and homotopy type theory) and teaching.
 """
 
 depends: [
-  "ocaml" {>= "4.05.0"}
+  "ocaml" {>= "4.05.0" & < "4.11"}
   "ocamlfind" {build}
   "num"
   "conf-findutils" {build}
@@ -33,6 +33,7 @@ build: [
     "-libdir" "%{lib}%/coq"
     "-datadir" "%{share}%/coq"
     "-coqide" "no"
+    "-native-compiler" {os = "macos"} "no" {os = "macos"}
   ]
   [make "-j%{jobs}%"]
   [make "-j%{jobs}%" "byte"]
