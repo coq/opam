@@ -48,5 +48,5 @@ extra-files: [
 ]
 
 url {
-  src: "git+https://github.com/coq/coq.git#master"
+  src: "git+https://github.com/coq/coq.git#v8.12"
 }
