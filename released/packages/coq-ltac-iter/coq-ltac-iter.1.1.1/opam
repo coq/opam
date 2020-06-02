@@ -21,5 +21,5 @@ description: "Provides tactics for performing various forms of iteration over hy
 
 url {
   src: "https://github.com/gmalecha/coq-ltac-iter/archive/v1.1.1.tar.gz"
-  checksum: "sha512=7a9145c4e1188dae3d6c7e9ae5f91bda34ebeb8c296a5045b3067a74cbea6641cdc38a5db1320da6f784444fb79d158f97ec4b2b765593e49d7149e9b015dc4a"
+  checksum: "sha512=56e58404f44a4d3e24a8c7f1075d057c19e146bba095b9d3faeb782f4380e23fc3a1b8bfbc0ce8be97fa507df7170ad255f33f7c0109c144c763de0deed1df26"
 }
