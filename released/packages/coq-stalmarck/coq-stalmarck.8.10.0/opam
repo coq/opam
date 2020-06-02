@@ -32,5 +32,5 @@ authors: [
 
 url {
   src: "https://github.com/coq-community/stalmarck/archive/v8.10.0.tar.gz"
-  checksum: "md5=9d1ead73e678fa2f51a70a933b0bf017"
+  checksum: "sha512=4943cf125044325bbc8871d0bb59e344e11def404552360505bed65e7ed7bc09436808603aa1734fbd10aba444ba25772b259974263ef85f9cb366879f0ad8a5"
 }
