@@ -1,0 +1,21 @@
+opam-version: "2.0"
+maintainer: "Gregory Malecha <gregory@bedrocksystems.com>"
+homepage: "https://gitlab.com/bedrockpublic/coq-bytestring"
+dev-repo: "git+https://gitlab.com/bedrockpublic/coq-bytestring.git"
+bug-reports: "https://gitlab.com/bedrockpublic/coq-bytestring/issues"
+authors: ["Gregory Malecha"]
+license: "LGPL-2.1 + BedRock"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.11" < "8.12~"}
+]
+synopsis: "A simple string library built around byte instead of Ascii"
+description: """
+  A simple string library built around byte.
+"""
+url {
+  src: "https://gitlab.com/bedrockpublic/coq-bytestring/-/archive/v0.9.0/coq-bytestring-v0.9.0.tar.gz"
+  checksum: "sha256=2dd6a0804225cf7a7822d8ab8056cedd2996e4f61b6f52fadf8956438c2b98a2"
+}
