@@ -14,7 +14,7 @@ has been successfully applied to a project, only this package needs
 to be installed; the hammer plugin is not required.
 """
 
-build: [make "-j%{jobs}%" "tactics"]
+build: [make "-j%{jobs}%" {ocaml:version >= "4.06.1"} "tactics"]
 install: [
   [make "install-tactics"]
   [make "test-tactics"] {with-test}
@@ -28,21 +28,19 @@ conflicts: [
   "coq-hammer" {!= version}
 ]
 
-tags: [  
+tags: [
   "keyword:automation"
   "keyword:hammer"
   "keyword:tactics"
   "logpath:Hammer"
-  "date:2019-10-14"  
+  "date:2020-04-25"
 ]
 
 authors: [
   "Lukasz Czajka <lukaszcz@mimuw.edu.pl>"
-  "Cezary Kaliszyk <cezary.kaliszyk@uibk.ac.at>"
-  "Burak Ekici <burak.ekici@uibk.ac.at>"
 ]
 
 url {
-  src: "https://github.com/lukaszcz/coqhammer/archive/v1.1.1-coq8.10.tar.gz"
-  checksum: "sha512=c9fd9c1a997775f515850fad54edceac6572d365f1e7cc043e448d6e5c9903ccb1bea2020fbbfda3983616f9ae4181a384b933f97731a487ee5cfba7cc1543d1"
+  src: "https://github.com/lukaszcz/coqhammer/archive/v1.2-coq8.10.tar.gz"
+  checksum: "sha512=74b1a014f4e1e62148e25d46a4b2c376b927a3481ef52ce853d43f526164bbffd0bf2184653ba13e638d9321635ceec85e7c7b34e08dfa362c5e7a9588dc4b96"
 }

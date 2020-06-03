@@ -22,7 +22,7 @@ depends: [
 ]
 
 conflicts: [
-  "coq-hammer" {< version}
+  "coq-hammer" {!= version}
 ]
 
 tags: [  
