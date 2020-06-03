@@ -1,0 +1,21 @@
+opam-version: "2.0"
+maintainer: "Enrico Tassi <enrico.tassi@inria.fr>"
+authors: [ "Cyril Cohen" "Kazuhiko Sakaguchi" "Enrico Tassi" ]
+license: "MIT"
+homepage: "https://github.com/math-comp/hierarchy-builder"
+bug-reports: "https://github.com/math-comp/hierarchy-builder/issues"
+dev-repo: "git+https://github.com/math-comp/hierarchy-builder"
+
+build: [ make ]
+install: [ make "install" "VFILES=structures.v" ]
+depends: [
+  "coq-elpi" {>= "1.4.0" & < "1.5.0~"}
+  ]
+synopsis: "Hierarchy Builder"
+description: """
+High level commands to declare and evolve a hierarchy based on packed classes.
+"""
+url {
+  src: "https://github.com/math-comp/hierarchy-builder/archive/v0.9.1.tar.gz"
+  checksum: "sha256=25acacb6b8aaac1666c4d710bb35d1f715c936d7dc0cab01d573102a33ae9c98"
+}
