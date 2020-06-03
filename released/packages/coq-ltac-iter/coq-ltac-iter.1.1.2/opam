@@ -1,0 +1,25 @@
+opam-version: "2.0"
+maintainer: "gmalecha@gmail.com"
+homepage: "https://github.com/gmalecha/coq-ltac-iter"
+dev-repo: "git+https://github.com/gmalecha/coq-ltac-iter.git"
+bug-reports: "https://github.com/gmalecha/coq-ltac-iter/issues"
+authors: ["Gregory Malecha"]
+license: "BSD"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.11" & < "8.12~"}
+]
+synopsis:
+  "Access hint databases from tactics"
+description: "Provides tactics for performing various forms of iteration over hypotheses, hint databases, and other collections."
+
+url {
+  src: "https://github.com/gmalecha/coq-ltac-iter/archive/v1.1.2.tar.gz"
+  checksum: "sha512=6cf303e7b528db97cc93f538583fc21a795d794ea7fe12d19a8fe0002d4e387e60596d5cbb8ff51043262edb91ad20da4b504e91c9f2cd140185716985a4008f"
+}
