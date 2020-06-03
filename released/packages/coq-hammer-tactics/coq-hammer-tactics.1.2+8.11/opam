@@ -14,14 +14,14 @@ has been successfully applied to a project, only this package needs
 to be installed; the hammer plugin is not required.
 """
 
-build: [make "-j%{jobs}%" "tactics"]
+build: [make "-j%{jobs}%" {ocaml:version >= "4.06.1"} "tactics"]
 install: [
   [make "install-tactics"]
   [make "test-tactics"] {with-test}
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.10" & < "8.11~"}
+  "coq" {>= "8.11" & < "8.12~"}
 ]
 
 conflicts: [
@@ -33,16 +33,14 @@ tags: [
   "keyword:hammer"
   "keyword:tactics"
   "logpath:Hammer"
-  "date:2019-10-14"  
+  "date:2020-04-25"
 ]
 
 authors: [
   "Lukasz Czajka <lukaszcz@mimuw.edu.pl>"
-  "Cezary Kaliszyk <cezary.kaliszyk@uibk.ac.at>"
-  "Burak Ekici <burak.ekici@uibk.ac.at>"
 ]
 
 url {
-  src: "https://github.com/lukaszcz/coqhammer/archive/v1.1.1-coq8.10.tar.gz"
-  checksum: "sha512=c9fd9c1a997775f515850fad54edceac6572d365f1e7cc043e448d6e5c9903ccb1bea2020fbbfda3983616f9ae4181a384b933f97731a487ee5cfba7cc1543d1"
+  src: "https://github.com/lukaszcz/coqhammer/archive/v1.2-coq8.11.tar.gz"
+  checksum: "sha512=f533eeb42fcad00447c174839dbc1c7882e14167e87275121c9a0ccc7dba7f25da4589caf53e26d816e8e06cc3de2d91b0a2ef9133b6371a8318ac037c4a0792"
 }
