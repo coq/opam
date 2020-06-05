@@ -1,4 +1,7 @@
 opam-version: "2.0"
+authors: [
+  "Yves Bertot"
+]
 maintainer: "kartiksinghal@gmail.com"
 homepage: "https://github.com/coq-community/semantics"
 dev-repo: "git+https://github.com/coq-community/semantics.git"
@@ -21,7 +24,7 @@ also provided in Coq, but there are no proofs associated.
 build: [make "-j%{jobs}%" ]
 install: [make "install"]
 depends: [
-  "coq"
+  "coq" {>= "8.10"}
   "ocamlbuild" {build}
 ]
 
@@ -37,13 +40,10 @@ tags: [
   "keyword:intervals"
   "logpath:Semantics"
 ]
-authors: [
-  "Yves Bertot"
-]
 url {
-  src: "https://github.com/coq-community/semantics/archive/8.11.1.tar.gz"
+  src: "https://github.com/coq-community/semantics/archive/v8.11.1.tar.gz"
   checksum: [
-    "md5=ac39ad750a2a6c4f4934f6467f5afc77"
-    "sha512=a8922cc966b94e69bb277f1a0e5dc38a0afb4ce52d50dc2ed1b3d76449a884c3a291466dca11ef021fc1b21f8db8f687cf2af5a932439de6fe443255d6df2311"
+    "md5=ed6ac2b800fd6277e9bf8a49ea9f4468"
+    "sha512=02c6c8f8049e23fd36ec754f3df26d52f2b8f9e7f9d6b86841970dbad164a4283fdb33f8711aea17cafc73c4159dfdcb3005cf926b5bb1d2ebd847bddcbecdf5"
   ]
 }
