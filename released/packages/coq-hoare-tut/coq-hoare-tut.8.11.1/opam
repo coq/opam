@@ -1,4 +1,7 @@
 opam-version: "2.0"
+authors: [
+  "Sylvain Boulmé"
+]
 maintainer: "kartiksinghal@gmail.com"
 homepage: "https://github.com/coq-community/hoare-tut"
 dev-repo: "git+https://github.com/coq-community/hoare-tut.git"
@@ -24,7 +27,7 @@ here performed through Dijkstra's weakest-precondition calculus.
 build: [make "-j%{jobs}%" ]
 install: [make "install"]
 depends: [
-  "coq"
+  "coq" {>= "8.8"}
 ]
 
 tags: [
@@ -36,9 +39,6 @@ tags: [
   "keyword:weakest precondition"
   "keyword:reflection"
   "logpath:HoareTut"
-]
-authors: [
-  "Sylvain Boulmé"
 ]
 url {
   src: "https://github.com/coq-community/hoare-tut/archive/v8.11.1.tar.gz"
