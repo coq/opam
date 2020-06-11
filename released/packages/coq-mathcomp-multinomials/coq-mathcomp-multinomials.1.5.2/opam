@@ -1,0 +1,34 @@
+opam-version: "2.0"
+maintainer: "pierre-yves@strub.nu"
+homepage: "https://github.com/math-comp/multinomials"
+bug-reports: "https://github.com/math-comp/multinomials/issues"
+dev-repo: "git+https://github.com/math-comp/multinomials.git"
+license: "CECILL-B"
+authors: ["Pierre-Yves Strub"]
+build: [
+  [make "INSTMODE=global" "config"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" {(>= "8.7" & < "8.12~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {(>= "1.11.0" & < "1.12~")}
+  "coq-mathcomp-algebra"
+  "coq-mathcomp-bigenough" {>= "1.0.0" & < "1.1~"}
+  "coq-mathcomp-finmap"    {>= "1.5" & < "1.6~"}
+]
+tags: [
+  "keyword:multinomials"
+  "keyword:monoid algebra"
+  "category:Math/Algebra/Multinomials"
+  "category:Math/Algebra/Monoid algebra"
+  "date:2020-06-11"
+  "logpath:SsrMultinomials"
+]
+synopsis: "A Multivariate polynomial Library for the Mathematical Components Library"
+url {
+  src: "https://github.com/math-comp/multinomials/archive/1.5.2.tar.gz"
+  checksum: "sha512=a4b9feba43fc16f3b4379970bd5309431f7e05a4c95e2a2545db776863ea24dfdc6f15c866b11e17fca94d598da21db06964381c826f226a6debb41fbbac1c1e"
+}
