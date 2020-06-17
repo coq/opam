@@ -20,7 +20,7 @@ install: [
 ]
 depends: [
   "coq" { >= "8.10" & < "8.12~" }
-  "coq-infotheo" { >= "0.1" }
+  "coq-infotheo" { >= "0.1" & < "0.1.1" }
 ]
 synopsis: "Monae"
 description: """
