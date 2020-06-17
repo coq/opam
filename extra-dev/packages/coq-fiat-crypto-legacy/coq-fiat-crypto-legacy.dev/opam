@@ -16,7 +16,7 @@ build: [
 install: [make "install"]
 depends: [
   "ocaml"
-  "coq" {= "dev"}
+  "coq" {>= "8.7~"}
   "coq-bignums"
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
