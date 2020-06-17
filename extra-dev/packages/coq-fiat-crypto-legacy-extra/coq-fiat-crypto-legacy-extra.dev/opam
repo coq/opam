@@ -1,0 +1,30 @@
+opam-version: "2.0"
+authors: [
+  "Andres Erbsen <andreser@mit.edu>"
+  "Google Inc."
+  "Jade Philipoom <jadep@mit.edu> <jade.philipoom@gmail.com>"
+  "Massachusetts Institute of Technology"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/mit-plv/fiat-crypto"
+bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
+license: "MIT"
+build: [
+  ["git" "submodule" "update" "--init" "--recursive"]
+  [make "-j%{jobs}%" "coq" "selected-specific-display" "coqprime-all"]
+  [make "-j%{jobs}%" "specific-vo-lt-10gb"]
+  [make "specific-vo-lt-20gb"]
+]
+install: [make "install"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.7~"}
+  "coq-bignums"
+]
+dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
+synopsis:
+  "Cryptographic Primitive Code Generation in Fiat (legacy pipeline + many large examples)."
+tags: ["logpath:Crypto"]
+url {
+  src: "git+https://github.com/mit-plv/fiat-crypto.git#sp2019latest"
+}
