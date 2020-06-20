@@ -10,8 +10,7 @@ license: "Apache-2.0"
 build: [ make "-j%{jobs}%" ]
 install: [ make "install" ]
 depends: [
-  "ocaml"
-  "coq" {(>= "8.10" & < "8.12~") | (= "dev")}
+  "coq" {(>= "8.10" & < "8.13~") | (= "dev")}
   "coq-mathcomp-ssreflect" {(= "dev")}
 ]
 tags: [
