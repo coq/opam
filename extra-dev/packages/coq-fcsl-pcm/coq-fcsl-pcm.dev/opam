@@ -10,9 +10,8 @@ license: "Apache-2.0"
 build: [ make "-j%{jobs}%" ]
 install: [ make "install" ]
 depends: [
-  "ocaml"
-  "coq" {(>= "8.10" & < "8.12~") | (= "dev")}
-  "coq-mathcomp-ssreflect" {(= "dev")}
+  "coq" {(>= "8.10" & < "8.13~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {(>= "1.10.0" & < "1.12~") | (= "dev")}
 ]
 tags: [
   "keyword:separation logic"
