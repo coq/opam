@@ -13,7 +13,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.10"}
   "coq-coquelicot" {>= "3" & < "4~"}
-  "coq-interval" {>= "3.1"}
+  "coq-interval" {>= "3.1" & < "4~"}
 ]
 tags: [ "keyword:real analysis" "keyword:pi" "category:Mathematics/Real Calculus and Topology" ]
 authors: [ "Yves Bertot <yves.bertot@inria.fr>" ]
