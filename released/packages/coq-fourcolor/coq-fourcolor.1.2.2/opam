@@ -1,9 +1,9 @@
 opam-version: "2.0"
 maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
-homepage: "https://math-comp.github.io/math-comp/"
+homepage: "https://math-comp.github.io"
 bug-reports: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
 dev-repo: "git+https://github.com/math-comp/fourcolor"
-license: "CeCILL-B"
+license: "CECILL-B"
 
 build: [ make "-j" "%{jobs}%" ]
 install: [ make "install" ]
@@ -24,4 +24,3 @@ url {
   src: "https://github.com/math-comp/fourcolor/archive/v1.2.2.tar.gz"
   checksum: "sha256=3e19b737636f06075d833b22ceb44e998724a43e9e2586a7639c82a147f02603"
 }
-
