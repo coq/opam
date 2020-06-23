@@ -32,5 +32,5 @@ The whole development can be used to produce mathematically proved and
 formally verified approximations of PI."""
 url {
   src: "https://github.com/ybertot/pi-agm/archive/v1.2.5.zip"
-  checksum: "sha256=22db29bf274a58cae18966ca2e0126811eb7223ef58fb23486727e1cd16162a1"
+  checksum: "sha256=0cb93b44a7198bd157cb16a661b70e0e2ccf858bdbf142815740136b69b52627"
 }
