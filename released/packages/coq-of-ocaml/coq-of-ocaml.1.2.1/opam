@@ -15,6 +15,7 @@ depends: [
   "conf-ruby" {build}
   "coq" {>= "8.5"}
   "ocaml" {>= "4.05.0" & < "4.06.0"}
+  "ocamlbuild" {build}
   "smart-print"
   "yojson"
 ]
