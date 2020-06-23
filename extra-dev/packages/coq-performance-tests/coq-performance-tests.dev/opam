@@ -7,9 +7,11 @@ homepage: "https://github.com/coq-community/coq-performance-tests"
 bug-reports: "https://github.com/coq-community/coq-performance-tests/issues"
 license: "MIT"
 build: [
-  [make "-j%{jobs}%" "--output-sync"]
+  [make "-j%{jobs}%" "--output-sync" "coq" "perf"]
 ]
-install: []
+install: [
+  [make "install" "install-perf"]
+]
 depends: [
   "coq" {>= "8.5~"}
   "conf-time"
