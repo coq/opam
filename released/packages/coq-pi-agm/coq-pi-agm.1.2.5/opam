@@ -3,7 +3,7 @@ maintainer: "yves.bertot@inria.fr"
 
 homepage: "http://www-sop.inria.fr/members/Yves.Bertot/"
 bug-reports: "yves.bertot@inria.fr"
-license: "CeCILL-B"
+license: "CECILL-B"
 build: [["coq_makefile" "-f" "_CoqProject" "-o" "Makefile" ]
        [ make "-j" "%{jobs}%" ]]
 install: [ make "install" "DEST='%{lib}%/coq/user-contrib/pi_agm'" ]
