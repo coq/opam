@@ -1,6 +1,4 @@
 opam-version: "2.0"
-name: "coq-pi-agm"
-version: "1.2.5"
 maintainer: "yves.bertot@inria.fr"
 
 homepage: "http://www-sop.inria.fr/members/Yves.Bertot/"
