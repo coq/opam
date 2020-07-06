@@ -11,8 +11,8 @@ install: [
   [make "install"]
 ]
 depends: [
-  "ocaml" {>= "4.04.0" }
-  "coq" {>= "8.9" & < "8.10~"}
+  "ocaml" {>= "4.09.0" }
+  "coq" {>= "8.11~" & < "8.12~"}
 ]
 tags: [ 
   "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
@@ -36,5 +36,5 @@ description: """
 - a certified checker for proof witnesses coming from the SAT solver ZChaff and the SMT solvers veriT and CVC4. This checker increases the confidence in these tools by checking their answers a posteriori and allows to import new theroems proved by these solvers in Coq;
 - decision procedures through new tactics that discharge some Coq goals to ZChaff, veriT, CVC4, and their combination"""
 url {
-  src: "git+https://github.com/smtcoq/smtcoq.git#master"
+  src: "git+https://github.com/smtcoq/smtcoq.git#coq-8.11
 }
