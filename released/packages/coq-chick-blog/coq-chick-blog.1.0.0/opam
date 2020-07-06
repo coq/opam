@@ -18,7 +18,7 @@ depends: [
   "coq-moment"
   "coq" {< "8.9~"}
   "lwt"
-  "ocaml"
+  "ocaml" {>= "4.03"}
   "ocamlfind" {build}
 ]
 tags: [
