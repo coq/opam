@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "thery@sophia.inria.fr"
-homepage: "https://gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=coq-contribs/high-school-geometry.git;a=tree"
+homepage: "https://github.com/coq-community/HighSchoolGeometry/"
 license: "LGPL 2"
 build: [
   ["./configure.sh"]
@@ -25,6 +25,6 @@ description: """
 This library is dedicated to high-shool geometry teaching.
 The axiomatisation for affine euclidean space is in a non analytic setting."""
 url {
-  src: "https://github.com/thery/HighSchoolGeometry/archive/v1.0.0.tar.gz"
+  src: "https://github.com/coq-community/HighSchoolGeometry/archive/v1.0.0.tar.gz"
   checksum: "md5=cf03f84a71cee31d4fe870fa567cc3dd"
 }
