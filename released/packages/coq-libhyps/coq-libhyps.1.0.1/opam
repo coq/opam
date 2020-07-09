@@ -39,5 +39,5 @@ premisses, but define your own manipulation on (groups of) hypothesis.
 
 url {
     http: "https://github.com/Matafou/LibHyps/archive/libhyps-1.0.1.tar.gz"
-    checksum: "07830a474ce69f1040677141880995c2"
+    checksum: "f15584ad68bc77a5bc06048abdd9aa0d"
 }
