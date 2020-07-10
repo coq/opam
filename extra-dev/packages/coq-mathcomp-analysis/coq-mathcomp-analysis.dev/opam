@@ -3,7 +3,7 @@ maintainer: "pierre-yves@strub.nu"
 homepage: "https://github.com/math-comp/analysis"
 bug-reports: "https://github.com/math-comp/analysis/issues"
 dev-repo: "git+https://github.com/math-comp/analysis.git"
-license: "CeCILL-C"
+license: "CECILL-C"
 authors: [
   "Reynald Affeldt"
   "Cyril Cohen"
@@ -20,10 +20,10 @@ install: [
 ]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/mathcomp/analysis"]
 depends: [
-  "coq" { (>= "8.8" | = "dev") }
-  "coq-mathcomp-field"       {(>= "1.8.0" & < "1.9.0~")}
-  "coq-mathcomp-bigenough"   {(>= "1.0.0" & < "1.1.0~")}
-  "coq-mathcomp-finmap"      {(>= "1.2.0" & < "1.3.0~")}
+  "coq"                      {((>= "8.10" & < "8.12~") | = "dev")}
+  "coq-mathcomp-field"       {(>= "1.11.0" & < "1.12~")}
+  "coq-mathcomp-finmap"      {(>= "1.5.0" & < "1.6~")}
+  "coq-mathcomp-real-closed" {(>= "1.1.1" & < "1.2~")}
 ]
 synopsis: "An analysis library for mathematical components"
 description: """
