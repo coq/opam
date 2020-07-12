@@ -1,0 +1,34 @@
+opam-version: "2.0"
+maintainer: "Jacques-Henri Jourdan <jacques-Henri.jourdan@normalesup.org>"
+homepage: "http://compcert.inria.fr/"
+dev-repo: "git+https://github.com/AbsInt/CompCert.git"
+bug-reports: "https://github.com/AbsInt/CompCert/issues"
+license: "INRIA Non-Commercial License Agreement"
+build: [
+  ["./configure"
+  "amd64-linux"  {os = "linux"}
+  "amd64-macosx" {os = "macos"}
+  "amd64-cygwin" {os = "cygwin"}
+  "-prefix" "%{prefix}%/variants/compcert64"
+  "-install-coqdev"
+  "-clightgen"
+  "-coqdevdir" "%{lib}%/coq-variant/compcert64/compcert"
+  "-ignore-coq-version"]
+  [make
+  "-j%{jobs}%" {ocaml:version >= "4.06"}]
+]
+run-test: [
+  [make "-j%{jobs}%" "-C" "test" "all"]
+  [make "-j%{jobs}%" "-C" "test" "DIRS=c clightgen raytracer regression spass" "test"]
+]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.8"}
+  "menhir" {>= "20190626"}
+  "ocaml" {>= "4.05.0"}
+]
+synopsis: "The CompCert C compiler (64 bit)"
+authors: "Xavier Leroy <xavier.leroy@inria.fr>"
+url {
+  src: "git+https://github.com/AbsInt/CompCert.git"
+}
