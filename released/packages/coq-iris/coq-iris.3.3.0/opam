@@ -1,0 +1,29 @@
+opam-version: "2.0"
+name: "coq-iris"
+maintainer: "Ralf Jung <jung@mpi-sws.org>"
+authors: "The Iris Team"
+license: "BSD"
+homepage: "https://iris-project.org/"
+bug-reports: "https://gitlab.mpi-sws.org/iris/iris/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/iris.git"
+
+synopsis: "Iris is a Higher-Order Concurrent Separation Logic Framework with support for interactive proofs"
+tags: [
+  "date:2020-07-15"
+  "logpath:iris"
+]
+
+depends: [
+  "coq" { (>= "8.9.1" & < "8.13~") | (= "dev") }
+  "coq-stdpp" { (= "1.4.0") | (= "dev") }
+]
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+
+url {
+  src:
+    "https://gitlab.mpi-sws.org/iris/iris/repository/iris-3.3.0/archive.tar.gz"
+  checksum:
+    "sha512=451145d68f18ab65649edbf1c78f0fccbc9748829a15640efc30cabed7ce14c5ee246f41de130e3fd331172e6a5a347c6810dbe2838c7d3ae2e32dbf6d1adb4d"
+}
