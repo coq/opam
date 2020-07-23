@@ -1,12 +1,12 @@
 opam-version: "2.0"
 maintainer: "tchajed@gmail.com"
 
-homepage: "https://github.com/tchajed/record-update"
-dev-repo: "git+https://github.com/tchajed/record-update.git"
-bug-reports: "https://github.com/tchajed/record-update/issues"
+homepage: "https://github.com/tchajed/coq-record-update"
+dev-repo: "git+https://github.com/tchajed/coq-record-update.git"
+bug-reports: "https://github.com/tchajed/coq-record-update/issues"
 license: "MIT"
 
-synopsis: "Generic support for updating record fields"
+synopsis: "Generic support for updating record fields in Coq"
 description: """
 While Coq provides projections for each field of a record, it has no
 convenient way to update a single field of a record. This library provides a
