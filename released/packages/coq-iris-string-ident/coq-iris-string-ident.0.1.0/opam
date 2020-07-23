@@ -1,0 +1,34 @@
+opam-version: "2.0"
+name: "coq-iris-string-ident"
+maintainer: "Ralf Jung <jung@mpi-sws.org>"
+authors: "Tej Chajed <tchajed@mit.edu>"
+license: "BSD"
+homepage: "https://gitlab.mpi-sws.org/iris/string-ident"
+bug-reports: "https://gitlab.mpi-sws.org/iris/string-ident/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/string-ident.git"
+
+synopsis: "Add support for Gallina names in intro patterns to the Iris Proof Mode"
+description: """
+This package implements string_to_ident in Ltac2, enabling support for Gallina names in Iris intro patterns (within strings).
+"""
+
+depends: [
+  "coq" {>= "8.11"}
+  "coq-iris" {>= "dev.2020-04-07.0.86b62616" | (>= "3.3.0" & < "4.0") | = "dev"}
+]
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "keyword:iris"
+  "logpath:iris_string_ident"
+]
+
+url {
+  src:
+    "https://gitlab.mpi-sws.org/iris/string-ident/-/archive/v0.1.0/string-ident-v0.1.0.tar.gz"
+  checksum:
+    "sha512=af7b009914cb0f3d3cb336bed5968916a5b9cee527c6a60a558e5e0c1919f182112937762aad7419fd62fbb0e624fb886e3f5fc419da7563a717d6412289f974"
+}
