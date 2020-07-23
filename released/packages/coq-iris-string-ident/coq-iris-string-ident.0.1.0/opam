@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "coq-iris-string-ident"
 maintainer: "Ralf Jung <jung@mpi-sws.org>"
 authors: "Tej Chajed <tchajed@mit.edu>"
 license: "BSD-3-Clause"
