@@ -19,7 +19,21 @@ depends: [
 ]
 
 tags: [ "keyword:javascript" "keyword:compiler" "date:2019-11-25" "logpath:JsAst" ]
-authors: [ "Josh Auerbach <>" "Martin Hirzel <>" "Louis Mandel <>" "Avi Shinnar <>" "Jerome Simeon <>" ]
+authors: [
+    "Martin Bodin <>"
+    "Arthur Charguéraud <>"
+    "Daniele Filaretti <>"
+    "Philippa Gardner <>"
+    "Sergio Maffeis <>"
+    "Daiva Naudziuniene <>"
+    "Alan Schmitt <>"
+    "Gareth Smith <>"
+    "Josh Auerbach <>"
+    "Martin Hirzel <>"
+    "Louis Mandel <>"
+    "Avi Shinnar <>"
+    "Jerome Simeon <>"
+]
 
 synopsis: "A minimal JavaScript syntax tree carved out of the JsCert project"
 description: """

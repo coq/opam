@@ -3,7 +3,21 @@ maintainer: "jeromesimeon@me.com"
 homepage: "https://github.com/querycert/jsast"
 dev-repo: "git+https://github.com/querycert/jsast/tree/JsAst"
 bug-reports: "https://github.com/querycert/jsast/issues"
-authors: [ "Jerome Simeon" ]
+authors: [
+    "Martin Bodin <>"
+    "Arthur Charguéraud <>"
+    "Daniele Filaretti <>"
+    "Philippa Gardner <>"
+    "Sergio Maffeis <>"
+    "Daiva Naudziuniene <>"
+    "Alan Schmitt <>"
+    "Gareth Smith <>"
+    "Josh Auerbach <>"
+    "Martin Hirzel <>"
+    "Louis Mandel <>"
+    "Avi Shinnar <>"
+    "Jerome Simeon <>"
+]
 license: "BSD-2-Clause"
 build: [
   [make "-j%{jobs}%"]
