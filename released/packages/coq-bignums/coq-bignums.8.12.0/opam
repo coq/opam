@@ -1,0 +1,40 @@
+opam-version: "2.0"
+maintainer: "Vincent.Laporte@inria.fr"
+homepage: "https://github.com/coq/bignums"
+dev-repo: "git+https://github.com/coq/bignums.git"
+bug-reports: "https://github.com/coq/bignums/issues"
+authors: [
+  "Laurent Théry"
+  "Benjamin Grégoire"
+  "Arnaud Spiwack"
+  "Evgeny Makarov"
+  "Pierre Letouzey"
+]
+license: "LGPL-2.1"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.12" & < "8.13~"}
+]
+tags: [
+  "keyword:integer numbers"
+  "keyword:rational numbers"
+  "keyword:arithmetic"
+  "keyword:arbitrary-precision"
+  "category:Miscellaneous/Coq Extensions"
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "category:Mathematics/Arithmetic and Number Theory/Rational numbers"
+  "logpath:Bignums"
+]
+synopsis: "Bignums, the Coq library of arbitrary large numbers"
+description:
+  "Provides BigN, BigZ, BigQ that used to be part of Coq standard library < 8.7."
+url {
+  src: "https://github.com/coq/bignums/archive/V8.12.0.tar.gz"
+  checksum: "sha512=8bec000c7b2c0e36e3a51c630132dd8e412c208a3ada22a4ae2aba6300f80ab9550b50803af901819c1ada72a0f77f5555a57fd9448d7ba734092d9fbb32d677"
+}
