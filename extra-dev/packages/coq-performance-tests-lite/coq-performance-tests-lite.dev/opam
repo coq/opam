@@ -1,0 +1,23 @@
+opam-version: "2.0"
+authors: [
+  "Jason Gross <jgross@mit.edu>"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/coq-community/coq-performance-tests"
+bug-reports: "https://github.com/coq-community/coq-performance-tests/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%" "--output-sync" "coq" "perf-lite"]
+]
+install: [
+  [make "install" "install-perf-lite"]
+]
+depends: [
+  "coq" {>= "8.8~"}
+  "conf-time"
+]
+dev-repo: "git+https://github.com/coq-community/coq-performance-tests.git"
+synopsis: "A library of Coq source files testing for performance regressions on Coq (lite version)"
+url {
+  src: "git+https://github.com/coq-community/coq-performance-tests.git#master"
+}
