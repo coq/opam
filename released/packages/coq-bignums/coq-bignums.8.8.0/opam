@@ -10,7 +10,7 @@ authors: [
   "Evgeny Makarov"
   "Pierre Letouzey"
 ]
-license: "LGPL 2"
+license: "LGPL-2.1-only"
 build: [
   [make "-j%{jobs}%"]
 ]
