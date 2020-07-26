@@ -10,9 +10,9 @@ authors: [
   "Evgeny Makarov"
   "Pierre Letouzey"
 ]
-license: "LGPL-2.1"
+license: "LGPL-2.1-only"
 build: [
-  [make "-j%{jobs}%"]
+  [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
 ]
 install: [
   [make "install"]
