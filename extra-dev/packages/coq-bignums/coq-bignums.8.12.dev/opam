@@ -11,7 +11,7 @@ description: """
 Provides BigN, BigZ, BigQ that used to be part of Coq standard library < 8.6
 """
 
-build: [make "-j%{jobs}%"]
+build: [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
 install: [make "install"]
 
 depends: [
