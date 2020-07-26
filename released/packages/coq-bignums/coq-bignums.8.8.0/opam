@@ -17,7 +17,6 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Bignums"]
 depends: [
   "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
@@ -36,7 +35,6 @@ tags: [
 synopsis: "Bignums, the Coq library of arbitrary large numbers"
 description:
   "Provides BigN, BigZ, BigQ that used to be part of Coq standard library < 8.7."
-flags: light-uninstall
 url {
   src: "https://github.com/coq/bignums/archive/V8.8.0.tar.gz"
   checksum: "md5=75b96617033250a41d064ea8da4febf8"

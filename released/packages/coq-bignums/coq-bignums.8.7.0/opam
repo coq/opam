@@ -12,12 +12,11 @@ authors: [
 ]
 license: "LGPL-2.1-only"
 build: [
-  [make]
+  [make "-j%{jobs}%"]
 ]
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Bignums"]
 depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
@@ -36,7 +35,6 @@ tags: [
 synopsis: "Bignums, the Coq library of arbitrary large numbers"
 description:
   "Provides BigN, BigZ, BigQ that used to be part of Coq standard library < 8.7."
-flags: light-uninstall
 url {
   src: "https://github.com/coq/bignums/archive/V8.7.0.tar.gz"
   checksum: "md5=1d5f18f15675cfac64df59b3405e64d3"
