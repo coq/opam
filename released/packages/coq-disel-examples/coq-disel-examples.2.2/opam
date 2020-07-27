@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/DistributedComponents/disel"
+dev-repo: "git+https://github.com/DistributedComponents/disel.git"
+bug-reports: "https://github.com/DistributedComponents/disel/issues"
+license: "BSD-2-Clause"
+synopsis: "Example systems for Disel, a separation-style logic for compositional verification of distributed systems in Coq"
+
+build: [make "-j%{jobs}%" "-C" "Examples"]
+install: [make "-C" "Examples" "install"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.7" & < "8.13~"}
+  "coq-mathcomp-ssreflect" {>= "1.9.0" & < "1.12~"}
+  "coq-fcsl-pcm"
+  "coq-disel" {= version}
+]
+
+tags: [
+  "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
+  "keyword:program verification"
+  "keyword:separation logic"
+  "keyword:distributed algorithms"
+  "logpath:DiSeL"
+  "date:2020-07-26"
+]
+authors: [
+  "Ilya Sergey"
+  "James R. Wilcox"
+]
+
+url {
+  src: "https://github.com/DistributedComponents/disel/archive/v2.2.tar.gz"
+  checksum: "sha512=52ede64ded6f54ec60220095d5315a1862a4eae067cdeeb418c5902167b2b8387a8e0de076811493808a55988b1753c1cf1c1c33e146d1279461fe056d4817a7"
+}
