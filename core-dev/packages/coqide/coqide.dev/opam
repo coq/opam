@@ -27,6 +27,7 @@ build: [
     "-docdir" doc
     "-libdir" "%{lib}%/coq"
     "-datadir" "%{share}%/coq"
+    # These settings are used as templates for release packages
     "-native-compiler" {os = "macos"} "no" {os = "macos"}
   ]
   [make "-j%{jobs}%" "coqide-files"]
