@@ -1,0 +1,48 @@
+opam-version: "2.0"
+name: "coq-jsast"
+version: "2.0.0"
+synopsis: "A minimal JavaScript syntax tree carved out of the JsCert project"
+description: """
+A minimal JavaScript syntax tree carved out of the JsCert project, with additional support for let bindings and using native floats.
+"""
+
+maintainer: "Jerome Simeon <jeromesimeon@me.com>"
+authors: [
+    "Martin Bodin <>"
+    "Arthur Charguéraud <>"
+    "Daniele Filaretti <>"
+    "Philippa Gardner <>"
+    "Sergio Maffeis <>"
+    "Daiva Naudziuniene <>"
+    "Alan Schmitt <>"
+    "Gareth Smith <>"
+    "Josh Auerbach <>"
+    "Martin Hirzel <>"
+    "Louis Mandel <>"
+    "Avi Shinnar <>"
+    "Jerome Simeon <>"
+]
+
+license: "BSD-2-Clause"
+homepage: "https://github.com/querycert/jsast"
+bug-reports: "https://github.com/querycert/jsast/issues"
+dev-repo: "git+https://github.com/querycert/jsast/tree/JsAst"
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/JsAst"]
+depends: [
+  "ocaml" {>= "4.08.0"}
+  "coq" { >= "8.11.2" }
+]
+
+tags: [ "keyword:javascript" "keyword:compiler" "date:2020-07-29" "logpath:JsAst" ]
+
+url {
+  src: "https://github.com/querycert/jsast/archive/v2.0.0.tar.gz"
+  checksum: "md5=cdda0e39036bbcb08fb5d048299dd103"
+}
