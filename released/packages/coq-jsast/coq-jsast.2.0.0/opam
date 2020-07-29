@@ -1,6 +1,4 @@
 opam-version: "2.0"
-name: "coq-jsast"
-version: "2.0.0"
 synopsis: "A minimal JavaScript syntax tree carved out of the JsCert project"
 description: """
 A minimal JavaScript syntax tree carved out of the JsCert project, with additional support for let bindings and using native floats.
@@ -34,9 +32,7 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/JsAst"]
 depends: [
-  "ocaml" {>= "4.08.0"}
   "coq" { >= "8.11.2" }
 ]
 
