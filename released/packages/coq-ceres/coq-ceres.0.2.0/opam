@@ -9,7 +9,7 @@ build: [make "build"]
 run-test: [make "test"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.8" & < "8.12~"}
+  "coq" {>= "8.8" & < "8.13~"}
 ]
 tags: [
   "date:2020-03-13"
