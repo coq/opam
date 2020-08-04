@@ -15,7 +15,7 @@ Also includes a constructive proof of Dickson's lemma."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.7" & < "8.12~"}
+  "coq" {>= "8.7" & < "8.13~"}
 ]
 
 tags: [
