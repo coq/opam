@@ -15,8 +15,8 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
   "ocaml" {(>= "4.05" & < "4.10~")}
-  "coq" {(>= "8.7" & < "8.12~") | (= "dev")}
-  "coq-mathcomp-algebra" {(>= "1.7" & < "1.11~") | (= "dev")}
+  "coq" {(>= "8.7" & < "8.13~") | (= "dev")}
+  "coq-mathcomp-algebra" {(>= "1.7" & < "1.12~") | (= "dev")}
 ]
 
 tags: [
