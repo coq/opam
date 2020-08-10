@@ -13,12 +13,12 @@ depends: [
   "conf-autoconf" {build}
   "ocaml"
   "ocamlfind" {build}
-  "coq" {>= "8.10" & < "8.11~"}
+  "coq" {>= "8.12" & < "8.13~"}
 ]
 authors: ["The Coq-HoTT Development Team"]
 dev-repo: "git+https://github.com/HoTT/HoTT.git"
 synopsis: "The Homotopy Type Theory library"
 tags: [ "logpath:HoTT" ]
 url {
-  src: "git+https://github.com/HoTT/HoTT.git#V8.10"
+  src: "git+https://github.com/HoTT/HoTT.git#V8.12"
 }
