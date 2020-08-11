@@ -1,0 +1,44 @@
+opam-version: "2.0"
+maintainer: "reynald.affeldt@aist.go.jp"
+homepage: "https://github.com/math-comp/analysis"
+bug-reports: "https://github.com/math-comp/analysis/issues"
+dev-repo: "git+https://github.com/math-comp/analysis.git"
+license: "CECILL-C"
+authors: [
+  "Reynald Affeldt"
+  "Cyril Cohen"
+  "Assia Mahboubi"
+  "Damien Rouhling"
+  "Pierre-Yves Strub"
+]
+build: [
+  [make "INSTMODE=global" "config"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" { ((>= "8.10" & < "8.13~") | = "dev") }
+  "coq-mathcomp-field"       {(>= "1.11.0" & < "1.12~")}
+  "coq-mathcomp-finmap"      {(>= "1.5.0" & < "1.6~")}
+]
+synopsis: "An analysis library for mathematical components"
+description: """
+This repository contains an experimental library for real analysis for
+the Coq proof-assistant and using the Mathematical Components library.
+
+It is inspired by the Coquelicot library.
+"""
+tags: [
+  "category:Mathematics/Real Calculus and Topology"
+  "keyword: analysis"
+  "keyword: topology"
+  "keyword: real numbers"
+  "logpath: mathcomp.analysis"
+  "date:2020-08-11"
+]
+url {
+  http: "https://github.com/math-comp/analysis/archive/0.3.2.tar.gz"
+  checksum: "sha512=aa2ffac487d71d3aceea9dafca21d7c8bfcbaaf52d9977fd9bf19a055d65597b95d9e2e10dc7da10676ab2f86a8cc205aac9e0fa08360fc127971f60f68c5430"
+}
