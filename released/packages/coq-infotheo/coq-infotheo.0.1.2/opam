@@ -1,0 +1,47 @@
+opam-version: "2.0"
+maintainer: "reynald.affeldt@aist.go.jp"
+homepage: "https://github.com/affeldt-aist/infotheo"
+bug-reports: "https://github.com/affeldt-aist/infotheo/issues"
+dev-repo: "git+https://github.com/affeldt-aist/infotheo.git"
+license: "GPL-3.0-or-later"
+authors: [
+  "Reynald Affeldt"
+  "Manabu Hagiwara"
+  "Jonas Senizergues"
+  "Jacques Garrigue"
+  "Kazuhiko Sakaguchi"
+  "Taku Asai"
+  "Takafumi Saikawa"
+  "Naruomi Obata"
+  "Erik Martin-Dorel"
+  "Ryosuke Obi"
+  "Mitsuharu Yamamoto"
+]
+build: [
+  [make "-j%{jobs}%"]
+  [make "-C" "extraction" "tests"] {with-test}
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" {>= "8.11" & < "8.13~"}
+  "coq-mathcomp-field" {>= "1.11" & < "1.12~"}
+  "coq-mathcomp-analysis"   {>= "0.3.2" & < "0.4~"}
+]
+synopsis: "Infotheo"
+description: """
+a Coq formalization of information theory and linear error-correcting codes
+"""
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "keyword: information theory"
+  "keyword: probability"
+  "keyword: error-correcting codes"
+  "logpath:infotheo"
+  "date:2020-08-11"
+]
+url {
+  http: "https://github.com/affeldt-aist/infotheo/archive/0.1.2.tar.gz"
+  checksum: "sha512=3ae60b960db080bdb176adf7713126d03e1046764da96114ac8bb89de427750819115505844a887b6b82b6250391ff869141f0cb1594c3f87fa1715d45de17ea"
+}
