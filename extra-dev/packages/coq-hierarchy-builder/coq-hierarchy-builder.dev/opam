@@ -8,7 +8,7 @@ dev-repo: "git+https://github.com/math-comp/hierarchy-builder"
 
 build: [ make ]
 install: [ make "install" "VFILES=structures.v" ]
-depends: [ "coq-elpi" ]
+depends: [ "coq-elpi" {= "dev"} ]
 synopsis: "Hierarchy Builder"
 description: """
 High level commands to declare and evolve a hierarchy based on packed classes.
