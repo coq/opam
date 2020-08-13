@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: "Enrico Tassi <enrico.tassi@inria.fr>"
 authors: [ "Enrico Tassi" ]
-license: "LGPL 2.1"
+license: "LGPL-2.1-or-later"
 homepage: "http://github.com/LPCIC/coq-elpi"
 doc: "http://github.com/LPCIC/coq-elpi"
 dev-repo: "git+http://github.com/LPCIC/coq-elpi"
