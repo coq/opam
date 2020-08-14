@@ -1,7 +1,5 @@
 synopsis: "Finite sets, maps, and other data structures with extensional reasoning"
-name: "coq-extructures"
 opam-version: "2.0"
-version: "0.2.2"
 maintainer: "arthur.aa@gmail.com"
 homepage: "https://github.com/arthuraa/extructures"
 dev-repo: "git+https://github.com/arthuraa/extructures.git"
