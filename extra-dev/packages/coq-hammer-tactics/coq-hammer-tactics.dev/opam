@@ -14,24 +14,29 @@ has been successfully applied to a project, only this package needs
 to be installed; the hammer plugin is not required.
 """
 
-build: [make "-j%{jobs}%" "tactics"]
-install: [make "install-tactics"]
+build: [make "-j%{jobs}%" {ocaml:version >= "4.06"} "tactics"]
+install: [
+  [make "install-tactics"]
+  [make "test-tactics"] {with-test}
+]
 depends: [
   "ocaml"
   "coq" {= "dev"}
+]
+
+conflicts: [
+  "coq-hammer" {!= version}
 ]
 
 tags: [  
   "keyword:automation"
   "keyword:hammer"
   "keyword:tactics"
-  "logpath:Hammer"
+  "logpath:Hammer.Tactics"
 ]
 
 authors: [
   "Lukasz Czajka <lukaszcz@mimuw.edu.pl>"
-  "Cezary Kaliszyk <cezary.kaliszyk@uibk.ac.at>"
-  "Burak Ekici <burak.ekici@uibk.ac.at>"
 ]
 
 url {
