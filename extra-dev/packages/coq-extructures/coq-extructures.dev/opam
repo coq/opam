@@ -24,7 +24,6 @@ tags: [
   "category:Computer Science/Data Types and Data Structures"
   "logpath:extructures"
 ]
-synopsis: "Finite data structures with extensional reasoning"
 url {
   src: "git+https://github.com/arthuraa/extructures.git#master"
 }
