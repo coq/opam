@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: "coqdev@inria.fr"
 authors: "The Coq development team, INRIA, CNRS, and contributors."
-homepage: "https://coq.inria.fr"
+homepage: "https://coq.inria.fr/"
 bug-reports: "https://github.com/coq/coq/issues"
 dev-repo: "git+https://github.com/coq/coq.git"
 license: "LGPL-2.1-only"
@@ -27,7 +27,7 @@ build: [
     "-docdir" doc
     "-libdir" "%{lib}%/coq"
     "-datadir" "%{share}%/coq"
-    "-flambda-opts" "-O3 -unbox-closures"
+    "-native-compiler" {os = "macos"} "no" {os = "macos"}
   ]
   [make "-j%{jobs}%" "coqide-files"]
   [make "-j%{jobs}%" "coqide-opt"]
