@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: "coqdev@inria.fr"
 authors: "The Coq development team, INRIA, CNRS, and contributors."
-homepage: "https://coq.inria.fr"
+homepage: "https://coq.inria.fr/"
 bug-reports: "https://github.com/coq/coq/issues"
 dev-repo: "git+https://github.com/coq/coq.git"
 license: "LGPL-2.1-only"
@@ -18,7 +18,7 @@ and homotopy type theory) and teaching.
 """
 
 depends: [
-  "ocaml" {>= "4.05.0"}
+  "ocaml" {>= "4.05.0" & < "4.12"}
   "ocamlfind" {build}
   "num"
   "conf-findutils" {build}
@@ -33,7 +33,7 @@ build: [
     "-libdir" "%{lib}%/coq"
     "-datadir" "%{share}%/coq"
     "-coqide" "no"
-    "-flambda-opts" "-O3 -unbox-closures"
+    "-native-compiler" {os = "macos"} "no" {os = "macos"}
   ]
   [make "-j%{jobs}%"]
   [make "-j%{jobs}%" "byte"]
