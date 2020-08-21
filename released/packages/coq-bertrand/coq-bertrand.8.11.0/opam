@@ -1,0 +1,40 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/bertrand"
+dev-repo: "git+https://github.com/coq-community/bertrand.git"
+bug-reports: "https://github.com/coq-community/bertrand/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Correctness of Knuth's algorithm for prime numbers"
+description: """
+A proof of correctness of the algorithm for computing prime
+numbers as described in "The Art of Computer Programming:
+Fundamental Algorithms" by Knuth, pp. 147-149, and an
+application using Bertrand's postulate.
+"""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.8" & < "8.12~"}
+]
+
+tags: [
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs based on external tools"
+  "category:Miscellaneous/Extracted Programs/Arithmetic"
+  "keyword:Knuth's algorithm"
+  "keyword:prime numbers"
+  "keyword:Bertrand's postulate"
+  "logpath:Bertrand"
+  "date:2020-08-21"
+]
+authors: [
+  "Laurent Théry"
+]
+
+url {
+  src: "https://github.com/coq-community/bertrand/archive/v8.11.0.tar.gz"
+  checksum: "sha512=64ff110193197cba1a7858ae478c675727a4ff89ccccc1eeb70d857d8bcba1c0adc3786d73a9a605b1b92b9cd99a9fa8299548491307f23414d5700e65f84f4d"
+}
