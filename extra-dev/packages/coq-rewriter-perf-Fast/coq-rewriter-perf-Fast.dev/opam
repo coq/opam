@@ -9,6 +9,7 @@ bug-reports: "https://github.com/mit-plv/rewriter/issues"
 license: "MIT"
 build: [
   [make "-j%{jobs}%" "perf-Fast" "EXTERNAL_PERF_DEPENDENCIES=1" "TIMED=1"]
+  [make "-j%{jobs}%" "perf-csv"]
 ]
 install: []
 depends: [
