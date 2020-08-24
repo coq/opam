@@ -1,0 +1,38 @@
+opam-version: "2.0"
+synopsis: "A Coq plugin to generate type-inequality axioms for inductive definitions"
+description: """
+  Antivalence generates universally-quantified type inequality axioms, letting
+  you treat the set of inductive definitions in your program as a closed
+  inductive definition itself.  
+"""
+
+homepage: "https://github.com/ivanbakel/coq-antivalence"
+dev-repo: "git+https://github.com/ivanbakel/coq-antivalence.git"
+bug-reports: "https://github.com/ivanbakel/coq-antivalence/issues"
+maintainer: "ivb@vanbakel.io"
+authors: [
+  "Isaac van Bakel"
+]
+license: "MIT"
+
+depends: [
+  "coq" {>= "8.11" & < "8.12~"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/ivanbakel/coq-antivalence/archive/1.0.1.tar.gz"
+  checksum: "sha256=faa00b1dc21afef199f975815f6f69e0fc122ce249b5179bc946529c450d5608"
+}
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:Antivalence"
+  "date:2020-08-24"
+]
