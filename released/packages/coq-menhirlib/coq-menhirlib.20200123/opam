@@ -15,7 +15,7 @@ install: [
   [make "-C" "coq-menhirlib" "install"]
 ]
 depends: [
-  "coq" { >= "8.7" }
+  "coq" { >= "8.7" & < "8.12" }
 ]
 conflicts: [
   "menhir" { != "20200123" }
