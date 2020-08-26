@@ -13,7 +13,7 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.11~"}
+  "coq" {>= "8.11~" & < "8.12"}
 ]
 synopsis: "Grassman Cayley and Clifford formalisations"
 tags: [
