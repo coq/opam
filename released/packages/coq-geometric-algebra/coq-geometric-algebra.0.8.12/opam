@@ -1,0 +1,25 @@
+opam-version: "2.0"
+maintainer: "Laurent Théry"
+homepage: "https://github.com/thery/GeometricAlgebra"
+bug-reports: "https://github.com/thery/GeometricAlgebra/issues"
+dev-repo: "git+https://github.com/thery/GeometricAlgebra.git"
+authors : "Laurent Théry"
+license: "LGPL-2.1-only"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.12~"}
+]
+synopsis: "Grassman Cayley and Clifford formalisations"
+tags: [
+  "logpath:GeometricAlgebra"
+]
+url {
+  src: "https://github.com/thery/GeometricAlgebra/archive/v8,12.zip"
+  checksum: "md5=0e0185d4efdb692a8f440796600e7063"
+}
