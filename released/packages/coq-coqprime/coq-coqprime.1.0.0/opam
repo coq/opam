@@ -1,7 +1,8 @@
 opam-version: "2.0"
 maintainer: "thery@sophia.inria.fr"
-homepage: "http://coqprime.gforge.inria.fr/"
-bug-reports: "https://gforge.inria.fr/tracker/?func=add&group_id=163&atid=733"
+homepage: "https://github.com/thery/coqprime"
+bug-reports: "https://github.com/thery/coqprime/issues"
+dev-repo: "git+https://github.com/thery/coqprime.git"
 license: "MIT"
 authors: ["Laurent Théry"]
 build: [
@@ -19,6 +20,6 @@ tags: [
 synopsis: "Certifying prime numbers in Coq"
 url {
   src:
-    "https://gforge.inria.fr/frs/download.php/file/35520/coqprime_8.5b.zip"
+    "https://github.com/thery/coqprime/releases/download/oldversions/coqprime_8.5b.zip"
   checksum: "md5=fea727b4ca765c1408d92baa0c98ce22"
 }
