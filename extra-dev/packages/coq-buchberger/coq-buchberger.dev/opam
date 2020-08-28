@@ -1,25 +1,36 @@
 opam-version: "2.0"
-maintainer: "dev@clarus.me"
-homepage: "https://github.com/coq-contribs/buchberger"
-license: "LGPL 2"
-build: [
-  ["coq_makefile" "-f" "Make" "-o" "Makefile"]
-  [make "-j%{jobs}%"]
-  [make "install"]
-]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Buchberger"]
-depends: [
-  "ocaml"
-  "coq" {= "dev"}
-]
-tags: [ "keyword:grobner basis" "keyword:polynomial ideal" "keyword:buchberger's algorithm" "category:Mathematics/Algebra" "category:Miscellaneous/Extracted Programs/Combinatorics" "date:1998" ]
-authors: [ "Henrik Persson <>" "Laurent Théry <>" ]
-synopsis: "Proof of Buchberger's algorithm."
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/buchberger"
+dev-repo: "git+https://github.com/coq-community/buchberger.git"
+bug-reports: "https://github.com/coq-community/buchberger/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Verified implementation in Coq of Buchberger's algorithm for computing Gröbner bases"
 description: """
-A machine-checked implementation of Buchberger's.
-It computes the Grobner basis associated to a
-polynomial ideal."""
-flags: light-uninstall
+A verified implementation of Buchberger's algorithm in Coq,
+which computes the Gröbner basis associated with a polynomial ideal.
+Also includes a constructive proof of Dickson's lemma."""
+
+build: [make "-j%{jobs}%" ]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.7" & < "8.13~") | (= "dev")}
+]
+
+tags: [
+  "category:Mathematics/Algebra"
+  "category:Miscellaneous/Extracted Programs/Combinatorics"
+  "keyword:Gröbner basis"
+  "keyword:polynomial ideal"
+  "keyword:Buchberger's algorithm"
+  "logpath:Buchberger"
+]
+authors: [
+  "Laurent Théry"
+  "Henrik Persson"
+]
+
 url {
-  src: "git+https://github.com/coq-contribs/buchberger.git#master"
+  src: "git+https://github.com/coq-community/buchberger.git#master"
 }

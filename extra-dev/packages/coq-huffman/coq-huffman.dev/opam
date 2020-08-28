@@ -6,18 +6,16 @@ dev-repo: "git+https://github.com/coq-community/huffman.git"
 bug-reports: "https://github.com/coq-community/huffman/issues"
 license: "LGPL-2.1-or-later"
 
-synopsis: "A Coq proof of the correctness of the Huffman coding algorithm"
+synopsis: "Coq proof of the correctness of the Huffman coding algorithm"
 description: """
 This projects contains a Coq proof of the correctness of the Huffman coding algorithm,
 as described in David A. Huffman's paper A Method for the Construction of Minimum-Redundancy
-Codes, Proc. IRE, pp. 1098-1101, September 1952.
-"""
+Codes, Proc. IRE, pp. 1098-1101, September 1952."""
 
-build: [make "-j%{jobs}%"]
-install: [make "install"]
+build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
-  "ocaml"
-  "coq" {(>= "8.7" & < "8.11~") | (= "dev")}
+  "dune" {>= "2.5"}
+  "coq" {(>= "8.7" & < "8.13~") | (= "dev")}
 ]
 
 tags: [

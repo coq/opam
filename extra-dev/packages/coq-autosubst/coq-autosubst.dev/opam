@@ -1,0 +1,24 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://www.ps.uni-saarland.de/autosubst/"
+dev-repo: "git+https://github.com/uds-psl/autosubst.git"
+bug-reports: "https://github.com/uds-psl/autosubst/issues"
+license: "MIT"
+
+synopsis: "Autosubst is a Coq library for parallel de Bruijn substitutions"
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.6" & < "8.13~") | (= "dev")}
+]
+
+authors: [
+  "Steven Schäfer"
+  "Tobias Tebbi"
+]
+
+url {
+  src: "git+https://github.com/uds-psl/autosubst#coq86-devel"
+}
