@@ -22,6 +22,7 @@ depends: [
   "ocamlfind" {build}
   "num"
   "conf-findutils" {build}
+  "zarith" { >= "1.9.1" }
 ]
 build: [
   [
