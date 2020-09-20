@@ -1,0 +1,48 @@
+opam-version: "2.0"
+synopsis: "A Coq library for tree calculus" # One-line description
+description: """
+ This library accompanies the book *Reflective Programs in Tree Calculus*. 
+In tree calculus, computations are given by natural trees, i.e. finitely-branching trees without labels.
+The functions, data structures, programs, inputs, outputs and values are all given by binary trees. 
+The trees are built as combinations of a single operator. It has three evaluation rules, for leaves stems and forks. 
+This is enough to support reflective programs such as a size function that can decide its own size, 
+an equality program that can decide its own equality, and self-evaluators than can evaluate themselves. 
+Since this does not require any meta-theory for, say, substitution, quotation, serialisation or Goedel numbers, 
+it is simpler and more powerful than traditional models of computation.  
+
+The organisation of the proofs is shown in the _CoqProject file, with one or two files per chapter.  
+""" # Longer description, can span several lines
+
+homepage: "https://github.com/barry-jay-personal/tree-calculus"
+dev-repo: "git+https://github.com/barry-jay-personal/tree-calculus.git"
+bug-reports: "https://github.com/barry-jay-personal/tree-calculus/issues"
+doc: "https://barry-jay-personal.github.io/tree-calculus"
+maintainer: "barry.jay8@gmail.com"
+authors: [
+  "Barry Jay"
+]
+license: "MIT" # Make sure this is reflected by a LICENSE file in your sources
+
+depends: [
+  "coq" {>= "8.12"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/barry-jay-personal/tree-calculus/archive/1.0.0.tar.gz"
+  checksum: "sha256=eb5b8bbc81e27c783334ff9d17d910495aa14b4c46b9a3465a85712b163ac33f"
+}
+
+tags: [
+  "keyword:tree calculus"
+  "keyword:reflective programs"
+  "categoryCS/Lambda Calculi"
+  "date:2020-09-20"
+  "logpath:tree-calculus"
+]
