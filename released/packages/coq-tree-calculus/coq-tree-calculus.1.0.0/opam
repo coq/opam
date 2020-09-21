@@ -42,7 +42,7 @@ url {
 tags: [
   "keyword:tree calculus"
   "keyword:reflective programs"
-  "categoryCS/Lambda Calculi"
+  "category:Computer Science/Lambda Calculi"	
   "date:2020-09-20"
   "logpath:Reflective"
 ]
