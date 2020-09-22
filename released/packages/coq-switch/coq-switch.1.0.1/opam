@@ -12,8 +12,8 @@ install: [
   [make "install"]
 ]
 depends: [
-  "coq" {>= "8.9.1"}
-  "coq-metacoq-template" {>= "1.0~alpha+8.9"}
+  "coq" {>= "8.9.1" & < "8.10~"}
+  "coq-metacoq-template" {>= "1.0~alpha1+8.9"}
 ]
 tags: [
   "category:Miscellaneous/Coq Extensions"
