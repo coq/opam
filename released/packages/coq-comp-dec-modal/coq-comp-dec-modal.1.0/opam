@@ -1,0 +1,53 @@
+opam-version: "2.0"
+maintainer: "christian.doczkal@inria.fr"
+
+homepage: "https://github.com/coq-community/comp-dec-modal"
+dev-repo: "git+https://github.com/coq-community/comp-dec-modal.git"
+bug-reports: "https://github.com/coq-community/comp-dec-modal/issues"
+doc: "https://coq-community.github.io/comp-dec-modal/"
+license: "CECILL-B"
+
+synopsis: "Constructive proofs of soundness and completeness for K, K*, CTL, PDL, and PDL with converse"
+description: """
+This project presents machine-checked constructive proofs of
+soundness, completeness, decidability, and the small-model property
+for the logics K, K*, CTL, and PDL (with and without converse).
+
+For all considered logics, we prove soundness and completeness of
+their respective Hilbert-style axiomatization. For K, K*, and CTL,
+we also prove soundness and completeness for Gentzen systems (i.e.,
+sequent calculi).
+
+For each logic, the central construction is a pruning-based
+algorithm computing for a given formula either a satisfying model of
+bounded size or a proof of its negation. The completeness and
+decidability results then follow with soundness from the existence
+of said algorithm.
+  """
+
+build: [make "-j%{jobs}%" ]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.10" & < "8.13~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {(>= "1.9" & < "1.12~") | (= "dev")}
+]
+
+tags: [
+  "category:Computer Science/Modal Logic"
+  "keyword:modal logic"
+  "keyword:completeness"
+  "keyword:decidability"
+  "keyword:Hilbert system"
+  "keyword:computation tree logic"
+  "keyword:propositional dynamic logic"
+  "logpath:CompDecModal"
+  "date:2020-09-35"
+]
+authors: [
+  "Christian Doczkal"
+]
+
+url {
+  src: "https://github.com/coq-community/comp-dec-modal/archive/v1.0.tar.gz"
+  checksum: "sha512=b9f0db9672d05e0fce859e3f4d4040275d30f7a6846a262767161283889f7bec5c078508a90a1ab6be87809c2431493f74a670f7d5789c5760a1028a1998854f"
+}
