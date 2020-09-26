@@ -17,6 +17,10 @@ depends: [
   "coq" {>= "8.12.0" & < "8.13~"}
 ]
 synopsis: "An enhanced unification algorithm for Coq"
+tags: [
+  "logpath:Unicoq"
+  "date:2020-08-12"
+]
 url {
   src: "https://github.com/unicoq/unicoq/archive/v1.5-8.12.tar.gz"
   checksum: "sha512=c2326af1972ddf0f34e6f2c81426882a332729a3d7f8a9c6cbffb23f85fa5b61d747adfa1cd149c05640e2c329945ab7405620eb80c9c3f6744aaf01f3ee8c1f"

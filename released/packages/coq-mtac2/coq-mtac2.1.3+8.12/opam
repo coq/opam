@@ -18,6 +18,10 @@ depends: [
   "coq-unicoq" {>= "1.5" & < "2~"}
 ]
 synopsis: "Mtac2: Typed Tactics for Coq"
+tags: [
+  "logpath:Mtac2"
+  "date:2020-08-19"
+]
 url {
   src: "https://github.com/Mtac2/Mtac2/archive/v1.3-coq8.12.tar.gz"
   checksum: "sha512=6d17c5916cacf24d10a55bc0c84d31cb3e8f3d7458586d98f4734f0d7bb9b8d2be88ada15537aaada478a9f844692f5d271f8b7e721743c70272fa44ffd47ac8"
