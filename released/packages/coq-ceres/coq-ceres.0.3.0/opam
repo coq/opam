@@ -1,0 +1,23 @@
+opam-version: "2.0"
+maintainer: "Li-yao Xia <lysxia@gmail.com>"
+authors: "Li-yao Xia"
+homepage: "https://github.com/Lysxia/coq-ceres"
+bug-reports: "https://github.com/Lysxia/coq-ceres/issues"
+license: "MIT"
+dev-repo: "git+https://github.com/Lysxia/coq-ceres.git"
+build: [make "build"]
+run-test: [make "test"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.8" & < "8.13~"}
+]
+tags: [
+  "date:2020-09-28"
+  "logpath:Ceres"
+  "keyword:serialization"
+]
+synopsis: "Library for serialization to S-expressions"
+url {
+  src: "https://github.com/Lysxia/coq-ceres/archive/0.3.0.tar.gz"
+  checksum: "sha512=2de406c1df6c37cf1a99bed741bf8d266ede024e862b828abe426acc2559816091dbc5630a7de4655c48993354d3db87569aefa90d136054a476d1c82fb44134"
+}
