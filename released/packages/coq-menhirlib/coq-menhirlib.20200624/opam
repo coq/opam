@@ -11,6 +11,12 @@ license: "LGPL-3.0-or-later"
 build: [
   [make "-C" "coq-menhirlib" "-j%{jobs}%"]
 ]
+patches: [
+  "0001-Adjust-make-to-cygwin-mingw-cross-builds.patch"
+]
+extra-files: [
+  ["0001-Adjust-make-to-cygwin-mingw-cross-builds.patch" "sha512=9cbff58064e5eea3607932fdd5cc183e879c01cafc9443273fb1a58f3e3e5af553112b32c1d596ca17a902d2538f42a45bce60b611c77b1e0640b87632f2b56c"]
+]
 install: [
   [make "-C" "coq-menhirlib" "install"]
 ]
