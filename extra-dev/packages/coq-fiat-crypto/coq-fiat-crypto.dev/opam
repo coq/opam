@@ -4,11 +4,12 @@ authors: [
   "Google Inc."
   "Jade Philipoom <jadep@mit.edu> <jade.philipoom@gmail.com>"
   "Massachusetts Institute of Technology"
+  "Zoe Paraskevopoulou <zoe.paraskevopoulou@gmail.com>"
 ]
 maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "https://github.com/mit-plv/fiat-crypto"
 bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
-license: "MIT"
+license: "MIT OR Apache-2.0 OR BSD-1-Clause"
 build: [
   [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "SKIP_BEDROCK2=1" "coq-without-bedrock2" "standalone-ocaml"]
 ]
@@ -22,7 +23,7 @@ depends: [
   "coq-rewriter"
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
-synopsis: "Cryptographic Primitive Code Generation in Fiat."
+synopsis: "Cryptographic Primitive Code Generation by Fiat."
 tags: ["logpath:Crypto"]
 url {
   src: "git+https://github.com/mit-plv/fiat-crypto.git#master"

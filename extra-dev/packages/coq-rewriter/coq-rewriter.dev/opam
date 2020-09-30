@@ -6,7 +6,7 @@ authors: [
 maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "https://github.com/mit-plv/rewriter"
 bug-reports: "https://github.com/mit-plv/rewriter/issues"
-license: "MIT"
+license: "MIT OR Apache-2.0 OR BSD-1-Clause"
 build: [
   [make "-j%{jobs}%"]
 ]
