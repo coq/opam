@@ -1,6 +1,4 @@
 opam-version: "2.0"
-name: "coq-paco"
-version: "4.0.2"
 maintainer: "paco@sf.snu.ac.kr"
 synopsis: "Coq library implementing parameterized coinduction"
 homepage: "https://github.com/snu-sf/paco/"
@@ -13,15 +11,14 @@ authors: [
   "Viktor Vafeiadis <viktor@mpi-sws.org>"
   "Minki Cho <minki.cho@sf.snu.ac.kr>"
 ]
-license: "BSD-3"
+license: "BSD-3-Clause"
 build: [make "-C" "src" "all" "-j%{jobs}%"]
 install: [make "-C" "src" "-f" "Makefile.coq" "install"]
-remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Paco"]
 depends: [
   "coq" {>= "8.6" & < "8.13~"}
 ]
 tags: [
-  "date:2019-04-30"
+  "date:2020-10-04"
 
   "category:Programming Languages/Formal Definitions and Theory"
   "category:Mathematical Logic and Foramal Languages/Mathematical Logic"
