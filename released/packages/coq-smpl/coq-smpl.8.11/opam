@@ -1,0 +1,30 @@
+opam-version: "2.0"
+version: "8.11"
+maintainer: "Yannick Forster <forster@cs.uni-saarland.de>"
+authors: ["Sigurd Schneider <sigurd.schneider@cs.uni-saarland.de>"
+          "Yannick Forster <forster@cs.uni-saarland.de>"
+          "Fabian Kunze <fabian.kunze@cs.uni-saarland.de>"]
+homepage: "https://github.com/uds-psl/smpl"
+bug-reports: "https://github.com/uds-psl/smpl/issues"
+license: "MIT"
+dev-repo: "git+https://github.com/uds-psl/smpl"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "ocaml"
+  "coq" { >= "8.11" & < "8.12~" }
+]
+synopsis: "Smpl: An Extensible Tactic for Coq"
+description: """
+Smpl is useful for proof automation in Coq. Smpl provides named lists
+of tactics to which tactics can be added with Coq commands. A special
+tactic called 'smpl foo' executes the tactics in the lists named foo
+in order, until one of them succeeds. Smpl works across modules by
+merging tactics from all imports according to a priority number that
+can be provided upon addition. Smpl thus allows to modify the behavior
+of a tactic after it is defined in a convenient and modular way.
+"""
+url {
+  src: "https://github.com/uds-psl/smpl/archive/v8.11.tar.gz"
+  checksum: "sha256=21345e42b0a459dd0f3f638ff641fcfb8887be251a708599aa498ce6089db12d"
+}
