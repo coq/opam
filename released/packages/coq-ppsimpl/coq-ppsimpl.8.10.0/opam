@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: "frederic.besson@inria.fr"
-homepage: "http://ppsimpl.gforge.inria.fr/"
-dev-repo: "git+https://scm.gforge.inria.fr/anonscm/git/ppsimpl/ppsimpl.git"
+homepage: "https://fbesson.gitlabpages.inria.fr/ppsimpl/"
+dev-repo: "git+https://gitlab.inria.fr/fbesson/ppsimpl.git"
 authors: ["Frédéric Besson"]
 bug-reports: "frederic.besson@inria.fr"
 license: "LGPL 3"
@@ -27,6 +27,6 @@ tags: [
 ]
 synopsis: "Ppsimpl is a reflexive tactic for canonising (arithmetic) goals"
 url {
-  src: "https://gforge.inria.fr/frs/download.php/file/38179/ppsimpl-17-10-2019.tar.gz"
+  src: "https://fbesson.gitlabpages.inria.fr/ppsimpl/ppsimpl-17-10-2019.tar.gz"
   checksum: "md5=db2cc823e6d4cd53e9429cef7af34d10"
 }
