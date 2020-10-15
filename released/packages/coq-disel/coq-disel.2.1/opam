@@ -22,7 +22,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.12~"}
   "coq-mathcomp-ssreflect" {>= "1.6.2" & < "1.11~"}
-  "coq-fcsl-pcm"
+  "coq-fcsl-pcm" {< "1.3.0"}
 ]
 
 tags: [
