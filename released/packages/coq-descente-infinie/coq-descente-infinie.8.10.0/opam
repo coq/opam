@@ -1,0 +1,31 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/descente-infinie"
+license: "GPL"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/DescenteInfinie"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10" & < "8.11~"}
+]
+tags: [
+  "keyword: Induction"
+  "keyword: Descente Infinie"
+  "category: Miscellaneous/Coq Extensions"
+  "date: 2010-02"
+]
+authors: [
+  "Razvan Voicu <razvan@comp.nus.edu.sg> [http://www.comp.nus.edu.sg/~razvan/]"
+  "Li Mengran <limengra@comp.nus.edu.sg> [http://www.comp.nus.edu.sg/~limengra]"
+]
+bug-reports: "https://github.com/coq-contribs/descente-infinie/issues"
+dev-repo: "git+https://github.com/coq-contribs/descente-infinie.git"
+synopsis: "The Descente Infinie Tactic"
+description: """
+This is a tactic plugin for coq. The tactic helps to prove inductive lemmas by fixpoint functions. A manual for the tactic can be found on its homepage listed above."""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/descente-infinie/archive/v8.10.0.tar.gz"
+  checksum: "md5=f2a2d09a3b51149f8da35269759bf09f"
+}

@@ -1,0 +1,37 @@
+opam-version: "2.0"
+maintainer: "Hugo.Herbelin@inria.fr"
+homepage: "https://github.com/coq-contribs/area-method"
+license: "Unknown"
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/AreaMethod"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.10" & < "8.11~"}
+]
+tags: [
+  "keyword: geometry"
+  "keyword: Chou Gao Zhang area method"
+  "keyword: decision procedure"
+  "keyword: automatic theorem proving"
+  "date: 2004-2010"
+]
+authors: [
+  "Julien Narboux"
+]
+bug-reports: "https://github.com/coq-contribs/area-method/issues"
+dev-repo: "git+https://github.com/coq-contribs/area-method.git"
+synopsis: "The Chou, Gao and Zhang area method"
+description: """
+This contribution is the implementation of the Chou, Gao and Zhang's area method decision procedure for euclidean plane geometry.
+This development contains a partial formalization of the book "Machine Proofs in Geometry, Automated Production of Readable Proofs for Geometry Theorems" by Chou, Gao and Zhang.
+The examples shown automatically (there are more than 100 examples) includes the Ceva, Desargues, Menelaus, Pascal, Centroïd, Pappus, Gauss line, Euler line, Napoleon theorems.
+Changelog
+2.1 : remove some not needed assumptions in some elimination lemmas (2010)
+2.0 : extension implementation to Euclidean geometry (2009-2010)
+1.0 : first implementation for affine geometry (2004)"""
+flags: light-uninstall
+url {
+  src: "https://github.com/coq-contribs/area-method/archive/v8.10.0.tar.gz"
+  checksum: "md5=82e7179a07bdf2a921fc7e8fa1079de4"
+}
