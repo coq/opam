@@ -3,7 +3,7 @@ authors: [ "The Coq Development Team" ]
 maintainer: "coqdev@inria.fr"
 homepage: "https://coq.inria.fr/"
 bug-reports: "https://coq.inria.fr/bugs/"
-license: "LGPL-2.1"
+license: "LGPL-2.1-only"
 build: [
   ["./configure"
     "-configdir" "%{lib}%/coq/config"
@@ -19,8 +19,7 @@ build: [
   [make "-j%{jobs}%" "coqide-binaries"]
 ]
 install: [make "install-ide-bin" "install-ide-files" "install-ide-info" "install-ide-devfiles"]
-remove: ["rm" "-R" "%{lib}%/coq/ide" "%{doc}%/FAQ-CoqIde"]
-dev-repo: "git+https://scm.gforge.inria.fr/anonscm/git/coq/coq.git"
+dev-repo: "git+https://github.com/coq/coq.git"
 depends: [
   "ocaml"
   "camlp5"
@@ -29,8 +28,7 @@ depends: [
   "conf-gtksourceview"
 ]
 synopsis: "IDE of the Coq formal proof management system."
-flags: light-uninstall
-extra-files: ["coq-coqide.install" "md5=d005cda8cb7888fbea94c5416dcb31bc"]
+extra-files: ["coqide.install" "md5=d005cda8cb7888fbea94c5416dcb31bc"]
 url {
   src: "https://github.com/coq/coq/archive/V8.6beta1.tar.gz"
   checksum: "md5=7d1fe1cde4a753e5bedbb7af4be2ce75"

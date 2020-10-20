@@ -1,25 +1,23 @@
 opam-version: "2.0"
 maintainer: "coqdev@inria.fr"
 homepage: "https://coq.inria.fr/"
-license: "LGPL-2.1"
+license: "LGPL-2.1-only"
 build: [
   ["./configure" "-configdir" "%{lib}%/coq/config" "-mandir" man "-docdir" doc "-prefix" prefix "-usecamlp5" "-camlp5dir" "%{lib}%/camlp5"]
   [make "-j%{jobs}%" "coqide-files"]
   [make "-j%{jobs}%" "coqide-binaries"]
   [make "install-ide-bin" "install-ide-files" "install-ide-info" "install-ide-devfiles"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/ide" "%{doc}%/FAQ-CoqIde"]
 depends: [
   "ocaml"
   "camlp5"
-  "coq" {= "8.5~beta2"}
+  "coq" {= "8.5~beta3"}
   "lablgtk"
   "conf-gtksourceview"
 ]
 synopsis: "IDE of the Coq formal proof management system."
-flags: light-uninstall
-extra-files: ["coq-coqide.install" "md5=d005cda8cb7888fbea94c5416dcb31bc"]
+extra-files: ["coqide.install" "md5=d005cda8cb7888fbea94c5416dcb31bc"]
 url {
-  src: "https://github.com/coq/coq/archive/V8.5beta1.tar.gz"
-  checksum: "md5=1484d167f5b22ee221daf988b36ef8cc"
+  src: "https://github.com/coq/coq/archive/V8.5beta3.tar.gz"
+  checksum: "md5=5d4b60f163d87e20b8f26cacb61d9d3d"
 }
