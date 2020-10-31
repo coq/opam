@@ -1,0 +1,45 @@
+opam-version: "2.0"
+maintainer: "reynald.affeldt@aist.go.jp"
+homepage: "https://github.com/affeldt-aist/monae"
+bug-reports: "https://github.com/affeldt-aist/monae/issues"
+dev-repo: "git+https://github.com/affeldt-aist/monae.git"
+license: "LGPL-2.1-or-later"
+authors: [
+  "Reynald Affeldt"
+  "David Nowak"
+  "Takafumi Saikawa"
+  "Jacques Garrigue"
+  "Celestine Sauvage"
+  "Kazunari Tanaka"
+]
+build: [
+  [make "-j%{jobs}%"]
+  [make "sect5"]
+  [make "-C" "impredicative_set"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" { >= "8.11" & < "8.13~" }
+  "coq-infotheo" { >= "0.2" & < "0.3~" }
+  "coq-paramcoq" { >= "1.1.2" & < "1.2~" }
+]
+synopsis: "Monads and equational reasoning in Coq"
+description: """
+This Coq library contains a hierarchy of monads with their laws used
+in several examples of monadic equational reasoning.
+"""
+tags: [
+  "category:Computer Science/Semantics"
+  "keyword: monad"
+  "keyword: effect"
+  "keyword: probability"
+  "keyword: nondeterminism"
+  "logpath:monae"
+  "date:2020-10-31"
+]
+url {
+  http: "https://github.com/affeldt-aist/monae/archive/0.2.tar.gz"
+  checksum: "sha512=ac190d9fccd104d9d2e73a6b770efcd64554090ff4cce9eaddabea31f3ef8c8d8b9f73bd35efdd5d9a958c789eb8e380c4866eae3eb6dcafe9028f194b7b5c80"
+}
