@@ -26,5 +26,5 @@ authors: [
   "Mizsei Tamás"
 ]
 url {
-  src: git+https://github.com/harp-project/AML-Formalization.git#master
+  src: "git+https://github.com/harp-project/AML-Formalization.git#master"
 }
