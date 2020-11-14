@@ -4,7 +4,7 @@ maintainer: "jenda.tusil@gmail.com"
 homepage: "https://github.com/harp-project/AML-Formalization"
 dev-repo: "git+https://github.com/harp-project/AML-Formalization.git"
 bug-reports: "https://github.com/harp-project/AML-Formalization/issues"
-license: "LGPL"
+license: "LGPL-2.1-only"
 
 synopsis: "Matching Logic in Coq"
 description: """
