@@ -1,0 +1,30 @@
+opam-version: "2.0"
+maintainer: "jenda.tusil@gmail.com"
+version: "dev"
+
+homepage: "https://github.com/harp-project/AML-Formalization"
+dev-repo: "git+https://github.com/harp-project/AML-Formalization.git"
+bug-reports: "https://github.com/harp-project/AML-Formalization/issues"
+license: "LGPL"
+
+synopsis: "Matching Logic in Coq"
+description: """
+A library for Matching Logic."""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "coq" {>= "8.12" & < "8.13~"}
+]
+
+tags: [
+  "category:Mathematics/Logic"
+]
+authors: [
+  "Jan Tusil"
+  "Lucas Peña"
+  "Attila Boros"
+  "Mizsei Tamás"
+]
+url {
+  src: git+https://github.com/harp-project/AML-Formalization.git#master
+}
