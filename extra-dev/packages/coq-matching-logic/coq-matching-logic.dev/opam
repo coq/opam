@@ -1,6 +1,5 @@
 opam-version: "2.0"
 maintainer: "jenda.tusil@gmail.com"
-version: "dev"
 
 homepage: "https://github.com/harp-project/AML-Formalization"
 dev-repo: "git+https://github.com/harp-project/AML-Formalization.git"
