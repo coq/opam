@@ -20,8 +20,8 @@ depends: [
   "coq-metacoq-template" { = "1.0~beta1+8.11" }
 ]
 tags: [
-  "logpath: Lens"
-  "date: 2020-03-29"
+  "logpath:Lens"
+  "date: 2020-11-18"
 ]
 url {
   src: "https://github.com/bedrocksystems/coq-lens/archive/v1.0.1.tar.gz"
