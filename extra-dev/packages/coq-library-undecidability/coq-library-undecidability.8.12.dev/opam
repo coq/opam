@@ -1,5 +1,5 @@
 opam-version: "2.0"
-version: "dev+8.12"
+version: "8.12.dev"
 maintainer: "forster@ps.uni-saarland.de"
 homepage: "https://github.com/uds-psl/coq-library-undecidability/"
 dev-repo: "git+https://github.com/uds-psl/coq-library-undecidability/"
@@ -14,7 +14,7 @@ authors: ["Yannick Forster"
           "Simon Spies"
           "Dominik Wehr"
           "Maximilian Wuttke"]
-license: "CeCILL"
+license: "CeCILL-2.1"
 build: [
   [make "-j%{jobs}%"]
 ]
