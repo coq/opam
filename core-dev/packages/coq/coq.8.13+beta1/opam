@@ -21,7 +21,7 @@ depopts: [
   "coq-native"
 ]
 depends: [
-  "ocaml" {>= "4.05.0"}
+  "ocaml" {>= "4.05.0" & < "4.12"}
   "ocamlfind" {build}
   "num"
   "conf-findutils" {build}
