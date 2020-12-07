@@ -5,14 +5,16 @@ homepage: "http://compcert.inria.fr/"
 dev-repo: "git+https://github.com/AbsInt/CompCert.git"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
 license: "INRIA Non-Commercial License Agreement"
+available: os != "macos"
 build: [
   ["./configure" "ia32-linux" {os = "linux"}
-  "ia32-macosx" {os = "macos"}
   "ia32-cygwin" {os = "cygwin"}
   "ia32-cygwin" {os = "win32" & os-distribution = "cygwinports"}
   "-prefix" "%{prefix}%/variants/compcert32"
   "-install-coqdev"
   "-clightgen"
+  "-use-external-Flocq"
+  "-use-external-MenhirLib"
   "-coqdevdir" "%{lib}%/coq-variant/compcert32/compcert"
   "-ignore-coq-version"]
   [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
@@ -21,9 +23,11 @@ install: [
   [make "install"]
 ]
 depends: [
-  "coq" {>= "8.7.0" & < "8.14"}
+  "coq" {>= "8.8.0" & < "8.14"}
   "menhir" {>= "20190626"}
   "ocaml" {>= "4.05.0"}
+  "coq-flocq" {>= "3.1.0"}
+  "coq-menhirlib" {>= "20190626"}
 ]
 synopsis: "The CompCert C compiler (32 bit)"
 description: "This package installs the 32 bit version of CompCert.
