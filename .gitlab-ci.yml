@@ -52,10 +52,10 @@ opam-lint:4.07.1:
   variables:
     COMPILER: "4.07.1"
 
-opam-lint:4.09.0:
+opam-lint:4.09.1:
   extends: .opam-lint
   variables:
-    COMPILER: "4.09.0"
+    COMPILER: "4.09.1"
 
 
 opam-build:4.05.0:
@@ -65,6 +65,15 @@ opam-build:4.05.0:
   except:
     - web
 
+opam-build:4.05.0:coq-native:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.05.0"
+    EXTRA_OPAM_OPTION: "coq-native"
+  except:
+    - web
+  allow_failure: true
+
 opam-build:4.07.1:
   extends: .opam-build
   variables:
@@ -72,17 +81,53 @@ opam-build:4.07.1:
   except:
     - web
 
-opam-build:4.09.0:
+opam-build:4.07.1:coq-native:
   extends: .opam-build
   variables:
-    COMPILER: "4.09.0"
+    COMPILER: "4.07.1"
+    EXTRA_OPAM_OPTION: "coq-native"
   except:
     - web
+  allow_failure: true
+
+opam-build:4.07.1+flambda:coq-native:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.07.1+flambda"
+    EXTRA_OPAM_OPTION: "coq-native"
+  except:
+    - web
+  allow_failure: true
+
+opam-build:4.09.1:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.09.1"
+  except:
+    - web
+
+opam-build:4.09.1:coq-native:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.09.1"
+    EXTRA_OPAM_OPTION: "coq-native"
+  except:
+    - web
+  allow_failure: true
+
+opam-build:4.09.1+flambda:coq-native:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.09.1+flambda"
+    EXTRA_OPAM_OPTION: "coq-native"
+  except:
+    - web
+  allow_failure: true
 
 opam-build:any:
   extends: .opam-build
   variables:
-    COMPILER: "4.09.0"
+    COMPILER: "4.09.1"
     EXTRA_OPAM_OPTION: "--unlock-base"
   except:
     - web
@@ -106,10 +151,10 @@ opam-build-no-timeout:4.07.1:
   tags:
     - no-timeout
 
-opam-build-no-timeout:4.09.0:
+opam-build-no-timeout:4.09.1:
   extends: .opam-build
   variables:
-    COMPILER: "4.09.0"
+    COMPILER: "4.09.1"
   only:
     - web
   tags:
@@ -118,7 +163,7 @@ opam-build-no-timeout:4.09.0:
 opam-build:any:
   extends: .opam-build
   variables:
-    COMPILER: "4.09.0"
+    COMPILER: "4.09.1"
     EXTRA_OPAM_OPTION: "--unlock-base"
   except:
     - web
