@@ -1,0 +1,45 @@
+opam-version: "2.0"
+maintainer: "christian.doczkal@inria.fr"
+
+homepage: "https://github.com/coq-community/graph-theory"
+dev-repo: "git+https://github.com/coq-community/graph-theory.git"
+bug-reports: "https://github.com/coq-community/graph-theory/issues"
+license: "CECILL-B"
+
+synopsis: "Graph theory results in Coq and MathComp"
+description: """
+A library of formalized graph theory results, including various
+standard results from the literature (e.g., Menger’s Theorem, Hall’s
+Marriage Theorem, and the excluded minor characterization of
+treewidth-two graphs) as well as some more recent results arising
+from the study of relation algebra within the ERC CoVeCe project
+(e.g., soundness and completeness of an axiomatization of graph
+isomorphism)."""
+
+build: [make "-j%{jobs}%" ]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.11" & < "8.13~"}
+  "coq-mathcomp-ssreflect" {>= "1.10" & < "1.13~"}
+  "coq-mathcomp-finmap" 
+  "coq-hierarchy-builder" { >= "0.10" }
+]
+
+tags: [
+  "category:Computer Science/Graph Theory"
+  "keyword:graph theory"
+  "keyword:minors"
+  "keyword:treewidth"
+  "keyword:algebra"
+  "logpath:GraphTheory"
+  "date:2020-12-08"
+]
+authors: [
+  "Christian Doczkal"
+  "Damien Pous"
+]
+
+url {
+  src: "https://github.com/coq-community/graph-theory/archive/v0.8.tar.gz"
+  checksum: "sha512=695618a7a62092fdaf296824ca5d2b01606a0e41cc8ab34233db3de2475d88e4c24da16f2bbf4d40914138581b44883345982ea616874d7beba16ad161f74bba"
+}
