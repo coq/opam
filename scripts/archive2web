@@ -95,7 +95,7 @@ function pluraly(s,n,...)
 end
 
 function print_pkg(name,info,print)
-	print [[ <tr class="package"><td> ]]
+	print [[<tr class="package"><td>]]
 	if info.homepage ~= "" then print(('<a href="%s">'):format(info.homepage or "#")) end
 	print (([[<h3 class="name">%s</h3>]]):format(name))
 	if info.homepage ~= "" then print "</a>" end
@@ -140,8 +140,7 @@ function print_pkg(name,info,print)
 	end
 	print [[</div>]]
 	print [[</div>]]
-	print [[</div>]]
-	print [[ </td></tr> ]]
+	print "</td></tr>\n"
 end
 
 template = io.open(templ):read('*a')
