@@ -60,9 +60,9 @@ function do_one_root(suite)
   	local dates = info.dates or {}
   	local categories = info.categories or {}
   	for tag in tags:gmatch('(%b"")') do
-  		add_uniq(categories, tag:match('"category:([^"]*)"'))
-  		add_uniq(keywords, tag:match('"keyword:([^"]*)"'))
-  		add_uniq(dates, tag:match('"date:([^"]*)"'))
+		add_uniq(categories, tag:match('"category: *([^"]*)"'))
+		add_uniq(keywords, tag:match('"keyword: *([^"]*)"'))
+		add_uniq(dates, tag:match('"date: *([^"]*)"'))
   	end
   	info.categories = categories
   	info.keywords = keywords
