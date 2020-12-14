@@ -78,6 +78,8 @@ while [ ! -z "$1" ]; do
               RC=1;
               FAILURES="$FAILURES $PKG_NAME_VERSION";
             else
+              echo Installed files:
+              opam show "$PKG_NAME_VERSION" --list-files
               SUCCESSES="$SUCCESSES $PKG_NAME_VERSION";
             fi
             echo Removing $PKG_NAME
