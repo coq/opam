@@ -1,9 +1,5 @@
-# This file was generated from `meta.yml`, please do not edit manually.
-# Follow the instructions on https://github.com/coq-community/templates to regenerate.
-
 opam-version: "2.0"
 maintainer: "Reynald Affeldt <reynald.affeldt@aist.go.jp>"
-version: "dev"
 
 homepage: "https://github.com/affeldt-aist/infotheo"
 dev-repo: "git+https://github.com/affeldt-aist/infotheo.git"
