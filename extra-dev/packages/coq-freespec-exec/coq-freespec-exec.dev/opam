@@ -1,0 +1,44 @@
+opam-version: "2.0"
+maintainer: "Thomas Letan <thomas.letan@ssi.gouv.fr"
+
+homepage: "https://github.com/ANSSI-FR/FreeSpec"
+dev-repo: "git+https://github.com/ANSSI-FR/FreeSpec.git"
+bug-reports: "https://github.com/ANSSI-FR/FreeSpec.git/issues"
+doc: "https://ANSSI-FR.github.io/FreeSpec"
+license: "GPL-3.0-or-later"
+
+synopsis: "A framework for implementing and certifying impure computations in Coq"
+description: """
+FreeSpec is a framework for the Coq proof assistant which allows to
+implement and specify impure computations. This is the “exec” plugin,
+which allows from executing impure computations from with Coq thanks
+to a dedicated vernacular command.
+"""
+
+build: [
+  ["patch" "-p1" "-i" "patches/opam-builds.patch"]
+  ["dune" "build" "-p" name "-j" jobs]
+]
+
+depends: [
+  "ocaml"
+  "dune" {>= "2.5"}
+  "coq" {>= "8.12" & < "8.13~"}
+  "coq-freespec-core" {= "dev"}
+  "coq-freespec-ffi" {= "dev"}
+]
+
+tags: [
+  "keyword:plugin"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:FreeSpec.Exec"
+]
+
+authors: [
+  "Thomas Letan"
+  "Yann Régis-Gianas"
+]
+
+url {
+  src: "git+https://github.com/ANSSI-FR/FreeSpec.git#master"
+}
