@@ -14,7 +14,7 @@ description: """
 High level commands to declare and evolve a hierarchy based on packed classes.
 """
 tags: [ "logpath:HB" ]
-src: {
-  url: "https://github.com/math-comp/hierarchy-builder/archive/v1.0.0.tar.gz"
+url {
+  src: "https://github.com/math-comp/hierarchy-builder/archive/v1.0.0.tar.gz"
   checksum: "sha256=9ccc7b21a69030c2e28c6f8ec6665c506861851d5bda690db17fbba5fbcb478d"
 }
