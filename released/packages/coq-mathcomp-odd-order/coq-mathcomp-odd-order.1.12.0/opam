@@ -1,0 +1,43 @@
+opam-version: "2.0"
+maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+homepage: "http://math-comp.github.io/math-comp/"
+bug-reports: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+dev-repo: "git+https://github.com/math-comp/odd-order"
+license: "CeCILL-B"
+
+build: [ 
+     [make "-j" "%{jobs}%"]
+]
+install: [ make "install" ]
+depends: [
+  "coq-mathcomp-character" {>= "1.12.0" & < "1.13"}
+  "coq-mathcomp-field"  {>= "1.12.0" & < "1.13"}
+  "coq-mathcomp-fingroup" {>= "1.12.0" & < "1.13"}
+  "coq-mathcomp-solvable" {>= "1.12.0" & < "1.13"}
+  "coq-mathcomp-ssreflect" {>= "1.12.0" & < "1.13"}
+]
+tags: [ "keyword:finite groups" "keyword:Feit Thompson theorem" "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" ]
+authors: [ "Jeremy Avigad <>" "Andrea Asperti <>" "Stephane Le Roux <>" "Yves Bertot <>" "Laurence Rideau <>" "Enrico Tassi <>" "Ioana Pasca <>" "Georges Gonthier <>" "Sidi Ould Biha <>" "Cyril Cohen <>" "Francois Garillot <>" "Alexey Solovyev <>" "Russell O'Connor <>" "Laurent Théry <>" "Assia Mahboubi <>" ]
+synopsis: "The formal proof of the Feit-Thompson theorem"
+description: """
+The formal proof of the Feit-Thompson theorem.
+
+From mathcomp Require Import all_ssreflect all_fingroup all_solvable PFsection14.
+
+Check Feit_Thompson.
+   : forall (gT : finGroupType) (G : {group gT}), odd #|G| -> solvable G
+
+From mathcomp Require Import all_ssreflect all_fingroup 
+                             all_solvable stripped_odd_order_theorem.
+
+Check stripped_Odd_Order.
+   : forall (T : Type) (mul : T -> T -> T) (one : T) (inv : T -> T)
+         (G : T -> Type) (n : natural),
+       group_axioms T mul one inv ->
+       group T mul one inv G ->
+       finite_of_order T G n -> odd n -> solvable_group T mul one inv G"""
+url {
+  src:
+    "https://github.com/math-comp/odd-order/archive/mathcomp-odd-order.1.12.0.tar.gz"
+  checksum: "sha256=8f2e56472084680c24fd82e28e2e205c6bb025e41c29e76161dbb3e0fd4883ac"
+}
