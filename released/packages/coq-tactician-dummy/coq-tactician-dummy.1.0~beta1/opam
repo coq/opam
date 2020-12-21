@@ -17,7 +17,7 @@ bug-reports: "https://github.com/coq-tactician/coq-tactician-dummy/issues"
 maintainer: "Lasse Blaauwbroek <lasse@blaauwbroek.eu>"
 authors: "Lasse Blaauwbroek <lasse@blaauwbroek.eu"
 depends: [
-  "coq"
+  "coq" {>= "8.6.1"}
   "dune" {>= "2.5"}
 ]
 build: [
