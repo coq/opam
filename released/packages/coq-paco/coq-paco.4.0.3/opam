@@ -29,5 +29,5 @@ tags: [
 ]
 url {
   http: "https://github.com/snu-sf/paco/archive/v4.0.3.tar.gz"
-  checksum: "355c110fdbf5c4b2c3491fff3288230d"
+  checksum: "11d6a056ce263f62db7023646a34dff6"
 }
