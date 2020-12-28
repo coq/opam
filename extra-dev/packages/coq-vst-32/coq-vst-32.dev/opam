@@ -21,16 +21,16 @@ dev-repo: "git+https://github.com/PrincetonUniversity/VST.git"
 bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 license: "https://raw.githubusercontent.com/PrincetonUniversity/VST/master/LICENSE"
 build: [
-  [make "-j%{jobs}%" "IGNORECOQVERSION=true" "BITSIZE=64"]
+  [make "-j%{jobs}%" "IGNORECOQVERSION=true" "BITSIZE=32"]
 ]
 install: [
-  [make "install" "IGNORECOQVERSION=true" "BITSIZE=64"]
+  [make "install" "IGNORECOQVERSION=true" "BITSIZE=32"]
 ]
 depends: [
   "ocaml"
   "coq" {>= "8.11" | = "dev"}
   # Note: the dev version of VST requires clightgen, so no open source
-  "coq-compcert" {= "3.8" | = "dev"}
+  "coq-compcert-32" {= "3.8" | = "dev"}
   "coq-flocq" {>= "3.2.1" | = "dev"}
 ]
 tags: [
