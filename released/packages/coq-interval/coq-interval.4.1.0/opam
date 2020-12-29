@@ -4,6 +4,9 @@ homepage: "http://coq-interval.gforge.inria.fr/"
 dev-repo: "git+https://gitlab.inria.fr/coqinterval/interval.git"
 bug-reports: "https://gitlab.inria.fr/coqinterval/interval/issues"
 license: "CeCILL-C"
+patches: [
+  "remake.patch"
+]
 build: [
   ["autoconf"] {dev}
   ["./configure"]
