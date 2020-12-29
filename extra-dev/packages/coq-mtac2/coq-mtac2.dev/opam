@@ -14,7 +14,7 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.12.0" | = "dev"}
+  "coq" {>= "8.13" | = "dev"}
   "coq-unicoq" {>= "1.5" | = "dev"}
 ]
 synopsis: "Mtac2: Typed Tactics for Coq"
