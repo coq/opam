@@ -5,13 +5,18 @@ homepage: "http://compcert.inria.fr/"
 dev-repo: "git+https://github.com/AbsInt/CompCert.git"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
 license: "INRIA Non-Commercial License Agreement"
+patches: [ "0001-Configure-the-correct-archiver-to-build-runtime-libc.patch" ]
 build: [
-  ["./configure" "amd64-linux" {os = "linux"}
+  ["./configure"
+  "amd64-linux" {os = "linux"}
   "amd64-macosx" {os = "macos"}
   "amd64-cygwin" {os = "cygwin"}
+  # This is for building a MinGW CompCert with cygwin host and cygwin target
   "amd64-cygwin" {os = "win32" & os-distribution = "cygwinports"}
-  "-bindir" "%{bin}%"
-  "-libdir" "%{lib}%/compcert"
+  # This is for building a 64 bit CompCert on 32 bit MinGW with cygwin build host
+  "-toolprefix"        {os = "win32" & os-distribution = "cygwinports" & arch = "i686"}
+  "x86_64-pc-cygwin-"  {os = "win32" & os-distribution = "cygwinports" & arch = "i686"}
+  "-prefix" "%{prefix}%"
   "-install-coqdev"
   "-clightgen"
   "-use-external-Flocq"
@@ -37,7 +42,7 @@ tags: [
   "keyword:C"
   "keyword:compiler"
   "logpath:compcert"
-  "date:2020-12-05"
+  "date:2020-12-21"
 ]
 url {
   src: "https://github.com/AbsInt/CompCert/archive/v3.8.tar.gz"
