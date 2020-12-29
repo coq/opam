@@ -1,5 +1,5 @@
 opam-version: "2.0"
-maintainer: "guillaume.melquiond@inria.fr"
+maintainer: "7895506+MSoegtropIMC@users.noreply.github.com"
 homepage: "http://gappa.gforge.inria.fr/"
 dev-repo: "git+https://gitlab.inria.fr/gappa/coq.git"
 bug-reports: "https://gitlab.inria.fr/gappa/coq/issues"
