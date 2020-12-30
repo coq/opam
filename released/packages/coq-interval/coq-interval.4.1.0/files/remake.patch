@@ -11,12 +11,3 @@ index 3a6af80..d5ac424 100644
  enum { MSG_NOSIGNAL = 0 };
  #endif
  
-@@ -786,7 +786,7 @@ struct log
- 	}
- };
- 
--static log debug;
-+static struct log debug;
- 
- struct log_auto_close
- {
