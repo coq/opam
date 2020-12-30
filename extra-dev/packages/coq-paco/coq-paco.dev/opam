@@ -19,7 +19,7 @@ install: [
 remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/Paco"]
 depends: [
   "ocaml"
-  "coq" {(>= "8.5.dev")}
+  "coq" {(>= "8.10")}
 ]
 synopsis: "Coq library implementing parameterized coinduction"
 tags: [
