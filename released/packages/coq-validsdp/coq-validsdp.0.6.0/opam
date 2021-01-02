@@ -47,7 +47,6 @@ tags: [
   "keyword:ValidSDP"
   "keyword:floating-point arithmetic"
   "keyword:Cholesky decomposition"
-  "category:ValidSDP"
   "category:Miscellaneous/Coq Extensions"
   "logpath:ValidSDP"
 ]
