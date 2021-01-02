@@ -9,7 +9,13 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:rsa" "keyword:chinese remainder" "keyword:fermat's little theorem" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "date:1999" ]
+tags: [
+  "keyword:rsa"
+  "keyword:chinese remainder"
+  "keyword:Fermat's little theorem"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
+  "date:1999"
+]
 authors: [ "Laurent Théry <>" "Jose C. Almeida <>" ]
 bug-reports: "https://github.com/coq-contribs/rsa/issues"
 dev-repo: "git+https://github.com/coq-contribs/rsa.git"

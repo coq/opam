@@ -12,7 +12,14 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:diophantus" "keyword:fermat" "keyword:arithmetic" "keyword:infinite descent" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:2005-07" ]
+tags: [
+  "keyword:Diophantus"
+  "keyword:Fermat"
+  "keyword:arithmetic"
+  "keyword:infinite descent"
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "date:2005-07"
+]
 authors: [ "David Delahaye <>" "Micaela Mayero <>" ]
 synopsis: "Diophantus' 20th Problem and Fermat's Last Theorem for n = 4."
 description: """

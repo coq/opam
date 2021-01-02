@@ -19,11 +19,11 @@ depends: [
 
 tags: [
   "category:Mathematics/Arithmetic and Number Theory/Number Theory"
-  "keyword:pocklington"
+  "keyword:Pocklington"
   "keyword:number theory"
   "keyword:prime numbers"
   "keyword:primality"
-  "keyword:fermat's little theorem"
+  "keyword:Fermat's little theorem"
   "logpath:Pocklington"
 ]
 authors: [
