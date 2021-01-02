@@ -76,7 +76,11 @@ function do_one_root(suite)
   	end
 		info.authors = authors
 
-  	info.description = info.description or opam:match('description:%s*(%b"")') or opam:match('synopsis:%s*(%b"")') or assert(io.open(pkg..'/descr')):read('*a')
+	info.description = info.description or
+	  opam:match('description:%s*"""%s*(.-)%s*"""') or
+	  opam:match('description:%s*"([^"]*)"') or
+	  opam:match('synopsis:%s*"([^"]*)"') or
+	  assert(io.open(pkg..'/descr')):read('*a')
 
   end end
 end
