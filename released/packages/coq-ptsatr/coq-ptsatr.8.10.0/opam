@@ -12,7 +12,7 @@ depends: [
 tags: [
   "keyword: Pure Type Systems"
   "keyword: Judgmental Equality"
-  "keyword: Chruch-Rosser"
+  "keyword: Church-Rosser"
   "keyword: Confluence"
   "keyword: Subject Reduction"
   "keyword: Pi Injectivity"

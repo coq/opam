@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:pure type systems" "keyword:judgmental equality" "keyword:chruch rosser" "keyword:confluence" "keyword:subject reduction" "keyword:pi injectivity" "category:Mathematics/Logic/Type theory" ]
+tags: [
+  "keyword:pure type systems"
+  "keyword:judgmental equality"
+  "keyword:Church-Rosser"
+  "keyword:confluence"
+  "keyword:subject reduction"
+  "keyword:pi injectivity"
+  "category:Mathematics/Logic/Type theory"
+]
 authors: [ "Vincent Siles <vincent.siles@ens-lyon.org>" "Hugo Herbelin <hugo.herbelin@inria.fr>" ]
 bug-reports: "https://github.com/coq-contribs/ptsatr/issues"
 dev-repo: "git+https://github.com/coq-contribs/ptsatr.git"
