@@ -10,10 +10,10 @@ depends: [
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
-  "keyword: Multimodal Categorial Grammars"
-  "keyword: Syntax/Semantics Interface"
-  "keyword: Higher Order Logic"
-  "keyword: Meta-Linguistics"
+  "keyword: multimodal categorial grammars"
+  "keyword: syntax/semantics interface"
+  "keyword: higher-order logic"
+  "keyword: meta-linguistics"
   "category: Computer Science/Formal Languages Theory and Automata"
   "date: 2003-2006"
 ]

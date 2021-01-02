@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-tags: [ "keyword: Decision procedures" "keyword: First-order logic" "keyword: Intuitionistic logic" "keyword: Theorem proving" "keyword: Proof search" "category: Miscellaneous/Coq Extensions and Computer Science/Decision Procedures" "date: 2002-04 (contribution since January 2009)" ]
+tags: [
+  "keyword: decision procedure"
+  "keyword: first-order logic"
+  "keyword: intuitionistic logic"
+  "keyword: theorem proving"
+  "keyword: proof search"
+  "category: Miscellaneous/Coq Extensions and Computer Science/Decision Procedures"
+  "date: 2002-04 (contribution since January 2009)"
+]
 authors: [ "Huang Guan-Shieng" ]
 bug-reports: "https://github.com/coq-contribs/jprover/issues"
 dev-repo: "git+https://github.com/coq-contribs/jprover.git"
