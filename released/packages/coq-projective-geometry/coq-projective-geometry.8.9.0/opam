@@ -12,12 +12,12 @@ depends: [
 tags: [
   "keyword: geometry"
   "keyword: projective"
-  "keyword: fano"
+  "keyword: Fano"
   "keyword: homogeneous coordinates model"
   "keyword: flat"
   "keyword: rank"
-  "keyword: desargues"
-  "keyword: moulton"
+  "keyword: Desargues"
+  "keyword: Moulton"
   "category: Mathematics/Geometry/General"
   "date: 2009-10"
 ]

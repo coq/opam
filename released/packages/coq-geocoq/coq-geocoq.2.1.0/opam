@@ -16,7 +16,18 @@ depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~beta1"}
 ]
-tags: [ "keyword:geometry" "keyword:neutral geometry" "keyword:euclidean geometry" "keyword:foundations" "keyword:Tarski" "keyword:hilbert" "keyword:Pappus" "keyword:desargues" "keyword:parallel postulates" "category:Mathematics/Geometry/General" ]
+tags: [
+  "keyword:geometry"
+  "keyword:neutral geometry"
+  "keyword:euclidean geometry"
+  "keyword:foundations"
+  "keyword:Tarski"
+  "keyword:Hilbert"
+  "keyword:Pappus"
+  "keyword:Desargues"
+  "keyword:parallel postulates"
+  "category:Mathematics/Geometry/General"
+]
 synopsis: "A formalization of foundations of geometry in Coq"
 flags: light-uninstall
 url {
