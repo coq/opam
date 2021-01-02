@@ -12,7 +12,14 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:hoare logic" "keyword:imperative program" "keyword:weakest precondition" "keyword:reflection" "category:Computer Science/Semantics and Compilation/Semantics" "date:2007" ]
+tags: [
+  "keyword:Hoare logic"
+  "keyword:imperative program"
+  "keyword:weakest precondition"
+  "keyword:reflection"
+  "category:Computer Science/Semantics and Compilation/Semantics"
+  "date:2007"
+]
 authors: [ "Sylvain Boulmé <Sylvain.Boulme@imag.fr>" ]
 synopsis:
   "A Tutorial on Reflecting in Coq the generation of Hoare proof obligations."
