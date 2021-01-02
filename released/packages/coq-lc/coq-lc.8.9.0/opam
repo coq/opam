@@ -10,11 +10,11 @@ depends: [
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
-  "keyword: Module"
-  "keyword: Monad"
-  "keyword: Category"
-  "keyword: Lambda-calculus"
-  "keyword: Higher-order syntax"
+  "keyword: module"
+  "keyword: monad"
+  "keyword: category"
+  "keyword: lambda calculus"
+  "keyword: higher-order syntax"
   "category: Computer Science/Lambda Calculi"
   "date: 2006-01-12"
   "date: 2008-09-9"

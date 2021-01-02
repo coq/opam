@@ -9,7 +9,16 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-tags: [ "keyword: Module" "keyword: Monad" "keyword: Category" "keyword: Lambda-calculus" "keyword: Higher-order syntax" "category: Computer Science/Lambda Calculi" "date: 2006-01-12" "date: 2008-09-9" ]
+tags: [
+  "keyword: module"
+  "keyword: monad"
+  "keyword: category"
+  "keyword: lambda calculus"
+  "keyword: higher-order syntax"
+  "category: Computer Science/Lambda Calculi"
+  "date: 2006-01-12"
+  "date: 2008-09-9"
+]
 authors: [ "André Hirschowitz <ah@math.unice.fr> [http://math.unice.fr/~ah/]" "Marco Maggesi <maggesi@math.unifi.it> [http://www.math.unifi.it/~maggesi/]" ]
 bug-reports: "https://github.com/coq-contribs/lc/issues"
 dev-repo: "git+https://github.com/coq-contribs/lc.git"
