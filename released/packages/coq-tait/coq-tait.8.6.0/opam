@@ -9,7 +9,18 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-tags: [ "keyword: Normalization" "keyword: Lambda-calculus" "keyword: Extraction" "keyword: Tait proof" "keyword: normalization by evalution" "keyword: type theory" "category: Mathematics/Logic/Type theory" "category: Computer Science/Lambda Calculi" "category: Miscellaneous/Extracted Programs/Type checking unification and normalization" "date: 2004" ]
+tags: [
+  "keyword: normalization"
+  "keyword: lambda-calculus"
+  "keyword: extraction"
+  "keyword: Tait proof"
+  "keyword: normalization by evalution"
+  "keyword: type theory"
+  "category: Mathematics/Logic/Type theory"
+  "category: Computer Science/Lambda Calculi"
+  "category: Miscellaneous/Extracted Programs/Type checking unification and normalization"
+  "date: 2004"
+]
 authors: [ "Pierre Letouzey" "Helmut Schwichtenberg" ]
 bug-reports: "https://github.com/coq-contribs/tait/issues"
 dev-repo: "git+https://github.com/coq-contribs/tait.git"

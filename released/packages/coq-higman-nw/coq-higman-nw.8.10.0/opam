@@ -12,9 +12,9 @@ depends: [
 tags: [
   "keyword: A-translation"
   "keyword: Higman's Lemma"
-  "keyword: Impredicativity"
+  "keyword: impredicativity"
   "keyword: System F"
-  "keyword: Extraction"
+  "keyword: extraction"
   "category: Mathematics/Logic/See also"
   "category: Mathematics/Combinatorics and Graph Theory"
   "category: Miscellaneous/Extracted Programs/Combinatorics"

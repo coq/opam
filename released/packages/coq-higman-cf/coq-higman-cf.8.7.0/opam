@@ -9,7 +9,12 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: Higman's Lemma" "keyword: Extraction" "category: Mathematics/Combinatorics and Graph Theory" "category: Miscellaneous/Extracted Programs/Combinatorics" ]
+tags: [
+  "keyword: Higman's Lemma"
+  "keyword: extraction"
+  "category: Mathematics/Combinatorics and Graph Theory"
+  "category: Miscellaneous/Extracted Programs/Combinatorics"
+]
 authors: [ "Stefan Berghofer" ]
 bug-reports: "https://github.com/coq-contribs/higman-cf/issues"
 dev-repo: "git+https://github.com/coq-contribs/higman-cf.git"

@@ -10,9 +10,9 @@ depends: [
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
-  "keyword: Normalization"
-  "keyword: Lambda-calculus"
-  "keyword: Extraction"
+  "keyword: normalization"
+  "keyword: lambda-calculus"
+  "keyword: extraction"
   "keyword: Tait proof"
   "keyword: normalization by evalution"
   "keyword: type theory"

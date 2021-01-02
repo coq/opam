@@ -11,7 +11,7 @@ depends: [
 ]
 tags: [
   "keyword: Higman's Lemma"
-  "keyword: Extraction"
+  "keyword: extraction"
   "category: Mathematics/Combinatorics and Graph Theory"
   "category: Miscellaneous/Extracted Programs/Combinatorics"
 ]
