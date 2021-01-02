@@ -35,8 +35,8 @@ depends: [
 ]
 synopsis: "The CompCert C compiler (patched for Coq 8.11 compatibility)"
 tags: [
-  "category:CS/Semantics and Compilation/Compilation"
-  "category:CS/Semantics and Compilation/Semantics"
+  "category:Computer Science/Semantics and Compilation/Compilation"
+  "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword:C"
   "keyword:compiler"
   "logpath:compcert"
