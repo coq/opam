@@ -1,5 +1,4 @@
 #!/usr/bin/lua5.1
--- requires dpkg and lua-filesystem
 
 function add_uniq(set, e)
 	if e and not(set[e]) then
@@ -8,85 +7,38 @@ function add_uniq(set, e)
 	end
 end
 
-require "lfs"
-
-function not_dot(x) return not(x:match("^%.")) end
+require "json"
 
 templ=arg[1] or error "1st argument: the template file"
-_=arg[2] or error "following arguments: the repo root path(s)"
-table.remove(arg,1)
+data =arg[2] or error "2st argument: the json file"
 
-packages = {}
+function scan_version(info, pkg)
+  local versions = info.versions or {}
+  add_uniq(versions, pkg.version)
+  info.versions = versions
 
-function do_one_root(suite)
-  root = suite .. '/packages/'
-  for p in lfs.dir(root) do if not_dot(p) then
-		local pn, v = p:match('^([^%.]*)%.(.*)$')
-		if v then p = pn end
-  	packages[p] = packages[p] or {}
-  	local info = packages[p]
+  local suites = info.suites or {}
+  add_uniq(suites, pkg.suite)
+  info.suites = suites
 
-		info.suites = info.suites or {}
-		add_uniq(info.suites, suite)
+  local dates = info.dates or {}
+  add_uniq(dates, pkg.date)
+  info.dates = dates
 
-  	local versions = info.versions or {}
-		local curv
-		if v then --simply a package
-			curv = v
-			add_uniq(versions, v)
-		else -- a dir of packages
-  	  for pv in lfs.dir(root .. p .. '/') do if not_dot(pv) then
-  	  	local v = assert(pv:match('^[^%.]*%.(.*)$'),
-  	  		root .. p .. '/' .. pv .. " not pkg.version")
-  	  	add_uniq(versions, v)
-			  curv = v
-  	  end end
-			assert(curv,"Directory "..root .. p .." is odd")
-  	end
-  	table.sort(versions,function(a,b)
-      return 0 == os.execute('dpkg --compare-versions '..a..' gt '..b..
-				' 2>/dev/null')
-    end)
-  	info.versions = versions
+  local keywords = info.keywords or {}
+  for _, k in ipairs(pkg.keywords) do add_uniq(keywords, k) end
+  info.keywords = keywords
 
-  	local pkg
-		if v then pkg = root..p..'.'..curv
-		else pkg = root..p..'/'..p..'.'..curv end
+  local categories = info.categories or {}
+  for _, c in ipairs(pkg.categories) do add_uniq(categories, c) end
+  info.categories = categories
 
-  	local opam = assert(io.open(pkg..'/opam')):read('*a')
-  	local tags = opam:match('tags:%s*(%b[])') or ""
+  local authors = info.authors or {}
+  for _, a in ipairs(pkg.authors) do add_uniq(authors, a) end
+  info.authors = authors
 
-  	local keywords = info.keywords or {}
-  	local dates = info.dates or {}
-  	local categories = info.categories or {}
-  	for tag in tags:gmatch('(%b"")') do
-		add_uniq(categories, tag:match('"category: *([^"]*)"'))
-		add_uniq(keywords, tag:match('"keyword: *([^"]*)"'))
-		add_uniq(dates, tag:match('"date: *([^"]*)"'))
-  	end
-  	info.categories = categories
-  	info.keywords = keywords
-  	info.dates = dates
-  	info.homepage = info.homepage or opam:match('homepage:%s*"([^"]*)"')
-
-		local authors_txt = opam:match('authors:%s*(%b[])') or ""
-		local authors = info.authors or {}
-  	for author in authors_txt:gmatch('(%b"")') do
-  		add_uniq(authors, author:match('"([^<"]*)'):gsub(' *$',''))
-  	end
-		info.authors = authors
-
-	info.description = info.description or
-	  opam:match('description:%s*"""%s*(.-)%s*"""') or
-	  opam:match('description:%s*"([^"]*)"') or
-	  opam:match('synopsis:%s*"([^"]*)"') or
-	  assert(io.open(pkg..'/descr')):read('*a')
-
-  end end
-end
-
-for _, r in ipairs(arg) do
-	do_one_root(r)
+  info.homepage = info.homepage or pkg.homepage
+  info.description = info.description or pkg.description
 end
 
 function plural(s,n,...)
@@ -148,6 +100,7 @@ function print_pkg(name,info,print)
 end
 
 template = io.open(templ):read('*a')
+packages = json.decode(io.open(data,'r'):read('*a'), {others = {null = false}})
 output_fname = templ:gsub('%.in$','')
 assert(template ~= output_fname, "template not ending in .in")
 --print("Generating "..output_fname)
@@ -155,10 +108,13 @@ output = io.open(output_fname,'w')
 output:write((template:gsub('@@PACKAGES@@', function()
 	local t = {}
 	local function print(s) t[#t+1] = s end
-  pkgs = {}
-  for p in pairs(packages) do table.insert(pkgs, p) end
-  table.sort(pkgs)
-  for _, p in ipairs(pkgs) do print_pkg(p,packages[p],print) end
+  for _, p in ipairs(packages) do
+    local info = {}
+    for _, v in ipairs(p[2].versions) do
+      scan_version(info, v)
+    end
+    print_pkg(p[1], info, print)
+  end
 	return table.concat(t)
 end)))
 

@@ -14,7 +14,8 @@ endif
 # refresh opam indexes + generate website
 all: check-deps
 	@./scripts/refresh-opam-indexes $(SUITES)
-	$(H)./scripts/archive2web templates/index.html.in $(SUITES_COQPKGIDX)
+	$(H)dune exec archive2web.exe $(SUITES_COQPKGIDX) > coq-packages.json
+	$(H)./scripts/archive2web templates/index.html.in coq-packages.json
 	$(H)$(call pp,templates/index.html,www/index.html)
 
 run: all
