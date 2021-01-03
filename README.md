@@ -32,7 +32,7 @@ using the same header, footer and `yamlpp` used by the Coq website (it is expect
 destination folder is `www/`.
 
 The templates are in `templates/`.  The file `index.html.in` is first
-processed by `scripts/archive2web` that fills in `<tr>` entries, then
+processed by `scripts/json2web.lua` that fills in `<tr>` entries, then
 `yamlpp` is used to insert the header and footer.
 
 The code in `www/filter.js` is used to interactively browse the contents

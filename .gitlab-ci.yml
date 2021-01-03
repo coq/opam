@@ -131,7 +131,7 @@ json-data:
   cache: {}
   before_script: []
   script:
-    - nix-shell --run "dune exec archive2web released extra-dev > coq-packages.json"
+    - nix-shell --run "dune exec scripts/archive2json.exe released extra-dev > coq-packages.json"
   artifacts:
     name: "$CI_JOB_NAME"
     paths:

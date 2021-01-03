@@ -1,6 +1,6 @@
 (executable
- (name archive2web)
- (public_name archive2web)
+ (name archive2json)
+ (public_name archive2json)
  (package opam-coq-archive)
  (preprocess (pps ppx_deriving_yojson))
  (libraries opam-file-format str yojson ppx_deriving_yojson.runtime))
