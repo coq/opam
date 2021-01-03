@@ -155,7 +155,10 @@ output = io.open(output_fname,'w')
 output:write((template:gsub('@@PACKAGES@@', function()
 	local t = {}
 	local function print(s) t[#t+1] = s end
-  for p, info in pairs(packages) do print_pkg(p,info,print) end
+  pkgs = {}
+  for p in pairs(packages) do table.insert(pkgs, p) end
+  table.sort(pkgs)
+  for _, p in ipairs(pkgs) do print_pkg(p,packages[p],print) end
 	return table.concat(t)
 end)))
 
