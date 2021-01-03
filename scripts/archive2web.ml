@@ -95,7 +95,7 @@ let has_prefix prefix s =
   let len_prefix = String.length prefix in
   let len = String.length s in
   if len > len_prefix && String.sub s 0 len_prefix = prefix then
-    Some (String.sub s len_prefix (len - len_prefix))
+    Some (String.trim (String.sub s len_prefix (len - len_prefix)))
   else None
 
 let rec filtermap f = function
@@ -106,12 +106,17 @@ let rec filtermap f = function
 let parse_author_name s =
   let r = Str.regexp "[^<]*" in
   if Str.string_match r s 0 then
-    Str.matched_string s
+    String.trim (Str.matched_string s)
   else raise (Invalid_argument "author_name")
 
 let obind o f =
   match o with
   | Some x -> f x
+  | None -> None
+
+let omap o f =
+  match o with
+  | Some x -> Some (f x)
   | None -> None
 
 let extract_package_version_data ~suite ~version opam_file =
@@ -127,6 +132,7 @@ let extract_package_version_data ~suite ~version opam_file =
     | None -> find_var_str "synopsis" opam_file
     | Some _ -> description
   in
+  let description = omap description String.trim in
   let tags = find_var_str_list "tags" opam_file in
   let keywords = filtermap (has_prefix "keyword:") tags in
   let categories = filtermap (has_prefix "category:") tags in
