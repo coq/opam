@@ -1,22 +1,21 @@
 opam-version: "2.0"
-maintainer: "palmskog@gmail.com"
-version: "dev"
+maintainer: "miloradovsky@gmail.com"
 
-homepage: "https://github.com/coq-community/zorns-lemma"
-dev-repo: "git+https://github.com/coq-community/zorns-lemma.git"
-bug-reports: "https://github.com/coq-community/zorns-lemma/issues"
+homepage: "https://github.com/coq-community/topology"
+dev-repo: "git+https://github.com/coq-community/topology.git"
+bug-reports: "https://github.com/coq-community/topology/issues"
 license: "LGPL-2.1-or-later"
 
-synopsis: "This library develops some basic set theory"
+synopsis: "This library develops some basic set theory in Coq"
 description: """
 This Coq library develops some basic set theory.
 The main purpose the author had in writing it
 was as support for the Topology library.
 """
 
-build: [make "-j%{jobs}%" ]
-install: [make "install"]
+build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
+  "dune" {>= "2.5"}
   "coq" {(>= "8.10" & < "8.14~") | (= "dev")}
 ]
 
@@ -37,5 +36,5 @@ authors: [
 ]
 
 url {
-  src: "git+https://github.com/coq-community/zorns-lemma.git#master"
+  src: "git+https://github.com/coq-community/topology.git#master"
 }
