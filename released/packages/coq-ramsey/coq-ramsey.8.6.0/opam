@@ -9,7 +9,14 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-tags: [ "keyword: dimension one Ramsey theorem" "keyword: constructive mathematics" "keyword: almost full sets" "category: Mathematics/Logic/See also" "category: Mathematics/Combinatorics and Graph Theory" "category: Miscellaneous/Extracted Programs/Combinatorics" ]
+tags: [
+  "keyword: dimension one Ramsey theorem"
+  "keyword: constructive mathematics"
+  "keyword: almost full sets"
+  "category: Mathematics/Logic"
+  "category: Mathematics/Combinatorics and Graph Theory"
+  "category: Miscellaneous/Extracted Programs/Combinatorics"
+]
 authors: [ "Marc Bezem" ]
 bug-reports: "https://github.com/coq-contribs/ramsey/issues"
 dev-repo: "git+https://github.com/coq-contribs/ramsey.git"

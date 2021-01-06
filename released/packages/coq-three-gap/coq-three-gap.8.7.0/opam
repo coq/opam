@@ -9,7 +9,13 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: Real Numbers" "keyword: Steinhaus" "keyword: Three Gap Theorem" "category: Mathematics/Geometry/See also" "category: Mathematics/Arithmetic and Number Theory/Miscellaneous" ]
+tags: [
+  "keyword: real numbers"
+  "keyword: Steinhaus"
+  "keyword: Three Gap Theorem"
+  "category: Mathematics/Geometry"
+  "category: Mathematics/Arithmetic and Number Theory/Miscellaneous"
+]
 authors: [ "Micaela Mayero" ]
 bug-reports: "https://github.com/coq-contribs/three-gap/issues"
 dev-repo: "git+https://github.com/coq-contribs/three-gap.git"

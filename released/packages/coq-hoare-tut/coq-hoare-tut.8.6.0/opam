@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-tags: [ "keyword: Hoare logic" "keyword: imperative program" "keyword: weakest precondition" "keyword: reflection" "category: Mathematics/Logic/See also" "category: Computer Science/Semantics and Compilation/Semantics" "date: 2007" ]
+tags: [
+  "keyword: Hoare logic"
+  "keyword: imperative program"
+  "keyword: weakest precondition"
+  "keyword: reflection"
+  "category: Mathematics/Logic"
+  "category: Computer Science/Semantics and Compilation/Semantics"
+  "date: 2007"
+]
 authors: [ "Sylvain Boulmé <Sylvain.Boulme@imag.fr> [http://www-verimag.imag.fr/~boulme]" ]
 bug-reports: "https://github.com/coq-contribs/hoare-tut/issues"
 dev-repo: "git+https://github.com/coq-contribs/hoare-tut.git"

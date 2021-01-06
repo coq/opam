@@ -31,7 +31,7 @@ depends: [
 ]
 
 tags: [
-  "category:Mathematics/Logic/See also"
+  "category:Mathematics/Logic"
   "category:Computer Science/Semantics"
   "category:Compilation/Semantics"
   "keyword:Hoare logic"
