@@ -15,7 +15,8 @@ tags: [
   "keyword: intuitionistic logic"
   "keyword: theorem proving"
   "keyword: proof search"
-  "category: Miscellaneous/Coq Extensions and Computer Science/Decision Procedures"
+  "category: Miscellaneous/Coq Extensions"
+  "category: Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
   "date: 2002-04 (contribution since January 2009)"
 ]
 authors: [ "Huang Guan-Shieng" ]

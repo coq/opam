@@ -37,7 +37,7 @@ tags: [
   "keyword:permutation"
   "keyword:decidable equality"
   "keyword:finite multisets"
-  "category:Misc/Coq Extensions"
+  "category:Miscellaneous/Coq Extensions"
   "date:2020-08-04"
   "logpath:OLlibs"
 ]

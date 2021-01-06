@@ -23,7 +23,7 @@ depends: [
   "coq" {(>= "8.6" & < "8.7~")}
 ]
 tags: [ "keyword:automation"
-	"category:Misc/Coq Extensions"
+	"category:Miscellaneous/Coq Extensions"
 	"date:2017-09-30"  ]
 synopsis: "Automation for Dependent Type Theory"
 flags: light-uninstall
