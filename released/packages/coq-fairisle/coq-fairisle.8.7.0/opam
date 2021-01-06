@@ -9,7 +9,14 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: circuits" "keyword: automata" "keyword: co-induction" "keyword: dependent types." "category: Computer Science/Architecture" "date: 2005-12-15" ]
+tags: [
+  "keyword: circuits"
+  "keyword: automata"
+  "keyword: co-induction"
+  "keyword: dependent types"
+  "category: Computer Science/Architecture"
+  "date: 2005-12-15"
+]
 authors: [ "Solange Coupet-Grimal <Solange.Coupet@lif.univ-mrs.fr> [http://www.cmi.univ-mrs.fr/~solange/]" "Line Jakubiec-Jamet <Line.Jakubiec@lif.univ-mrs.fr> [http://www.dil.univ-mrs.fr/~jakubiec/]" ]
 bug-reports: "https://github.com/coq-contribs/fairisle/issues"
 dev-repo: "git+https://github.com/coq-contribs/fairisle.git"

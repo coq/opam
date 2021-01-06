@@ -37,8 +37,8 @@ depends: [
 ]
 synopsis: "The CompCert C compiler (64 bit)"
 tags: [
-  "category:CS/Semantics and Compilation/Compilation"
-  "category:CS/Semantics and Compilation/Semantics"
+  "category:Computer Science/Semantics and Compilation/Compilation"
+  "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword:C"
   "keyword:compiler"
   "logpath:compcert"

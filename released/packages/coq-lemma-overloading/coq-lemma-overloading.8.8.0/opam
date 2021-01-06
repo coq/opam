@@ -17,7 +17,7 @@ depends: [
 tags: [
   "keyword:canonical structures"
   "keyword:proof automation"
-  "keyword:hoare type theory"
+  "keyword:Hoare type theory"
   "keyword:lemma overloading"
   "category:Computer Science/Data Types and Data Structures"
   "date:2018-07-24"

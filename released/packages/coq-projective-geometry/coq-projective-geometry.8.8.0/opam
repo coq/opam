@@ -9,7 +9,18 @@ depends: [
   "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
-tags: [ "keyword: geometry" "keyword: projective" "keyword: fano" "keyword: homogeneous coordinates model" "keyword: flat" "keyword: rank" "keyword: desargues" "keyword: moulton" "category: Mathematics/Geometry/General" "date: 2009-10" ]
+tags: [
+  "keyword: geometry"
+  "keyword: projective"
+  "keyword: Fano"
+  "keyword: homogeneous coordinates model"
+  "keyword: flat"
+  "keyword: rank"
+  "keyword: Desargues"
+  "keyword: Moulton"
+  "category: Mathematics/Geometry/General"
+  "date: 2009-10"
+]
 authors: [ "Nicolas Magaud <Nicolas.Magaud@lsiit-cnrs.unistra.fr>" "Julien Narboux <Julien.Narboux@lsiit-cnrs.unistra.fr>" "Pascal Schreck <Pascal.Schreck@lsiit-cnrs.unistra.fr>" ]
 bug-reports: "https://github.com/coq-contribs/projective-geometry/issues"
 dev-repo: "git+https://github.com/coq-contribs/projective-geometry.git"

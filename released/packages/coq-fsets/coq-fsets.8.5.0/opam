@@ -9,7 +9,17 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:finite sets" "keyword:sorted lists" "keyword:balanced trees" "keyword:red black trees" "keyword:avl" "keyword:functors" "keyword:data structures" "category:Computer Science/Data Types and Data Structures" "category:Miscellaneous/Extracted Programs/Data structures" ]
+tags: [
+  "keyword:finite sets"
+  "keyword:sorted lists"
+  "keyword:balanced trees"
+  "keyword:red-black trees"
+  "keyword:AVL"
+  "keyword:functors"
+  "keyword:data structures"
+  "category:Computer Science/Data Types and Data Structures"
+  "category:Miscellaneous/Extracted Programs/Data structures"
+]
 authors: [ "Jean-Christophe Filliâtre <>" "Pierre Letouzey <>" ]
 bug-reports: "https://github.com/coq-contribs/fsets/issues"
 dev-repo: "git+https://github.com/coq-contribs/fsets.git"

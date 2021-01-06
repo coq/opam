@@ -10,11 +10,11 @@ depends: [
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
-  "keyword: pocklington"
+  "keyword: Pocklington"
   "keyword: number theory"
   "keyword: prime numbers"
   "keyword: primality"
-  "keyword: fermat's little theorem"
+  "keyword: Fermat's little theorem"
   "category: Mathematics/Arithmetic and Number Theory/Number theory"
   "date: 2000-11"
 ]

@@ -9,7 +9,11 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-tags: [ "keyword: Constructive mathematics" "keyword: Geometry" "category: Mathematics/Geometry/General" ]
+tags: [
+  "keyword: constructive mathematics"
+  "keyword: geometry"
+  "category: Mathematics/Geometry/General"
+]
 authors: [ "Gilles Kahn" ]
 bug-reports: "https://github.com/coq-contribs/constructive-geometry/issues"
 dev-repo: "git+https://github.com/coq-contribs/constructive-geometry.git"

@@ -28,7 +28,7 @@ depends: [
   "coq-bellantonicook"
 ]
 tags: [
-  "category:CS/Algo/Complexity"
+  "category:Computer Science/Algorithms/Complexity"
   "keyword:implicit complexity"
   "keyword:polynomial time"
   "keyword:rewriting"

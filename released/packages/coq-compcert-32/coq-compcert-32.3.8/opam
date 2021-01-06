@@ -50,8 +50,8 @@ supports both 32 and 64 bit versions. Otherwise all files would have to
 be duplicated with module paths compcert and compcert32.
 Please also note that the binary folder is usually not in the path."
 tags: [
-  "category:CS/Semantics and Compilation/Compilation"
-  "category:CS/Semantics and Compilation/Semantics"
+  "category:Computer Science/Semantics and Compilation/Compilation"
+  "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword:C"
   "keyword:compiler"
   "logpath:compcert32"

@@ -12,8 +12,8 @@ depends: [
 tags: [
   "keyword: BDD"
   "keyword: BDT"
-  "keyword: Finite Sets"
-  "keyword: Model-Checking"
+  "keyword: finite sets"
+  "keyword: model checking"
   "keyword: binary decision diagrams"
   "category: Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
   "category: Miscellaneous/Extracted Programs/Decision procedures"

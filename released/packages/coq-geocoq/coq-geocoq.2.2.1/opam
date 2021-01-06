@@ -21,9 +21,19 @@ depends: [
     {((>= "8.4pl4" & < "8.5~") | (>= "8.5" & < "8.6~") |
       (>= "8.6" & < "8.7~"))}
 ]
-tags: [ "keyword:geometry" "keyword:neutral geometry" "keyword:euclidean geometry" "keyword:foundations"
-        "keyword:Tarski" "keyword:hilbert" "keyword:Pappus" "keyword:desargues" "keyword:parallel postulates"
-        "category:Mathematics/Geometry/General" "date:2016-12-22"]
+tags: [
+  "keyword:geometry"
+  "keyword:neutral geometry"
+  "keyword:euclidean geometry"
+  "keyword:foundations"
+  "keyword:Tarski"
+  "keyword:Hilbert"
+  "keyword:Pappus"
+  "keyword:Desargues"
+  "keyword:parallel postulates"
+  "category:Mathematics/Geometry/General"
+  "date:2016-12-22"
+]
 synopsis: "A formalization of foundations of geometry in Coq"
 flags: light-uninstall
 url {

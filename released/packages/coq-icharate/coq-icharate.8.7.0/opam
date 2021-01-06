@@ -9,7 +9,14 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: Multimodal Categorial Grammars" "keyword: Syntax/Semantics Interface" "keyword: Higher Order Logic" "keyword: Meta-Linguistics" "category: Computer Science/Formal Languages Theory and Automata" "date: 2003-2006" ]
+tags: [
+  "keyword: multimodal categorial grammars"
+  "keyword: syntax/semantics interface"
+  "keyword: higher-order logic"
+  "keyword: meta-linguistics"
+  "category: Computer Science/Formal Languages Theory and Automata"
+  "date: 2003-2006"
+]
 authors: [ "Houda Anoun <anoun@labri.fr>" "Pierre Casteran <casteran@labri.fr>" ]
 bug-reports: "https://github.com/coq-contribs/icharate/issues"
 dev-repo: "git+https://github.com/coq-contribs/icharate.git"

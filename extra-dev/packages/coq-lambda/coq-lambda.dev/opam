@@ -12,7 +12,16 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:pure lambda calculus" "keyword:confluence" "keyword:parallel moves lemma" "keyword:lévy's cube lemma" "keyword:church rosser" "keyword:residual" "keyword:prism theorem" "category:Computer Science/Lambda Calculi" ]
+tags: [
+  "keyword:pure lambda calculus"
+  "keyword:confluence"
+  "keyword:parallel moves lemma"
+  "keyword:Lévy's cube lemma"
+  "keyword:Church-Rosser"
+  "keyword:residual"
+  "keyword:prism theorem"
+  "category:Computer Science/Lambda Calculi"
+]
 authors: [ "Gérard Huet <>" ]
 synopsis: "Residual Theory in Lambda-Calculus."
 description: """

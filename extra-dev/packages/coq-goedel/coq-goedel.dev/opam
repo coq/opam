@@ -21,11 +21,11 @@ depends: [
 
 tags: [
   "category:Mathematics/Logic/Foundations"
-  "keyword:goedel"
-  "keyword:rosser"
+  "keyword:Goedel"
+  "keyword:Rosser"
   "keyword:incompleteness"
   "keyword:logic"
-  "keyword:hilbert"
+  "keyword:Hilbert"
   "logpath:Goedel"
 ]
 authors: [

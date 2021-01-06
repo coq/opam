@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: pocklington" "keyword: number theory" "keyword: prime numbers" "keyword: primality" "keyword: fermat's little theorem" "category: Mathematics/Arithmetic and Number Theory/Number theory" "date: 2000-11" ]
+tags: [
+  "keyword: Pocklington"
+  "keyword: number theory"
+  "keyword: prime numbers"
+  "keyword: primality"
+  "keyword: Fermat's little theorem"
+  "category: Mathematics/Arithmetic and Number Theory/Number theory"
+  "date: 2000-11"
+]
 authors: [ "Olga Caprotti" "Martijn Oostdijk" ]
 bug-reports: "https://github.com/coq-contribs/pocklington/issues"
 dev-repo: "git+https://github.com/coq-contribs/pocklington.git"

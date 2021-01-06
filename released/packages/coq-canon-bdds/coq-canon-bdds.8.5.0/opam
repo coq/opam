@@ -9,7 +9,14 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:bdt" "keyword:finite sets" "keyword:model checking" "keyword:binary decision diagrams" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category:Miscellaneous/Extracted Programs/Decision procedures" ]
+tags: [
+  "keyword:BDT"
+  "keyword:finite sets"
+  "keyword:model checking"
+  "keyword:binary decision diagrams"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "category:Miscellaneous/Extracted Programs/Decision procedures"
+]
 authors: [ "Emmanuel Ledinot <>" ]
 bug-reports: "https://github.com/coq-contribs/canon-bdds/issues"
 dev-repo: "git+https://github.com/coq-contribs/canon-bdds.git"

@@ -10,12 +10,12 @@ depends: [
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
-  "keyword: Finite Sets"
-  "keyword: Sorted lists"
-  "keyword: Balanced trees"
-  "keyword: Red-black trees"
+  "keyword: finite sets"
+  "keyword: sorted lists"
+  "keyword: balanced trees"
+  "keyword: red-black trees"
   "keyword: AVL"
-  "keyword: Functors"
+  "keyword: functors"
   "keyword: data structures"
   "category: Computer Science/Data Types and Data Structures"
   "category: Miscellaneous/Extracted Programs/Data structures"
