@@ -33,5 +33,5 @@ authors: [
 ]
 url {
   src:
-    "https://github.com/damien-pous/relation-algebra#master"
+    "https://github.com/damien-pous/relation-algebra.git#master"
 }
