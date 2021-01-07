@@ -21,7 +21,7 @@ depends: [
   "dune" {>= "2.5"}
   "opam-client" {>= "2.1.0~beta2"}
   "cmdliner"
-  "coq" {= "8.13.dev"}
+  "coq" {>= "8.13" & < "8.14~"}
   "coq-tactician-dummy"
 ]
 depexts: ["git"]
