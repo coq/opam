@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-tags: [ "keyword: Q" "keyword: Arithmetic" "keyword: Rational numbers" "keyword: Setoid" "keyword: Ring" "category: Mathematics/Arithmetic and Number Theory/Rational numbers" "category: Miscellaneous/Extracted Programs/Arithmetic" ]
+tags: [
+  "keyword: Q"
+  "keyword: arithmetic"
+  "keyword: rational numbers"
+  "keyword: setoid"
+  "keyword: ring"
+  "category: Mathematics/Arithmetic and Number Theory/Rational numbers"
+  "category: Miscellaneous/Extracted Programs/Arithmetic"
+]
 authors: [ "Pierre Letouzey" ]
 bug-reports: "https://github.com/coq-contribs/qarith/issues"
 dev-repo: "git+https://github.com/coq-contribs/qarith.git"

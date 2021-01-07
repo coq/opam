@@ -23,8 +23,8 @@ depends: [
 tags: [
   "date:2019-04-30"
 
-  "category:Programming Languages/Formal Definitions and Theory"
-  "category:Mathematical Logic and Foramal Languages/Mathematical Logic"
+  "category:Computer Science/Programming Languages/Formal Definitions and Theory"
+  "category:Mathematics/Logic"
 
   "keyword:coinduction"
   "keyword:simulation"

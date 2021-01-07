@@ -10,10 +10,10 @@ depends: [
   "coq" {>= "8.10" & < "8.11~"}
 ]
 tags: [
-  "keyword: Real Numbers"
+  "keyword: real numbers"
   "keyword: Steinhaus"
   "keyword: Three Gap Theorem"
-  "category: Mathematics/Geometry/See also"
+  "category: Mathematics/Geometry"
   "category: Mathematics/Arithmetic and Number Theory/Miscellaneous"
 ]
 authors: [

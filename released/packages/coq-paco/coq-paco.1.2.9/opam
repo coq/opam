@@ -26,8 +26,8 @@ synopsis: "Coq library implementing parameterized coinduction"
 tags: [
   "date:2018-02-11"
 
-  "category:Programming Languages/Formal Definitions and Theory"
-  "category:Mathematical Logic and Foramal Languages/Mathematical Logic"
+  "category:Computer Science/Programming Languages/Formal Definitions and Theory"
+  "category:Mathematics/Logic"
 
   "keyword:coinduction"
   "keyword:simulation"
