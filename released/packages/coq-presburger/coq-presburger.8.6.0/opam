@@ -9,7 +9,16 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-tags: [ "keyword: Integers" "keyword: Arithmetic" "keyword: Decision Procedure" "keyword: Presburger" "category: Mathematics/Logic/Foundations" "category: Mathematics/Arithmetic and Number Theory/Miscellaneous" "category: Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date: March 2002" ]
+tags: [
+  "keyword: integers"
+  "keyword: arithmetic"
+  "keyword: decision procedure"
+  "keyword: Presburger"
+  "category: Mathematics/Logic/Foundations"
+  "category: Mathematics/Arithmetic and Number Theory/Miscellaneous"
+  "category: Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "date: March 2002"
+]
 authors: [ "Laurent Théry" ]
 bug-reports: "https://github.com/coq-contribs/presburger/issues"
 dev-repo: "git+https://github.com/coq-contribs/presburger.git"

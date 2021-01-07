@@ -9,7 +9,14 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: Diophantus" "keyword: Fermat" "keyword: Arithmetic" "keyword: Infinite Descent" "category: Mathematics/Arithmetic and Number Theory/Number theory" "date: 2005-07" ]
+tags: [
+  "keyword: Diophantus"
+  "keyword: Fermat"
+  "keyword: arithmetic"
+  "keyword: infinite descent"
+  "category: Mathematics/Arithmetic and Number Theory/Number theory"
+  "date: 2005-07"
+]
 authors: [ "David Delahaye" "Micaela Mayero" ]
 bug-reports: "https://github.com/coq-contribs/fermat4/issues"
 dev-repo: "git+https://github.com/coq-contribs/fermat4.git"

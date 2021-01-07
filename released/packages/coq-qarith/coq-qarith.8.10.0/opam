@@ -11,10 +11,10 @@ depends: [
 ]
 tags: [
   "keyword: Q"
-  "keyword: Arithmetic"
-  "keyword: Rational numbers"
-  "keyword: Setoid"
-  "keyword: Ring"
+  "keyword: arithmetic"
+  "keyword: rational numbers"
+  "keyword: setoid"
+  "keyword: ring"
   "category: Mathematics/Arithmetic and Number Theory/Rational numbers"
   "category: Miscellaneous/Extracted Programs/Arithmetic"
 ]
