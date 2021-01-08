@@ -24,5 +24,5 @@ tags: [
 ]
 synopsis: "A Multivariate polynomial Library for the Mathematical Components Library"
 url {
-  src: "git+https://github.com/math-comp/analysis.git#master"
+  src: "git+https://github.com/math-comp/multinomials.git#master"
 }
