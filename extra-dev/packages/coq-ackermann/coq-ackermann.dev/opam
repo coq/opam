@@ -6,28 +6,23 @@ dev-repo: "git+https://github.com/coq-community/goedel.git"
 bug-reports: "https://github.com/coq-community/goedel/issues"
 license: "MIT"
 
-synopsis: "Coq proof of the Gödel-Rosser 1st incompleteness theorem"
+synopsis: "Primitive recursive functions, first-order logic, NN, and PA in Coq"
 description: """
-A proof in Coq of the Gödel-Rosser 1st incompleteness theorem,
-which says that any first order theory extending NN (which is PA
-without induction) that is complete is inconsistent."""
+Deep embeddings in Coq of the primitive recursive functions and first-order logic,
+as well as the systems NN and PA."""
 
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
   "coq" {(>= "8.7" & < "8.14~") | (= "dev")}
-  "coq-ackermann" {= version}
-  "coq-pocklington" {= "dev"}
 ]
 
 tags: [
   "category:Mathematics/Logic/Foundations"
-  "keyword:Goedel"
-  "keyword:Rosser"
-  "keyword:incompleteness"
-  "keyword:logic"
-  "keyword:Hilbert"
-  "logpath:Goedel"
+  "keyword:primitive recursive functions"
+  "keyword:Ackermann"
+  "keyword:first-order logic"
+  "logpath:Ackermann"
 ]
 authors: [
   "Russell O'Connor"
