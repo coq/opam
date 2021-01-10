@@ -12,9 +12,14 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:higman's lemma" "keyword:well quasi ordering" "category:Mathematics/Combinatorics and Graph Theory" "date:2007-09-14" ]
+tags: [
+  "keyword:Higman's lemma"
+  "keyword:well quasi ordering"
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "date:2007-09-14"
+]
 authors: [ "William Delobel <william.delobel@lif.univ-mrs.fr>" ]
-synopsis: "Higman's lemma on an unrestricted alphabet."
+synopsis: "Higman's lemma on an unrestricted alphabet"
 description:
   "This proof is more or less the proof given by Monika Seisenberger in \"An Inductive Version of Nash-Williams' Minimal-Bad-Sequence Argument for Higman's Lemma\"."
 flags: light-uninstall

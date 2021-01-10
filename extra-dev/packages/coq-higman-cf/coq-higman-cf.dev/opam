@@ -12,9 +12,14 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:higman's lemma" "keyword:extraction" "category:Mathematics/Combinatorics and Graph Theory" "category:Miscellaneous/Extracted Programs/Combinatorics" ]
+tags: [
+  "keyword:Higman's lemma"
+  "keyword:extraction"
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "category:Miscellaneous/Extracted Programs/Combinatorics"
+]
 authors: [ "Stefan Berghofer <>" ]
-synopsis: "A direct constructive proof of Higman's Lemma."
+synopsis: "A direct constructive proof of Higman's Lemma"
 description: """
 This development formalizes in Coq the Coquand-Friedlender proof of
 Higman's lemma for a two-letter alphabet.

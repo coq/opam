@@ -9,7 +9,12 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:higman's lemma" "keyword:well quasi ordering" "category:Mathematics/Combinatorics and Graph Theory" "date:2007-09-14" ]
+tags: [
+  "keyword:Higman's lemma"
+  "keyword:well quasi ordering"
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "date:2007-09-14"
+]
 authors: [ "William Delobel <william.delobel@lif.univ-mrs.fr>" ]
 bug-reports: "https://github.com/coq-contribs/higman-s/issues"
 dev-repo: "git+https://github.com/coq-contribs/higman-s.git"
