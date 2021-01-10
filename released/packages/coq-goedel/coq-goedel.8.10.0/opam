@@ -11,7 +11,11 @@ depends: [
   "coq-pocklington" {>= "8.10" & < "8.11~"}
 ]
 tags: [
-  "keyword: Goedel Rosser Incompleteness Logic Hilbert"
+  "keyword:Goedel"
+  "keyword:Rosser"
+  "keyword:incompleteness"
+  "keyword:logic"
+  "keyword:Hilbert"
   "category: Mathematics/Logic/Foundations"
   "date: 2007-04-13"
 ]
