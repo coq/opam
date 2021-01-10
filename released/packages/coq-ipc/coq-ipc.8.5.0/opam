@@ -9,7 +9,17 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:intuitionistic logic" "keyword:proof search" "keyword:proof as programs" "keyword:correct by construction" "keyword:program verification" "keyword:program extraction" "category:Mathematics/Logic/Foundations" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "category:Miscellaneous/Extracted Programs/Decision procedures" ]
+tags: [
+  "keyword:intuitionistic logic"
+  "keyword:proof search"
+  "keyword:proof as programs"
+  "keyword:correct by construction"
+  "keyword:program verification"
+  "keyword:program extraction"
+  "category:Mathematics/Logic/Foundations"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "category:Miscellaneous/Extracted Programs/Decision procedures"
+]
 authors: [ "Klaus Weich <>" ]
 bug-reports: "https://github.com/coq-contribs/ipc/issues"
 dev-repo: "git+https://github.com/coq-contribs/ipc.git"
