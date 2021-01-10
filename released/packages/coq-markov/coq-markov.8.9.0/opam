@@ -11,12 +11,12 @@ depends: [
 ]
 tags: [
   "keyword: probability theory"
-  "keyword: markov"
-  "keyword: lebesgue integral"
+  "keyword: Markov"
+  "keyword: Lebesgue integral"
   "keyword: measures"
   "keyword: sigma algebras"
   "keyword: measurability"
-  "keyword: borel"
+  "keyword: Borel"
   "category: Mathematics/Real Calculus and Topology"
   "date: 2008-01-5"
 ]
