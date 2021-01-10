@@ -12,9 +12,17 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:polyhedron" "keyword:hypermap" "keyword:genus" "keyword:euler formula" "keyword:assisted proofs" "category:Mathematics/Geometry/General" "date:2006-09" ]
+tags: [
+  "keyword:polyhedron"
+  "keyword:hypermap"
+  "keyword:genus"
+  "keyword:Euler formula"
+  "keyword:assisted proofs"
+  "category:Mathematics/Geometry/General"
+  "date:2006-09"
+]
 authors: [ "Jean-François Dufourd <dufourd@dpt-info.u-strasbg.fr>" ]
-synopsis: "Hypermaps, Genus Theorem and Euler Formula."
+synopsis: "Hypermaps, Genus Theorem and Euler Formula"
 description:
   "This library formalizes the combinatorial hypermaps and their properties in a constructive way. It gives the proofs of the Genus Theorem and of the Euler Formula for the polyhedra."
 flags: light-uninstall

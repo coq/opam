@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:combinatorial hypermaps" "keyword:genus" "keyword:planarity" "keyword:euler formula" "keyword:discrete jordan curve theorem" "category:Mathematics/Geometry/General" "date:2008" ]
+tags: [
+  "keyword:combinatorial hypermaps"
+  "keyword:genus"
+  "keyword:planarity"
+  "keyword:Euler formula"
+  "keyword:discrete Jordan curve theorem"
+  "category:Mathematics/Geometry/General"
+  "date:2008"
+]
 authors: [ "Jean-François Dufourd <dufourd@lsiit.u-strasbg.fr>" ]
 bug-reports: "https://github.com/coq-contribs/jordan-curve-theorem/issues"
 dev-repo: "git+https://github.com/coq-contribs/jordan-curve-theorem.git"

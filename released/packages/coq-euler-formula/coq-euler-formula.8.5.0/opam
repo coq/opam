@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:polyhedron" "keyword:hypermap" "keyword:genus" "keyword:euler formula" "keyword:assisted proofs" "category:Mathematics/Geometry/General" "date:2006-09" ]
+tags: [
+  "keyword:polyhedron"
+  "keyword:hypermap"
+  "keyword:genus"
+  "keyword:Euler formula"
+  "keyword:assisted proofs"
+  "category:Mathematics/Geometry/General"
+  "date:2006-09"
+]
 authors: [ "Jean-François Dufourd <dufourd@dpt-info.u-strasbg.fr>" ]
 bug-reports: "https://github.com/coq-contribs/euler-formula/issues"
 dev-repo: "git+https://github.com/coq-contribs/euler-formula.git"
