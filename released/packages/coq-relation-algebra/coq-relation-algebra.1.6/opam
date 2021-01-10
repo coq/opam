@@ -13,8 +13,8 @@ depends: [
 ]
 tags: [
   "keyword:relation algebra"
-  "keyword:kleene algebra with tests"
-  "keyword:kat"
+  "keyword:Kleene algebra with tests"
+  "keyword:KAT"
   "keyword:allegories"
   "keyword:residuated structures"
   "keyword:automata"

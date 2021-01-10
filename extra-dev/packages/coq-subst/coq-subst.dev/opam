@@ -12,9 +12,17 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:lambda sigma lift calculus" "keyword:explicit substitution" "keyword:newman's lemma" "keyword:yokouchi's lemma" "keyword:confluence" "keyword:rewriting" "category:Computer Science/Lambda Calculi" ]
+tags: [
+  "keyword:lambda sigma lift calculus"
+  "keyword:explicit substitution"
+  "keyword:Newman's lemma"
+  "keyword:Yokouchi's lemma"
+  "keyword:confluence"
+  "keyword:rewriting"
+  "category:Computer Science/Lambda Calculi"
+]
 authors: [ "Amokrane Saïbi <>" ]
-synopsis: "The confluence of Hardin-Lévy lambda-sigma-lift-calcul."
+synopsis: "The confluence of Hardin-Lévy lambda-sigma-lift-calcul"
 description: """
 The confluence of Hardin-Lévy lambda-sigma-lift-calcul is
 proven. By the way, several standard definition and results about

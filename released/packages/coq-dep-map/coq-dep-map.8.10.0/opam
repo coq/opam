@@ -10,8 +10,8 @@ depends: [
   "coq" {>= "8.10" & < "8.11~"}
 ]
 tags: [
-  "keyword: Maps"
-  "keyword: Dependent maps"
+  "keyword: maps"
+  "keyword: dependent maps"
   "keyword: domain"
   "category: Computer Science/Data Types and Data Structures"
 ]

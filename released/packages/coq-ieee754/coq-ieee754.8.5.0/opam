@@ -12,7 +12,6 @@ depends: [
 tags: [
   "date:1997"
   "keyword:floating-point arithmetic"
-  "keyword:floats"
   "keyword:IEEE"
   "category:Computer Science/Data Types and Data Structures"
   "category:Computer Science/Semantics and Compilation/Semantics"

@@ -10,8 +10,8 @@ depends: [
   "coq" {>= "8.10" & < "8.11~"}
 ]
 tags: [
-  "keyword: Regular Expression"
-  "keyword: Kleene Algebra"
+  "keyword: regular expressions"
+  "keyword: Kleene algebra"
   "category: Computer Science/Formal Languages Theory and Automata"
 ]
 authors: [

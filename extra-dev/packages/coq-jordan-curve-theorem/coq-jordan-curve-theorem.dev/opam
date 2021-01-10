@@ -12,9 +12,17 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:combinatorial hypermaps" "keyword:genus" "keyword:planarity" "keyword:euler formula" "keyword:discrete jordan curve theorem" "category:Mathematics/Geometry/General" "date:2008" ]
+tags: [
+  "keyword:combinatorial hypermaps"
+  "keyword:genus"
+  "keyword:planarity"
+  "keyword:Euler formula"
+  "keyword:discrete Jordan curve theorem"
+  "category:Mathematics/Geometry/General"
+  "date:2008"
+]
 authors: [ "Jean-François Dufourd <dufourd@lsiit.u-strasbg.fr>" ]
-synopsis: "Hypermaps, planarity and discrete Jordan curve theorem."
+synopsis: "Hypermaps, planarity and discrete Jordan curve theorem"
 description:
   "Constructive formalization of the combinatorial hypermaps, characterization of the planarity, genus theorem, Euler formula, ring of faces, discrete Jordan curve theorem"
 flags: light-uninstall

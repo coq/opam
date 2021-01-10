@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:lambda sigma lift calculus" "keyword:explicit substitution" "keyword:newman's lemma" "keyword:yokouchi's lemma" "keyword:confluence" "keyword:rewriting" "category:Computer Science/Lambda Calculi" ]
+tags: [
+  "keyword:lambda sigma lift calculus"
+  "keyword:explicit substitution"
+  "keyword:Newman's lemma"
+  "keyword:Yokouchi's lemma"
+  "keyword:confluence"
+  "keyword:rewriting"
+  "category:Computer Science/Lambda Calculi"
+]
 authors: [ "Amokrane Saïbi <>" ]
 bug-reports: "https://github.com/coq-contribs/subst/issues"
 dev-repo: "git+https://github.com/coq-contribs/subst.git"

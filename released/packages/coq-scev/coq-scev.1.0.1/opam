@@ -18,7 +18,7 @@ depends: [
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [
-  "keyword:math"
+  "keyword:mathematics"
   "category:Miscellaneous/Coq Extensions"
   "date:2016-09-01"
   "logpath:coq-scev"

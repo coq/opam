@@ -10,7 +10,7 @@ depends: [
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
-  "keyword: Higman's Lemma"
+  "keyword: Higman's lemma"
   "keyword: extraction"
   "category: Mathematics/Combinatorics and Graph Theory"
   "category: Miscellaneous/Extracted Programs/Combinatorics"

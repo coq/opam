@@ -9,7 +9,14 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: modules  functors search-trees" "category: Computer Science/Data Types and Data Structures" "category: Miscellaneous/Extracted Programs/Data structures" "date: 2003-02-6" ]
+tags: [
+  "keyword: modules"
+  "keyword: functors"
+  "keyword: search trees"
+  "category: Computer Science/Data Types and Data Structures"
+  "category: Miscellaneous/Extracted Programs/Data structures"
+  "date: 2003-02-6"
+]
 authors: [ "Pierre Castéran <casteran@labri.fr>" ]
 bug-reports: "https://github.com/coq-contribs/dictionaries/issues"
 dev-repo: "git+https://github.com/coq-contribs/dictionaries.git"

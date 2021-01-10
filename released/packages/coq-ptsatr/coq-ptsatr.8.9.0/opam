@@ -10,12 +10,12 @@ depends: [
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
-  "keyword: Pure Type Systems"
-  "keyword: Judgmental Equality"
+  "keyword: pure type systems"
+  "keyword: judgmental equality"
   "keyword: Church-Rosser"
-  "keyword: Confluence"
-  "keyword: Subject Reduction"
-  "keyword: Pi Injectivity"
+  "keyword: confluence"
+  "keyword: subject reduction"
+  "keyword: pi injectivity"
   "category: Mathematics/Logic/Type theory"
 ]
 authors: [

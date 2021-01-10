@@ -12,7 +12,14 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:modules  functors search trees" "category:Computer Science/Data Types and Data Structures" "category:Miscellaneous/Extracted Programs/Data structures" "date:2003-02-6" ]
+tags: [
+  "keyword:modules"
+  "keyword:functors"
+  "keyword:search trees"
+  "category:Computer Science/Data Types and Data Structures"
+  "category:Miscellaneous/Extracted Programs/Data structures"
+  "date:2003-02-6"
+]
 authors: [ "Pierre Castéran <casteran@labri.fr>" ]
 synopsis: "Dictionaries (with modules)."
 description: """

@@ -9,7 +9,11 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: Regular Expression" "keyword: Kleene Algebra" "category: Computer Science/Formal Languages Theory and Automata" ]
+tags: [
+  "keyword: regular expressions"
+  "keyword: Kleene algebra"
+  "category: Computer Science/Formal Languages Theory and Automata"
+]
 authors: [ "Takashi Miyamoto <tmiya@bu.iij4u.or.jp> [http://study-func-prog.blogspot.com/]" ]
 bug-reports: "https://github.com/coq-contribs/regexp/issues"
 dev-repo: "git+https://github.com/coq-contribs/regexp.git"

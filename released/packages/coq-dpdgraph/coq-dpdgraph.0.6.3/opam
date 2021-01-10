@@ -28,8 +28,7 @@ depends: [
   "ocamlgraph"
 ]
 authors: [ "Anne Pacalet" "Yves Bertot"]
-synopsis: "Compute dependencies between Coq objects (definitions, theorems)"
-description: "and produce graphs"
+synopsis: "Compute dependencies between Coq objects (definitions, theorems) and produce graphs"
 flags: light-uninstall
 url {
   src:

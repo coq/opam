@@ -12,9 +12,17 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:weak bisimulation" "keyword:up to techniques" "keyword:termination" "keyword:commutation" "keyword:newman's lemma" "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date:2005-02-22" ]
+tags: [
+  "keyword:weak bisimulation"
+  "keyword:up-to techniques"
+  "keyword:termination"
+  "keyword:commutation"
+  "keyword:Newman's lemma"
+  "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
+  "date:2005-02-22"
+]
 authors: [ "Damien Pous <Damien.Pous@ens-lyon.fr>" ]
-synopsis: "New Up-to Techniques for Weak Bisimulation."
+synopsis: "New Up-to Techniques for Weak Bisimulation"
 description: """
 This contribution is the formalisation of a paper that appeared in
 Proc. of ICALP 2005: "Up-to Techniques for Weak Bisimulation".

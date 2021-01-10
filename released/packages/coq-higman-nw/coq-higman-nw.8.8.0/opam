@@ -11,7 +11,7 @@ depends: [
 ]
 tags: [
   "keyword: A-translation"
-  "keyword: Higman's Lemma"
+  "keyword: Higman's lemma"
   "keyword: impredicativity"
   "keyword: System F"
   "keyword: extraction"
