@@ -9,7 +9,13 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: floating-point arithmetic" "keyword: floats" "keyword: IEEE" "category: Computer Science/Data Types and Data Structures" "category: Computer Science/Semantics and Compilation/Semantics" "date: 1997" ]
+tags: [
+  "keyword: floating-point arithmetic"
+  "keyword: IEEE"
+  "category: Computer Science/Data Types and Data Structures"
+  "category: Computer Science/Semantics and Compilation/Semantics"
+  "date: 1997"
+]
 authors: [ "Patrick Loiseleur" ]
 bug-reports: "https://github.com/coq-contribs/ieee754/issues"
 dev-repo: "git+https://github.com/coq-contribs/ieee754.git"
