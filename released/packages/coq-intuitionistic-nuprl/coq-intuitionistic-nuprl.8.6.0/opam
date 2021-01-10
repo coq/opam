@@ -9,7 +9,18 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-tags: [ "keyword: Nuprl" "keyword: Computational Type Theory" "keyword: Extensional Type Theory" "keyword: Intuitionistic Type Theory" "keyword: Howe's computational equivalence relation" "keyword: Partial Equivalence Relation (PER) semantics" "keyword: Consistency" "keyword: Continuity" "keyword: Bar Induction" "category: Mathematics/Logic/Type theory" ]
+tags: [
+  "keyword: Nuprl"
+  "keyword: computational type theory"
+  "keyword: extensional type theory"
+  "keyword: intuitionistic type theory"
+  "keyword: Howe's computational equivalence relation"
+  "keyword: Partial Equivalence Relation (PER) semantics"
+  "keyword: consistency"
+  "keyword: continuity"
+  "keyword: bar induction"
+  "category: Mathematics/Logic/Type theory"
+]
 authors: [ "Vincent Rahli <vincent.rahli@gmail.com> [http://www.cs.cornell.edu/~rahli/]" "Abhishek Anand <abhishek.anand.iitg@gmail.com> [http://www.cs.cornell.edu/~aa755/]" "Mark Bickford <mark.concertina@gmail.com> [http://nuprl.org/]" ]
 bug-reports: "https://github.com/coq-contribs/intuitionistic-nuprl/issues"
 dev-repo: "git+https://github.com/coq-contribs/intuitionistic-nuprl.git"
