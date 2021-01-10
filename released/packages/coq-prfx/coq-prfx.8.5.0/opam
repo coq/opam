@@ -9,7 +9,16 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:first order logic" "keyword:natural deduction" "keyword:reflection" "keyword:proof terms" "keyword:de bruijn indices" "keyword:permutative conversions" "category:Mathematics/Logic/Foundations" "date:2005-04-15" ]
+tags: [
+  "keyword:first-order logic"
+  "keyword:natural deduction"
+  "keyword:reflection"
+  "keyword:proof terms"
+  "keyword:de Bruijn indices"
+  "keyword:permutative conversions"
+  "category:Mathematics/Logic/Foundations"
+  "date:2005-04-15"
+]
 authors: [ "Dimitri Hendriks <hendriks@cs.ru.nl>" ]
 bug-reports: "https://github.com/coq-contribs/prfx/issues"
 dev-repo: "git+https://github.com/coq-contribs/prfx.git"

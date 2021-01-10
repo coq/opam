@@ -10,7 +10,12 @@ depends: [
   "coq" {>= "8.5" & < "8.6~"}
   "camlp5"
 ]
-tags: [ "keyword:first order unification" "keyword:robinson" "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms" "category:Miscellaneous/Extracted Programs/Type checking unification and normalization" ]
+tags: [
+  "keyword:first-order unification"
+  "keyword:Robinson"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
+  "category:Miscellaneous/Extracted Programs/Type checking unification and normalization"
+]
 authors: [ "Jocelyne Rouyer <>" ]
 bug-reports: "https://github.com/coq-contribs/founify/issues"
 dev-repo: "git+https://github.com/coq-contribs/founify.git"
