@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: process algebras" "keyword: pi-calculus" "keyword: concurrency" "keyword: formal verification" "keyword: higher order syntax" "category: Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" "date: 1998-07" ]
+tags: [
+  "keyword: process algebras"
+  "keyword: pi-calculus"
+  "keyword: concurrency"
+  "keyword: formal verification"
+  "keyword: higher-order syntax"
+  "category: Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
+  "date: 1998-07"
+]
 authors: [ "Ivan Scagnetto <scagnett@dimi.uniud.it>" ]
 bug-reports: "https://github.com/coq-contribs/pi-calc/issues"
 dev-repo: "git+https://github.com/coq-contribs/pi-calc.git"
