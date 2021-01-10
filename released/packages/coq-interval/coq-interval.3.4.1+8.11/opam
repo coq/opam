@@ -21,7 +21,16 @@ depends: [
   ("conf-g++" {build} | "conf-clang" {build})
   "conf-autoconf" {build}
 ]
-tags: [ "keyword:interval arithmetic" "keyword:decision procedure" "keyword:floating point arithmetic" "keyword:reflexive tactic" "keyword:taylor models" "category:Mathematics/Real Calculus and Topology" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "logpath:Interval"]
+tags: [
+  "keyword:interval arithmetic"
+  "keyword:decision procedure"
+  "keyword:floating-point arithmetic"
+  "keyword:reflexive tactic"
+  "keyword:Taylor models"
+  "category:Mathematics/Real Calculus and Topology"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "logpath:Interval"
+]
 authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "(patched for Coq 8.11 compatibility by MSoegtropIMC) A Coq tactic for proving bounds on real-valued expressions automatically"
 url {

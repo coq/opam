@@ -14,9 +14,9 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:floating point arithmetic" ]
+tags: [ "keyword:floating-point arithmetic" ]
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
-synopsis: "A floating-point formalization for the Coq system."
+synopsis: "A floating-point formalization for the Coq system"
 flags: light-uninstall
 url {
   src: "git+https://gitlab.inria.fr/flocq/flocq.git#master"

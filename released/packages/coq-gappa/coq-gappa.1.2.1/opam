@@ -14,11 +14,14 @@ depends: [
   "coq" {>= "8.4pl4" & < "8.6~"}
   "coq-flocq" {>= "2.5" & < "3.0~"}
 ]
-tags: [ "keyword:floating point arithmetic" "keyword:interval arithmetic" "keyword:decision procedure" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" ]
+tags: [
+  "keyword:floating-point arithmetic"
+  "keyword:interval arithmetic"
+  "keyword:decision procedure"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+]
 authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
-synopsis:
-  "A Coq tactic for discharging goals about floating-point arithmetic and"
-description: "round-off errors using the Gappa prover."
+synopsis: "A Coq tactic for discharging goals about floating-point arithmetic and round-off errors using the Gappa prover"
 flags: light-uninstall
 url {
   src:

@@ -17,7 +17,16 @@ depends: [
   "coq-coquelicot" {>= "3.0"}
   ("conf-g++" | "conf-clang")
 ]
-tags: [ "keyword:interval arithmetic" "keyword:decision procedure" "keyword:floating point arithmetic" "keyword:reflexive tactic" "keyword:taylor models" "category:Mathematics/Real Calculus and Topology" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "date:2020-02-25" ]
+tags: [
+  "keyword:interval arithmetic"
+  "keyword:decision procedure"
+  "keyword:floating-point arithmetic"
+  "keyword:reflexive tactic"
+  "keyword:Taylor models"
+  "category:Mathematics/Real Calculus and Topology"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "date:2020-02-25"
+]
 authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" "Érik Martin-Dorel <erik.martin-dorel@irit.fr>" "Thomas Sibut-Pinote <thomas.sibut-pinote@inria.fr>" ]
 synopsis: "A Coq tactic for proving bounds on real-valued expressions automatically"
 url {

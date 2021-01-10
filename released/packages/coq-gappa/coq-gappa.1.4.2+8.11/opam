@@ -18,7 +18,13 @@ depends: [
   ("conf-g++" {build} | "conf-clang" {build})
   "conf-autoconf" {build}
 ]
-tags: [ "keyword:floating point arithmetic" "keyword:interval arithmetic" "keyword:decision procedure" "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures" "logpath:Gappa" ]
+tags: [
+  "keyword:floating-point arithmetic"
+  "keyword:interval arithmetic"
+  "keyword:decision procedure"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "logpath:Gappa"
+]
 authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "(patched for Coq 8.11 compatibility by MSoegtropIMC) A Coq tactic for discharging goals about floating-point arithmetic and round-off errors using the Gappa prover"
 url {

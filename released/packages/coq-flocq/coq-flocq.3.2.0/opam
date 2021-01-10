@@ -12,7 +12,7 @@ install: ["./remake" "install"]
 depends: [
   "coq" {>= "8.7" & < "8.12"}
 ]
-tags: [ "keyword:floating point arithmetic" ]
+tags: [ "keyword:floating-point arithmetic" ]
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "A floating-point formalization for the Coq system"
 url {

@@ -12,9 +12,13 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:floating point arithmetic" "category:Computer Science/Data Types and Data Structures" "category:Computer Science/Semantics and Compilation/Semantics" ]
+tags: [
+  "keyword:floating-point arithmetic"
+  "category:Computer Science/Data Types and Data Structures"
+  "category:Computer Science/Semantics and Compilation/Semantics"
+]
 authors: [ "Patrick Loiseleur <>" ]
-synopsis: "A formalisation of the IEEE754 norm on floating-point arithmetic."
+synopsis: "A formalisation of the IEEE754 norm on floating-point arithmetic"
 description: """
 The IEEE754 norm was born in 1985 and is now used in all
 microprocessors. Here is a full formalistion in Coq of this norm,

@@ -15,7 +15,10 @@ depends: [
   ("conf-g++" {build} | "conf-clang" {build})
   "conf-autoconf" {build}
 ]
-tags: [ "keyword:floating point arithmetic" "logpath:Flocq" ]
+tags: [
+  "keyword:floating-point arithmetic"
+  "logpath:Flocq"
+]
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "(patched for Coq 8.11 compatibility by MSoegtropIMC) A floating-point formalization for the Coq system"
 url {
