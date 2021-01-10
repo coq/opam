@@ -16,7 +16,7 @@ depends: [
   ("conf-g++" {build} | "conf-clang" {build})
 ]
 tags: [
-  "keyword:floating point arithmetic"
+  "keyword:floating-point arithmetic"
   "logpath:Flocq"
   "date:2020-12-28"
 ]

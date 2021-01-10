@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:a translation" "keyword:higman's lemma" "keyword:impredicativity" "keyword:system f" "keyword:extraction" "category:Mathematics/Combinatorics and Graph Theory" "category:Miscellaneous/Extracted Programs/Combinatorics" ]
+tags: [
+  "keyword:A-translation"
+  "keyword:Higman's lemma"
+  "keyword:impredicativity"
+  "keyword:System F"
+  "keyword:extraction"
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "category:Miscellaneous/Extracted Programs/Combinatorics"
+]
 authors: [ "Hugo Herbelin <>" ]
 bug-reports: "https://github.com/coq-contribs/higman-nw/issues"
 dev-repo: "git+https://github.com/coq-contribs/higman-nw.git"

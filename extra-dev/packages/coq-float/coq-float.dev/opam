@@ -12,10 +12,14 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:floating point arithmetic" "category:Computer Science/Data Types and Data Structures" "date:2001" ]
+tags: [
+  "keyword:floating-point arithmetic"
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2001"
+]
 authors: [ "Sylvie Boldo <>" "Laurent Théry <>" ]
-synopsis: "Library for floating point numbers."
-description: "A library for floating point numbers."
+synopsis: "Library for floating-point numbers"
+description: "A library for floating-point numbers."
 flags: light-uninstall
 url {
   src: "git+https://github.com/coq-contribs/float.git#master"

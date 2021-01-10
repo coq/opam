@@ -21,7 +21,7 @@ depends: [
   ("conf-g++" {build} | "conf-clang" {build})
 ]
 tags: [
-  "keyword:floating point arithmetic"
+  "keyword:floating-point arithmetic"
   "keyword:interval arithmetic"
   "keyword:decision procedure"
   "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"

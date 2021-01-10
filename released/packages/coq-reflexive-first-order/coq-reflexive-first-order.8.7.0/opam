@@ -9,14 +9,21 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: computationnal reflection" "keyword: interpretation" "keyword: first-order logic" "keyword: equational reasoning" "category: Miscellaneous/Coq Extensions" "date: 2005-05" ]
+tags: [
+  "keyword: computational reflection"
+  "keyword: interpretation"
+  "keyword: first-order logic"
+  "keyword: equational reasoning"
+  "category: Miscellaneous/Coq Extensions"
+  "date: 2005-05"
+]
 authors: [ "Pierre Corbineau <pierre.corbineau@lri.fr> [http://www.cs.ru.nl/~corbineau]" ]
 bug-reports: "https://github.com/coq-contribs/reflexive-first-order/issues"
 dev-repo: "git+https://github.com/coq-contribs/reflexive-first-order.git"
 synopsis: "Reflexive first-order proof interpreter"
 description: """
 This contribution is a package which can be used to interpret firstorder
-proofs provided by an external theorem prover, using computationnal
+proofs provided by an external theorem prover, using computational
 reflexion."""
 flags: light-uninstall
 url {

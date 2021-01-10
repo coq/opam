@@ -14,7 +14,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.4pl4" & < "8.7~"}
 ]
-tags: [ "keyword:floating point arithmetic" ]
+tags: [ "keyword:floating-point arithmetic" ]
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "A floating-point formalization for the Coq system"
 flags: light-uninstall

@@ -9,12 +9,16 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: floating point arithmetic" "category: Computer Science/Data Types and Data Structures" "date: 2001" ]
+tags: [
+  "keyword: floating-point arithmetic"
+  "category: Computer Science/Data Types and Data Structures"
+  "date: 2001"
+]
 authors: [ "Laurent Théry" "Sylvie Boldo" ]
 bug-reports: "https://github.com/coq-contribs/float/issues"
 dev-repo: "git+https://github.com/coq-contribs/float.git"
-synopsis: "Library for floating point numbers"
-description: "A library for floating point numbers."
+synopsis: "Library for floating-point numbers"
+description: "A library for floating-point numbers."
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/float/archive/v8.7.0.tar.gz"

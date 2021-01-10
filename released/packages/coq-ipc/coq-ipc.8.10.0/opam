@@ -10,10 +10,10 @@ depends: [
   "coq" {>= "8.10" & < "8.11~"}
 ]
 tags: [
-  "keyword: intuitionistic logic "
-  "keyword: proof search "
-  "keyword: proof-as-programs "
-  "keyword: correct-by-construction "
+  "keyword: intuitionistic logic"
+  "keyword: proof search"
+  "keyword: proof-as-programs"
+  "keyword: correct-by-construction"
   "keyword: program verification"
   "keyword: program extraction"
   "category: Mathematics/Logic/Foundations"

@@ -10,7 +10,7 @@ depends: [
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
-  "keyword: computationnal reflection"
+  "keyword: computational reflection"
   "keyword: interpretation"
   "keyword: first-order logic"
   "keyword: equational reasoning"
@@ -25,7 +25,7 @@ dev-repo: "git+https://github.com/coq-contribs/reflexive-first-order.git"
 synopsis: "Reflexive first-order proof interpreter"
 description: """
 This contribution is a package which can be used to interpret firstorder
-proofs provided by an external theorem prover, using computationnal
+proofs provided by an external theorem prover, using computational
 reflexion."""
 flags: light-uninstall
 url {
