@@ -17,8 +17,7 @@ authors: [ "Anne Pacalet" "Yves Bertot"]
 tags: [
   "logpath:dpdgraph"
 ]
-synopsis:
-  "Computing dependencies between Coq objects (definitions, theorems)"
+synopsis: "Compute dependencies between Coq objects (definitions, theorems) and produce graphs"
 url {
   src:
     "https://github.com/ybertot/coq-dpdgraph/archive/release-for-8.5-0.4-rc1.zip"
