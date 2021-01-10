@@ -10,7 +10,7 @@ depends: [
   "coq" {>= "8.10" & < "8.11~"}
 ]
 tags: [
-  "keyword: regular expression"
+  "keyword: regular expressions"
   "keyword: Kleene algebra"
   "category: Computer Science/Formal Languages Theory and Automata"
 ]

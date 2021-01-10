@@ -17,15 +17,16 @@ install: [make "install"]
 remove: [ "sh" "-exc" "rm -r '%{lib}%/coq/user-contrib/RelationAlgebra'" ]
 tags: [
   "keyword:relation algebra"
-  "keyword:kleene algebra with tests"
-  "keyword:kat"
+  "keyword:Kleene algebra with tests"
+  "keyword:KAT"
   "keyword:allegories"
   "keyword:residuated structures"
   "keyword:automata"
   "keyword:regular expressions"
   "keyword:matrices"
   "category:Mathematics/Algebra"
-  "logpath:RelationAlgebra" ]
+  "logpath:RelationAlgebra"
+]
 authors: [
   "Damien Pous <Damien.Pous@ens-lyon.fr>"
   "Christian Doczkal <christian.doczkal@ens-lyon.fr>"
