@@ -9,11 +9,20 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:newman's lemma" "keyword:tarski's fixpoint theorem" "keyword:line formatting" "keyword:binary search paradigm" "keyword:square root approximation" "keyword:calculus of constructions" "keyword:history of coq" "category:Miscellaneous/Coq Use Examples" "date:" ]
+tags: [
+  "keyword:Newman's lemma"
+  "keyword:Tarski's fixpoint theorem"
+  "keyword:line formatting"
+  "keyword:binary search paradigm"
+  "keyword:square root approximation"
+  "keyword:calculus of constructions"
+  "keyword:history of Coq"
+  "category:Miscellaneous/Coq Use Examples"
+]
 authors: [ "Gérard Huet <>" "Christine Paulin <>" ]
 bug-reports: "https://github.com/coq-contribs/historical-examples/issues"
 dev-repo: "git+https://github.com/coq-contribs/historical-examples.git"
-synopsis: "Historical examples developed in the (pure) Calculus of Constructions "
+synopsis: "Historical examples developed in the (pure) Calculus of Constructions"
 description: """
 This is a collection of historical examples developed in
 system CoC that implemented Coquand's Calculus of Constructions.
