@@ -9,7 +9,12 @@ depends: [
   "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
-tags: [ "keyword: Maps" "keyword: Dependent maps" "keyword: domain" "category: Computer Science/Data Types and Data Structures" ]
+tags: [
+  "keyword: maps"
+  "keyword: dependent maps"
+  "keyword: domain"
+  "category: Computer Science/Data Types and Data Structures"
+]
 authors: [ "Lionel Rieg <lionel.rieg@college-de-france.fr>" ]
 bug-reports: "https://github.com/coq-contribs/dep-map/issues"
 dev-repo: "git+https://github.com/coq-contribs/dep-map.git"
