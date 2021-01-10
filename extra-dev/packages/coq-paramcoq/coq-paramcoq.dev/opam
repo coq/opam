@@ -18,8 +18,7 @@ depends: [
 tags: [
   "keyword:paramcoq"
   "keyword:parametricity"
-  "keyword:ocaml module"
-  "category:paramcoq"
+  "keyword:OCaml module"
   "category:Miscellaneous/Coq Extensions"
   "logpath:Param"
 ]

@@ -22,7 +22,7 @@ depends: [
 tags: [
   "date:2015-08-31"
   "keyword:compilation"
-  "keyword:ocaml"
+  "keyword:OCaml"
 ]
 synopsis: "Compile OCaml to Coq"
 extra-files: ["coq-of-ocaml.install" "md5=aaa1f52ec40bedefd2674f46a44cd578"]
