@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/hydra-battles"
+dev-repo: "git+https://github.com/coq-community/hydra-battles.git"
+bug-reports: "https://github.com/coq-community/hydra-battles/issues"
+license: "MIT"
+
+synopsis: "Exploration of some properties of Kirby and Paris' hydra battles, with the help of Coq"
+description: """
+An exploration of some properties of Kirby and Paris' hydra battles,
+with the help of the Coq Proof assistant. This development includes
+the study of several representations of ordinal numbers, and a part
+of the so-called Ketonen and Solovay machinery (combinatorial
+properties of epsilon0)."""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "2.5"}
+  "coq" {>= "8.11" & < "8.14~"}
+  "coq-equations" {>= "1.2" & < "1.3~"}
+]
+
+tags: [
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "keyword:Ketonen-Solovay machinery"
+  "keyword:ordinals"
+  "logpath:hydras"
+]
+authors: [
+  "Pierre Castéran"
+]
+
+url {
+  src: "git+https://github.com/coq-community/hydra-battles.git#master"
+}
