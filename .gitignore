@@ -2,13 +2,9 @@
 .history
 *~
 .*.swp
-templates/*html
-www/policy.html
-www/index.html
-www/files
-www/styles
 */archives/*
 */index.tar.gz
 */urls.txt
-.DS_Store
-.history
+/coq-packages.json
+/_build
+/scripts/.merlin
