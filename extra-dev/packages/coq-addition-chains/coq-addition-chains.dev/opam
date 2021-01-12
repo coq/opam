@@ -14,10 +14,10 @@ with the least number of multiplication as possible. We present a few implementa
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
-  "coq" {>= "8.11" & < "8.14~"}
-  "coq-paramcoq" {>= "1.1.2" & < "1.2~"}
-  "coq-mathcomp-ssreflect" {>= "1.11.0" & < "1.13~"}
-  "coq-mathcomp-algebra" {>= "1.11.0" & < "1.13~"}
+  "coq" {(>= "8.11" & < "8.14~") | (= "dev")}
+  "coq-paramcoq" {(>= "1.1.2" & < "1.2~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {(>= "1.11.0" & < "1.13~") | (= "dev")}
+  "coq-mathcomp-algebra"
 ]
 
 tags: [
