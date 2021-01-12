@@ -21,6 +21,7 @@ stdenv.mkDerivation rec {
     merlin
     ocp-indent
     opam
+    opam-core
   ]);
 
 }
