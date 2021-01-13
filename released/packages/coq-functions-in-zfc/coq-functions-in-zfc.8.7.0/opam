@@ -9,7 +9,13 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: Set Theory" "keyword: Zermelo-Fraenkel" "keyword: functions" "category: Mathematics/Logic/Set theory" "date: April 2001" ]
+tags: [
+  "keyword: set theory"
+  "keyword: Zermelo-Fraenkel"
+  "keyword: functions"
+  "category: Mathematics/Logic/Set theory"
+  "date: April 2001"
+]
 authors: [ "Carlos Simpson <carlos@math.unice.fr>" ]
 bug-reports: "https://github.com/coq-contribs/functions-in-zfc/issues"
 dev-repo: "git+https://github.com/coq-contribs/functions-in-zfc.git"

@@ -9,7 +9,12 @@ depends: [
   "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
-tags: [ "keyword: Set Theory" "keyword: Zermelo-Fraenkel" "keyword: Calculus of Inductive Constructions" "category: Mathematics/Logic/Set theory" ]
+tags: [
+  "keyword: set theory"
+  "keyword: Zermelo-Fraenkel"
+  "keyword: Calculus of Inductive Constructions"
+  "category: Mathematics/Logic/Set theory"
+]
 authors: [ "Benjamin Werner" ]
 bug-reports: "https://github.com/coq-contribs/zfc/issues"
 dev-repo: "git+https://github.com/coq-contribs/zfc.git"

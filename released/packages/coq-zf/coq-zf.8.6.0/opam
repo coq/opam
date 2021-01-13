@@ -9,7 +9,11 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-tags: [ "keyword: Set Theory" "keyword: Zermelo-Fraenkel" "category: Mathematics/Logic/Set theory" ]
+tags: [
+  "keyword: set theory"
+  "keyword: Zermelo-Fraenkel"
+  "category: Mathematics/Logic/Set theory"
+]
 authors: [ "Guillaume Alexandre" ]
 bug-reports: "https://github.com/coq-contribs/zf/issues"
 dev-repo: "git+https://github.com/coq-contribs/zf.git"
