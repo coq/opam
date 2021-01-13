@@ -17,14 +17,16 @@ properties of epsilon0)."""
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
-  "coq" {>= "8.11" & < "8.14~"}
-  "coq-equations" {>= "1.2" & < "1.3~"}
+  "coq" {(>= "8.11" & < "8.14~") | (= "dev")}
+  "coq-equations" {(>= "1.2" & < "1.3~") | (= "dev")}
 ]
 
 tags: [
   "category:Mathematics/Combinatorics and Graph Theory"
+  "category:Mathematics/Logic/Foundations"
   "keyword:Ketonen-Solovay machinery"
   "keyword:ordinals"
+  "keyword:primitive recursive functions"
   "logpath:hydras"
 ]
 authors: [
