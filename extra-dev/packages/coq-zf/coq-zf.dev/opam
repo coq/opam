@@ -12,9 +12,13 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:set theory" "keyword:zermelo fraenkel" "category:Mathematics/Logic/Set theory" ]
+tags: [
+  "keyword:set theory"
+  "keyword:Zermelo-Fraenkel"
+  "category:Mathematics/Logic/Set theory"
+]
 authors: [ "Guillaume Alexandre <>" ]
-synopsis: "An axiomatisation of intuitionistic Zermelo-Fraenkel set theory."
+synopsis: "An axiomatisation of intuitionistic Zermelo-Fraenkel set theory"
 flags: light-uninstall
 url {
   src: "git+https://github.com/coq-contribs/zf.git#master"

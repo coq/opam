@@ -32,8 +32,7 @@ depends: [
 
 tags: [
   "category:Mathematics/Logic"
-  "category:Computer Science/Semantics"
-  "category:Compilation/Semantics"
+  "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword:Hoare logic"
   "keyword:imperative program"
   "keyword:weakest precondition"

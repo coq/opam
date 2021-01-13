@@ -9,7 +9,12 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: Induction" "keyword: Descente Infinie" "category: Miscellaneous/Coq Extensions" "date: 2010-02" ]
+tags: [
+  "keyword: Induction"
+  "keyword: infinite descent"
+  "category: Miscellaneous/Coq Extensions"
+  "date: 2010-02"
+]
 authors: [ "Razvan Voicu <razvan@comp.nus.edu.sg> [http://www.comp.nus.edu.sg/~razvan/]" "Li Mengran <limengra@comp.nus.edu.sg> [http://www.comp.nus.edu.sg/~limengra]" ]
 bug-reports: "https://github.com/coq-contribs/descente-infinie/issues"
 dev-repo: "git+https://github.com/coq-contribs/descente-infinie.git"

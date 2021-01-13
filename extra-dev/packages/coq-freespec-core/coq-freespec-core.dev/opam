@@ -29,7 +29,7 @@ depends: [
 ]
 
 tags: [
-  "keyword:effect"
+  "keyword:effects"
   "keyword:freer"
   "keyword:program logic"
   "category:Mathematics/Category Theory"

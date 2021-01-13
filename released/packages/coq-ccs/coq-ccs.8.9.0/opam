@@ -11,7 +11,7 @@ depends: [
 ]
 tags: [
   "keyword: Labelled Transitions Systems"
-  "keyword: Process Algebra"
+  "keyword: process algebras"
   "keyword: Calculus of Concurrent Process (CCS)"
   "category: Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
 ]

@@ -12,9 +12,18 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:intuitionistic set theory" "keyword:pointed graphs" "keyword:type theory" "keyword:intuitionistic choice operator" "keyword:set theory" "keyword:zermelo fraenkel" "category:Mathematics/Logic/Set theory" "date:2003-02" ]
+tags: [
+  "keyword:intuitionistic set theory"
+  "keyword:pointed graphs"
+  "keyword:type theory"
+  "keyword:intuitionistic choice operator"
+  "keyword:set theory"
+  "keyword:Zermelo-Fraenkel"
+  "category:Mathematics/Logic/Set theory"
+  "date:2003-02"
+]
 authors: [ "Alexandre Miquel <Alexandre.Miquel@pps.jussieu.fr>" ]
-synopsis: "Intuitionistic Zermelo-Fraenkel Set Theory in Coq."
+synopsis: "Intuitionistic Zermelo-Fraenkel Set Theory in Coq"
 description: """
 This development contains the set-as-pointed-graph
 interpretation of Intuitionistic Zermelo Frankel set theory in system

@@ -12,9 +12,21 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:ctl" "keyword:tctl" "keyword:real time systems" "keyword:timed automatas" "keyword:safety" "keyword:concurrency" "keyword:properties" "keyword:invariants" "keyword:nonzeno" "keyword:discrete time" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" "date:February-March 2000" ]
+tags: [
+  "keyword:CTL"
+  "keyword:TCTL"
+  "keyword:real time systems"
+  "keyword:timed automatas"
+  "keyword:safety"
+  "keyword:concurrency properties"
+  "keyword:invariants"
+  "keyword:non-Zeno"
+  "keyword:discrete time"
+  "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols"
+  "date:February-March 2000"
+]
 authors: [ "Carlos Daniel Luna <http://www.fing.edu.uy/~cluna>" ]
-synopsis: "The Railroad Crossing Example."
+synopsis: "The Railroad Crossing Example"
 description: """
 This library present the specification and verification of
 one real time system: the Railroad Crossing Problem, which has been

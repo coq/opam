@@ -38,7 +38,7 @@ tags: [
   "keyword:matrices"
   "keyword:FSet"
   "keyword:FMap"
-  
+
   "keyword:term"
   "keyword:context"
   "keyword:substitution"
@@ -48,9 +48,9 @@ tags: [
   "keyword:string"
 
   "keyword:alpha-equivalence"
-  "keyword:de bruijn indices"
+  "keyword:de Bruijn indices"
   "keyword:simple types"
-  
+
   "keyword:matching"
   "keyword:unification"
 
@@ -58,7 +58,7 @@ tags: [
   "keyword:ordering"
   "keyword:quasi-ordering"
   "keyword:lexicographic ordering"
-  
+
   "keyword:ring"
   "keyword:semiring"
 
@@ -70,13 +70,13 @@ tags: [
 
   "keyword:non-termination"
   "keyword:loop"
-  
+
   "keyword:graph"
   "keyword:path"
   "keyword:transitive closure"
   "keyword:strongly connected component"
   "keyword:topological ordering"
-  
+
   "keyword:rpo"
   "keyword:horpo"
   "keyword:dependency pair"
@@ -85,13 +85,13 @@ tags: [
 
   "keyword:reducibility"
   "keyword:Girard"
-  
+
   "keyword:fixpoint theorem"
   "keyword:Tarski"
 
   "keyword:pigeon-hole principle"
   "keyword:Ramsey theorem"
-  
+
   "category:Computer Science/Algorithms/Correctness proofs of algorithms"
   "category:Computer Science/Data Types and Data Structures"
   "category:Computer Science/Lambda Calculi"
@@ -101,7 +101,7 @@ tags: [
   "category:Miscellaneous/Extracted Programs/Type checking unification and normalization"
 
   "date:2016-01-26"
-  
+
   "logpath:CoLoR"
 ]
 synopsis: "A library on rewriting theory and termination"

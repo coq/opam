@@ -10,7 +10,7 @@ depends: [
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
-  "keyword: Set Theory"
+  "keyword: set theory"
   "keyword: Zermelo-Fraenkel"
   "category: Mathematics/Logic/Set theory"
 ]

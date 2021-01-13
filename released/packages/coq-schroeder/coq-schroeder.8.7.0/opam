@@ -9,7 +9,11 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: Schroeder-Bernstein" "keyword: Set Theory" "category: Mathematics/Logic/Set theory" ]
+tags: [
+  "keyword: Schroeder-Bernstein"
+  "keyword: set theory"
+  "category: Mathematics/Logic/Set theory"
+]
 authors: [ "Hugo herbelin" ]
 bug-reports: "https://github.com/coq-contribs/schroeder/issues"
 dev-repo: "git+https://github.com/coq-contribs/schroeder.git"

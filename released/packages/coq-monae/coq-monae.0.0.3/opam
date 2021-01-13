@@ -28,9 +28,9 @@ models, examples of monadic equational reasoning, and an application
 to program semantics.
 """
 tags: [
-  "category:Computer Science/Semantics"
+  "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword: monad"
-  "keyword: effect"
+  "keyword: effects"
   "keyword: probability"
   "logpath:monae"
   "date:2019-11-09"

@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:intuitionistic set theory" "keyword:pointed graphs" "keyword:type theory" "keyword:intuitionistic choice operator" "keyword:set theory" "keyword:zermelo fraenkel" "category:Mathematics/Logic/Set theory" ]
+tags: [
+  "keyword:intuitionistic set theory"
+  "keyword:pointed graphs"
+  "keyword:type theory"
+  "keyword:intuitionistic choice operator"
+  "keyword:set theory"
+  "keyword:Zermelo-Fraenkel"
+  "category:Mathematics/Logic/Set theory"
+]
 authors: [ "Alexandre Miquel <Alexandre.Miquel@pps.jussieu.fr>" ]
 bug-reports: "https://github.com/coq-contribs/izf/issues"
 dev-repo: "git+https://github.com/coq-contribs/izf.git"

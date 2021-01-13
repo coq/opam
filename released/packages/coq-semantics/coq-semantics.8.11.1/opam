@@ -29,8 +29,7 @@ depends: [
 ]
 
 tags: [
-  "category:Computer Science/Semantics"
-  "category:Compilation/Semantics"
+  "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword:natural semantics"
   "keyword:denotational semantics"
   "keyword:axiomatic semantics"
