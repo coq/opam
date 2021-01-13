@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:abstract syntax" "keyword:binders" "keyword:de bruijn indices" "keyword:shift" "keyword:lift" "keyword:substitution" "category:Computer Science/Lambda Calculi" ]
+tags: [
+  "keyword:abstract syntax"
+  "keyword:binders"
+  "keyword:de Bruijn indices"
+  "keyword:shift"
+  "keyword:lift"
+  "keyword:substitution"
+  "category:Computer Science/Lambda Calculi"
+]
 authors: [ "Francois Pottier <francois.pottier@inria.fr>" ]
 bug-reports: "https://github.com/coq-contribs/dblib/issues"
 dev-repo: "git+https://github.com/coq-contribs/dblib.git"
