@@ -9,7 +9,12 @@ depends: [
   "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
-tags: [ "keyword: Labelled Transitions Systems" "keyword: Process Algebra" "keyword: Calculus of Concurrent Process (CCS)" "category: Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems" ]
+tags: [
+  "keyword: Labelled Transitions Systems"
+  "keyword: process algebras"
+  "keyword: Calculus of Concurrent Process (CCS)"
+  "category: Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
+]
 authors: [ "Solange Coupet-Grimal" ]
 bug-reports: "https://github.com/coq-contribs/ccs/issues"
 dev-repo: "git+https://github.com/coq-contribs/ccs.git"
