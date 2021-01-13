@@ -1,0 +1,47 @@
+
+opam-version: "2.0"
+maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
+
+homepage: "https://github.com/math-comp/abel"
+dev-repo: "git+https://github.com/math-comp/abel.git"
+bug-reports: "https://github.com/math-comp/abel/issues"
+license: "CECILL-B"
+
+synopsis: "Abel - Ruffini's theorem"
+description: """
+This repository contains a proof of Abel - Galois Theorem
+(equivalence between being solvable by radicals and having a
+solvable Galois group) and Abel - Ruffini Theorem (unsolvability of
+quintic equations) in the Coq proof-assistant and using the
+Mathematical Components library."""
+
+build: [make "-j%{jobs}%" ]
+install: [make "install"]
+depends: [
+  "coq" { (>= "8.10" & < "8.14~") | = "dev" }
+  "coq-mathcomp-ssreflect" { (>= "1.11.0" & < "1.13~") | = "dev" }
+  "coq-mathcomp-fingroup" 
+  "coq-mathcomp-algebra" 
+  "coq-mathcomp-solvable" 
+  "coq-mathcomp-field" 
+  "coq-mathcomp-real-closed" { (>= "1.1.1") | = "dev" }
+]
+
+tags: [
+  "keyword:algebra"
+  "keyword:Galois"
+  "keyword:Abel Ruffini"
+  "keyword:unsolvability of quintincs"
+  "logpath:Abel"
+]
+authors: [
+  "Sophie Bernard"
+  "Cyril Cohen"
+  "Assia Mahboubi"
+  "Pierre-Yves Strub"
+]
+
+url {
+  src: "https://github.com/math-comp/Abel/archive/1.0.0.tar.gz"
+  checksum: "sha256=45ff1fc19ee16d1d97892a54fbbc9864e89fe79b0c7aa3cc9503e44bced5f446"
+}
