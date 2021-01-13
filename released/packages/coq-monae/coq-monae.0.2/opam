@@ -31,7 +31,7 @@ This Coq library contains a hierarchy of monads with their laws used
 in several examples of monadic equational reasoning.
 """
 tags: [
-  "category:Computer Science/Semantics"
+  "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword: monad"
   "keyword: effect"
   "keyword: probability"
