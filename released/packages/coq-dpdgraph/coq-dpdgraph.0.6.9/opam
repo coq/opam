@@ -1,0 +1,32 @@
+opam-version: "2.0"
+maintainer: "yves.bertot@inria.fr"
+license: "LGPL-2.1-only"
+
+homepage: "https://github.com/karmaki/coq-dpdgraph"
+
+build: [
+  ["./configure"]
+  ["echo" "%{jobs}%" "jobs for the linter"]
+  [make "-j%{jobs}%" "WARN_ERR="]
+ ]
+
+bug-reports: "https://github.com/karmaki/coq-dpdgraph/issues"
+
+dev-repo: "git+https://github.com/karmaki/coq-dpdgraph.git"
+install: [
+  [make "install" "BINDIR=%{bin}%"]
+]
+
+depends: [
+  "ocaml" {}
+  "coq" {>= "8.13" & < "8.14~"}
+  "ocamlgraph"
+]
+authors: [ "Anne Pacalet" "Yves Bertot"]
+synopsis: "Compute dependencies between Coq objects (definitions, theorems) and produce graphs"
+
+url {
+  src:
+    "https://github.com/Karmaki/coq-dpdgraph/releases/download/v0.6.9/coq-dpdgraph-0.6.9.tgz"
+  checksum: "sha256=0858014eb3fa35be67a626478d1d5cf1f953cf329d39c372d08657dfd1fa0545"
+}
