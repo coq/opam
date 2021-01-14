@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "Yishuai Li <yishuai@cis.upenn.edu>"
+
+homepage: "https://github.com/liyishuai/coq-http"
+dev-repo: "git+https://github.com/liyishuai/coq-http.git"
+bug-reports: "https://github.com/liyishuai/coq-http/issues"
+license: "MPL-2.0"
+
+synopsis: "HTTP in Coq"
+description: """
+HTTP specification in Coq, testable and verifiable"""
+
+build: [make "-j%{jobs}%" ]
+run-test: [make "-j" jobs "test"]
+install: [make "install" "INSTALLDIR=%{bin}%"]
+depends: [
+  "coq" { >= "8.12~" }
+  "ocamlbuild" 
+  "coq-itree-io" 
+  "coq-parsec" 
+]
+
+tags: [
+  "logpath:HTTP"
+]
+authors: [
+  "Yishuai Li <yishuai@cis.upenn.edu>"
+  "Li-yao Xia <xialiyao@cis.upenn.edu>"
+  "Yao Li <liyao@cis.upenn.edu>"
+  "Azzam Althagafi <aazzam@cis.upenn.edu>"
+  "Benjamin C. Pierce <bcpierce@cis.upenn.edu>"
+]
+
+url {
+  src: "git+https://github.com/liyishuai/coq-http"
+}
