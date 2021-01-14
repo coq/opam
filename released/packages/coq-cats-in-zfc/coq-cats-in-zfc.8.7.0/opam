@@ -9,7 +9,19 @@ depends: [
   "ocaml"
   "coq" {>= "8.7" & < "8.8~"}
 ]
-tags: [ "keyword: set theory" "keyword: ordinal" "keyword: cardinal" "keyword: category theory" "keyword: functor" "keyword: natural transformation" "keyword: limit" "keyword: colimit" "category: Mathematics/Logic/Set theory" "category: Mathematics/Category Theory" "date: 2004-10-10" ]
+tags: [
+  "keyword: set theory"
+  "keyword: ordinal"
+  "keyword: cardinal"
+  "keyword: category theory"
+  "keyword: functors"
+  "keyword: natural transformation"
+  "keyword: limit"
+  "keyword: colimit"
+  "category: Mathematics/Logic/Set theory"
+  "category: Mathematics/Category Theory"
+  "date: 2004-10-10"
+]
 authors: [ "Carlos Simpson <carlos@math.unice.fr> [http://math.unice.fr/~carlos/]" ]
 bug-reports: "https://github.com/coq-contribs/cats-in-zfc/issues"
 dev-repo: "git+https://github.com/coq-contribs/cats-in-zfc.git"
