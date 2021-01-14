@@ -33,7 +33,7 @@ tags: [
 
   "keyword:list"
   "keyword:multiset"
-  "keyword:polynom"
+  "keyword:polynomial"
   "keyword:vectors"
   "keyword:matrices"
   "keyword:FSet"
@@ -62,7 +62,7 @@ tags: [
   "keyword:ring"
   "keyword:semiring"
 
-  "keyword:well-founded"
+  "keyword:well-foundedness"
   "keyword:noetherian"
   "keyword:finitely branching"
   "keyword:dependent choice"

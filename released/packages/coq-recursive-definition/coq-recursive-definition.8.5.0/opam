@@ -9,7 +9,12 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:recursive functions" "keyword:well founded recursion" "keyword:well foundedness" "category:Miscellaneous/Coq Extensions" "date:2002" ]
+tags: [
+  "keyword:recursive functions"
+  "keyword:well-foundedness"
+  "category:Miscellaneous/Coq Extensions"
+  "date:2002"
+]
 authors: [ "Antonia Balaa <>" "Yves Bertot <>" ]
 bug-reports: "https://github.com/coq-contribs/recursive-definition/issues"
 dev-repo: "git+https://github.com/coq-contribs/recursive-definition.git"
