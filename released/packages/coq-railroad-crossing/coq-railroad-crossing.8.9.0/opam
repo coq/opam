@@ -12,7 +12,7 @@ depends: [
 tags: [
   "keyword: CTL"
   "keyword: TCTL"
-  "keyword: real time systems"
+  "keyword: real time"
   "keyword: timed automatas"
   "keyword: safety"
   "keyword: concurrency properties"

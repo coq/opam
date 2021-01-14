@@ -12,10 +12,22 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:ctl" "keyword:tctl" "keyword:real time systems" "keyword:reactive systems" "keyword:temporal logic" "keyword:timed automatas" "keyword:timed graphs" "keyword:discrete time" "keyword:modal logic" "category:Mathematics/Logic/Modal logic" "date:February-March 2000" ]
+tags: [
+  "keyword:CTL"
+  "keyword:TCTL"
+  "keyword:real time"
+  "keyword:reactive systems"
+  "keyword:temporal logic"
+  "keyword:timed automatas"
+  "keyword:timed graphs"
+  "keyword:discrete time"
+  "keyword:modal logic"
+  "category:Mathematics/Logic/Modal logic"
+  "date:February-March 2000"
+]
 authors: [ "Carlos Daniel Luna <>" ]
 synopsis:
-  "Computation Tree Logic for Reactive Systems and Timed Computation Tree Logic for Real Time Systems."
+  "Computation Tree Logic for Reactive Systems and Timed Computation Tree Logic for Real Time Systems"
 description: """
 This library formalises two logics for reasoning about
 reactive systems (CTL) and real time systems (TCTL) represents using

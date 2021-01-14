@@ -9,7 +9,19 @@ depends: [
   "ocaml"
   "coq" {>= "8.8" & < "8.9~"}
 ]
-tags: [ "keyword: CTL" "keyword: TCTL" "keyword: real time systems" "keyword: reactive systems" "keyword: temporal logic" "keyword: timed automatas" "keyword: timed graphs" "keyword: discrete time" "keyword: modal logic" "category: Mathematics/Logic/Modal logic" "date: February-March 2000" ]
+tags: [
+  "keyword: CTL"
+  "keyword: TCTL"
+  "keyword: real time"
+  "keyword: reactive systems"
+  "keyword: temporal logic"
+  "keyword: timed automatas"
+  "keyword: timed graphs"
+  "keyword: discrete time"
+  "keyword: modal logic"
+  "category: Mathematics/Logic/Modal logic"
+  "date: February-March 2000"
+]
 authors: [ "Carlos Daniel Luna" ]
 bug-reports: "https://github.com/coq-contribs/ctltctl/issues"
 dev-repo: "git+https://github.com/coq-contribs/ctltctl.git"
