@@ -10,7 +10,7 @@ depends: [
   "coq" {>= "8.5" & < "8.6~"}
 ]
 tags: [
-  "keyword:module"
+  "keyword:modules"
   "keyword:monads"
   "keyword:category theory"
   "keyword:lambda calculus"

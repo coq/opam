@@ -32,7 +32,7 @@ in several examples of monadic equational reasoning.
 """
 tags: [
   "category:Computer Science/Semantics and Compilation/Semantics"
-  "keyword: monad"
+  "keyword: monads"
   "keyword: effects"
   "keyword: probability"
   "keyword: nondeterminism"
