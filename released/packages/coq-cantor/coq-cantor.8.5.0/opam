@@ -9,11 +9,19 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:ordinals" "keyword:well foundedness" "keyword:termination" "keyword:rpo" "keyword:goodstein sequences" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:2006-05-22" ]
+tags: [
+  "keyword:ordinal numbers"
+  "keyword:well-foundedness"
+  "keyword:termination"
+  "keyword:rpo"
+  "keyword:Goodstein sequences"
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "date:2006-05-22"
+]
 authors: [ "Évelyne Contejean <contejea@lri.fr>" "Pierre Castéran <pierre.casteran@labri.fr>" ]
 bug-reports: "https://github.com/coq-contribs/cantor/issues"
 dev-repo: "git+https://github.com/coq-contribs/cantor.git"
-synopsis: "On Ordinal Notations "
+synopsis: "On Ordinal Notations"
 description: """
 This contribution contains data structures for ordinals
 less than Gamma0 under Cantor and Veblen normal

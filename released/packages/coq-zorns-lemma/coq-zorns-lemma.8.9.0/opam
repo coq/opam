@@ -11,12 +11,12 @@ depends: [
 ]
 tags: [
   "keyword: set theory"
-  "keyword: cardinals"
-  "keyword: ordinals"
+  "keyword: cardinal numbers"
+  "keyword: ordinal numbers"
   "keyword: finite"
   "keyword: countable"
   "keyword: quotients"
-  "keyword: well orders"
+  "keyword: well-orders"
   "keyword: Zorn's lemma"
   "category: Mathematics/Logic/Set theory"
 ]
