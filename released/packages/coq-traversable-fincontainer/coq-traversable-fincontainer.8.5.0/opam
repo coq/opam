@@ -9,7 +9,11 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:finitary container" "keyword:traversable functor" "category:Computer Science/Data Types and Data Structures" ]
+tags: [
+  "keyword:finitary container"
+  "keyword:traversable functors"
+  "category:Computer Science/Data Types and Data Structures"
+]
 authors: [ "Russell O'Connor <oconnorr@google.com>" ]
 bug-reports: "https://github.com/coq-contribs/traversable-fincontainer/issues"
 dev-repo: "git+https://github.com/coq-contribs/traversable-fincontainer.git"

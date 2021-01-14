@@ -10,8 +10,8 @@ depends: [
   "coq" {>= "8.6" & < "8.7~"}
 ]
 tags: [
-  "keyword: module"
-  "keyword: monad"
+  "keyword: modules"
+  "keyword: monads"
   "keyword: category"
   "keyword: lambda calculus"
   "keyword: higher-order syntax"

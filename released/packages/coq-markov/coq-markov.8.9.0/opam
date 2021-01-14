@@ -10,10 +10,9 @@ depends: [
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
-  "keyword: probability theory"
+  "keyword: probability"
   "keyword: Markov"
   "keyword: Lebesgue integral"
-  "keyword: measures"
   "keyword: sigma algebras"
   "keyword: measurability"
   "keyword: Borel"

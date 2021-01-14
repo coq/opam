@@ -22,8 +22,8 @@ depends: [
 tags: [
   "category:Mathematics/Logic/Set theory"
   "keyword:set theory"
-  "keyword:cardinals"
-  "keyword:ordinals"
+  "keyword:cardinal numbers"
+  "keyword:ordinal numbers"
   "keyword:finite"
   "keyword:countable"
   "keyword:quotients"
