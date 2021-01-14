@@ -25,7 +25,7 @@ tags: [
   "keyword:Smith normal form"
   "keyword:mathematical components"
   "keyword:Bareiss"
-  "keyword:Karatsuba"
+  "keyword:Karatsuba multiplication"
   "keyword:refinements"
   "logpath:CoqEAL"
 ]

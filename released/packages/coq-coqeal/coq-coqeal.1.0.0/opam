@@ -22,9 +22,15 @@ depends: [
   "coq-mathcomp-algebra" {(>= "1.8.0" & < "1.9.0~")}
 ]
 
-tags: [ "keyword:effective algebra" "keyword:elementary divisor rings"
-        "keyword:Smith normal form" "keyword:mathematical components"
-        "keyword: Bareiss" "keyword: Karatsuba" "keyword: refinements"]
+tags: [
+  "keyword:effective algebra"
+  "keyword:elementary divisor rings"
+  "keyword:Smith normal form"
+  "keyword:mathematical components"
+  "keyword: Bareiss"
+  "keyword: Karatsuba multiplication"
+  "keyword: refinements"
+]
 authors: [ "Guillaume Cano" "Cyril Cohen"
            "Maxime Dénès" "Anders Mörtberg" "Vincent Siles"]
 

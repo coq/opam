@@ -9,7 +9,12 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:karatsuba multiplication" "keyword:binary ring" "category:Mathematics/Arithmetic and Number Theory/Number theory" "date:2005-09-15" ]
+tags: [
+  "keyword:Karatsuba multiplication"
+  "keyword:binary ring"
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "date:2005-09-15"
+]
 authors: [ "Russell O'Connor <r.oconnor@cs.ru.nl>" ]
 bug-reports: "https://github.com/coq-contribs/karatsuba/issues"
 dev-repo: "git+https://github.com/coq-contribs/karatsuba.git"
