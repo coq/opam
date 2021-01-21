@@ -33,5 +33,5 @@ See individual packages for more detailed descriptions.
 """
 url {
   src: "https://github.com/MetaCoq/metacoq/archive/v1.0-beta2-8.13.tar.gz"
-  checksum: "sha256=4d2d2e5eaa9dba2f903961f036852b55925b3c267ec7eaa0ddb2bf44ac9c016f"
+  checksum: "sha256=15e1cfde70e6c4dbf33bff1a77266ac5c0c3e280586ef059e0cdec07bee814f2"
 }

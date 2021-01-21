@@ -36,5 +36,5 @@ translation that invalidates functional extensionality.
 # }
 url {
   src: "https://github.com/MetaCoq/metacoq/archive/v1.0-beta2-8.11.tar.gz"
-  checksum: "sha256=8ed0fd3942f12c7f48499fe367f31bbe60dc27fff3a22eeb9c4d4009d783a902"
+  checksum: "sha256=35d4a30bb19e6710fc03d178a2c8a17bc964bfbfd9236d1c59a0e77a30c425df"
 }
