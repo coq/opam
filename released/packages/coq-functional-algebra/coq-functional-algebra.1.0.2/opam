@@ -14,7 +14,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/functional_algebra"]
 depends: [
   "ocaml"
-  "coq" {>= "8.4"}
+  "coq" {>= "8.4" & < "8.13~"}
 ]
 tags: [
   "keyword:algebra"

@@ -24,7 +24,7 @@ depends: [
   "ocaml" {>= "4.09.1"}
   "ocamlfind"
   "dune"
-  "coq" {>= "8.11.0"}
+  "coq" {>= "8.11.0" & < "8.13~"}
   "coq-jsast" {>= "2.0.0"}
   "menhir"
   "base64"
