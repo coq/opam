@@ -1,0 +1,34 @@
+opam-version: "2.0"
+maintainer: "matthieu.sozeau@inria.fr"
+homepage: "https://metacoq.github.io/metacoq"
+dev-repo: "git+https://github.com/MetaCoq/metacoq.git#coq-8.11"
+bug-reports: "https://github.com/MetaCoq/metacoq/issues"
+authors: ["Simon Boulier <simon.boulier@inria.fr>"
+          "Cyril Cohen <cyril.cohen@inria.fr>"
+          "Matthieu Sozeau <matthieu.sozeau@inria.fr>"
+          "Nicolas Tabareau <nicolas.tabareau@inria.fr>"
+          "Théo Winterhalter <theo.winterhalter@inria.fr>"
+]
+license: "MIT"
+build: [
+  ["sh" "./configure.sh"]
+  [make "-j" "%{jobs}%" "-C" "translations"]
+]
+install: [
+  [make "-C" "translations" "install"]
+]
+depends: [
+  "coq-metacoq-template" {= version}
+]
+synopsis: "Translations built on top of MetaCoq"
+description: """
+MetaCoq is a meta-programming framework for Coq.
+
+The Translations modules provides implementation of standard translations 
+from type theory to type theory, e.g. parametricity and the `cross-bool` 
+translation that invalidates functional extensionality.
+"""
+url {
+  src: "https://github.com/MetaCoq/metacoq/archive/v1.0-beta2-8.13.tar.gz"
+  checksum: "sha256=15e1cfde70e6c4dbf33bff1a77266ac5c0c3e280586ef059e0cdec07bee814f2"
+}
