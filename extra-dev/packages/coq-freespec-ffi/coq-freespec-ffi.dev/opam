@@ -5,7 +5,7 @@ homepage: "https://github.com/lthms/FreeSpec"
 dev-repo: "git+https://github.com/lthms/FreeSpec.git"
 bug-reports: "https://github.com/lthms/FreeSpec.git/issues"
 doc: "https://lthms.github.io/FreeSpec"
-license: "GPL-3.0-or-later"
+license: "MPL-2.0"
 
 synopsis: "A framework for implementing and certifying impure computations in Coq"
 description: """
