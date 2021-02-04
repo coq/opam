@@ -13,7 +13,7 @@ install: [
 ]
 depends: [
   "coq" {>= "8.12.0"}
-  "coq-metacoq-template" {>= "1.0~beta1+8.12"}
+  "coq-metacoq-template" {>= "1.0~beta1+8.12" & < "1.0~beta2+8.12"}
 ]
 tags: [
   "category:Miscellaneous/Coq Extensions"
