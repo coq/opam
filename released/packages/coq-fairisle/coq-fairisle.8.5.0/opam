@@ -9,11 +9,18 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:circuits" "keyword:automata" "keyword:coinduction" "keyword:dependent types" "category:Computer Science/Architecture" "date:2005-12-15" ]
+tags: [
+  "keyword:circuits"
+  "keyword:automata"
+  "keyword:co-induction"
+  "keyword:dependent types"
+  "category:Computer Science/Architecture"
+  "date:2005-12-15"
+]
 authors: [ "Solange Coupet-Grimal <Solange.Coupet@lif.univ-mrs.fr>" "Line Jakubiec-Jamet <Line.Jakubiec@lif.univ-mrs.fr>" ]
 bug-reports: "https://github.com/coq-contribs/fairisle/issues"
 dev-repo: "git+https://github.com/coq-contribs/fairisle.git"
-synopsis: "Proof of the Fairisle 4x4 Switch Element "
+synopsis: "Proof of the Fairisle 4x4 Switch Element"
 description: """
 This library contains the development of general definitions dedicated
 to the verification of sequential synchronous devices (based on Moore and Mealy automata)

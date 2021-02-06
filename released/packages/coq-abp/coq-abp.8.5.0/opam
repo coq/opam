@@ -9,7 +9,14 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:alternating bit protocol" "keyword:process calculi" "keyword:reactive systems" "keyword:coinductive types" "keyword:coinduction" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" ]
+tags: [
+  "keyword:alternating bit protocol"
+  "keyword:process calculi"
+  "keyword:reactive systems"
+  "keyword:co-inductive types"
+  "keyword:co-induction"
+  "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols"
+]
 authors: [ "Eduardo Giménez <>" ]
 bug-reports: "https://github.com/coq-contribs/abp/issues"
 dev-repo: "git+https://github.com/coq-contribs/abp.git"
