@@ -12,9 +12,13 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:maps" "keyword:dependent maps" "keyword:domain" "category:Computer Science/Data Types and Data Structures" ]
+tags: [
+  "keyword:maps"
+  "keyword:dependent maps"
+  "category:Computer Science/Data Types and Data Structures"
+]
 authors: [ "Lionel Rieg <lionel.rieg@college-de-france.fr>" ]
-synopsis: "Dependent Maps."
+synopsis: "Dependent Maps"
 description:
   "A rudimentary library for dependent maps that contain their domain in the type."
 flags: light-uninstall
