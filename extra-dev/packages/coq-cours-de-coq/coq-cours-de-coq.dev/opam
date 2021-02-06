@@ -12,9 +12,11 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:coq" "keyword:examples" "category:Miscellaneous/Coq Use Examples" ]
+tags: [
+  "category:Miscellaneous/Coq Use Examples"
+]
 authors: [ "Frédéric Prost <>" "Gilles Kahn <>" ]
-synopsis: "Various examples of Coq proofs."
+synopsis: "Various examples of Coq proofs"
 description: "Various simple examples of Coq proofs"
 flags: light-uninstall
 url {

@@ -9,7 +9,9 @@ depends: [
   "ocaml"
   "coq" {>= "8.6" & < "8.7~"}
 ]
-tags: [ "keyword: Coq" "keyword: examples" "category: Miscellaneous/Coq Use Examples" ]
+tags: [
+  "category: Miscellaneous/Coq Use Examples"
+]
 authors: [ "Frédéric Prost" "Gilles Kahn" ]
 bug-reports: "https://github.com/coq-contribs/cours-de-coq/issues"
 dev-repo: "git+https://github.com/coq-contribs/cours-de-coq.git"
