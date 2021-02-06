@@ -9,7 +9,11 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:pi calculus" "category:Computer Science/Lambda Calculi" "date:1998-09-30" ]
+tags: [
+  "keyword:pi-calculus"
+  "category:Computer Science/Lambda Calculi"
+  "date:1998-09-30"
+]
 authors: [ "Loïc Henry-Gréard <lhenrygr@cma.inria.fr>" ]
 bug-reports: "https://github.com/coq-contribs/param-pi/issues"
 dev-repo: "git+https://github.com/coq-contribs/param-pi.git"

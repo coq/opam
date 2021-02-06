@@ -12,10 +12,13 @@ depends: [
   "ocaml"
   "coq" {= "dev"}
 ]
-tags: [ "keyword:pi calculus" "category:Computer Science/Lambda Calculi" "date:1998-09-30" ]
+tags: [
+  "keyword:pi-calculus"
+  "category:Computer Science/Lambda Calculi"
+  "date:1998-09-30"
+]
 authors: [ "Loïc Henry-Gréard <lhenrygr@cma.inria.fr>" ]
-synopsis:
-  "Coding of a typed monadic pi-calculus using parameters for free names."
+synopsis: "Coding of a typed monadic pi-calculus using parameters for free names"
 description: """
 This development contains the specification for a monadic
 pi-calculus using the same coding method for names than
