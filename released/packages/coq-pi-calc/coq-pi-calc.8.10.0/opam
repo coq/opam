@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://www.dimi.uniud.it/~scagnett/pi-calculus.html"
+homepage: "http://www.dimi.uniud.it/~scagnett/pi-calculus.html"
 license: "Unknown"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
@@ -13,7 +13,6 @@ tags: [
   "keyword: process algebras"
   "keyword: pi-calculus"
   "keyword: concurrency"
-  "keyword: formal verification"
   "keyword: higher-order syntax"
   "category: Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
   "date: 1998-07"
