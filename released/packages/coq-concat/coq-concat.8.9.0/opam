@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://logical.inria.fr/~saibi/docCatV6.ps"
+homepage: "http://logical.inria.fr/~saibi/docCatV6.ps"
 license: "LGPL 2.1"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

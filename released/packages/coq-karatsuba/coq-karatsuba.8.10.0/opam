@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://r6.ca/Karatsuba/"
+homepage: "http://r6.ca/Karatsuba/"
 license: "Unknown"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://dpt-info.u-strasbg.fr/~narboux/tarski.html"
+homepage: "http://dpt-info.u-strasbg.fr/~narboux/tarski.html"
 license: "GPL"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

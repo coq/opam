@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:mutual exclusion" "keyword:concurrency" "keyword:peterson's algorithm" "keyword:coinductive types" "keyword:coinduction" "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols" "category:Miscellaneous/Extracted Programs/Automata and protocols" ]
+tags: [
+  "keyword:mutual exclusion"
+  "keyword:concurrency"
+  "keyword:Peterson's algorithm"
+  "keyword:co-inductive types"
+  "keyword:co-induction"
+  "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols"
+  "category:Miscellaneous/Extracted Programs/Automata and protocols"
+]
 authors: [ "Eduardo Giménez <>" ]
 bug-reports: "https://github.com/coq-contribs/mutual-exclusion/issues"
 dev-repo: "git+https://github.com/coq-contribs/mutual-exclusion.git"

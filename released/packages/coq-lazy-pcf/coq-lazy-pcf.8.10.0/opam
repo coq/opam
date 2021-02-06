@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://www.cs.bell-labs.com/~felty/abstracts/ppcoq.html"
+homepage: "http://www.cs.bell-labs.com/~felty/abstracts/ppcoq.html"
 license: "Unknown"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

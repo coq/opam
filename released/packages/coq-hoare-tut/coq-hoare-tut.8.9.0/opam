@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://www-verimag.imag.fr/~boulme/HOARE_LOGIC_TUTORIAL/"
+homepage: "http://www-verimag.imag.fr/~boulme/HOARE_LOGIC_TUTORIAL/"
 license: "GNU LGPL"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://mattam.org/research/russell/fingertrees.en.html"
+homepage: "http://mattam.org/research/russell/fingertrees.en.html"
 license: "LGPL"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

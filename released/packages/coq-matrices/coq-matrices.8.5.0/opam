@@ -9,7 +9,14 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:matrices" "keyword:vectors" "keyword:linear algebra" "keyword:coq modules" "category:Mathematics/Algebra" "date:2003-03" ]
+tags: [
+  "keyword:matrices"
+  "keyword:vectors"
+  "keyword:linear algebra"
+  "keyword:Coq modules"
+  "category:Mathematics/Algebra"
+  "date:2003-03"
+]
 authors: [ "Nicolas Magaud <>" ]
 bug-reports: "https://github.com/coq-contribs/matrices/issues"
 dev-repo: "git+https://github.com/coq-contribs/matrices.git"

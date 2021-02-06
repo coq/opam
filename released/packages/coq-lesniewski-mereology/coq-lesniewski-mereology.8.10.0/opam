@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://www.polytech.univ-savoie.fr/index.php?id=listic-logiciels-coq&L=1"
+homepage: "http://www.polytech.univ-savoie.fr/index.php?id=listic-logiciels-coq&L=1"
 license: "LGPL"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

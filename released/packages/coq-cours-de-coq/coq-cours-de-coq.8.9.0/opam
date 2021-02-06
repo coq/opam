@@ -10,8 +10,6 @@ depends: [
   "coq" {>= "8.9" & < "8.10~"}
 ]
 tags: [
-  "keyword: Coq"
-  "keyword: examples"
   "category: Miscellaneous/Coq Use Examples"
 ]
 authors: [

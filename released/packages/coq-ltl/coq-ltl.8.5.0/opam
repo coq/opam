@@ -9,7 +9,13 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:temporal logic" "keyword:infinite transition systems" "keyword:coinduction" "category:Mathematics/Logic/Modal logic" "date:2002-07" ]
+tags: [
+  "keyword:temporal logic"
+  "keyword:infinite transition systems"
+  "keyword:co-induction"
+  "category:Mathematics/Logic/Modal logic"
+  "date:2002-07"
+]
 authors: [ "Solange Coupet-Grimal <>" ]
 bug-reports: "https://github.com/coq-contribs/ltl/issues"
 dev-repo: "git+https://github.com/coq-contribs/ltl.git"

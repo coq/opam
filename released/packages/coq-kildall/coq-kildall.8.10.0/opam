@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://www.lif-sud.univ-mrs.fr/Rapports/24-2005.html"
+homepage: "http://www.lif-sud.univ-mrs.fr/Rapports/24-2005.html"
 license: "Unknown"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

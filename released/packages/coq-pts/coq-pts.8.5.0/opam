@@ -9,7 +9,12 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:calculus of constructions" "keyword:coq" "keyword:pure type systems" "keyword:metatheory" "category:Computer Science/Lambda Calculi" "date:2007-03" ]
+tags: [
+  "keyword:pure type systems"
+  "keyword:metatheory"
+  "category:Computer Science/Lambda Calculi"
+  "date:2007-03"
+]
 authors: [ "Bruno Barras <>" ]
 bug-reports: "https://github.com/coq-contribs/pts/issues"
 dev-repo: "git+https://github.com/coq-contribs/pts.git"

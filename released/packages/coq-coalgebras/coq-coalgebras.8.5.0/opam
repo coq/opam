@@ -9,7 +9,15 @@ depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
 ]
-tags: [ "keyword:coalgebra" "keyword:bisimulation" "keyword:weakly final" "keyword:coiteration" "keyword:coinductive types" "category:Mathematics/Category Theory" "date:2008-10" ]
+tags: [
+  "keyword:coalgebra"
+  "keyword:bisimulation"
+  "keyword:weakly final"
+  "keyword:coiteration"
+  "keyword:co-inductive types"
+  "category:Mathematics/Category Theory"
+  "date:2008-10"
+]
 authors: [ "Milad Niqui <M.Niqui@cwi.nl>" ]
 bug-reports: "https://github.com/coq-contribs/coalgebras/issues"
 dev-repo: "git+https://github.com/coq-contribs/coalgebras.git"
