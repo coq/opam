@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/https://github.com/oconnorr/traversable-fincontainer"
+homepage: "https://github.com/oconnorr/traversable-fincontainer"
 license: "ASL"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

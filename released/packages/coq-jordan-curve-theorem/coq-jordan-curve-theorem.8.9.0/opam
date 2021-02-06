@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://dpt-info.u-strasbg.fr/~jfd/Downloads/JORDAN_Contrib_Coq.tar.gz"
+homepage: "http://dpt-info.u-strasbg.fr/~jfd/Downloads/JORDAN_Contrib_Coq.tar.gz"
 license: "Unknown"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://www.nuprl.org/html/CFGVLFMTP2014/"
+homepage: "http://www.nuprl.org/html/CFGVLFMTP2014/"
 license: "LGPL"
 build: [make "-j%{jobs}%"]
 install: [make "install"]

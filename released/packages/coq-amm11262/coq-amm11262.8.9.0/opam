@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "Hugo.Herbelin@inria.fr"
-homepage: "https://github.com/http://www.cs.ru.nl/~milad/AMM11262"
+homepage: "http://www.cs.ru.nl/~milad/AMM11262"
 license: "LGPL"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
