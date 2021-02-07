@@ -10,18 +10,19 @@ synopsis: "Monadic parser combinator library in Coq"
 description: """
 Inspired by Haskell Parsec library."""
 
-build: [make "-j%{jobs}%" ]
-run-test: [make "test"]
+build: [make "-j%{jobs}%"]
+run-test: [make "-j%{jobs}%" "test"]
 install: [make "install"]
 depends: [
   "coq" { >= "8.12~" }
-  "coq-ceres" 
-  "coq-ext-lib" 
+  "coq-ceres" { >= "0.4.0" }
+  "coq-ext-lib" { >= "0.11.3" }
 ]
 
 tags: [
   "category:Computer Science/Data Types and Data Structures"
   "keyword:string"
+  "date:2020-10-04"
   "logpath:Parsec"
 ]
 authors: [
@@ -31,7 +32,7 @@ authors: [
   "Li-yao Xia <xialiyao@cis.upenn.edu>"
   "Benjamin C. Pierce <bcpierce@cis.upenn.edu>"
 ]
-
 url {
-  src: "git+https://github.com/liyishuai/coq-parsec"
+  http: "https://github.com/liyishuai/coq-parsec/archive/v0.1.0.tar.gz"
+  checksum: "sha512=2644c051d8835c4339191864419b50ef200a8882297a45b3ee9ba88b2392b73f0984666377aea5247c61b189f7f422f414da67812fdfd2b197644be77c906a59"
 }
