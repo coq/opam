@@ -10,14 +10,14 @@ synopsis: "HTTP in Coq"
 description: """
 HTTP specification in Coq, testable and verifiable"""
 
-build: [make "-j%{jobs}%" ]
-run-test: [make "-j" jobs "test"]
+build: [make "-j%{jobs}%"]
+run-test: [make "-j%{jobs}%" "test"]
 install: [make "install" "INSTALLDIR=%{bin}%"]
 depends: [
   "coq" { >= "8.12~" }
-  "ocamlbuild" 
-  "coq-itree-io" 
-  "coq-parsec" 
+  "ocamlbuild" { >= "0.14.0" }
+  "coq-itree-io" { >= "0.1.0" }
+  "coq-parsec" { >= "0.1.0" }
 ]
 
 tags: [
@@ -26,6 +26,7 @@ tags: [
   "keyword:co-induction"
   "keyword:extraction"
   "keyword:reactive systems"
+  "date:2021-01-14"
   "logpath:HTTP"
 ]
 authors: [
@@ -35,7 +36,7 @@ authors: [
   "Azzam Althagafi <aazzam@cis.upenn.edu>"
   "Benjamin C. Pierce <bcpierce@cis.upenn.edu>"
 ]
-
 url {
-  src: "git+https://github.com/liyishuai/coq-http"
+  http: "https://github.com/liyishuai/coq-http/archive/v0.1.0.tar.gz"
+  checksum: "sha512=7ccaf4cb1e64cf02a1a0dbee03d0bfce9a5f8c04e554d0272f06e942c281dfb52bcc0f109c469d635d2900c1e10ee4b1519aec096a9b7ef47566a4f9b24edf31"
 }
