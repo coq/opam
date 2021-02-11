@@ -73,7 +73,7 @@ while [ ! -z "$1" ]; do
           if opam install "$PKG_NAME_VERSION" -y --show-action $EXTRA_OPAM_OPTION; then
             set +e
             echo Installing $PKG_NAME_VERSION
-            opam install "$PKG_NAME_VERSION" -y -v -v $EXTRA_OPAM_OPTION >> $LOG
+            opam install "$PKG_NAME_VERSION" -y -v -v --with-test $EXTRA_OPAM_OPTION >> $LOG
             if [ $? != 0 ]; then
               RC=1;
               FAILURES="$FAILURES $PKG_NAME_VERSION";
