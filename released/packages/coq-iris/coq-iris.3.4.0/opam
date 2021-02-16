@@ -1,0 +1,31 @@
+opam-version: "2.0"
+maintainer: "Ralf Jung <jung@mpi-sws.org>"
+authors: "The Iris Team"
+license: "BSD-3-Clause"
+homepage: "https://iris-project.org/"
+bug-reports: "https://gitlab.mpi-sws.org/iris/iris/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/iris.git"
+
+synopsis: "Iris is a Higher-Order Concurrent Separation Logic Framework with support for interactive proofs"
+description: """
+This package provides the following Coq modules:
+iris.prelude, iris.algebra, iris.si_logic, iris.bi, iris.proofmode, iris.base_logic, iris.program_logic.
+"""
+tags: [
+  "date:2021-02-16"
+]
+
+depends: [
+  "coq" { (>= "8.11" & < "8.14~") | (= "dev") }
+  "coq-stdpp" { (= "1.5.0") | (= "dev") }
+]
+
+build: ["./make-package" "iris" "-j%{jobs}%"]
+install: ["./make-package" "iris" "install"]
+
+url {
+  src:
+    "https://gitlab.mpi-sws.org/iris/iris/repository/iris-3.4.0/archive.tar.gz"
+  checksum:
+    "sha512=f227cf2535e76315605c0dce8adeb9c0ef157a6f97e99624915331061d88ab1892dc0342fe5de1591b234fcd767496572d3bfc70bdb11ac49909bd7d403d2af9"
+}
