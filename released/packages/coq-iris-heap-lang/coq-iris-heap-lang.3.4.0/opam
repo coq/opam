@@ -1,0 +1,29 @@
+opam-version: "2.0"
+maintainer: "Ralf Jung <jung@mpi-sws.org>"
+authors: "The Iris Team"
+license: "BSD-3-Clause"
+homepage: "https://iris-project.org/"
+bug-reports: "https://gitlab.mpi-sws.org/iris/iris/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/iris.git"
+
+synopsis: "HeapLang is the canonical example language for Iris"
+description: """
+This package provides the iris.heap_lang Coq module.
+"""
+tags: [
+  "date:2021-02-16"
+]
+
+depends: [
+  "coq-iris" {= version}
+]
+
+build: ["./make-package" "iris_heap_lang" "-j%{jobs}%"]
+install: ["./make-package" "iris_heap_lang" "install"]
+
+url {
+  src:
+    "https://gitlab.mpi-sws.org/iris/iris/repository/iris-3.4.0/archive.tar.gz"
+  checksum:
+    "sha512=f227cf2535e76315605c0dce8adeb9c0ef157a6f97e99624915331061d88ab1892dc0342fe5de1591b234fcd767496572d3bfc70bdb11ac49909bd7d403d2af9"
+}
