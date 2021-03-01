@@ -1,6 +1,5 @@
 opam-version: "2.0"
-maintainer: "thomas.letan@ssi.gouv.fr"
-version: "dev"
+maintainer: "lthms@soap.coffee"
 
 homepage: "https://github.com/coq-community/coqffi"
 dev-repo: "git+https://github.com/coq-community/coqffi.git"
@@ -19,7 +18,7 @@ build: [
 depends: [
   "ocaml" {>= "4.08" & < "4.12~" }
   "dune" {>= "2.5"}
-  "coq" {(>= "8.12" & < "8.14~") | (= "dev")}
+  "coq" {>= "8.12" & < "8.14~"}
   "cmdliner" {>= "1.0.4"}
   "sexplib" {>= "0.14"}
 ]
@@ -38,5 +37,6 @@ authors: [
   "Yannick Zakowski"
 ]
 url {
-  src: "git+https://github.com/coq-community/coqffi.git#main"
+  src: "https://github.com/coq-community/coqffi/archive/1.0.0-beta5.tar.gz"
+  checksum: "sha512=019966ed128e31a69ab79c610d7e1163bd650ab03485878f00e8942f2f4b4ef1f6d48a014617fce29c60190c3523f2f544655276b11fd752f98fcc2090df7f60"
 }
