@@ -25,7 +25,7 @@ depends: [
   "coq-mathcomp-solvable" { (>= "1.12.0" & < "1.13~") }
   "coq-mathcomp-field" { (>= "1.12.0" & < "1.13~") }
   "coq-mathcomp-analysis" { (>= "0.3.4" & < "0.4~") }
-  "coq-infotheo" { = "0.3"}
+  "coq-infotheo" { >= "0.3.1" & < "0.4~"}
   "coq-paramcoq" { >= "1.1.2" & < "1.2~" }
 ]
 
@@ -35,7 +35,7 @@ tags: [
   "keyword:probability"
   "keyword:nondeterminism"
   "logpath:monae"
-  "date:2021-02-21"
+  "date:2021-03-01"
 ]
 authors: [
   "Reynald Affeldt"
@@ -46,6 +46,6 @@ authors: [
   "Kazunari Tanaka"
 ]
 url {
-  http: "https://github.com/affeldt-aist/monae/archive/0.3.tar.gz"
-  checksum: "sha512=2929ffbcd375672a57877eecdade71ddb543de58f63a9104e37a713687c0ce5bf96525785abad5b9903f4973d2c96e0944928494af51acaa0f12f05771e7847d"
+  http: "https://github.com/affeldt-aist/monae/archive/0.3.1.tar.gz"
+  checksum: "sha512=9922cadb9987b2f4282b4b4efd67eda011df55fd8b459c23a500ea24a7060d13ef3637b351d139a7c7a81ac0aece5a83516c92cd7b2054016f338eb9a187a320"
 }
