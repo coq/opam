@@ -26,6 +26,14 @@ build: [
   ]
 ]
 dev-repo: "git+https://github.com/fetburner/coq-dijkstra.git"
+tags: [
+  "keyword:graph theory"
+  "keyword:shortest path"
+  "keyword:Dijkstra's algorithm"
+  "category:Graph Theory"
+  "date:2021-03-02"
+  "logpath:dijkstra"
+]
 url {
   src: "https://github.com/fetburner/coq-dijkstra/archive/0.1.0.tar.gz"
   checksum: "md5=ba5b8f156d209b428eaafe75436bee97"
