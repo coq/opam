@@ -30,9 +30,9 @@ tags: [
   "keyword:graph theory"
   "keyword:shortest path"
   "keyword:Dijkstra's algorithm"
-  "category:Graph Theory"
+  "category:Computer Science/Graph Theory"
   "date:2021-03-02"
-  "logpath:dijkstra"
+  "logpath:Dijkstra"
 ]
 url {
   src: "https://github.com/fetburner/coq-dijkstra/archive/0.1.0.tar.gz"
