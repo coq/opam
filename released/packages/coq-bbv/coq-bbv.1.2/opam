@@ -27,7 +27,7 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.8.2" & < "8.13~"}
+  "coq" {>= "8.8.2" & < "8.14~"}
 ]
 synopsis: "An implementation of bitvectors in Coq."
 url {
