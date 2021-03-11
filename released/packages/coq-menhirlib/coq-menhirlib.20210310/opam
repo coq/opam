@@ -6,7 +6,7 @@ authors: [
 ]
 homepage: "https://gitlab.inria.fr/fpottier/coq-menhirlib"
 dev-repo: "git+https://gitlab.inria.fr/fpottier/menhir.git"
-bug-reports: "jacques-henri.jourdan@lri.fr"
+bug-reports: "https://gitlab.inria.fr/fpottier/menhir/-/issues"
 license: "LGPL-3.0-or-later"
 build: [
   [make "-C" "coq-menhirlib" "-j%{jobs}%"]
