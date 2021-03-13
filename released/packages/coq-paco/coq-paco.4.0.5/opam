@@ -26,6 +26,8 @@ tags: [
   "keyword:co-induction"
   "keyword:simulation"
   "keyword:parameterized greatest fixed point"
+  
+  "logpath:Paco"
 ]
 url {
   http: "https://github.com/snu-sf/paco/archive/v4.0.5.tar.gz"
