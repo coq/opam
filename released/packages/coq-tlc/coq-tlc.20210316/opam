@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "arthur.chargueraud@inria.fr"
+
+homepage: "https://github.com/charguer/tlc"
+dev-repo: "git+https://github.com/charguer/tlc.git"
+bug-reports: "https://github.com/charguer/tlc/issues"
+license: "MIT"
+
+synopsis: "TLC: A Library for Classical Coq"
+description: """
+Provides an alternative to the core of the Coq standard library, using classic definitions.
+"""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" { >= "8.12" }
+]
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "date:2021-03-16"
+  "keyword:library"
+  "keyword:classic"
+  "logpath:TLC"
+]
+authors: [
+  "Arthur Charguéraud"
+]
+url {
+  src: "https://github.com/charguer/tlc/archive/20210316.tar.gz"
+  checksum: [
+    "md5=a88c1bd2b7995d256b88fc7f75ac1f60"
+    "sha512=886e6151dbbf04e6bc73289c4661bda6d176219b341ad6a43269f66c383f617a6b6a7fbcf048e015d9455b15bb4e361957c660d94c092cc13a1db206bf3c4505"
+  ]
+}
