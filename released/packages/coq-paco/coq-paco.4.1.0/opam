@@ -18,7 +18,7 @@ depends: [
   "coq" {>= "8.9" & < "8.14~"}
 ]
 tags: [
-  "date:2021-03-12"
+  "date:2021-03-16"
 
   "category:Computer Science/Programming Languages/Formal Definitions and Theory"
   "category:Mathematics/Logic"
@@ -30,6 +30,6 @@ tags: [
   "logpath:Paco"
 ]
 url {
-  http: "https://github.com/snu-sf/paco/archive/v4.0.5.tar.gz"
-  checksum: "da40c6509b63cdba0af822b0933861f8"
+  http: "https://github.com/snu-sf/paco/archive/v4.1.0.tar.gz"
+  checksum: "83ac51189c7f0224355e18478208c307"
 }
