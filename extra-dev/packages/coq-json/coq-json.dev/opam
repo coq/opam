@@ -21,7 +21,8 @@ depends: [
 
 tags: [
   "category:Computer Science/Data Types and Data Structures"
-  "keyword:string"
+  "keyword:serialization"
+  "keyword:JSON"
   "logpath:JSON"
 ]
 authors: [
