@@ -24,7 +24,7 @@ depends: [
   "coq-mathcomp-algebra" { (>= "1.11.0" & < "1.13~") }
   "coq-mathcomp-solvable" { (>= "1.11.0" & < "1.13~") }
   "coq-mathcomp-field" { (>= "1.11.0" & < "1.13~") }
-  "coq-mathcomp-analysis" { (>= "0.3.4" & < "0.4~") }
+  "coq-mathcomp-analysis" { (>= "0.3.4" & < "0.3.6~") }
   "coq-infotheo" { >= "0.2.1" & < "0.3~"}
   "coq-paramcoq" { >= "1.1.2" & < "1.2~" }
 ]
