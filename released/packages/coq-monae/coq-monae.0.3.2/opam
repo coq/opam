@@ -11,12 +11,8 @@ description: """
 This Coq library contains a hierarchy of monads with their laws used
 in several examples of monadic equational reasoning."""
 
-build: [
-  [make "-j%{jobs}%"]
-  [make "sect5"]
-  [make "-C" "impredicative_set"]
-]
-install: [make "install"]
+build: [make "-j%{jobs}%" ]
+install: [make "install_full"]
 depends: [
   "coq" { (>= "8.13" & < "8.14~") | (= "dev") }
   "coq-mathcomp-ssreflect" { (>= "1.12.0" & < "1.13~") }
@@ -24,8 +20,8 @@ depends: [
   "coq-mathcomp-algebra" { (>= "1.12.0" & < "1.13~") }
   "coq-mathcomp-solvable" { (>= "1.12.0" & < "1.13~") }
   "coq-mathcomp-field" { (>= "1.12.0" & < "1.13~") }
-  "coq-mathcomp-analysis" { (>= "0.3.4" & <= "0.3.5") }
-  "coq-infotheo" { = "0.3"}
+  "coq-mathcomp-analysis" { (>= "0.3.6" & < "0.4~") }
+  "coq-infotheo" { >= "0.3.2" & < "0.4~"}
   "coq-paramcoq" { >= "1.1.2" & < "1.2~" }
 ]
 
@@ -35,7 +31,7 @@ tags: [
   "keyword:probability"
   "keyword:nondeterminism"
   "logpath:monae"
-  "date:2021-02-21"
+  "date:2021-03-24"
 ]
 authors: [
   "Reynald Affeldt"
@@ -46,6 +42,7 @@ authors: [
   "Kazunari Tanaka"
 ]
 url {
-  http: "https://github.com/affeldt-aist/monae/archive/0.3.tar.gz"
-  checksum: "sha512=2929ffbcd375672a57877eecdade71ddb543de58f63a9104e37a713687c0ce5bf96525785abad5b9903f4973d2c96e0944928494af51acaa0f12f05771e7847d"
+  http: "https://github.com/affeldt-aist/monae/archive/0.3.2.tar.gz"
+  checksum: "sha512=21024941b390fa36602494d062781075091991b8edbfdfc0f1e7adfd4ce5dc158b37ef6702d100a9eda39d009bc42f9ad249e3e2215839a967264e685ea5f98b"
 }
+
