@@ -13,7 +13,7 @@ This package implements string_to_ident in Ltac2, enabling support for Gallina n
 
 depends: [
   "coq" {>= "8.11" & < "8.14~"}
-  "coq-iris" {(>= "3.3.0" & < "4.0") | = "dev"}
+  "coq-iris" {(>= "3.3.0" & < "3.5.0")}
 ]
 
 build: [make "-j%{jobs}%"]
