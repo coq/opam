@@ -14,8 +14,10 @@ build: [
 install: [make "install"]
 
 depends: [
-  "coq" { (>= "8.10" & < "8.13~") | (= "dev") }
-  "coq-mathcomp-ssreflect" { (>= "1.9" & < "1.12~") | (= "dev") }
+  "coq" { >= "8.11" & < "8.14~" }
+  "coq-mathcomp-ssreflect" { >= "1.12" & < "1.13~" }
+  "coq-mathcomp-analysis" { >= "0.3.5" & < "0.4~" }
+  "coq-hierarchy-builder" { >= "1.0" & < "2~" }
 ]
 synopsis: "Dioid"
 description: """
@@ -23,7 +25,7 @@ Definitions of the algebraic structure of dioid following the style of
 ssralg in the Mathcomp library.
 
 The main algebraic structures defined are:
-* semirings: rings without oppositve for the additive law
+* semirings: rings without opposite for the additive law
 * dioids: idempotent semirings (i.e., forall x, x + x = x)
 * complete dioids: dioids whose canonical order (x <= y wen x + y = y)
   yields a complete lattice
@@ -37,7 +39,7 @@ tags: [
   "keyword:semiring"
   "keyword:complete dioid"
   "category:Miscellaneous/Coq Extensions"
-  "logpath:dioid"
+  "logpath:mathcomp.dioid"
 ]
 authors: [
   "Lucien Rakotomalala <lucien.rakotomalala@onera.fr>"
