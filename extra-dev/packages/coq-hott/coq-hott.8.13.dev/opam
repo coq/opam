@@ -4,13 +4,11 @@ homepage: "http://homotopytypetheory.org/"
 bug-reports: "https://github.com/HoTT/HoTT/issues"
 license: "BSD-2-Clause"
 build: [
-  ["bash" "-c" "./autogen.sh -skip-submodules || :"]
-  ["./configure" "COQBIN=%{bin}%" "--prefix=%{prefix}%"]
-  [make "-j%{jobs}%"]
+  ["coq_makefile" "-f" "_CoqProject" "-o" "CoqMakefile"]
+  [make "-f" "CoqMakefile" "-j%{jobs}%"]
 ]
-install: [make "install"]
+install: [make "-f" "CoqMakefile" "install"]
 depends: [
-  "conf-autoconf" {build}
   "ocaml"
   "ocamlfind" {build}
   "coq" {>= "8.13" & < "8.14~"}
@@ -18,7 +16,17 @@ depends: [
 authors: ["The Coq-HoTT Development Team"]
 dev-repo: "git+https://github.com/HoTT/HoTT.git"
 synopsis: "The Homotopy Type Theory library"
+description: """
+To use the HoTT library, the following flags must be passed to coqc:
+   -noinit -indices-matter
+
+To use the HoTT library in a project, add the following to _CoqProject:
+   -arg -noinit
+   -arg -indices-matter
+`
+"""
 tags: [ "logpath:HoTT" ]
 url {
-  src: "git+https://github.com/HoTT/HoTT.git#V8.13"
+  src: "https://github.com/HoTT/HoTT/archive/refs/tags/V8.13.1.tar.gz"
+  checksum: "sha512=565c6aca580fce329f801d97634354b8f0c6b4687198b8f5e80332b083a82f182999d19570055992ae0c0367c6ff15cac54a998cc1f471dc57182681a24ad63d"
 }
