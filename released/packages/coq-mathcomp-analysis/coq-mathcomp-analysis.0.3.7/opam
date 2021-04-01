@@ -15,19 +15,20 @@ build: [make "-j%{jobs}%" ]
 install: [make "install"]
 depends: [
   "coq" { (>= "8.11" & < "8.14~") | (= "dev") }
-  "coq-mathcomp-ssreflect" { (>= "1.12.0" & < "1.13~") }
-  "coq-mathcomp-fingroup" { (>= "1.12.0" & < "1.13~") }
-  "coq-mathcomp-algebra" { (>= "1.12.0" & < "1.13~") }
-  "coq-mathcomp-solvable" { (>= "1.12.0" & < "1.13~") }
-  "coq-mathcomp-field" { (>= "1.12.0" & < "1.13~") }
-  "coq-mathcomp-finmap" { (>= "1.5.1" & < "1.6~") }
-  "coq-hierarchy-builder" { (>= "0.10.0" & < "1.1.0") }
+  "coq-mathcomp-ssreflect" { (>= "1.12.0" & < "1.13~") | (= "dev") }
+  "coq-mathcomp-fingroup" { (>= "1.12.0" & < "1.13~") | (= "dev") }
+  "coq-mathcomp-algebra" { (>= "1.12.0" & < "1.13~") | (= "dev") }
+  "coq-mathcomp-solvable" { (>= "1.12.0" & < "1.13~") | (= "dev") }
+  "coq-mathcomp-field" { (>= "1.12.0" & < "1.13~") | (= "dev") }
+  "coq-mathcomp-finmap" { (>= "1.5.1" & < "1.6~") | (= "dev") }
+  "coq-hierarchy-builder" { >= "0.10.0" | (= "dev") }
 ]
 
 tags: [
   "keyword:analysis"
   "keyword:topology"
   "keyword:real numbers"
+  "date:2021-04-01"
   "logpath:mathcomp.analysis"
 ]
 authors: [
@@ -40,6 +41,6 @@ authors: [
   "Pierre-Yves Strub"
 ]
 url {
-  http: "https://github.com/math-comp/analysis/archive/0.3.5.tar.gz"
-  checksum: "sha512=78a3205f551597a4a5088c74453565ee5bb38b617e421cccd4be01b8f2a8b8205e44d4e6963811a97069ca671eba98d0a79aa33c05d11fce2666bb9767e53d84"
+  http: "https://github.com/math-comp/analysis/archive/0.3.7.tar.gz"
+  checksum: "sha512=97c277ad2bd8fc75be458178d1ac5a2f5c9dd6651bc137e80fdeeda5b62f5b25969bfce64e58321494075f116afc703268479833effa86a7deae61fe926d606e"
 }
