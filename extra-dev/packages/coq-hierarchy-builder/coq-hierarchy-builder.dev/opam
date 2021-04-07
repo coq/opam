@@ -14,5 +14,5 @@ description: """
 High level commands to declare and evolve a hierarchy based on packed classes.
 """
 url {
-  src: "git+https://github.com/math-comp/hierarchy-builder.git#master"
+  src: "git+https://github.com/math-comp/hierarchy-builder.git#coq-master"
 }
