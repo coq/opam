@@ -18,8 +18,9 @@ install: [
   [make "install"]
 ]
 depends: [
-  "ocaml"
   "coq" {>= "8.10" & < "8.11~"}
+  "ocaml"
+  "ocamlfind" {build}
 ]
 tags: [
   "keyword:integer numbers"
