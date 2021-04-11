@@ -18,7 +18,7 @@ provided with the plugin."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "ocaml" {>= "4.05.0"}
+  "ocaml" {>= "4.05.0" & < "4.12"}
   "coq" {>= "8.13" & < "8.14~"}
 ]
 
