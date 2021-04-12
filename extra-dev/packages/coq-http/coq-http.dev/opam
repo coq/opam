@@ -18,6 +18,8 @@ depends: [
   "ocamlbuild" 
   "coq-itree-io" 
   "coq-parsec" 
+  "coq-quickchick"
+  "coq-json"
 ]
 
 tags: [
