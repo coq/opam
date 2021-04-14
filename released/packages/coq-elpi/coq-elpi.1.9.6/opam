@@ -11,7 +11,7 @@ build: [ [ make "build"   "COQBIN=%{bin}%/" "ELPIDIR=%{prefix}%/lib/elpi" "OCAML
        ]
 install: [ make "install" "COQBIN=%{bin}%/" "ELPIDIR=%{prefix}%/lib/elpi" ]
 depends: [
-  "elpi" {= "1.13.0"}
+  "elpi" {>= "1.13.1" & < "1.14.0~"}
   "coq" {>= "8.13" & < "8.14~" }
   ]
 tags: [ "logpath:elpi" ]
@@ -30,6 +30,6 @@ numbers, or `{{A -> B}}` to the representation of a product by unfolding
 and
 new tactics."""
 url {
-src: "https://github.com/LPCIC/coq-elpi/archive/v1.9.5.tar.gz"
-checksum: "sha256=837728cc8c536a74757bbc36365828ce5ac8a2f3f9afa8182c98c4986861c77a"
+src: "https://github.com/LPCIC/coq-elpi/archive/v1.9.6.tar.gz"
+checksum: "sha256=acd260153c0684705992a04ca6e9f6d4c24621c2018d5329c87b1a5d944ee945"
 }
