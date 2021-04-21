@@ -1,0 +1,31 @@
+opam-version: "2.0"
+maintainer: "frederic.besson@inria.fr"
+homepage: "https://gitlab.inria.fr/fbesson/itauto"
+dev-repo: "git://gitlab.inria.fr:fbesson/itauto.git"
+authors: ["Frédéric Besson"]
+bug-reports: "frederic.besson@inria.fr"
+license: "GPL 3"
+synopsis: "'itauto' is a reflexive SAT solver parameterised by a leaf tactic"
+build: [
+  [make]
+]
+install: [
+  [make "install"]
+]
+remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Cdcl"]
+depends: [
+  "ocaml" {>= "4.9~"}
+  "coq" {>= "8.13.~" }
+  "ocamlbuild" {build }
+]
+depopts: [ "ocamlformat" {build} ]
+
+url {
+  src: "https://gitlab.inria.fr/fbesson/itauto/-/archive/8.13/itauto-8.13.tar.gz"
+  checksum: "sha256=971ac9da9ff16ba83ad0236a5206ce0b8617e62c026340441fea0f4f80b79ded"
+}
+  
+tags: [
+  "keyword:integers" "keyword:SAT" "keyword:SMT" "keyword:automation"
+  "logpath:Cdcl"
+]
