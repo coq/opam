@@ -31,10 +31,10 @@ install: [
 ]
 depends: [
   "coq" {>= "8.8.0" & < "8.14"}
-  "menhir" {>= "20190626"}
+  "menhir" {>= "20190626" & <= "20210310" }
   "ocaml" {>= "4.05.0"}
   "coq-flocq" {>= "3.1.0"}
-  "coq-menhirlib" {>= "20190626"}
+  "coq-menhirlib" {>= "20190626" & <= "20210310"}
 ]
 synopsis: "The CompCert C compiler (32 bit)"
 description: "This package installs the 32 bit version of CompCert.
