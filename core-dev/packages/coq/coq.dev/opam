@@ -19,8 +19,8 @@ and homotopy type theory) and teaching.
 
 depends: [
   "ocaml" {>= "4.05.0"}
+  "dune" {>= "2.5.1"}
   "ocamlfind" {build}
-  "num"
   "conf-findutils" {build}
   "zarith" {>= "1.10"}
 ]
@@ -36,17 +36,9 @@ build: [
     "-coqide" "no"
     "-native-compiler" "yes" {coq-native:installed} "no" {!coq-native:installed}
   ]
-  [make "-j%{jobs}%"]
-  [make "-j%{jobs}%" "byte"]
+  [make "-j%{jobs}%" world]
 ]
-install: [
-  [make "install"]
-  [make "install-byte"]
-]
-
-extra-files: [
-   ["coq.install" "sha512=b501737b4dbd22adc1c0377d744448056fb1dc493caf72c05f57c8463cf23f758373605ab3a50b9f505e4c856c41039d0bd7f81f96ed62adc6a674179523e7d2"]
-]
+install: [ [make "install"] ]
 
 url {
   src: "git+https://github.com/coq/coq.git#master"
