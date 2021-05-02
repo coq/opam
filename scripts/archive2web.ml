@@ -54,7 +54,7 @@ let strip_prefix prefix fullname =
 
 let fold_subdirs base acc f = Array.fold_left f acc (Sys.readdir base)
 
-open OpamParserTypes
+open OpamParserTypes.FullPos
 
 let has_tilde s =
   let len = String.length s in
@@ -72,23 +72,23 @@ let digits v =
 
 let rec find_section name = function
   | [] -> None
-  | Section(_,s) :: _ when name = s.section_kind -> Some s
+  | Section s :: _ when name = s.section_kind.pelem -> Some s
   | _ :: xs -> find_section name xs
 
 let rec find_var_str name = function
   | [] -> None
-  | Variable(_,n,String(_,v)) :: _ when name = n -> Some v
+  | Variable({ pelem = n; _ },{ pelem = String v; _ }) :: _ when name = n -> Some v
   | _ :: xs -> find_var_str name xs
 
 let rec find_var_str_list name = function
   | [] -> []
-  | Variable(_,n,List(_,vl)) :: _ when name = n ->
-       List.map (function String(_,s) -> s | _ -> assert false) vl
+  | Variable({ pelem = n; _ },{ pelem = List( { pelem = vl; _}); _ }) :: _ when name = n ->
+       List.map (function { pelem = String s; _ } -> s | _ -> assert false) vl
   | _ :: xs -> find_var_str_list name xs
 
 let rec find_var name = function
   | [] -> None
-  | Variable(_,n,v) :: _ when name = n -> Some v
+  | Variable({ pelem = n; _ },v) :: _ when name = n -> Some v
   | _ :: xs -> find_var name xs
 
 let has_prefix prefix s =
@@ -139,12 +139,12 @@ let extract_package_version_data ~suite ~version opam_file =
   let authors = find_var_str_list "authors" opam_file in
   let authors = List.map parse_author_name authors in
   let url = find_section "url" opam_file in
-  let src = obind url (fun sec -> find_var_str "src" sec.section_items) in
+  let src = obind url (fun sec -> find_var_str "src" @@ List.map (fun x -> x.pelem) sec.section_items.pelem) in
   let src = match src with
-    | None -> obind url (fun sec -> find_var_str "archive" sec.section_items)
+    | None -> obind url (fun sec -> find_var_str "archive" @@ List.map (fun x -> x.pelem) sec.section_items.pelem)
     | Some _ -> src
   in
-  let checksum = obind url (fun sec -> find_var_str "checksum" sec.section_items) in
+  let checksum = obind url (fun sec -> find_var_str "checksum" @@ List.map (fun x -> x.pelem) sec.section_items.pelem) in
   { version;
     homepage;
     keywords;
@@ -160,8 +160,8 @@ let extract_package_version_data ~suite ~version opam_file =
 let do_one_package_version root pname version =
   let pdir = pname ^ "." ^ version in
   let package_file s = root / "packages" / pname / pdir / s in
-  let { OpamParserTypes.file_contents; _ } = OpamParser.file (package_file "opam") in
-  extract_package_version_data ~suite:root ~version file_contents
+  let { OpamParserTypes.FullPos.file_contents; _ } = OpamParser.FullPos.file (package_file "opam") in
+  extract_package_version_data ~suite:root ~version (List.map (fun x -> x.pelem) file_contents)
 
 let merge_package_versions p1 p2 =
   { versions = p1.versions @ p2.versions;
