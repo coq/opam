@@ -160,7 +160,7 @@ let extract_package_version_data ~suite ~version opam_file =
 let do_one_package_version root pname version =
   let pdir = pname ^ "." ^ version in
   let package_file s = root / "packages" / pname / pdir / s in
-  let { OpamParserTypes.file_contents; _ } = OpamParser.file (package_file "opam") in
+  let { OpamParserTypes.file_contents; _ } = OpamParser.FullPos.file (package_file "opam") in
   extract_package_version_data ~suite:root ~version file_contents
 
 let merge_package_versions p1 p2 =
