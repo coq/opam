@@ -115,12 +115,12 @@ opam-build-no-timeout:4.09.0:
   tags:
     - no-timeout
 
-opam-build:any:
+opam-build-no-timeout:any:
   extends: .opam-build
   variables:
     COMPILER: "4.09.0"
     EXTRA_OPAM_OPTION: "--unlock-base"
-  except:
+  only:
     - web
   tags:
     - no-timeout
