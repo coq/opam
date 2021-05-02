@@ -10,7 +10,7 @@ stdenv.mkDerivation rec {
   src = null;
 
   buildInputs = [
-    dune
+    dune_2
     lua51Packages.lua
   ] ++ (with ocamlPackages; [
     ocaml
