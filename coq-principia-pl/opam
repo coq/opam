@@ -1,0 +1,41 @@
+opam-version: "1.0"
+synopsis: "A Coq library for *Principia Mathematica*'s propositional logic" # One-line description
+description: """
+  This package checks all of *Principia*'s primitive axioms, inference rules, and definitions
+  against Coq's standard classical logic libraries; it also contains proofs that match the 
+  proof sketches given in *Principia* in that (a) the proofs cite every proof mentioned in 
+  *Principia*'s proof sketch and (b) nothing extraneous to *Principia*'s logic is used.
+""" # Longer description, can span several lines
+
+homepage: "https://www.principiarewrite.com/"
+dev-repo: "https://github.com/LogicalAtomist/principia"
+bug-reports: "https://github.com/LogicalAtomist/principia-pl/issues"
+doc: "https://github.com/LogicalAtomist/principia/blob/master/PL.v"
+maintainer: "elkind@ualberta.ca"
+authors: [
+  "Landon D. C. Elkind"
+]
+license: "MIT" # Make sure this is reflected by a LICENSE file in your sources
+
+depends: [
+  "coq" {>= "8.7" & < "8.10~"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/LogicalAtomist/principia-pl/archive/1.0.0.tar.gz"
+  checksum: "sha256=133f2c6de1b9b35c0b26ab3e21fa86a351fffb415d20cae714b015f95fbc3725"
+}
+
+tags: [
+  "keyword:Principia"
+  "category:Miscellaneous/Coq Extensions"
+  "date:2021-05-03"
+  "logpath:Principia-PL"
+]
