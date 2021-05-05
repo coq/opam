@@ -24,7 +24,11 @@ build: [
   [make "-j%{jobs}%" "BITSIZE=64" "IGNORECOQVERSION=true"]
 ]
 install: [
-  [make "install" "BITSIZE=64" "IGNORECOQVERSION=true"]
+  ["mkdir" "-p" "%{lib}%/coq/user-contrib/VST"]
+  ["cp" "-r" "msl" "%{lib}%/coq/user-contrib/VST/"]
+  ["cp" "-r" "veric" "%{lib}%/coq/user-contrib/VST/"]
+  ["cp" "-r" "floyd" "%{lib}%/coq/user-contrib/VST/"]
+  ["cp" "-r" "sepcomp" "%{lib}%/coq/user-contrib/VST/"]
 ]
 depends: [
   "ocaml"
