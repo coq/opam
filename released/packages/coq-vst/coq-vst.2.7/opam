@@ -21,14 +21,14 @@ dev-repo: "git+https://github.com/PrincetonUniversity/VST.git"
 bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 license: "https://raw.githubusercontent.com/PrincetonUniversity/VST/master/LICENSE"
 build: [
-  [make "-j%{jobs}%" "BITSIZE=64"]
+  [make "-j%{jobs}%" "BITSIZE=64" "IGNORECOQVERSION=true"]
 ]
 install: [
-  [make "install" "BITSIZE=64"]
+  [make "install" "BITSIZE=64" "IGNORECOQVERSION=true"]
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.12" & < "8.13.2"}
+  "coq" {>= "8.12" & < "8.14"}
   "coq-compcert" {(= "3.8") | (= "3.8~open-source")}
   "coq-flocq" {>= "3.2.1"}
 ]
