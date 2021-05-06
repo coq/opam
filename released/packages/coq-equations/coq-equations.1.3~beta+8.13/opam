@@ -20,7 +20,7 @@ tags: [
   "logpath:Equations"
 ]
 build: [
-  ["./configure.sh"]
+  ["./configure.sh" "--enable-hott" {coq-hott:installed} ]
   [make "-j%{jobs}%"]
 ]
 install: [
