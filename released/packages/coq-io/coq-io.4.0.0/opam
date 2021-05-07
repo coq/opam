@@ -19,8 +19,8 @@ depends: [
 synopsis: "A library for effects in Coq"
 tags: [
   "date:2019-07-23"
-  "keyword:effects"
   "logpath:Io"
+  "keyword:effects"
 ]
 url {
   src: "https://github.com/coq-io/io/archive/4.0.0.tar.gz"
