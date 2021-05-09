@@ -5,7 +5,7 @@ description: """
   against Coq's standard classical logic libraries; it also contains proofs that match the 
   proof sketches given in *Principia* in that (a) the proofs cite every proof mentioned in 
   *Principia*'s proof sketch and (b) nothing extraneous to *Principia*'s logic is used.
-""" # Longer description, can span several lines
+"""
 
 homepage: "https://www.principiarewrite.com/"
 dev-repo: "https://github.com/LogicalAtomist/principia"
