@@ -1,4 +1,4 @@
-opam-version: "1.0"
+opam-version: "2.0"
 synopsis: "A Coq library for *Principia Mathematica*'s propositional logic" # One-line description
 description: """
   This package checks all of *Principia*'s primitive axioms, inference rules, and definitions
