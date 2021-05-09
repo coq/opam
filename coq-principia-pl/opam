@@ -15,7 +15,7 @@ maintainer: "elkind@ualberta.ca"
 authors: [
   "Landon D. C. Elkind"
 ]
-license: "MIT" # Make sure this is reflected by a LICENSE file in your sources
+license: "MIT"
 
 depends: [
   "coq" {>= "8.7" & < "8.10~"}
