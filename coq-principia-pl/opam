@@ -8,7 +8,7 @@ description: """
 """
 
 homepage: "https://www.principiarewrite.com/"
-dev-repo: "https://github.com/LogicalAtomist/principia"
+dev-repo: "git+https://github.com/LogicalAtomist/principia.git"
 bug-reports: "https://github.com/LogicalAtomist/principia-pl/issues"
 doc: "https://github.com/LogicalAtomist/principia/blob/master/PL.v"
 maintainer: "elkind@ualberta.ca"
