@@ -1,0 +1,47 @@
+opam-version: "2.0"
+maintainer: "Reynald Affeldt <reynald.affeldt@aist.go.jp>"
+
+homepage: "https://github.com/affeldt-aist/robot"
+dev-repo: "git+https://github.com/affeldt-aist/robot.git"
+bug-reports: "https://github.com/affeldt-aist/robot/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Formal Foundations for Modeling Robot Manipulators"
+description: """
+This library is a formalization of the mathematics of rigid body
+transformations in the Coq proof-assistant. It can be used to address
+the forward kinematics problem of robot manipulators. It contains
+theories for angles, three-dimensional geometry (including
+three-dimensional rotations, skew-symmetric matrices, quaternions),
+rigid body transformations (isometries, homogeneous representation,
+Denavit-Hartenberg convention, screw motions), and an application to
+the SCARA robot manipulator."""
+
+build: [make "-j%{jobs}%" ]
+install: [make "install"]
+depends: [
+  "coq" { (>= "8.13" & < "8.14~") | (= "dev") }
+  "coq-mathcomp-ssreflect" { (>= "1.12.0" & < "1.13~") }
+  "coq-mathcomp-fingroup" { (>= "1.12.0" & < "1.13~") }
+  "coq-mathcomp-algebra" { (>= "1.12.0" & < "1.13~") }
+  "coq-mathcomp-solvable" { (>= "1.12.0" & < "1.13~") }
+  "coq-mathcomp-field" { (>= "1.12.0" & < "1.13~") }
+  "coq-mathcomp-analysis" { (>= "0.3.6") }
+  "coq-mathcomp-real-closed" { (>= "1.1.2") }
+]
+
+tags: [
+  "keyword:robotics"
+  "keyword:3D geometry"
+  "logpath:robot"
+  "date:2021-05-11"
+]
+authors: [
+  "Reynald Affeldt, AIST"
+  "Cyril Cohen, Inria"
+  "Laurent Thery, Inria"
+]
+url {
+  http: "https://github.com/affeldt-aist/coq-robot/archive/refs/tags/0.1.tar.gz"
+  checksum: "sha512=e4cb8e7857ca4d27d746fb10251b4779a1f59dde8094b6b35300900eac79b9556f697ada33514005a9f78d6a67707225a3c8d5be958437277d3f2a221f3c00cc"
+}
