@@ -9,7 +9,7 @@ description: """
 
 homepage: "https://www.principiarewrite.com/"
 dev-repo: "git+https://github.com/LogicalAtomist/principia.git"
-bug-reports: "https://github.com/LogicalAtomist/principia-pl/issues"
+bug-reports: "https://github.com/LogicalAtomist/principia/issues"
 doc: "https://github.com/LogicalAtomist/principia/blob/master/PL.v"
 maintainer: "elkind@ualberta.ca"
 authors: [
@@ -29,7 +29,7 @@ install: [
 ]
 
 url {
-  src: "https://github.com/LogicalAtomist/principia-pl/archive/1.0.0.tar.gz"
+  src: "https://github.com/LogicalAtomist/principia/archive/1.0.0.tar.gz"
   checksum: "sha256=133f2c6de1b9b35c0b26ab3e21fa86a351fffb415d20cae714b015f95fbc3725"
 }
 
@@ -37,5 +37,5 @@ tags: [
   "keyword:Principia"
   "category:Miscellaneous/Coq Extensions"
   "date:2021-05-03"
-  "logpath:Principia-PL"
+  "logpath:Principia"
 ]
