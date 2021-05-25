@@ -15,11 +15,9 @@ run-test: [make "-j" jobs "test"]
 install: [make "install" "INSTALLDIR=%{bin}%"]
 depends: [
   "coq" { >= "8.13~" }
-  "ocamlbuild" 
-  "coq-itree-io" 
-  "coq-parsec" 
+  "ocamlbuild" { >= "0.14.0" }
   "coq-quickchick"
-  "coq-json"
+  "coq-async-test"
 ]
 
 tags: [
