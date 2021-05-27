@@ -23,7 +23,7 @@ install: [make "install"]
 
 url {
   src:
-    "https://gitlab.mpi-sws.org/iris/iris/repository/iris-3.3.0/archive.tar.gz"
+    "https://gitlab.mpi-sws.org/iris/iris/-/archive/iris-3.3.0.tar.gz"
   checksum:
     "sha512=451145d68f18ab65649edbf1c78f0fccbc9748829a15640efc30cabed7ce14c5ee246f41de130e3fd331172e6a5a347c6810dbe2838c7d3ae2e32dbf6d1adb4d"
 }
