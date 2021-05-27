@@ -36,6 +36,6 @@ The key features of this library are as follows:
 flags: light-uninstall
 url {
   src:
-    "https://gitlab.mpi-sws.org/robbertkrebbers/coq-stdpp/repository/coq-stdpp-1.1.0/archive.tar.gz"
+    "https://gitlab.mpi-sws.org/iris/stdpp/-/archive/coq-stdpp-1.1.0.tar.gz"
   checksum: "md5=2a24643f073f0975597dfbe6cbbc63e5"
 }

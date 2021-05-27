@@ -34,6 +34,6 @@ The key features of this library are as follows:
 
 url {
   src:
-    "https://gitlab.mpi-sws.org/iris/stdpp/repository/coq-stdpp-1.2.0/archive.tar.gz"
+    "https://gitlab.mpi-sws.org/iris/stdpp/-/archive/coq-stdpp-1.2.0.tar.gz"
   checksum: "md5=5aee0ec3ff9bb8bbdbf5a5d54d0d7670"
 }

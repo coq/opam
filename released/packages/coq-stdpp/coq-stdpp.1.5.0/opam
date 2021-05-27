@@ -41,7 +41,7 @@ install: [make "install"]
 
 url {
   src:
-    "https://gitlab.mpi-sws.org/iris/stdpp/repository/coq-stdpp-1.5.0/archive.tar.gz"
+    "https://gitlab.mpi-sws.org/iris/stdpp/-/archive/coq-stdpp-1.5.0.tar.gz"
   checksum:
     "sha512=393ae68782370e4206e452d46c44300d5e6e27be15d9aa1dfd33ef0ccef1640f83e741f0a799c106453f305c59c5af1698ef276b47522daaefc86ece0b40f530"
 }
