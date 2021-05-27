@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "guillaume.melquiond@inria.fr"
-homepage: "http://coq-interval.gforge.inria.fr/"
+homepage: "https://coqinterval.gitlabpages.inria.fr/"
 dev-repo: "git+https://gitlab.inria.fr/coqinterval/interval.git"
 bug-reports: "https://gitlab.inria.fr/coqinterval/interval/issues"
 license: "CeCILL-C"
