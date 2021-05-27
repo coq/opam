@@ -38,6 +38,6 @@ The key features of this library are as follows:
 - It is entirely dependency- and axiom-free."""
 url {
   src:
-    "https://gitlab.mpi-sws.org/robbertkrebbers/coq-stdpp/repository/coq-stdpp-1.0.0/archive.tar.gz"
+    "https://gitlab.mpi-sws.org/iris/stdpp/-/archive/coq-stdpp-1.0.0.tar.gz"
   checksum: "md5=274b1c461dd99b541d41500959498dee"
 }
