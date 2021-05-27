@@ -1,6 +1,6 @@
 opam-version: "2.0"
 maintainer: "guillaume.melquiond@inria.fr"
-homepage: "http://flocq.gforge.inria.fr/"
+homepage: "https://flocq.gitlabpages.inria.fr/"
 dev-repo: "git+https://gitlab.inria.fr/flocq/flocq.git"
 bug-reports: "https://gitlab.inria.fr/flocq/flocq/issues"
 license: "LGPL-3.0-or-later"
