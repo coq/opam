@@ -23,7 +23,7 @@ install: ["./make-package" "iris_heap_lang" "install"]
 
 url {
   src:
-    "https://gitlab.mpi-sws.org/iris/iris/repository/iris-3.4.0/archive.tar.gz"
+    "https://gitlab.mpi-sws.org/iris/iris/-/archive/iris-3.4.0.tar.gz"
   checksum:
     "sha512=f227cf2535e76315605c0dce8adeb9c0ef157a6f97e99624915331061d88ab1892dc0342fe5de1591b234fcd767496572d3bfc70bdb11ac49909bd7d403d2af9"
 }
