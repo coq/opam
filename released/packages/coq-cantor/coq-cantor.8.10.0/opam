@@ -27,6 +27,8 @@ bug-reports: "https://github.com/coq-contribs/cantor/issues"
 dev-repo: "git+https://github.com/coq-contribs/cantor.git"
 synopsis: "On Ordinal Notations"
 description: """
+Note: this package has been superseded by coq-hydra-battles.
+
 This contribution contains data structures for ordinals
 less than Gamma0 under Cantor and Veblen normal
 forms. Well-foundedness is established thanks to RPO with status for
