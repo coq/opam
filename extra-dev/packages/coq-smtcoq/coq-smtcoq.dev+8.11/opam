@@ -17,8 +17,8 @@ depends: [
 tags: [ 
   "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
   "category:Miscellaneous/Coq Extensions"
-  "keyword: smt"
-  "keyword: sat"
+  "keyword: SMT"
+  "keyword: SAT"
   "keyword: automation"
 ]
 authors: [ 
@@ -27,7 +27,7 @@ authors: [
  "Amina Bousalem"
  "Quentin Garchery"
  "Benjamin Grégoire"
- "Chantal Keller <Chantal.Keller@lri.fr>"
+ "Chantal Keller"
  "Burak Ekici"
  "Alain Mebsout"
 ]
