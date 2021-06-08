@@ -20,6 +20,8 @@ authors: [
 bug-reports: "https://github.com/coq-contribs/additions/issues"
 dev-repo: "git+https://github.com/coq-contribs/additions.git"
 synopsis: "Addition Chains"
+description: """
+Note: this package has been superseded by coq-addition-chains."""
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/additions/archive/v8.10.0.tar.gz"
