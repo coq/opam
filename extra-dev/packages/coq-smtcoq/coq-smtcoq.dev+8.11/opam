@@ -17,8 +17,8 @@ depends: [
 tags: [ 
   "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
   "category:Miscellaneous/Coq Extensions"
-  "keyword: smt"
-  "keyword: sat"
+  "keyword: SMT"
+  "keyword: SAT"
   "keyword: automation"
 ]
 authors: [ 
