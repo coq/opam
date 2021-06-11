@@ -14,7 +14,7 @@ depends: [
   "elpi" {>= "1.13.5" & < "1.14.0~"}
   "coq" {>= "8.13" & < "8.14~" }
   ]
-tags: [ "logpath:elpi" ]
+tags: [ "logpath:elpi" "date:2021-06-11" ]
 synopsis: "Elpi extension language for Coq"
 description: """
 Coq-elpi provides a Coq plugin that embeds ELPI.
