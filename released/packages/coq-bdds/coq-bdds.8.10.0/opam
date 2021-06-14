@@ -40,5 +40,5 @@ in Coq. See file README for operation."""
 flags: light-uninstall
 url {
   src: "https://github.com/coq-contribs/bdds/archive/v8.10.0.tar.gz"
-  checksum: "md5=9e25331342938b96cb45c1428d72a087"
+  checksum: "md5=9d8155b5718bc6032daf45451eda40d6"
 }
