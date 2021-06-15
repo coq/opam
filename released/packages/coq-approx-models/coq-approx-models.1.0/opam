@@ -18,7 +18,7 @@ verified Chebyshev approximations."""
 build: [make "-j%{jobs}%" ]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.13" ) | (= "dev")}
+  "coq" {(>= "8.13" )}
   "coq-interval"
   "coq-coquelicot" {(>= "3.2.0")}
 ]
