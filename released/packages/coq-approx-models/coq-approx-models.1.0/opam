@@ -18,17 +18,18 @@ verified Chebyshev approximations."""
 build: [make "-j%{jobs}%" ]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.13" & < "8.14~") | (= "dev")}
+  "coq" {(>= "8.13" ) | (= "dev")}
   "coq-interval"
-  "coq-coquelicot" {(= "3.2.0")}
+  "coq-coquelicot" {(>= "3.2.0")}
 ]
 
 tags: [
-  "category:Computer Science/Approximation Theory"
+  "category:Mathematics/Approximation Theory"
   "keyword:approximation theory"
-  "keyword:chebyshev polynomials"
+  "keyword:Chebyshev polynomials"
   "keyword:certificate-based approximation"
   "logpath:ApproxModels"
+  "date:2021-06-15"
 ]
 authors: [
   "Florent Bréhard"
