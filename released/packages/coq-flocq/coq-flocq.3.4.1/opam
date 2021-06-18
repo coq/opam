@@ -11,18 +11,21 @@ build: [
 ]
 install: ["./remake" "install"]
 depends: [
-  "coq" {>= "8.7" & < "8.14~"}
+  "coq" {>= "8.7"}
   "conf-autoconf" {build & dev}
   ("conf-g++" {build} | "conf-clang" {build})
 ]
 tags: [
   "keyword:floating-point arithmetic"
   "logpath:Flocq"
-  "date:2020-04-03"
+  "date:2021-06-18"
 ]
-authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
-synopsis: "A floating-point formalization for the Coq system"
+authors: [
+  "Sylvie Boldo <sylvie.boldo@inria.fr>"
+  "Guillaume Melquiond <guillaume.melquiond@inria.fr>"
+]
+synopsis: "A formalization of floating-point arithmetic for the Coq system"
 url {
-  src: "https://gforge.inria.fr/frs/download.php/file/38301/flocq-3.2.1.tar.gz"
-  checksum: "sha512=5e300bfe7e6998047c8e1458a1205b1e88768ec9d1492a701ceb1293ad994190bc00e63a2566c4d77aaaaa585dd2d66f2c03fddddcacb75b0e30ab1f0c46c6f6"
+  src: "https://gforge.inria.fr/frs/download.php/file/38442/flocq-3.4.1.tar.gz"
+  checksum: "sha512=7d8d9ea86a95f006466329f9abf90ebd0bea16c40a90010b921f6dcd1dfd7cb791087f2f6f8f5e9f13286432ffface7e2a6aeaf80b32b21bf9eb9d60ffa87e24"
 }
