@@ -20,7 +20,7 @@ tags: [
   "logpath:Equations"
 ]
 build: [
-  ["./configure.sh"]
+  ["./configure.sh" "--enable-hott" {coq-hott:installed} ]
   [make "-j%{jobs}%"]
 ]
 install: [
@@ -31,6 +31,9 @@ run-test: [
 ]
 depends: [
   "coq" {= "dev"}
+]
+depopts: [
+  "coq-hott"
 ]
 url {
   src: "git+https://github.com/mattam82/Coq-Equations#master"
