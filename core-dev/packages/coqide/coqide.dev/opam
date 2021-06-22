@@ -31,11 +31,7 @@ build: [
     "-datadir" "%{share}%/coq"
     "-native-compiler" {os = "macos"} "no" {os = "macos"}
   ]
-  [make "-j%{jobs}%" "coqide"]
-]
-install: [
-  make
-  "install-coqide"
+  [ "dune" "build" "-p" name "-j"  jobs ]
 ]
 
 url {
