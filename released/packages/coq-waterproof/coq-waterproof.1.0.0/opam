@@ -15,7 +15,7 @@ authors: [
   "Adrian Vrămuleţ"
   "Tudor Voicu"
 ]
-license: "LGPL 3.0" # Make sure this is reflected by a LICENSE file in your sources
+license: "LGPL 3.0"
 
 depends: [
   "coq" {>= "8.10"}
