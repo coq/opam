@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "Chantal.Keller@lri.fr"
+homepage: "https://github.com/smtcoq/sniper"
+dev-repo: "git+https://github.com/smtcoq/sniper.git"
+bug-reports: "https://github.com/smtcoq/sniper/issues"
+authors: ["Valentin Blot <Valentin.Blot@inria.fr>"
+          "Louise Dubois de Prsique <Louise.Dubois-de-Prisque@inria.fr>"
+          "Chantal Keller <Chantal.Keller@lri.fr"
+          "Pierre Vial <Pierre.Vial@inria.fr>"
+]
+license: "CECILL-C"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml" {>= "4.07.1" }
+  "coq" {>= "8.13~" & < "8.14~"}
+  "coq-metacoq" {= "1.0~beta2+8.13"}
+  "coq-smtcoq" {= "dev+8.13"}
+]
+tags: [ 
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "category:Miscellaneous/Coq Extensions"
+  "keyword: SMT"
+  "keyword: automation"
+]
+synopsis: "A Coq plugin for general proof automation"
+description: """
+Sniper is a Coq plugin for general proof automation, based on a translation from Coq logic into first-order logic, then a call to the SMT solver veriT through the SMTCoq plugin.
+"""
+url {
+  src: "git+https://github.com/smtcoq/sniper.git#coq-8.11"
+}
