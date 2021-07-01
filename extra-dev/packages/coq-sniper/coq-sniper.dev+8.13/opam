@@ -18,8 +18,8 @@ install: [
 depends: [
   "ocaml" {>= "4.07.1" }
   "coq" {>= "8.13" & < "8.14~"}
-  "coq-metacoq" {= "1.0~beta2+8.13"}
-  "coq-smtcoq" {= "dev+8.13"}
+  "coq-metacoq"
+  "coq-smtcoq"
 ]
 tags: [ 
   "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
