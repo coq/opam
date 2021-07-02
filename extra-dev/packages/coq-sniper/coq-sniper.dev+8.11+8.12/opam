@@ -16,7 +16,6 @@ install: [
   [make "install"]
 ]
 depends: [
-  "ocaml"
   "coq" {>= "8.11" & < "8.13~"}
   "coq-metacoq-pcuic"
   "coq-smtcoq"
