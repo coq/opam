@@ -6,6 +6,7 @@ variables:
 cache:
   paths:
     - opam-cache
+  key: v2
 
 before_script:
   - export HOME=$(pwd)
@@ -15,7 +16,6 @@ before_script:
   - export OPAM_VERSION=2.0.6
   - export OPAM_ROOT_DIR=${HOME}/opam-root-${COMPILER}-${OPAM_VERSION}-${OPAM_VARIANT}
   - export OPAM_ROOT_CACHE=${HOME}/opam-cache/cache-${COMPILER}-${OPAM_VERSION}-${OPAM_VARIANT}.tgz
-  - export EXTRA_OPAM="ocamlbuild" # some packages build extracted code this way
   - apt-get update -qy
   - apt-get install unzip libgtksourceview2.0-dev libgtksourceview-3.0-dev libncurses5-dev curl jq ruby bubblewrap time libgmp-dev coinor-csdp libstring-shellquote-perl libipc-system-simple-perl -y
   - test -e $OPAM_ROOT_CACHE || scripts/opam-coq-init
