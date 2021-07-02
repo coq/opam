@@ -16,12 +16,12 @@ install: [
   [make "install"]
 ]
 depends: [
-  "ocaml" {>= "4.07.1" }
+  "ocaml"
   "coq" {>= "8.13" & < "8.14~"}
-  "coq-metacoq"
+  "coq-metacoq-pcuic"
   "coq-smtcoq"
 ]
-tags: [ 
+tags: [
   "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
   "category:Miscellaneous/Coq Extensions"
   "keyword: SMT"
