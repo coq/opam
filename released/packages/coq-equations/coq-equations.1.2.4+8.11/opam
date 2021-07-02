@@ -31,6 +31,7 @@ run-test: [
 ]
 depends: [
   "coq" {>= "8.11.0" & < "8.12~"}
+  "ocamlfind" {build}
 ]
 url {
   src:
