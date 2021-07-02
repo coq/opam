@@ -6,6 +6,7 @@ variables:
 cache:
   paths:
     - opam-cache
+  key: v2
 
 before_script:
   - export HOME=$(pwd)
