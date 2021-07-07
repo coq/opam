@@ -6,8 +6,8 @@ homepage: "https://github.com/math-comp/hierarchy-builder"
 bug-reports: "https://github.com/math-comp/hierarchy-builder/issues"
 dev-repo: "git+https://github.com/math-comp/hierarchy-builder"
 
-build: [ make ]
-install: [ make "install" "VFILES=structures.v" ]
+build: [ make "build"]
+install: [ make "install"]
 depends: [ "coq-elpi" {= "dev"} ]
 synopsis: "Hierarchy Builder"
 description: """
