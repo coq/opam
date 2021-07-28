@@ -1,0 +1,42 @@
+opam-version: "2.0"
+maintainer: "damien.pous@ens-lyon.fr"
+
+homepage: "https://github.com/damien-pous/coinduction"
+dev-repo: "git+https://github.com/damien-pous/coinduction.git"
+bug-reports: "https://github.com/damien-pous/coinduction/issues"
+license: "LGPL-3.0-or-later"
+
+synopsis: "A library and plugin for doing proofs by (enhanced) coinduction"
+description: """
+Coinductive predicates are greatest fixpoints of monotone functions.
+The `companion' makes it possible to enhance the associated coinduction scheme.
+This library provides a formalisation on enhancements based on the companion, as well as tactics in making it straightforward to perform proofs by enhanced coinduction.
+"""
+
+build: [
+  [make "-j%{jobs}%" ]
+]
+install: [make "install"]
+depends: [
+  "ocaml"
+  "coq" {(>= "8.13")}
+  "coq-aac-tactics" 
+]
+
+tags: [
+  "keyword:coinduction"
+  "keyword:up to techniques"
+  "keyword:companion"
+  "keyword:bisimilarity"
+  "keyword:streams"
+  "keyword:CCS"
+  "logpath:Coinduction"
+]
+authors: [
+  "Damien Pous"
+]
+url {
+  src:
+    "https://github.com/damien-pous/coinduction/archive/v1.0.tar.gz"
+  checksum: "sha512=47d3a3dc7a2bbbd361131344b08133160353df3997a5df9bae4e6f91ee128b6d9212308ffd7709e9a0379abb4314e569353dba55062c61e0196bce0a4258e1c0"
+}
