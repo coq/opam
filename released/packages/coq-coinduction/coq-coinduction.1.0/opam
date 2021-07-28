@@ -39,5 +39,5 @@ authors: [
 url {
   src:
     "https://github.com/damien-pous/coinduction/archive/v1.0.tar.gz"
-  checksum: "md5=2ea0f8e1bb16a8ced44b33b7578ab054"
+  checksum: "sha512=47d3a3dc7a2bbbd361131344b08133160353df3997a5df9bae4e6f91ee128b6d9212308ffd7709e9a0379abb4314e569353dba55062c61e0196bce0a4258e1c0"
 }
