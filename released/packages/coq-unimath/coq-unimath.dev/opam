@@ -10,7 +10,7 @@ build: [make "-j%{jobs}%" "BUILD_COQ=no"]
 install: [make "BUILD_COQ=no" "install"]
 depends: [
   "ocaml"
-  "coq" {>= "8.12.2" | "dev" }
+  "coq" {>= "8.12.2"}
 ]
 url {
   src: "git+https://github.com/UniMath/UniMath.git/#master"
