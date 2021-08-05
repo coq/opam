@@ -7,13 +7,11 @@ license: "Kind of MIT"
 authors: ["The UniMath Development Team"]
 build: [make "BUILD_COQ=no" "-j%{jobs}%"]
 install: [make "BUILD_COQ=no" "install"]
-remove: ["rm" "-r" "-f" "%{lib}%/coq/user-contrib/UniMath"]
 depends: [
   "ocaml"
-  "coq" {= "dev"}
+  "coq" {>= "8.12.2"}
 ]
-synopsis: "UniMath"
-flags: light-uninstall
+synopsis: "Library of Univalent Mathematics"
 url {
   src: "git+https://github.com/UniMath/UniMath.git#master"
 }
