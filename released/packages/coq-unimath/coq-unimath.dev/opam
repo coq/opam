@@ -13,5 +13,5 @@ depends: [
   "coq" {>= "8.12.2"}
 ]
 url {
-  src: "git+https://github.com/UniMath/UniMath.git/#master"
+  src: "git+https://github.com/UniMath/UniMath.git#master"
 }
