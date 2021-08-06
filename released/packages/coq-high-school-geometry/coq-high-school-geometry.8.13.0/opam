@@ -1,0 +1,38 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/HighSchoolGeometry"
+dev-repo: "git+https://github.com/coq-community/HighSchoolGeometry.git"
+bug-reports: "https://github.com/coq-community/HighSchoolGeometry/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Geometry in Coq for French high school"
+description: """
+This Coq library is dedicated to high-shool geometry teaching. The
+axiomatisation for affine Euclidean space is in a non analytic setting.
+Includes a proof of Ptolemy's theorem."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.12" & < "8.15~"}
+]
+
+tags: [
+  "category:Mathematics/Geometry/General"
+  "keyword:geometry"
+  "keyword:teaching"
+  "keyword:high school"
+  "keyword:Ptolemy's theorem"
+  "logpath:HighSchoolGeometry"
+  "date:2021-08-06"
+]
+authors: [
+  "Frédérique Guilhot"
+  "Tuan-Minh Pham"
+]
+
+url {
+  src: "https://github.com/coq-community/HighSchoolGeometry/archive/v8.13.tar.gz"
+  checksum: "sha512=47dba843c3541c628725224b6f9d353b5e5d224cd16ae52d6980a6aec9d698855477934609364dfaaa91271818f530d7af6d344c2ee7c38f8c0e0a3e226a655e"
+}
