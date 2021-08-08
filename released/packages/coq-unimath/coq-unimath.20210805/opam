@@ -13,5 +13,6 @@ depends: [
 ]
 synopsis: "Library of Univalent Mathematics"
 url {
-  src: "git+https://github.com/UniMath/UniMath.git#7cc41b88e798e9f42af984d8a8abd72c5f955213"
+  src: "https://github.com/UniMath/UniMath/archive/refs/tags/v20210807.tar.gz"
+  checksum: "sha512=db2f660aea7e4c7eda6d10173173b80d357f994ff148102df6d20b0098e4c4e3ec17f9956700e118b7ff043a4ef29827cccd1fe9f5f54b5f5deaebcac60c666c"
 }
