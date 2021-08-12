@@ -1,0 +1,37 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/gaia"
+dev-repo: "git+https://github.com/coq-community/gaia.git"
+bug-reports: "https://github.com/coq-community/gaia/issues"
+license: "MIT"
+
+synopsis: "Implementation of books from Bourbaki's Elements of Mathematics in Coq"
+description: """
+Implementation of books from N. Bourbaki's Elements of Mathematics
+in Coq using the Mathematical Components library, including set theory
+and number theory."""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "2.5"}
+  "coq" {(>= "8.10" & < "8.15~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {(>= "1.12.0" & < "1.13~") | (= "dev")}
+  "coq-mathcomp-algebra" 
+]
+
+tags: [
+  "category:Mathematics/Logic/Set theory"
+  "keyword:Bourbaki"
+  "keyword:set theory"
+  "logpath:gaia"
+]
+authors: [
+  "José Grimm"
+  "Alban Quadrat"
+  "Carlos Simpson"
+]
+
+url {
+  src: "git+https://github.com/coq-community/gaia.git#master"
+}
