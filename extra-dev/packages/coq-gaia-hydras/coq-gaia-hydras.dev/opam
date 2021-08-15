@@ -6,29 +6,27 @@ dev-repo: "git+https://github.com/coq-community/hydra-battles.git"
 bug-reports: "https://github.com/coq-community/hydra-battles/issues"
 license: "MIT"
 
-synopsis: "Exponentiation algorithms following addition chains"
+synopsis: "Comparison between ordinals in Gaia and Hydra battles"
 description: """
-Addition chains are algorithms for computations of the p-th power of some x, 
-with the least number of multiplication as possible. We present a few implementations of addition chains, with proofs of their correctness"""
+The Gaia and Hydra battles projects develop different notions of ordinals.
+This development bridges the different notions."""
 
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
   "coq" {(>= "8.13" & < "8.14~") | (= "dev")}
-  "coq-paramcoq" {(>= "1.1.2" & < "1.2~") | (= "dev")}
+  "coq-hydra-battles" {(>= "0.4" & < "0.5~") | (= "dev")}
   "coq-mathcomp-ssreflect" {(>= "1.12.0" & < "1.13~") | (= "dev")}
-  "coq-mathcomp-algebra"
+  "coq-gaia" {(>= "1.12" & < "1.13~") | (= "dev")}
 ]
 
 tags: [
-  "category:Mathematics/Combinatorics and Graph Theory"
-  "keyword:addition chains"
-  "keyword:exponentiation algorithms"
-  "logpath:additions"
+  "category:Mathematics/Logic/Foundations"
+  "keyword:ordinals"
+  "logpath:gaia_hydras"
 ]
 authors: [
   "Pierre Castéran"
-  "Yves Bertot"
 ]
 
 url {
