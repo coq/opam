@@ -1,25 +1,41 @@
 opam-version: "2.0"
-maintainer: "cohen@crans.org"
-homepage: "http://www.maximedenes.fr/content/coqeal-coq-effective-algebra-library"
+maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
+
+homepage: "https://github.com/coq-community/coqeal"
+dev-repo: "git+https://github.com/coq-community/coqeal.git"
+bug-reports: "https://github.com/coq-community/coqeal/issues"
 license: "MIT"
-build: [
-  [make "-j%{jobs}%"]
-]
+
+synopsis: "The theory needed by the CoqEAL refinement framework library"
+
+build: [make "-j%{jobs}%"]
 install: [make "install"]
+
 depends: [
-  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
-  "coq-math-comp" {>= "1.5"} |
-  ("coq-mathcomp-ssreflect" {>= "1.6"} & "coq-mathcomp-algebra" {>= "1.6"})
+  "coq-mathcomp-ssreflect" {>= "1.6"}
+  "coq-mathcomp-algebra" {>= "1.6"}
 ]
+
 tags: [
+  "category:Mathematics/Algebra"
+  "keyword:effective algebra"
+  "keyword:elementary divisor rings"
+  "keyword:Smith normal form"
+  "keyword:mathematical components"
+  "keyword:Bareiss"
   "logpath:CoqEAL_theory"
 ]
-synopsis: "The theory needed by the refinement framework library"
-authors:
-  "Guillaume Cano, Cyril Cohen, Maxime Dénès, Anders Mörtberg and Vincent Siles"
+
+authors: [
+  "Guillaume Cano"
+  "Cyril Cohen"
+  "Maxime Dénès"
+  "Anders Mörtberg"
+  "Vincent Siles"
+]
+
 url {
-  src:
-    "https://github.com/Barbichu/CoqEAL/raw/master/release/CoqEAL_theory.0.9.1.tgz"
+  src: "https://github.com/coq-community/coqeal/releases/download/0.9.1/CoqEAL_theory.0.9.1.tgz"
   checksum: "md5=3b85194a65e80a763cfc2f067092efc8"
 }

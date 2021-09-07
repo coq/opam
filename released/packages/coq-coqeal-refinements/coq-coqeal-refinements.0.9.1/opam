@@ -1,24 +1,37 @@
 opam-version: "2.0"
-maintainer: "cohen@crans.org"
-homepage: "http://www.maximedenes.fr/content/coqeal-coq-effective-algebra-library"
+maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
+
+homepage: "https://github.com/coq-community/coqeal"
+dev-repo: "git+https://github.com/coq-community/coqeal.git"
+bug-reports: "https://github.com/coq-community/coqeal/issues"
 license: "MIT"
-build: [
-  [make "-j%{jobs}%"]
-]
+
+synopsis: "A refinement framework (for algebra)"
+
+build: [make "-j%{jobs}%"]
 install: [make "install"]
+
 depends: [
-  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
-  "coq-coqeal-theory" {>= "0.9.0"}
+  "coq-coqeal-theory" {= version}
 ]
+
 tags: [
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
+  "keyword:Karatsuba multiplication"
+  "keyword:refinements"
   "logpath:CoqEAL_refinements"
 ]
-synopsis: "A refinement framework (for algebra)"
-authors:
-  "Guillaume Cano, Cyril Cohen, Maxime Dénès, Anders Mörtberg and Vincent Siles"
+
+authors: [
+  "Guillaume Cano"
+  "Cyril Cohen"
+  "Maxime Dénès"
+  "Anders Mörtberg"
+  "Vincent Siles"
+]
+
 url {
-  src:
-    "https://github.com/Barbichu/CoqEAL/raw/master/release/CoqEAL_refinements.0.9.1.tgz"
+  src: "https://github.com/coq-community/coqeal/releases/download/0.9.1/CoqEAL_refinements.0.9.1.tgz"
   checksum: "md5=5bb83c00bb33b9b3254f9f3cedae2447"
 }
