@@ -1,25 +1,26 @@
 opam-version: "2.0"
 maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
 
-homepage: "https://github.com/CoqEAL/coqeal"
-dev-repo: "git+https://github.com/CoqEAL/coqeal.git"
-bug-reports: "https://github.com/CoqEAL/coqeal/issues"
+homepage: "https://github.com/coq-community/coqeal"
+dev-repo: "git+https://github.com/coq-community/coqeal.git"
+bug-reports: "https://github.com/coq-community/coqeal/issues"
 license: "MIT"
 
 synopsis: "CoqEAL - The Coq Effective Algebra Library"
 description: """
-This libary contains a subset of the work that was developed in the context of the ForMath european project (2009-2013). It has two parts:
-- theory (module CoqEAL_theory), which contains formal developments in algebra and optimized algorithms on mathcomp data structures.
-- refinements (module CoqEAL_refinements), which is a framework to ease change of data representation during a proof."""
+This Coq library contains a subset of the work that was developed in the context
+of the ForMath EU FP7 project (2009-2013). It has two parts:
+- theory, which contains developments in algebra and optimized algorithms on mathcomp data structures.
+- refinements, which is a framework to ease change of data representations during a proof."""
 
-build: [make "-j%{jobs}%" ]
+build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.10" & < "8.14~") | (= "dev")}
+  "coq" {(>= "8.10" & < "8.15~") | (= "dev")}
   "coq-bignums" 
-  "coq-paramcoq" {(>= "1.1.1") | (= "dev")}
+  "coq-paramcoq" {>= "1.1.1"}
   "coq-mathcomp-multinomials" {((>= "1.5.1" & < "1.7~") | = "dev")}
-  "coq-mathcomp-algebra" {((>= "1.11.0" & < "1.13~") | = "dev")}
+  "coq-mathcomp-algebra" {((>= "1.12.0" & < "1.13~") | = "dev")}
 ]
 
 tags: [
@@ -37,11 +38,13 @@ authors: [
   "Guillaume Cano"
   "Cyril Cohen"
   "Maxime Dénès"
+  "Érik Martin-Dorel"
   "Anders Mörtberg"
   "Damien Rouhling"
+  "Pierre Roux"
   "Vincent Siles"
 ]
 
 url {
-  src: "git+https://github.com/CoqEAL/CoqEAL.git#master"
+  src: "git+https://github.com/coq-community/coqeal.git#master"
 }
