@@ -1,19 +1,19 @@
-
 opam-version: "2.0"
 maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
 
-homepage: "https://github.com/CoqEAL/coqeal"
-dev-repo: "git+https://github.com/CoqEAL/coqeal.git"
-bug-reports: "https://github.com/CoqEAL/coqeal/issues"
+homepage: "https://github.com/coq-community/coqeal"
+dev-repo: "git+https://github.com/coq-community/coqeal.git"
+bug-reports: "https://github.com/coq-community/coqeal/issues"
 license: "MIT"
 
 synopsis: "CoqEAL - The Coq Effective Algebra Library"
 description: """
-This libary contains a subset of the work that was developed in the context of the ForMath european project (2009-2013). It has two parts:
-- theory (module CoqEAL_theory), which contains formal developments in algebra and optimized algorithms on mathcomp data structures.
-- refinements (module CoqEAL_refinements), which is a framework to ease change of data representation during a proof."""
+This Coq library contains a subset of the work that was developed in the context
+of the ForMath EU FP7 project (2009-2013). It has two parts:
+- theory, which contains developments in algebra and optimized algorithms on mathcomp data structures.
+- refinements, which is a framework to ease change of data representations during a proof."""
 
-build: [make "-j%{jobs}%" ]
+build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
   "coq" {>= "8.10" & < "8.14~"}
@@ -44,6 +44,6 @@ authors: [
 ]
 
 url {
-  src: "https://github.com/CoqEAL/coqeal/archive/1.0.5.tar.gz"
-  checksum: "sha256=864a5e153ef27f1f608b0904966ae5fb9f6c00cc2945ab1016835e5339aed6b9"
+  src: "https://github.com/coq-community/coqeal/archive/refs/tags/1.0.5.tar.gz"
+  checksum: "sha512=0e72018c9ff740018b74d32fdc0e4e8266162e3853d5eba54afaffad0cc096978b6534e4c5c56e628f12409ca29df9347fa02fb472cb0f13709f1e1b8c23a7af"
 }
