@@ -1,16 +1,20 @@
 opam-version: "2.0"
 maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
-homepage: "https://github.com/CoqEAL/CoqEAL"
-bug-reports: "https://github.com/CoqEAL/CoqEAL/issues"
-dev-repo: "git+https://github.com/CoqEAL/CoqEAL.git"
 
+homepage: "https://github.com/coq-community/coqeal"
+dev-repo: "git+https://github.com/coq-community/coqeal.git"
+bug-reports: "https://github.com/coq-community/coqeal/issues"
 license: "MIT"
-build: [
-  [make "-j%{jobs}%"]
-]
-install: [
-  [make "install"]
-]
+
+synopsis: "CoqEAL - The Coq Effective Algebra Library"
+description: """
+This Coq library contains a subset of the work that was developed in the context
+of the ForMath EU FP7 project (2009-2013). It has two parts:
+- theory, which contains developments in algebra and optimized algorithms on mathcomp data structures.
+- refinements, which is a framework to ease change of data representations during a proof."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
 depends: [
   "coq" {>= "8.7" & < "8.13~"}
   "coq-bignums"
@@ -20,6 +24,7 @@ depends: [
 ]
 
 tags: [
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
   "keyword:effective algebra"
   "keyword:elementary divisor rings"
   "keyword:Smith normal form"
@@ -37,13 +42,7 @@ authors: [
   "Vincent Siles"
 ]
 
-synopsis: "CoqEAL - The Coq Effective Algebra Library"
-description: """
-This library contains a subset of the work that was developed in the context of the ForMath european project (2009-2013). It has two parts:
-- theory (module CoqEAL_theory), which contains formal developments in algebra and optimized algorithms on mathcomp data structures.
-- refinements (module CoqEAL_refinements), which is a framework to ease change of data representation during a proof.
-"""
 url {
-  src: "https://github.com/CoqEAL/CoqEAL/archive/1.0.4.tar.gz"
-  checksum: "sha512=d3d4cdc2975dbc237c59ff23f99e3fff2fc88fc0330aaeb966025457aae4c094c8eff91b562b8f6944ff12f4db649b681e2f378543f1ed6b2747cb8e77631c1d"
+  src: "https://github.com/coq-community/coqeal/archive/refs/tags/1.0.4.tar.gz"
+  checksum: "sha512=98fbabb5014adde76c743b90bfb14b1ddedc6eecd9671f904598d92bacfd62e327b067cce6597df9e5fbab8331abf96979e3fd6137d42d37fb5ae93c8d6e6830"
 }
