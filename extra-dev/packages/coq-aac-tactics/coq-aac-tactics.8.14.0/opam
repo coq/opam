@@ -1,0 +1,45 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/aac-tactics"
+dev-repo: "git+https://github.com/coq-community/aac-tactics.git"
+bug-reports: "https://github.com/coq-community/aac-tactics/issues"
+license: "LGPL-3.0-or-later"
+
+synopsis: "Coq plugin providing tactics for rewriting universally quantified equations, modulo associative (and possibly commutative) operators"
+description: """
+This Coq plugin provides tactics for rewriting universally quantified
+equations, modulo associativity and commutativity of some operator.
+The tactics can be applied for custom operators by registering the
+operators and their properties as type class instances. Many common
+operator instances, such as for Z binary arithmetic and booleans, are
+provided with the plugin."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "ocaml" {>= "4.05.0"}
+  "coq" {>= "8.14" & < "8.15~"}
+]
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "keyword:reflexive tactic"
+  "keyword:rewriting"
+  "keyword:rewriting modulo associativity and commutativity"
+  "keyword:rewriting modulo ac"
+  "keyword:decision procedure"
+  "logpath:AAC_tactics"
+  "date:2021-09-22"
+]
+authors: [
+  "Thomas Braibant"
+  "Damien Pous"
+  "Fabian Kunze"
+]
+
+url {
+  src: "https://github.com/coq-community/aac-tactics/archive/v8.14.0.tar.gz"
+  checksum: "sha512=679e0952d593e5c020159cfd78bd2c30927e35f3fcf33363caffac0fdfe3c8d69e07a3c2ad2bc0cd4e2a29a72619a1055c482f4240bbc3aabfacab8c6ca9d39f"
+}
