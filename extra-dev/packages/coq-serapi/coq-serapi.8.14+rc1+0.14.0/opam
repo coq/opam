@@ -1,0 +1,48 @@
+opam-version: "2.0"
+maintainer:   "e@x80.org"
+homepage:     "https://github.com/ejgallego/coq-serapi"
+bug-reports:  "https://github.com/ejgallego/coq-serapi/issues"
+dev-repo:     "git+https://github.com/ejgallego/coq-serapi.git"
+license:      "GPL-3.0-or-later"
+doc:          "https://ejgallego.github.io/coq-serapi/"
+
+synopsis:     "Serialization library and protocol for machine interaction with the Coq proof assistant"
+description:  """
+SerAPI is a library for machine-to-machine interaction with the
+Coq proof assistant, with particular emphasis on applications in IDEs,
+code analysis tools, and machine learning. SerAPI provides automatic
+serialization of Coq's internal OCaml datatypes from/to JSON or
+S-expressions (sexps).
+"""
+
+authors: [
+  "Emilio Jesús Gallego Arias"
+  "Karl Palmskog"
+  "Clément Pit-Claudel"
+  "Kaiyu Yang"
+]
+
+depends: [
+  "ocaml"               {           >= "4.07.0"              }
+  "coq"                 {           >= "8.14" & < "8.15"     }
+  "cmdliner"            {           >= "1.0.0"               }
+  "ocamlfind"           {           >= "1.8.0"               }
+  "sexplib"             {           >= "v0.13.0"             }
+  "dune"                {           >= "2.0.1"               }
+  "ppx_import"          { build   & >= "1.5-3"               }
+  "ppx_deriving"        {           >= "4.2.1"               }
+  "ppx_sexp_conv"       {           >= "v0.13.0" & < "v0.15" }
+  "yojson"              {           >= "1.7.0"               }
+  "ppx_deriving_yojson" {           >= "3.4"                 }
+]
+
+build: [ "dune" "build" "-p" name "-j" jobs ]
+x-commit-hash: "90649c9d1d1ded649cc37d020dc2e41143eea394"
+url {
+  src:
+    "https://github.com/ejgallego/coq-serapi/archive/8.14+rc1+0.14.0.tar.gz"
+  checksum: [
+    "sha256=91a8c9a8c4087dff5fd61165738ec3651beba59539d44c754939004131456a25"
+    "sha512=3accfe0bc10f2514fbb569ceaec5ae8273a5ea3cf2dce585016ecbd6b40c380d75c8d02a1922efffeffa55d8d1b144db6ce4cd9870586a6551224c169075c5d8"
+  ]
+}
