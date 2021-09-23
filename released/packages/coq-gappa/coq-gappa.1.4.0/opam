@@ -2,6 +2,7 @@ opam-version: "2.0"
 maintainer: "guillaume.melquiond@inria.fr"
 homepage: "https://gappa.gitlabpages.inria.fr/"
 dev-repo: "git+https://gitlab.inria.fr/gappa/coq.git"
+bug-reports: "https://gitlab.inria.fr/gappa/coq/issues"
 license: "LGPL 2.1"
 build: [
   ["./configure"]
@@ -25,7 +26,6 @@ authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "A Coq tactic for discharging goals about floating-point arithmetic and round-off errors using the Gappa prover"
 flags: light-uninstall
 url {
-  src:
-    "https://gforge.inria.fr/frs/download.php/file/37626/gappalib-coq-1.4.0.tar.gz"
+  src: "https://gappa.gitlabpages.inria.fr/releases/gappalib-coq-1.4.0.tar.gz"
   checksum: "md5=53421c1f38c95c7c25642f80d3f210e4"
 }

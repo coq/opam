@@ -29,6 +29,6 @@ tags: [
 authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "A Coq tactic for discharging goals about floating-point arithmetic and round-off errors using the Gappa prover"
 url {
-  src: "https://gforge.inria.fr/frs/download.php/file/38386/gappalib-coq-1.4.6.tar.gz"
+  src: "https://gappa.gitlabpages.inria.fr/releases/gappalib-coq-1.4.6.tar.gz"
   checksum: "sha512=bb9c431d320d9c66998ec02ba7d459ee3f00cb7b16f89e57f3d7eb4b89cd3c9254e98e3906a8dfac31f73e5a32918ad12eaeaf7504750d3bfdce878913b745d3"
 }
