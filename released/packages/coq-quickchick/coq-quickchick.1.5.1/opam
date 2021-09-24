@@ -10,7 +10,6 @@ license: "MIT"
 build: [ make "-j" jobs ]
 install: [
   [make "-j" jobs "install" ]
-  [make "-j" jobs "tests"] {with-test}
 ]
 depends: [
   "ocaml" {>= "4.07"}
