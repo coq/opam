@@ -9,7 +9,7 @@ dev-repo: "git+https://github.com/math-comp/hierarchy-builder"
 build: [ make "-C" "shim" "build" ]
 install: [ make "-C" "shim" "install" ]
 conflicts: [ "coq-hierarchy-builder" ]
-depends: [ "coq" ]
+depends: [ "coq" {>= "8.10"} ]
 synopsis: "Shim package for HB"
 description: """
 This package provide the support constants one can use to compile files
