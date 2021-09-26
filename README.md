@@ -6,7 +6,7 @@ Packages are organized according to the [layout](https://coq.inria.fr/opam-layou
 ## Repositories
 
 To activate the repositories:
-* all the released packages:
+* all the released packages (recommended default):
 
     ```
     opam repo add coq-released https://coq.inria.fr/opam/released
