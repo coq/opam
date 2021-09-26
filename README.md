@@ -3,7 +3,7 @@
 All [opam](https://opam.ocaml.org) repositories for Coq packages live here.
 Packages are organized according to the [layout](https://coq.inria.fr/opam-layout.html).
 
-## Repositories
+## Use
 
 To activate the repositories:
 * all the released packages (recommended default):
@@ -23,6 +23,13 @@ To activate the repositories:
     ```
     opam repo add coq-core-dev https://coq.inria.fr/opam/core-dev
     ```
+
+## Add packages
+
+To add new packages, look at this
+[documentation](https://coq.inria.fr/opam-packaging.html). You can also look at
+existing [pull requests](https://github.com/coq/opam-coq-archive/pulls) to see
+how others are adding packages.
 
 ## Website and opam metadata
 
