@@ -1,16 +1,20 @@
-# OPAM archive for Coq
+# opam archive for Coq
 
-All [OPAM](https://opam.ocaml.org) repositories for Coq packages live here.
+All [opam](https://opam.ocaml.org) repositories for Coq packages live here.
 Packages are organized according to the [layout](https://coq.inria.fr/opam-layout.html).
 
-## Repositories
+## Use
 
 To activate the repositories:
-* all the released packages:
+* all the released packages (recommended default):
 
     ```
     opam repo add coq-released https://coq.inria.fr/opam/released
     ```
+We welcome pull requests for all Coq-related packages that are compatible with
+a released version of Coq. Besides _libraries_ of general interest, this also
+includes _paper artifacts_ and other _specialized formalizations_ that are not
+necessarily expected to be immediately reusable by others.
 
 * development versions:
 
@@ -24,7 +28,14 @@ To activate the repositories:
     opam repo add coq-core-dev https://coq.inria.fr/opam/core-dev
     ```
 
-## Website and OPAM metadata
+## Add packages
+
+To add new packages, look at this
+[documentation](https://coq.inria.fr/opam-packaging.html). You can also look at
+existing [pull requests](https://github.com/coq/opam-coq-archive/pulls) to see
+how others are adding packages.
+
+## Website and opam metadata
 
 The `scripts/archive2web.ml` program generates a JSON file
 `coq-packages.json` by looking at the `opam` files.
