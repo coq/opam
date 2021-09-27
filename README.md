@@ -11,6 +11,10 @@ To activate the repositories:
     ```
     opam repo add coq-released https://coq.inria.fr/opam/released
     ```
+We welcome pull requests for all Coq-related packages that are compatible with
+a released version of Coq. Besides _libraries_ of general interest, this also
+includes _paper artifacts_ and other _specialized formalizations_ that are not
+necessarily expected to be immediately reusable by others.
 
 * development versions:
 
