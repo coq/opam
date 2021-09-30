@@ -32,6 +32,6 @@ authors: [
 ]
 synopsis: "A Coq formalization of real analysis compatible with the standard library"
 url {
-  src: "https://gforge.inria.fr/frs/download.php/file/38383/coquelicot-3.2.0.tar.gz"
+  src: "https://coquelicot.gitlabpages.inria.fr/releases/coquelicot-3.2.0.tar.gz"
   checksum: "sha512=d7ac2dcc48499a95e73f875da0f24fec6714ad06f16c4675c764d0600034fa51c10c9eaaacef7943e1147a9412e24274228ac9d17f2c0e07eb86932bc2b264a1"
 }

@@ -3,7 +3,7 @@ maintainer: "guillaume.melquiond@inria.fr"
 homepage: "https://flocq.gitlabpages.inria.fr/"
 dev-repo: "git+https://gitlab.inria.fr/flocq/flocq.git"
 bug-reports: "https://gitlab.inria.fr/flocq/flocq/issues"
-license: "LGPL 3"
+license: "LGPL-3.0-or-later"
 build: [
   ["./configure"]
   ["./remake" "-j%{jobs}%"]
@@ -16,6 +16,6 @@ tags: [ "keyword:floating-point arithmetic" ]
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "A floating-point formalization for the Coq system"
 url {
-  src: "https://gforge.inria.fr/frs/download.php/file/38103/flocq-3.2.0.tar.gz"
+  src: "https://flocq.gitlabpages.inria.fr/releases/flocq-3.2.0.tar.gz"
   checksum: "sha512=de737c9dab61115cb8f0e145f6e8d7e0ec8c1de97afec77079a30fb3948eec2afa0e5b0568bd5a3f82939a2c18befa62073adfbbdcac31ab7775d8cc874f026a"
 }

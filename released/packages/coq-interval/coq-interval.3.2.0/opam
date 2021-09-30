@@ -9,7 +9,6 @@ build: [
   ["./remake" "-j%{jobs}%"]
 ]
 install: ["./remake" "install"]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Interval"]
 depends: [
   "coq" {>= "8.5" & < "8.7"}
   "coq-flocq" {>= "2.5.0" & < "3.0~"}
@@ -27,9 +26,7 @@ tags: [
 ]
 authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "A Coq tactic for proving bounds on real-valued expressions automatically"
-flags: light-uninstall
 url {
-  src:
-    "https://gforge.inria.fr/frs/download.php/file/36538/interval-3.2.0.tar.gz"
+  src: "https://coqinterval.gitlabpages.inria.fr/releases/interval-3.2.0.tar.gz"
   checksum: "md5=19aabc38a870036eaf5a07149b4c0565"
 }
