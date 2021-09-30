@@ -28,6 +28,6 @@ tags: [
 authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "A Coq tactic for proving bounds on real-valued expressions automatically"
 url {
-  src: "https://gforge.inria.fr/frs/download.php/file/38104/interval-3.4.1.tar.gz"
+  src: "https://coqinterval.gitlabpages.inria.fr/releases/interval-3.4.1.tar.gz"
   checksum: "sha512=676fd6f7d9f0ce949f30ebb00fd911353181ae29f9381ed786b9a105a26fa277c9b049dbe86f198f8e30b4a799546762becfc156f0868037a3c2f31efdb27a63"
 }

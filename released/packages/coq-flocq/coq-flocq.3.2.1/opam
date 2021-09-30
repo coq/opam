@@ -23,6 +23,6 @@ tags: [
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "A floating-point formalization for the Coq system"
 url {
-  src: "https://gforge.inria.fr/frs/download.php/file/38301/flocq-3.2.1.tar.gz"
+  src: "https://flocq.gitlabpages.inria.fr/releases/flocq-3.2.1.tar.gz"
   checksum: "sha512=5e300bfe7e6998047c8e1458a1205b1e88768ec9d1492a701ceb1293ad994190bc00e63a2566c4d77aaaaa585dd2d66f2c03fddddcacb75b0e30ab1f0c46c6f6"
 }

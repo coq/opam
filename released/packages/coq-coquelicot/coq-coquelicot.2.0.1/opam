@@ -1,14 +1,15 @@
 opam-version: "2.0"
 maintainer: "guillaume.melquiond@inria.fr"
 homepage: "http://coquelicot.saclay.inria.fr/"
-license: "LGPL 3"
+dev-repo: "git+https://gitlab.inria.fr/coquelicot/coquelicot.git"
+bug-reports: "https://gitlab.inria.fr/coquelicot/coquelicot/issues"
+license: "LGPL-3.0-or-later"
 build: [
   ["./configure"]
   ["./remake" "-j%{jobs}%"]
 ]
 install: ["./remake" "install"]
 depends: [
-  "ocaml"
   "coq" {>= "8.4pl4" & < "8.5~"}
   "coq-ssreflect" {= "1.5.0"}
 ]
@@ -16,7 +17,6 @@ tags: [ "keyword:real analysis" "keyword:topology" "keyword:filters" "keyword:me
 authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Catherine Lelay <catherine.lelay@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
 synopsis: "A Coq formalization of real analysis compatible with the standard library"
 url {
-  src:
-    "https://gforge.inria.fr/frs/download.php/33464/coquelicot-2.0.1.tar.gz"
+  src: "https://coquelicot.gitlabpages.inria.fr/releases/coquelicot-2.0.1.tar.gz"
   checksum: "md5=e06ef9cadf7cdce7517a17b895409ef0"
 }

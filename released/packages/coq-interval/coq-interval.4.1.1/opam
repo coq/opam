@@ -38,6 +38,6 @@ authors: [
 ]
 synopsis: "A Coq tactic for proving bounds on real-valued expressions automatically"
 url {
-  src: "https://gforge.inria.fr/frs/download.php/file/38384/interval-4.1.1.tar.gz"
+  src: "https://coqinterval.gitlabpages.inria.fr/releases/interval-4.1.1.tar.gz"
   checksum: "sha512=7a09b2d95eff5b95f2ccf5041dd3103fbf455246fe4f62e90af08933d7349bd73a8f69a285b63bc6c214fdc7d94cfd4c4b94a651fcbfbef4057c05b80c00cdf1"
 }

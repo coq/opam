@@ -26,6 +26,6 @@ authors: [
 ]
 synopsis: "A formalization of floating-point arithmetic for the Coq system"
 url {
-  src: "https://gforge.inria.fr/frs/download.php/file/38444/flocq-3.4.2.tar.gz"
+  src: "https://flocq.gitlabpages.inria.fr/releases/flocq-3.4.2.tar.gz"
   checksum: "sha512=eceeebbeb3d42a6e1d279839e6d98ec453ea4ce60b55e3310e5ca44ff10ad992435fbde2c321c884ad4aa3d075a08c84c1b1a49e5160f6789a4b74f21bfcff12"
 }

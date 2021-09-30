@@ -36,6 +36,6 @@ tags: [
 authors: [ "Guillaume Melquiond <guillaume.melquiond@inria.fr>" "Érik Martin-Dorel <erik.martin-dorel@irit.fr>" "Pierre Roux <pierre.roux@onera.fr>" "Thomas Sibut-Pinote <thomas.sibut-pinote@inria.fr>" ]
 synopsis: "A Coq tactic for proving bounds on real-valued expressions automatically"
 url {
-  src: "https://gforge.inria.fr/frs/download.php/file/38339/interval-4.0.0.tar.gz"
+  src: "https://coqinterval.gitlabpages.inria.fr/releases/interval-4.0.0.tar.gz"
   checksum: "sha512=e8fc34e4b38565e9bb5b0ec9423d12d06c33c708235df97222fc6be9035cfdcba9b0b209b7123de4f9fca1b1ef7c6d7eb7f1383dca59795d8142ad737feb6597"
 }
