@@ -15,9 +15,9 @@ without induction) that is complete is inconsistent."""
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
-  "coq" {(>= "8.11" & < "8.14~") | (= "dev")}
-  "coq-hydra-battles" {= "dev"}
-  "coq-pocklington" {= "dev"}
+  "coq" {(>= "8.11" & < "8.15~") | (= "dev")}
+  "coq-hydra-battles" {>= "0.4"}
+  "coq-pocklington" {>= "8.12.0"}
 ]
 
 tags: [

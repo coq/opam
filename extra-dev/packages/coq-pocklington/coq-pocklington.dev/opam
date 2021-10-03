@@ -6,19 +6,19 @@ dev-repo: "git+https://github.com/coq-community/pocklington.git"
 bug-reports: "https://github.com/coq-community/pocklington/issues"
 license: "LGPL-2.1-or-later"
 
-synopsis: "Pocklington's criterion in Coq"
+synopsis: "Pocklington's criterion for primality in Coq"
 description: """
-Coq formalization of Pocklington's criterion for checking primality for
+Coq formalization of Pocklington's criterion for checking primality of
 large natural numbers. Includes a formal proof of Fermat's little theorem."""
 
-build: [make "-j%{jobs}%"]
-install: [make "install"]
+build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
+  "dune" {>= "2.5"}
   "coq" {(>= "8.7" & < "8.15~") | (= "dev")}
 ]
 
 tags: [
-  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "category:Mathematics/Arithmetic and Number Theory/Number Theory"
   "keyword:Pocklington"
   "keyword:number theory"
   "keyword:prime numbers"
