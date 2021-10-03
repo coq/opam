@@ -1,0 +1,32 @@
+opam-version: "2.0"
+maintainer: "dev@clarus.me"
+homepage: "https://github.com/foobar-land/coq-bonsai"
+dev-repo: "git+https://github.com/foobar-land/coq-bonsai.git"
+bug-reports: "https://github.com/foobar-land/coq-bonsai/issues"
+authors: ["Guillaume Claret"]
+license: "GPL-3.0-only"
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+  [make "-C" "extraction"]
+]
+depends: [
+  "coq" {>= "8.13.0"}
+  "coq-list-string"
+  "coq-simple-io"
+  "ocaml"
+  "ocamlbuild" {build}
+]
+tags: [
+  "category:Misc/Logical Puzzles and Entertainment"
+  "keyword:bonsai"
+  "keyword:effects"
+  "keyword:extraction"
+  "date:2021-10-04"
+]
+synopsis: "Generate a fresh Bonsai on your terminal"
+
+url {
+  src: "https://github.com/foobar-land/coq-bonsai/archive/refs/tags/v1.0.0.tar.gz"
+  checksum: "sha512=0760e15ee5627651ead63f1ee527f487f89b49cc2327e8b4bf2da261c215895cd1c5541a0e729bebc576d4e58dddbc8cae6b5666a56e5a94e849ab773208c5d1"
+}
