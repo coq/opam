@@ -18,9 +18,10 @@ depends: [
   "ocaml" {build}
   "ocamlfind" {build}
   "conf-jq" {build}
-  "coq" {>= "8.9~"}
+  "coq" {>= "8.11~"}
   "coq-coqprime"
   "coq-rewriter"
+  "coq-coqutil"
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
 synopsis: "Cryptographic Primitive Code Generation by Fiat."
