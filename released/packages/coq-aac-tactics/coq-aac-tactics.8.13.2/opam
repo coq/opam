@@ -6,14 +6,14 @@ dev-repo: "git+https://github.com/coq-community/aac-tactics.git"
 bug-reports: "https://github.com/coq-community/aac-tactics/issues"
 license: "LGPL-3.0-or-later"
 
-synopsis: "Coq plugin providing tactics for rewriting universally quantified equations, modulo associative (and possibly commutative) operators"
+synopsis: "Coq tactics for rewriting universally quantified equations, modulo associative (and possibly commutative and idempotent) operators"
 description: """
-This Coq plugin provides tactics for rewriting universally quantified
-equations, modulo associativity and commutativity of some operator.
-The tactics can be applied for custom operators by registering the
-operators and their properties as type class instances. Many common
-operator instances, such as for Z binary arithmetic and booleans, are
-provided with the plugin."""
+This Coq plugin provides tactics for rewriting and proving universally
+quantified equations modulo associativity and commutativity of some operator,
+with idempotent commutative operators enabling additional simplifications.
+The tactics can be applied for custom operators by registering the operators and
+their properties as type class instances. Instances for many commonly used operators,
+such as for binary integer arithmetic and booleans, are provided with the plugin."""
 
 build: [make "-j%{jobs}%"]
 install: [make "install"]
@@ -31,7 +31,7 @@ tags: [
   "keyword:rewriting modulo ac"
   "keyword:decision procedure"
   "logpath:AAC_tactics"
-  "date:2021-10-01"
+  "date:2021-10-10"
 ]
 authors: [
   "Thomas Braibant"
@@ -41,5 +41,5 @@ authors: [
 
 url {
   src: "https://github.com/coq-community/aac-tactics/archive/v8.13.2.tar.gz"
-  checksum: "sha512=082ed3cc712eff25378d22ea71eb5d7820cf477f57d42d1a3260cf16948c7ac94743024c2e9b6022364102b2c6a20b1759bb7a09788e672df180f1d1831f275e"
+  checksum: "sha512=0291d360b8ace354a23341e22c23c08606dab76b9e553411d17c08f83e5c6a18c17c0c7f8ed69f9114d963f6e6b8ec9acddafeabb201bc4d907f9dc941641d44"
 }
