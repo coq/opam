@@ -14,7 +14,7 @@ types). This includes support for functions with finite support and
 multisets. The library also contains a generic order and set libary,
 which will be used to subsume notations for finite sets, eventually."""
 
-build: [make "-j%{jobs}%" ]
+build: [make "-j%{jobs}%" "COQEXTRAFLAGS+=-native-compiler yes" {coq-native:installed & coq:version < "8.13~" } ]
 install: [make "install"]
 depends: [
   "coq" { (>= "8.10" & < "8.15~") | (= "dev") }
