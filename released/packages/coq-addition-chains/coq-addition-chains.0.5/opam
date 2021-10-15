@@ -1,0 +1,38 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/hydra-battles"
+dev-repo: "git+https://github.com/coq-community/hydra-battles.git"
+bug-reports: "https://github.com/coq-community/hydra-battles/issues"
+license: "MIT"
+
+synopsis: "Exponentiation algorithms following addition chains"
+description: """
+Addition chains are algorithms for computations of the p-th power of some x, 
+with the least number of multiplication as possible. We present a few implementations of addition chains, with proofs of their correctness"""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "2.5"}
+  "coq" {>= "8.13" & < "8.15~"}
+  "coq-paramcoq" {>= "1.1.3" & < "1.2~"}
+  "coq-mathcomp-ssreflect" {>= "1.12.0" & < "1.13~"}
+  "coq-mathcomp-algebra"
+]
+
+tags: [
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "keyword:addition chains"
+  "keyword:exponentiation algorithms"
+  "logpath:additions"
+  "date:2021-10-15"
+]
+authors: [
+  "Pierre Castéran"
+  "Yves Bertot"
+]
+
+url {
+  src: "https://github.com/coq-community/hydra-battles/archive/v0.5.tar.gz"
+  checksum: "sha512=7edd74fa408b996ebe7c4748046fda522f24a4b532c58b5ad55edeaa4bbd137ba9f21b0b6c1f824d4e7c50f04fb6afe488dfbcd24702e8fe44eb75b780610458"
+}
