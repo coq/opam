@@ -1,0 +1,58 @@
+opam-version: "2.0"
+version: "0.1.0"
+synopsis: "Separation logic-based verification of instruction sets"
+description: """
+Katamaran is a semi-automated separation logic verifier for
+the Sail specification language. It works on an embedded
+version of Sail called μSail and verifies separation
+logic-based contracts of functions by generating (succinct)
+first-order verification conditions. It further comes with a
+complete model based on the Iris separation logic
+framework."""
+maintainer: ["Steven Keuchel <steven.keuchel@vub.be>"]
+authors: [
+  "Dominique Devriese"
+  "Georgy Lukyanov"
+  "Sander Huyghebaert"
+  "Steven Keuchel"
+]
+license: "BSD-2-Clause"
+tags: [
+  "keyword:program verification"
+  "keyword:separation logic"
+  "keyword:symbolic execution"
+  "keyword:instruction sets"
+  "category:Computer Science/Semantics and Compilation/Semantics"
+  "data:2021-10-15"
+  "logpath:Katamaran"
+]
+homepage: "https://katamaran-project.github.io/"
+bug-reports: "https://github.com/katamaran-project/katamaran/issues"
+depends: [
+  "dune"                  {>= "2.5"}
+  "coq"                   {>= "8.12" & < "8.14~" | = "dev"}
+  "coq-bbv"               {>= "1.2"  & < "1.3~" | = "dev"}
+  "coq-equations"         {>= "1.2"  & < "1.4~" | = "dev"}
+  "coq-iris"              {= "3.4.0"}
+  "coq-iris-string-ident" {= "0.1.0"}
+  "coq-stdpp"             {= "1.5.0"}
+]
+build: [
+  ["dune" "subst"] {pinned}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/katamaran-project/katamaran.git"
+url {
+  src: "https://github.com/katamaran-project/katamaran/archive/v0.1.0.tar.gz"
+  checksum: "sha256=cb3d1b9121cdff09367d04caf01b595affae4600a10e73d2890c07f4aee3cbbb"
+}
