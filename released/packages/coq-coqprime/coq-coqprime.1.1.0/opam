@@ -20,5 +20,4 @@ synopsis: "Certifying prime numbers in Coq"
 url {
   src: "https://github.com/thery/coqprime/archive/v8.14.zip"
   checksum: "md5=dae09ead7beab4ee29819d56a9e6ddd7"
-
 }
