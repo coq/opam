@@ -1,52 +1,60 @@
 # opam archive for Coq
 
 All [opam](https://opam.ocaml.org) repositories for Coq packages live here.
-Packages are organized according to the [layout](https://coq.inria.fr/opam-layout.html).
+Packages are organized according to the [layout](https://coq.inria.fr/opam-layout.html):
 
-## Use
+* `released`: packages for Coq libraries and Coq extensions that were officially released by the Coq team or their corresponding authors.
+
+* `core-dev`: packages for development versions of Coq.
+
+* `extra-dev`: packages for development versions of external contributions to Coq.
+
+We welcome pull requests to `released` for any Coq-related package that is compatible with a
+[released version of Coq](https://github.com/ocaml/opam-repository/tree/master/packages/coq).
+Besides _libraries_ of general interest, this also includes _paper artifacts_ and other
+_specialized formalizations_ that are not necessarily expected to be immediately reusable
+by others.
+
+## Usage
 
 To activate the repositories:
-* all the released packages (recommended default):
+
+* `released` (recommended default):
 
     ```
     opam repo add coq-released https://coq.inria.fr/opam/released
     ```
-We welcome pull requests for all Coq-related packages that are compatible with
-a released version of Coq. Besides _libraries_ of general interest, this also
-includes _paper artifacts_ and other _specialized formalizations_ that are not
-necessarily expected to be immediately reusable by others.
 
-* development versions:
-
-    ```
-    opam repo add coq-extra-dev https://coq.inria.fr/opam/extra-dev
-    ```
-
-* development versions of Coq:
+* `core-dev`:
 
     ```
     opam repo add coq-core-dev https://coq.inria.fr/opam/core-dev
     ```
 
-## Add packages
+* `extra-dev`:
 
-To add new packages, look at this
-[documentation](https://coq.inria.fr/opam-packaging.html). You can also look at
-existing [pull requests](https://github.com/coq/opam-coq-archive/pulls) to see
-how others are adding packages.
+    ```
+    opam repo add coq-extra-dev https://coq.inria.fr/opam/extra-dev
+    ```
+
+## Adding packages
+
+See the [documentation](https://coq.inria.fr/opam-packaging.html) for how to add a package.
+You can also look at existing [pull requests](https://github.com/coq/opam-coq-archive/pulls)
+to see how others are adding packages.
 
 ## Website and opam metadata
 
-The `scripts/archive2web.ml` program generates a JSON file
+The `scripts/archive2web.ml` program generates the JSON file
 `coq-packages.json` by looking at the `opam` files.
 
 In particular, it uses the `tags` field of an `opam` file as follows:
 
  1. strings beginning with `keyword:` are considered as `keywords`
  2. strings beginning with `category:` are considered as `categories`
- 3. a string beginning with `date:` is the date the software was last updated
-    (not the package)
- 4. a string beginning with `logpath:` is considered the Coq logical path prefix
+ 3. a string beginning with `logpath:` is considered the Coq logical path prefix
+ 4. a string beginning with `date:` is the date the software was last updated
+    (not the package definition)
 
 Example:
 
@@ -54,23 +62,24 @@ Example:
 tags: [
   "keyword:cool"
   "keyword:stuff"
-  "category:Some/Category"
+  "category:Miscellaneous/Coq Use Examples"
+  "logpath:MyPrefix"
   "date:1992-12-22"
-  "logpath:SomePrefix"
 ]
 ```
 
 The `homepage:`, `author:`, `maintainer:`, and `doc:` fields are
 also used to generate the package entry.
 
-This JSON file is generated during continuous integration and copied to
-the website. Some JavaScript code on the website then loads it to
-dynamically generate the content of the webpage on client side.
+The JSON file is generated during continuous integration and
+[copied to the website](https://coq.inria.fr/opam/coq-packages.json).
+JavaScript code on the website then loads it to dynamically generate
+the content of the website on the client side.
 
 See also [CEP3](https://github.com/coq/ceps/blob/master/text/003-opam-metadata.md) and
 the [deployed website](https://coq.inria.fr/opam/www/).
 
-## Continuous Integration
+## Continuous integration
 
 Incoming pull requests are tested on GitLab CI. **@coqbot** pushes any opened
 or synchonized pull request to a branch named `pr-<number>` on GitLab. It will
