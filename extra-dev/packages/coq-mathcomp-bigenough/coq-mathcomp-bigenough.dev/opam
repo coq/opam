@@ -6,7 +6,7 @@ bug-reports: "https://github.com/math-comp/bigenough/issues"
 license: "CeCILL-B"
 dev-repo: "git+https://github.com/math-comp/bigenough"
 
-build: [ make "-j" "%{jobs}%" ]
+build: [ make "-j" "%{jobs}%" "COQEXTRAFLAGS+=-native-compiler yes" {coq-native:installed & coq:version < "8.13~" } ]
 install: [ make "install" ]
 depends: [
   "ocaml"

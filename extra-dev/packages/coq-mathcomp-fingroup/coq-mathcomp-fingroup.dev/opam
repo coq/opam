@@ -7,7 +7,7 @@ bug-reports: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
 dev-repo: "git+https://github.com/math-comp/math-comp.git"
 license: "CeCILL-B"
 
-build: [ make "-C" "mathcomp/fingroup" "-j" "%{jobs}%" ]
+build: [ make "-C" "mathcomp/fingroup" "-j" "%{jobs}%" "COQEXTRAFLAGS+=-native-compiler yes" {coq-native:installed & coq:version < "8.13~" } ]
 install: [ make "-C" "mathcomp/fingroup" "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/fingroup'" ]
 depends: [
