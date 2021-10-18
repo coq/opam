@@ -3,14 +3,14 @@
 All [opam](https://opam.ocaml.org) repositories for Coq packages live here.
 Packages are organized according to the [layout](https://coq.inria.fr/opam-layout.html):
 
-* `released`: packages for Coq libraries and Coq extensions that were officially released by their corresponding authors.
+* `released`: packages for officially released versions of Coq libraries and Coq extensions.
 
 * `core-dev`: packages for development versions of Coq.
 
 * `extra-dev`: packages for development versions of Coq libraries and Coq extensions.
 
-We welcome pull requests to `released` for any Coq-related package that is compatible with a
-[released version of Coq](https://github.com/ocaml/opam-repository/tree/master/packages/coq).
+We welcome pull requests to the `released` repository adding any Coq-related package that is compatible
+with a [released version of Coq](https://github.com/ocaml/opam-repository/tree/master/packages/coq).
 Besides _libraries_ of general interest, this also includes _paper artifacts_ and other
 _specialized formalizations_ that are not necessarily expected to be immediately reusable
 by others.
