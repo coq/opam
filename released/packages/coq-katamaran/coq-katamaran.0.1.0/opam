@@ -1,5 +1,4 @@
 opam-version: "2.0"
-version: "0.1.0"
 synopsis: "Separation logic-based verification of instruction sets"
 description: """
 Katamaran is a semi-automated separation logic verifier for
@@ -30,7 +29,7 @@ homepage: "https://katamaran-project.github.io/"
 bug-reports: "https://github.com/katamaran-project/katamaran/issues"
 depends: [
   "dune"                  {>= "2.5"}
-  "coq"                   {>= "8.12" & < "8.14"}
+  "coq"                   {>= "8.12" & < "8.15"}
   "coq-bbv"               {>= "1.2"  & < "1.3"}
   "coq-equations"         {>= "1.2"  & < "1.4"}
   "coq-iris"              {>= "3.4"  & < "3.5"}
