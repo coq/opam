@@ -33,7 +33,6 @@ depends: [
   "coq-bbv"               {>= "1.2"  & < "1.3"}
   "coq-equations"         {>= "1.2"  & < "1.4"}
   "coq-iris"              {>= "3.4"  & < "3.5"}
-  "coq-iris-string-ident" {>= "0.1"  & < "0.2"}
   "coq-stdpp"             {>= "1.5"  & < "1.6"}
 ]
 build: [ "dune" "build" "-p" name "-j" jobs ]
