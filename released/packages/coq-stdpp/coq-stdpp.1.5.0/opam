@@ -35,7 +35,7 @@ tags: [
 depends: [
   "coq" { (>= "8.10.2" & < "8.14~") | (= "dev") }
 ]
-
+patches: [ "0001-Windows-CI-strip-CR-in-result-comparison.patch" ]
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 
