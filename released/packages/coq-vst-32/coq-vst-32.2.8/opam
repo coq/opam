@@ -20,6 +20,7 @@ homepage: "http://vst.cs.princeton.edu/"
 dev-repo: "git+https://github.com/PrincetonUniversity/VST.git"
 bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 license: "https://raw.githubusercontent.com/PrincetonUniversity/VST/master/LICENSE"
+patches: [ "0001-Allow-Coq-8.14.0.patch" ]
 build: [
   [make "-j%{jobs}%" "BITSIZE=32"]
 ]
@@ -28,8 +29,8 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.12" & < "8.14"}
-  "coq-compcert-32" {(= "3.9") | (= "3.9~open-source")}
+  "coq" {>= "8.12" & < "8.15~"}
+  "coq-compcert-32" {= "3.9"}
   "coq-flocq" {>= "3.2.1"}
 ]
 tags: [
