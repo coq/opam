@@ -19,7 +19,7 @@ install: [make "install"]
 depends: [
   "coq" {(>= "8.10" & < "8.15~") | (= "dev")}
   "coq-mathcomp-ssreflect" {(>= "1.12.0" & < "1.14~") | (= "dev")}
-  "coq-mathcomp-fingroup"
+  "coq-mathcomp-fingroup" 
 ]
 
 tags: [
@@ -41,5 +41,5 @@ authors: [
 
 url {
   src: "https://github.com/math-comp/tarjan/archive/1.0.0.tar.gz"
-  checksum: "sha256=897826f3d44b6d04aca3e064f7d1744b635b873a33fee69a8bdf5204155797a1"
+  checksum: "sha256=abed66d36c76e0824f32322c9b951d5154203d98e3ee65943e30925da089e133"
 }
