@@ -1,0 +1,45 @@
+
+opam-version: "2.0"
+maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
+
+homepage: "https://github.com/math-comp/tarjan"
+dev-repo: "git+https://github.com/math-comp/tarjan.git"
+bug-reports: "https://github.com/math-comp/tarjan/issues"
+license: "CECILL-B"
+
+synopsis: "Strongly connected component algorithms by Tarjan and Kosaraju using Coq and MathComp"
+description: """
+This development contains formalizations and correctness proofs using Coq and the Mathematical
+Components library of algorithms originally due to Kosaraju and Tarjan for finding strongly
+connected components in finite graphs. It also contains a verified implementation of topological
+sorting with extended guarantees for acyclic graphs."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.10" & < "8.15~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {(>= "1.12.0" & < "1.14~") | (= "dev")}
+  "coq-mathcomp-fingroup"
+]
+
+tags: [
+  "category:Computer Science/Graph Theory"
+  "keyword:strongly connected components"
+  "keyword:topological sorting"
+  "keyword:Kosaraju"
+  "keyword:Tarjan"
+  "keyword:acyclicity"
+  "keyword:graph theory"
+  "logpath:mathcomp.tarjan"
+]
+authors: [
+  "Cyril Cohen"
+  "Jean-Jacques Lévy"
+  "Karl Palmskog"
+  "Laurent Théry"
+]
+
+url {
+  src: "https://github.com/math-comp/tarjan/archive/1.0.0.tar.gz"
+  checksum: "sha256=897826f3d44b6d04aca3e064f7d1744b635b873a33fee69a8bdf5204155797a1"
+}
