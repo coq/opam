@@ -19,10 +19,10 @@ ring/field expressions before normalization to the Horner form."""
 build: [make "-j%{jobs}%" ]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.13" & < "8.15~") | (= "dev")}
-  "coq-mathcomp-algebra" {(>= "1.12" & < "1.13~") | (= "dev")}
-  "coq-mathcomp-zify" {(>= "1.1.0") | (= "dev")}
-  "coq-elpi" {(>= "1.10.1") | (= "dev")}
+  "coq" {>= "8.13"}
+  "coq-mathcomp-algebra" {>= "1.12"}
+  "coq-mathcomp-zify" {>= "1.1.0"}
+  "coq-elpi" {>= "1.10.1"}
 ]
 
 tags: [
