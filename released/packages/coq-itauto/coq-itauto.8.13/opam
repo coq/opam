@@ -15,7 +15,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Cdcl"]
 depends: [
   "ocaml" {>= "4.9~"}
-  "coq" {>= "8.13.~" }
+  "coq" {>= "8.13.~" & < "8.14~"}
   "ocamlbuild" {build }
 ]
 depopts: [ "ocamlformat" {build} ]
