@@ -17,7 +17,7 @@ depends: [
   "coq-cunit"
   "coq-error-handlers"
   "coq-list-plus"
-  "coq" {>= "8.4pl4"}
+  "coq" {>= "8.4pl4" & < "8.14"}
   "ocaml"
 ]
 tags: [
