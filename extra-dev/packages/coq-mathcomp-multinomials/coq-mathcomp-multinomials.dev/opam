@@ -10,12 +10,12 @@ build: [
   [ "dune" "build" "-p" name "-j" jobs ]
 ]
 depends: [
-  "coq"                    {(>= "8.10" & < "8.15~") | = "dev"}
+  "coq"                    {>= "8.10"}
   "dune"                   {>= "2.5"}
-  "coq-mathcomp-ssreflect" {(>= "1.12" & < "1.13~") | = "dev"}
+  "coq-mathcomp-ssreflect" {>= "1.12"}
   "coq-mathcomp-algebra"
-  "coq-mathcomp-bigenough" {(>= "1.0" & < "1.1~") | = "dev"}
-  "coq-mathcomp-finmap"    {(>= "1.5" & < "1.6~") | = "dev"}
+  "coq-mathcomp-bigenough" {>= "1.0"}
+  "coq-mathcomp-finmap"    {>= "1.5"}
 ]
 tags: [
   "keyword:multinomials"
