@@ -4,7 +4,7 @@ homepage: "https://gitlab.inria.fr/fbesson/itauto"
 dev-repo: "git+https://gitlab.inria.fr/fbesson/itauto.git"
 authors: ["Frédéric Besson"]
 bug-reports: "frederic.besson@inria.fr"
-license: "GPL 3"
+license: "MIT"
 synopsis: "'itauto' is a reflexive SAT solver parameterised by a leaf tactic and Nelson-Oppen support"
 build: [
   [make]
