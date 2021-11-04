@@ -1,0 +1,33 @@
+opam-version: "2.0"
+maintainer: "frederic.besson@inria.fr"
+homepage: "https://gitlab.inria.fr/fbesson/itauto"
+dev-repo: "git+https://gitlab.inria.fr/fbesson/itauto.git"
+authors: ["Frédéric Besson"]
+bug-reports: "frederic.besson@inria.fr"
+license: "MIT"
+synopsis: "'itauto' is a reflexive SAT solver parameterised by a leaf tactic and Nelson-Oppen support"
+build: [
+  [make]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml" {>= "4.9~" & < "4.13~"}
+  "coq" {>= "8.14.~" }
+  "ocamlbuild" {build }
+]
+depopts: [ "ocamlformat" {build} ]
+
+tags: [
+  "keyword:integers" "keyword:SAT" "keyword:SMT" "keyword:Nelson-Oppen" "keyword:automation"
+  "logpath:Cdcl"
+]
+url {
+  src:
+    "https://gitlab.inria.fr/fbesson/itauto/-/archive/8.14.0/itauto-8.14.0.tar.gz"
+  checksum: [
+    "md5=051ea3ffa85a515bbe8b12f42acb7cb1"
+    "sha512=f68f850d550cf67646f92786997f7f593f38586d67b7883fc80f373eee53b6ba6d010d26014d39718853553312ad4f2f1d1cc06126803dd059c539d68a3013c0"
+  ]
+}
