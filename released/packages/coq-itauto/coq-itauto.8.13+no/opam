@@ -14,7 +14,7 @@ install: [
 ]
 depends: [
   "ocaml" {>= "4.9~" & < "4.13~"}
-  "coq" {>= "8.13.~" }
+  "coq" {>= "8.13" & < "8.14"}
   "ocamlbuild" {build }
 ]
 depopts: [ "ocamlformat" {build} ]

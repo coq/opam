@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: "frederic.besson@inria.fr"
 homepage: "https://gitlab.inria.fr/fbesson/itauto"
-dev-repo: "git://gitlab.inria.fr:fbesson/itauto.git"
+dev-repo: "git+https://gitlab.inria.fr/fbesson/itauto.git"
 authors: ["Frédéric Besson"]
 bug-reports: "frederic.besson@inria.fr"
 license: "GPL 3"
@@ -12,7 +12,6 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Cdcl"]
 depends: [
   "ocaml" {>= "4.9~"}
   "coq" {>= "8.13.~" & < "8.14~"}
