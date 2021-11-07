@@ -43,13 +43,13 @@ before_script:
       - log/
     expire_in: 1 week
 
-
+# Lint
 opam-lint:4.13.1:
   extends: .opam-lint
   variables:
     COMPILER: "4.13.1"
 
-
+# Build
 opam-build:4.05.0:
   extends: .opam-build
   variables:
@@ -93,7 +93,7 @@ opam-build:any:
   except:
     - web
 
-
+# Build without timeout
 opam-build-no-timeout:4.05.0:
   extends: .opam-build
   variables:
@@ -149,7 +149,7 @@ opam-build-no-timeout:any:
   tags:
     - no-timeout
 
-
+# JSON data
 json-data:
   image: nixos/nix
   cache: {}
