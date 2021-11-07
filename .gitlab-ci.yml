@@ -64,6 +64,11 @@ opam-lint:4.11.2:
   variables:
     COMPILER: "4.11.2"
 
+opam-lint:4.13.1:
+  extends: .opam-lint
+  variables:
+    COMPILER: "4.13.1"
+
 
 opam-build:4.05.0:
   extends: .opam-build
@@ -90,6 +95,13 @@ opam-build:4.11.2:
   extends: .opam-build
   variables:
     COMPILER: "4.11.2"
+  except:
+    - web
+
+opam-build:4.13.1:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.13.1"
   except:
     - web
 
@@ -133,6 +145,15 @@ opam-build-no-timeout:4.11.2:
   extends: .opam-build
   variables:
     COMPILER: "4.11.2"
+  only:
+    - web
+  tags:
+    - no-timeout
+
+opam-build-no-timeout:4.13.1:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.13.1"
   only:
     - web
   tags:
