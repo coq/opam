@@ -4,9 +4,9 @@ maintainer: "francois.pottier@inria.fr"
 authors: [
   "Arthur Charguéraud <arthur.chargueraud@inria.fr>"
 ]
-homepage: "https://gitlab.inria.fr/charguer/tlc"
-dev-repo: "git+https://gitlab.inria.fr/charguer/tlc.git"
-bug-reports: "tlc-users@lists.gforge.inria.fr"
+homepage: "https://github.com/charguer/tlc"
+dev-repo: "git+https://github.com/charguer/tlc.git"
+bug-reports: "https://github.com/charguer/tlc/issues"
 license: "CeCILL-B"
 build: [
   [make "-j%{jobs}%"]
@@ -22,6 +22,6 @@ depends: [
   "coq" {>= "8.6" & < "8.11"}
 ]
 url {
-  src: "http://tlc.gforge.inria.fr/releases/tlc-20181116.tar.gz"
-  checksum: "md5=6029758d18f26907278e700dee7b750e"
+  src: "https://github.com/charguer/tlc/archive/20181116.tar.gz"
+  checksum: "md5=fb787df96d77da6ca63c760a5e34ca89"
 }
