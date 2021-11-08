@@ -18,7 +18,7 @@ depends: [
   "ocamlbuild" {build}
 ]
 tags: [
-  "category:Misc/Logical Puzzles and Entertainment"
+  "category:Miscellaneous/Logical Puzzles and Entertainment"
   "keyword:bonsai"
   "keyword:effects"
   "keyword:extraction"
