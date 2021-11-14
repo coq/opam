@@ -15,6 +15,9 @@ depends: [
   "coq-mathcomp-bigenough" {>= "1.0" & < "1.1~"}
   "coq-mathcomp-finmap"    {>= "1.5" & < "1.6~"}
 ]
+conflicts: [
+  "coq-native"
+]
 tags: [
   "keyword:multinomials"
   "keyword:monoid algebra"
