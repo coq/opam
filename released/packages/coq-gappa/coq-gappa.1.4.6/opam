@@ -14,7 +14,7 @@ depends: [
   "ocaml"
   "ocamlfind" {build}
   "coq" {>= "8.8.1" & < "8.14~"}
-  "coq-flocq" {>= "3.0"}
+  "coq-flocq" {>= "3.0" & < "4~"}
   "conf-autoconf" {build & dev}
   ("conf-g++" {build} | "conf-clang" {build})
 ]
