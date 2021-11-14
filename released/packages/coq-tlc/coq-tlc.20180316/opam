@@ -39,6 +39,6 @@ TLC provides a collection of tactics that enhance the default tactics provided
 by Coq. These tactics help construct more concise and more robust proof
 scripts."""
 url {
-  src: "http://tlc.gforge.inria.fr/releases/tlc-20180316.tar.gz"
-  checksum: "md5=713dec115afe2e305d7745bb7649d379"
+  src: "https://github.com/charguer/tlc/archive/refs/tags/20180316.tar.gz"
+  checksum: "md5=f42a1d9e6b34192fc131c9ac85cad4f6"
 }
