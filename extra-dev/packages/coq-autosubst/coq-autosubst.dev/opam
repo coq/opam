@@ -16,7 +16,7 @@ annotations, Autosubst synthesizes the parallel substitution
 operation and automatically proves the basic lemmas about
 substitutions."""
 
-build: [make "-j%{jobs}%" ]
+build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
   "coq" {(>= "8.11" & < "8.15~") | (= "dev")}
