@@ -108,7 +108,6 @@ tags: [
 ]
 synopsis: "A library on rewriting theory and termination"
 url {
-  src:
-    "https://gforge.inria.fr/frs/download.php/file/37205/color.1.4.0.tar.gz"
+  src: "http://files.inria.fr/blanqui/color/color.1.4.0.tar.gz"
   checksum: "md5=012e9be1fee95f5bea00cd91133302c1"
 }
