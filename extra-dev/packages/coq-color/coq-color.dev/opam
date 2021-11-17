@@ -20,13 +20,6 @@ license: "CeCILL"
 homepage: "http://color.inria.fr/"
 bug-reports: "color@inria.fr"
 build: [
-  ["bash" "-c" "sed -i -e \"s/From Coq Require Import BigN/From Bignums Require Import BigN/\" Util/*/*.v"]
-  ["bash" "-c" "sed -i -e \"s/From Coq Require Export BigN/From Bignums Require Export BigN/\" Util/*/*.v"]
-  ["bash" "-c" "sed -i -e \"s/From Coq Require Import BigZ/From Bignums Require Import BigZ/\" Util/*/*.v"]
-  ["bash" "-c" "sed -i -e \"s/From Coq Require Export BigZ/From Bignums Require Export BigZ/\" Util/*/*.v"]
-  ["bash" "-c" "sed -i -e \"21i From Coq Require Import FunInd.\" Util/List/ListUtil.v"]
-  ["bash" "-c" "sed -i -e \"17i From Coq Require Import FunInd.\" Util/Multiset/MultisetOrder.v"]
-  ["bash" "-c" "sed -i -e \"13i From Coq Require Import FunInd.\" Util/Set/SetUtil.v"]
   [make "-j%{jobs}%"]
 ]
 install: [make "-f" "Makefile.coq" "install"]
