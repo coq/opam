@@ -1,0 +1,50 @@
+opam-version: "2.0"
+maintainer: "Reynald Affeldt <reynald.affeldt@aist.go.jp>"
+
+homepage: "https://github.com/affeldt-aist/infotheo"
+dev-repo: "git+https://github.com/affeldt-aist/infotheo.git"
+bug-reports: "https://github.com/affeldt-aist/infotheo/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Discrete probabilities and information theory for Coq"
+description: """
+Infotheo is a Coq library for reasoning about discrete probabilities,
+information theory, and linear error-correcting codes."""
+
+build: [
+  [make "-j%{jobs}%" ]
+  [make "-C" "extraction" "tests"] {with-test}
+]
+install: [make "install"]
+depends: [
+  "coq" { (>= "8.13" & < "8.15~") | (= "dev") }
+  "coq-mathcomp-ssreflect" { (>= "1.13.0" & < "1.14~") | (= "dev") }
+  "coq-mathcomp-fingroup" { (>= "1.13.0" & < "1.14~") | (= "dev")  }
+  "coq-mathcomp-algebra" { (>= "1.13.0" & < "1.14~") | (= "dev")  }
+  "coq-mathcomp-solvable" { (>= "1.13.0" & < "1.14~") | (= "dev")  }
+  "coq-mathcomp-field" { (>= "1.13.0" & < "1.14~") | (= "dev")  }
+  "coq-mathcomp-analysis" { (>= "0.3.11") & (< "0.4~")}
+]
+
+tags: [
+  "keyword:information theory"
+  "keyword:probability"
+  "keyword:error-correcting codes"
+  "keyword:convexity"
+  "logpath:infotheo"
+  "date:2021-11-20"
+]
+authors: [
+  "Reynald Affeldt, AIST"
+  "Manabu Hagiwara, Chiba U. (previously AIST)"
+  "Jonas Senizergues, ENS Cachan (internship at AIST)"
+  "Jacques Garrigue, Nagoya U."
+  "Kazuhiko Sakaguchi, Tsukuba U."
+  "Taku Asai, Nagoya U. (M2)"
+  "Takafumi Saikawa, Nagoya U."
+  "Naruomi Obata, Titech (M2)"
+]
+url {
+  http: "https://github.com/affeldt-aist/infotheo/archive/0.3.4.tar.gz"
+  checksum: "sha512=31e31c8a6304e8fb28dffb11f490ac3b937dfa9bbc9d3d0256216a9a2dd8f052a7d4129af621805dd6a59f8924cd84d2697a96da26d4fc0ee6407a7f34a6fc76"
+}
