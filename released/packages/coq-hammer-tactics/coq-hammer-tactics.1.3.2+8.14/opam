@@ -1,0 +1,46 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/lukaszcz/coqhammer"
+dev-repo: "git+https://github.com/lukaszcz/coqhammer.git"
+bug-reports: "https://github.com/lukaszcz/coqhammer/issues"
+license: "LGPL-2.1-only"
+
+synopsis: "Reconstruction tactics for the hammer for Coq"
+description: """
+Collection of tactics that are used by the hammer for Coq
+to reconstruct proofs found by automated theorem provers. When the hammer
+has been successfully applied to a project, only this package needs
+to be installed; the hammer plugin is not required.
+"""
+
+build: [make "-j%{jobs}%" "tactics"]
+install: [
+  [make "install-tactics"]
+  [make "test-tactics"] {with-test}
+]
+depends: [
+  "ocaml" { >= "4.08" }
+  "coq" {>= "8.14" & < "8.15~"}
+]
+
+conflicts: [
+  "coq-hammer" {!= version}
+]
+
+tags: [
+  "keyword:automation"
+  "keyword:hammer"
+  "keyword:tactics"
+  "logpath:Hammer.Tactics"
+  "date:2021-10-01"
+]
+
+authors: [
+  "Lukasz Czajka <lukaszcz@mimuw.edu.pl>"
+]
+
+url {
+  src: "https://github.com/lukaszcz/coqhammer/archive/v1.3.2-coq8.14.tar.gz"
+  checksum: "sha512=68c6e6a2054ce9dd3d87cb61e667f638e7b9fb2b5ec9571427d9fac59d0901cbfa4e57c59edb3a8bc52c2626985fca6edbac42caf2acdc5858fb6e13f15afcea"
+}
