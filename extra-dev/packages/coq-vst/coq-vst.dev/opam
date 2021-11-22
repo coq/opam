@@ -17,9 +17,9 @@ dev-repo: "git+https://github.com/PrincetonUniversity/VST.git"
 bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 license: "https://raw.githubusercontent.com/PrincetonUniversity/VST/master/LICENSE"
 build: [
-    [make "IGNORECOQVERSION=true" "-j%{jobs}%" "msl" "sepcomp" "veric" "floyd"]
+    [make "COMPCERT=bundled" "IGNORECOQVERSION=true" "-j%{jobs}%" "msl" "sepcomp" "veric" "floyd"]
 ]
-run-test: [make "IGNORECOQVERSION=true" "-j%{jobs}%" "progs" "sha-hmac" "mailbox" "VSUpile"]
+run-test: [make "COMPCERT=bundled" "IGNORECOQVERSION=true" "-j%{jobs}%" "progs"]
 install: [
 	["mkdir" "-p" "%{lib}%/coq/user-contrib/VST"]
 	["cp" "-r" "msl" "%{lib}%/coq/user-contrib/VST/"]
@@ -33,7 +33,7 @@ remove: [
 depends: [
   "ocaml"
   "coq" {>= "8.11.0"}
-  "coq-compcert" {>= "3.7~"}
+  "coq-flocq" {>= "3.1.0" & < "4.0.0"} | "coq-flocq3" { = "dev"}
 ]
 synopsis: "Verified Software Toolchain"
 description:
