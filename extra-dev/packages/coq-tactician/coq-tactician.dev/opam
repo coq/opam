@@ -1,5 +1,4 @@
 opam-version: "2.0"
-version: "dev"
 synopsis:
   "Tactician: A Seamless, Interactive Tactic Learner and Prover for Coq"
 description: """
@@ -17,7 +16,7 @@ homepage: "https://coq-tactician.github.io"
 bug-reports: "https://github.com/coq-tactician/coq-tactician/issues"
 depends: [
   "ocaml" {>= "4.08"}
-  "dune" {>= "2.5" & build}
+  "dune" {>= "2.5"}
   "opam-client" {>= "2.1.0~beta2"}
   "cmdliner"
   "coq" {= "dev"}
