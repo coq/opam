@@ -8,7 +8,6 @@ license: "CeCILL-B"
 dev-repo: "git+https://gitlab.inria.fr/charguer/cfml.git"
 build: [make "-j%{jobs}%"]
 install: [make "install" "PREFIX=%{prefix}%"]
-remove: [make "uninstall" "PREFIX=%{prefix}%"]
 depends: [
   "ocaml" {>= "4.03.0" & < "4.07.0"}
   "ocamlbuild" {build}
@@ -20,5 +19,5 @@ depends: [
 url {
   src:
     "https://gitlab.inria.fr/charguer/cfml/-/archive/20180525/archive.tar.gz"
-  checksum: "md5=84981a5ed6dcd6d4bfc355a263fdc5bd"
+  checksum: "sha512=2c8055bcdcfb7f9b7e7aa50e20603d7f69a2abb42f6ba4fe5758b756ef0481e3fc588c29d0f68f1c04561448609f3bfa65ca616da2717f2947eb572f952630d1"
 }
