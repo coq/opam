@@ -18,6 +18,6 @@ depends: [
 ]
 url {
   src:
-    "https://gitlab.inria.fr/charguer/cfml/repository/20181201/archive.tar.gz"
-  checksum: "md5=0fd573617610a512381b58fe26a0edf6"
+    "https://gitlab.inria.fr/charguer/cfml/-/archive/20181201/archive.tar.gz"
+  checksum: "md5=5476890fb7922fe2ce264c8af4bd26bc"
 }
