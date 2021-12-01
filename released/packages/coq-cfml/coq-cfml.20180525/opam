@@ -7,7 +7,7 @@ bug-reports: "https://gitlab.inria.fr/charguer/cfml/issues"
 license: "CeCILL-B"
 dev-repo: "git+https://gitlab.inria.fr/charguer/cfml.git"
 build: [make "-j%{jobs}%"]
-install: [make "install"]
+install: [make "install" "PREFIX=%{prefix}%"]
 depends: [
   "ocaml" {>= "4.03.0" & < "4.07.0"}
   "ocamlbuild" {build}
@@ -18,6 +18,6 @@ depends: [
 ]
 url {
   src:
-    "https://gitlab.inria.fr/charguer/cfml/repository/20180525/archive.tar.gz"
-  checksum: "md5=84981a5ed6dcd6d4bfc355a263fdc5bd"
+    "https://gitlab.inria.fr/charguer/cfml/-/archive/20180525/archive.tar.gz"
+  checksum: "sha512=ee6c62a7b7885aa9b443da97fb1b1d20e30d383d59ff2affebca7f35880c3396549b6e7c4547087e9d6eef5185b77ecf1adc78e94ced20c7c6c052db68a5caf5"
 }
