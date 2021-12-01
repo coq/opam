@@ -19,5 +19,5 @@ depends: [
 url {
   src:
     "https://gitlab.inria.fr/charguer/cfml/-/archive/20180525/archive.tar.gz"
-  checksum: "sha512=2c8055bcdcfb7f9b7e7aa50e20603d7f69a2abb42f6ba4fe5758b756ef0481e3fc588c29d0f68f1c04561448609f3bfa65ca616da2717f2947eb572f952630d1"
+  checksum: "sha512=ee6c62a7b7885aa9b443da97fb1b1d20e30d383d59ff2affebca7f35880c3396549b6e7c4547087e9d6eef5185b77ecf1adc78e94ced20c7c6c052db68a5caf5"
 }
