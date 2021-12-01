@@ -6,7 +6,8 @@ bug-reports: "https://gitlab.inria.fr/charguer/cfml/issues"
 license: "CeCILL-B"
 dev-repo: "git+https://gitlab.inria.fr/charguer/cfml.git"
 build: [make "-j%{jobs}%"]
-install: [make "install"]
+install: [make "install" "PREFIX=%{prefix}%"]
+remove: [make "uninstall" "PREFIX=%{prefix}%"]
 synopsis: "A tool for proving OCaml programs in Separation Logic"
 depends: [
   "ocaml" {>= "4.03.0" & < "4.08.0"}
