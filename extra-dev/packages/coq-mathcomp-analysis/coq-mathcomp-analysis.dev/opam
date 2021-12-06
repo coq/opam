@@ -1,6 +1,5 @@
 opam-version: "2.0"
 maintainer: "Reynald Affeldt <reynald.affeldt@aist.go.jp>"
-version: "dev"
 
 homepage: "https://github.com/math-comp/analysis"
 dev-repo: "git+https://github.com/math-comp/analysis.git"
