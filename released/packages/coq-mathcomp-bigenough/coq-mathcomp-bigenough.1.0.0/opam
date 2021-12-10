@@ -13,7 +13,8 @@ install: [ make "install" ]
 remove: [ "sh" "-c" "rm -rf '%{lib}%/coq/user-contrib/mathcomp/bigenough'" ]
 depends: [
   "ocaml"
-  "coq-mathcomp-ssreflect" {(>= "1.6" | = "dev")}
+  "coq" {>= "8.5" & < "8.15~"}
+  "coq-mathcomp-ssreflect" {>= "1.6"}
 ]
 tags: [ "keyword:bigenough" "keyword:asymptotic reasonning" "keyword:small scale reflection" "keyword:mathematical components" ]
 authors: [ "Cyril Cohen <cyril.cohen@inria.fr>" ]
