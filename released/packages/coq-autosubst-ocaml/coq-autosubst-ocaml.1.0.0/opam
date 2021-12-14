@@ -1,0 +1,55 @@
+opam-version: "2.0"
+synopsis: "A tool to generate substitution boilerplate Coq code for languages with binders"
+description: """
+  This is an OCaml reimplementation of the Autosubst 2 code generator by Stark, Schäfer and Kaiser,
+  which was the main focus of Stark's doctoral dissertation. Autosubst 2 in turn is based on 
+  previous work on Autosubst by Schäfer, Tebbi and Smolka.
+
+  If you ever were in the situation of looking at metatheorems of languages modelled in Coq 
+  (e.g. progress and preservation of lambda calculi) and were bothered by the tediousness of 
+  formalizing substitution of de Bruijn indices again, this tool might be for you. Autosubst is a 
+  tool that allows you to quickly generate boilerplate code to handle substitutions in languages 
+  with binders.
+
+  The output is Coq source code that contains
+
+  - an implementation of the language via (mutual) inductive types and de Bruijn indices for variables,
+  - definitions for capture avoiding substitution and renaming on de Bruijn indices,
+  - lemmas about the behavior and interaction of renaming and substitution,
+  - and a tactic to solve assumption-free substitution equations.
+""" 
+
+homepage: "https://github.com/uds-psl/autosubst-ocaml"
+dev-repo: "git+https://github.com/uds-psl/autosubst-ocaml.git"
+bug-reports: "https://github.com/uds-psl/autosubst-ocaml/issues"
+maintainer: "s8addapp@stud.uni-saarland.de"
+doc: "https://www.ps.uni-saarland.de/~dapprich/bachelor.php"
+authors: [
+  "Adrian Dapprich"
+]
+license: "MIT"
+
+depends: [
+  "ocaml" { >= "4.09" & < "4.12" }
+  "coq" { >= "8.13.1" & < "8.14" }
+  "angstrom" { >= "0.15.0" }
+  "dune" { >= "2.5" }
+  "ocamlgraph" { >= "2.0.0" }
+  "ppx_deriving" { >= "5.2.1" }
+]
+
+build: ["dune" "build" "-p" name "-j" jobs]
+
+url {
+  src: "https://github.com/uds-psl/autosubst-ocaml/archive/refs/tags/1.0.0.tar.gz"
+  checksum: "sha256=a265652904182f36d62e43d73b7a14f2bd2e33138b43d58f019033d0bf44bbb4"
+}
+
+tags: [
+  "category:Computer Science/Lambda Calculi"
+  "keyword:abstract syntax"
+  "keyword:binders"
+  "keyword:de Bruijn indices"
+  "keyword:substitution"
+  "date:2021-12-13"
+]
