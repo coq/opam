@@ -35,5 +35,5 @@ and
 new tactics."""
 url {
 src: "https://github.com/LPCIC/coq-elpi/archive/v1.12.0.tar.gz"
-checksum: "sha256=a791a536a163d6c9625eb32ad4ed4ad890667d6293f74190b62e14a73a73f0a3"
+checksum: "sha256=796225b6a569ca47ca2a2d6a7c15d1d57de971ef669bde7dd6321ce34f61fa29"
 }
