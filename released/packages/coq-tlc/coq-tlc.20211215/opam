@@ -19,7 +19,7 @@ depends: [
 ]
 
 tags: [
-  "category:Miscellaneous/Coq Extensions"
+  "category:Computer Science/Data Types and Data Structures"
   "date:2021-12-15"
   "keyword:classical logic"
   "logpath:TLC"
