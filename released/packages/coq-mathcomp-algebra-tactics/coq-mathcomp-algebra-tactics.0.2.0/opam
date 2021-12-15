@@ -1,0 +1,37 @@
+opam-version: "2.0"
+maintainer: "sakaguchi@coins.tsukuba.ac.jp"
+
+homepage: "https://github.com/math-comp/algebra-tactics"
+dev-repo: "git+https://github.com/math-comp/algebra-tactics.git"
+bug-reports: "https://github.com/math-comp/algebra-tactics/issues"
+license: "CECILL-B"
+
+synopsis: "Ring and field tactics for Mathematical Components"
+description: """
+This library provides `ring` and `field` tactics for Mathematical Components,
+that work with any `comRingType` and `fieldType` instances, respectively.
+Their instance resolution is done through canonical structure inference.
+Therefore, they work with abstract rings and do not require `Add Ring` and
+`Add Field` commands. Another key feature of this library is that they
+automatically push down ring morphisms and additive functions to leaves of
+ring/field expressions before normalization to the Horner form."""
+
+build: [make "-j%{jobs}%" ]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.13" & < "8.16~")}
+  "coq-mathcomp-algebra" {(>= "1.12" & < "1.14~")}
+  "coq-mathcomp-zify" {(>= "1.1.0")}
+  "coq-elpi" {(>= "1.10.1")}
+]
+
+tags: [
+  "logpath:mathcomp.algebra_tactics"
+]
+authors: [
+  "Kazuhiko Sakaguchi"
+]
+url {
+  src: "https://github.com/math-comp/algebra-tactics/archive/refs/tags/0.2.0.tar.gz"
+  checksum: "sha256=940484199a317bb325aed7a12ae96b958dddab34a66df12aeeda93d6e34cc13e"
+}
