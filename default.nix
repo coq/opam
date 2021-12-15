@@ -18,8 +18,6 @@ stdenv.mkDerivation rec {
     opam-file-format
     yojson
     ppx_deriving_yojson
-    merlin
-    ocp-indent
     opam
     opam-core
   ]);
