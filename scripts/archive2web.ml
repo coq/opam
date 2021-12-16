@@ -119,13 +119,13 @@ let omap o f =
   | Some x -> Some (f x)
   | None -> None
 
-let extract_package_version_data ~suite ~version opam_file =
+let extract_package_version_data ~suite ~version ~package_file opam_file =
   let tags = find_var_str_list "tags" opam_file in
   let date =
     match filtermap (has_prefix "date:") tags with
     | [] -> None
     | [x] -> Some x
-    | x :: _ -> warning "multiple date tag"; Some x in
+    | x :: _ -> warning (Printf.sprintf "multiple date tag in %s" package_file); Some x in
   let homepage = find_var_str "homepage" opam_file in
   let description = find_var_str "description" opam_file in
   let description = match description with
@@ -159,9 +159,9 @@ let extract_package_version_data ~suite ~version opam_file =
 
 let do_one_package_version root pname version =
   let pdir = pname ^ "." ^ version in
-  let package_file s = root / "packages" / pname / pdir / s in
-  let { OpamParserTypes.FullPos.file_contents; _ } = OpamParser.FullPos.file (package_file "opam") in
-  extract_package_version_data ~suite:root ~version (List.map (fun x -> x.pelem) file_contents)
+  let package_file = root / "packages" / pname / pdir / "opam" in
+  let { OpamParserTypes.FullPos.file_contents; _ } = OpamParser.FullPos.file package_file in
+  extract_package_version_data ~suite:root ~version ~package_file (List.map (fun x -> x.pelem) file_contents)
 
 let merge_package_versions p1 p2 =
   { versions = p1.versions @ p2.versions;
