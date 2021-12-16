@@ -151,7 +151,7 @@ opam-build-no-timeout:any:
 
 # JSON data
 json-data:
-  image: nixos/nix
+  image: nixos/nix:2.3.12
   cache: {}
   before_script: []
   script:
