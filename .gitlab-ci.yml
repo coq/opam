@@ -43,6 +43,26 @@ before_script:
       - log/
     expire_in: 1 week
 
+.opam-json:
+  script: |
+    . scripts/opam-coq-setup-root
+    mkdir -p log; > log/log.json
+    setup_root $OPAM_ROOT_CACHE log/log.json
+    opam install -y opam-core.2.1.0 opam-file-format.2.1.3 ppx_deriving_yojson.3.6.1
+    ocamlfind opt -package opam-file-format,opam-core,ppx_deriving_yojson,str -linkpkg scripts/archive2web.ml -o scripts/archive2web
+    scripts/archive2web released extra-dev > coq-packages.json
+  artifacts:
+    name: "json-data"
+    paths:
+      - coq-packages.json
+    expire_in: 1 year
+
+# Json
+opam-json:4.11.2:
+  extends: .opam-json
+  variables:
+    COMPILER: "4.11.2"
+
 # Lint
 opam-lint:4.13.1:
   extends: .opam-lint
@@ -150,14 +170,14 @@ opam-build-no-timeout:any:
     - no-timeout
 
 # JSON data
-json-data:
-  image: nixos/nix:2.3.12
-  cache: {}
-  before_script: []
-  script:
-    - nix-shell --run "dune exec --profile=release -- archive2web released extra-dev > coq-packages.json"
-  artifacts:
-    name: "$CI_JOB_NAME"
-    paths:
-      - coq-packages.json
-    expire_in: 1 year
+# json-data:
+#   image: nixos/nix:2.3.12
+#   cache: {}
+#   before_script: []
+#   script:
+#     - nix-shell --run "dune exec --profile=release -- archive2web released extra-dev > coq-packages.json"
+#   artifacts:
+#     name: "$CI_JOB_NAME"
+#     paths:
+#       - coq-packages.json
+#     expire_in: 1 year
