@@ -6,6 +6,8 @@
 set -e
 #set -x
 
+. scripts/opam-coq-setup-root
+
 CACHE=$1
 shift
 declare -A SKIP
@@ -14,21 +16,6 @@ while [ $1 != "--" ]; do
 	shift
 done
 shift # for --
-
-function setup_root() {
-  echo .Initializing opam root
-  rm -rf $OPAM_ROOT_DIR
-  tar xzf $CACHE -C /
-  eval $(opam env --root=$OPAM_ROOT_DIR --set-root)
-  opam update default >> $1
-  echo .Add released repo
-  opam repo add released --all-switches file://$PWD/released >> $1
-  opam config list
-  opam switch list
-  opam pin list
-  opam list
-  which ocamlc
-}
 
 RC=0
 FAILURES=
@@ -52,7 +39,7 @@ while [ ! -z "$1" ]; do
         else
           echo Testing $1
           > $LOG
-          setup_root $LOG
+          setup_root $CACHE $LOG
           case "$PKG_VERSION_DIR" in
             *core-dev*)
               echo Add dev repos

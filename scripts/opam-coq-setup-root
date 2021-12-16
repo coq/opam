@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# usage:
+#   setup_root cache-file.tgz logfile.log
+
+function setup_root() {
+  local CACHE="$1"
+  local LOG="$2"
+
+  echo .Initializing opam root
+  rm -rf $OPAM_ROOT_DIR
+  tar xzf $CACHE -C /
+  eval $(opam env --root=$OPAM_ROOT_DIR --set-root)
+  opam update default >> $1
+  echo .Add released repo
+  opam repo add released --all-switches file://$PWD/released >> $LOG
+  opam config list
+  opam switch list
+  opam pin list
+  opam list
+  which ocamlc
+}
