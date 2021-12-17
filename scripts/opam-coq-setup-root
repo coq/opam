@@ -11,7 +11,7 @@ function setup_root() {
   rm -rf $OPAM_ROOT_DIR
   tar xzf $CACHE -C /
   eval $(opam env --root=$OPAM_ROOT_DIR --set-root)
-  opam update default >> $1
+  opam update default >> $LOG
   echo .Add released repo
   opam repo add released --all-switches file://$PWD/released >> $LOG
   opam config list
