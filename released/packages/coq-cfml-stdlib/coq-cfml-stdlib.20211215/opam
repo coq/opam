@@ -7,27 +7,22 @@ dev-repo: "git+https://gitlab.inria.fr/charguer/cfml2.git"
 bug-reports: "https://gitlab.inria.fr/charguer/cfml2/-/issues"
 license: "MIT"
 
-synopsis: "The CFML Basis library"
+synopsis: "The CFML program verification system"
 description: """
-This library provides theoretical foundations for the CFML tool.
+CFML is a program verification system for OCaml.
 """
 
-build: [
-  [make "-C" "lib/coq" "-j%{jobs}%"]
-]
-
-install: [
-  [make "-C" "lib/coq" "install"]
-]
-
+build: [make "-C" "lib/stdlib" "-j%{jobs}%"]
+install: [make "-C" "lib/stdlib" "install"]
 depends: [
-  "coq"     { >= "8.13" }
-  "coq-tlc" { >= "20211215"}
+  "coq" { >= "8.13" }
+  "cfml" { = version }
+  "coq-cfml-basis" { = version }
 ]
 
 tags: [
   "date:"
-  "logpath:CFML"
+  "logpath:CFML.Stdlib"
   "category:Computer Science/Programming Languages/Formal Definitions and Theory"
   "keyword:program verification"
   "keyword:separation logic"
