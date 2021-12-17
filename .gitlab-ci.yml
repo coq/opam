@@ -52,13 +52,13 @@ before_script:
     ocamlfind opt -package opam-file-format,opam-core,ppx_deriving_yojson,str -linkpkg scripts/archive2web.ml -o scripts/archive2web
     scripts/archive2web released extra-dev > coq-packages.json
   artifacts:
-    name: "json-data"
+    name: "$CI_JOB_NAME"
     paths:
       - coq-packages.json
     expire_in: 1 year
 
 # Json
-opam-json:4.11.2:
+json-data:
   extends: .opam-json
   variables:
     COMPILER: "4.11.2"
