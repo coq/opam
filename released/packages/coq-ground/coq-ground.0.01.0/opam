@@ -1,0 +1,17 @@
+opam-version: "2.0"
+synopsis: "Ground : A Usefull Extension to Coq's Standard Library"
+maintainer: "Joan Thibault <joan.thibault@ens-rennes.fr>"
+authors: "Joan Thibault <joan.thibault@ens-rennes.fr>"
+license: "LGPL-3.0-only with OCaml-LGPL-linking-exception"
+homepage: "https://gitlab.com/boreal-ldd/ground"
+bug-reports: "https://gitlab.com/boreal-ldd/ground/-/issues"
+depends: [
+  "coq" {>= "8.14.0"}
+]
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+dev-repo: "git+https://gitlab.com/boreal-ldd/ground.git"
+url {
+	src:"https://gitlab.com/boreal-ldd/ground/-/archive/v0.01/ground-v0.01.tar.gz"
+	checksum:"sha512=d2814b5eac7b7ac7619fd86007742ee98bc94f57f3dc34c3b4d5e6ad0c0ec4aecdfff5e243921a464bb7498b1c9ed1458a337b9006b82e70ab92d8d6c24a8748"
+}
