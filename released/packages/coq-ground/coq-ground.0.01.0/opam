@@ -9,9 +9,8 @@ bug-reports: "https://gitlab.com/boreal-ldd/ground/-/issues"
 depends: [
   "coq" {>= "8.14.0"}
 ]
-build: [make]
+build: [make "-j%{jobs}%"]
 install: [make "install"]
-remove: [make "uninstall"]
 dev-repo: "git+https://gitlab.com/boreal-ldd/ground.git"
 url {
 	src:"hhttps://gitlab.com/boreal-ldd/ground/-/archive/v0.01/ground-v0.01.tar.gz"
