@@ -13,6 +13,6 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 dev-repo: "git+https://gitlab.com/boreal-ldd/ground.git"
 url {
-	src:"hhttps://gitlab.com/boreal-ldd/ground/-/archive/v0.01/ground-v0.01.tar.gz"
-	checksum:"md5=eae5b7c0df663a2d34c3b67ffccb9c7d"
+	src:"https://gitlab.com/boreal-ldd/ground/-/archive/v0.01/ground-v0.01.tar.gz"
+	checksum:"sha512=d2814b5eac7b7ac7619fd86007742ee98bc94f57f3dc34c3b4d5e6ad0c0ec4aecdfff5e243921a464bb7498b1c9ed1458a337b9006b82e70ab92d8d6c24a8748"
 }
