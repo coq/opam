@@ -14,6 +14,6 @@ install: [make "install"]
 remove: [make "uninstall"]
 dev-repo: "git+https://gitlab.com/boreal-ldd/ground.git"
 url {
-	src:"hhttps://gitlab.com/boreal-ldd/ground/-/archive/v0.01/ground-v0.01.zip"
+	src:"hhttps://gitlab.com/boreal-ldd/ground/-/archive/v0.01/ground-v0.01.tar.gz"
 	checksum:"md5=eae5b7c0df663a2d34c3b67ffccb9c7d"
 }
