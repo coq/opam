@@ -14,10 +14,11 @@ build: [
 install: [make "install"]
 
 depends: [
-  "coq" {>= "8.11" & < "8.14~"}
+  "coq" {>= "8.13" & < "8.14~"}
   "coq-mathcomp-ssreflect" { >= "1.12" & < "1.14~" }
   "coq-mathcomp-analysis" { >= "0.3.9" & < "0.4~" }
   "coq-hierarchy-builder" { = "1.0.0" }
+  "coq-elpi" { = "1.8.1" }
 ]
 synopsis: "Dioid"
 description: """
