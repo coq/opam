@@ -1,0 +1,52 @@
+opam-version: "2.0"
+maintainer: [
+  "Pierre Roux <pierre.roux@onera.fr>"
+]
+
+homepage: "https://github.com/math-comp/dioid"
+dev-repo: "git+https://github.com/math-comp/dioid.git"
+bug-reports: "https://github.com/math-comp/dioid/issues"
+license: "CECILL-B"
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [make "install"]
+
+depends: [
+  "coq" {>= "8.13" & < "8.14~"}
+  "coq-mathcomp-ssreflect" { >= "1.12" & < "1.14~" }
+  "coq-mathcomp-analysis" { >= "0.3.9" & < "0.4~" }
+  "coq-hierarchy-builder" { = "1.0.0" }
+  "coq-elpi" { = "1.8.1" }
+]
+synopsis: "Dioid"
+description: """
+Definitions of the algebraic structure of dioid following the style of
+ssralg in the Mathcomp library.
+
+The main algebraic structures defined are:
+* semirings: rings without oppositve for the additive law
+* dioids: idempotent semirings (i.e., forall x, x + x = x)
+* complete dioids: dioids whose canonical order (x <= y wen x + y = y)
+  yields a complete lattice
+* commutative variants (multiplicative law is commutative)
+
+More details can be found in comments at the beginning of each file.
+"""
+
+tags: [
+  "keyword:dioid"
+  "keyword:semiring"
+  "keyword:complete dioid"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:mathcomp.dioid"
+]
+authors: [
+  "Lucien Rakotomalala <lucien.rakotomalala@onera.fr>"
+  "Pierre Roux <pierre.roux@onera.fr>"
+]
+url {
+  src: "https://github.com/math-comp/dioid/archive/0.2.tar.gz"
+  checksum: "sha256=afbbcfd9c4cdfcb12327fa111ca455e545905b01ff0f5e8e19da7035f6bc4780"
+}
