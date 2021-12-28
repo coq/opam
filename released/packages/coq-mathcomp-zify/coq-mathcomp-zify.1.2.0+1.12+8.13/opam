@@ -8,9 +8,9 @@ license: "CECILL-B"
 
 synopsis: "Micromega tactics for Mathematical Components"
 description: """
-This small library enables the use of the Micromega tactics for goals stated
-with the definitions of the Mathematical Components library by extending the
-zify tactic."""
+This small library enables the use of the Micromega arithmetic solvers of Coq
+for goals stated with the definitions of the Mathematical Components library
+by extending the zify tactic."""
 
 build: [make "-j%{jobs}%" ]
 install: [make "install"]
@@ -26,6 +26,6 @@ authors: [
   "Kazuhiko Sakaguchi"
 ]
 url {
-  src: "https://github.com/math-comp/mczify/archive/1.0.0+1.12+8.13.tar.gz"
-  checksum: "sha256=813072984b3702071efa42b82ce3d9ea7d0b013e554ec78446f3da1248ffbce0"
+  src: "https://github.com/math-comp/mczify/archive/1.2.0+1.12+8.13.tar.gz"
+  checksum: "sha256=a19515dcfb2a3ec95261b400dbd1bfb820ce6029b8a76d295ab2448e18825958"
 }
