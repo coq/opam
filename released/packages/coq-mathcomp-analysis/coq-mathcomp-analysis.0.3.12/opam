@@ -1,0 +1,52 @@
+opam-version: "2.0"
+maintainer: "Reynald Affeldt <reynald.affeldt@aist.go.jp>"
+
+homepage: "https://github.com/math-comp/analysis"
+dev-repo: "git+https://github.com/math-comp/analysis.git"
+bug-reports: "https://github.com/math-comp/analysis/issues"
+license: "CECILL-C"
+
+synopsis: "An analysis library for mathematical components"
+description: """
+This repository contains an experimental library for real analysis for
+the Coq proof-assistant and using the Mathematical Components library."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" { (>= "8.11" & < "8.15~") | (= "dev") }
+  "coq-mathcomp-ssreflect" { (>= "1.12.0" & < "1.14~") | (= "dev") }
+  "coq-mathcomp-fingroup" { (>= "1.12.0" & < "1.14~") | (= "dev") }
+  "coq-mathcomp-algebra" { (>= "1.12.0" & < "1.14~") | (= "dev") }
+  "coq-mathcomp-solvable" { (>= "1.12.0" & < "1.14~") | (= "dev") }
+  "coq-mathcomp-field" { (>= "1.12.0" & < "1.14~") | (= "dev") }
+  "coq-mathcomp-finmap" { (>= "1.5.1" & < "1.6~") | (= "dev") }
+  "coq-mathcomp-bigenough" { (>= "1.0.0") }
+  "coq-hierarchy-builder" { (>= "0.10.0") }
+]
+
+tags: [
+  "category:Mathematics/Real Calculus and Topology"
+  "keyword:analysis"
+  "keyword:topology"
+  "keyword:real numbers"
+  "date:2021-12-29"
+  "logpath:mathcomp.analysis"
+]
+authors: [
+  "Reynald Affeldt"
+  "Yves Bertot"
+  "Cyril Cohen"
+  "Marie Kerjean"
+  "Assia Mahboubi"
+  "Damien Rouhling"
+  "Pierre Roux"
+  "Kazuhiko Sakaguchi"
+  "Zachary Stone"
+  "Pierre-Yves Strub"
+  "Laurent Théry"
+]
+url {
+  http: "https://github.com/math-comp/analysis/archive/0.3.12.tar.gz"
+  checksum: "sha512=f23fa55bd84d7a632ffdc2b0f3dda7592d862eb47c0a8fd97a71c48d1e12931ca603ca364a92fa55278ec26202ddfb395d6155f18dbd9822a19a792b138140e9"
+}
