@@ -1,0 +1,46 @@
+
+opam-version: "2.0"
+maintainer: "arthur.chargueraud@inria.fr"
+
+homepage: "https://gitlab.inria.fr/charguer/cfml2"
+dev-repo: "git+https://gitlab.inria.fr/charguer/cfml2.git"
+bug-reports: "https://gitlab.inria.fr/charguer/cfml2/-/issues"
+license: "CC-BY-4.0"
+
+synopsis: "The CFML Basis library"
+description: """
+This library provides theoretical foundations for the CFML tool.
+"""
+
+build: [
+  [make "-C" "lib/coq" "-j%{jobs}%"]
+]
+
+install: [
+  [make "-C" "lib/coq" "install"]
+]
+
+depends: [
+  "coq"     { >= "8.13" }
+  "coq-tlc" { >= "20211215"}
+]
+
+tags: [
+  "date:"
+  "logpath:CFML"
+  "category:Computer Science/Programming Languages/Formal Definitions and Theory"
+  "keyword:program verification"
+  "keyword:separation logic"
+  "keyword:weakest precondition"
+]
+authors: [
+  "Arthur Charguéraud"
+]
+url {
+  src:
+    "https://gitlab.inria.fr/charguer/cfml2/-/archive/20220102/archive.tar.gz"
+  checksum: [
+    "md5=8b968b59c4b309ca55e57f2f04027899"
+    "sha512=a73364e03f57bef82ff55d84fa9f895415a0ad148e4fba3863bf976ed41c5bc3bf03eac1e120d117576e4976a1f549d30ce67d2b5eefb5cb7935563fed078864"
+  ]
+}
