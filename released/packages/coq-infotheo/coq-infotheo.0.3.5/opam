@@ -23,7 +23,7 @@ depends: [
   "coq-mathcomp-algebra" { (>= "1.13.0" & < "1.14~") | (= "dev")  }
   "coq-mathcomp-solvable" { (>= "1.13.0" & < "1.14~") | (= "dev")  }
   "coq-mathcomp-field" { (>= "1.13.0" & < "1.14~") | (= "dev")  }
-  "coq-mathcomp-analysis" { (>= "0.3.11") & (< "0.4~")}
+  "coq-mathcomp-analysis" { (>= "0.3.12") & (< "0.4~")}
 ]
 
 tags: [
