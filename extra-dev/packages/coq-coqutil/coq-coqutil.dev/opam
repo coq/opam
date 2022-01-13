@@ -31,5 +31,5 @@ Each feature is intended to be as minimal and as independent of the other featur
 """
 tags: ["logpath:coqutil"]
 url {
-  src: "git+https://github.com/mit-plv/coqutil.git#master"
+  src: "git+https://github.com/mit-plv/coqutil.git#tested"
 }
