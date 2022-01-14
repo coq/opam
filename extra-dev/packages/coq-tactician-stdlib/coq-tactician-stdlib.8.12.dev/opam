@@ -7,8 +7,11 @@ description: """
   This package recompiles Coq's standard library with Tactician's (`coq-tactician`)
   instrumentation loaded such that Tactician can learn from the library. When you
   install this package, the current `.vo` files of the standard library are backed
-  in the folder `user-contrib/Tactician/stdlib-backup`. Then exactly the same `.vo`
-  files are installed, except that they also contain Tactician's tactic databases.
+  in the folder `user-contrib/Tactician/stdlib-backup`. The new `.vo` files are
+  equivalent to the originals, except that they also contain Tactician's tactic
+  databases. After installation of this package, all other Coq developments that
+  are installed will also need to be recompiled. The 'tactician recompile' command
+  line utility can help with this.
   Upon removal of this package, the original files will be placed back.
 """
 homepage: "https://coq-tactician.github.io"
@@ -21,7 +24,10 @@ messages: [
   "This package will overwrite Coq's standard library files."
   "A backup of the original files will be placed under Coq's"
   "library directory at user-contrib/tactician-stdlib-backup/"
-  "and they will be restored when you remove this package"
+  "and they will be restored when you remove this package."
+  "After installation of this package, all other Coq packages"
+  "also need to be recompiled. Running the 'tactician recompile'"
+  "command-line utility will help with this process."
 ]
 post-messages: ["
 --- The standard library was successfully recompiled ---
