@@ -18,9 +18,9 @@ depends: [
   "ocaml" {>= "4.08"}
   "dune" {>= "2.8"}
   "dune-site" {>= "2.9.1"}
-  "opam-client" {>= "2.1.0"}
+  "opam-client" {>= "2.1.0~beta2"}
   "cmdliner"
-  "coq" {>= "8.11" & < "8.12~"}
+  "coq" {>= "8.14" & < "8.15~"}
   "conf-git"
   "bos" {>= "0.2.1"}
   "coq-tactician-dummy" {= "dev" & with-test}
@@ -61,5 +61,5 @@ substs: [
   "coq-shim/tactician.ml"
 ]
 url {
-  src: "git+https://github.com/coq-tactician/coq-tactician.git#coq8.11"
+  src: "git+https://github.com/coq-tactician/coq-tactician.git#coq8.14"
 }
