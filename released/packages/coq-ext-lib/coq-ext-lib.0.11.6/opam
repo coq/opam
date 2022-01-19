@@ -1,0 +1,25 @@
+opam-version: "2.0"
+synopsis: "A library of Coq definitions, theorems, and tactics"
+description:
+  "A collection of theories and plugins that may be useful in other Coq developments."
+maintainer: "gmalecha@gmail.com"
+authors: "Gregory Malecha"
+license: "BSD-2-Clause"
+tags: "logpath:ExtLib"
+homepage: "https://github.com/coq-community/coq-ext-lib"
+bug-reports: "https://github.com/coq-community/coq-ext-lib/issues"
+depends: [
+  "ocaml"
+  "coq" {>= "8.8"}
+]
+build: [make "-j%{jobs}%" "theories"]
+run-test: [make "-j%{jobs}%" "examples"]
+install: [make "install"]
+dev-repo: "git+https://github.com/coq-community/coq-ext-lib.git"
+url {
+  src: "https://github.com/coq-community/coq-ext-lib/archive/v0.11.6.tar.gz"
+  checksum: [
+    "md5=442577afb6ff3a02043478690057cc21"
+    "sha512=5e429e291439885c57ad537d2bf644345973740e29cff42e4045367f9f1e22a406b15e17af415e8d301eb0caf179495a506ea04c1ce39f94875366a49aa2db80"
+  ]
+}
