@@ -16,7 +16,7 @@ build: [
 install: [make "install"]
 
 depends: [
-  "coq" {(>= "8.11" & < "8.15~") | (= "dev")}
+  "coq" {(>= "8.11" & < "8.16~") | (= "dev")}
 ]
 
 tags: [
