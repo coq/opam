@@ -20,6 +20,7 @@ depends: [
 ]
 conflicts: [
   "menhir" { != "20211128" }
+  "coq-native"
 ]
 tags: [
   "date:2021-11-28"
