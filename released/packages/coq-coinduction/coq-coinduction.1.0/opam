@@ -19,7 +19,7 @@ build: [
 install: [make "install"]
 depends: [
   "ocaml"
-  "coq" {(>= "8.13")}
+  "coq" {>= "8.13" & < "8.15~"}
   "coq-aac-tactics" 
 ]
 
