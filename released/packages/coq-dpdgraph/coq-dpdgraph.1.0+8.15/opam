@@ -38,5 +38,5 @@ authors: [
 
 url {
   src: "https://github.com/coq-community/coq-dpdgraph/releases/download/v1.0%2B8.15/coq-dpdgraph-1.0-8.15.tgz"
-  checksum: "sha512=78c436149bfaa7bdccf0f7d50c7bee9f2dc2a515baffa2c03c8443cb4dc962380be95ad49a056a4c7ff1efbab6c4c3ad96c72d7fce0077f50803f4119482f148"
+  checksum: "sha512=b3f1ec5d37664975732bdc5ed2e087a9a94950466b8e8ae7f6a907f5637f1779f1e360d9c54019e3f13c2212e0d03c34c9428f70d2e1023b02b59a1aa89fa09d"
 }
