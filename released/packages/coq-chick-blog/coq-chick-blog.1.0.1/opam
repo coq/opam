@@ -16,7 +16,7 @@ depends: [
   "coq-function-ninjas"
   "coq-list-string"
   "coq-moment"
-  "coq"
+  "coq" {< "8.15~"}
   "lwt"
   "ocaml" {>= "4.03"}
   "ocamlfind" {build}
