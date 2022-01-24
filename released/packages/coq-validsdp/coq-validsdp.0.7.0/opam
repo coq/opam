@@ -28,7 +28,7 @@ depends: [
   "coq-paramcoq" {>= "1.1.0"}
   "osdp" {>= "1.0"}
   "ocamlfind" {build}
-  "conf-autoconf" {build}
+  "conf-autoconf" {build & dev}
 ]
 synopsis: "ValidSDP"
 description: """
