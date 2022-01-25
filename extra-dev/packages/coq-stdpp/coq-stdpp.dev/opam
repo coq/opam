@@ -32,7 +32,7 @@ tags: [
 ]
 
 depends: [
-  "coq" { (>= "8.11" & < "8.16~") | (= "dev") }
+  "coq" {>= "8.11"}
 ]
 
 build: [make "-j%{jobs}%"]
