@@ -13,18 +13,20 @@ build: [
   ["sh" "-c" "./configure"]
   [make "-j%{jobs}%"]
 ]
+run-test: [make "-j%{jobs}%" "test"]
 install: [make "install"]
 
 depends: [
   "ocaml"
-  "coq" {>= "8.7" & < "8.12~"}
+  "coq" {>= "8.12" & < "8.16~"}
   "coq-bignums"
-  "coq-flocq" {>= "3.1.0"}
-  "coq-interval" {>= "3.4.0" & < "4~"}
-  "coq-mathcomp-field" {>= "1.8" & < "1.11~"}
-  "coq-libvalidsdp" {= "0.7.0"}
+  "coq-flocq" {>= "3.3.0"}
+  "coq-interval" {>= "4.0.0" & < "5~"}
+  "coq-mathcomp-field" {>= "1.12" & < "1.15~"}
+  "coq-mathcomp-analysis" {>= "0.3.4" & < "0.4~"}
+  "coq-libvalidsdp" {= "1.0.0"}
   "coq-mathcomp-multinomials" {>= "1.2"}
-  "coq-coqeal" {>= "1.0.0"}
+  "coq-coqeal" {>= "1.1.0"}
   "coq-paramcoq" {>= "1.1.0"}
   "osdp" {>= "1.0"}
   "ocamlfind" {build}
@@ -55,6 +57,6 @@ authors: [
   "Pierre Roux <pierre.roux@onera.fr>"
 ]
 url {
-  src: "https://github.com/validsdp/validsdp/releases/download/v0.7.0/validsdp-0.7.0.tar.gz"
-  checksum: "sha256=69f7d5f56b0e14bc9b927ff203d8ad8d699134a66b50c60deca58b78074ec1af"
+  src: "https://github.com/validsdp/validsdp/releases/download/v1.0.0/validsdp-1.0.0.tar.gz"
+  checksum: "sha512=6cabd5f4b202a78a92e1f55ec2ab37d552b3e295de2b048392ac87c06dfa9d54f53c2160e06db08f32b4d36dfbabff2dc2c4cbbac0c46346d5105d65296cfb26"
 }

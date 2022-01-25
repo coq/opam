@@ -15,12 +15,13 @@ build: [
 ]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.7" & < "8.12~"}
+  "coq" {>= "8.12" & < "8.16~"}
   "coq-bignums"
-  "coq-flocq" {>= "3.1.0"}
+  "coq-flocq" {>= "3.3.0"}
   "coq-coquelicot" {>= "3.0"}
-  "coq-interval" {>= "3.4.0" & < "4~"}
-  "coq-mathcomp-field" {>= "1.8" & < "1.11~"}
+  "coq-interval" {>= "4.0.0" & < "5~"}
+  "coq-mathcomp-field" {>= "1.12" & < "1.15~"}
+  "coq-mathcomp-analysis" {>= "0.3.4" & < "0.4~"}
   "ocamlfind" {build}
   "conf-autoconf" {build & dev}
 ]
@@ -40,6 +41,7 @@ tags: [
   "keyword:ValidSDP"
   "keyword:floating-point arithmetic"
   "keyword:Cholesky decomposition"
+  "category:libValidSDP"
   "category:Miscellaneous/Coq Extensions"
   "logpath:libValidSDP"
 ]
@@ -48,6 +50,6 @@ authors: [
   "Érik Martin-Dorel <erik.martin-dorel@irit.fr>"
 ]
 url {
-  src: "https://github.com/validsdp/validsdp/releases/download/v0.7.0/libvalidsdp-0.7.0.tar.gz"
-  checksum: "sha256=b9559939a14f56bdd1929fedf8c7d5e8a217ba5057686acad667b3d1b45fa14d"
+  src: "https://github.com/validsdp/validsdp/releases/download/v1.0.0/libvalidsdp-1.0.0.tar.gz"
+  checksum: "sha512=911a7f3dce7984d54ca8b33dac9532e52000273c8e7928e02010e14e44caa1b4f3903fe6cc3f1b33e0e5a25394e20872a7a88091585fd8b02ad25e7a55d3c71f"
 }
