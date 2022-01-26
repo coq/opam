@@ -13,16 +13,17 @@ and produces files with dependency information. Includes tools
 to visualize dependency graphs and find unused definitions."""
 
 build: [
-  ["autoreconf" "-i" "-s"]
+  ["autoconf"] {dev}
   ["./configure"]
   [make "-j%{jobs}%" "WARN_ERR="]
 ]
+run-test: [make "test-suite"]
 install: [make "install" "BINDIR=%{bin}%"]
 depends: [
   "ocaml" {>= "4.05.0"}
-  "coq" {>= "8.15" & < "8.16~" | = "dev"}
-  "ocamlgraph"
-  "conf-automake"
+  "coq" {= "dev"}
+  "conf-autoconf" {build & dev}
+  "ocamlgraph" 
 ]
 
 tags: [
