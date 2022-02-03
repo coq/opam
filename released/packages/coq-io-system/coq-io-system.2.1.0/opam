@@ -14,7 +14,7 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.4pl4"}
+  "coq" {>= "8.4pl4" & < "8.15~"}
   "coq-function-ninjas"
   "coq-list-string" {>= "2.0.0"}
   "coq-io" {>= "2.1.0" & < "3.0.0"}
