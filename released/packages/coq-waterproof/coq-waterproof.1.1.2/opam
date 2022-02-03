@@ -31,7 +31,7 @@ install: [
 
 url {
   src: "https://github.com/impermeable/coq-waterproof/archive/1.1.2.tar.gz"
-  checksum: "sha256=0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  checksum: "sha256=aac7996c3b40804e6c4db78ef6c8d2ceed2783774a859af8452cc680d1dc79bc"
 }
 
 tags: [
