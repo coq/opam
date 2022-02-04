@@ -13,9 +13,6 @@ build: [
 install: [
   [make "install"]
 ]
-remove: [
-  [make "uninstall"]
-]
 depends: [
   "ocaml"
   "coq" {>= "8.5" & < "8.6~"}
