@@ -1,5 +1,4 @@
 opam-version: "2.0"
-version: "8.15"
 maintainer: "Yannick Forster <forster@cs.uni-saarland.de>"
 authors: ["Sigurd Schneider <sigurd.schneider@cs.uni-saarland.de>"
           "Yannick Forster <forster@cs.uni-saarland.de>"
@@ -10,7 +9,6 @@ license: "MIT"
 dev-repo: "git+https://github.com/uds-psl/smpl"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/smpl"]
 depends: [
   "ocaml"
   "coq" { >= "8.15" & < "8.16~" }
