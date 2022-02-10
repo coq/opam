@@ -58,5 +58,5 @@ authors: [
 ]
 url {
   src: "https://github.com/validsdp/validsdp/releases/download/v1.0.0/validsdp-1.0.0.tar.gz"
-  checksum: "sha512=6cabd5f4b202a78a92e1f55ec2ab37d552b3e295de2b048392ac87c06dfa9d54f53c2160e06db08f32b4d36dfbabff2dc2c4cbbac0c46346d5105d65296cfb26"
+  checksum: "sha512=94d872eb3ef308cc7c344f3c39e60d5bc265b05bc6c50b2399475e1ac4e105b330b1d63cf4193a04388b7a173f142e246bb6b6c46092fe9c221ed85b1d6b7c3f"
 }
