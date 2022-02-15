@@ -39,6 +39,6 @@ authors: [
 ]
 
 url {
-  src: "https://github.com/lukaszcz/coqhammer/archive/v1.3.1-coq8.12.tar.gz"
+  src: "https://github.com/lukaszcz/coqhammer/archive/refs/tags/v1.3.1-coq8.12.tar.gz"
   checksum: "sha512=8b55bf002636614d87f80dd12b7ce2831be28c3de1aef36eb94daf57effa9c815fdcd270b382473628ee9f17bf0d7a66a6c9c524b31d50ccc977ddd395d3188e"
 }
