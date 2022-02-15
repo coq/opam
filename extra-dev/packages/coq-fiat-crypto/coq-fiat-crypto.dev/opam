@@ -23,6 +23,9 @@ depends: [
   "coq-rewriter"
   "coq-coqutil"
 ]
+conflicts: [
+  "coq-fiat-crypto-with-bedrock"
+]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
 synopsis: "Cryptographic Primitive Code Generation by Fiat."
 tags: ["logpath:Crypto"]
