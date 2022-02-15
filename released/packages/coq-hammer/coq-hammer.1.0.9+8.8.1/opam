@@ -27,6 +27,6 @@ authors: [
 ]
 synopsis: "Automation for Dependent Type Theory"
 url {
-  src: "https://github.com/lukaszcz/coqhammer/archive/v1.0.9-coq8.8.1.tar.gz"
+  src: "https://github.com/lukaszcz/coqhammer/archive/refs/tags/v1.0.9-coq8.8.1.tar.gz"
   checksum: "md5=525fffc2e9e07ec87e12ced8104c33b1"
 }
