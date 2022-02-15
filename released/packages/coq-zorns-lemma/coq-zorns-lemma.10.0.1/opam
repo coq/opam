@@ -1,6 +1,5 @@
 opam-version: "2.0"
-maintainer: "miloradovsky@gmail.com"
-version: "dev"
+maintainer: "palmskog@gmail.com"
 
 homepage: "https://github.com/coq-community/topology"
 dev-repo: "git+https://github.com/coq-community/topology.git"
