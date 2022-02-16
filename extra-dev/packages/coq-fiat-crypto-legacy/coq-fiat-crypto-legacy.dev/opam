@@ -19,6 +19,9 @@ depends: [
   "coq" {>= "8.7~"}
   "coq-bignums"
 ]
+conflict-class: [
+  "coq-fiat-crypto"
+]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
 synopsis:
   "Cryptographic Primitive Code Generation in Fiat (legacy pipeline)."
