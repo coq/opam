@@ -1,0 +1,46 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/runtimeverification/vlsm"
+dev-repo: "git+https://github.com/runtimeverification/vlsm.git"
+bug-reports: "https://github.com/runtimeverification/vlsm/issues"
+license: "BSD-3-Clause"
+
+synopsis: "Coq formalization of validating labelled state transition and message production systems"
+description: """
+A validating labelled state transition and message production system
+(VLSM) abstractly models a distributed system with faults. This project
+contains a formalization of VLSMs and their theory in the Coq proof assistant."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.13" & < "8.14~"}
+  "coq-stdpp" {>= "1.6.0"}
+]
+
+tags: [
+  "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
+  "keyword:fault tolerance"
+  "keyword:distributed algorithms"
+  "logpath:VLSM"
+  "date:2022-02-18"
+]
+authors: [
+  "Mihai Calancea"
+  "Denisa Diaconescu"
+  "Wojciech Kołowski"
+  "Elaine Li"
+  "Brandon Moore"
+  "Karl Palmskog"
+  "Lucas Peña"
+  "Grigore Roșu"
+  "Traian Șerbănuță"
+  "Jan Tušil"
+  "Vlad Zamfir"
+]
+
+url {
+  src: "https://github.com/runtimeverification/vlsm/archive/v1.1.tar.gz"
+  checksum: "sha512=9eac41874fea4f622bb7f225b3c6c7f78ca517790ca0b467d571d86476778bdc6e8ea531815cf608b2a9eba966caa21101e90861bce80a10f054ceca53ec65fd"
+}
