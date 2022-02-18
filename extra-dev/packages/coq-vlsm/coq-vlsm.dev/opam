@@ -16,7 +16,7 @@ build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
   "coq" {>= "8.13" & < "8.14~"}
-  "coq-stdpp" {= "1.5.0"}
+  "coq-stdpp" {>= "1.6.0"}
 ]
 
 tags: [
