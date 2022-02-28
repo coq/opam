@@ -1,0 +1,38 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/hydra-battles"
+dev-repo: "git+https://github.com/coq-community/hydra-battles.git"
+bug-reports: "https://github.com/coq-community/hydra-battles/issues"
+license: "MIT"
+
+synopsis: "Bridge in Coq between Gaia and Hydra battles"
+description: """
+The Gaia and Hydra battles projects develop different implementations
+of ordinals and other mathematical concepts in Coq. This development bridges
+similar concepts in the two projects."""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "2.5"}
+  "coq" {>= "8.14" & < "8.16~"}
+  "coq-hydra-battles" {= version}
+  "coq-mathcomp-ssreflect" {>= "1.12.0" & < "1.15~"}
+  "coq-mathcomp-zify"
+  "coq-gaia" {>= "1.12" & < "1.14~"}
+]
+
+tags: [
+  "category:Mathematics/Logic/Foundations"
+  "keyword:ordinals"
+  "logpath:gaia_hydras"
+  "date:2022-02-17"
+]
+authors: [
+  "Pierre Castéran"
+]
+
+url {
+  src: "https://github.com/coq-community/hydra-battles/archive/v0.6.tar.gz"
+  checksum: "sha512=a7e5e16506ad4eb2b5968d6bffbc1dacb297a304c7e8bbbd2ec4d2488d2090573288bdcd0e17fa05b605925b71c3ece5e46e91134d98f47248ef173c92dc8ed7"
+}
