@@ -1,0 +1,35 @@
+opam-version: "2.0"
+maintainer: "Yishuai Li <yishuai@cis.upenn.edu>"
+version: "dev"
+
+homepage: "https://github.com/liyishuai/file-sync"
+dev-repo: "git+https://github.com/liyishuai/file-sync.git"
+bug-reports: "https://github.com/liyishuai/file-sync/issues"
+license: "MPL-2.0"
+
+synopsis: "File synchroniser specification in Coq"
+description: """
+Coq formalisation of the Unison file synchroniser"""
+
+build: [make "-j%{jobs}%"]
+run-test: [make "-j%{jobs}%" "test"]
+install: [make "install" "INSTALLDIR=%{bin}%"]
+depends: [
+  "ocaml" { >= "4.12" }
+  "coq" { >= "8.14~" }
+  "coq-async-test" 
+  "ocamlbuild" 
+  "fileutils" 
+  "unison" { with-test }
+]
+
+tags: [
+  "logpath:FileSync"
+]
+authors: [
+  "Yishuai Li <yishuai@cis.upenn.edu>"
+]
+
+url {
+  src: "git+https://github.com/liyishuai/file-sync"
+}
