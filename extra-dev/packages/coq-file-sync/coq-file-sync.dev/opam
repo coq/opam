@@ -1,6 +1,5 @@
 opam-version: "2.0"
 maintainer: "Yishuai Li <yishuai@cis.upenn.edu>"
-version: "dev"
 
 homepage: "https://github.com/liyishuai/file-sync"
 dev-repo: "git+https://github.com/liyishuai/file-sync.git"
@@ -31,5 +30,5 @@ authors: [
 ]
 
 url {
-  src: "git+https://github.com/liyishuai/file-sync"
+  src: "git+https://github.com/liyishuai/file-sync.git"
 }
