@@ -15,7 +15,7 @@ run-test: [make "-j%{jobs}%" "test"]
 install: [make "install" "INSTALLDIR=%{bin}%"]
 depends: [
   "ocaml" { >= "4.12" }
-  "coq" { >= "8.14~" }
+  "coq" { >= "8.14~" < "8.16" }
   "coq-async-test" 
   "ocamlbuild" 
   "fileutils" 
