@@ -31,7 +31,7 @@ build: [
 install: [
   [make "install" "IGNORECOQVERSION=true" "BITSIZE=32"]
 ]
-test: [
+run-test: [
   [make "-j%{jobs}%" "test" "IGNORECOQVERSION=true" "BITSIZE=32"]
 ]
 depends: [
