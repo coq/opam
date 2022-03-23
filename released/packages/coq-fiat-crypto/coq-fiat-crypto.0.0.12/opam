@@ -27,7 +27,7 @@ conflict-class: [
   "coq-fiat-crypto"
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
-synopsis: "Cryptographic Primitive Code Generation by Fiat."
+synopsis: "Cryptographic Primitive Code Generation by Fiat"
 tags: ["logpath:Crypto"]
 url {
   src: "https://github.com/mit-plv/fiat-crypto/archive/refs/tags/v0.0.12.tar.gz"
