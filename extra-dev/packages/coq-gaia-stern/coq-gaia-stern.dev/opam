@@ -18,6 +18,9 @@ depends: [
   "coq-mathcomp-ssreflect" {>= "1.12.0"}
   "coq-mathcomp-algebra"
 ]
+conflicts: [
+  "coq-gaia"
+]
 
 tags: [
   "category:Mathematics/Arithmetic and Number Theory/Number theory"

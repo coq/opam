@@ -19,6 +19,9 @@ depends: [
   "coq-gaia-theory-of-sets" {= version}
   "coq-gaia-schutte" {= version}
 ]
+conflicts: [
+  "coq-gaia"
+]
 
 tags: [
   "category:Mathematics/Logic/Set theory"

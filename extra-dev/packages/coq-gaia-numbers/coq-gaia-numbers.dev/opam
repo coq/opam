@@ -20,6 +20,9 @@ depends: [
   "coq-gaia-theory-of-sets" {= version}
   "coq-gaia-ordinals" {= version}
 ]
+conflicts: [
+  "coq-gaia"
+]
 
 tags: [
   "category:Mathematics/Arithmetic and Number Theory/Number theory"
