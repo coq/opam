@@ -1,0 +1,35 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/gaia"
+dev-repo: "git+https://github.com/coq-community/gaia.git"
+bug-reports: "https://github.com/coq-community/gaia/issues"
+license: "MIT"
+
+synopsis: "Properties of Fibonacci numbers and the Stern diatomic sequence in Coq"
+description: """
+Properties of Fibonacci numbers and the Stern diatomic sequence in Coq using the
+Mathematical Components library."""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "2.5"}
+  "coq" {>= "8.10"}
+  "coq-mathcomp-ssreflect" {>= "1.12.0"}
+  "coq-mathcomp-algebra"
+]
+
+tags: [
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "keyword:stern-brocot"
+  "keyword:fibonacci numbers"
+  "logpath:gaia.stern"
+]
+authors: [
+  "José Grimm"
+  "Alban Quadrat"
+]
+
+url {
+  src: "git+https://github.com/coq-community/gaia.git#master"
+}
