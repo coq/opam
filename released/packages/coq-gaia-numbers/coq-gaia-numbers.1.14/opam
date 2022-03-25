@@ -1,0 +1,43 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/gaia"
+dev-repo: "git+https://github.com/coq-community/gaia.git"
+bug-reports: "https://github.com/coq-community/gaia/issues"
+license: "MIT"
+
+synopsis: "Implementation of the sets of numbers Z, Q, and R following Bourbaki's Elements of Mathematics in Coq"
+description: """
+Implementation of the sets of numbers Z, Q, and R following N. Bourbaki's book series
+Elements of Mathematics in Coq using the Mathematical Components library."""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "2.5"}
+  "coq" {>= "8.10" & < "8.16~"}
+  "coq-mathcomp-ssreflect" {>= "1.12.0" & < "1.15~"}
+  "coq-mathcomp-algebra"
+  "coq-gaia-theory-of-sets" {= version}
+  "coq-gaia-ordinals" {= version}
+]
+conflicts: [
+  "coq-gaia"
+]
+
+tags: [
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "keyword:integers"
+  "keyword:rational numbers"
+  "keyword:real numbers"  
+  "logpath:gaia.numbers"
+  "date:2022-03-23"
+]
+authors: [
+  "José Grimm"
+  "Alban Quadrat"
+]
+
+url {
+  src: "https://github.com/coq-community/gaia/archive/v1.14.tar.gz"
+  checksum: "sha512=aec8b3321bba4ffeedf65f2411f0154edc729df6b64b619cfffc46db275f58d1fdfe0e1923b191a9e5b35120e1ee3cf8fae8b0a8c4600278d6061a46cf7ecc74"
+}
