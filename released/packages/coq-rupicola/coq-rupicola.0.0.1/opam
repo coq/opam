@@ -1,6 +1,10 @@
 opam-version: "2.0"
 authors: [
-  "Massachusetts Institute of Technology"
+  "Clément Pit-Claudel <clement.pitclaudel@live.com>"
+  "Jade Philipoom"
+  "Dustin Jamner"
+  "Andres Erbsen"
+  "Adam Chlipala"
 ]
 maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "https://github.com/mit-plv/rupicola"
