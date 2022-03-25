@@ -26,6 +26,7 @@ bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 # test or install commands are changed, this needs to be reviewed!
 license: "BSD-2-Clause"
 
+patches: [ "0001-Fix-issue-that-make-install-does-not-install-anythin.patch" ]
 build: [
   [make "-j%{jobs}%" "vst" "IGNORECOQVERSION=true" "BITSIZE=64"]
 ]
