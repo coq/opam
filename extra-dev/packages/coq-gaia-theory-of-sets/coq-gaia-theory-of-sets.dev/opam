@@ -6,25 +6,26 @@ dev-repo: "git+https://github.com/coq-community/gaia.git"
 bug-reports: "https://github.com/coq-community/gaia/issues"
 license: "MIT"
 
-synopsis: "Implementation of books from Bourbaki's Elements of Mathematics in Coq"
+synopsis: "Implementation of the Theory of Sets from Bourbaki's Elements of Mathematics in Coq"
 description: """
-Implementation of books from N. Bourbaki's Elements of Mathematics
-in Coq using the Mathematical Components library, including set theory
-and number theory."""
+Implementation of the Theory of Sets following N. Bourbaki's book series
+Elements of Mathematics in Coq using the Mathematical Components library."""
 
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
-  "coq" {(>= "8.10" & < "8.15~") | (= "dev")}
-  "coq-mathcomp-ssreflect" {(>= "1.12.0" & < "1.13~") | (= "dev")}
-  "coq-mathcomp-algebra" 
+  "coq" {>= "8.10"}
+  "coq-mathcomp-ssreflect" {>= "1.12.0"}
+]
+conflicts: [
+  "coq-gaia"
 ]
 
 tags: [
   "category:Mathematics/Logic/Set theory"
   "keyword:Bourbaki"
   "keyword:set theory"
-  "logpath:gaia"
+  "logpath:gaia.sets"
 ]
 authors: [
   "José Grimm"
