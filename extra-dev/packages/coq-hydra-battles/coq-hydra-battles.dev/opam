@@ -17,8 +17,9 @@ properties of epsilon0)."""
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
-  "coq" {(>= "8.13" & < "8.15~") | (= "dev")}
-  "coq-equations" {(>= "1.2" & < "1.4~") | (= "dev")}
+  "coq" {>= "8.13"}
+  "coq-equations" {>= "1.2"}
+  "coq-libhyps" {>= "2.0.1"}
 ]
 
 tags: [
