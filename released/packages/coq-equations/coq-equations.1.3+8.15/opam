@@ -34,7 +34,7 @@ depends: [
   "ocamlfind" {build}
 ]
 depopts: [
-  "coq-hott" {>= "8.15" & < "8.16~"}
+  "coq-hott"
 ]
 url {
   src: "https://github.com/mattam82/Coq-Equations/archive/refs/tags/v1.3-8.15.tar.gz"
