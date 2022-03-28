@@ -20,7 +20,7 @@ tags: [
   "logpath:Equations"
 ]
 build: [
-  ["./configure.sh"] # "--enable-hott" {coq-hott:installed}]
+  ["./configure.sh" "--enable-hott" {coq-hott:installed}]
   [make "-j%{jobs}%"]
 ]
 install: [
@@ -33,9 +33,9 @@ depends: [
   "coq" {>= "8.15" & < "8.16~"}
   "ocamlfind" {build}
 ]
-# depopts: [
-#  "coq-hott" {>= "8.13" & < "8.15~"}
-# ]
+depopts: [
+  "coq-hott" {>= "8.15" & < "8.16~"}
+]
 url {
   src: "https://github.com/mattam82/Coq-Equations/archive/refs/tags/v1.3-8.15.tar.gz"
   checksum: "sha512=ec281fca0b148d9297f2c871a5485649bb93f24e8723f56a4a78d2bc6224984de16e0d6438fd3f7ee98ea0e69487208480bd44d3a30a92af667e38926b8dab0e"
