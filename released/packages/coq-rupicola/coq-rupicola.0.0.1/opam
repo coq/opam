@@ -11,9 +11,9 @@ homepage: "https://github.com/mit-plv/rupicola"
 bug-reports: "https://github.com/mit-plv/rupicola/issues"
 license: "MIT"
 build: [
-  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "all" FIXME EXTERNAL_DEPS]
+  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "all"]
 ]
-install: [make "EXTERNAL_DEPENDENCIES=1" "install" FIXME EXTERNAL_DEPS]
+install: [make "EXTERNAL_DEPENDENCIES=1" "install"]
 depends: [
   "coq" {>= "8.15~"}
   "coq-bedrock2" {= "0.0.1"}
@@ -22,6 +22,6 @@ dev-repo: "git+https://github.com/mit-plv/rupicola.git"
 synopsis: "Gallina to imperative code compilation, currently in design phase"
 tags: ["logpath:Rupicola"]
 url {
-  src: "https://github.com/mit-plv/rupicola/archive/refs/tags/v0.0.1.tar.gz"
-  checksum: "sha512=5733c3c79456e245c4b1df1fca07f317ba2e6ea24e6682bc8c9314ca6a40ef2c5fd4882e1aae18215c7f5de40fc5747aab55e18939ccd689522fc8895c21ab9e"
+  src: "https://github.com/mit-plv/rupicola/archive/refs/tags/v0.0.2.tar.gz"
+  checksum: "sha512=FIXEME"
 }
