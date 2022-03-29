@@ -22,6 +22,6 @@ dev-repo: "git+https://github.com/mit-plv/rupicola.git"
 synopsis: "Gallina to imperative code compilation, currently in design phase"
 tags: ["logpath:Rupicola"]
 url {
-  src: "https://github.com/mit-plv/rupicola/archive/refs/tags/v0.0.2.tar.gz"
-  checksum: "sha512=FIXEME"
+  src: "https://github.com/mit-plv/rupicola/archive/refs/tags/v0.0.3.tar.gz"
+  checksum: "sha512=82c96f69e32b8a46cce857dbaaabab2dc8cf033983536231169f5763aac983e1"
 }
