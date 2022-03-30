@@ -13,6 +13,7 @@ build: [
 ]
 install: [make "EXTERNAL_DEPENDENCIES=1" "install_bedrock2"]
 depends: [
+  "conf-findutils" {build}
   "coq" {>= "8.9~"}
   "coq-coqutil"
   "zarith" {>= "1.11"}
