@@ -21,7 +21,7 @@ depends: [
   "coq" {>= "8.11~"}
   "coq-coqprime"
   "coq-rewriter" {= "0.0.2"}
-  "coq-rupicola" {= "0.0.3"}
+  "coq-rupicola" {= "0.0.4"}
 ]
 conflict-class: [
   "coq-fiat-crypto"
