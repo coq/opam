@@ -14,7 +14,7 @@ algorithms in Coq. It provides a collection of definitions and notations to
 make Gallina more familiar to Haskellers.
 """
 
-build: [make "-j%{jobs}%"]
+build: [make]
 install: [make "install"]
 depends: [
   "coq" {(>= "8.10" & < "8.16~") | (= "dev")}
