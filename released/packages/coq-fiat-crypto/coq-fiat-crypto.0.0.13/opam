@@ -1,0 +1,35 @@
+opam-version: "2.0"
+authors: [
+  "Andres Erbsen <andreser@mit.edu>"
+  "Google Inc."
+  "Jade Philipoom <jadep@mit.edu> <jade.philipoom@gmail.com>"
+  "Massachusetts Institute of Technology"
+  "Zoe Paraskevopoulou <zoe.paraskevopoulou@gmail.com>"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/mit-plv/fiat-crypto"
+bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
+license: "MIT OR Apache-2.0 OR BSD-1-Clause"
+build: [
+  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "SKIP_COQSCRIPTS_INCLUDE=1" "coq" "standalone-ocaml"]
+]
+install: [make "EXTERNAL_DEPENDENCIES=1" "SKIP_COQSCRIPTS_INCLUDE=1" "BINDIR=%{bin}%" "install" "install-standalone-ocaml"]
+depends: [
+  "ocaml" {build}
+  "ocamlfind" {build}
+  "conf-jq" {build}
+  "coq" {>= "8.11~"}
+  "coq-coqprime" {>= "1.2.0"}
+  "coq-rewriter" {= "0.0.2"}
+  "coq-rupicola" {= "0.0.4"}
+]
+conflict-class: [
+  "coq-fiat-crypto"
+]
+dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
+synopsis: "Cryptographic Primitive Code Generation by Fiat"
+tags: ["logpath:Crypto"]
+url {
+  src: "https://github.com/mit-plv/fiat-crypto/archive/refs/tags/v0.0.13.tar.gz"
+  checksum: "sha512=c8f3da07cc4d8b2be86c9239d14c04a8ed990a12f80ce9b00c926cd5064afe1393de5bc52c673d7c7e0e099434ac4c2a03e302b2d23c47d97ce8dddb5404b75d"
+}

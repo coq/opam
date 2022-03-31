@@ -1,0 +1,27 @@
+opam-version: "2.0"
+authors: [
+  "Massachusetts Institute of Technology"
+  "Kevix"
+  "SiFive"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/mit-plv/bedrock2"
+bug-reports: "https://github.com/mit-plv/bedrock2/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "bedrock2_ex"]
+]
+install: [make "EXTERNAL_DEPENDENCIES=1" "install_bedrock2"]
+depends: [
+  "conf-findutils" {build}
+  "coq" {>= "8.15~"}
+  "coq-coqutil" {= "0.0.1"}
+  "zarith" {>= "1.11"}
+]
+dev-repo: "git+https://github.com/mit-plv/bedrock2.git"
+synopsis: "A work-in-progress language and compiler for verified low-level programming"
+tags: ["logpath:bedrock2"]
+url {
+  src: "https://github.com/mit-plv/bedrock2/archive/refs/tags/v0.0.1.tar.gz"
+  checksum: "sha512=d9303db34ab8414b20a77135d6ca019b0904bba69baca246c6e89afa5ca9be78c2753020a534fd9042f179142cfcbcd8182cb07c938af411b4f83f8882493d62"
+}
