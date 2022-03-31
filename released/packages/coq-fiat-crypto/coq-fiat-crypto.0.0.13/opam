@@ -19,7 +19,7 @@ depends: [
   "ocamlfind" {build}
   "conf-jq" {build}
   "coq" {>= "8.11~"}
-  "coq-coqprime"
+  "coq-coqprime" {>= "1.2.0"}
   "coq-rewriter" {= "0.0.2"}
   "coq-rupicola" {= "0.0.4"}
 ]
