@@ -31,6 +31,7 @@ synopsis: "Cryptographic Primitive Code Generation by Fiat"
 description: """
 Coq code and proofs for a command-line binary that can synthesize proven-correct
 big-integer modular field arithmetic operations for cryptography.
+Target languages include C, Rust, Zig, Go, and bedrock2.
 """
 tags: ["logpath:Crypto"]
 url {

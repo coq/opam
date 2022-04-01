@@ -21,10 +21,10 @@ depends: [
 dev-repo: "git+https://github.com/mit-plv/bedrock2.git"
 synopsis: "A work-in-progress language and compiler for verified low-level programming"
 description: """
-bedrock2 is a low-level systems programming language. One piece
-of the puzzle is a verified compiler targeting RISC-V. The source
-language itself is also equipped with a simple program logic for
-proving correctness of the source programs.
+bedrock2 is a low-level systems programming language. This
+language is equipped with a simple program logic for
+proving correctness of the programs.  A verified compiler
+targeting RISC-V from this language exists but is not yet on opam.
 
 The project has similar goals as bedrock, but uses a different design.
 No code is shared between bedrock and bedrock2.
