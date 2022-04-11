@@ -1,5 +1,5 @@
 opam-version: "2.0"
-synopsis: "Library for serialization to S-expressions"
+synopsis: "Library for serialization via S-expressions"
 maintainer: "Li-yao Xia <lysxia@gmail.com>"
 license: "MIT"
 
@@ -10,12 +10,15 @@ bug-reports: "https://github.com/Lysxia/coq-ceres/issues"
 authors: [ "Li-yao Xia" ]
 
 depends: [
-  "coq" {>= "8.8"}
+  "dune" {>= "2.8"}
+  "coq" {>= "8.8~"}
+  "odoc" {with-doc}
 ]
-
-build: [ make "-j%{jobs}%" ]
-install: [ make "install" ]
-run-test: [ make "-j%{jobs}%" "test" ]
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs "@install" ]
+]
+run-test: [ "dune" "build" "-p" name "test" "tutorial" ]
 
 tags: [
   "keyword:serialization"
