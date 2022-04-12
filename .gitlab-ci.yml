@@ -109,7 +109,7 @@ opam-build:any:
   extends: .opam-build
   variables:
     COMPILER: "4.09.0"
-    EXTRA_OPAM_OPTION: "--unlock-base"
+    EXTRA_OPAM_OPTION: "--update-invariant"
   except:
     - web
 
