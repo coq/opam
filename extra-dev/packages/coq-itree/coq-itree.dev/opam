@@ -9,15 +9,18 @@ dev-repo: "git+https://github.com/DeepSpec/InteractionTrees"
 bug-reports: "https://github.com/DeepSpec/InteractionTrees/issues"
 license: "MIT"
 
-build: [ make "-j%{jobs}%" ]
-install: [ make "install" ]
-run-test: [ make "-j%{jobs}%" "all" ]
+build: [
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "build" "--root=." "-j" jobs] {with-test}
+  ["dune" "runtest" "--root=." "-j" jobs] {with-test}
+]
 
 depends: [
   "coq" {>= "8.12"}
-  "coq-ext-lib" {>= "0.10.3"}
-  "coq-paco" {>= "4.0.0"}
-  "ocamlbuild" {with-test}
+  "coq-ext-lib" {>= "0.11.1"}
+  "coq-paco" {>= "4.0.1"}
+  "dune" {>= "2.6"}
 ]
 authors: [
   "Li-yao Xia <lysxia@gmail.com>"
