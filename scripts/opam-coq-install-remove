@@ -72,7 +72,7 @@ while [ ! -z "$1" ]; do
             set -e
           else
             echo Check if $PKG_NAME_VERSION is installable with another compiler
-            opam install "$PKG_NAME_VERSION" -y --show-action --unlock-base
+            opam install "$PKG_NAME_VERSION" -y --show-action --update-invariant
             echo Skipping $PKG_NAME_VERSION since not installable with the current compiler
           fi
         fi
