@@ -21,14 +21,14 @@ depopts: [
   "coq-native"
 ]
 depends: [
-  "ocaml" {>= "4.05.0"}
+  "ocaml" {>= "4.09.0"}
   "ocamlfind" {build}
   "dune" {>= "2.5.1"}
   "conf-findutils" {build}
   "zarith" {>= "1.10"}
 ]
 conflicts: [
-  "ocaml-option-nnp"
+  "base-nnp"
   "ocaml-option-nnpchecker"
 ]
 build: [
@@ -37,16 +37,16 @@ build: [
     "-configdir" "%{lib}%/coq/config"
     "-prefix" prefix
     "-mandir" man
-    "-docdir" doc
+    "-docdir" "%{doc}%/coq"
     "-libdir" "%{lib}%/coq"
     "-datadir" "%{share}%/coq"
     "-coqide" "no"
     "-native-compiler" "yes" {coq-native:installed} "no" {!coq-native:installed}
   ]
-  [make "-j%{jobs}%"]
+  [ make "COQ_USE_DUNE=" "-j%{jobs}%" ]
 ]
 install: [
-  [make "install"]
+  [ make "COQ_USE_DUNE=" "install" ]
 ]
 
 url {
