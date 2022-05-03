@@ -1,0 +1,52 @@
+opam-version: "2.0"
+maintainer: "fcsl@software.imdea.org"
+
+homepage: "https://github.com/imdea-software/htt"
+dev-repo: "git+https://github.com/imdea-software/htt.git"
+bug-reports: "https://github.com/imdea-software/htt/issues"
+license: "Apache-2.0"
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" { (>= "8.14" & < "8.16~") | (= "dev") }
+  "coq-mathcomp-ssreflect" { (>= "1.13.0" & < "1.15~") | (= "dev") }
+  "coq-fcsl-pcm" { (>= "1.5.0" & < "1.6~") | (= "dev") }
+]
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "keyword:partial commutative monoids"
+  "keyword:separation logic"
+  "logpath:HTT"
+]
+authors: [
+  "Aleksandar Nanevski"
+  "Germán Andrés Delbianco"
+  "Alexander Gryzlov"
+]
+
+synopsis: "Hoare Type Theory"
+description: """
+Hoare Type Theory (HTT) is a verification system for reasoning about sequential heap-manipulating
+programs based on separation logic.
+
+HTT incorporates Hoare-style specifications via preconditions and postconditions into types.
+A Hoare type `ST P (fun x : A => Q)` denotes computations with a precondition `P` and
+postcondition `Q`, returning a value `x` of type `A`. Hoare types are a dependently typed version
+of monads, as used in the programming language Haskell. Monads hygienically combine the language
+features for pure functional programming, with those for imperative programming, such as state
+or exceptions. In this sense, HTT establishes a formal connection between (functional programming
+variant of) Separation logic and monads, in the style of Curry-Howard isomorphism. Every
+effectful command in HTT has a type which corresponds to the appropriate non-structural inference
+rule in Separation logic, and vice versa, every non-structural inference rule corresponds to a
+command in HTT that has that rule as the type. The type for monadic bind is the Hoare-style rule
+for sequential composition, and the type for monadic unit combines the Hoare-style rule for the
+idle program and the Hoare-style rule for variable assignment (adapted for functional variables).
+In implementation terms, the above means that HTT implements Separation logic as a shallow
+embedding in Coq."""
+
+url {
+  src: "https://github.com/imdea-software/htt/archive/v1.0.0.tar.gz"
+  checksum: "sha256=8e34a0b31e9fb70699dd9de96738a3647b38d00c7c407095128c121121138b64"
+}
