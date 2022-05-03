@@ -26,12 +26,12 @@ build: [
     "-configdir" "%{lib}%/coq/config"
     "-prefix" prefix
     "-mandir" man
-    "-docdir" doc
+    "-docdir" "%{doc}%/coq"
     "-libdir" "%{lib}%/coq"
     "-datadir" "%{share}%/coq"
-    "-native-compiler" {os = "macos"} "no" {os = "macos"}
+    "-native-compiler" "yes" {coq-native:installed} "no" {!coq-native:installed}
   ]
-  [ "dune" "build" "-p" name "-j"  jobs ]
+  [ "dune" "build" "-p" name "-j" jobs ]
 ]
 
 url {
