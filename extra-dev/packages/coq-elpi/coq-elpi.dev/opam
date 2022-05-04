@@ -10,7 +10,7 @@ build: [ make "COQBIN=%{bin}%/" "ELPIDIR=%{prefix}%/lib/elpi" "OCAMLWARN=" ]
 install: [ make "install" "COQBIN=%{bin}%/" "ELPIDIR=%{prefix}%/lib/elpi" ]
 
 depends: [
-  "elpi" {>= "1.14.0" & < "1.15.0~"}
+  "elpi" {>= "1.15.2"}
   "coq" {= "dev"}
 ]
 synopsis: "Elpi extension language for Coq"
