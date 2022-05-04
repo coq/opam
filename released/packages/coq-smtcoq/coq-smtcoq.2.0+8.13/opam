@@ -38,5 +38,5 @@ description: """
 - decision procedures through new tactics that discharge some Coq goals to ZChaff, veriT, CVC4, and their combination"""
 url {
   src: "https://github.com/smtcoq/smtcoq/archive/refs/tags/SMTCoq-2.0+8.13.tar.gz"
-  checksum: "sha512=2669f7a94eec29962af463b9ebd54eba2dd52d8237be4852d40f4004fd39f89621ceefadd64b47f2f9866b4f31f8e442ff8d238fc69395f9a5e96e5347cb738c"
+  checksum: "sha512=5909679b27b67ccca4265e07551d69aedbb3c320b7a3c1eea9dc9d6d2f82c54fc4710f8dfd7bf9f205bcf15f5c62b9391d3e36e7d37048f0dcb97df9c9281168"
 }
