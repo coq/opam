@@ -20,6 +20,7 @@ tags: [
   "keyword: SMT"
   "keyword: SAT"
   "keyword: automation"
+  "logpath:SMTCoq"
 ]
 authors: [ 
  "Michaël Armand"
