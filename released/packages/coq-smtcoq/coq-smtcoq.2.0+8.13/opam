@@ -37,5 +37,6 @@ description: """
 - a certified checker for proof witnesses coming from the SAT solver ZChaff and the SMT solvers veriT and CVC4. This checker increases the confidence in these tools by checking their answers a posteriori and allows to import new theroems proved by these solvers in Coq;
 - decision procedures through new tactics that discharge some Coq goals to ZChaff, veriT, CVC4, and their combination"""
 url {
-  src: "git+https://github.com/smtcoq/smtcoq.git#SMTCoq-2.0+8.13"
+  src: "https://github.com/smtcoq/smtcoq/archive/refs/tags/SMTCoq-2.0+8.13.tar.gz"
+  checksum: "sha512=2669f7a94eec29962af463b9ebd54eba2dd52d8237be4852d40f4004fd39f89621ceefadd64b47f2f9866b4f31f8e442ff8d238fc69395f9a5e96e5347cb738c"
 }
