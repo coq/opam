@@ -1,5 +1,5 @@
 opam-version: "2.0"
-maintainer: "matthieu.sozeau@inria.fr"
+maintainer: "Chantal.Keller@lri.fr"
 homepage: "https://smtcoq.github.io/"
 dev-repo: "git+https://github.com/smtcoq/smtcoq.git"
 bug-reports: "https://github.com/smtcoq/smtcoq/issues"
@@ -20,6 +20,7 @@ tags: [
   "keyword: SMT"
   "keyword: SAT"
   "keyword: automation"
+  "logpath:SMTCoq"
 ]
 authors: [ 
  "Michaël Armand"
@@ -36,5 +37,6 @@ description: """
 - a certified checker for proof witnesses coming from the SAT solver ZChaff and the SMT solvers veriT and CVC4. This checker increases the confidence in these tools by checking their answers a posteriori and allows to import new theroems proved by these solvers in Coq;
 - decision procedures through new tactics that discharge some Coq goals to ZChaff, veriT, CVC4, and their combination"""
 url {
-  src: "git+https://github.com/smtcoq/smtcoq.git#coq-8.12"
+  src: "https://github.com/smtcoq/smtcoq/archive/refs/tags/SMTCoq-2.0+8.12.tar.gz"
+  checksum: "sha512=07a602bd62ffa1226802248b47ee076f81f5f99148b2f5b5908c09b1cdd100d0369de436b05b58aa7a5607d7525f8d05441b6fa7d88c03c37caf1e66515b4d1c"
 }
