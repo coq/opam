@@ -1,6 +1,5 @@
 opam-version: "2.0"
 name: "coq-trakt"
-version: "dev"
 maintainer: "Enzo Crance <enzo.crance@inria.fr>"
 authors: [ "Enzo Crance" ]
 license: "LGPL-3.0-or-later"
