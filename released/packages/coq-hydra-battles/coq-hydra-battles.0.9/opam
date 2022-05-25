@@ -1,0 +1,47 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/hydra-battles"
+dev-repo: "git+https://github.com/coq-community/hydra-battles.git"
+bug-reports: "https://github.com/coq-community/hydra-battles/issues"
+license: "MIT"
+
+synopsis: "Exploration of some properties of Kirby and Paris' hydra battles, with the help of Coq"
+description: """
+An exploration of some properties of Kirby and Paris' hydra battles,
+with the help of the Coq proof assistant. This includes the study of
+several representations of ordinal numbers, and a part
+of the so-called Ketonen and Solovay machinery (combinatorial
+properties of epsilon0)."""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "2.5"}
+  "coq" {>= "8.13" & < "8.16~"}
+  "coq-equations" {>= "1.2" & < "1.4~"}
+  "coq-libhyps"
+]
+
+tags: [
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "category:Mathematics/Logic/Foundations"
+  "keyword:Ketonen-Solovay machinery"
+  "keyword:ordinals"
+  "keyword:primitive recursive functions"
+  "logpath:hydras"
+  "date:2022-05-20"
+]
+authors: [
+  "Pierre Castéran"
+  "Évelyne Contejean"
+  "Jeremy Damour"
+  "Russell O'Connor"
+  "Karl Palmskog"
+  "Clément Pit-Claudel"
+  "Théo Zimmermann"
+]
+
+url {
+  src: "https://github.com/coq-community/hydra-battles/archive/v0.9.tar.gz"
+  checksum: "sha512=d793c993b50dd1149475ed7131ddb7910a30b6711c97f3ae8079661e2e8f4211ce8b4d85ade9e57c176b05feb20edb59d286db883a5873e3c775aac0fb1e40c5"
+}
