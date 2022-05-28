@@ -1,0 +1,31 @@
+opam-version: "2.0"
+synopsis: "Testing asynchronous system"
+description: "From interaction trees to asynchronous tests."
+maintainer: "Yishuai Li <yishuai@cis.upenn.edu>"
+authors: "Yishuai Li <yishuai@cis.upenn.edu>"
+license: "MPL-2.0"
+tags: [
+  "category:Miscellaneous/Extracted Programs/Decision procedures"
+  "keyword:extraction"
+  "keyword:reactive systems"
+  "logpath:AsyncTest"
+]
+homepage: "https://github.com/liyishuai/coq-async-test"
+bug-reports: "https://github.com/liyishuai/coq-async-test/issues"
+depends: [
+  "coq" {>= "8.14~"}
+  "coq-json" {>= "0.1.1"}
+  "coq-itree-io" {>= "0.1.0"}
+  "coq-quickchick" {>= "1.6.3"}
+]
+build: [make "-j%{jobs}%"]
+run-test: [make "-j%{jobs}%" "test"]
+install: [make "install"]
+dev-repo: "git+https://github.com/liyishuai/coq-async-test.git"
+url {
+  src: "https://github.com/liyishuai/coq-async-test/archive/v0.1.0.tar.gz"
+  checksum: [
+    "md5=11edde75a469675be08ab7cf55ccb415"
+    "sha512=e92a2d160f43050f6a2084de199c537750db3bbe0c7005de7043f528a077f0948c0cfffff712d5f8ccb3573705a4bc77c4de6a534a7cb42292346adb976a3b0e"
+  ]
+}
