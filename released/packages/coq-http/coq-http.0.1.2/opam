@@ -1,0 +1,42 @@
+opam-version: "2.0"
+synopsis: "HTTP in Coq"
+description: "HTTP specification in Coq, testable and verifiable"
+maintainer: "Yishuai Li <yishuai@cis.upenn.edu>"
+authors: [
+  "Yishuai Li <yishuai@cis.upenn.edu>"
+  "Li-yao Xia <xialiyao@cis.upenn.edu>"
+  "Yao Li <liyao@cis.upenn.edu>"
+  "Azzam Althagafi <aazzam@cis.upenn.edu>"
+  "Benjamin C. Pierce <bcpierce@cis.upenn.edu>"
+]
+license: "MPL-2.0"
+tags: [
+  "category:Computer Science/Concurrent Systems and Protocols/Correctness of specific protocols"
+  "category:Miscellaneous/Extracted Programs/Decision procedures"
+  "keyword:co-induction"
+  "keyword:extraction"
+  "keyword:reactive systems"
+  "date:2022-05-31"
+  "logpath:HTTP"
+]
+homepage: "https://github.com/liyishuai/coq-http"
+bug-reports: "https://github.com/liyishuai/coq-http/issues"
+depends: [
+  "coq" {>= "8.13~"}
+  "ocamlbuild" {>= "0.14.1"}
+  "coq-itree-io" {>= "0.1.0"}
+  "coq-parsec" {>= "0.1.1"}
+  "coq-quickchick" {>= "1.6.3"}
+  "coq-json" {>= "0.1.1"}
+]
+build: [make "-j%{jobs}%"]
+run-test: [make "-j%{jobs}%" "test"]
+install: [make "install" "INSTALLDIR=%{bin}%"]
+dev-repo: "git+https://github.com/liyishuai/coq-http.git"
+url {
+  src: "https://github.com/liyishuai/coq-http/archive/v0.1.2.tar.gz"
+  checksum: [
+    "md5=7368c124ab19bfc2a40b5c9183ba5a1c"
+    "sha512=cb41ddb51d1b2df7586d9d4292b47f0ce25c329d794a431b1eb1d985a29d5ed4539637b62c77372312e49eb0dc2f05b11fdcd6e2e6c579e684a859beb3d84ae4"
+  ]
+}
