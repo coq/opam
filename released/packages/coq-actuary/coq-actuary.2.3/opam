@@ -15,7 +15,7 @@ the theory of interest, life tables, annuities, and reserves."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.12"}
+  "coq" {>= "8.13"}
   "coq-mathcomp-ssreflect" {>= "1.12"}
   "coq-coquelicot" {>= "3.1.0"}
 ]
@@ -28,7 +28,7 @@ tags: [
   "keyword:reserves"
   "keyword:actuarial mathematics"
   "logpath:Actuary"
-  "date:2021-12-18"
+  "date:2022-06-07"
 ]
 authors: [
   "Yosuke Ito"
