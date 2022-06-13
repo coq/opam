@@ -11,9 +11,9 @@ homepage: "https://github.com/mit-plv/fiat-crypto"
 bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
 license: "MIT OR Apache-2.0 OR BSD-1-Clause"
 build: [
-  [make "-j%{jobs}%" "EXTERNAL_REWRITER=1" "EXTERNAL_COQPRIME=1" "EXTERNAL_COQUTIL=1" "coq" "standalone-ocaml"]
+  [make "-j%{jobs}%" "EXTERNAL_REWRITER=1" "EXTERNAL_COQPRIME=1" "coq" "standalone-ocaml"]
 ]
-install: [make "EXTERNAL_REWRITER=1" "EXTERNAL_COQPRIME=1" "EXTERNAL_COQUTIL=1" "BINDIR=%{bin}%" "install" "install-standalone-ocaml"]
+install: [make "EXTERNAL_REWRITER=1" "EXTERNAL_COQPRIME=1" "BINDIR=%{bin}%" "install" "install-standalone-ocaml"]
 depends: [
   "ocaml" {build}
   "ocamlfind" {build}
@@ -21,10 +21,10 @@ depends: [
   "coq" {>= "8.11~"}
   "coq-coqprime"
   "coq-rewriter"
-  "coq-coqutil"
 ]
 conflict-class: [
   "coq-fiat-crypto"
+  "coq-coqutil"
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
 synopsis: "Cryptographic Primitive Code Generation by Fiat."
