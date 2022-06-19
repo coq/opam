@@ -1,0 +1,38 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/huffman"
+dev-repo: "git+https://github.com/coq-community/huffman.git"
+bug-reports: "https://github.com/coq-community/huffman/issues"
+doc: "https://coq-community.org/huffman/"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Coq proof of the correctness of the Huffman coding algorithm"
+description: """
+This projects contains a Coq proof of the correctness of the Huffman coding algorithm,
+as described in David A. Huffman's paper A Method for the Construction of Minimum-Redundancy
+Codes, Proc. IRE, pp. 1098-1101, September 1952."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.12" & < "8.17~"}
+]
+
+tags: [
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
+  "category:Miscellaneous/Extracted Programs/Combinatorics"
+  "keyword:data compression"
+  "keyword:code"
+  "keyword:huffman tree"
+  "logpath:Huffman"
+  "date:2022-06-19"
+]
+authors: [
+  "Laurent Théry"
+]
+
+url {
+  src: "https://github.com/coq-community/huffman/archive/v8.15.0.tar.gz"
+  checksum: "sha512=06b6147a713e3f15428623ab09c9f226e626837a9e1876892a24ebdc1843c84ade0ccd8aafe53892b899dc235ff42d0e3cc11e4bd324f3ebb57e205e4fdf6a9d"
+}
