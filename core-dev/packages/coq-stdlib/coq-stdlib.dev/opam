@@ -54,7 +54,3 @@ build: [
 ]
 dev-repo: "git+https://github.com/coq/coq.git"
 depopts: ["coq-native"]
-
-url {
-  src: "git+https://github.com/coq/coq.git#master"
-}
