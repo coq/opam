@@ -1,0 +1,28 @@
+opam-version: "2.0"
+synopsis: "Numerical Analysis in Coq"
+name: "coq-num-analysis"
+version: "1.0.0"
+maintainer: "MILC project <milc@inria.fr>"
+authors: [ "Sylvie Boldo" "François Clément" "Vincent Martin" "Micaela Mayero" "Florian Faissole" "Houda Mouhcine" "Louise Leclerc" "Stéphane Aubry" ]
+homepage: "https://lipn.univ-paris13.fr/coq-num-analysis/"
+dev-repo: "https://lipn.univ-paris13.fr/coq-num-analysis/"
+license: "LGPL-3.0-or-later"
+tags: [ "keyword:real analysis" "keyword:Lax Milgram" "keyword:Lebesgue" "keyword:Tonelli" ]
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make  "install"]
+]
+
+depends: [
+  "ocaml" { >= "4.08" }
+  "coq" {>= "8.14.0"}
+  "coq-mathcomp-ssreflect" {>= "1.12"}
+  "coq-coquelicot" {>= "3.2.0"}
+  "coq-flocq" {>= "4.0.0"}
+]
+url {
+  src: "https://lipn.univ-paris13.fr/coq-num-analysis/-/archive/Tonelli.1.0/coq-num-analysis-Tonelli.1.0.tar.gz""
+  checksum: "sha256=9c3389424c48f07c71d1502771862c3fead6327231e2e5bc82488a721efdb0f2"
+}
