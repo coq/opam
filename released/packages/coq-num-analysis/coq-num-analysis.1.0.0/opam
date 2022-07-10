@@ -5,24 +5,21 @@ version: "1.0.0"
 maintainer: "MILC project <milc@inria.fr>"
 authors: [ "Sylvie Boldo" "François Clément" "Vincent Martin" "Micaela Mayero" "Florian Faissole" "Houda Mouhcine" "Louise Leclerc" "Stéphane Aubry" ]
 homepage: "https://lipn.univ-paris13.fr/coq-num-analysis/"
-dev-repo: "https://lipn.univ-paris13.fr/coq-num-analysis/"
+dev-repo: "git+https://lipn.univ-paris13.fr/coq-num-analysis/"
+bug-reports: "https://lipn.univ-paris13.fr/coq-num-analysis/issues"
 license: "LGPL-3.0-or-later"
-tags: [ "keyword:real analysis" "keyword:Lax Milgram" "keyword:Lebesgue" "keyword:Tonelli" ]
-build: [
-  [make "-j%{jobs}%"]
-]
-install: [
-  [make  "install"]
-]
-
+tags: [ "keyword:real analysis" "keyword:Lax Milgram" "keyword:Lebesgue" "keyword:Tonelli" "keyword:Bochner"]
+build: [make]
+install: [make "install"]
+remove: [make "uninstall"]
 depends: [
-  "ocaml" { >= "4.08" }
-  "coq" {>= "8.14.0"}
-  "coq-mathcomp-ssreflect" {>= "1.12"}
+  "ocaml" { >= "4.08.1" }
+  "coq" {>= "8.15.0"}
+  "coq-mathcomp-ssreflect" {>= "1.15.0"}
   "coq-coquelicot" {>= "3.2.0"}
-  "coq-flocq" {>= "4.0.0"}
+  "coq-flocq" {>= "4.1.0"}
 ]
 url {
-  src: "https://lipn.univ-paris13.fr/coq-num-analysis/-/archive/Tonelli.1.0/coq-num-analysis-Tonelli.1.0.tar.gz""
-  checksum: "sha256=9c3389424c48f07c71d1502771862c3fead6327231e2e5bc82488a721efdb0f2"
+  src: "https://lipn.univ-paris13.fr/coq-num-analysis/released/coq-num-analysis-1.0.0/coq-num-analysis-1.0.0.tar.gz"
+  checksum: "sha256=55678c42447bec3e7c7a5e1c900996bcc1372bac11a809c114f13525984c1ea8"
 }
