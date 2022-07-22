@@ -1,6 +1,5 @@
 opam-version: "2.0"
 maintainer: "johnw@newartisans.com"
-version: "1.1.0"
 
 homepage: "https://github.com/jwiegley/coq-haskell"
 dev-repo: "git+https://github.com/jwiegley/coq-haskell.git"
