@@ -1,0 +1,34 @@
+opam-version: "2.0"
+maintainer: "johnw@newartisans.com"
+
+homepage: "https://github.com/jwiegley/coq-cds4ltl"
+dev-repo: "git+https://github.com/jwiegley/coq-cds4ltl.git"
+bug-reports: "https://github.com/jwiegley/coq-cds4ltl/issues"
+license: "BSD-3-Clause"
+
+synopsis: "A Calculational Deductive System for Linear Temporal Logic"
+description: """
+An axiomatic and denotational formalization of the theorems described by the
+paper: A Calculational Deductive System for Linear Temporal Logic (CDS4LTL).
+"""
+
+build: [make "-j%{jobs}%" ]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.14" & < "8.17~") | (= "dev")}
+]
+
+url {
+  src: "https://github.com/jwiegley/coq-cds4ltl/archive/refs/tags/1.0.0.tar.gz"
+  checksum: "sha256=7a0beafad11ca48775e404cabe25e5790d2c7ea59ef84aadf191a5e2d5b6e76a"
+}
+
+tags: [
+  "keyword: temporal logic"
+  "category: Mathematics/Logic/Modal logic"
+  "date: 2022-07-23"
+  "logpath: CDS4LTL"
+]
+authors: [
+  "John Wiegley"
+]
