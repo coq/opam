@@ -1,6 +1,5 @@
 opam-version: "2.0"
 maintainer: "johnw@newartisans.com"
-version: "dev"
 
 homepage: "https://github.com/jwiegley/linearscan"
 dev-repo: "git+https://github.com/jwiegley/linearscan.git"
