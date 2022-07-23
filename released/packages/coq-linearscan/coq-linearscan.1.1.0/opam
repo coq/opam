@@ -1,0 +1,37 @@
+opam-version: "2.0"
+maintainer: "johnw@newartisans.com"
+
+homepage: "https://github.com/jwiegley/linearscan"
+dev-repo: "git+https://github.com/jwiegley/linearscan.git"
+bug-reports: "https://github.com/jwiegley/linearscan/issues"
+license: "BSD-3-Clause"
+
+synopsis: "A linear scan register allocator in Coq"
+description: """
+An implementation in Coq of register allocator described in the paper
+Optimized Interval Splitting in a Linear Scan Register Allocator by Christian
+Wimmer and Hanspeter Mӧssenbӧck.
+"""
+
+build: [make "-j%{jobs}%" ]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.14" & < "8.17~") | (= "dev")}
+  "coq-haskell" {(>= "1.1" & < "1.2~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {(>= "1.12" & < "1.16~") | (= "dev")}
+]
+
+url {
+  src: "https://github.com/jwiegley/linearscan/archive/refs/tags/1.1.0.tar.gz"
+  checksum: "sha256=1dfa22c9c5b3a1a76d069a23fdf9ed3c7950006d8689d18ea7c01903ddbec9c6"
+}
+
+tags: [
+  "keyword: register allocator"
+  "category:Computer Science/Semantics and Compilation/Compilation"
+  "date: 2022-07-23"
+  "logpath: Linearscan"
+]
+authors: [
+  "John Wiegley"
+]
