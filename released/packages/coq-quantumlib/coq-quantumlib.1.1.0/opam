@@ -1,5 +1,4 @@
 opam-version: "2.0"
-version: "1.1.0"
 synopsis: "Coq library for reasoning about quantum programs"
 description: """
 inQWIRE's QuantumLib is a Coq library for reasoning
