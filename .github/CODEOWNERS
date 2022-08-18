@@ -1,0 +1,16 @@
+# This file associates maintainers with some packages
+
+########## coq-stdpp ##########
+
+/released/packages/coq-stdpp/  @RalfJung
+/extra-dev/packages/coq-stdpp/ @RalfJung
+
+########## coq-iris ##########
+
+/released/packages/coq-iris/  @RalfJung
+/extra-dev/packages/coq-iris/ @RalfJung
+
+########## coq-iris-heap-lang ##########
+
+/released/packages/coq-iris-heap-lang/  @RalfJung
+/extra-dev/packages/coq-iris-heap-lang/ @RalfJung
