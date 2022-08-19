@@ -32,11 +32,19 @@ run-test: [
   [make "-j%{jobs}%" "test" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64"]
 ]
 depends: [
+  "ocaml"
   "coq" {>= "8.14" & < "8.17~"}
   "coq-compcert" {= "3.11"}
-  "coq-vst-zlist" {>= "2.11"}
+  "coq-vst-zlist" {= "2.11"}
   "coq-flocq" {>= "4.1.0"}
 ]
+tags: [
+  "category:Computer Science/Semantics and Compilation/Semantics"
+  "keyword:C"
+  "logpath:VST"
+  "date:2022-08-19"
+]
 url {
-  src: "git+https://github.com/PrincetonUniversity/VST.git#master"
+  src: "https://github.com/PrincetonUniversity/VST/archive/refs/tags/v2.11.tar.gz"
+  checksum: "sha512=4cdbe2dd45f5234acae8c74deac0209fd37041d0fc3816b07c7b7b55b3587b85597ab83752f94381a7f8e13f11eb861713ee511916b322ca7f486c20155c672c"
 }
