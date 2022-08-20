@@ -93,5 +93,5 @@ authors: [
 
 url {
   src: "https://github.com/coq-community/corn/archive/8.16.0.tar.gz"
-  checksum: "sha512=80c20cea5b66679115f75c521d57f2481e7011c919547fdbcbcf6402d0bec995"
+  checksum: "sha512=2c2d6f013650e36c2766b7d89a4c40e8f144dd7cc159fea1f130bda84cdec04b30efa29c5144a16be85a4ebc2768a2035fbef5456978245327cf5a5210979bb8"
 }
