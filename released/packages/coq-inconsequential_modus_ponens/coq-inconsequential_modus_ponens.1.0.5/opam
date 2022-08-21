@@ -11,7 +11,7 @@ maintainer: "eronenveeti174@gmail.com"
 authors: [
   "Veeti Eronen"
 ]
-license: "Creative Commons Attribution-ShareAlike 3.0 Unported"
+license: "CC-BY-SA-3.0"
 
 depends: [
   "coq" {>= "8.15"}
