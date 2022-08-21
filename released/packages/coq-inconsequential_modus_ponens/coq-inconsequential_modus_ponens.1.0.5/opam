@@ -1,0 +1,36 @@
+opam-version: "2.0"
+synopsis: "A Coq library about the needlessness of modus ponens"
+description: """
+  It shown with two interpretations of modus ponens that it's true only when an other pretty meaningless propositional sentence is true.
+""" # Longer description, can span several lines
+
+homepage: "https://github.com/ebveeti/inconsequential_modus_ponens"
+dev-repo: "git+https://github.com/ebveeti/inconsequential_modus_ponens.git"
+bug-reports: "https://github.com/ebveeti/inconsequential_modus_ponens/issues"
+maintainer: "eronenveeti174@gmail.com"
+authors: [
+  "Veeti Eronen"
+]
+license: "Creative Commons Attribution-ShareAlike 3.0 Unported"
+
+depends: [
+  "coq" {"8.15"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/ebveeti/inconsequential_modus_ponens/archive/refs/tags/1.0.5.tar.gz"
+  checksum: "sha256=931244c9321b4375ebba4cc89f8bd0880018f869a792d913d6daf526972f9481"
+}
+
+tags: [
+  "keyword:modus ponens"
+  "category:Mathematics/Logic/Foundations"
+  "date:2022-08-20"
+]
