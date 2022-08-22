@@ -28,3 +28,7 @@ tags: [
   "category:Computer Science/Data Types and Data Structures"
   "logpath:extructures.ord_instances"
 ]
+
+url {
+  src: "git+https://github.com/arthuraa/extructures-instances.git#master"
+}
