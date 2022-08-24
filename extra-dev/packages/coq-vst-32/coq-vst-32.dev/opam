@@ -38,5 +38,5 @@ depends: [
   "coq-flocq" {>= "4.1.0"}
 ]
 url {
-  src: "git+https://github.com/PrincetonUniversity/VST.git#master"
+  src: "git+https://github.com/PrincetonUniversity/VST.git#opam"
 }
