@@ -38,6 +38,9 @@ depends: [
   "coq-vst-zlist" {= "2.11"}
   "coq-flocq" {>= "4.1.0"}
 ]
+conflicts: [
+  "coq-vst"
+]
 tags: [
   "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword:C"
