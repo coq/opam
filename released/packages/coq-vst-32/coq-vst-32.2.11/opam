@@ -38,6 +38,9 @@ depends: [
   "coq-vst-zlist" {= "2.11"}
   "coq-flocq" {>= "4.1.0"}
 ]
+conflicts: [
+  "coq-vst"
+]
 tags: [
   "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword:C"
@@ -46,5 +49,5 @@ tags: [
 ]
 url {
   src: "https://github.com/PrincetonUniversity/VST/archive/refs/tags/v2.11.tar.gz"
-  checksum: "sha512=4cdbe2dd45f5234acae8c74deac0209fd37041d0fc3816b07c7b7b55b3587b85597ab83752f94381a7f8e13f11eb861713ee511916b322ca7f486c20155c672c"
+  checksum: "sha512=655123f4ddb3221020c1034e3e1bed4ccd277d50b155947962009081d45abce0081abc0c2ac7a7f234a0b3ce0a169475e2d0dbd5250e3ab9d4f2503dcc67353f"
 }
