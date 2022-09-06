@@ -1,25 +1,31 @@
 opam-version: "2.0"
 synopsis: "Numerical Analysis in Coq"
-name: "coq-num-analysis"
-version: "1.0.0"
 maintainer: "MILC project <milc@inria.fr>"
 authors: [ "Sylvie Boldo" "François Clément" "Vincent Martin" "Micaela Mayero" "Florian Faissole" "Houda Mouhcine" "Louise Leclerc" "Stéphane Aubry" ]
 homepage: "https://lipn.univ-paris13.fr/coq-num-analysis/"
 dev-repo: "git+https://lipn.univ-paris13.fr/coq-num-analysis/"
 bug-reports: "https://lipn.univ-paris13.fr/coq-num-analysis/issues"
 license: "LGPL-3.0-or-later"
-tags: [ "keyword:real analysis" "keyword:Lax Milgram" "keyword:Lebesgue" "keyword:Tonelli" "keyword:Bochner"]
-build: [make]
+build: [make "-j%{jobs}%"]
 install: [make "install"]
-remove: [make "uninstall"]
 depends: [
-  "ocaml" { >= "4.08.1" }
   "coq" {>= "8.15.0"}
   "coq-mathcomp-ssreflect" {>= "1.15.0"}
   "coq-coquelicot" {>= "3.2.0"}
   "coq-flocq" {>= "4.1.0"}
 ]
+tags: [
+  "category:Mathematics/Real Calculus and Topology"
+  "keyword:real analysis"
+  "keyword:Lax-Milgram theorem"
+  "keyword:Lebesgue integration"
+  "keyword:Tonelli theorem"
+  "keyword:Bochner integration"
+  "logpath:Lebesgue"
+  "logpath:LM"
+  "date:2022-09-06"
+]
 url {
-  src: "https://lipn.univ-paris13.fr/coq-num-analysis/released/coq-num-analysis-1.0.0/coq-num-analysis-1.0.0.tar.gz"
-  checksum: "sha256=55678c42447bec3e7c7a5e1c900996bcc1372bac11a809c114f13525984c1ea8"
+  src: "https://depot.lipn.univ-paris13.fr/mayero/coq-num-analysis/-/archive/1.0/coq-num-analysis-1.0.tar.gz"
+  checksum: "sha256=c230cb37b61e3b9de8619b66e470981ba986a4009c6e9dda0d3958d0858df40a"
 }
