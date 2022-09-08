@@ -1,0 +1,38 @@
+opam-version: "2.0"
+synopsis: "Relation Algebra and KAT in Coq"
+maintainer: "Damien Pous <Damien.Pous@ens-lyon.fr>"
+homepage: "http://perso.ens-lyon.fr/damien.pous/ra/"
+dev-repo: "git+https://github.com/damien-pous/relation-algebra.git"
+bug-reports: "https://github.com/damien-pous/relation-algebra/issues"
+license: "LGPL-3.0-or-later"
+depends: [
+  "ocaml"
+  "coq" {>= "8.16" & < "8.17~"}
+]
+depopts: [ "coq-mathcomp-ssreflect" "coq-aac-tactics" ]
+build: [
+  ["sh" "-exc" "./configure --%{coq-mathcomp-ssreflect:enable}%-ssr --%{coq-aac-tactics:enable}%-aac"]
+  [make "-j%{jobs}%"]
+]
+install: [make "install"]
+tags: [
+  "keyword:relation algebra"
+  "keyword:Kleene algebra with tests"
+  "keyword:KAT"
+  "keyword:allegories"
+  "keyword:residuated structures"
+  "keyword:automata"
+  "keyword:regular expressions"
+  "keyword:matrices"
+  "category:Mathematics/Algebra"
+  "logpath:RelationAlgebra"
+]
+authors: [
+  "Damien Pous <Damien.Pous@ens-lyon.fr>"
+  "Christian Doczkal <christian.doczkal@ens-lyon.fr>"
+]
+url {
+  src:
+    "https://github.com/damien-pous/relation-algebra/archive/refs/tags/v.1.7.8.tar.gz"
+  checksum: "sha512=37ef39a8c4367fd57bbcb0c57b5334d1248dda1bbd0d1e56f159b2b7e18a1ce147ec3bfc980a233f79fc8f5c78911ff0e3e8f2eef161e7fbf058807b7157cb37"
+}
