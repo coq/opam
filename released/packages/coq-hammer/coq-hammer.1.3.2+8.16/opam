@@ -1,0 +1,44 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/lukaszcz/coqhammer"
+dev-repo: "git+https://github.com/lukaszcz/coqhammer.git"
+bug-reports: "https://github.com/lukaszcz/coqhammer/issues"
+license: "LGPL-2.1-only"
+
+synopsis: "General-purpose automated reasoning hammer tool for Coq"
+description: """
+A general-purpose automated reasoning hammer tool for Coq that combines
+learning from previous proofs with the translation of problems to the
+logics of automated systems and the reconstruction of successfully found proofs.
+"""
+
+build: [make "-j%{jobs}%" "plugin"]
+install: [
+  [make "install-plugin"]
+  [make "test-plugin"] {with-test}
+]
+depends: [
+  "ocaml" { >= "4.08" }
+  "coq" {>= "8.16" & < "8.17~"}
+  ("conf-g++" {build} | "conf-clang" {build})
+  "coq-hammer-tactics" {= version}
+]
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "keyword:automation"
+  "keyword:hammer"
+  "logpath:Hammer.Plugin"
+  "date:2022-09-04"
+]
+
+authors: [
+  "Lukasz Czajka <lukaszcz@mimuw.edu.pl>"
+  "Cezary Kaliszyk <cezary.kaliszyk@uibk.ac.at>"
+]
+
+url {
+  src: "https://github.com/lukaszcz/coqhammer/archive/refs/tags/v1.3.2+8.16.tar.gz"
+  checksum: "sha512=12edf0caba798591df62dac16bb2a78dd36648f830f64e02f271453430c145b3b0f02200be85da013efcb00ca08c3db554b63e4127b70a4316d0b0d4fc3d53a4"
+}
