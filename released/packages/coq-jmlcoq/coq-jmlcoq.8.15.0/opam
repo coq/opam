@@ -1,0 +1,38 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/jmlcoq"
+dev-repo: "git+https://github.com/coq-community/jmlcoq.git"
+bug-reports: "https://github.com/coq-community/jmlcoq/issues"
+license: "MIT"
+
+synopsis: "Coq definition of the JML specification language and a verified runtime assertion checker for JML"
+description: """
+A Coq formalization of the syntax and semantics of the
+Java-targeted JML specification language, along with a
+verified runtime assertion checker for JML."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.10" & < "8.17~"}
+]
+
+tags: [
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
+  "keyword:JML"
+  "keyword:Java Modeling Language"
+  "keyword:runtime verification"
+  "logpath:JML"
+  "date:2022-06-26"
+]
+authors: [
+  "Hermann Lehner"
+  "David Pichardie"
+  "Andreas Kägi"
+]
+
+url {
+  src: "https://github.com/coq-community/jmlcoq/archive/v8.15.0.tar.gz"
+  checksum: "sha512=2e9d26e4b5517787a03518372902405b5eafda6ff81a1c4a5c51ebbd268d84817183ab12177f18235ee68d930002f5715642b783108ac5f55787cbec83d108be"
+}
