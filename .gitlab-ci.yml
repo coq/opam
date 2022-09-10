@@ -105,6 +105,13 @@ opam-build:4.13.1:
   except:
     - web
 
+opam-build:4.14.0:
+  extends: .opam-build
+  variables:
+    COMPILER: "4.14.0"
+  except:
+    - web
+
 opam-build:any:
   extends: .opam-build
   variables:
