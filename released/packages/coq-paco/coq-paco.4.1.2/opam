@@ -15,7 +15,7 @@ license: "BSD-3-Clause"
 build: [make "-C" "src" "all" "-j%{jobs}%"]
 install: [make "-C" "src" "-f" "Makefile.coq" "install"]
 depends: [
-  "coq" {>= "8.12" & < "8.16~"}
+  "coq" {>= "8.12" & < "8.17~"}
 ]
 tags: [
   "date:2021-12-13"
