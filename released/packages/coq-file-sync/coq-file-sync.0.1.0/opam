@@ -1,0 +1,28 @@
+opam-version: "2.0"
+synopsis: "File synchroniser specification in Coq"
+description: "Coq formalisation of the Unison file synchroniser"
+maintainer: "Yishuai Li <liyishuai.lys@alibaba-inc.com>"
+authors: "Yishuai Li <liyishuai.lys@alibaba-inc.com>"
+license: "MPL-2.0"
+tags: "logpath:FileSync"
+homepage: "https://github.com/liyishuai/file-sync"
+bug-reports: "https://github.com/liyishuai/file-sync/issues"
+depends: [
+  "ocaml" {>= "4.12"}
+  "coq" {>= "8.14~"}
+  "coq-async-test"
+  "ocamlbuild"
+  "fileutils"
+  "unison" {with-test}
+]
+build: [make "-j%{jobs}%"]
+run-test: [make "-j%{jobs}%" "test"]
+install: [make "install" "INSTALLDIR=%{bin}%"]
+dev-repo: "git+https://github.com/liyishuai/file-sync.git"
+url {
+  src: "https://github.com/liyishuai/file-sync/archive/v0.1.0.tar.gz"
+  checksum: [
+    "md5=1f86c96adea2a14c8f622298fda3dbfb"
+    "sha512=416c1a4356126545ba08532b412ce83347a2104204d93344a9ab4f1b02db518faf8128d0d86b2c01073fade543cc02319e2f17dbab04c2b21115a75da21afc2c"
+  ]
+}
