@@ -13,7 +13,6 @@ depends: [
   "coq-async-test"
   "ocamlbuild"
   "fileutils"
-  "unison" {with-test}
 ]
 build: [make "-j%{jobs}%"]
 run-test: [make "-j%{jobs}%" "test"]
