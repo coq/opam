@@ -57,7 +57,7 @@ while [ ! -z "$1" ]; do
               ;;
           esac
           echo Check if $PKG_NAME_VERSION is installable
-          if opam install "$PKG_NAME_VERSION" -y --show-action $EXTRA_OPAM_OPTION; then
+          if opam install "$PKG_NAME_VERSION" -y --with-test --show-action $EXTRA_OPAM_OPTION; then
             set +e
             echo Installing $PKG_NAME_VERSION
             opam install "$PKG_NAME_VERSION" -y -v -v --with-test $EXTRA_OPAM_OPTION >> $LOG
