@@ -10,6 +10,7 @@ bug-reports: "https://github.com/liyishuai/file-sync/issues"
 depends: [
   "ocaml" {>= "4.12"}
   "coq" {>= "8.14~"}
+  "coq-simple-io" {>= "1.8.0"}
   "coq-async-test"
   "ocamlbuild"
   "fileutils"
