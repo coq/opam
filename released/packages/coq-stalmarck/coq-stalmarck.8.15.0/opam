@@ -1,0 +1,35 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/stalmarck"
+dev-repo: "git+https://github.com/coq-community/stalmarck.git"
+bug-reports: "https://github.com/coq-community/stalmarck/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Verified implementation of Stålmarck's algorithm for proving tautologies in Coq"
+description: """
+A two-level approach to prove tautologies using Stålmarck's
+algorithm in Coq."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.15" & < "8.16~"}
+]
+
+tags: [
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "keyword:boolean formula"
+  "keyword:tautology checker"
+  "logpath:Stalmarck.Algorithm"
+  "date:2022-09-16"
+]
+authors: [
+  "Pierre Letouzey"
+  "Laurent Théry"
+]
+
+url {
+  src: "https://github.com/coq-community/stalmarck/archive/v8.15.0.tar.gz"
+  checksum: "sha512=b8d27d4062c7541a1a45ec28e0b916cb7ba2ca6b444447005763db2a101ce8ef59bcef76ef475251e3059be5622806f451159b556af9fcacee3897e1bc0e4469"
+}
