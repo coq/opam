@@ -5,7 +5,11 @@ dev-repo: "git+https://github.com/UniMath/UniMath.git"
 bug-reports: "https://github.com/UniMath/UniMath/issues"
 license: "Kind of MIT"
 authors: ["The UniMath Development Team"]
-build: [make "BUILD_COQ=no" "-j%{jobs}%"]
+build: [
+  [sh -c "sed -i.bak 's/PACKAGES += SubstitutionSystems// Makefile"]
+  [sh -c "sed -i.bak 's/PACKAGES += Bicategories// Makefile"]
+  [make "BUILD_COQ=no" "-j%{jobs}%"]
+]
 install: [make "BUILD_COQ=no" "install"]
 depends: [
   "ocaml"
