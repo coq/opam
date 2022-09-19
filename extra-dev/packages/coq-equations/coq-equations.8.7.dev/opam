@@ -4,7 +4,7 @@ maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://mattam82.github.io/Coq-Equations"
 dev-repo: "git+https://github.com/mattam82/Coq-Equations.git"
 bug-reports: "https://github.com/mattam82/Coq-Equations/issues"
-license: "LGPL 2.1"
+license: "LGPL-2.1-only"
 build: [
   ["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
   [make "-j%{jobs}%"]

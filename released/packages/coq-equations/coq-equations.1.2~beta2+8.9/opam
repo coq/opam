@@ -4,7 +4,7 @@ dev-repo: "git+https://github.com/mattam82/Coq-Equations.git"
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://mattam82.github.io/Coq-Equations"
 bug-reports: "https://github.com/mattam82/Coq-Equations/issues"
-license: "LGPL 2.1"
+license: "LGPL-2.1-only"
 synopsis: "A function definition package for Coq"
 build: [
   ["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
