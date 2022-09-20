@@ -57,6 +57,6 @@ authors: [
   "Pierre Roux <pierre.roux@onera.fr>"
 ]
 url {
-  src: "https://github.com/validsdp/validsdp/releases/download/v1.0.0/validsdp-1.0.1.tar.gz"
+  src: "https://github.com/validsdp/validsdp/releases/download/v1.0.1/validsdp-1.0.1.tar.gz"
   checksum: "sha512=7857ceb8e7e04c2771f4264f6612e63f753bfca92a13a38bb058e817fc3dec60a6357992a74318a5bf617231c30beec3f2ea15c45243bc0b8186ccca043f8f82"
 }
