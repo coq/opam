@@ -15,15 +15,16 @@ authors: ["Lasse Blaauwbroek <lasse@blaauwbroek.eu>"]
 homepage: "https://coq-tactician.github.io"
 bug-reports: "https://github.com/coq-tactician/coq-tactician/issues"
 depends: [
+  "dune" {>= "3.5"}
   "ocaml" {>= "4.08"}
-  "dune" {>= "2.8"}
   "dune-site" {>= "2.9.1"}
-  "opam-client" {>= "2.1.0~beta2"}
-  "cmdliner"
-  "coq" {= "dev"}
+  "opam-client" {>= "2.1.0"}
+  "cmdliner" {>= "1.1.0"}
+  "coq-core" {= "dev"}
+  "coq-stdlib" {= "dev" & with-test}
   "conf-git"
   "bos" {>= "0.2.1"}
-  "coq-tactician-dummy" {= "dev" & with-test}
+  "coq-tactician-dummy" {= "8.17.dev" & with-test}
   "odoc" {with-doc}
 ]
 build: [
@@ -35,10 +36,12 @@ build: [
     name
     "-j"
     jobs
+    "--promote-install-files=false"
     "@install"
     "@runtest" {with-test}
     "@doc" {with-doc}
   ]
+  ["dune" "install" "-p" name "--create-install-files" name]
 ]
 dev-repo: "git+https://github.com/coq-tactician/coq-tactician.git"
 post-messages: ["
