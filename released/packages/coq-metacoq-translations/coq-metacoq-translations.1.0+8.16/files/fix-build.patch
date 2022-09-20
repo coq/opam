@@ -1,0 +1,43 @@
+diff --git a/Makefile b/Makefile
+index 68af1734..6d6f8306 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ 
+-all: template-coq pcuic safechecker erasure examples test-suite translations
++all: printconf template-coq pcuic safechecker erasure examples test-suite translations
+ 
+ -include Makefile.conf
+ 
+@@ -12,8 +12,6 @@ ifeq '$(METACOQ_CONFIG)' 'local'
+   export OCAMLPATH
+ endif
+ 
+-all: printconf template-coq pcuic safechecker erasure examples
+-
+ .PHONY: printconf all template-coq pcuic erasure install html clean mrproper .merlin test-suite translations
+ 
+ printconf:
+diff --git a/configure.sh b/configure.sh
+index fdd968c6..67d5b358 100755
+--- a/configure.sh
++++ b/configure.sh
+@@ -20,7 +20,7 @@ then
+         PCUIC_DEPS="-R ../template-coq/theories MetaCoq.Template"
+         SAFECHECKER_DEPS="-R ../pcuic/theories MetaCoq.PCUIC"
+         ERASURE_DEPS="-R ../safechecker/theories MetaCoq.SafeChecker"
+-        TRANSLATIONS_DEPS=""
++        TRANSLATIONS_DEPS="-I ../template-coq"
+         echo "METACOQ_CONFIG = local" > Makefile.conf
+     else
+         echo "Building MetaCoq globally (default)"
+diff --git a/translations/_CoqProject.in b/translations/_CoqProject.in
+index 76684626..a7ba44b0 100644
+--- a/translations/_CoqProject.in
++++ b/translations/_CoqProject.in
+@@ -1,5 +1,4 @@
+ -R . MetaCoq.Translations
+--I ../template-coq/
+ 
+ sigma.v
+ MiniHoTT.v

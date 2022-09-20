@@ -1,4 +1,4 @@
-opam-version: "2.0"              
+opam-version: "2.0"
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://metacoq.github.io/metacoq"
 dev-repo: "git+https://github.com/MetaCoq/metacoq.git#coq-8.16"
@@ -17,22 +17,24 @@ authors: ["Abhishek Anand <aa755@cs.cornell.edu>"
           "Théo Winterhalter <theo.winterhalter@inria.fr>"
 ]
 license: "MIT"
+patches: ["fix-build.patch"]
+build: [
+  ["sh" "./configure.sh"]
+  [make "-j" "%{jobs}%" "-C" "translations"]
+]
+install: [
+  [make "-C" "translations" "install"]
+]
 depends: [
   "coq-metacoq-template" {= version}
-  "coq-metacoq-pcuic" {= version}
-  "coq-metacoq-safechecker" {= version}
-  "coq-metacoq-erasure" {= version}
-  "coq-metacoq-translations" {= version}
 ]
-synopsis: "A meta-programming framework for Coq"
+synopsis: "Translations built on top of MetaCoq"
 description: """
 MetaCoq is a meta-programming framework for Coq.
 
-The meta-package includes the template-coq library,
-the PCUIC development including a verified equivalence between Coq and PCUIC, 
-a safe type checker and verified erasure for PCUIC and example translations. 
-
-See individual packages for more detailed descriptions.
+The Translations modules provides implementation of standard translations 
+from type theory to type theory, e.g. parametricity and the `cross-bool` 
+translation that invalidates functional extensionality.
 """
 url {
   src: "https://github.com/MetaCoq/metacoq/archive/refs/tags/v1.0-8.16.tar.gz"
