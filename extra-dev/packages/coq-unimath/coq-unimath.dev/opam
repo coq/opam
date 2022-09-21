@@ -6,8 +6,8 @@ bug-reports: "https://github.com/UniMath/UniMath/issues"
 license: "Kind of MIT"
 authors: ["The UniMath Development Team"]
 build: [
-  [sh -c "sed -i.bak 's/PACKAGES += SubstitutionSystems// Makefile"]
-  [sh -c "sed -i.bak 's/PACKAGES += Bicategories// Makefile"]
+  ["bash" "-c" "sed -i.bak 's/PACKAGES += SubstitutionSystems//' Makefile"]
+  ["bash" "-c" "sed -i.bak 's/PACKAGES += Bicategories//' Makefile"]
   [make "BUILD_COQ=no" "-j%{jobs}%"]
 ]
 install: [make "BUILD_COQ=no" "install"]
