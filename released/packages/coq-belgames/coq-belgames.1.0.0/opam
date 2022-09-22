@@ -1,0 +1,43 @@
+# This file was generated from `meta.yml`, please do not edit manually.
+# Follow the instructions on https://github.com/coq-community/templates to regenerate.
+
+opam-version: "2.0"
+maintainer: "erik.martin-dorel@irit.fr"
+
+homepage: "https://github.com/pPomCo/coq-belgames-csl2023"
+dev-repo: "git+https://github.com/pPomCo/coq-belgames-csl2023.git"
+bug-reports: "https://github.com/pPomCo/coq-belgames-csl2023/issues"
+license: "MIT"
+
+synopsis: "BelGames: A Formal Theory of Games of Incomplete Information Based on Belief Functions in the Coq Proof Assistant"
+description: """
+We extend Bayesian games to the theory of belief functions. We
+obtain a more expressive class of games we refer to as BelGames. It
+makes it possible to better capture human behaviors with respect to
+lack of information.
+Next, we prove an extended version of the so-called
+Howson--Rosenthal's theorem, showing that BelGames can be turned
+into games of complete information, i.e., without any uncertainty."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.14" & < "8.17~")}
+  "coq-mathcomp-algebra" {(>= "1.13" & < "1.16~")}
+]
+
+tags: [
+  "keyword:games of incomplete information"
+  "keyword:belief functions theory"
+  "keyword:mathcomp/ssreflect"
+  "logpath:BelGames"
+]
+authors: [
+  "Pierre Pomeret-Coquot"
+  "Erik Martin-Dorel"
+  "Hélène Fargier"
+]
+url {
+  src: "https://github.com/pPomCo/coq-belgames-csl2023/archive/refs/tags/1.0.0.tar.gz"
+  checksum: "sha512=e3c254725ba62e55c02b5e58f09079c90556735e68c98b8bff1253cff7a7b4014e3f61818c3f5671893e901c943f7c30e7e4a44b8ffcba18410d4ee0a4a15824"
+}
