@@ -16,12 +16,13 @@ build: [
 install: [make "-C" "libvalidsdp" "install"]
 depends: [
   "ocaml"
-  "coq" {>= "8.7" & < "8.11~"}
+  "coq" {>= "8.14"}
   "coq-bignums"
-  "coq-flocq" {>= "3.1.0"}
+  "coq-flocq" {>= "3.3.0"}
   "coq-coquelicot" {>= "3.0"}
-  "coq-interval" {>= "3.4.0" & < "4~"}
-  "coq-mathcomp-field" {>= "1.8" & < "1.10~"}
+  "coq-interval" {>= "4.0.0"}
+  "coq-mathcomp-field" {>= "1.13"}
+  "coq-mathcomp-analysis" {>= "0.3.5"}
   "ocamlfind" {build}
   "conf-autoconf" {build}
 ]
