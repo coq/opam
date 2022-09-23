@@ -1,0 +1,49 @@
+opam-version: "2.0"
+maintainer: "Pierre.Courtieu@lecnam.net"
+synopsis: "Hypotheses manipulation library"
+
+homepage: "https://github.com/Matafou/LibHyps"
+dev-repo: "git+https://github.com/Matafou/LibHyps.git"
+bug-reports: "https://github.com/Matafou/LibHyps/issues"
+doc: "https://github.com/Matafou/LibHyps/blob/master/Demo/demo.v"
+license: "MIT"
+
+build: [
+  ["./configure.sh"]
+  [make "-j%{jobs}%"]
+]
+
+install: [make "install"]
+
+depends: [
+  "coq" {(>= "8.11" & < "8.17~") | (= "dev")}
+]
+
+tags: [
+  "keyword:proof environment manipulation"
+  "keyword:forward reasoning"
+  "keyword:hypothesis naming"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:LibHyps"
+  "date:2022-09-23"
+]
+
+authors: [
+ "Pierre Courtieu"
+]
+
+description: "
+This library defines a set of tactics to manipulate hypothesis
+individually or by group. In particular it allows applying a tactic on
+each hypothesis of a goal, or only on *new* hypothesis after some
+tactic. Examples of manipulations: automatic renaming, subst, revert,
+or any tactic expecting a hypothesis name as argument.
+
+It also provides the especialize tactic to ease forward reasoning by
+instantianting one, several or all premisses of a hypothesis.
+"
+
+url {
+  src: "https://github.com/Matafou/LibHyps/archive/libhyps-2.0.6.tar.gz"
+  checksum: "sha512=13a50570088d9223b3abf5cf65dc4b64c6d2215db84b1f0044ab332dd838104df18e181bc37617e5df1ed9dea506ea568f456c7ed256113c2d435bb0ee03dd5e"
+}
