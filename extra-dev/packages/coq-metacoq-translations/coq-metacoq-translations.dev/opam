@@ -11,7 +11,7 @@ authors: ["Simon Boulier <simon.boulier@inria.fr>"
 ]
 license: "MIT"
 build: [
-  ["sh" "./configure.sh"]
+  ["bash" "./configure.sh"]
   [make "-j" "%{jobs}%" "-C" "translations"]
 ]
 install: [
