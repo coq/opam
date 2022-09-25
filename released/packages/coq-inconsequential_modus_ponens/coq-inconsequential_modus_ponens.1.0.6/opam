@@ -1,0 +1,36 @@
+opam-version: "2.0"
+synopsis: "A Coq library about how redundant modus ponens is"
+description: """
+  It shown with two interpretations of modus ponens that it's only true when one of two other propositional sentences unsuitable for deducing facts from others are true.
+""" # Longer description, can span several lines
+
+homepage: "https://github.com/ebveeti/inconsequential_modus_ponens"
+dev-repo: "git+https://github.com/ebveeti/inconsequential_modus_ponens.git"
+bug-reports: "https://github.com/ebveeti/inconsequential_modus_ponens/issues"
+maintainer: "eronenveeti174@gmail.com"
+authors: [
+  "Veeti Eronen"
+]
+license: "CC-BY-SA-3.0"
+
+depends: [
+  "coq" {>= "8.15"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/ebveeti/inconsequential_modus_ponens/archive/refs/tags/1.0.6.tar.gz"
+  checksum: "sha256=cea9ebdc58043cc9d43226b620ab7b27809888813bd15d24f6241104de010217"
+}
+
+tags: [
+  "keyword:modus ponens"
+  "category:Mathematics/Logic/Foundations"
+  "date:2022-08-20"
+]
