@@ -14,8 +14,8 @@ axiomatization and extraction to OCaml native integers"""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.10" & < "8.15~")}
-  "coq-mathcomp-algebra" {(>= "1.12" & < "1.14~")}
+  "coq" {(>= "8.10" & < "8.17~")}
+  "coq-mathcomp-algebra" {(>= "1.12" & < "1.16~")}
 ]
 
 tags: [
