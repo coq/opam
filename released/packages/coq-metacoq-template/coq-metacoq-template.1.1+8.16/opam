@@ -18,6 +18,9 @@ authors: ["Abhishek Anand <aa755@cs.cornell.edu>"
           "Théo Winterhalter <theo.winterhalter@inria.fr>"
 ]
 license: "MIT"
+patches: [
+  "0001-Fix-line-ending-issues-with-generated-code-on-Window.patch"
+]
 build: [
   ["bash" "./configure.sh"]
   [make "-j" "%{jobs}%" "template-coq"]
