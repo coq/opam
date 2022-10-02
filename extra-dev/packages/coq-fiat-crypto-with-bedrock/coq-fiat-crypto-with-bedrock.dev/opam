@@ -18,7 +18,7 @@ depends: [
   "ocaml" {build}
   "ocamlfind" {build}
   "conf-jq" {build}
-  "coq" {>= "8.11~"}
+  "coq" {>= "8.15~"}
   "coq-coqprime"
   "coq-rewriter"
 ]
