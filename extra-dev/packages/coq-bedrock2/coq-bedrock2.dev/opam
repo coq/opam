@@ -18,6 +18,9 @@ depends: [
   "coq-coqutil"
   "zarith" {>= "1.11"}
 ]
+conflict-class: [
+  "coq-bedrock2"
+]
 dev-repo: "git+https://github.com/mit-plv/bedrock2.git"
 synopsis: "A work-in-progress language and compiler for verified low-level programming"
 description: """
