@@ -15,7 +15,7 @@ build: [
 ]
 install: [make "EXTERNAL_DEPENDENCIES=1" "SKIP_BEDROCK2=1" "BINDIR=%{bin}%" "install-without-bedrock2" "install-standalone-ocaml"]
 depends: [
-  "ocaml" {build}
+  "ocaml" {build & >= "4.08~"}
   "ocamlfind" {build}
   "conf-jq" {build}
   "coq" {>= "8.15~"}
