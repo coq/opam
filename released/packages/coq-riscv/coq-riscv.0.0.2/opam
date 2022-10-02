@@ -5,7 +5,7 @@ authors: [
 maintainer: "Jason Gross <jgross@mit.edu>"
 homepage: "https://github.com/mit-plv/riscv-coq"
 bug-reports: "https://github.com/mit-plv/riscv-coq/issues"
-license: "BSD 3-Clause"
+license: "BSD-3-Clause"
 build: [
   [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "all"]
 ]
