@@ -14,6 +14,7 @@ build: [
 ]
 install: [make "EXTERNAL_DEPENDENCIES=1" "install_compiler"]
 depends: [
+  "conf-findutils" {build}
   "coq" {>= "8.15~"}
   "coq-bedrock2" {= "0.0.2"}
   "coq-riscv" {= "0.0.2"}

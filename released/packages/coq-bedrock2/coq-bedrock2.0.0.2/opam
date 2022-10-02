@@ -12,8 +12,12 @@ build: [
   [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "bedrock2_ex"]
 ]
 install: [make "EXTERNAL_DEPENDENCIES=1" "install_bedrock2"]
+run-test: [
+  [make "-j%{jobs}%" "-C" "bedrock2" "EXTERNAL_DEPENDENCIES=1" "test"]
+]
 depends: [
   "conf-findutils" {build}
+  "conf-python-3" {build & with-test}
   "coq" {>= "8.15~"}
   "coq-coqutil" {= "0.0.2"}
   "zarith" {>= "1.11"}

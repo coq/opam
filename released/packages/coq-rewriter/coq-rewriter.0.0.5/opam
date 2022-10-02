@@ -12,6 +12,7 @@ build: [
 ]
 install: [make "install"]
 depends: [
+  "conf-findutils" {build}
   "ocaml" {build}
   "coq" {>= "8.15~"}
 ]
