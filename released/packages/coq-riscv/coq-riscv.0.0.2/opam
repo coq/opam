@@ -1,0 +1,24 @@
+opam-version: "2.0"
+authors: [
+  "Massachusetts Institute of Technology"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/mit-plv/riscv-coq"
+bug-reports: "https://github.com/mit-plv/riscv-coq/issues"
+license: "BSD-3-Clause"
+build: [
+  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "all"]
+]
+install: [make "EXTERNAL_DEPENDENCIES=1" "install"]
+depends: [
+  "coq" {>= "8.15~"}
+  "coq-coqutil" {= "0.0.2"}
+  "coq-record-update" {>= "0.3.0"}
+]
+dev-repo: "git+https://github.com/mit-plv/riscv-coq.git"
+synopsis: "RISC-V Specification in Coq, somewhat experimental"
+tags: ["logpath:riscv"]
+url {
+  src: "https://github.com/mit-plv/riscv-coq/archive/refs/tags/v0.0.2.tar.gz"
+  checksum: "sha512=0d66e2d59a208e47c5816bde085d64dd659149c7064ac480ec8fb89bd42a1e90e1a8ec6ccaf0b27b7413648b5fb0a965adeb13a4ad366ab1290b928741c6a8d1"
+}

@@ -1,0 +1,25 @@
+opam-version: "2.0"
+authors: [
+  "Google Inc."
+  "Massachusetts Institute of Technology"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/mit-plv/rewriter"
+bug-reports: "https://github.com/mit-plv/rewriter/issues"
+license: "MIT OR Apache-2.0 OR BSD-1-Clause"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [make "install"]
+depends: [
+  "conf-findutils" {build}
+  "ocaml" {build}
+  "coq" {>= "8.15~"}
+]
+dev-repo: "git+https://github.com/mit-plv/rewriter.git"
+synopsis: "Reflective PHOAS rewriting/pattern-matching-compilation framework for simply-typed equalities and let-lifting, experimental and tailored for use in Fiat Cryptography"
+tags: ["logpath:Rewriter"]
+url {
+  src: "https://github.com/mit-plv/rewriter/archive/refs/tags/v0.0.5.tar.gz"
+  checksum: "sha512=26652a8d6f292ce24495bb877b12111626b81027d60ab6526c233555bf09df778b438c757c4df1d7cd98db9e79d5d30e0419a1e57b917c05208ecc22bc75a748"
+}
