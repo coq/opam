@@ -9,7 +9,7 @@ while [ ! -z "$1" ]; do
   */opam)
     echo Linting $1
     # 21: incorrect opam version
-    opam lint --warn=-21 $1
+    opam lint --warn=-21 --check-upstream $1
     echo
   ;;
   *)
