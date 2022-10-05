@@ -1,3 +1,7 @@
+stages:
+  - lint
+  - build
+
 image: buildpack-deps:stable-scm
 
 variables:
@@ -25,11 +29,8 @@ before_script:
   - chmod +x /usr/local/bin/opam
   - set -o pipefail
 
-.opam-lint:
-  script:
-    - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-lint
-
 .opam-build:
+  stage: build
   script: |
     PR=${CI_BUILD_REF_NAME##pr-};
     echo "Github PR number: $PR";
@@ -43,7 +44,11 @@ before_script:
       - log/
     expire_in: 1 week
 
-.opam-json:
+# Json
+json-data:
+  stage: build
+  variables:
+    COMPILER: "4.11.2"
   script: |
     . scripts/opam-coq-setup-root
     mkdir -p log; > log/log.json
@@ -55,28 +60,17 @@ before_script:
     name: "$CI_JOB_NAME"
     paths:
       - coq-packages.json
-    expire_in: 1 year
-
-# Json
-json-data:
-  extends: .opam-json
-  variables:
-    COMPILER: "4.11.2"
+    expire_in: 1 week
 
 # Lint
-opam-lint:4.13.1:
-  extends: .opam-lint
+opam-lint:
+  stage: lint
   variables:
-    COMPILER: "4.13.1"
+    COMPILER: "4.11.2"
+  script:
+    - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-lint
 
 # Build
-opam-build:4.05.0:
-  extends: .opam-build
-  variables:
-    COMPILER: "4.05.0"
-  except:
-    - web
-
 opam-build:4.07.1:
   extends: .opam-build
   variables:
@@ -84,24 +78,10 @@ opam-build:4.07.1:
   except:
     - web
 
-opam-build:4.09.0:
-  extends: .opam-build
-  variables:
-    COMPILER: "4.09.0"
-  except:
-    - web
-
 opam-build:4.11.2:
   extends: .opam-build
   variables:
     COMPILER: "4.11.2"
-  except:
-    - web
-
-opam-build:4.13.1:
-  extends: .opam-build
-  variables:
-    COMPILER: "4.13.1"
   except:
     - web
 
