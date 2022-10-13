@@ -15,16 +15,19 @@ contains a formalization of VLSMs and their theory in the Coq proof assistant.""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.13" & < "8.15~"}
-  "coq-stdpp" {>= "1.6.0" & < "1.7.0"}
+  "coq" {>= "8.15" & < "8.16~"}
+  "coq-stdpp" {>= "1.7.0" & < "1.8.0"}
+  "coq-itauto"
+  "coq-equations"
 ]
 
 tags: [
   "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
+  "keyword:consensus"
   "keyword:fault tolerance"
   "keyword:distributed algorithms"
   "logpath:VLSM"
-  "date:2022-02-18"
+  "date:2022-10-11"
 ]
 authors: [
   "Mihai Calancea"
@@ -36,11 +39,12 @@ authors: [
   "Lucas Peña"
   "Grigore Roșu"
   "Traian Șerbănuță"
+  "Dafina Trufas"
   "Jan Tušil"
   "Vlad Zamfir"
 ]
 
 url {
-  src: "https://github.com/runtimeverification/vlsm/archive/v1.1.tar.gz"
-  checksum: "sha512=9eac41874fea4f622bb7f225b3c6c7f78ca517790ca0b467d571d86476778bdc6e8ea531815cf608b2a9eba966caa21101e90861bce80a10f054ceca53ec65fd"
+  src: "https://github.com/runtimeverification/vlsm/archive/v1.2.tar.gz"
+  checksum: "sha512=5c5ddaef94e17dd7430275717de7958a92af5de15c41b114bad2981157bf17b8c8e01e33686339fcb80bdbbae660d86dce592954a4be884a3be8d423b692f262"
 }
