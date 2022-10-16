@@ -21,8 +21,8 @@ depends: [
   "coq" {>= "8.15~"}
   "coq-coqprime" {>= "1.2.0"}
   "coq-rewriter" {>= "0.0.6" & <= "0.0.7"}
-  "coq-rupicola" {= "0.0.5"}
-  "coq-bedrock2-compiler" {= "0.0.3"}
+  "coq-rupicola" {= "0.0.6"}
+  "coq-bedrock2-compiler" {= "0.0.4"}
 ]
 conflict-class: [
   "coq-fiat-crypto"
@@ -36,6 +36,6 @@ Target languages include C, Rust, Zig, Go, and bedrock2.
 """
 tags: ["logpath:Crypto"]
 url {
-  src: "https://github.com/mit-plv/fiat-crypto/archive/refs/tags/v0.0.15.tar.gz"
-  checksum: "sha512=0f761a739ca97dff99792e766516e122ee141670f3a28eaca2735f8a7fc6d924e16dccff2cf18b362c44e3cff7f73e407d2b8b33f7786cac96a9c425cca11b8e"
+  src: "https://github.com/mit-plv/fiat-crypto/archive/refs/tags/v0.0.16.tar.gz"
+  checksum: "sha512=db5e3ce6eb30066150c3611222c48f0eaab02f5b6101faab20d8a586c4f23bacb0c46372eff03736d7f017195500b3ea0203895052bf6ade752030a08c77e86d"
 }
