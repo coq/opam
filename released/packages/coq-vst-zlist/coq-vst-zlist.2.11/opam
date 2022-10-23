@@ -16,7 +16,7 @@ build: [
 run-test: []
 install: [make "-C" "zlist" "install"]
 depends: [
-  "coq" {>= "8.11.0"}
+  "coq" {>= "8.12"}
 ]
 url {
   src: "https://github.com/PrincetonUniversity/VST/archive/refs/tags/v2.11.tar.gz"
