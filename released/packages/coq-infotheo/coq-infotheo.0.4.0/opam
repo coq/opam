@@ -46,6 +46,6 @@ authors: [
   "Naruomi Obata, Titech (M2)"
 ]
 url {
-  http: "https://github.com/affeldt-aist/infotheo/archive/0.4.0.tar.gz"
+  src: "https://github.com/affeldt-aist/infotheo/archive/0.4.0.tar.gz"
   checksum: "sha512=cfc9945e7188b66aa1a277e206a7203c8fb8f51ab8b87df1b31a9e75cfd921fd16af4585b0612159d7babb6c19f711e4b0b33e3f66e3c7c5c0b2c90645c7e314"
 }
