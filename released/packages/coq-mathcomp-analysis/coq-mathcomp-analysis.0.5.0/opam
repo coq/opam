@@ -22,7 +22,7 @@ depends: [
   "coq-mathcomp-field" { (>= "1.13.0" & < "1.15~") | (= "dev") }
   "coq-mathcomp-finmap" { (>= "1.5.1" & < "1.6~") | (= "dev") }
   "coq-mathcomp-bigenough" { (>= "1.0.0") }
-  "coq-hierarchy-builder" { (>= "1.2.0") }
+  "coq-hierarchy-builder" { (= "1.2.0") }
 ]
 
 tags: [
@@ -48,6 +48,6 @@ authors: [
   "Laurent Théry"
 ]
 url {
-  http: "https://github.com/math-comp/analysis/archive/0.5.0.tar.gz"
+  src: "https://github.com/math-comp/analysis/archive/0.5.0.tar.gz"
   checksum: "sha512=57e5ec7e71338de65f1a07a9036c6d19a3584f757be76e8375a2f984d1fd05265928113a57c44d942e0ef9be7753299240763052d60661cb59551f7abb33b1e8"
 }
