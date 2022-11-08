@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: [ "Jason Gross <jgross@mit.edu>" "Ali Caglayan <alizter@gmail.com>" ]
 homepage: "http://homotopytypetheory.org/"
-bug-reports: "https://github.com/HoTT/HoTT/issues"
+bug-reports: "https://github.com/HoTT/Coq-HoTT/issues"
 license: "BSD-2-Clause"
 build: [
   [make "-j%{jobs}%"]
@@ -13,7 +13,7 @@ depends: [
   "coq" {>= "8.14" & < "8.15~"}
 ]
 authors: ["The Coq-HoTT Development Team"]
-dev-repo: "git+https://github.com/HoTT/HoTT.git"
+dev-repo: "git+https://github.com/HoTT/Coq-HoTT.git"
 synopsis: "The Homotopy Type Theory library"
 description: """
 To use the HoTT library, the following flags must be passed to coqc:
@@ -24,6 +24,6 @@ To use the HoTT library in a project, add the following to _CoqProject:
 """
 tags: [ "logpath:HoTT" ]
 url {
-  src: "https://github.com/HoTT/HoTT/archive/refs/tags/V8.14.tar.gz"
-  checksum: "sha512=dfdc9360da69ff4aa78b425c3393de4fc824f6cdb522d7c147dac8e8f14ebda2882170aa3eae28d8c60135e44610cddc135e6d9093a7d6da06b8cd0395d8a812"
+  src: "https://github.com/HoTT/Coq-HoTT/archive/refs/tags/V8.14.tar.gz"
+  checksum: "sha512=55a08bc76c90eb177bc22739bb6c2d95709575fdbc92c84c751c5fac3df6e71c5579c6d044572beb7c6d7696f257d58f4dd987af53ace12f11b77f7f5cb5daca"
 }
