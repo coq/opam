@@ -1,0 +1,51 @@
+opam-version: "2.0"
+synopsis: "A Foundation for Formally Proven Schedulability Analysis"
+description: """Prosa is a repository of definitions and proofs for
+real-time schedulability analysis built with Coq. Prosa’s
+distinguishing characteristic is that Prosa prioritizes readability
+over all other concerns to ensure that specifications remain
+accessible to readers without a background in formal proofs. (A
+background in real-time scheduling is assumed.)"""
+
+homepage: "https://prosa.mpi-sws.org/"
+dev-repo: "git+https://gitlab.mpi-sws.org/RT-PROOFS/rt-proofs.git"
+bug-reports: "https://gitlab.mpi-sws.org/RT-PROOFS/rt-proofs/issues"
+license: "BSD-2-Clause"
+doc: "https://prosa.mpi-sws.org/releases/v0.5/spec/with-proofs/toc.html"
+maintainer: "Pierre Roux <pierre.roux@onera.fr>"
+
+
+build: [
+  ["./create_makefile.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.13" & < "8.17~")}
+  "coq-mathcomp-ssreflect" {(>= "1.12" & < "1.16~")}
+  "coq-mathcomp-zify" {>= "1.2.0"}
+  "coq-coqeal" {>= "1.1.0"}
+]
+
+tags: [
+  "keyword:prosa"
+  "keyword:real-time"
+  "keyword:schedulability analysis"
+  "keyword:response-time analysis"
+  "logpath:prosa"
+]
+authors: [
+  "Felipe Cerqueira"
+  "Björn Brandenburg"
+  "Maxime Lesourd"
+  "Sergey Bozhko"
+  "Xiaojie Guo"
+  "Sophie Quinton"
+  "Marco Maida"
+  "Kimaya Bedarkar"
+]
+
+url {
+  src: "https://gitlab.mpi-sws.org/RT-PROOFS/rt-proofs/-/archive/v0.5/rt-proofs-v0.5.tar.gz"
+  checksum: "sha256=49b246784fb32137079c3aebbade1dc648d7a7cc705bdc91789ee3e144ea8279"
+}
