@@ -4,7 +4,8 @@ maintainer: "Pierre Roux <pierre.roux@onera.fr>"
 homepage: "https://prosa.mpi-sws.org/"
 dev-repo: "git+https://gitlab.mpi-sws.org/RT-PROOFS/rt-proofs.git"
 bug-reports: "https://gitlab.mpi-sws.org/RT-PROOFS/rt-proofs/issues"
-license: "BSD"
+doc: "https://prosa.mpi-sws.org/branches/"
+license: "BSD-2-Clause"
 
 build: [
   ["./create_makefile.sh"]
@@ -14,12 +15,15 @@ install: [make "install"]
 depends: [
   "coq" {>= "8.13"}
   "coq-mathcomp-ssreflect" {>= "1.12"}
+  "coq-mathcomp-zify" {>= "1.2.0"}
+  "coq-coqeal" {>= "1.1.0"}
 ]
 
 tags: [
   "keyword:prosa"
-  "keyword:real time"
+  "keyword:real-time"
   "keyword:schedulability analysis"
+  "keyword:response-time analysis"
   "logpath:prosa"
 ]
 authors: [
@@ -29,7 +33,8 @@ authors: [
   "Sergey Bozhko"
   "Xiaojie Guo"
   "Sophie Quinton"
-  "Marco Perronet"
+  "Marco Maida"
+  "Kimaya Bedarkar"
 ]
 synopsis: "A Foundation for Formally Proven Schedulability Analysis"
 description: """Prosa is a repository of definitions and proofs for
