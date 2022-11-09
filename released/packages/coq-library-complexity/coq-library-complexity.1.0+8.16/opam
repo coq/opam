@@ -1,0 +1,28 @@
+opam-version: "2.0"
+maintainer: "forster@cs.uni-saarland.de"
+homepage: "https://github.com/uds-psl/coq-library-complexity/"
+dev-repo: "git+https://github.com/uds-psl/coq-library-complexity/"
+bug-reports: "https://github.com/uds-psl/coq-library-complexity/issues"
+authors: ["Fabian Kunze"
+          "Lennard Gäher"
+          "Maximilian Wuttke"
+          "Yannick Forster"
+          "Stefan Haan"]
+synopsis: "A Coq Library of Complexity Theory"
+
+license: "CECILL-2.1"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" {>= "8.16" & < "8.17"}
+  "coq-library-undecidability" {= "1.0.1+8.16" }
+]
+
+url {
+  src: "https://github.com/uds-psl/coq-library-complexity/archive/refs/tags/v1.0+8.16.tar.gz"
+  checksum: "sha256=f07ca356e7b3ebb03ac6ccc07a3e389dab293ec01b1994027597998859f97306"
+}
