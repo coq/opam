@@ -1,5 +1,4 @@
 opam-version: "2.0"
-version: "1.0.1+8.16"
 maintainer: "forster@cs.uni-saarland.de"
 homepage: "https://github.com/uds-psl/coq-library-undecidability/"
 dev-repo: "git+https://github.com/uds-psl/coq-library-undecidability/"
