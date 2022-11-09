@@ -17,7 +17,7 @@ authors: ["Yannick Forster"
           "Dominik Wehr"
           "Maximilian Wuttke"]
 
-license: "CeCILL-2.1"
+license: "CECILL-2.1"
 build: [
   [make "-j%{jobs}%"]
 ]
