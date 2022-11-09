@@ -20,7 +20,6 @@ install: [
 
 depends: [
   "ocaml"
-  "ocamlfind"
   "coq" {>= "8.14" & < "8.17~" }
 ]
 url {
