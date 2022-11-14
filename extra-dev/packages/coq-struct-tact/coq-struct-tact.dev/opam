@@ -5,19 +5,19 @@ homepage: "https://github.com/uwplse/StructTact"
 dev-repo: "git+https://github.com/uwplse/StructTact.git"
 bug-reports: "https://github.com/uwplse/StructTact/issues"
 license: "BSD-2-Clause"
-synopsis: "Coq library of \"structural tactics\" and utility lemmas about lists and finite types"
-description: """
-A Coq library of \"structural tactics\" and lemmas about lists and finite
-types that use the tactics.
-"""
 
-build: [
-  ["./configure"]
-  [make "-j%{jobs}%"]
-]
+synopsis: "Coq library of structural tactics and utility lemmas about lists and finite types"
+description: """
+StructTact is a Coq library of structural tactics as well as lemmas about
+lists, finite types, and orders on strings that use the tactics.
+The structural tactics enable a style of proof where hypothesis names
+are never mentioned. When automatically generated names change during
+proof development, structural tactics will still work."""
+
+build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.5" & < "8.12~") | (= "dev")}
+  "coq" {>= "8.9"}
 ]
 
 tags: [

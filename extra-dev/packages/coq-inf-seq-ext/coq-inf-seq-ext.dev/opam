@@ -5,19 +5,16 @@ homepage: "https://github.com/DistributedComponents/InfSeqExt"
 dev-repo: "git+https://github.com/DistributedComponents/InfSeqExt.git"
 bug-reports: "https://github.com/DistributedComponents/InfSeqExt/issues"
 license: "Proprietary"
+
 synopsis: "Coq library for reasoning inductively and coinductively on infinite sequences"
 description: """
-A Coq library for reasoning inductively and coinductively on infinite sequences,
-using modal operators similar to those in linear temporal logic (LTL).
-"""
+Coq library for reasoning inductively and coinductively on infinite sequences,
+using modal operators similar to those in linear temporal logic (LTL)."""
 
-build: [
-  ["./configure"]
-  [make "-j%{jobs}%"]
-]
+build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.5" & < "8.12~") | (= "dev")}
+  "coq" {>= "8.9"}
 ]
 
 tags: [
