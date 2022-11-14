@@ -5,26 +5,24 @@ homepage: "https://github.com/uwplse/cheerios"
 dev-repo: "git+https://github.com/uwplse/cheerios.git"
 bug-reports: "https://github.com/uwplse/cheerios/issues"
 license: "BSD-2-Clause"
+
 synopsis: "Coq library for verified serialization"
 description: """
 A formally verified serialization library for Coq
 which defines a typeclass for serializable types and instances
-for many standard library types.
-"""
+for many standard library types."""
 
-build: [
-  ["./configure"]
-  [make "-j%{jobs}%"]
-]
+build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.6.1" & < "8.12~") | (= "dev")}
+  "coq" {>= "8.14"}
   "coq-struct-tact" {= "dev"}
 ]
 
 tags: [
   "category:Computer Science/Data Types and Data Structures"
   "keyword:serialization"
+  "keyword:deserialization"
   "logpath:Cheerios"
 ]
 authors: [
