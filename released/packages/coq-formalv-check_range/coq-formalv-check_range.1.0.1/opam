@@ -1,0 +1,48 @@
+opam-version: "2.0"
+synopsis: "Tactics to automatically prove Boolean goals involving Uint63/Sint63 variables" # One-line description
+description: """
+FV Check Range provides tactics to automatically prove Boolean goals
+involving 1, 2 or 3 Uint63.int/Sint63.int bounded variables through
+brute-force computation.
+""" # Longer description, can span several lines
+
+homepage: "https://gitlab.com/formalv/formalv"
+dev-repo: "git+https://gitlab.com/formalv/formalv"
+bug-reports: "https://gitlab.com/formalv/formalv/-/issues"
+doc: "https://gitlab.com/formalv/formalv/-/jobs/3104990375/artifacts/file/public/index.html"
+maintainer: "Mireia González Bedmar <mireia.gbedmar@formalv.com>"
+
+tags: [
+  "keyword:automation"
+  "keyword:primitive integers"
+  "logpath:formalv"
+]
+
+authors: [
+  "Ana de Almeida Borges"
+  "Quim Casals Buñuel"
+  "Juan Conejero Rodriguez"
+  "Mireia González Bedmar"
+  "Eduardo Hermo Reyes"
+]
+
+license: "PolyForm Noncommercial License 1.0.0" # Make sure this is reflected by a LICENSE file in your sources
+
+depends: [
+  "coq" {>= "8.14" & < "8.16~"}
+  "coq-mathcomp-algebra" {>= "1.12" & < "1.15~" }
+  "coq-mathcomp-ssreflect" {>= "1.12" & < "1.15~" }
+  "coq-formalv-prim63_mathcomp" {= version}
+]
+
+build: [
+  [make "-C" "theories/check_range" "-j" "%{jobs}%"]
+]
+install: [
+  [make "-C" "theories/check_range" "install"]
+]
+
+url {
+  src: "https://gitlab.com/formalv/formalv/-/archive/1.0.1/formalv-1.0.1.tar.gz"
+  checksum: "sha256=d00453d3f553c988df1ea1fd3a33413af03a2e21952b75b0c47f9290ae31b3bc"
+}
