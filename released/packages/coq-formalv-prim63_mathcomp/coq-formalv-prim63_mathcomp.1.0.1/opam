@@ -1,0 +1,48 @@
+opam-version: "2.0"
+synopsis: "Refinements from MathComp nat and int to Coq primitive integers Uint63/Sint63" # One-line description
+description: """
+FV Prim63 to MathComp provides conversions from the Coq primitive integers
+Uint63 and Sint63 to the MathComp natural and integer numbers nat and int,
+and vice versa, as well as lemmas to rewrite between their respective
+operations.
+""" # Longer description, can span several lines
+
+homepage: "https://gitlab.com/formalv/formalv"
+dev-repo: "git+https://gitlab.com/formalv/formalv"
+bug-reports: "https://gitlab.com/formalv/formalv/-/issues"
+doc: "https://gitlab.com/formalv/formalv/-/jobs/3104990375/artifacts/file/public/index.html"
+maintainer: "Mireia González Bedmar <mireia.gbedmar@formalv.com>"
+
+tags: [
+  "keyword:refinement"
+  "keyword:primitive integers"
+  "logpath:formalv"
+]
+
+authors: [
+  "Ana de Almeida Borges"
+  "Quim Casals Buñuel"
+  "Juan Conejero Rodriguez"
+  "Mireia González Bedmar"
+  "Eduardo Hermo Reyes"
+]
+
+license: "PolyForm Noncommercial License 1.0.0" # Make sure this is reflected by a LICENSE file in your sources
+
+depends: [
+  "coq" {>= "8.14" & < "8.16~"}
+  "coq-mathcomp-algebra" {>= "1.12" & < "1.15~" }
+  "coq-mathcomp-ssreflect" {>= "1.12" & < "1.15~" }
+]
+
+build: [
+  [make "-C" "theories/prim63_mathcomp" "-j" "%{jobs}%"]
+]
+install: [
+  [make "-C" "theories/prim63_mathcomp" "install"]
+]
+
+url {
+  src: "https://gitlab.com/formalv/formalv/-/archive/1.0.1/formalv-1.0.1.tar.gz"
+  checksum: "sha256=d00453d3f553c988df1ea1fd3a33413af03a2e21952b75b0c47f9290ae31b3bc"
+}
