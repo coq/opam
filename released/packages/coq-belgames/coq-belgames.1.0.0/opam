@@ -38,6 +38,6 @@ authors: [
   "Hélène Fargier"
 ]
 url {
-  src: "https://github.com/pPomCo/coq-belgames-csl2023/archive/refs/tags/1.0.0.tar.gz"
+  src: "https://github.com/pPomCo/belgames/archive/refs/tags/1.0.0.tar.gz"
   checksum: "sha512=5dc6cc1f8812213c7519ff192f0eaf76b9920f7b10835668a2bc35d15917bb9db52668f0fda80c19ce58dc8cfa0dfe1701d1079457a47f077661d1edce5889d6"
 }
