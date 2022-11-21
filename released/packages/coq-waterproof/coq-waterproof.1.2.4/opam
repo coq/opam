@@ -16,7 +16,7 @@ authors: [
   "Tudor Voicu"
   "Jim Portegies"
 ]
-license: "LGPL 3.0"
+license: "LGPL-3.0-or-later"
 
 depends: [
   "coq" {>= "8.15" & < "8.16"}
