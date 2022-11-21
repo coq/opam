@@ -1,0 +1,44 @@
+opam-version: "2.0"
+synopsis: "Waterproof library"
+description: """
+The Waterproof library provides tactics, notations, and mathematical theories geared towards use
+in Mathematics educational environments. It aims to provide syntax such that proof scripts mimic
+handwritten mathematical proofs.
+"""
+
+homepage: "https://github.com/impermeable/coq-waterproof"
+dev-repo: "git+https://github.com/impermeable/coq-waterproof.git"
+bug-reports: "https://github.com/impermeable/coq-waterproof/issues"
+maintainer: "j.w.portegies@tue.nl"
+authors: [
+  "Jelle Wemmenhove"
+  "Cosmin Manea"
+  "Lulof Pirée"
+  "Adrian Vrămuleţ"
+  "Tudor Voicu"
+  "Jim Portegies"
+]
+license: "LGPL-3.0-or-later"
+
+depends: [
+  "coq" {>= "8.15" & < "8.16"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/impermeable/coq-waterproof/archive/1.2.4.tar.gz"
+  checksum: "sha256=b087cc6fff34c519ab9c4d938c439ba565d599d974eb067b48a670d894280457"
+}
+
+tags: [
+  "keyword:mathematics education"
+  "category:Mathematics/Education"
+  "date:2022-02-03"
+  "logpath:Waterproof"
+]
