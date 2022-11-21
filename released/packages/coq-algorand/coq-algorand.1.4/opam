@@ -1,0 +1,51 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/runtimeverification/algorand-verification"
+dev-repo: "git+https://github.com/runtimeverification/algorand-verification.git"
+bug-reports: "https://github.com/runtimeverification/algorand-verification/issues"
+license: "NCSA"
+
+synopsis: "A verified model of the Algorand consensus protocol in Coq"
+description: """
+The Algorand consensus protocol is the foundation of a decentralized
+digital currency and transactions platform. This project provides a
+model of the protocol in Coq, expressed as a transition system over
+global states in a message-passing distributed system. Included is
+a formal proof of safety for the transition system."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.14"}
+  "coq-mathcomp-ssreflect" {>= "1.14"}
+  "coq-mathcomp-algebra" 
+  "coq-mathcomp-finmap" {>= "1.5.1"}
+  "coq-mathcomp-analysis" {>= "0.5.0"}
+  "coq-mathcomp-zify" 
+  "coq-record-update" 
+]
+
+tags: [
+  "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
+  "keyword:distributed algorithms"
+  "keyword:blockchain"
+  "keyword:consensus"
+  "keyword:algorand"
+  "logpath:Algorand"
+  "date:2022-11-20"
+]
+authors: [
+  "Musab A. Alturki"
+  "Jing Chen"
+  "Victor Luchangco"
+  "Brandon Moore"
+  "Karl Palmskog"
+  "Lucas Peña"
+  "Grigore Roșu"
+]
+
+url {
+  src: "https://github.com/runtimeverification/algorand-verification/archive/release-1.4.tar.gz"
+  checksum: "sha512=8a1bf5df4126f32d72af91fcaba61756b197adea880974f8d1905d509eb23383f8fbbc2bf5d4a9bf22648d1d57dca69d0238358296fa6ce186cfed4212c52930"
+}
