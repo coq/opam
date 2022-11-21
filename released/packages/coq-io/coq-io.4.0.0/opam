@@ -14,7 +14,7 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.5"}
+  "coq" {>= "8.5" & < "8.16~"}
 ]
 synopsis: "A library for effects in Coq"
 tags: [
