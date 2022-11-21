@@ -15,7 +15,7 @@ and complex analysis."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.11"}
+  "coq" {>= "8.11" & < "8.16~"}
 ]
 
 tags: [
