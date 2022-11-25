@@ -37,7 +37,7 @@ run-test: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.12" & < "8.17~"}
+  "coq" {>= "8.13" & < "8.17~"}
   "coq-compcert-32" {= "3.11"}
   "coq-flocq" {>= "4.1.0"}
 ]
