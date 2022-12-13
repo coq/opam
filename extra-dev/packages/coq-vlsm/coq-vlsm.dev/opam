@@ -15,12 +15,15 @@ contains a formalization of VLSMs and their theory in the Coq proof assistant.""
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
-  "coq" {>= "8.13"}
-  "coq-stdpp" {>= "1.6.0"}
+  "coq" {>= "8.15" & < "8.16"}
+  "coq-stdpp" {>= "1.7.0" & < "1.8.0"}
+  "coq-itauto" 
+  "coq-equations" 
 ]
 
 tags: [
   "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
+  "keyword:consensus"
   "keyword:fault tolerance"
   "keyword:distributed algorithms"
   "logpath:VLSM"
@@ -35,6 +38,7 @@ authors: [
   "Lucas Peña"
   "Grigore Roșu"
   "Traian Șerbănuță"
+  "Dafina Trufas"
   "Jan Tušil"
   "Vlad Zamfir"
 ]
