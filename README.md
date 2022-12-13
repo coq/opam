@@ -43,6 +43,14 @@ See the [documentation](https://coq.inria.fr/opam-packaging.html) for how to add
 You can also look at existing [pull requests](https://github.com/coq/opam-coq-archive/pulls)
 to see how others are adding packages.
 
+## Coq Platform
+
+The `released` opam archive is a key component of the [Coq Platform](https://github.com/coq/platform),
+a distribution of Coq together with a curated set of libraries and plugins.
+After installing the Platform using scripts (as opposed to via a binary installer),
+additional packages in the `released` opam archive can be installed manually without the
+need for repository activation.
+
 ## Website and opam metadata
 
 The `scripts/archive2web.ml` program generates the JSON file
