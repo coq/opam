@@ -26,8 +26,10 @@ install: [
   [make "install"]
 ]
 depends: [
-  "ocaml"
-  "coq" {((>= "8.9" & < "8.13~") | = "dev")}
+  "coq" {>= "8.14~"}
+]
+conflict-class: [
+  "coq-bbv"
 ]
 synopsis: "An implementation of bitvectors in Coq."
 url {
