@@ -14,7 +14,7 @@ in several examples of monadic equational reasoning."""
 build: [make "-j%{jobs}%"]
 install: [make "install_full"]
 depends: [
-  "coq" { (>= "8.14" & < "8.17~") | (= "dev") }
+  "coq" { (>= "8.15" & < "8.17~") | (= "dev") }
   "coq-mathcomp-ssreflect" { (>= "1.13.0" & < "1.16~") | (= "dev")  }
   "coq-mathcomp-fingroup" { (>= "1.13.0" & < "1.16~") | (= "dev")  }
   "coq-mathcomp-algebra" { (>= "1.13.0" & < "1.16~") | (= "dev")  }
