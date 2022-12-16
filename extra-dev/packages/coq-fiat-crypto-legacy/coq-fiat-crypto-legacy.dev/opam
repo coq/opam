@@ -16,11 +16,13 @@ build: [
 install: [make "install"]
 depends: [
   "ocaml"
-  "coq" {>= "8.7~"}
+  "coq" {>= "8.14~"}
   "coq-bignums"
 ]
 conflict-class: [
   "coq-fiat-crypto"
+  "coq-bbv"
+  "coq-coqprime"
 ]
 dev-repo: "git+https://github.com/mit-plv/fiat-crypto.git"
 synopsis:
