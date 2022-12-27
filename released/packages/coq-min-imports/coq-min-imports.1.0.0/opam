@@ -15,7 +15,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.5"}
   "extlib"
-  "batteries"
+  "batteries" {< "3.6.0"}
   "omake"
 ]
 tags: [
