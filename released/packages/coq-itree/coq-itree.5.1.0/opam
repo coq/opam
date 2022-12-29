@@ -1,0 +1,35 @@
+opam-version: "2.0"
+synopsis: "Library for representing recursive and impure programs with equational reasoning"
+maintainer: ["Li-yao Xia <lysxia@gmail.com>"]
+authors: [
+  "Li-yao Xia"
+  "Yannick Zakowski"
+  "Paul He"
+  "Chung-Kil Hur"
+  "Gregory Malecha"
+  "Steve Zdancewic"
+  "Benjamin Pierce"
+]
+license: "MIT"
+homepage: "https://github.com/DeepSpec/InteractionTrees"
+bug-reports: "https://github.com/DeepSpec/InteractionTrees/issues"
+dev-repo: "git+https://github.com/DeepSpec/InteractionTrees.git"
+build: [
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs "@install" "@runtest" {with-test} "@doc" {with-doc}]
+]
+depends: [
+  "dune" {>= "2.6"}
+  "coq" {>= "8.13"}
+  "coq-ext-lib" {>= "0.11.1"}
+  "coq-paco" {>= "4.0.1"}
+]
+tags: [
+  "org:deepspec"
+  "logpath: ITree"
+  "date:2022-12-29"
+]
+url {
+  http: "https://github.com/DeepSpec/InteractionTrees/archive/5.1.0.tar.gz"
+  checksum: "sha512=cb8986ab4d2af8eadbf99c05c5824df513cd803ddac1479ef943c5d402c65faa6f6ff4d3ffec4620d1f4139e741b7c40e61a4ac052bb15db1ce05b0edf5080fd"
+}
