@@ -13,7 +13,7 @@ build: [
 depends: [
   "ocaml" {>= "4.08.0"}
   "ocamlfind"
-  "coq" {>= "8.11" & < "8.17~"}
+  "coq" {>= "8.11" & < "8.18~"}
   "coq-ext-lib" {>= "0.10.0"}
   "ocamlbuild" {with-test & >= "0.9.0"}
   "cppo" {build & >= "1.6.8"}
