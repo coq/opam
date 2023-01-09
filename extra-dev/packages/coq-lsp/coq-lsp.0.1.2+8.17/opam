@@ -1,0 +1,41 @@
+synopsis: "Language Server Protocol native server for Coq"
+description:
+"""
+Language Server Protocol native server for Coq
+"""
+opam-version: "2.0"
+maintainer: "e@x80.org"
+bug-reports: "https://github.com/ejgallego/coq-lsp/issues"
+homepage: "https://github.com/ejgallego/coq-lsp"
+dev-repo: "git+https://github.com/ejgallego/coq-lsp.git"
+authors: [
+  "Emilio Jesús Gallego Arias <e@x80.org>"
+  "Ali Caglayan <alizter@gmail.com>"
+  "Shachar Itzhaky <shachari@cs.technion.ac.il>"
+  "Ramkumar Ramachandra <r@artagnon.com>"
+]
+license: "LGPL-2.1-or-later"
+doc: "https://ejgallego.github.io/coq-lsp/"
+
+depends: [
+  "ocaml"        { >= "4.12.0" }
+  "dune"         { >= "3.2.0"  }
+
+  "coq"          { >= "8.17" < "8.18" }
+  "coq-serapi"   { >= "8.17" < "8.18" }
+
+  "cmdliner"     { >= "1.1.0" }
+  "yojson"       { >= "1.7.0" }
+]
+
+build: [ [ "dune" "build" "-p" name "-j" jobs ] ]
+run-test: [ [ "dune" "runtest" "-p" name "-j" jobs ] ]
+
+url {
+  src:
+    "https://github.com/ejgallego/coq-lsp/archive/refs/tags/0.1.2+v8.17.tar.gz"
+  checksum: [
+    "sha256=251cc3c904ae28bc0f03053e2582ca03cd93f7097c58539515a4a74be5eb3206"
+    "sha512=c490ae0d72fbe99758e3a73bb23cdbe05b4d4270cb4a766d6fcf3a0c062e2ef96a54d144ad9b361cf687b44dbf818dcd675782964b3d79dfeaa3e340754809b0"
+  ]
+}
