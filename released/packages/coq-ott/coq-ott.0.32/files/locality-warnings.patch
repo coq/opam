@@ -1,0 +1,13 @@
+diff --git a/coq/_CoqProject b/coq/_CoqProject
+index 6f23a74..3e229a7 100644
+--- a/coq/_CoqProject
++++ b/coq/_CoqProject
+@@ -1,5 +1,8 @@
+ -Q . Ott
+ 
++-arg -w -arg -deprecated-hint-without-locality
++-arg -w -arg -deprecated-hint-rewrite-without-locality
++
+ ott_list_predicate.v
+ ott_list_takedrop.v
+ ott_list.v
