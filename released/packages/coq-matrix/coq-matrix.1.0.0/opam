@@ -43,8 +43,8 @@ install: [
 }
 
 tags: [
-  "keyword:matrix"
-  "category:Math/Matrix"
+  "keyword:matrices"
+  "category:Mathematics/Algebra"
   "date:2023-01-19"
   "logpath:CoqMatrix"
 ]
