@@ -28,6 +28,7 @@ license: "MIT" # Make sure this is reflected by a LICENSE file in your sources
 
 depends: [
   "coq" {>= "8.13"}
+  "coq-mathcomp-algebra" {>="1.15.0"}
 ]
 
 build: [
@@ -38,13 +39,13 @@ install: [
 ]
 
   url {
-  src: "https://github.com/zhengpushi/CoqMatrix/archive/refs/tags/1.0.0.tar.gz"
-  checksum: "sha256=01c751dd1634890c977f3c3bff41f49704e059dd031962f8a994a20d518ff2ab"
+  src: "https://github.com/zhengpushi/CoqMatrix/archive/refs/tags/1.0.2.tar.gz"
+  checksum: "sha256=ba15c4a2dd0440b0876328075b44cfb382d320ba9631618d853d7b6ae5af2a8c"
 }
 
 tags: [
   "keyword:matrices"
   "category:Mathematics/Algebra"
-  "date:2023-01-19"
+  "date:2023-01-20"
   "logpath:CoqMatrix"
 ]
