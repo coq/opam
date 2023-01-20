@@ -39,8 +39,8 @@ install: [
 ]
 
   url {
-  src: "https://github.com/zhengpushi/CoqMatrix/archive/refs/tags/1.0.1.tar.gz"
-  checksum: "sha256=e114edfd6b1ce8a4f8711da54bb249a99b2da26371d4aeed0468895a4c547004"
+  src: "https://github.com/zhengpushi/CoqMatrix/archive/refs/tags/1.0.2.tar.gz"
+  checksum: "sha256=ba15c4a2dd0440b0876328075b44cfb382d320ba9631618d853d7b6ae5af2a8c"
 }
 
 tags: [
