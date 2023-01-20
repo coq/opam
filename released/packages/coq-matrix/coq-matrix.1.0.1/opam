@@ -44,7 +44,7 @@ install: [
 }
 
 tags: [
-  "keyword:matrix"
+  "keyword:matrices"
   "category:Mathematics/Algebra"
   "date:2023-01-20"
   "logpath:CoqMatrix"
