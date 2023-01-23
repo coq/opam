@@ -18,7 +18,7 @@ patches: ["locality-warnings.patch"]
 build: [make "-j%{jobs}%" "-C" "coq"]
 install: [make "-C" "coq" "install"]
 depends: [
-  "coq" {>= "8.5.1"}
+  "coq" {>= "8.5.3"}
 ]
 conflicts: [
   "ott" { != version }
