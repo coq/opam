@@ -15,7 +15,7 @@ install: [
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Io/List.vo"]
 depends: [
   "ocaml"
-  "coq" {>= "8.4pl4"}
+  "coq" {>= "8.4pl4" & < "8.16~"}
   "coq-io" {>= "3.0.0" & < "3.1.0"}
 ]
 synopsis: "Generic functions on lists with effects"
