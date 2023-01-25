@@ -16,7 +16,7 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
   "coq" {>= "8.11" & < "8.17~"}
-  "coq-hydra-battles" {>= "0.4"}
+  "coq-hydra-battles" {>= "0.4" & <= "0.9"}
   "coq-pocklington" {>= "8.12"}
 ]
 
