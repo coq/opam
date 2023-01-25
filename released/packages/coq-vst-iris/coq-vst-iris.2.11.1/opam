@@ -28,7 +28,7 @@ tags: [
   "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword:C"
   "logpath:VST"
-  "date:2023-1-24"
+  "date:2023-01-24"
 ]
 url {
   src: "https://github.com/PrincetonUniversity/VST/archive/refs/tags/v2.11.1.tar.gz"
