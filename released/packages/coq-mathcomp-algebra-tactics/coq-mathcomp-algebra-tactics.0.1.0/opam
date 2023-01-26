@@ -24,6 +24,7 @@ depends: [
   "coq-mathcomp-zify" {(>= "1.1.0")}
   "coq-elpi" {(>= "1.10.1")}
 ]
+conflicts: [ "coq-mathcomp-word" { = "2.0" } ]
 
 tags: [
   "logpath:mathcomp.algebra_tactics"
