@@ -29,7 +29,6 @@ depends: [
   "coq-mathcomp-zify" {>= "1.2.0"}
   "coq-mathcomp-algebra-tactics" {>= "0.2.0"}
 ]
-conflicts: [ "coq-mathcomp-word" { = "2.0" } ]
 
 tags: [
   "category:Mathematics/Arithmetic and Number Theory/Number theory"
