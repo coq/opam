@@ -26,6 +26,7 @@ depends: [
   "coq-mathcomp-zify" {>= "1.2.0"}
   "coq-coqeal" {>= "1.1.0"}
 ]
+conflicts: [ "coq-mathcomp-word" { = "2.0" } ]
 
 tags: [
   "keyword:prosa"

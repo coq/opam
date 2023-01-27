@@ -27,6 +27,7 @@ depends: [
   "coq-mathcomp-real-closed" {>= "1.1.2"}
   "coq-mathcomp-bigenough" {>= "1.0.0"}
 ]
+conflicts: [ "coq-mathcomp-word" { = "2.0" } ]
 
 tags: [
   "category:Mathematics/Arithmetic and Number Theory/Number theory"
