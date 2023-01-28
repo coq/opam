@@ -16,9 +16,7 @@ depends: [
   "coq-mathcomp-algebra"
 ]
 conflicts: [
-  "coq-prosa" { = "0.5" }
-  "coq-mathcomp-apery" { <= "1.0.2" }
-  "coq-mathcomp-algebra-tactics" { <= "1.0.0" }
+  "coq-mathcomp-zify"
 ]
 
 tags: [
