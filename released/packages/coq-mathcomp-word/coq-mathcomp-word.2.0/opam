@@ -15,6 +15,11 @@ depends: [
   "coq-mathcomp-ssreflect" {>= "1.12" & < "1.16~"}
   "coq-mathcomp-algebra"
 ]
+conflicts: [
+  "coq-prosa" { = "0.5" }
+  "coq-mathcomp-apery" { <= "1.0.2" }
+  "coq-mathcomp-algebra-tactics" { <= "1.0.0" }
+]
 
 tags: [
   "category:Computer Science/Data Types and Data Structures"
