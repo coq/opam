@@ -1,0 +1,53 @@
+opam-version: "2.0"
+maintainer:   "e@x80.org"
+homepage:     "https://github.com/ejgallego/coq-serapi"
+bug-reports:  "https://github.com/ejgallego/coq-serapi/issues"
+dev-repo:     "git+https://github.com/ejgallego/coq-serapi.git"
+license:      "GPL-3.0-or-later"
+doc:          "https://ejgallego.github.io/coq-serapi/"
+
+synopsis:     "Serialization library and protocol for machine interaction with the Coq proof assistant"
+description:  """
+SerAPI is a library for machine-to-machine interaction with the
+Coq proof assistant, with particular emphasis on applications in IDEs,
+code analysis tools, and machine learning. SerAPI provides automatic
+serialization of Coq's internal OCaml datatypes from/to JSON or
+S-expressions (sexps).
+"""
+
+authors: [
+  "Emilio Jesús Gallego Arias"
+  "Karl Palmskog"
+  "Clément Pit-Claudel"
+  "Kaiyu Yang"
+]
+
+depends: [
+  "ocaml"               {           >= "4.09.0"              }
+  "coq"                 {           >= "8.17" & < "8.18"     }
+  "cmdliner"            {           >= "1.1.0"               }
+  "ocamlfind"           {           >= "1.8.0"               }
+  "sexplib"             {           >= "v0.13.0"             }
+  "dune"                {           >= "2.0.1"               }
+  "ppx_import"          { build   & >= "1.5-3" & < "2.0"     }
+  "ppx_deriving"        {           >= "4.2.1"               }
+  "ppx_sexp_conv"       {           >= "v0.13.0"             }
+  "ppx_compare"         {           >= "v0.13.0"             }
+  "ppx_hash"            {           >= "v0.13.0"             }
+  "yojson"              {           >= "1.7.0"               }
+  "ppx_deriving_yojson" {           >= "3.4"                 }
+]
+
+conflicts: [
+  "result" {< "1.5"}
+]
+
+build: [ "dune" "build" "-p" name "-j" jobs ]
+url {
+  src:
+    "https://github.com/ejgallego/coq-serapi/archive/refs/tags/8.17+rc1+0.17.1.tar.gz"
+  checksum: [
+    "sha256=a2ea7ccd53385e9abbe998c51f33b1607a0e8e1fbb22d6763069eed746e3e4b6"
+    "sha512=6d3719a7d389739d70c8294e3effa61e435fd97b1346634494cb875a11adf5dfcde8bb56a131b149af41365cf38ba59213190e38ee259da8b57af3e8cb83e61e"
+  ]
+}
