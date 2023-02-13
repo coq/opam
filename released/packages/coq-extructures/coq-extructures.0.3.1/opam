@@ -15,7 +15,7 @@ install: [
 depends: [
   "ocaml"
   "coq" {(>= "8.11" & < "8.17~")}
-  "coq-mathcomp-ssreflect" {(>= "1.12" & < "1.16~")}
+  "coq-mathcomp-ssreflect" {(>= "1.12" & < "1.17~")}
   "coq-deriving" {(>= "0.1" & < "0.2~")}
 ]
 tags: [
