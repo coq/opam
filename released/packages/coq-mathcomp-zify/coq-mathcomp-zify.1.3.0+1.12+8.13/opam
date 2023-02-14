@@ -1,0 +1,32 @@
+opam-version: "2.0"
+maintainer: "kazuhiko.sakaguchi@inria.fr"
+
+homepage: "https://github.com/math-comp/mczify"
+dev-repo: "git+https://github.com/math-comp/mczify.git"
+bug-reports: "https://github.com/math-comp/mczify/issues"
+license: "CECILL-B"
+
+synopsis: "Micromega tactics for Mathematical Components"
+description: """
+This small library enables the use of the Micromega arithmetic solvers of Coq
+for goals stated with the definitions of the Mathematical Components library
+by extending the zify tactic."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.13" & < "8.18~")}
+  "coq-mathcomp-ssreflect" {(>= "1.12" & < "1.17~")}
+  "coq-mathcomp-algebra" 
+]
+
+tags: [
+  "logpath:mathcomp.zify"
+]
+authors: [
+  "Kazuhiko Sakaguchi"
+]
+url {
+  src: "https://github.com/math-comp/mczify/archive/1.3.0+1.12+8.13.tar.gz"
+  checksum: "sha256=00a42aae961a5fdc5b3f8b80150065a3401dd188d2f8f42cdcff31520a687578"
+}
