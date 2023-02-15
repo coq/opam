@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "coq-smlms"
 version: "1.0.0"
 maintainer: "Hugo Férée <feree@irif.fr>"
 authors: [
@@ -14,10 +13,6 @@ build: [
   [make "html"] {with-doc}
 ]
 install: [make "install"]
-remove: [
-  [make "uninstall"]
-  ["rmdir" "%{lib}%/coq/user-contrib/AbstractRenaming"]
-]
 depends: [
   "ocaml"
   "coq" {>= "8.15.1"}
