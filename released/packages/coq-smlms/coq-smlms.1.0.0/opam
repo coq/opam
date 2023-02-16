@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "Hugo Férée <feree@irif.fr>"
+authors: [
+  "Hugo Férée"
+]
+homepage: "https://gitlab.com/trustworthy-refactoring/coq-smlms"
+dev-repo: "git+https://gitlab.com/trustworthy-refactoring/coq-smlms.git"
+bug-reports: "https://gitlab.com/trustworthy-refactoring/coq-smlms/-/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+  [make "html"] {with-doc}
+]
+install: [make "install"]
+depends: [
+  "ocaml"
+  "coq" {>= "8.15.1"}
+]
+tags: [
+  "category:Computer Science/Semantics and Compilation/Semantics"
+  "keywords: adequacy"
+  "keywords: modules"
+  "keywords: module types"
+  "keywords: OCaml"
+  "keywords: refactoring"
+  "keywords: renaming"
+  "keywords: semantics"
+  "logpath:AbstractRenaming"
+  "date:2023-02-14"
+]
+synopsis:
+  "A formal semantics capturing value binding in a language with a powerful module system such as OCaml."
+url {
+  src: "https://gitlab.com/trustworthy-refactoring/coq-smlms/-/archive/v1.0.0/coq-smlms-v1.0.0.tar.gz"
+  checksum: "sha256=edde3149da9a2cc3c5cbf1f91f73f34d0e7a41304fa2b8051f97edfe69a5bfff"
+}
