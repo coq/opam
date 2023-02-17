@@ -5,10 +5,8 @@ bug-reports: "https://github.com/thery/PolTac"
 dev-repo: "git://github.com/thery/PolTac"
 license: "LGPL"
 authors: ["Laurent Théry"]
-install: [
-  [make]
-  [make "install"]
-]
+build: [make "-j%{jobs}%"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.11~" & < "8.12"}
