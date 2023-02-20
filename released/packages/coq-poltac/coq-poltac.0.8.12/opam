@@ -5,10 +5,8 @@ bug-reports: "https://github.com/thery/PolTac/issues"
 dev-repo: "git://github.com/thery/PolTac"
 license: "LGPL-2.1-only"
 authors: ["Laurent Théry"]
-install: [
-  [make]
-  [make "install"]
-]
+build: [make "-j%{jobs}%"]
+install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.12~"}
@@ -19,6 +17,6 @@ tags: [
   "logpath:PolTac"
 ]
 url {
-  src: "https://github.com/thery/PolTac/archive/v8.12.zip"
-  checksum: "md5=ff07d9cebc93958dd32c63afddb0c1a3"
+  src: "https://github.com/thery/PolTac/archive/v8.12.tar.gz"
+  checksum: "md5=5e627ee171248a92edac49d7d92579fe"
 }
