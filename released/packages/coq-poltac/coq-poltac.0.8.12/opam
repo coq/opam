@@ -17,6 +17,6 @@ tags: [
   "logpath:PolTac"
 ]
 url {
-  src: "https://github.com/thery/PolTac/archive/v8.12.zip"
-  checksum: "md5=ff07d9cebc93958dd32c63afddb0c1a3"
+  src: "https://github.com/thery/PolTac/archive/v8.12.tar.gz"
+  checksum: "md5=5e627ee171248a92edac49d7d92579fe"
 }
