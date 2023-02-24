@@ -4,9 +4,9 @@
 opam-version: "2.0"
 maintainer: "erik.martin-dorel@irit.fr"
 
-homepage: "https://github.com/pPomCo/coq-belgames-csl2023"
-dev-repo: "git+https://github.com/pPomCo/coq-belgames-csl2023.git"
-bug-reports: "https://github.com/pPomCo/coq-belgames-csl2023/issues"
+homepage: "https://github.com/pPomCo/belgames"
+dev-repo: "git+https://github.com/pPomCo/belgames.git"
+bug-reports: "https://github.com/pPomCo/belgames/issues"
 license: "MIT"
 
 synopsis: "BelGames: A Formal Theory of Games of Incomplete Information Based on Belief Functions in the Coq Proof Assistant"
@@ -29,8 +29,9 @@ depends: [
 tags: [
   "keyword:games of incomplete information"
   "keyword:belief functions theory"
-  "keyword:mathcomp/ssreflect"
+  "category:Computer Science/Algorithms/Correctness proofs of algorithms"
   "logpath:BelGames"
+  "date:2022-09-22"
 ]
 authors: [
   "Pierre Pomeret-Coquot"
