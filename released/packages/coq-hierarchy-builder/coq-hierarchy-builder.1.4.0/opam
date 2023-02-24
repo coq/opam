@@ -11,7 +11,7 @@ build: [ [ make "build"]
          [ make "test-suite" ] {with-test}
        ]
 install: [ make "install" ]
-depends: [ "coq-elpi" { (>= "1.14" & < "1.17~") | = "dev" } ]
+depends: [ "coq-elpi" { (>= "1.14" & < "1.18~") | = "dev" } ]
 conflicts: [ "coq-hierarchy-builder-shim" ]
 synopsis: "High level commands to declare and evolve a hierarchy based on packed classes"
 description: """
