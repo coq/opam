@@ -11,14 +11,14 @@ build: [
 ]
 install: ["./remake" "install"]
 depends: [
-  "coq" {>= "8.12" & < "8.17~"}
+  "coq" {>= "8.12"}
   "conf-autoconf" {build & dev}
   ("conf-g++" {build} | "conf-clang" {build})
 ]
 tags: [
   "keyword:floating-point arithmetic"
   "logpath:Flocq"
-  "date:2022-04-28"
+  "date:2023-02-24"
 ]
 authors: [
   "Sylvie Boldo <sylvie.boldo@inria.fr>"
@@ -26,6 +26,6 @@ authors: [
 ]
 synopsis: "A formalization of floating-point arithmetic for the Coq system"
 url {
-  src: "https://flocq.gitlabpages.inria.fr/releases/flocq-4.1.0.tar.gz"
-  checksum: "sha512=677e0de1406b3c7e5504d114a5b18ec07c719bbad79a2cfb750ac309fd5ab09be5493afdb1786b5a188cece59fddcd4167e28bf3be4facbdea8fe3b11cdf1ab1"
+  src: "https://flocq.gitlabpages.inria.fr/releases/flocq-4.1.1.tar.gz"
+  checksum: "sha512=7076b8d5e33b8225e0124b9f66f4e3e1ed3e30804c5bca28e30d5e176c1b8c5c3d777a28c243fada17ab4ed32f580c6d606b11f045d48f7acb15e03db59870c4"
 }
