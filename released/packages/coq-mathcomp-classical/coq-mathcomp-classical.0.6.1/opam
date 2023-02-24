@@ -23,7 +23,7 @@ depends: [
 ]
 
 tags: [
-  "category:Mathematics/Classical Logic"
+  "category:Mathematics/Logic/Classical logic"
   "keyword:classical"
   "keyword:logic"
   "keyword:sets"
