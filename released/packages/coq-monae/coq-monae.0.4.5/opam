@@ -1,0 +1,51 @@
+opam-version: "2.0"
+maintainer: "Reynald Affeldt <reynald.affeldt@aist.go.jp>"
+
+homepage: "https://github.com/affeldt-aist/monae"
+dev-repo: "git+https://github.com/affeldt-aist/monae.git"
+bug-reports: "https://github.com/affeldt-aist/monae/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Monads and equational reasoning in Coq"
+description: """
+This Coq library contains a hierarchy of monads with their laws used
+in several examples of monadic equational reasoning."""
+
+build: [make "-j%{jobs}%" ]
+install: [make "install_full"]
+depends: [
+  "coq" { (>= "8.15" & < "8.18~") | (= "dev") }
+  "coq-mathcomp-ssreflect" { (>= "1.14.0" & < "1.17~") | (= "dev")  }
+  "coq-mathcomp-fingroup" { (>= "1.14.0" & < "1.17~") | (= "dev")  }
+  "coq-mathcomp-algebra" { (>= "1.14.0" & < "1.17~") | (= "dev")  }
+  "coq-mathcomp-solvable" { (>= "1.14.0" & < "1.17~") | (= "dev")  }
+  "coq-mathcomp-field" { (>= "1.14.0" & < "1.17~") | (= "dev")  }
+  "coq-mathcomp-analysis" { (>= "0.5.4") }
+  "coq-infotheo" { >= "0.5.0" & < "0.6~"}
+  "coq-paramcoq" { >= "1.1.3" & < "1.2~" }
+  "coq-hierarchy-builder" { >= "1.3.0" }
+  "coq-equations" { >= "1.3" & < "1.4~" }
+]
+
+tags: [
+  "keyword:monae"
+  "keyword:effects"
+  "keyword:probability"
+  "keyword:nondeterminism"
+  "logpath:monae"
+  "date:2023-02-26"
+]
+authors: [
+  "Reynald Affeldt"
+  "David Nowak"
+  "Takafumi Saikawa"
+  "Jacques Garrigue"
+  "Ayumu Saito"
+  "Celestine Sauvage"
+  "Kazunari Tanaka"
+]
+url {
+  src: "https://github.com/affeldt-aist/monae/archive/0.4.5.tar.gz"
+  checksum: "sha512=0752ba8a91aff1c756fbb3c4995a35de564c52d61bf317ad0bf04fc25340a03b770baa0c21b9f14834711fed2cc3a92252a9b56c943b98727d7c24971dea58db"
+}
+
