@@ -17,11 +17,11 @@ of the ForMath EU FP7 project (2009-2013). It has two parts:
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.13" & < "8.17~") | (= "dev")}
+  "coq" {(>= "8.13" & < "8.18~") | (= "dev")}
   "coq-bignums"
   "coq-paramcoq" {>= "1.1.3"}
   "coq-mathcomp-multinomials" {((>= "1.5.1" & < "1.7~") | = "dev")}
-  "coq-mathcomp-algebra" {((>= "1.13.0" & < "1.16~") | = "dev")}
+  "coq-mathcomp-algebra" {((>= "1.13.0" & < "1.17~") | = "dev")}
   "coq-mathcomp-real-closed" {(>= "1.1.2" & < "1.2~") | (= "dev")}
 ]
 
