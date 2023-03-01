@@ -8,13 +8,12 @@ doc: "https://prosa.mpi-sws.org/branches/"
 license: "BSD-2-Clause"
 
 build: [
-  [make "-j%{jobs}%"]
+  [make "-j%{jobs}%" "refinements"]
 ]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.13"}
-  "coq-mathcomp-ssreflect" {>= "1.12"}
-  "coq-mathcomp-zify" {>= "1.2.0"}
+  "coq-prosa" { = version }
+  "coq-coqeal" {>= "1.1.0"}
 ]
 
 tags: [
@@ -22,7 +21,7 @@ tags: [
   "keyword:real-time"
   "keyword:schedulability analysis"
   "keyword:response-time analysis"
-  "logpath:prosa"
+  "logpath:prosa.refinements"
 ]
 authors: [
   "Felipe Cerqueira"
@@ -33,6 +32,7 @@ authors: [
   "Sophie Quinton"
   "Marco Maida"
   "Kimaya Bedarkar"
+  "Pierre Roux"
 ]
 synopsis: "A Foundation for Formally Proven Schedulability Analysis"
 description: """Prosa is a repository of definitions and proofs for
