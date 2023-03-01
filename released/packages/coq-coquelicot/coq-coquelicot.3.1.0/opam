@@ -15,12 +15,24 @@ build: [
 install: ["./remake" "install"]
 depends: [
   "coq" {>= "8.8" & < "8.14"}
-  "coq-mathcomp-ssreflect" {>= "1.6"}
+  "coq-mathcomp-ssreflect" {>= "1.6" & < "1.16~"}
   "conf-autoconf" {build & dev}
   ("conf-g++" {build} | "conf-clang" {build})
 ]
-tags: [ "keyword:real analysis" "keyword:topology" "keyword:filters" "keyword:metric spaces" "category:Mathematics/Real Calculus and Topology" "logpath:Coquelicot" "date:2020-02-24" ]
-authors: [ "Sylvie Boldo <sylvie.boldo@inria.fr>" "Catherine Lelay <catherine.lelay@inria.fr>" "Guillaume Melquiond <guillaume.melquiond@inria.fr>" ]
+tags: [
+  "keyword:real analysis"
+  "keyword:topology"
+  "keyword:filters"
+  "keyword:metric spaces"
+  "category:Mathematics/Real Calculus and Topology"
+  "logpath:Coquelicot"
+  "date:2020-02-24"
+]
+authors: [
+  "Sylvie Boldo <sylvie.boldo@inria.fr>"
+  "Catherine Lelay <catherine.lelay@inria.fr>"
+  "Guillaume Melquiond <guillaume.melquiond@inria.fr>"
+]
 synopsis: "A Coq formalization of real analysis compatible with the standard library"
 url {
   src: "https://coquelicot.gitlabpages.inria.fr/releases/coquelicot-3.1.0.tar.gz"

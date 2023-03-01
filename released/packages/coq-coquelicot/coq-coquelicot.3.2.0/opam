@@ -12,7 +12,7 @@ build: [
 install: ["./remake" "install"]
 depends: [
   "coq" {>= "8.8"}
-  "coq-mathcomp-ssreflect" {>= "1.6"}
+  "coq-mathcomp-ssreflect" {>= "1.6" & < "1.16~"}
   "conf-autoconf" {build & dev}
   ("conf-g++" {build} | "conf-clang" {build})
 ]
