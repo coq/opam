@@ -17,6 +17,7 @@ description: """
 homepage: "https://coq-tactician.github.io"
 dev-repo: "git+https://github.com/coq-tactician/coq-tactician-stdlib"
 bug-reports: "https://github.com/coq-tactician/coq-tactician-stdlib/issues"
+license: "LGPL-2.1-only"
 maintainer: "Lasse Blaauwbroek <lasse@blaauwbroek.eu>"
 authors: "Lasse Blaauwbroek <lasse@blaauwbroek.eu"
 messages: [
