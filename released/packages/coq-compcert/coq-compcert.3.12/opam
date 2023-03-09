@@ -11,7 +11,7 @@ tags: [
   "keyword:C"
   "keyword:compiler"
   "logpath:compcert"
-  "date:2022-11-21"
+  "date:2022-11-25"
 ]
 homepage: "http://compcert.inria.fr/"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
