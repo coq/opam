@@ -1,0 +1,35 @@
+opam-version: "2.0"
+maintainer: "minki.cho@sf.snu.ac.kr"
+synopsis: "Coq library implementing parameterized coinduction"
+homepage: "https://github.com/snu-sf/paco/"
+dev-repo: "git+https://github.com/snu-sf/paco.git"
+bug-reports: "https://github.com/snu-sf/paco/issues/"
+authors: [
+  "Chung-Kil Hur <gil.hur@sf.snu.ac.kr>"
+  "Georg Neis <neis@mpi-sws.org>"
+  "Derek Dreyer <dreyer@mpi-sws.org>"
+  "Viktor Vafeiadis <viktor@mpi-sws.org>"
+  "Minki Cho <minki.cho@sf.snu.ac.kr>"
+]
+license: "BSD-3-Clause"
+build: [make "-C" "src" "all" "-j%{jobs}%"]
+install: [make "-C" "src" "-f" "Makefile.coq" "install"]
+depends: [
+  "coq" {>= "8.13" & < "8.18~"}
+]
+tags: [
+  "date:2023-03-13"
+
+  "category:Computer Science/Programming Languages/Formal Definitions and Theory"
+  "category:Mathematics/Logic"
+
+  "keyword:co-induction"
+  "keyword:simulation"
+  "keyword:parameterized greatest fixed point"
+
+  "logpath:Paco"
+]
+url {
+  http: "https://github.com/snu-sf/paco/archive/v4.2.0.tar.gz"
+  checksum: "b714319091ae46212dd5a70446865d72"
+}
