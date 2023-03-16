@@ -16,7 +16,7 @@ build: [
 install: [make "install"]
 depends: [
   "coq" {>= "8.14" & < "8.17~"}
-  "coq-bignums"
+  "coq-bignums" {< "9~"}
   "coq-flocq" {>= "3.3.0"}
   "coq-coquelicot" {>= "3.0"}
   "coq-interval" {>= "4.0.0" & < "5~"}
