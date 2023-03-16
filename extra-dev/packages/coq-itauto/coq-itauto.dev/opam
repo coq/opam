@@ -5,24 +5,38 @@ dev-repo: "git+https://gitlab.inria.fr/fbesson/itauto.git"
 authors: ["Frédéric Besson"]
 bug-reports: ["frederic.besson@inria.fr" "https://gitlab.inria.fr/fbesson/itauto/-/issues"]
 license: "MIT"
-synopsis: "'itauto' is a reflexive SAT solver parameterised by a leaf tactic and Nelson-Oppen support"
-build: [make "-j%{jobs}%"]
+synopsis: "Reflexive SAT solver with Nelson-Oppen support, parameterised by a leaf tactic inside Coq"
+description: """
+itauto is a reflexive intuitionistic SAT solver parameterised by a theory module.
+When run inside Coq, the theory module wraps an arbitrary Coq tactic, e.g., the lia
+solver for linear arithmetic or the congruence solver for uninterpreted function symbols
+and constructors. Using a black-box Nelson-Oppen scheme for combination of theories,
+itauto also provides an SMT-like tactic for propositional reasoning modulo the solvers for
+both arithmetic and function symbols.
+"""
+
+build: [
+  [make "-j%{jobs}%"]
+]
 install: [make "install"]
 depends: [
   "ocaml" {>= "4.9~"}
   "coq" {= "dev"}
-  "ocamlbuild" {build}
+  "dune"
 ]
 depopts: [ "ocamlformat" {build} ]
 
 tags: [
- "keyword:integers"
- "keyword:SAT"
- "keyword:SMT"
- "keyword:Nelson-Oppen"
- "keyword:automation"
- "logpath:Cdcl"
+  "category:Miscellaneous/Coq Extensions"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "keyword:integers"
+  "keyword:SAT"
+  "keyword:SMT"
+  "keyword:Nelson-Oppen"
+  "keyword:automation"
+  "logpath:Cdcl"
 ]
+
 url {
   src: "git+https://gitlab.inria.fr/fbesson/itauto.git#master"
 }
