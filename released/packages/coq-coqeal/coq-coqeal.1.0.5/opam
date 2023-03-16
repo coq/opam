@@ -17,7 +17,7 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
   "coq" {>= "8.10" & < "8.14~"}
-  "coq-bignums" 
+  "coq-bignums" {< "9~"}
   "coq-paramcoq" {(>= "1.1.1") | (= "dev")}
   "coq-mathcomp-multinomials" {((>= "1.5.1" & < "1.7~") | = "dev")}
   "coq-mathcomp-algebra" {((>= "1.11.0" & < "1.13~") | = "dev")}
