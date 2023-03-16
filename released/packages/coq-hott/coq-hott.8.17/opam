@@ -1,0 +1,28 @@
+opam-version: "2.0"
+maintainer: [ "Jason Gross <jgross@mit.edu>" "Ali Caglayan <alizter@gmail.com>" ]
+homepage: "http://homotopytypetheory.org/"
+bug-reports: "https://github.com/HoTT/HoTT/issues"
+license: "BSD-2-Clause"
+build: [ "dune" "build" "-p" name "-j" jobs "@install" ]
+install: [ "dune" "install" "-p" name ]
+depends: [
+  "ocaml"
+  "ocamlfind" {build}
+  "dune" {>= "3.5"}
+  "coq" {>= "8.16.0" & < "8.18~"}
+]
+authors: ["The HoTT Library Development Team"]
+dev-repo: "git+https://github.com/HoTT/HoTT.git"
+synopsis: "The Homotopy Type Theory library"
+description: """
+To use the HoTT library, the following flags must be passed to coqc:
+  -noinit -indices-matter
+To use the HoTT library in a project, add the following to _CoqProject:
+  -arg -noinit
+  -arg -indices-matter
+"""
+tags: [ "logpath:HoTT" ]
+url {
+  src: "https://github.com/HoTT/HoTT/archive/refs/tags/V8.17.tar.gz"
+  checksum: "sha512=0d6f713a987a8fd3006ea0bdd7a32dc0b827272a36758521736a6373aed2920ab24acd43e35ca7afc49d2ccd09a1e6d7d37ee07393c479d6e7cd39c15308ea8a"
+}
