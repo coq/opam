@@ -19,7 +19,7 @@ install: [make "install"]
 depends: [
   "ocaml"
   "coq" {>= "8.12" & < "8.16~"}
-  "coq-bignums"
+  "coq-bignums" {< "9~"}
   "coq-flocq" {>= "3.3.0"}
   "coq-interval" {>= "4.0.0" & < "5~"}
   "coq-mathcomp-field" {>= "1.12" & < "1.15~"}
