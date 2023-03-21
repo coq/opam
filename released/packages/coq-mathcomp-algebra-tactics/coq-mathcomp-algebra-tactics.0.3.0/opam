@@ -1,5 +1,5 @@
 opam-version: "2.0"
-maintainer: "sakaguchi@coins.tsukuba.ac.jp"
+maintainer: "kazuhiko.sakaguchi@inria.fr"
 
 homepage: "https://github.com/math-comp/algebra-tactics"
 dev-repo: "git+https://github.com/math-comp/algebra-tactics.git"

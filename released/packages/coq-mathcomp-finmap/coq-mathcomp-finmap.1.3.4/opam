@@ -14,7 +14,7 @@ depends: [
   "coq-mathcomp-bigenough" { (>= "1.0.0" & < "1.1~") }
 ]
 tags: [ "keyword:finmap" "keyword:finset" "keyword:multiset" "keyword:order" "date:2019-06-18" "logpath:mathcomp.finmap"]
-authors: [ "Cyril Cohen <cyril.cohen@inria.fr>" "Kazuhiko Sakaguchi <sakaguchi@coins.tsukuba.ac.jp>" ]
+authors: [ "Cyril Cohen <cyril.cohen@inria.fr>" "Kazuhiko Sakaguchi <kazuhiko.sakaguchi@inria.fr>" ]
 synopsis: "Finite sets, finite maps, finitely supported functions, orders"
 description: """
 This library is an extension of mathematical component in order to
