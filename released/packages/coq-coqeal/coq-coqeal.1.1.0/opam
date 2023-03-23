@@ -20,8 +20,8 @@ depends: [
   "coq" {>= "8.10" & < "8.16~"}
   "coq-bignums" {< "9~"}
   "coq-paramcoq" {>= "1.1.3"}
-  "coq-mathcomp-multinomials" {((>= "1.5.1" & < "1.7~") | = "dev")}
-  "coq-mathcomp-algebra" {((>= "1.12.0" & < "1.15~") | = "dev")}
+  "coq-mathcomp-multinomials" {>= "1.5.1" & < "1.6~"}
+  "coq-mathcomp-algebra" {>= "1.12.0" & < "1.15~"}
   "coq-mathcomp-real-closed" {(>= "1.1.2" & < "1.2~") | (= "dev")}
 ]
 
