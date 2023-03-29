@@ -19,7 +19,7 @@ build: [
 install: [make "install" "BINDIR=%{bin}%"]
 depends: [
   "ocaml" {>= "4.09.0"}
-  "coq" {>= "8.16" & < "8.17~"}
+  "coq" {>= "8.16" & < "8.18~"}
   "ocamlgraph" 
 ]
 
