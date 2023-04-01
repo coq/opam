@@ -1,0 +1,25 @@
+opam-version: "2.0"
+authors: [
+  "Massachusetts Institute of Technology"
+  "Kevix"
+  "SiFive"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/mit-plv/kami"
+bug-reports: "https://github.com/mit-plv/kami/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "coq"]
+]
+install: [make "EXTERNAL_DEPENDENCIES=1" "install"]
+depends: [
+  "coq" {>= "8.15~"}
+  "coq-riscv" {= "0.0.1"}
+]
+dev-repo: "git+https://github.com/mit-plv/kami.git"
+synopsis: "A work-in-progress language and compiler for verified low-level programming"
+tags: ["logpath:kami"]
+url {
+  src: "https://github.com/mit-plv/kami/archive/refs/tags/v0.0.1.tar.gz"
+  checksum: "sha512=160f02f07733173d6237a7b5efebd51d2c98d34fbc3b668228a47296738b80d8987f98443d0581b3ca06bdeb6541e0f09a3316559ae6d5545aa3903767801b6d"
+}
