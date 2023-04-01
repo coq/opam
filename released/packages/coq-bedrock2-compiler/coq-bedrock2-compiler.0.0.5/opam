@@ -16,8 +16,8 @@ install: [make "EXTERNAL_DEPENDENCIES=1" "install_compiler"]
 depends: [
   "conf-findutils" {build}
   "coq" {>= "8.15~"}
-  "coq-bedrock2" {= "0.0.4"}
-  "coq-riscv" {= "0.0.3"}
+  "coq-bedrock2" {= "0.0.5"}
+  "coq-riscv" {= "0.0.4"}
   "zarith" {>= "1.11"}
 ]
 dev-repo: "git+https://github.com/mit-plv/bedrock2.git"
@@ -33,6 +33,6 @@ No code is shared between bedrock and bedrock2.
 """
 tags: ["logpath:bedrock2"]
 url {
-  src: "https://github.com/mit-plv/bedrock2/archive/refs/tags/v0.0.4.tar.gz"
-  checksum: "sha512=7abf5e6553d4844f3563c99b3ff4a0a3f96a901473d824623029c82efe4d22c3bdf0bacd710e61619cf3fa2cf9f88db68ca650ba7a251e782c3e92357ba20d9f"
+  src: "https://github.com/mit-plv/bedrock2/archive/refs/tags/v0.0.5.tar.gz"
+  checksum: "sha512=a4101b4a526dd691fcce8e5d86c16001736c465d4bccbf2e913b4f17b4ee24fe4d51731955480d4b69e04823dda860388994eff2ccc087d046ef15e4ef429b72"
 }

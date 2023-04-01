@@ -12,7 +12,7 @@ build: [
 install: [make "install"]
 depends: [
   "conf-findutils" {build}
-  "coq" {>= "8.11~"}
+  "coq" {>= "8.15~"}
 ]
 conflict-class: [
   "coq-coqutil"
@@ -35,6 +35,6 @@ Each feature is intended to be as minimal and as independent of the other featur
 """
 tags: ["logpath:coqutil"]
 url {
-  src: "https://github.com/mit-plv/coqutil/archive/refs/tags/v0.0.2.tar.gz"
-  checksum: "sha512=f3d37d57fb4301cbf6ab0bdd65c78bf5906607775b483e4f1b29e02e2a09980ef97ed7a9f19629d41bec45e281d7212cbb150e2602a26d30f408dd012ba51230"
+  src: "https://github.com/mit-plv/coqutil/archive/refs/tags/v0.0.3.tar.gz"
+  checksum: "sha512=3e24a56daa7f10d4dd507ada0be1581c238156bcbbfa642ab4f1b535106c501bafa271320b09d6b3de888a11f97381fda8394d466c9dd5906db3cf5b65509309"
 }
