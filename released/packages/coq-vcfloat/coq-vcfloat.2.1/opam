@@ -31,7 +31,7 @@ depends: [
 ]
 url {
   src: "https://github.com/VeriNum/vcfloat/archive/refs/tags/2.1.tar.gz"
-  checksum: "sha256=d9242c62a403b34282393708be8fcd23fb7387aae24bbe05de15463bb1ea2edd"
+  checksum: "sha256=d243d58667a55d76cd1e3727fa6701dbf0d78681a7b4d0301e83060fac056437"
 }
 tags: [
   "date:2023-04-13"
