@@ -1,5 +1,4 @@
 opam-version: "2.0"
-version: "2.1"
 synopsis: "VCFloat: Floating Point Round-off Error Analysis"
 description: "VCFloat is a tool for Coq proofs about floating-point round-off error."
 authors: [
