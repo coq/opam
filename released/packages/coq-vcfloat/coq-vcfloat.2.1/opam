@@ -16,11 +16,10 @@ bug-reports: "https://github.com/VeriNum/vcfloat/issues"
 license: "LGPL-3.0-or-later"
 
 build: [
-  [ make "-C" "vcfloat" "depend" ]
   [ make "-C" "vcfloat" "-j%{jobs}%" "vcfloat2"]
 ]
 install: [
-  [make "-C" "vcfloat" "-j%{jobs}%" "install" "INSTALLDIR=%{lib}%/coq/user-contrib/vcfloat"]
+  [make "-C" "vcfloat" "-j%{jobs}%" "install"]
 ]
 run-test: [
   [make "-C" "vcfloat" "-j%{jobs}%" "tests"]
