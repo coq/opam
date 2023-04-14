@@ -29,7 +29,7 @@ depends: [
   "coq-vst" {>= "2.11.1"}
 ]
 url {
-  src: "git+https://github.com/PrincetonUniversity/VST/archive/refs/tags/lib-2.12.tar.gz"
+  src: "https://github.com/PrincetonUniversity/VST/archive/refs/tags/lib-2.12.tar.gz"
   checksum: "sha256=90a021b7f8175d264ddc1633d267a2543514549de574f5e09aa5e0524a26864e"
 }
 tags: [
