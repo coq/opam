@@ -19,7 +19,7 @@ build: [
   [ make "-C" "vcfloat" "-j%{jobs}%" "vcfloat2"]
 ]
 install: [
-  [make "-C" "vcfloat" "-j%{jobs}%" "install"]
+  [make "-C" "vcfloat" "-j%{jobs}%" "install" "INSTALLDIR=%{lib}%/coq/user-contrib/vcfloat"]
 ]
 run-test: [
   [make "-C" "vcfloat" "-j%{jobs}%" "tests"]
