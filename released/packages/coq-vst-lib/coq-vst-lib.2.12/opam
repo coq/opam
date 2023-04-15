@@ -1,0 +1,45 @@
+opam-version: "2.0"
+synopsis: "VSTlib: VST-verified C library for VST-verified clients"
+description: "These program modules, in the form of Verified Software Units,
+may be linked with client-module code  (at the .c/.o level) and proofs (at the .v level)."
+authors: [
+  "Andrew W. Appel"
+  "William Mansky"
+]
+maintainer: "Andrew W. Appel <appel@princeton.edu>"
+homepage: "https://github.com/PrincetonUniversity/VST/tree/lib-2.12/lib#readme"
+dev-repo: "git+https://github.com/PrincetonUniversity/VST"
+bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
+license: "BSD-2-Clause"
+
+build: [
+  [ make "-C" "lib" "-j%{jobs}%" "proof-only"]
+]
+install: [
+  [ make "-C" "lib" "install" "INSTALLDIR=%{lib}%/coq/user-contrib/VSTlib"]
+]
+run-test: [
+  [ make "-C" "lib" "-j%{jobs}%" "test-only"]
+]
+depends: [
+  "coq" {>= "8.16" & < "8.18~"}
+  "coq-compcert" {>= "3.11"}
+  "coq-flocq" {>= "4.1.0" & < "5.0"}
+  "coq-vcfloat" {>= "2.1"}
+  "coq-vst" {>= "2.11.1"}
+]
+url {
+  src: "https://github.com/PrincetonUniversity/VST/archive/refs/tags/lib-2.12.tar.gz"
+  checksum: "sha256=90a021b7f8175d264ddc1633d267a2543514549de574f5e09aa5e0524a26864e"
+}
+tags: [
+  "date:2023-04-14"
+  "keyword:VST"
+  "keyword:library"
+  "keyword:malloc"
+  "keyword:threads"
+  "keyword:floating-point arithmetic"
+  "category:Miscellaneous/Coq Extensions"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "logpath:VSTlib"
+  ]
