@@ -96,6 +96,7 @@ opam-build:5.0.0:
   extends: .opam-build
   variables:
     COMPILER: "5.0.0"
+  tags: [ saas-linux-medium-amd64 ]
   except:
     - web
 
