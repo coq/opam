@@ -1,0 +1,41 @@
+opam-version: "2.0"
+maintainer: "matthieu.sozeau@inria.fr"
+homepage: "https://metacoq.github.io/metacoq"
+dev-repo: "git+https://github.com/MetaCoq/metacoq.git#coq-8.17"
+bug-reports: "https://github.com/MetaCoq/metacoq/issues"
+authors: ["Abhishek Anand <aa755@cs.cornell.edu>"
+          "Danil Annenkov <danil.v.annenkov@gmail.com>"
+          "Simon Boulier <simon.boulier@inria.fr>"
+          "Cyril Cohen <cyril.cohen@inria.fr>"
+          "Yannick Forster <forster@ps.uni-saarland.de>"
+          "Jason Gross <jgross@mit.edu>"
+          "Fabian Kunze <fkunze@fakusb.de>"
+          "Meven Lennon-Bertrand <Meven.Bertrand@univ-nantes.fr>"
+          "Kenji Maillard <kenji.maillard@inria.fr>"
+          "Gregory Malecha <gmalecha@gmail.com>"
+          "Jakob Botsch Nielsen <Jakob.botsch.nielsen@gmail.com>"
+          "Matthieu Sozeau <matthieu.sozeau@inria.fr>"
+          "Nicolas Tabareau <nicolas.tabareau@inria.fr>"
+          "Théo Winterhalter <theo.winterhalter@inria.fr>"
+]
+license: "MIT"
+build: [
+  ["bash" "./configure.sh"]
+  [make "-j" "%{jobs}%" "utils"]
+]
+install: [
+  [make "-C" "utils" "install"]
+]
+depends: [
+  "stdlib-shims"
+  "coq" { >= "8.17" & < "8.18~" }
+  "coq-equations" { >= "1.3" }
+]
+synopsis: "The utility library of Template Coq and PCUIC"
+description: """
+MetaCoq is a meta-programming framework for Coq.
+"""
+url {
+  src: "https://github.com/MetaCoq/metacoq/archive/refs/tags/v1.2-8.17.tar.gz"
+  checksum: "sha512=a5ce2f5d94120a00703331a3cfdb7d51653fb44adeba89fa84b5f76e711ee9f582a22551f81fd144dc974e3f05e58d85cd716f8fcf69ec89923bc64774d82668"
+}
