@@ -1,29 +1,33 @@
 opam-version: "2.0"
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://metacoq.github.io/metacoq"
-dev-repo: "git+https://github.com/MetaCoq/metacoq.git#master"
+dev-repo: "git+https://github.com/MetaCoq/metacoq.git#main"
 bug-reports: "https://github.com/MetaCoq/metacoq/issues"
 authors: ["Abhishek Anand <aa755@cs.cornell.edu>"
+          "Danil Annenkov <danil.v.annenkov@gmail.com>"
           "Simon Boulier <simon.boulier@inria.fr>"
           "Cyril Cohen <cyril.cohen@inria.fr>"
           "Yannick Forster <forster@ps.uni-saarland.de>"
+          "Jason Gross <jgross@mit.edu>"
           "Fabian Kunze <fkunze@fakusb.de>"
+          "Meven Lennon-Bertrand <Meven.Bertrand@univ-nantes.fr>"
+          "Kenji Maillard <kenji.maillard@inria.fr>"
           "Gregory Malecha <gmalecha@gmail.com>"
+          "Jakob Botsch Nielsen <Jakob.botsch.nielsen@gmail.com>"
           "Matthieu Sozeau <matthieu.sozeau@inria.fr>"
           "Nicolas Tabareau <nicolas.tabareau@inria.fr>"
           "Théo Winterhalter <theo.winterhalter@inria.fr>"
 ]
 license: "MIT"
 build: [
-  ["sh" "./configure.sh"]
+  ["bash" "./configure.sh"]
   [make "-j" "%{jobs}%" "-C" "pcuic"]
 ]
 install: [
   [make "-C" "pcuic" "install"]
 ]
 depends: [
-  "coq-equations" {= "dev" }
-  "coq-metacoq-template" {= version}
+  "coq-metacoq-common" {= version}
 ]
 synopsis: "A type system equivalent to Coq's and its metatheory"
 description: """
@@ -33,7 +37,6 @@ The PCUIC module provides a cleaned-up specification of Coq's typing algorithm a
 with a certified typechecker for it. This module includes the standard metatheory of
 PCUIC: Weakening, Substitution, Confluence and Subject Reduction are proven here.
 """
-
 url {
-  src: "git+https://github.com/metacoq/metacoq.git#master"
+  src: "git+https:///github.com/metacoq/metacoq.git#main"
 }

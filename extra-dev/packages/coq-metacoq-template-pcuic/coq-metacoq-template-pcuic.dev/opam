@@ -21,21 +21,17 @@ authors: ["Abhishek Anand <aa755@cs.cornell.edu>"
 license: "MIT"
 build: [
   ["bash" "./configure.sh"]
-  [make "-j" "%{jobs}%" "-C" "translations"]
+  [make "-j" "%{jobs}%" "-C" "template-pcuic"]
 ]
 install: [
-  [make "-C" "translations" "install"]
+  [make "-C" "template-pcuic" "install"]
 ]
 depends: [
   "coq-metacoq-template" {= version}
+  "coq-metacoq-pcuic" {= version}
 ]
-synopsis: "Translations built on top of MetaCoq"
+synopsis: "Translations between Template Coq and PCUIC and proofs of correctness"
 description: """
-MetaCoq is a meta-programming framework for Coq.
-
-The Translations modules provides implementation of standard translations
-from type theory to type theory, e.g. parametricity and the `cross-bool`
-translation that invalidates functional extensionality.
 """
 url {
   src: "git+https:///github.com/metacoq/metacoq.git#main"
