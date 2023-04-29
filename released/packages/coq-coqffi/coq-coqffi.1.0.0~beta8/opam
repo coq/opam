@@ -1,5 +1,4 @@
 opam-version: "2.0"
-version: "dev"
 maintainer: "lthms@soap.coffee"
 
 homepage: "https://github.com/coq-community/coqffi"
@@ -38,5 +37,6 @@ authors: [
   "Yannick Zakowski"
 ]
 url {
-  src: "git+https://github.com/coq-community/coqffi.git#main"
+  src: "https://github.com/coq-community/coqffi/archive/1.0.0-beta8.tar.gz"
+  checksum: "sha512=1065eb8b3eea7c77c5f4961ead8277de9b3fd6ec670757be30cefdd9744b98886e3e55b6aeff6edd6449fbfdd4b4337a193d2a4544c9a56f4ba37e863548e2b6"
 }
