@@ -1,0 +1,32 @@
+opam-version: "2.0"
+maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+
+homepage: "https://math-comp.github.io/"
+bug-reports: "https://github.com/math-comp/math-comp/issues"
+dev-repo: "git+https://github.com/math-comp/math-comp.git"
+license: "CECILL-B"
+
+build: [ make "-C" "mathcomp/ssreflect" "-j" "%{jobs}%" ]
+install: [ make "-C" "mathcomp/ssreflect" "install" ]
+depends: [
+  "coq" { ((>= "8.16" & < "8.18~") | (= "dev"))}
+  "coq-hierarchy-builder" { >= "1.4.0"}
+]
+
+tags: [ "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" "logpath:mathcomp.ssreflect" ]
+authors: [ "The Mathematical Components team" ]
+
+synopsis: "Small Scale Reflection"
+description: """
+This library includes the small scale reflection proof language
+extension and the minimal set of libraries to take advantage of it.
+This includes libraries on lists (seq), boolean and boolean
+predicates, natural numbers and types with decidable equality,
+finite types, finite sets, finite functions, finite graphs, basic arithmetics
+and prime numbers, big operators
+"""
+
+url {
+src: "https://github.com/math-comp/math-comp/archive/mathcomp-2.0.0.tar.gz"
+checksum: "sha256=ea98879e2b3be3321378ed43b8b0cd9b8b469315955784228d8851e4f59a927f"
+}
