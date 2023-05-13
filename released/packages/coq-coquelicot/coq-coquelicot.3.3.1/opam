@@ -12,7 +12,7 @@ build: [
 install: ["./remake" "install"]
 depends: [
   "coq" {>= "8.12"}
-  "coq-mathcomp-ssreflect" {>= "1.6" & < "1.17~"}
+  "coq-mathcomp-ssreflect" {>= "1.6"}
   "conf-autoconf" {build & dev}
   ("conf-g++" {build} | "conf-clang" {build})
 ]
@@ -23,7 +23,7 @@ tags: [
   "keyword:metric spaces"
   "category:Mathematics/Real Calculus and Topology"
   "logpath:Coquelicot"
-  "date:2023-01-25"
+  "date:2023-05-13"
 ]
 authors: [
   "Sylvie Boldo <sylvie.boldo@inria.fr>"
@@ -32,6 +32,6 @@ authors: [
 ]
 synopsis: "A Coq formalization of real analysis compatible with the standard library"
 url {
-  src: "https://coquelicot.gitlabpages.inria.fr/releases/coquelicot-3.3.0.tar.gz"
-  checksum: "sha512=d0f70f4b6618a7a53fe478618eaf27797d9e00b994cb290bdfc8193e5ff0d6514d0f41f70756f8884b6619fbc24224e2334517fbdfdb70c9f698a912c69f032d"
+  src: "https://coquelicot.gitlabpages.inria.fr/releases/coquelicot-3.3.1.tar.gz"
+  checksum: "sha512=d1f3b8cf07b6dde411c310e65fe144ece064b9c5d13ef517687e18888d8bfd9f1a0757c12ad175e621d357ca783793b296f4278ea70579e2f330d339bcbec52c"
 }
