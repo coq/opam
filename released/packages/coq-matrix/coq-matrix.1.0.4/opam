@@ -39,7 +39,7 @@ install: [
 
   url {
   src: "https://github.com/zhengpushi/CoqMatrix/archive/refs/tags/1.0.4.tar.gz"
-  checksum: "sha256=4b30fa6289ceafa17361f9c344bfdc354e65cd236e643e0003e13b1c7237d0ef"
+  checksum: "sha256=694648b083fec06d43f0da570a26cffd6e81970f99af249f14faf7789166b6be"
 }
 
 tags: [
