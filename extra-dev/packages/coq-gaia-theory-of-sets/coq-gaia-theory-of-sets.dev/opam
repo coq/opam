@@ -14,8 +14,8 @@ Elements of Mathematics in Coq using the Mathematical Components library."""
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
-  "coq" {>= "8.10"}
-  "coq-mathcomp-ssreflect" {>= "1.12.0"}
+  "coq" {>= "8.16"}
+  "coq-mathcomp-ssreflect" {>= "2.0.0"}
 ]
 conflicts: [
   "coq-gaia"
