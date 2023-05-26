@@ -16,7 +16,7 @@ install: [
   [make "install"]
 ]
 depends: [
-  "coq" {>= "8.13" & < "8.14~"}
+  "coq" {>= "8.14" & < "8.15~"}
   "coq-metacoq-pcuic"
   "coq-elpi"
   "coq-smtcoq"
@@ -37,6 +37,6 @@ This plugin is an extension of SMTCoq, a plugin to safely call external SMT solv
 The translation is implemented through a combination of modular, small transformations that independently eliminate specific aspects of Coq logic towards first-order logic. These small transformations are safe, either generating proof terms on the fly (certifying transformations) or being proved once and for all in Coq (certified transformations).
 """
 url {
-  src: "https://github.com/smtcoq/sniper/archive/refs/tags/Sniper-1.0+8.13.tar.gz"
-  checksum: "sha512=94632b899b2736fe61b96e812dc444639bb3b5d275a294eced64f0f880c7b4158c018f8ac98c0498ffbe8c78fa6a7997c381c9dd93a9d992738af1d723638eb4"
+  src: "https://github.com/smtcoq/sniper/archive/refs/tags/Sniper-1.1+coq-8.14.tar.gz"
+  checksum: "sha512=9d475dbf535863d171bddf92949f34940a32d61e64921537edae4865dcc96e4a224e8f642b60ab2b257f4559434b39f2d5a4ca7280e51bcba3386779075687d4"
 }
