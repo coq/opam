@@ -1,5 +1,5 @@
 opam-version: "2.0"
-maintainer: "Chantal.Keller@lri.fr"
+maintainer: "ckeller@lmf.cnrs.fr"
 homepage: "https://smtcoq.github.io/"
 dev-repo: "git+https://github.com/smtcoq/smtcoq.git"
 bug-reports: "https://github.com/smtcoq/smtcoq/issues"
