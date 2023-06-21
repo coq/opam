@@ -28,7 +28,7 @@ tags: [
   "keyword:logic"
   "keyword:sets"
   "logpath:mathcomp.classical"
-  "date:2023-04-21"
+  "date:2023-06-21"
 ]
 authors: [
   "Reynald Affeldt"
@@ -44,6 +44,6 @@ authors: [
   "Laurent Théry"
 ]
 url {
-  src: "https://github.com/math-comp/analysis/archive/0.6.2.tar.gz"
-  checksum: "sha512=deeac1445049d360f8e04fe6729f7f8f3c6840ef6bcf958346b1c3b5d2349bb41674c114fe1787c77b08f22aa3aa5a075cc78eb7cbb7edb7d2aeb2fef3f9fd48"
+  src: "https://github.com/math-comp/analysis/archive/0.6.3.tar.gz"
+  checksum: "sha512=3a7f4c3c21984a4f051620032a4f1d307b1482525237d5b313ea7a2b6027ddbcb6a0c69de91b1ed1bc3e3fd8029d27ecc1e76ca12a39a4540a8e7586bfc72703"
 }
