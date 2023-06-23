@@ -1,0 +1,41 @@
+opam-version: "2.0"
+maintainer: "ckeller@lmf.cnrs.fr"
+homepage: "https://github.com/smtcoq/sniper"
+dev-repo: "git+https://github.com/smtcoq/sniper.git"
+bug-reports: "https://github.com/smtcoq/sniper/issues"
+authors: ["Valentin Blot <Valentin.Blot@inria.fr>"
+          "Louise Dubois de Prisque <Louise.Dubois-de-Prisque@inria.fr>"
+          "Chantal Keller <ckeller@lmf.cnrs.fr"
+          "Pierre Vial <Pierre.Vial@inria.fr>"
+]
+license: "CECILL-C"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" {>= "8.16" & < "8.17~"}
+  "coq-metacoq-pcuic" {= "1.1.1+8.16"}
+  "coq-elpi"
+  "coq-smtcoq" {= version}
+]
+tags: [
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "category:Miscellaneous/Coq Extensions"
+  "keyword: SMT"
+  "keyword: automation"
+  "logpath:Sniper"
+]
+synopsis: "A Coq plugin for general proof automation"
+description: """
+Sniper is a Coq plugin that provides a new Coq tactic, snipe, for general proof automation.
+
+This plugin is an extension of SMTCoq, a plugin to safely call external SMT solvers from Coq. Sniper extends SMTCoq by translating (a subset) of Coq goals into first-order logic before calling SMTCoq.
+
+The translation is implemented through a combination of modular, small transformations that independently eliminate specific aspects of Coq logic towards first-order logic. These small transformations are safe, either generating proof terms on the fly (certifying transformations) or being proved once and for all in Coq (certified transformations).
+"""
+url {
+  src: "git+https://github.com/smtcoq/sniper.git#coq-8.16"
+}
