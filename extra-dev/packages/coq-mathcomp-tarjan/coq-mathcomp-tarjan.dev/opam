@@ -1,24 +1,25 @@
 opam-version: "2.0"
-maintainer: "palmskog@gmail.com"
+maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
 
-homepage: "https://github.com/math-comp/tarjan"
-dev-repo: "git+https://github.com/math-comp/tarjan.git"
-bug-reports: "https://github.com/math-comp/tarjan/issues"
+homepage: "https://github.com/coq-community/tarjan"
+dev-repo: "git+https://github.com/coq-community/tarjan.git"
+bug-reports: "https://github.com/coq-community/tarjan/issues"
 license: "CECILL-B"
 
 synopsis: "Strongly connected component algorithms by Tarjan and Kosaraju using Coq and MathComp"
 description: """
-This development contains formalizations and correctness proofs using Coq and the Mathematical
-Components library of algorithms originally due to Kosaraju and Tarjan for finding strongly
+This development contains formalizations and correctness proofs, using Coq and the Mathematical
+Components library, of algorithms originally due to Kosaraju and Tarjan for finding strongly
 connected components in finite graphs. It also contains a verified implementation of topological
 sorting with extended guarantees for acyclic graphs."""
 
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.10"}
-  "coq-mathcomp-ssreflect" {>= "1.12.0"}
+  "coq" {>= "8.16"}
+  "coq-mathcomp-ssreflect" {>= "2.0"}
   "coq-mathcomp-fingroup" 
+  "coq-hierarchy-builder" {>= "1.4.0"}
 ]
 
 tags: [
