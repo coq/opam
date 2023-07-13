@@ -18,7 +18,7 @@ build: [
 ]
 install: [make "install"]
 depends: [
-  "coq-coinduction" {>= "1.5" & < "1.7"} 
+  "coq-coinduction" {>= "1.7"} 
   "coq-aac-tactics" 
   "coq-relation-algebra" 
 ]
@@ -39,6 +39,6 @@ authors: [
 
 url {
   src:
-    "https://github.com/damien-pous/coinduction-examples/archive/v1.5.tar.gz"
-  checksum: "sha512=ac0a4fd9e2a2e0a3477137b35543c5a6043521bb0ea7e030630ddaafc28451554b2d5d927627e10dc539f1f623ebc8c7779f69bc45a1f99fb5e05ee6581609dc"
+    "https://github.com/damien-pous/coinduction-examples/archive/refs/tags/v1.7.tar.gz"
+  checksum: "sha512=229b7d82fae725875c8a9acc099dee8a7fb24e14620d2b9d6bb48da9727312cadb93d8defe58fcee87d1af5f0548258eab0c9bfd03e4c0ce68aed9063e513d27"
 }
