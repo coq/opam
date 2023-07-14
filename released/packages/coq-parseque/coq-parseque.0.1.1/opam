@@ -4,7 +4,7 @@ dev-repo: "git+https://github.com/gallais/parseque"
 bug-reports: "https://github.com/gallais/parseque/issues"
 homepage: "https://github.com/gallais/parseque"
 authors: ["G. Allais"]
-license: "GPL-3.0"
+license: "GPL-3.0-or-later"
 build: [
   [make "compile"]
 ]
