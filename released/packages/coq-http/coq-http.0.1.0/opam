@@ -14,7 +14,7 @@ build: [make "-j%{jobs}%"]
 run-test: [make "-j%{jobs}%" "test"]
 install: [make "install" "INSTALLDIR=%{bin}%"]
 depends: [
-  "coq" { >= "8.12~" }
+  "coq" { >= "8.12~" < "8.13" }
   "ocamlbuild" { >= "0.14.0" }
   "coq-itree-io" { >= "0.1.0" }
   "coq-parsec" { >= "0.1.0" }
