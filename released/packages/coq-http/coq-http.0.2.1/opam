@@ -1,7 +1,7 @@
 opam-version: "2.0"
 synopsis: "HTTP in Coq"
 description: "HTTP specification in Coq, testable and verifiable"
-maintainer: "Yishuai Li <yishuai@cis.upenn.edu>"
+maintainer: "Yishuai Li <liyishuai.lys@alibaba-inc.com>"
 authors: [
   "Yishuai Li <yishuai@cis.upenn.edu>"
   "Li-yao Xia <xialiyao@cis.upenn.edu>"
@@ -16,13 +16,12 @@ tags: [
   "keyword:co-induction"
   "keyword:extraction"
   "keyword:reactive systems"
-  "date:2022-05-30"
   "logpath:HTTP"
 ]
 homepage: "https://github.com/liyishuai/coq-http"
 bug-reports: "https://github.com/liyishuai/coq-http/issues"
 depends: [
-  "coq" {>= "8.14~" < "8.17"}
+  "coq" {>= "8.14~"}
   "ocamlbuild" {>= "0.14.1"}
   "coq-quickchick" {>= "1.6.3"}
   "coq-async-test" {>= "0.1.0"}
@@ -32,9 +31,10 @@ run-test: [make "-j%{jobs}%" "test"]
 install: [make "install" "INSTALLDIR=%{bin}%"]
 dev-repo: "git+https://github.com/liyishuai/coq-http.git"
 url {
-  src: "https://github.com/liyishuai/coq-http/archive/v0.2.0.tar.gz"
+  src:
+    "https://github.com/liyishuai/coq-http/archive/refs/tags/v0.2.1.tar.gz"
   checksum: [
-    "md5=e898e21067058e306611ebde75480276"
-    "sha512=54418a6920e499bd172ca177746200ac972396d3ef91aed6cc5df91392625a970565d47e7eddd27b9167fbad4334c4839a3a9e44ec97ab43f4f1c49cd9f71e5f"
+    "md5=0cabdca398a667cdf5013fe9cbba5d74"
+    "sha512=1c39bca328e7537770228e0eb7da8cac119371a7cf3fd6d72ba68f815d8d9b73b7cbea7460b1956dc43877cbed9f2d75743602d85513c380e82246226b35e922"
   ]
 }
