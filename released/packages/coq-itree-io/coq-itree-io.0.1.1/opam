@@ -1,0 +1,25 @@
+opam-version: "2.0"
+synopsis: "Run interaction trees in IO"
+description: "Interpret itree in the IO monad of simple-io."
+maintainer: "Yishuai Li <liyishuai.lys@alibaba-inc.com>"
+authors: "Li-yao Xia <lysxia@gmail.com>"
+license: "MIT"
+tags: "logpath:ITreeIO"
+homepage: "https://github.com/Lysxia/coq-itree-io"
+bug-reports: "https://github.com/Lysxia/coq-itree-io/issues"
+depends: [
+  "coq" {>= "8.12"}
+  "coq-itree" {>= "3.2.0"}
+  "coq-simple-io" {>= "1.3.0"}
+]
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+dev-repo: "git+https://github.com/Lysxia/coq-itree-io.git"
+url {
+  src:
+    "https://github.com/Lysxia/coq-itree-io/archive/refs/tags/v0.1.1.tar.gz"
+  checksum: [
+    "md5=fbe92a7cebea11bd05a7aeb9c87af020"
+    "sha512=5a29b0effa54a0547eaba39934cbb48bf0aa52af2358104d10dc725423bbad6dea90977cb9b26e1e061befb23bab4b39717d5227d598fd16165b9869c3275619"
+  ]
+}
