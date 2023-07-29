@@ -37,5 +37,5 @@ authors: [
 ]
 synopsis: "A Coq tactic for proving bounds on real-valued expressions automatically"
 url {
-  src: "git+https://gitlab.inria.fr//coqinterval/interval.git/#master"
+  src: "git+https://gitlab.inria.fr/coqinterval/interval.git/#master"
 }
