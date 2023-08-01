@@ -13,10 +13,11 @@ over arbitrary ordered types using Coq functors. This is an
 updated version of Coq Stdlib's FMaps. It is meant to complement
 the MSet library."""
 
+patches: ["locality-warnings.patch"]
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.13" & < "8.17~"}
+  "coq" {>= "8.13" & < "8.18~"}
 ]
 
 tags: [
