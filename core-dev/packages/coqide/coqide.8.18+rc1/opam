@@ -1,0 +1,45 @@
+opam-version: "2.0"
+synopsis: "The Coq Proof Assistant --- GTK3 IDE"
+description: """\
+Coq is a formal proof management system. It provides
+a formal language to write mathematical definitions, executable
+algorithms and theorems together with an environment for
+semi-interactive development of machine-checked proofs.
+
+This package provides the CoqIDE, a graphical user interface for the
+development of interactive proofs."""
+maintainer: "The Coq development team <coqdev@inria.fr>"
+authors: "The Coq development team, INRIA, CNRS, and contributors"
+license: "LGPL-2.1-only"
+homepage: "https://coq.inria.fr/"
+doc: "https://coq.github.io/doc/"
+bug-reports: "https://github.com/coq/coq/issues"
+depends: [
+  "dune" {>= "2.9"}
+  "ocamlfind" {build}
+  "conf-findutils" {build}
+  "conf-adwaita-icon-theme"
+  "coqide-server" {= version}
+  "cairo2" {>= "0.6.4"}
+  "lablgtk3-sourceview3" {>= "3.1.2"}
+]
+build: [
+  "dune"
+  "build"
+  "-p"
+  name
+  "-j"
+  jobs
+  "@install"
+  "@runtest" {with-test}
+  "@doc" {with-doc}
+]
+dev-repo: "git+https://github.com/coq/coq.git"
+url {
+  src:
+    "https://github.com/coq/coq/releases/download/V8.18+rc1/coq-8.18+rc1.tar.gz"
+  checksum: [
+    "md5=853ea58b21b9c0ab8c27d07b306b30e6"
+    "sha512=8bf010a17ff000660118c47e4d3648b6ebdd98f3d9d0ac6146f29614dc9c512e2e3b90377cc4f20f52ac0fbac951b34763aaa6e2d688039b61dbbfc75388f3c2"
+  ]
+}
