@@ -18,8 +18,9 @@ decidability results and closure properties of regular languages."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.10" & < "8.19"}
-  "coq-mathcomp-ssreflect" {>= "1.11" & < "1.18"}
+  "coq" {>= "8.16" & < "8.19"}
+  "coq-mathcomp-ssreflect" {>= "2.0"}
+  "coq-hierarchy-builder" {>= "1.4.0"}
 ]
 
 tags: [
@@ -30,7 +31,7 @@ tags: [
   "keyword:two-way automata"
   "keyword:monadic second-order logic"
   "logpath:RegLang"
-  "date:2022-01-20"
+  "date:2023-08-05"
 ]
 authors: [
   "Christian Doczkal"
@@ -39,6 +40,6 @@ authors: [
 ]
 
 url {
-  src: "https://github.com/coq-community/reglang/archive/v1.1.3.tar.gz"
-  checksum: "sha512=45085423899a0957922198c24c54c496cc4d4f9f02bd9ed6db72854436982acc9994487b0381bad8046eec5be0252a6fdc2ef0f001e48a0f58c323f1e46ee143"
+  src: "https://github.com/coq-community/reglang/archive/v1.2.0.tar.gz"
+  checksum: "sha512=a50317719f8c8c7c636173e67b685ed2c78a0dbc5a9122783fc432ae2714662b9d7648d88b29facdb653e96e60dc22482ffa0136172fc870d5f784ce2099533e"
 }
