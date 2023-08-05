@@ -16,7 +16,7 @@ simple typeclass that lists out the record fields."""
 build: [make "-j%{jobs}%" "NO_TEST=1"]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.10" & < "8.18~") | (= "dev")}
+  "coq" {(>= "8.10" & < "8.19~") | (= "dev")}
 ]
 
 tags: [
