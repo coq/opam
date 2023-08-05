@@ -13,9 +13,9 @@ the Mathematical Components library."""
 
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
-  "dune" {>= "2.5"}
-  "coq" {>= "8.10" & < "8.19"}
-  "coq-mathcomp-ssreflect" {>= "1.12.0" & < "1.18~"}
+  "dune" {>= "2.8"}
+  "coq" {>= "8.16" & < "8.19"}
+  "coq-mathcomp-ssreflect" {>= "2.0"}
   "coq-gaia-theory-of-sets" {= version}
   "coq-gaia-schutte" {= version}
 ]
@@ -31,7 +31,7 @@ tags: [
   "keyword:ordinals"
   "keyword:cardinal numbers"
   "logpath:gaia.ordinals"
-  "date:2023-08-01"
+  "date:2023-08-05"
 ]
 authors: [
   "José Grimm"
@@ -39,6 +39,6 @@ authors: [
 ]
 
 url {
-  src: "https://github.com/coq-community/gaia/archive/v1.17.tar.gz"
-  checksum: "sha512=beeb2b8bf16549db96cf423a140e8bc927235919e3d3f54f3e93a1c2edca6d285b046518a244c417f6f2c48f02b185b2ad059b8d441eeee8b896b8658d3a33a6"
+  src: "https://github.com/coq-community/gaia/archive/v2.0.tar.gz"
+  checksum: "sha512=37551367ae132870235e2dfd433d420e814933c642068f4d1e0bc37ed3d001e1536ca24e176d490f4c3e05567bc99e426cd48e0a0b989bdff38a371a532f3328"
 }
