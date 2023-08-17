@@ -1,0 +1,41 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/topology"
+dev-repo: "git+https://github.com/coq-community/topology.git"
+bug-reports: "https://github.com/coq-community/topology/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "General topology in Coq"
+description: """
+This library develops some of the basic concepts
+and results of general topology in Coq.
+"""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "2.5"}
+  "coq" {(>= "8.12" & < "8.19~") | (= "dev")}
+  "coq-zorns-lemma" {= version}
+]
+
+tags: [
+  "category:Mathematics/Real Calculus and Topology"
+  "date:2023-08-18"
+  "keyword:topology"
+  "keyword:filters"
+  "keyword:nets"
+  "keyword:metric spaces"
+  "keyword:real analysis"
+  "keyword:Urysohn's lemma"
+  "keyword:Tietze extension theorem"
+  "logpath:Topology"
+]
+authors: [
+  "Daniel Schepler"
+]
+
+url {
+  src: "https://github.com/coq-community/topology/archive/v10.1.0.tar.gz"
+  checksum: "sha512=6c780574cc8d71a1be49748d087754123a16f712726b48e857f9c2d002d03fc21ce63074929927852b380499590193ee076a573d5d2167736805f9765e5390df"
+}
