@@ -21,7 +21,7 @@ jobs:
       - name: Build index
         run: |
           eval $(opam env)
-          make
+          scripts/generate-opam-indexes released core-dev extra-dev
 
       - name: Build JSON index data
         run: |
