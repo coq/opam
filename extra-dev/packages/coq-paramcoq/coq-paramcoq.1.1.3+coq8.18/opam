@@ -1,0 +1,46 @@
+opam-version: "2.0"
+
+maintainer: "Pierre Roux <pierre.roux@onera.fr>"
+homepage: "https://github.com/coq-community/paramcoq"
+dev-repo: "git+https://github.com/coq-community/paramcoq.git"
+bug-reports: "https://github.com/coq-community/paramcoq/issues"
+license: "MIT"
+
+synopsis: "Plugin for generating parametricity statements to perform refinement proofs"
+description: """
+A Coq plugin providing commands for generating parametricity statements.
+Typical applications of such statements are in data refinement proofs.
+Note that the plugin is still in an experimental state - it is not very user
+friendly (lack of good error messages) and still contains bugs. But it
+is usable enough to "translate" a large chunk of the standard library."""
+
+build: [make "-j%{jobs}%"]
+install: [
+  [make "install"]
+  [make "-C" "test-suite" "examples"] {with-test}
+]
+depends: [
+  "coq" {>= "8.18" & < "8.19~" }
+]
+
+tags: [
+  "keyword:paramcoq"
+  "keyword:parametricity"
+  "keyword:OCaml modules"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:Param"
+  "date:2023-08-21"
+]
+authors: [
+  "Chantal Keller (Inria, École polytechnique)"
+  "Marc Lasson (ÉNS de Lyon)"
+  "Abhishek Anand"
+  "Pierre Roux"
+  "Emilio Jesús Gallego Arias"
+  "Cyril Cohen"
+  "Matthieu Sozeau"
+]
+url {
+  src: "https://github.com/coq-community/paramcoq/archive/v1.1.3+coq8.18.tar.gz"
+  checksum: "sha512=84cbaec9433f876da75294377a321aa07dad0e6a191b35bcbf7fb9c73befc77b83be87324c1b22b99c1b1c70051094a27f5979977f5373f2765b8678f7a11203"
+}
