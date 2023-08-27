@@ -1,6 +1,4 @@
 opam-version: "2.0"
-name: "coq-waterproof"
-version: "2.0.1+8.17"
 maintainer: "Jim Portegies <j.w.portegies@tue.nl>"
 authors: [
   "Jelle Wemmenhove"
