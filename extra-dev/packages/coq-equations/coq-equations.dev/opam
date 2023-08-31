@@ -36,5 +36,5 @@ depopts: [
   "coq-hott"
 ]
 url {
-  src: "git+https://github.com/mattam82/Coq-Equations#master"
+  src: "git+https://github.com/mattam82/Coq-Equations#main"
 }

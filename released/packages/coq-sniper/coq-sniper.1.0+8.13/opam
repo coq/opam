@@ -1,11 +1,11 @@
 opam-version: "2.0"
-maintainer: "Chantal.Keller@lri.fr"
+maintainer: "ckeller@lmf.cnrs.fr"
 homepage: "https://github.com/smtcoq/sniper"
 dev-repo: "git+https://github.com/smtcoq/sniper.git"
 bug-reports: "https://github.com/smtcoq/sniper/issues"
 authors: ["Valentin Blot <Valentin.Blot@inria.fr>"
           "Louise Dubois de Prisque <Louise.Dubois-de-Prisque@inria.fr>"
-          "Chantal Keller <Chantal.Keller@lri.fr"
+          "Chantal Keller <ckeller@lmf.cnrs.fr"
           "Pierre Vial <Pierre.Vial@inria.fr>"
 ]
 license: "CECILL-C"

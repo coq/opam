@@ -1,0 +1,41 @@
+opam-version: "2.0"
+synopsis: "A Coq library defining operads"
+description: """
+  This library formalizes a definition of a symmetric colored operad 
+  and demonstrates the operad of sets as an example.
+"""
+
+homepage: "https://github.com/twosixlabs/coq-operads"
+dev-repo: "git+https://github.com/twosixlabs/coq-operads.git"
+bug-reports: "https://github.com/twosixlabs/coq-operads/issues"
+maintainer: "yakir.forman@twosixtech.com"
+authors: [
+  "Zachary Flores"
+  "Angelo Taranto"
+  "Eric Bond"
+  "Yakir Forman"
+]
+
+depends: [
+  "coq" {>= "8.15"}
+  "coq-hammer" {>= "1.3"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/twosixlabs/coq-operads/archive/1.1.0.tar.gz"
+  checksum: "sha256=8c973266b9b517ae4acfa7125a181f03daeb5e043f7e6b931636a187726eabd7"
+}
+
+tags: [
+  "keyword:operad"
+  "category:Mathematics/Algebra"
+  "date:2023-08-28"
+  "logpath:Operads"
+]

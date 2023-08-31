@@ -1,0 +1,42 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/topology"
+dev-repo: "git+https://github.com/coq-community/topology.git"
+bug-reports: "https://github.com/coq-community/topology/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "This library develops some basic set theory in Coq"
+description: """
+This Coq library develops some basic set theory.
+The main purpose the author had in writing it
+was as support for the Topology library.
+"""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "2.5"}
+  "coq" {(>= "8.12" & < "8.19~") | (= "dev")}
+]
+
+tags: [
+  "category:Mathematics/Logic/Set theory"
+  "date:2023-08-18"
+  "keyword:set theory"
+  "keyword:cardinals"
+  "keyword:ordinals"
+  "keyword:finite"
+  "keyword:countable"
+  "keyword:quotients"
+  "keyword:well-orders"
+  "keyword:Zorn's lemma"
+  "logpath:ZornsLemma"
+]
+authors: [
+  "Daniel Schepler"
+]
+
+url {
+  src: "https://github.com/coq-community/topology/archive/v10.1.0.tar.gz"
+  checksum: "sha512=6c780574cc8d71a1be49748d087754123a16f712726b48e857f9c2d002d03fc21ce63074929927852b380499590193ee076a573d5d2167736805f9765e5390df"
+}

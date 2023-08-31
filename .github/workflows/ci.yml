@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install OCaml
+        uses: avsm/setup-ocaml@v2
+        with:
+          ocaml-compiler: 4.14.1
+
+      - name: Build index
+        run: |
+          eval $(opam env)
+          scripts/generate-opam-indexes released core-dev extra-dev
+
+      - name: Build JSON index data
+        run: |
+          eval $(opam env)
+          opam install -y dune.2.9.3 opam-core.2.1.0 opam-file-format.2.1.3 ppx_deriving_yojson.3.6.1
+          ocamlfind opt -package opam-file-format,opam-core,ppx_deriving_yojson,str -linkpkg scripts/archive2web.ml -o scripts/archive2web
+          scripts/archive2web released extra-dev > coq-packages.json
+
+      - name: Prepare website
+        run: |
+          mkdir dest
+          cp -r core-dev dest
+          cp -r extra-dev dest
+          cp -r released dest
+          cp coq-packages.json dest
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: dest
+
+  deploy:
+
+    needs: build
+
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

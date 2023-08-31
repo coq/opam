@@ -1,10 +1,19 @@
 opam-version: "2.0"
 maintainer: "matthieu.sozeau@inria.fr"
 homepage: "https://metacoq.github.io/metacoq"
-dev-repo: "git+https://github.com/MetaCoq/metacoq.git#master"
+dev-repo: "git+https://github.com/MetaCoq/metacoq.git#main"
 bug-reports: "https://github.com/MetaCoq/metacoq/issues"
-authors: ["Simon Boulier <simon.boulier@inria.fr>"
+authors: ["Abhishek Anand <aa755@cs.cornell.edu>"
+          "Danil Annenkov <danil.v.annenkov@gmail.com>"
+          "Simon Boulier <simon.boulier@inria.fr>"
           "Cyril Cohen <cyril.cohen@inria.fr>"
+          "Yannick Forster <forster@ps.uni-saarland.de>"
+          "Jason Gross <jgross@mit.edu>"
+          "Fabian Kunze <fkunze@fakusb.de>"
+          "Meven Lennon-Bertrand <Meven.Bertrand@univ-nantes.fr>"
+          "Kenji Maillard <kenji.maillard@inria.fr>"
+          "Gregory Malecha <gmalecha@gmail.com>"
+          "Jakob Botsch Nielsen <Jakob.botsch.nielsen@gmail.com>"
           "Matthieu Sozeau <matthieu.sozeau@inria.fr>"
           "Nicolas Tabareau <nicolas.tabareau@inria.fr>"
           "Théo Winterhalter <theo.winterhalter@inria.fr>"
@@ -28,7 +37,6 @@ The Translations modules provides implementation of standard translations
 from type theory to type theory, e.g. parametricity and the `cross-bool`
 translation that invalidates functional extensionality.
 """
-
 url {
-  src: "git+https://github.com/metacoq/metacoq.git#master"
+  src: "git+https:///github.com/metacoq/metacoq.git#main"
 }

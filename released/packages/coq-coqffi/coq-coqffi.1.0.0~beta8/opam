@@ -1,0 +1,42 @@
+opam-version: "2.0"
+maintainer: "lthms@soap.coffee"
+
+homepage: "https://github.com/coq-community/coqffi"
+dev-repo: "git+https://github.com/coq-community/coqffi.git"
+bug-reports: "https://github.com/coq-community/coqffi/issues"
+license: "MIT"
+
+synopsis: "Tool for generating Coq FFI bindings to OCaml libraries"
+description: """
+`coqffi` generates the necessary Coq boilerplate to use OCaml functions in a
+Coq development, and configures the Coq extraction mechanism accordingly."""
+
+build: [
+  ["./src-prepare.sh"]
+  ["dune" "build" "-p" name "-j" jobs]
+]
+depends: [
+  "ocaml" {>= "4.08" & < "5.0~" }
+  "dune" {>= "2.5"}
+  "coq" {>= "8.12" & < "8.14~"}
+  "cmdliner" {>= "1.1.0"}
+  "sexplib" {>= "0.14"}
+]
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "keyword:foreign function interface"
+  "keyword:extraction"
+  "keyword:OCaml"
+  "logpath:CoqFFI"
+]
+authors: [
+  "Thomas Letan"
+  "Li-yao Xia"
+  "Yann Régis-Gianas"
+  "Yannick Zakowski"
+]
+url {
+  src: "https://github.com/coq-community/coqffi/archive/1.0.0-beta8.tar.gz"
+  checksum: "sha512=1065eb8b3eea7c77c5f4961ead8277de9b3fd6ec670757be30cefdd9744b98886e3e55b6aeff6edd6449fbfdd4b4337a193d2a4544c9a56f4ba37e863548e2b6"
+}

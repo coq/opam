@@ -1,0 +1,13 @@
+#!/bin/bash -e
+#
+# Script which generates the index for OPAM packages to be served through HTTP.
+# Similar to refresh-opam-indexes, but less ad-hoc (no hardcoded paths & e-mail
+# addresses) and better suited for use as part of a CI workflow
+
+OPAMCHECKOPTS=--cycles
+
+for repo in "$@"; do
+  cd "$repo"
+  opam admin check $OPAMCHECKOPTS && opam admin make
+  cd ..
+done

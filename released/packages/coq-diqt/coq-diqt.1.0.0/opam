@@ -1,0 +1,35 @@
+opam-version: "2.0"
+maintainer: "valeran.maytie@universite-paris-saclay.fr"
+
+homepage: "https://github.com/valoran-M/diqt/"
+bug-reports: "https://github.com/valoran-M/diqt/issues"
+license: "CECILL-B"
+build: [["coq_makefile" "-f" "_CoqProject" "-o" "Makefile" ]
+       [ make "-j" "%{jobs}%" ]]
+install: [ make "install" ]
+depends: [
+  "coq" {>= "8.14"}
+]
+dev-repo: "git+https://github.com/valoran-M/diqt.git"
+tags: [ 
+  "keyword:hashtables"
+  "keyword:primitive arrays"
+  "keyword:data structures"
+  "keyword:dictionaries" 
+  "category:Computer Science/Data Types and Data Structures"
+  "logpath:Diqt"
+  "date:2023-07-13" ]
+authors: [ "Valeran Maytié <valeran.maytie@universite-paris-saclay.fr>" ]
+synopsis:
+  "Formalization of hashtables with Radix trees and PArray"
+description: """
+This library provides two hashtable structures. They use either Radix trees
+and positive integers, or persistent arrays (Coq.PArray) and machine integers.
+Their purpose is to be efficient when evaluating the code with Coq's virtual
+machine (vm_compute).
+"""
+
+url {
+  src: "https://github.com/valoran-M/diqt/archive/refs/tags/diqt-1.0.tar.gz"
+  checksum: "sha512=716ab079e2bdc37773f02757d99509313fa7bef513ff8332ab720bc1cb6f50ef25696981eabdd8d8206a92ee94454c14e5666971fda2370eaae996959446e648"
+}

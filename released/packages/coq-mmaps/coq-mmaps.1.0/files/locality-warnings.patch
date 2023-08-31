@@ -1,0 +1,11 @@
+diff --git a/_CoqProject b/_CoqProject
+index fcc265e..c19091d 100644
+--- a/_CoqProject
++++ b/_CoqProject
+@@ -1,4 +1,6 @@
+ -R . MMaps
++-arg -w -arg -deprecated-instance-without-locality
++-arg -w -arg -deprecated-hint-without-locality
+ Utils.v
+ Comparisons.v
+ Interface.v

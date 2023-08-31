@@ -1,0 +1,32 @@
+opam-version: "2.0"
+name: "vscoq-language-server"
+maintainer: "Enrico Tassi <enrico.tassi@inria.fr>"
+authors: [ "Enrico Tassi" "Maxime Denes" "Romain Tetley" ]
+license: "LGPL-2.1-or-later"
+homepage: "https://github.com/coq-community/vscoq"
+bug-reports: "https://github.com/coq-community/vscoq/issues"
+dev-repo: "git+https://github.com/coq-community/vscoq"
+
+build: [
+  [ "dune" "build" "-p" "vscoq-language-server" "--display=short"] 
+]
+depends: [
+  "coq-core" {= "dev"}
+  "coq-stdlib" {= "dev"}
+  "yojson"
+  "ocamlfind"
+  "ppx_inline_test"
+  "ppx_assert"
+  "ppx_sexp_conv"
+  "ppx_yojson_conv" {< "v0.16.0"}
+  "ppx_deriving"
+  "sexplib"
+  "uri"
+]
+url {
+  src: "git+https://github.com/coq-community/vscoq.git/#main"
+}
+synopsis: "VSCoq language server"
+description: """
+LSP based language server for Coq and its VSCoq user interface
+"""

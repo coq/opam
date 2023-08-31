@@ -1,0 +1,24 @@
+opam-version: "2.0"
+maintainer: "G. Allais"
+dev-repo: "git+https://github.com/gallais/parseque"
+bug-reports: "https://github.com/gallais/parseque/issues"
+homepage: "https://github.com/gallais/parseque"
+authors: ["G. Allais"]
+license: "GPL-3.0-or-later"
+build: [
+  [make "compile"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.9" & < "8.18"}
+]
+
+synopsis: "Total parser combinators in Coq"
+description: "Port of agdarsec to Coq"
+url {
+  src: "https://github.com/gallais/parseque/archive/refs/tags/v0.1.1.tar.gz"
+  checksum: "sha256=5c921a619deb884e713fce7f057c9605f0ee2a9cde9e02b5cbd874cf92eb86aa"
+}

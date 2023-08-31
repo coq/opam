@@ -1,0 +1,43 @@
+opam-version: "2.0"
+maintainer: "ckeller@lmf.cnrs.fr"
+homepage: "https://smtcoq.github.io/"
+dev-repo: "git+https://github.com/smtcoq/smtcoq.git"
+bug-reports: "https://github.com/smtcoq/smtcoq/issues"
+license: "CECILL-C"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml" {>= "4.07.1" }
+  "coq" {>= "8.13~" & < "8.14~"}
+]
+tags: [ 
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "category:Miscellaneous/Coq Extensions"
+  "keyword: SMT"
+  "keyword: SAT"
+  "keyword: automation"
+  "logpath:SMTCoq"
+]
+authors: [ 
+ "Michaël Armand"
+ "Valentin Blot"
+ "Amina Bousalem"
+ "Boris Djalal"
+ "Quentin Garchery"
+ "Benjamin Grégoire"
+ "Chantal Keller"
+ "Burak Ekici"
+ "Alain Mebsout"
+]
+synopsis: "A Coq plugin that checks proof witnesses coming from external SAT and SMT solvers"
+description: """
+- a certified checker for proof witnesses coming from the SAT solver ZChaff and the SMT solvers veriT and CVC4. This checker increases the confidence in these tools by checking their answers a posteriori and allows to import new theroems proved by these solvers in Coq;
+- decision procedures through new tactics that discharge some Coq goals to ZChaff, veriT, CVC4, and their combination"""
+url {
+  src: "https://github.com/smtcoq/smtcoq/archive/refs/tags/SMTCoq-2.1+8.13.tar.gz"
+  checksum: "sha512=85fee1f7bc66d24d1ed98771005c1bfc56c7c1e60f376b5df7f865e17de51ca3907fe6e13aee22badee80640e340d406c1862ba4a0a3904c0967e200f6b18395"
+}

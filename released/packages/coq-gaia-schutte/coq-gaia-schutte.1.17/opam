@@ -1,0 +1,39 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/gaia"
+dev-repo: "git+https://github.com/coq-community/gaia.git"
+bug-reports: "https://github.com/coq-community/gaia/issues"
+license: "MIT"
+
+synopsis: "Implementation of ordinals in Coq following Schütte and Ackermann"
+description: """
+Types for ordinal numbers in Coq using the Mathematical Components library,
+following the approaches of Schütte and Ackermann."""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "2.5"}
+  "coq" {>= "8.10" & < "8.19"}
+  "coq-mathcomp-ssreflect" {>= "1.12.0" & < "1.18~"}
+]
+conflicts: [
+  "coq-gaia"
+]
+
+tags: [
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "keyword:ordinal arithmetic"
+  "keyword:ordinals"
+  "logpath:gaia.schutte"
+  "date:2023-08-01"
+]
+authors: [
+  "José Grimm"
+  "Alban Quadrat"
+]
+
+url {
+  src: "https://github.com/coq-community/gaia/archive/v1.17.tar.gz"
+  checksum: "sha512=beeb2b8bf16549db96cf423a140e8bc927235919e3d3f54f3e93a1c2edca6d285b046518a244c417f6f2c48f02b185b2ad059b8d441eeee8b896b8658d3a33a6"
+}

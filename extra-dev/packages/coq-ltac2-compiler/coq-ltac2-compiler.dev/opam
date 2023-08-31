@@ -1,0 +1,26 @@
+opam-version: "2.0"
+maintainer: "gaetan.gilbert@skyskimmer.net"
+version: "dev"
+
+homepage: "https://github.com/SkySkimmer/coq-ltac2-compiler"
+dev-repo: "git+https://github.com/SkySkimmer/coq-ltac2-compiler.git"
+bug-reports: "https://github.com/SkySkimmer/coq-ltac2-compiler/issues"
+license: "LGPL-2.1-only"
+
+synopsis: "Plugin to compile Ltac2 tactics using OCaml"
+description: """
+Plugin to compile Ltac2 tactics using OCaml."""
+
+build: [make "-j%{jobs}%" "test"]
+install: [make "install"]
+depends: [
+  "ocaml" {>= "4.09.0"}
+  "coq" {= "dev"}
+]
+
+authors: [
+  "Gaëtan Gilbert"
+]
+url {
+  src: "git+https://github.com/SkySkimmer/coq-ltac2-compiler#main"
+}
