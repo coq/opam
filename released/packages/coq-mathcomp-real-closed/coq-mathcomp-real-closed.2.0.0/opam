@@ -1,0 +1,40 @@
+opam-version: "2.0"
+maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
+
+homepage: "https://github.com/math-comp/real-closed"
+dev-repo: "git+https://github.com/math-comp/real-closed.git"
+bug-reports: "https://github.com/math-comp/real-closed/issues"
+license: "CECILL-B"
+
+synopsis: "Mathematical Components Library on real closed fields"
+description: """
+This library contains definitions and theorems about real closed
+fields, with a construction of the real closure and the algebraic
+closure (including a proof of the fundamental theorem of
+algebra). It also contains a proof of decidability of the first
+order theory of real closed field, through quantifier elimination."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.16" & < "8.19"}
+  "coq-mathcomp-ssreflect" {>= "2.0.0"}
+  "coq-mathcomp-algebra"
+  "coq-mathcomp-field"
+  "coq-mathcomp-bigenough" {>= "1.0.0"}
+]
+
+tags: [
+  "keyword:real closed field"
+  "logpath:mathcomp.real_closed"
+  "date:2023-09-01"
+]
+authors: [
+  "Cyril Cohen"
+  "Assia Mahboubi"
+]
+
+url {
+  src: "https://github.com/math-comp/real-closed/archive/2.0.0.tar.gz"
+  checksum: "sha256=3ca62553ce212f2d20ff13afc040121c146e7b31db2534c36b91d7bcdd6f8d53"
+}
