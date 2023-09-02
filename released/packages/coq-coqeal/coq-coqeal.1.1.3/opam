@@ -17,12 +17,12 @@ of the ForMath EU FP7 project (2009-2013). It has two parts:
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.15" & < "8.18~") | (= "dev")}
+  "coq" {(>= "8.15" & < "8.19~") | (= "dev")}
   "coq-bignums" 
   "coq-paramcoq" {>= "1.1.3"}
-  "coq-mathcomp-multinomials" {((>= "1.6.0" & < "1.7~") | = "dev")}
-  "coq-mathcomp-algebra" {((>= "1.15.0" & < "1.18~") | = "dev")}
-  "coq-mathcomp-real-closed" {(>= "1.1.2" & < "1.2~") | (= "dev")}
+  "coq-mathcomp-multinomials" {>= "1.6.0" & < "1.7~"}
+  "coq-mathcomp-algebra" {>= "1.15.0" & < "1.18~"}
+  "coq-mathcomp-real-closed" {>= "1.1.2" & < "2.0~"}
 ]
 
 tags: [
