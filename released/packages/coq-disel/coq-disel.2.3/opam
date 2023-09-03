@@ -20,7 +20,7 @@ build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
   "coq" {>= "8.14"}
-  "coq-mathcomp-ssreflect" {>= "1.13"}
+  "coq-mathcomp-ssreflect" {>= "1.13" & < "2.0"}
   "coq-fcsl-pcm" {>= "1.7.0"}
   "coq-htt" {>= "1.2.0"}
 ]
