@@ -18,9 +18,9 @@ build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
   "coq" {>= "8.14"}
-  "coq-mathcomp-ssreflect" {>= "1.14"}
+  "coq-mathcomp-ssreflect" {>= "1.14" & < "2.0"}
   "coq-mathcomp-algebra" 
-  "coq-mathcomp-finmap" {>= "1.5.1"}
+  "coq-mathcomp-finmap" {>= "1.5.1" & < "2.0"}
   "coq-mathcomp-analysis" {>= "0.5.0"}
   "coq-mathcomp-zify" 
   "coq-record-update" 
