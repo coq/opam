@@ -10,7 +10,7 @@ build: [ [ make "build"]
          [ make "test-suite" ] {with-test}
        ]
 install: [ make "install" ]
-depends: [ "coq-elpi" {>= "1.14"} "coq" {= "dev"} ]
+depends: [ "coq-elpi" {>= "1.15"} "coq" {= "dev"} ]
 depexts: [
   [ "wdiff" ] {os-family = "debian" & with-test}
 ]
