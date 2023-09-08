@@ -1,0 +1,67 @@
+commit 02d5287d82b2bd583f14f2d29be41ce5796667f5
+Author: Jason Gross <jgross@mit.edu>
+Date:   Thu Sep 7 20:23:29 2023 -0700
+
+    Support coq-native by passing through `COQEXTRAFLAGS`
+    
+    Since coq-interval doesn't build nor install .coq-native files, when
+    coq-native is installed, vcfloat should avoid looking for .coq-native
+    files.
+
+diff --git a/coq-vcfloat.opam b/coq-vcfloat.opam
+index 5c84090..221a1e4 100644
+--- a/coq-vcfloat.opam
++++ b/coq-vcfloat.opam
+@@ -18,13 +18,13 @@ bug-reports: "https://github.com/VeriNum/vcfloat/issues"
+ license: "LGPL-3.0-or-later"
+ 
+ build: [
+-  [ make "-C" "vcfloat" "-j%{jobs}%" "vcfloat2"]
++  [ make "-C" "vcfloat" "-j%{jobs}%" "vcfloat2" "COQEXTRAFLAGS=-native-compiler ondemand" {coq-native:installed}]
+ ]
+ install: [
+-  [make "-C" "vcfloat" "-j%{jobs}%" "install" "INSTALLDIR=%{lib}%/coq/user-contrib/vcfloat"]
++  [make "-C" "vcfloat" "-j%{jobs}%" "install" "INSTALLDIR=%{lib}%/coq/user-contrib/vcfloat" "COQEXTRAFLAGS=-native-compiler ondemand" {coq-native:installed}]
+ ]
+ run-test: [
+-  [make "-C" "vcfloat" "-j%{jobs}%" "tests"]
++  [make "-C" "vcfloat" "-j%{jobs}%" "tests" "COQEXTRAFLAGS=-native-compiler ondemand" {coq-native:installed}]
+ ]
+ depends: [
+   "coq" {>= "8.16" & < "8.18~"}
+diff --git a/vcfloat/Makefile b/vcfloat/Makefile
+index 062b6bc..78fad69 100644
+--- a/vcfloat/Makefile
++++ b/vcfloat/Makefile
+@@ -1,11 +1,12 @@
+ # This Makefile assumes that coq already has access to
+ # Flocq, Interval, CompCert, etc.,
+-# which will be true if coq was installed through opam 
++# which will be true if coq was installed through opam
+ # or as a "Coq Platform" package.
+ 
+ COQC=coqc
+ COQDEP=coqdep
+ COQFLAGS := $(shell cat _CoqProject)
++COQEXTRAFLAGS?=
+ 
+ target:  vcfloat2 tests
+ 
+@@ -16,7 +17,7 @@ tests: ../Test/Test.vo ../Test/TestFunc.vo ../Test/TestPaper.vo ../Test/Test2.vo
+ vcfloat2:  VCFloat.vo FPCompCert.vo Version.vo FPLib.vo
+ 
+ %.vo: %.v
+-	$(COQC) $(COQFLAGS) $*.v
++	$(COQC) $(COQFLAGS) $(COQEXTRAFLAGS) $*.v
+ 
+ ifdef INSTALLDIR
+ INSTALLFILES=$(shell make -Bn vcfloat2 2>/dev/null | awk '/^coqc.*v$$/{print $$NF"o"}')
+@@ -31,7 +32,7 @@ endif
+ 	install -d $(INSTALLDIR)
+ 	install -m 0644 $(INSTALLFILES) $(INSTALLDIR)
+ 
+-depend: 
++depend:
+ 	$(COQDEP) $(COQFLAGS) *.v ../Test/*.v > .depend
+ 
+ ifneq ($(MAKECMDGOALS),depend)
