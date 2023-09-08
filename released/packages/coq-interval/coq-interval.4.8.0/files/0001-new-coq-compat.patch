@@ -1,0 +1,86 @@
+commit 21b36c92674510f9f6281d308635e45a59835af0
+Author: Pierre Roux <pierre.roux@onera.fr>
+Date:   Fri Jul 28 09:16:55 2023 +0200
+
+    Adapt to https://github.com/coq/coq/pull/16920
+    
+    C.f.: https://coq.zulipchat.com/#narrow/stream/237977-Coq-users/topic/building.20coq-interval
+    
+    Co-authored-by: Jason Gross
+
+diff --git a/src/Float/Primitive_ops.v b/src/Float/Primitive_ops.v
+index 35622d9..ee23e18 100644
+--- a/src/Float/Primitive_ops.v
++++ b/src/Float/Primitive_ops.v
+@@ -3,6 +3,17 @@ Require Import Int63Compat.
+ From Coq Require Import Floats Psatz.
+ From Flocq Require Import Zaux Raux BinarySingleNaN PrimFloat Sterbenz Mult_error.
+ 
++(* Compatibility workaround, remove once requiring Coq >= 8.15 *)
++Definition ldexp f (_ : Z) : float := f.
++Definition frexp (f : float) := (f, Z0).
++Import FloatOps.
++Module Import Z.
++Notation ldexp := ldexp.
++Notation frexp := frexp.
++End Z.
++Import Floats.
++Import Zaux BinarySingleNaN.
++
+ Require Import Xreal.
+ Require Import Basic.
+ Require Import Sig.
+@@ -59,7 +70,7 @@ Definition fromZ_UP (p : precision) x :=
+       let d := Z.log2 x in
+       let e := (d - 52)%Z in
+       let m := Z.shiftr x e in
+-      ldexp (of_int63 (of_Z m + 1)) e
++      Z.ldexp (of_int63 (of_Z m + 1)) e
+     end
+   | Zneg x =>
+     match (x ?= 9007199254740992)%positive (* 2^53 *) with
+@@ -69,7 +80,7 @@ Definition fromZ_UP (p : precision) x :=
+       let d := Z.log2 x in
+       let e := (d - 52)%Z in
+       let m := Z.shiftr x e in
+-      next_up (ldexp (-(of_int63 (of_Z m))) e)
++      next_up (Z.ldexp (-(of_int63 (of_Z m))) e)
+     end
+   end.
+ 
+@@ -84,7 +95,7 @@ Definition fromZ_DN (p : precision) x :=
+       let d := Z.log2 x in
+       let e := (d - 52)%Z in
+       let m := Z.shiftr x e in
+-      next_down (ldexp (of_int63 (of_Z m)) e)
++      next_down (Z.ldexp (of_int63 (of_Z m)) e)
+     end
+   | Zneg x =>
+     match (x ?= 9007199254740992)%positive (* 2^53 *) with
+@@ -94,7 +105,7 @@ Definition fromZ_DN (p : precision) x :=
+       let d := Z.log2 x in
+       let e := (d - 52)%Z in
+       let m := Z.shiftr x e in
+-      ldexp (-(of_int63 (Int63.of_Z m + 1))) e
++      Z.ldexp (-(of_int63 (Int63.of_Z m + 1))) e
+     end
+   end.
+ 
+@@ -494,7 +505,7 @@ intros prec [ |p|p]; unfold fromZ_UP.
+     apply Zle_minus_le_0.
+     refine (proj1 (Z.log2_le_pow2 _ _ _) _); [now simpl| ].
+     generalize (Pos2Z.pos_lt_pos _ _ Hp'); lia. }
+-  rewrite <-(B2Prim_Prim2B (ldexp _ _)) at 1; rewrite toX_Prim2B.
++  rewrite <-(B2Prim_Prim2B (Z.ldexp _ _)) at 1; rewrite toX_Prim2B.
+   rewrite ldexp_equiv.
+   generalize (shiftr_pos p Pe); intros [H1 H2]; revert H1 H2; fold e s.
+   intros [_ H1] H2.
+@@ -2594,7 +2605,7 @@ case (Prim2B x) as [s|s| |s m e B]; clear x; [ |now simpl..| ]; intros _.
+ rewrite toX_Prim2B, Prim2B_B2Prim; unfold BtoX.
+ set (f := B2Prim (B754_finite s m e B)).
+ generalize (frexp_equiv f).
+-unfold frexp.
++unfold Z.frexp.
+ case frshiftexp as [f' e'].
+ generalize (Bfrexp_correct _ _ _ (Prim2B f)).
+ unfold f; rewrite Prim2B_B2Prim; clear f.
