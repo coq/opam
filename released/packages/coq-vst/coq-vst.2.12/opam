@@ -22,14 +22,17 @@ dev-repo: "git+https://github.com/PrincetonUniversity/VST.git"
 bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 license: "BSD-2-Clause"
 
+patches: [
+  "0001-coq-native-fix.patch"
+]
 build: [
-  [make "-j%{jobs}%" "vst" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64"]
+  [make "-j%{jobs}%" "vst" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64" "COQEXTRAFLAGS=-native-compiler ondemand" {coq-native:installed}]
 ]
 install: [
-  [make "install" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64"]
+  [make "install" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64" "COQEXTRAFLAGS=-native-compiler ondemand" {coq-native:installed}]
 ]
 run-test: [
-  [make "-j%{jobs}%" "test" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64"]
+  [make "-j%{jobs}%" "test" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64" "COQEXTRAFLAGS=-native-compiler ondemand" {coq-native:installed}]
 ]
 depends: [
   "ocaml"
