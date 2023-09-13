@@ -36,6 +36,7 @@ jobs:
           cp -r core-dev dest
           cp -r extra-dev dest
           cp -r released dest
+          cp -r www dest
           cp coq-packages.json dest
 
       - name: Upload Pages artifact
