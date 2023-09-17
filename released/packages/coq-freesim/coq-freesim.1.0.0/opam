@@ -4,7 +4,7 @@ authors: "Minki Cho, Youngju Song, Dongjae Lee"
 license: "BSD-3-Clause"
 homepage: "https://github.com/CCR-project/FreeSim"
 bug-reports: "https://github.com/CCR-project/FreeSim/issues"
-dev-repo: "git+https://github.com/CCR-project/FreeSim.git"
+dev-repo: "git+https://github.com/CCR-project/FreeSim"
 
 synopsis: "Stuttering For Free"
 description: """
@@ -26,6 +26,8 @@ tags: [
   "keyword:companion"
   "keyword:Interaction Trees"
   "keyword:CompCert"
+
+  "logpath:FreeSim"
 ]
 
 depends: [
