@@ -5,7 +5,6 @@ license: "BSD-3-Clause"
 homepage: "https://github.com/CCR-project/FreeSim"
 bug-reports: "https://github.com/CCR-project/FreeSim/issues"
 dev-repo: "git+https://github.com/CCR-project/FreeSim.git"
-version: "1.0.0"
 
 synopsis: "Stuttering For Free"
 description: """
@@ -30,7 +29,7 @@ tags: [
 ]
 
 depends: [
-  "coq" { (= "8.15.2") }
+  "coq" { >= "8.15" & < "8.16" }
   "coq-paco" { (= "4.1.2") }
   "coq-itree" { (= "4.0.0") }
   "coq-ordinal" { (= "0.5.2") }
