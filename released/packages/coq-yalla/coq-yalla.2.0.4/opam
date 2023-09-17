@@ -16,7 +16,7 @@ authors: [
 license: "LGPL-3.0-or-later"
 
 depends: [
-  "coq" { >= "8.16" & < "8.18~" }
+  "coq" { >= "8.16" & < "8.19~" }
 ]
 
 build: [
