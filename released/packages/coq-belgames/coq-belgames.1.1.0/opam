@@ -29,7 +29,7 @@ depends: [
 tags: [
   "keyword:games of incomplete information"
   "keyword:belief functions theory"
-  "category:Computer Science/Algorithms/Correctness proofs of algorithms"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
   "logpath:BelGames"
   "date:2023-02-24"
 ]

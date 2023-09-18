@@ -23,9 +23,8 @@ depends: [
 ]
 
 tags: [
-  "category:Mathematics/Classical Logic"
-  "keyword:classical"
-  "keyword:logic"
+  "category:Mathematics/Logic/Classical logic"
+  "keyword:classical logic"
   "keyword:sets"
   "logpath:mathcomp.classical"
 ]

@@ -34,7 +34,7 @@ tags: [
 
   "logpath:CoLoR"
 
-  "category:Computer Science/Algorithms/Correctness proofs of algorithms"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
   "category:Computer Science/Data Types and Data Structures"
   "category:Computer Science/Lambda Calculi"
   "category:Mathematics/Algebra"
@@ -89,7 +89,7 @@ tags: [
   "keyword:graph"
   "keyword:path"
   "keyword:transitive closure"
-  "keyword:strongly connected component"
+  "keyword:strongly connected components"
   "keyword:topological ordering"
 
   "keyword:rpo"
