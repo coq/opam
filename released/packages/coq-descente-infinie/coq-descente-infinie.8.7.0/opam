@@ -10,7 +10,7 @@ depends: [
   "coq" {>= "8.7" & < "8.8~"}
 ]
 tags: [
-  "keyword: Induction"
+  "keyword: induction"
   "keyword: infinite descent"
   "category: Miscellaneous/Coq Extensions"
   "date: 2010-02"

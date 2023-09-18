@@ -24,8 +24,7 @@ depends: [
 
 tags: [
   "category:Mathematics/Logic/Classical logic"
-  "keyword:classical"
-  "keyword:logic"
+  "keyword:classical logic"
   "keyword:sets"
   "date:2023-02-24"
   "logpath:mathcomp.classical"

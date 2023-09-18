@@ -33,7 +33,7 @@ depends: [
 ]
 
 tags: [
-  "category:Computer Science/Modal Logic"
+  "category:Mathematics/Logic/Modal logic"
   "keyword:modal logic"
   "keyword:completeness"
   "keyword:decidability"

@@ -15,7 +15,7 @@ depends: [
 tags: [
   "keyword:probability"
   "keyword:Markov"
-  "keyword:Lebesgue integral"
+  "keyword:Lebesgue integration"
   "keyword:sigma algebras"
   "keyword:measurability"
   "keyword:Borel"
