@@ -1,0 +1,47 @@
+opam-version: "2.0"
+maintainer: "Minki Cho <minki.cho@sf.snu.ac.kr>, Youngju Song <youngju@mpi-sws.org>"
+authors: "Minki Cho, Youngju Song, Dongjae Lee"
+license: "BSD-3-Clause"
+homepage: "https://github.com/CCR-project/FreeSim"
+bug-reports: "https://github.com/CCR-project/FreeSim/issues"
+dev-repo: "git+https://github.com/CCR-project/FreeSim"
+
+synopsis: "Stuttering For Free"
+description: """
+One of the most common tools for proving behavioral refinements between transition systems is the method of simulation proofs, which has been explored extensively over the past several decades.
+Stuttering simulations are an extension of traditional simulations---used, for example, in CompCert---in which either the source or target of the simulation is permitted to ``stutter'' (stay in place) while the other side steps forward.
+In the interest of ensuring soundness, however, existing stuttering simulations restrict proofs to only perform a finite number of stuttering steps before making synchronous progress---a step of reasoning in which both sides of the simulation progress forward together.
+This restriction guarantees that a terminating program cannot be proven to simulate a non-terminating one.
+
+In this paper, we observe that the requirement to eventually achieve synchronous progress is burdensome and, what's more, unnecessary: it is possible to ensure soundness of stuttering simulations while only requiring asynchronous progress (progress on both sides of the simulation that may be achieved with only stuttering steps).
+Building on this observation, we develop a new simulation technique we call FreeSim (short for ``freely-stuttering simulations''), mechanized in Coq, and we demonstrate its effectiveness on a range of interesting case studies.
+These include a simplification of the meta-theory of CompCert, as well as the DTrees library, which enriches the ITrees (Interaction Trees) library with dual non-determinism.
+"""
+
+tags: [
+  "keyword:simulation"
+  "keyword:coinduction"
+  "keyword:dual non-determinism"
+  "keyword:up to techniques"
+  "keyword:companion"
+  "keyword:Interaction Trees"
+  "keyword:CompCert"
+
+  "logpath:FreeSim"
+]
+
+depends: [
+  "coq" { >= "8.15" & < "8.16" }
+  "coq-paco" { (= "4.1.2") }
+  "coq-itree" { (= "4.0.0") }
+  "coq-ordinal" { (= "0.5.2") }
+  "coq-compcert" { (= "3.11") }
+]
+
+build: [make "-j%{jobs}%"]
+install: [make "-f" "Makefile.coq" "install"]
+
+url {
+  src: "https://github.com/CCR-project/FreeSim/archive/refs/tags/AE.tar.gz"
+  checksum: "sha512=5c561c8f66a9733ff353292c6b7ac2ddb272eb1d71720597fd269a69aac2c7aa3474e19f36278e4e45e1ee0f52913b9de3aa554362be0c760f699359b996a55f"
+}
