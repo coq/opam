@@ -40,3 +40,8 @@ depends: [
 
 build: [make "-j%{jobs}%"]
 install: [make "-f" "Makefile.coq" "install"]
+
+url {
+  src: "https://github.com/CCR-project/FreeSim/archive/refs/tags/AE.tar.gz"
+  checksum: "sha512=5c561c8f66a9733ff353292c6b7ac2ddb272eb1d71720597fd269a69aac2c7aa3474e19f36278e4e45e1ee0f52913b9de3aa554362be0c760f699359b996a55f"
+}
