@@ -10,7 +10,7 @@ build: [ make "-j" "%{jobs}%" "test" {with-test} ]
 install: [ make "install" ]
 depends: [
   "coq" { (>= "8.17" & < "8.19~") | (= "dev") }
-  "coq-mathcomp-ssreflect" {(>= "2.0") | (= "dev")}
+  "coq-mathcomp-ssreflect" {>= "2.0"}
 ]
 
 tags: [
@@ -31,6 +31,6 @@ define their own instances for other classes.
 """
 
 url {
-  src: "https://github.com/arthuraa/deriving/releases/tag/v0.2.0"
+  src: "https://github.com/arthuraa/deriving/archive/refs/tags/v0.2.0.tar.gz"
   checksum: "sha512=8d4cbb22f246add31d48553d67aee39d985f6f1b9c6f1b6c885c6972b50aaeb3fc4b48944b643b994550dcc680fd6d9e5644a3441929d9b3c0d7d4933fe05706"
 }
