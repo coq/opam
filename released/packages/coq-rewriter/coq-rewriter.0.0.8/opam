@@ -14,7 +14,7 @@ install: [make "install"]
 depends: [
   "conf-findutils" {build}
   "ocaml" {build}
-  "ocaml" {build & >= "4.14.0" & (arch != "arm64" | arch != "aarch64")}
+  "ocaml" {build & >= "4.14.0" & arch != "arm64"}
   "coq" {>= "8.15~"}
 ]
 dev-repo: "git+https://github.com/mit-plv/rewriter.git"
