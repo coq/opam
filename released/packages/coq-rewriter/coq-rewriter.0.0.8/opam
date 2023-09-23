@@ -13,8 +13,8 @@ build: [
 install: [make "install"]
 depends: [
   "conf-findutils" {build}
-  "ocaml" {build}
-  "coq" {>= "8.15~"}
+  "ocaml" {build & (arch = "x86_32" | arch = "x86_64" | >= "4.14.0")}
+  "coq" {>= "8.15~" & < "8.18~"}
 ]
 dev-repo: "git+https://github.com/mit-plv/rewriter.git"
 synopsis: "Reflective PHOAS rewriting/pattern-matching-compilation framework for simply-typed equalities and let-lifting, experimental and tailored for use in Fiat Cryptography"
