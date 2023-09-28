@@ -1,0 +1,25 @@
+opam-version: "2.0"
+synopsis:
+  "A Coq plugin to add reduction side effects to some Coq reduction strategies"
+maintainer: "Yishuai Li <yishuai@cis.upenn.edu>"
+authors: "Hugo Herbelin"
+license: "MPL-2.0"
+tags: "logpath:ReductionEffect"
+homepage: "https://github.com/coq-community/reduction-effects"
+bug-reports: "https://github.com/coq-community/reduction-effects/issues"
+depends: [
+  "coq" {>= "8.10"}
+  "cppo" {>= "1.6.8"}
+]
+build: [make "-j%{jobs}%"]
+run-test: [make "-j%{jobs}%" "test"]
+install: [make "install"]
+dev-repo: "git+https://github.com/coq-community/reduction-effects.git"
+url {
+  src:
+    "https://github.com/coq-community/reduction-effects/archive/refs/tags/v0.1.5.tar.gz"
+  checksum: [
+    "md5=e913b9fcfe9ff88a5e637b8e05191a0e"
+    "sha512=9665623b59d352fdfc5e00de4e18d900372161f35e8ec945bee360e4e7c8daa2a514ae9e4b05112aade5c3a30020784f739ca2dcbdeba4407216420a9960a25c"
+  ]
+}
