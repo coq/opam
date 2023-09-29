@@ -1,0 +1,45 @@
+opam-version: "2.0"
+maintainer: "kazuhiko.sakaguchi@inria.fr"
+
+homepage: "https://github.com/math-comp/algebra-tactics"
+dev-repo: "git+https://github.com/math-comp/algebra-tactics.git"
+bug-reports: "https://github.com/math-comp/algebra-tactics/issues"
+license: "CECILL-B"
+
+synopsis: "Ring, field, lra, nra, and psatz tactics for Mathematical Components"
+description: """
+This library provides `ring`, `field`, `lra`, `nra`, and `psatz` tactics for
+algebraic structures of the Mathematical Components library. The `ring` tactic
+works with any `comRingType` (commutative ring) or `comSemiRingType`
+(commutative semiring). The `field` tactic works with any `fieldType` (field).
+The other (Micromega) tactics work with any `realDomainType` (totally ordered
+integral domain) or `realFieldType` (totally ordered field). Algebra Tactics
+do not provide a way to declare instances, like the `Add Ring` and `Add Field`
+commands, but use canonical structure inference instead. Therefore, each of
+these tactics works with any canonical (or abstract) instance of the
+respective structure declared through Hierarchy Builder. Another key feature
+of Algebra Tactics is that they automatically push down ring morphisms and
+additive functions to leaves of ring/field expressions before applying the
+proof procedures."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.16" & < "8.19~"}
+  "coq-mathcomp-ssreflect" {>= "2.0" & < "2.1~"}
+  "coq-mathcomp-algebra"
+  "coq-mathcomp-zify" {>= "1.5.0"}
+  "coq-elpi" {>= "1.15.0" & != "1.17.0"}
+]
+
+tags: [
+  "logpath:mathcomp.algebra_tactics"
+]
+authors: [
+  "Kazuhiko Sakaguchi"
+  "Pierre Roux"
+]
+url {
+  src: "https://github.com/math-comp/algebra-tactics/archive/refs/tags/1.2.1.tar.gz"
+  checksum: "sha256=ce05b0b58232ea85bcfab1f33dc9bbeecb5dfc9b775d22b04fd82e1536559bec"
+}
