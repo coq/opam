@@ -33,9 +33,10 @@ tags: [
 ]
 
 depends: [
-  "coq" { (>= "8.12" & < "8.18~") | (= "dev") }
+  "coq" { (>= "8.13" & < "8.19~") | (= "dev") }
 ]
 
+patches: ["curry.patch"]
 build: ["./make-package" "stdpp" "-j%{jobs}%"]
 install: ["./make-package" "stdpp" "install"]
 
