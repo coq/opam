@@ -9,7 +9,7 @@ license: "MIT"
 build: [make "-j%{jobs}%" "computed"]
 install: []
 depends: [
-  "coq" {>= "8.17~"}
+  "coq" {>= "8.17~" & ( < "8.18~" | > "8.18.0" )}
 ]
 conflict-class: [
   "coq-neural-net-interp"
