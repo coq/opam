@@ -1,0 +1,47 @@
+opam-version: "2.0"
+synopsis: "Elpi extension language for Coq"
+description: """\
+Coq-elpi provides a Coq plugin that embeds ELPI.
+It also provides a way to embed Coq's terms into λProlog using
+the Higher-Order Abstract Syntax approach
+and a way to read terms back.  In addition to that it exports to ELPI a
+set of Coq's primitives, e.g. printing a message, accessing the
+environment of theorems and data types, defining a new constant and so on.
+For convenience it also provides a quotation and anti-quotation for Coq's
+syntax in λProlog.  E.g. `{{nat}}` is expanded to the type name of natural
+numbers, or `{{A -> B}}` to the representation of a product by unfolding
+ the `->` notation. Finally it provides a way to define new vernacular commands
+and
+new tactics."""
+maintainer: "Enrico Tassi <enrico.tassi@inria.fr>"
+authors: "Enrico Tassi"
+license: "LGPL-2.1-or-later"
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "keyword:λProlog"
+  "keyword:higher order abstract syntax"
+  "logpath:elpi"
+]
+homepage: "https://github.com/LPCIC/coq-elpi"
+bug-reports: "https://github.com/LPCIC/coq-elpi/issues"
+depends: [
+  "stdlib-shims"
+  "elpi" {>= "1.16.5" & < "1.18.0~"}
+  "coq" {>= "8.18" & < "8.19~"}
+  "dot-merlin-reader" {with-dev}
+  "ocaml-lsp-server" {with-dev}
+]
+build: [
+  [make "build" "COQBIN=%{bin}%/" "ELPIDIR=%{prefix}%/lib/elpi" "OCAMLWARN="]
+  [make "test" "COQBIN=%{bin}%/" "ELPIDIR=%{prefix}%/lib/elpi"] {with-test}
+]
+install: [make "install" "COQBIN=%{bin}%/" "ELPIDIR=%{prefix}%/lib/elpi"]
+dev-repo: "git+https://github.com/LPCIC/coq-elpi"
+url {
+  src:
+    "https://github.com/LPCIC/coq-elpi/releases/download/v1.19.3/coq-elpi-1.19.3.tar.gz"
+  checksum: [
+    "md5=99f1dbc5830577455e51d3027a2316bb"
+    "sha512=d58a1fa9749270426c90ccc952fc0a91537dba1c6a0a3be4a7eae371c6251b861777ccdce09ab355e6480c86c682af83fb9370513f4dd39d7379f88987765e88"
+  ]
+}
