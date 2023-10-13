@@ -14,11 +14,11 @@ contains a formalization of VLSMs and their theory in the Coq proof assistant.""
 
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
-  "dune" {>= "2.5"}
-  "coq" {>= "8.15"}
-  "coq-stdpp" {>= "1.7.0"}
-  "coq-itauto" 
-  "coq-equations" 
+  "dune" {>= "3.5"}
+  "coq" {>= "8.16"}
+  "coq-stdpp" {>= "1.8.0"}
+  "coq-itauto"
+  "coq-equations"
 ]
 
 tags: [
@@ -38,7 +38,8 @@ authors: [
   "Lucas Peña"
   "Grigore Roșu"
   "Traian Șerbănuță"
-  "Dafina Trufas"
+  "Ioan Teodorescu"
+  "Dafina Trufaș"
   "Jan Tušil"
   "Vlad Zamfir"
 ]
