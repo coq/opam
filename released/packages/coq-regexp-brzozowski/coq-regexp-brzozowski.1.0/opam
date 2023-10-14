@@ -16,9 +16,9 @@ of regular expressions for correctness."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.10"}
-  "coq-mathcomp-ssreflect" {>= "1.12.0"}
-  "coq-reglang" {>= "1.1.3"}
+  "coq" {>= "8.10" & < "8.17~"}
+  "coq-mathcomp-ssreflect" {>= "1.12.0" & < "1.16.0"}
+  "coq-reglang" {>= "1.1.3" & < "1.2.0"}
 ]
 
 tags: [
