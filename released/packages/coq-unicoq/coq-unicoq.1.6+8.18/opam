@@ -19,7 +19,7 @@ depends: [
 synopsis: "An enhanced unification algorithm for Coq"
 tags: [
   "logpath:Unicoq"
-  "date:2023-03-28"
+  "date:2023-09-27"
 ]
 url {
   src: "https://github.com/unicoq/unicoq/archive/v1.6-8.18.tar.gz"
