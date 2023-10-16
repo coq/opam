@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "coq-compcert"
 synopsis: "The CompCert C compiler (64 bit)"
 maintainer: "Michael Soegtrop"
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
