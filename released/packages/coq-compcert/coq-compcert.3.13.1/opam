@@ -9,7 +9,7 @@ tags: [
   "keyword:C"
   "keyword:compiler"
   "logpath:compcert"
-  "date:2022-11-25"
+  "date:2023-07-04"
 ]
 homepage: "http://compcert.inria.fr/"
 bug-reports: "https://github.com/AbsInt/CompCert/issues"
