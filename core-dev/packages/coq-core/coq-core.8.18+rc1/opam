@@ -31,6 +31,9 @@ depends: [
   "zarith" {>= "1.11"}
   "ounit2" {with-test}
 ]
+conflicts: [
+  "coq"   { < "8.17" }
+]
 depopts: ["coq-native"]
 build: [
   [
