@@ -21,8 +21,8 @@ depends: [
   "dune-site" {>= "2.9.1"}
   "opam-client" {>= "2.1.0"}
   "cmdliner" {>= "1.1.0"}
-  "coq-core" {= "dev"}
-  "coq-stdlib" {= "dev" & with-test}
+  "coq-core" {>= "8.18" & < "8.19~"}
+  "coq-stdlib" {with-test}
   "conf-git"
   "bos" {>= "0.2.1"}
   "coq-tactician-dummy" {= "8.17.dev" & with-test}
@@ -65,5 +65,5 @@ substs: [
   "coq-shim/tactician.ml"
 ]
 url {
-  src: "git+https://github.com/coq-tactician/coq-tactician.git#coqdev"
+  src: "git+https://github.com/coq-tactician/coq-tactician.git#coq8.18"
 }
