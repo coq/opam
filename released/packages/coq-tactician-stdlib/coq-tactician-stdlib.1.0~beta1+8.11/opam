@@ -45,6 +45,7 @@ remove: [
 ]
 url {
   src: "https://github.com/coq-tactician/coq-tactician-stdlib/archive/1.0-beta1-8.11.tar.gz"
+  checksum: "sha512=3525285687a023c353170ba611e572fd2051e360c63bf78e8239864409db5a8ee36d876b66bc7cb97248fd0e2f8adbbaa2d189cbe06a2e322734c2ea711a98ad"
 }
 tags: [
   "keyword:tactic-learning"
