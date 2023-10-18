@@ -1,0 +1,40 @@
+opam-version: "2.0"
+maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+homepage: "https://math-comp.github.io/math-comp/"
+bug-reports: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+dev-repo: "git+https://github.com/math-comp/odd-order"
+license: "CeCILL-B"
+
+build: [
+  [make "-j" "%{jobs}%"]
+]
+install: [ make "install" ]
+depends: [
+  "ocaml"
+  "coq-mathcomp-character" { (>= "2.0.0") | (= "dev") }
+]
+tags: [ "keyword:finite groups" "keyword:Feit Thompson theorem" "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" ]
+authors: [ "Jeremy Avigad <>" "Andrea Asperti <>" "Stephane Le Roux <>" "Yves Bertot <>" "Laurence Rideau <>" "Enrico Tassi <>" "Ioana Pasca <>" "Georges Gonthier <>" "Sidi Ould Biha <>" "Cyril Cohen <>" "Francois Garillot <>" "Alexey Solovyev <>" "Russell O'Connor <>" "Laurent Théry <>" "Assia Mahboubi <>" ]
+synopsis: "The formal proof of the Feit-Thompson theorem"
+description: """
+The formal proof of the Feit-Thompson theorem.
+
+From mathcomp Require Import all_ssreflect all_fingroup all_solvable PFsection14.
+
+Check Feit_Thompson.
+   : forall (gT : finGroupType) (G : {group gT}), odd #|G| -> solvable G
+
+From mathcomp Require Import all_ssreflect all_fingroup 
+                             all_solvable stripped_odd_order_theorem.
+
+Check stripped_Odd_Order.
+   : forall (T : Type) (mul : T -> T -> T) (one : T) (inv : T -> T)
+         (G : T -> Type) (n : natural),
+       group_axioms T mul one inv ->
+       group T mul one inv G ->
+       finite_of_order T G n -> odd n -> solvable_group T mul one inv G"""
+
+url {
+  src: "https://github.com/math-comp/odd-order/archive/mathcomp-odd-order.2.0.0.tar.gz"
+  checksum: "sha256=7d0f0a642c185f414a6d47e6cb110d5017a7c961f7a88c915db5ff195988b305"
+}
