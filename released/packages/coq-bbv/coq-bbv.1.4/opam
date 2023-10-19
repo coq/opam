@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "gmalecha@gmail.com"
+homepage: "https://github.com/mit-plv/bbv"
+dev-repo: "git://git@github.com:mit-plv/bbv.git"
+bug-reports: "https://github.com/mit-plv/bbv/issues"
+authors: ["Tej Chajed"
+          "Haogang Chen"
+          "Adam Chlipala"
+          "Joonwon Choi"
+          "Andres Erbsen"
+          "Jason Gross"
+          "Samuel Gruetter"
+          "Frans Kaashoek"
+          "Alex Konradi"
+          "Gregory Malecha"
+          "Duckki Oe"
+          "Murali Vijayaraghavan"
+          "Nickolai Zeldovich"
+          "Daniel Ziegler"
+]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.14" & < "8.19~"}
+]
+synopsis: "An implementation of bitvectors in Coq."
+url {
+  src: "https://github.com/mit-plv/bbv/archive/v1.4.tar.gz"
+  checksum: "sha512=c7ee20bfaae862b8336b2281a39914819c2140d9ea1df9c6aa58696cf61d6f965bddf514e1fd6b8dbd37f3d82e8a2d5d03593b74cb61d2b2045458a0a55870ca"
+}
