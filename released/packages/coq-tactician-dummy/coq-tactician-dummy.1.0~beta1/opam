@@ -25,6 +25,7 @@ build: [
 ]
 url {
   src: "https://github.com/coq-tactician/coq-tactician-dummy/archive/1.0-beta1.tar.gz"
+  checksum: "sha512=99c2a46202263745fa509a5fcea4b8a09f0cfb5e268a5fa610e32731781a3235845d977e299d3a48c4f2a7b2e3cae0b2b415c7bc57f4b685e8da960a53ac40ca"
 }
 tags: [
   "keyword:tactic-learning"

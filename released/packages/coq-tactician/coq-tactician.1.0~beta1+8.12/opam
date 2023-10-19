@@ -37,6 +37,7 @@ tactician enable
 " {success}]
 url {
   src: "https://github.com/coq-tactician/coq-tactician/archive/1.0-beta1-8.12.tar.gz"
+  checksum: "sha512=f96dbfb30727b05422709c0d2256ca71c1905aea304bbbfb593639823322a1155b90e81bf7383bf03d17215d3fb447c74b2301bebbf72b057f8e81fe66e21e26"
 }
 tags: [
   "keyword:tactic-learning"
