@@ -1,0 +1,63 @@
+opam-version: "2.0"
+synopsis: "Recompiles Coq's standard libary with Tactician's instrumentation loaded"
+description: """
+  *** WARNING *** This package will overwrite Coq's standard library files.
+
+  This package recompiles Coq's standard library with Tactician's (`coq-tactician`)
+  instrumentation loaded such that Tactician can learn from the library. When you
+  install this package, the current `.vo` files of the standard library are backed
+  in the folder `user-contrib/Tactician/stdlib-backup`. The new `.vo` files are
+  equivalent to the originals, except that they also contain Tactician's tactic
+  databases. After installation of this package, all other Coq developments that
+  are installed will also need to be recompiled. The 'tactician recompile' command
+  line utility can help with this.
+  Upon removal of this package, the original files will be placed back.
+"""
+homepage: "https://coq-tactician.github.io"
+dev-repo: "git+https://github.com/coq-tactician/coq-tactician-stdlib"
+bug-reports: "https://github.com/coq-tactician/coq-tactician-stdlib/issues"
+maintainer: "Lasse Blaauwbroek <lasse@blaauwbroek.eu>"
+authors: "Lasse Blaauwbroek <lasse@blaauwbroek.eu"
+license: "MIT"
+messages: [
+  "*** WARNING ***"
+  "This package will overwrite Coq's standard library files."
+  "A backup of the original files will be placed under Coq's"
+  "library directory at user-contrib/tactician-stdlib-backup/"
+  "and they will be restored when you remove this package."
+  "After installation of this package, all other Coq packages"
+  "also need to be recompiled. Running the 'tactician recompile'"
+  "command-line utility will help with this process."
+]
+post-messages: ["
+--- The standard library was successfully recompiled ---
+
+In order to finish the process, you should run
+
+tactician recompile
+" {success}]
+depends: [
+  "coq" {>= "8.16" & < "8.17~"}
+  "coq-tactician"
+]
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+remove: [
+  [make "restore"]
+]
+tags: [
+  "keyword:tactic-learning"
+  "keyword:machine-learning"
+  "keyword:automation"
+  "keyword:proof-synthesis"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:Tactician"
+]
+url {
+  src: "https://github.com/coq-tactician/coq-tactician-stdlib/archive/1.0-beta2-8.16.tar.gz"
+  checksum: "sha512=444674226211ad3a6e6a0aa60ebd756923ae0f65ea322afed1050a5bf53b7fb311c4a7447aa5f8b00082585ffd2cf01d6991ba40a36c752df9ba619f4eadfcd2"
+}
