@@ -1,0 +1,48 @@
+opam-version: "2.0"
+synopsis: "A dummy implementation of Tactician"
+description: """
+This package acts as a stand-in for the Tactician plugin (`coq-tactician`).
+It provides short files that replicate Tactician's tactics without actually
+doing much. This is useful when you have a development that uses Tactician
+that you want to package up. In most situations, it is not a good idea to
+have your package directly depend on `coq-tactician`. Instead you should load
+Tactician through your `coqrc` file. In order for your package to be compilable
+by others, your package can depend on this package. Just add
+`From Tactician Require Import Ltac1Dummy` in your development and you are good
+to go."""
+maintainer: ["Lasse Blaauwbroek <lasse@blaauwbroek.eu>"]
+authors: ["Lasse Blaauwbroek <lasse@blaauwbroek.eu>"]
+license: "MIT"
+homepage: "https://coq-tactician.github.io"
+bug-reports: "https://github.com/coq-tactician/coq-tactician-dummy/issues"
+depends: [
+  "dune" {>= "2.5"}
+  "coq" {>= "8.6.1" & < "8.17~"}
+]
+build: [
+  ["dune" "subst"] {pinned}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/coq-tactician/coq-tactician-dummy.git"
+tags: [
+  "keyword:tactic-learning"
+  "keyword:machine-learning"
+  "keyword:automation"
+  "keyword:proof-synthesis"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:Tactician"
+]
+url {
+  src: "https://github.com/coq-tactician/coq-tactician-dummy/archive/1.0-beta2-8.11.tar.gz"
+  checksum: "sha512=89aa13aff38e7ff3d53c00c0a604771ee1b3d0fadb3dab21161b28e25ab9fa14bd834a445472c05140c881ba7b7205ed81ca20b479002573051f42660428e9bb"
+}
