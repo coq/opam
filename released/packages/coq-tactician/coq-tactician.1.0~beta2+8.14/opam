@@ -15,6 +15,7 @@ authors: ["Lasse Blaauwbroek <lasse@blaauwbroek.eu>"]
 license: "MIT"
 homepage: "https://coq-tactician.github.io"
 bug-reports: "https://github.com/coq-tactician/coq-tactician/issues"
+flags: [ avoid-version ]
 depends: [
   "ocaml" {>= "4.08"}
   "dune" {>= "2.8"}
