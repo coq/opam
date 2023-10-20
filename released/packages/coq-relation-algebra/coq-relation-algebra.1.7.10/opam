@@ -33,6 +33,6 @@ authors: [
 ]
 url {
   src:
-    "https://github.com/damien-pous/relation-algebra/archive/refs/tags/v.1.7.10.tar.gz"
+    "https://github.com/damien-pous/relation-algebra/archive/refs/tags/v1.7.10.tar.gz"
   checksum: "sha512=9dd7601db9f25753709d4708ab878782580a7d3a858c0188948a10ea51fcbceddee86e5c42e7ddba2a53f65fcb4ee379b33e9c0996cdcef32b7b419d62e6e04e"
 }
