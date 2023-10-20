@@ -4,7 +4,7 @@ homepage: "https://github.com/thery/GeometricAlgebra"
 bug-reports: "https://github.com/thery/GeometricAlgebra"
 dev-repo: "git+https://github.com/thery/GeometricAlgebra.git"
 authors : "Laurent Théry"
-license: "LGPL"
+license: "LGPL-2.1-only"
 build: [
   [make "-j%{jobs}%"]
 ]
@@ -19,6 +19,6 @@ depends: [
 synopsis: "Grassman Cayley and Clifford formalisations"
 flags: light-uninstall
 url {
-  src: "https://github.com/thery/GeometricAlgebra/archive/v8.8.zip"
-  checksum: "md5=12dfbc7869435e2777342fe0a0243283"
+  src: "https://github.com/thery/GeometricAlgebra/archive/v8.8.tar.gz"
+  checksum: "md5=2026059522901d82553ca58e8a7a6a2b"
 }

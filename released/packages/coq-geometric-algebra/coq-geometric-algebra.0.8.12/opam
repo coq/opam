@@ -20,6 +20,6 @@ tags: [
   "logpath:GeometricAlgebra"
 ]
 url {
-  src: "https://github.com/thery/GeometricAlgebra/archive/v8,12.zip"
-  checksum: "md5=0e0185d4efdb692a8f440796600e7063"
+  src: "https://github.com/thery/GeometricAlgebra/archive/v8,12.tar.gz"
+  checksum: "md5=c0682da10c8ca6ae12c204f9335ae020"
 }

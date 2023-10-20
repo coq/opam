@@ -4,7 +4,7 @@ homepage: "https://github.com/thery/GeometricAlgebra"
 bug-reports: "https://github.com/thery/GeometricAlgebra"
 dev-repo: "git+https://github.com/thery/GeometricAlgebra.git"
 authors : "Laurent Théry"
-license: "LGPL"
+license: "LGPL-2.1-only"
 build: [
   [make "-j%{jobs}%"]
 ]
@@ -20,6 +20,6 @@ tags: [
   "logpath:GeometricAlgebra"
 ]
 url {
-  src: "https://github.com/thery/GeometricAlgebra/archive/v8,11.zip"
-  checksum: "md5=8539a242001444b6ef76f2b3507d4779"
+  src: "https://github.com/thery/GeometricAlgebra/archive/v8,11.tar.gz"
+  checksum: "md5=660cfe9c5a8ea7e7405a9015e37d99c9"
 }
