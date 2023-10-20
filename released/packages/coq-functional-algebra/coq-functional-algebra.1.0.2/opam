@@ -4,7 +4,7 @@ homepage: "https://github.com/llee454/functional-algebra"
 dev-repo: "git+https://github.com/llee454/functional-algebra.git"
 bug-reports: "https://github.com/llee454/functional-algebra/issues"
 authors: ["Larry D. Lee Jr."]
-license: "LGPLv3"
+license: "LGPL-3.0"
 build: [
   [make "-j%{jobs}%"]
 ]

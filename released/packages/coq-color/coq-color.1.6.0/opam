@@ -16,7 +16,7 @@ authors: [
   "Lianyi Zhang"
   "Sorin Stratulat"
 ]
-license: "CeCILL"
+license: "CECILL-2.1"
 homepage: "http://color.inria.fr/"
 bug-reports: "https://github.com/fblanqui/color/issues"
 build: [make "-j%{jobs}%"]

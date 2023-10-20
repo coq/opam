@@ -1,7 +1,7 @@
 opam-version: "2.0"
 maintainer: "matej.kosik@inria.fr"
 homepage: "https://github.com/coq-contribs/rsa"
-license: "LGPL 2"
+license: "LGPL-2.1-only"
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/RSA"]
