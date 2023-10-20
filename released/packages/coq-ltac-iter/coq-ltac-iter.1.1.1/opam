@@ -4,7 +4,7 @@ homepage: "https://github.com/gmalecha/coq-ltac-iter"
 dev-repo: "git+https://github.com/gmalecha/coq-ltac-iter.git"
 bug-reports: "https://github.com/gmalecha/coq-ltac-iter/issues"
 authors: ["Gregory Malecha"]
-license: "BSD"
+license: "MIT"
 build: [
   [make "-j%{jobs}%"]
 ]
