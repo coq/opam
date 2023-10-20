@@ -4,7 +4,7 @@ homepage: "https://github.com/thery/GeometricAlgebra"
 bug-reports: "https://github.com/thery/GeometricAlgebra"
 dev-repo: "git+https://github.com/thery/GeometricAlgebra.git"
 authors : "Laurent Théry"
-license: "LGPL"
+license: "LGPL-2.1-only"
 build: [
   [make "-j%{jobs}%"]
 ]
