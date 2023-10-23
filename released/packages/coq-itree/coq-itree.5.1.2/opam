@@ -15,7 +15,7 @@ homepage: "https://github.com/DeepSpec/InteractionTrees"
 bug-reports: "https://github.com/DeepSpec/InteractionTrees/issues"
 dev-repo: "git+https://github.com/DeepSpec/InteractionTrees.git"
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs "@install" "@runtest" {with-test} "@doc" {with-doc}]
 ]
 depends: [
