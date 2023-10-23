@@ -15,21 +15,21 @@ homepage: "https://github.com/DeepSpec/InteractionTrees"
 bug-reports: "https://github.com/DeepSpec/InteractionTrees/issues"
 dev-repo: "git+https://github.com/DeepSpec/InteractionTrees.git"
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   ["dune" "build" "-p" name "-j" jobs "@install" "@runtest" {with-test} "@doc" {with-doc}]
 ]
 depends: [
   "dune" {>= "2.6"}
-  "coq" {>= "8.13" & < "8.18"}
+  "coq" {>= "8.13"}
   "coq-ext-lib" {>= "0.11.1"}
   "coq-paco" {>= "4.0.1"}
 ]
 tags: [
   "org:deepspec"
   "logpath: ITree"
-  "date:2023-03-17"
+  "date:2023-10-22"
 ]
 url {
-  http: "https://github.com/DeepSpec/InteractionTrees/archive/5.1.1.tar.gz"
-  checksum: "sha512=ab155c00cc067912d3e955451b7bc997ae8a24a637a25bb073ad6c17290f842ad42ae77144c13d7dc7224a30217c20844f31175eb116cbc30a5e135c29f41424"
+  http: "https://github.com/DeepSpec/InteractionTrees/archive/5.1.2.tar.gz"
+  checksum: "sha512=989f966960f68f55b257e887438e6a03f21c2e7eee743f56bf05452756624f777b266a38b6ec767aa73d2f8fa0fe6953424115d529bef5eb6a89b572db618093"
 }
