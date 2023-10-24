@@ -1,0 +1,25 @@
+opam-version: "2.0"
+maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+
+homepage: "https://math-comp.github.io/"
+bug-reports: "https://github.com/math-comp/math-comp/issues"
+dev-repo: "git+https://github.com/math-comp/math-comp.git"
+license: "CECILL-B"
+
+build: [ make "-C" "mathcomp/field" "-j" "%{jobs}%" ]
+install: [ make "-C" "mathcomp/field" "install" ]
+depends: [ "coq-mathcomp-solvable" { = version } ]
+
+tags: [ "keyword:algebra" "keyword:field" "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" "logpath:mathcomp.field" ]
+authors: [ "The Mathematical Components team" ]
+
+synopsis: "Mathematical Components Library on Fields"
+description:"""
+This library contains definitions and theorems about field extensions,
+galois theory, algebraic numbers, cyclotomic polynomials...
+"""
+
+url {
+src: "https://github.com/math-comp/math-comp/archive/mathcomp-2.1.0.tar.gz"
+checksum: "sha256=ca000eb4cbd80f9088fd5f6a6745eebf9be3c0d7430fa3fde10a790b99466d26"
+}
