@@ -32,12 +32,7 @@ build: [
     "-j"
     jobs
     "@install"
-    "@runtest" {with-test}
-    "@doc" {with-doc}
   ]
-]
-install: [
-[make "install"]
 ]
 dev-repo: "git+https://github.com/WasmCert/WasmCert-Coq.git"
 url {
@@ -45,7 +40,7 @@ url {
   checksum: "sha256=8b128a9a8f3acaa5ded5f05c12f07fe5828e40d961bc00fedf53a252a67f5890"
 }
 tags: [
-  "keyword: WebAssembly"
-  "category: Computer Science/Semantics and Compilation/Semantics"
-  "date: 2023-10-24"
+  "keyword:WebAssembly"
+  "category:Computer Science/Semantics and Compilation/Semantics"
+  "date:2023-10-24"
 ]
