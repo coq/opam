@@ -1,0 +1,27 @@
+opam-version: "2.0"
+maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+
+homepage: "https://math-comp.github.io/"
+bug-reports: "https://github.com/math-comp/math-comp/issues"
+dev-repo: "git+https://github.com/math-comp/math-comp.git"
+license: "CECILL-B"
+
+build: [ make "-C" "mathcomp/algebra" "-j" "%{jobs}%" ]
+install: [ make "-C" "mathcomp/algebra" "install" ]
+depends: [ "coq-mathcomp-fingroup" { = version } ]
+
+tags: [ "keyword:algebra" "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" "logpath:mathcomp.algebra" ]
+authors: [ "The Mathematical Components team" ]
+
+synopsis: "Mathematical Components Library on Algebra"
+description: """
+This library contains definitions and theorems about discrete
+(i.e. with decidable equality) algebraic structures : ring, fields,
+ordered fields, real fields,  modules, algebras, integers, rational
+numbers, polynomials, matrices, vector spaces...
+"""
+
+url {
+src: "https://github.com/math-comp/math-comp/archive/mathcomp-2.1.0.tar.gz"
+checksum: "sha256=ca000eb4cbd80f9088fd5f6a6745eebf9be3c0d7430fa3fde10a790b99466d26"
+}
