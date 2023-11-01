@@ -1,9 +1,14 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "beta.ziliani@gmail.com"
 homepage: "https://github.com/Mtac2/Mtac2"
-dev-repo: "https://github.com/Mtac2/Mtac2.git"
+dev-repo: "git+https://github.com/Mtac2/Mtac2.git"
 bug-reports: "https://github.com/Mtac2/Mtac2/issues"
-authors: ["Beta Ziliani <beta.ziliani@gmail.com>" "Jan-Oliver Kaiser <janno@mpi-sws.org" "Robbert Krebbers <mail@robbertkrebbers.nl>" "Yann Régis-Gianas <yrg@pps.univ-paris-diderot.fr>"]
+authors: [
+ "Beta Ziliani <beta.ziliani@gmail.com>"
+ "Jan-Oliver Kaiser <janno@mpi-sws.org"
+ "Robbert Krebbers <mail@robbertkrebbers.nl>"
+ "Yann Régis-Gianas <yrg@pps.univ-paris-diderot.fr>"
+]
 license: "MIT"
 synopsis: "Typed tactic language for Coq"
 build: [
