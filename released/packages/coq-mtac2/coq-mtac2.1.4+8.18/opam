@@ -13,7 +13,6 @@ build: [
 install: [
   [make "install"]
 ]
-remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Mtac2"]
 depends: [
   "coq" {>= "8.18" & < "8.19"}
   "coq-unicoq" {>= "1.5" & < "2~"}
