@@ -21,5 +21,5 @@ galois theory, algebraic numbers, cyclotomic polynomials...
 
 url {
 src: "https://github.com/math-comp/math-comp/archive/mathcomp-1.18.0.tar.gz"
-checksum: "sha256=2d2deb084aef7b2d2b7cb97a227527c4a6b28729e2a8270f57a5b3baad5485bd"
+checksum: "sha512=4b428e6ec4b290716fa3e5fe512e271d1a140394aa44deb8fa131d1417f3a31862eed4020e6ffa62d7847e2512da846041b027d6fd1f724a080923f3a496a1e7"
 }
