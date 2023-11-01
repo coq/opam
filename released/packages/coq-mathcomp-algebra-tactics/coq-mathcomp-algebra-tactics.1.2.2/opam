@@ -12,7 +12,7 @@ This library provides `ring`, `field`, `lra`, `nra`, and `psatz` tactics for
 the Mathematical Components library. These tactics use the algebraic
 structures defined in the MathComp library and their canonical instances for
 the instance resolution, and do not require any special instance declaration,
-like the `add Ring` and `Add Field` commands. Therefore, each of these tactics
+like the `Add Ring` and `Add Field` commands. Therefore, each of these tactics
 works with any instance of the respective structure, including concrete
 instances declared through Hierarchy Builder, abstract instances, and mixed
 concrete and abstract instances, e.g., `int * R` where `R` is an abstract
