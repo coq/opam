@@ -39,5 +39,5 @@ authors: [
 ]
 url {
   src: "https://github.com/pPomCo/belgames/releases/download/2.0.0/belgames-2.0.0.tar.gz"
-  checksum: "sha512=992a2e0c844c24ae9c22365663ba629e63d0e180d3d8b7b69849f5d37a5be9ca2df72158266dd4612eea8ce302e98dd93888694744792c56c0cdcd28afa4979e"
+  checksum: "sha512=7085b2f6e7e5ae8bf8fc4ec0a411e5caef1619f434fb7557ca470606799fcf57bec5d7343c9d776068049632f6f35baf9425586a4cb7d2d81c42476364bf7e5a"
 }
