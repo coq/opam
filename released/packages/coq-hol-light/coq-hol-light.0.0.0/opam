@@ -1,0 +1,26 @@
+opam-version: "2.0"
+synopsis: "HOL-Light library in Coq"
+description: """
+This library contains an automatic translation in Coq of (for the moment) some
+small part the HOL-Light library using https://github.com/Deducteam/hol2dk.
+"""
+homepage: "https://github.com/Deducteam/coq-hol-light"
+dev-repo: "git+https://github.com/Deducteam/coq-hol-light.git"
+bug-reports: "https://github.com/Deducteam/coq-hol-light/issues"
+doc: "https://github.com/Deducteam/coq-hol-light"
+maintainer: "frederic.blanqui@inria.fr"
+authors: ["Frédéric Blanqui"]
+license: "CeCILL-2.1"
+depends: [ "coq" {>= "8.16"} ]
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+tags: [
+  "keyword:HOL-Light"
+  "category:Math/Arith/Misc"
+  "date:2023-11-06"
+  "logpath:HOLLight"
+]
+url {
+  src: "https://github.com/Deducteam/coq-hol-light/archive/refs/tags/0.0.0.tar.gz"
+  checksum: "sha256=7e89265a208d33b1190487fc4a0d436d23df591c7ea7a2886a34a84460a5d4fa"
+}
