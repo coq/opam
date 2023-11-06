@@ -20,7 +20,7 @@ depends: [
   "ocamlfind" {build}
   "coq" {>= "8.15~"}
   "coq-coqprime" {>= "1.2.0"}
-  "coq-rewriter" {>= "0.0.6" & <= "0.0.8"}
+  "coq-rewriter" {>= "0.0.6" & <= "0.0.9"}
   "coq-rupicola" {= "0.0.7"}
   "coq-bedrock2-compiler" {= "0.0.5"}
 ]
