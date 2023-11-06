@@ -1,0 +1,43 @@
+opam-version: "2.0"
+maintainer: "erik.martin-dorel@irit.fr"
+
+homepage: "https://github.com/pPomCo/belgames"
+dev-repo: "git+https://github.com/pPomCo/belgames.git"
+bug-reports: "https://github.com/pPomCo/belgames/issues"
+license: "MIT"
+
+synopsis: "BelGames: A Formal Theory of Games of Incomplete Information Based on Non-Monotonic Capacities in the Coq Proof Assistant"
+description: """
+We extend Bayesian games to several uncertainty theories
+(eg. belief functions, imprecise probabilities). We
+obtain a more expressive class of games we refer to as BelGames. It
+makes it possible to better capture human behaviors with respect to
+lack of information.
+Next, we prove an extended version of the so-called
+Howson--Rosenthal's theorem, showing that BelGames can be turned
+into games of complete information, i.e., without any uncertainty."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.16" & < "8.19~")}
+  "coq-mathcomp-algebra" {(>= "2.0.0" & < "2.1~")}
+]
+
+tags: [
+  "keyword:games of incomplete information"
+  "keyword:belief functions theory"
+  "keyword:imprecise probability theory"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
+  "logpath:BelGames"
+  "date:2023-11-26"
+]
+authors: [
+  "Pierre Pomeret-Coquot"
+  "Erik Martin-Dorel"
+  "Hélène Fargier"
+]
+url {
+  src: "https://github.com/pPomCo/belgames/releases/download/2.0.0/belgames-2.0.0.tar.gz"
+  checksum: "sha512=7085b2f6e7e5ae8bf8fc4ec0a411e5caef1619f434fb7557ca470606799fcf57bec5d7343c9d776068049632f6f35baf9425586a4cb7d2d81c42476364bf7e5a"
+}
