@@ -31,6 +31,6 @@ depends: [
 synopsis: "A Coq Library for First-Order Logic"
 url {
   src: "https://github.com/uds-psl/coq-library-fol/archive/refs/tags/v1.0+8.18.tar.gz"
-  checksum: "sha256=777796790b0ede24cffbbb25f92c4c51eea53477518600ca1b7ce85b7810a5e7"
+  checksum: "sha256=9be91c51601e2a6afba5f71d44bdd1a5775345d2140c3a401d7c26ff58ad6351"
 }
 
