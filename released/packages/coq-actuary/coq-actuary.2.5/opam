@@ -15,8 +15,8 @@ the theory of interest, life tables, annuities, and reserves."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.13"}
-  "coq-mathcomp-ssreflect" {>= "1.15"}
+  "coq" {>= "8.13" & < "8.17"}
+  "coq-mathcomp-ssreflect" {>= "1.15" & < "2.0"}
   "coq-coquelicot" {>= "3.1.0"}
 ]
 
