@@ -1,0 +1,27 @@
+opam-version: "2.0"
+authors: [
+  "Jason Gross <jgross@mit.edu>"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/JasonGross/neural-net-coq-interp"
+bug-reports: "https://github.com/JasonGross/neural-net-coq-interp/issues"
+license: "MIT"
+build: [make "-j%{jobs}%" "computed-lite"]
+install: []
+depends: [
+  "coq" {>= "8.17~" & ( < "8.18~" | > "8.18.0" )}
+]
+conflict-class: [
+  "coq-neural-net-interp"
+]
+dev-repo: "git+https://github.com/JasonGross/neural-net-coq-interp.git"
+synopsis: "Work in progress formalization of mechanistic interpretability arguments on tiny neural nets (only native-compiler tests)"
+description: """
+This opam package is mostly for testing the native compiler on Coq's
+bench using a work-in-progress formalization of mechanistic
+interpretability results.
+"""
+tags: ["logpath:NeuralNetInterp"]
+url {
+  src: "git+https://github.com/JasonGross/neural-net-coq-interp.git#main"
+}
