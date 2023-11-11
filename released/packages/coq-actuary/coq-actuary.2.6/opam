@@ -1,0 +1,40 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/Yosuke-Ito-345/Actuary"
+dev-repo: "git+https://github.com/Yosuke-Ito-345/Actuary.git"
+bug-reports: "https://github.com/Yosuke-Ito-345/Actuary/issues"
+license: "MIT"
+
+synopsis: "Formalization of actuarial mathematics in Coq"
+description: """
+This package formalizes basic actuarial mathematics using Coq and
+the Mathematical Components and Coquelicot libraries. This includes
+the theory of interest, life tables, annuities, and reserves."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.17.1"}
+  "coq-mathcomp-ssreflect" {>= "1.17" & < "2.0"}
+  "coq-coquelicot" {>= "3.4.0"}
+]
+
+tags: [  
+  "category:Mathematics/Real Calculus and Topology"
+  "keyword:present value"
+  "keyword:life tables"
+  "keyword:annuities"
+  "keyword:reserves"
+  "keyword:actuarial mathematics"
+  "logpath:Actuary"
+  "date:2023-11-11"
+]
+authors: [
+  "Yosuke Ito"
+]
+
+url {
+  src: "https://github.com/Yosuke-Ito-345/Actuary/archive/v2.6.tar.gz"
+  checksum: "sha512=7c4f7567846fe9c19503aa1bb4beaa19a92beaf3be8d6c19921d2dee759bd65357c4fc9c7179c188d4bc8b76e12fb1a9ea56d2513c2875e919169ab5d89619d2"
+}
