@@ -1,5 +1,4 @@
 opam-version: "2.0"
-version: "0.1"
 synopsis: "Wasm formalisation in Coq"
 description:
   "Wasm formalisation in Coq, following the AFP formalisation of Conrad Watt"
@@ -14,13 +13,12 @@ depends: [
   "dune" {>= "3.0"}
   "coq" {>= "8.16" & <= "8.17.1"}
   "coq-compcert" {>= "3.11"}
-  "coq-mathcomp-ssreflect" {>= "1.16.0" & <= "1.17.0"}
+  "coq-mathcomp-ssreflect" {>= "1.16.0" & <= "1.18.0"}
   "coq-itree" {>= "3.1.0"}
-  "coq-parseque" {>= "0.1.0"}
+  "coq-parseque" {>= "0.2.0"}
   "cmdliner" {>= "1.1.0"}
   "linenoise" {>= "1.4.0"}
   "mdx" {>= "1.9.0"}
-  "odoc" {with-doc}
 ]
 build: [
   ["dune" "subst"] {dev}
