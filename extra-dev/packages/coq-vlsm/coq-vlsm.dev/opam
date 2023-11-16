@@ -16,7 +16,7 @@ build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "3.5"}
   "coq" {>= "8.16"}
-  "coq-stdpp" {>= "1.8.0"}
+  "coq-stdpp" {>= "1.9.0"}
   "coq-itauto"
   "coq-equations"
 ]

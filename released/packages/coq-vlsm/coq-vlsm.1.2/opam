@@ -15,7 +15,7 @@ contains a formalization of VLSMs and their theory in the Coq proof assistant.""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.15" & < "8.16~"}
+  "coq" {>= "8.15" & < "8.18~"}
   "coq-stdpp" {>= "1.7.0" & < "1.8.0"}
   "coq-itauto"
   "coq-equations"
