@@ -11,14 +11,18 @@ homepage: "https://github.com/mit-plv/fiat-crypto"
 bug-reports: "https://github.com/mit-plv/fiat-crypto/issues"
 license: "MIT OR Apache-2.0 OR BSD-1-Clause"
 build: [
-  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "SKIP_BEDROCK2=1" "coq-without-bedrock2" "standalone-ocaml"]
+  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "SKIP_BEDROCK2=1" "coq-without-bedrock2" "standalone-unified-ocaml"]
 ]
-install: [make "EXTERNAL_DEPENDENCIES=1" "SKIP_BEDROCK2=1" "BINDIR=%{bin}%" "install-without-bedrock2" "install-standalone-ocaml"]
+install: [
+  [make "EXTERNAL_DEPENDENCIES=1" "SKIP_BEDROCK2=1" "BINDIR=%{bin}%" "install-without-bedrock2" "install-standalone-unified-ocaml"]
+  ["etc/test-run-fiat-crypto-silent-no-bedrock2.sh" "%{bin}%/fiat_crypto"] {with-test}
+  ["etc/test-run-fiat-crypto-silent-no-bedrock2.sh" "fiat_crypto"] {with-test}
+]
 depends: [
   "conf-findutils" {build}
   "ocaml" {build & >= "4.08~"}
   "ocamlfind" {build}
-  "coq" {>= "8.15~"}
+  "coq" {>= "8.16~"}
   "coq-coqprime"
   "coq-rewriter"
   "coq-coqutil"
