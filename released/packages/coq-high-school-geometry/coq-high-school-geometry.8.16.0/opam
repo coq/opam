@@ -15,7 +15,7 @@ Includes a proof of Ptolemy's theorem."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.12" & < "8.16~"}
+  "coq" {>= "8.16" & < "8.19"}
 ]
 
 tags: [
@@ -25,7 +25,7 @@ tags: [
   "keyword:high school"
   "keyword:Ptolemy's theorem"
   "logpath:HighSchoolGeometry"
-  "date:2021-08-06"
+  "date:2023-11-18"
 ]
 authors: [
   "Frédérique Guilhot"
@@ -33,6 +33,6 @@ authors: [
 ]
 
 url {
-  src: "https://github.com/coq-community/HighSchoolGeometry/archive/v8.13.tar.gz"
-  checksum: "sha512=47dba843c3541c628725224b6f9d353b5e5d224cd16ae52d6980a6aec9d698855477934609364dfaaa91271818f530d7af6d344c2ee7c38f8c0e0a3e226a655e"
+  src: "https://github.com/coq-community/HighSchoolGeometry/archive/v8.16.tar.gz"
+  checksum: "sha512=694dfe2a60896a4b044854c612cc54462e92864349f35d7b87b6ab40878260d0400d406b8657ac8fed39ae7b27b58ba3b9c9c12082adbf0313d270abfd494dc5"
 }
