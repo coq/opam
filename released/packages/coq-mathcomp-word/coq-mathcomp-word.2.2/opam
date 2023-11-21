@@ -25,4 +25,5 @@ authors: ["Pierre-Yves Strub"]
 
 url {
   src: "https://github.com/jasmin-lang/coqword/archive/refs/tags/v2.2.tar.gz"
+  checksum: "sha512=a0f2802d3bf670049b29e9f061d87b34637a17e054438e0a402ea01308d57a9bef6d6a3fc6b43e210127682e0411c613d857f808564c6923e686430aac31fc25"
 }
