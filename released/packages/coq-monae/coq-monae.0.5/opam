@@ -14,16 +14,16 @@ in several examples of monadic equational reasoning."""
 build: [make "-j%{jobs}%"]
 install: [make "install_full"]
 depends: [
-  "coq" { (>= "8.16" & < "8.18~") | (= "dev") }
-  "coq-mathcomp-ssreflect" { (>= "1.16.0" & < "1.18~") | (= "dev")  }
-  "coq-mathcomp-fingroup" { (>= "1.16.0" & < "1.18~") | (= "dev")  }
-  "coq-mathcomp-algebra" { (>= "1.16.0" & < "1.18~") | (= "dev")  }
-  "coq-mathcomp-solvable" { (>= "1.16.0" & < "1.18~") | (= "dev")  }
-  "coq-mathcomp-field" { (>= "1.16.0" & < "1.18~") | (= "dev")  }
+  "coq" {>= "8.16" & < "8.19~"}
+  "coq-mathcomp-ssreflect" {>= "1.16.0" & < "1.19~"}
+  "coq-mathcomp-fingroup"
+  "coq-mathcomp-algebra"
+  "coq-mathcomp-solvable"
+  "coq-mathcomp-field"
   "coq-mathcomp-analysis" { (>= "0.5.4") }
   "coq-infotheo" { >= "0.5.0" & < "0.6~"}
   "coq-paramcoq" { >= "1.1.3" & < "1.2~" }
-  "coq-hierarchy-builder" { >= "1.3.0" }
+  "coq-hierarchy-builder" { >= "1.3.0" & < "1.6" }
   "coq-equations" { >= "1.3" & < "1.4~" }
 ]
 
