@@ -19,8 +19,8 @@ remains the sole trusted code base."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.13" & < "8.17~"}
-  "coq-mathcomp-ssreflect" {>= "1.12" & < "1.16~"}
+  "coq" {>= "8.13" & < "8.19~"}
+  "coq-mathcomp-ssreflect" {>= "1.12" & < "1.18~"}
   "coq-mathcomp-algebra" 
   "coq-mathcomp-field" 
   "coq-coqeal" {>= "1.0.5"}
