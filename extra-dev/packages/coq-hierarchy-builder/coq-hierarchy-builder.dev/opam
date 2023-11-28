@@ -24,5 +24,5 @@ Behind that interface the developer can provide appropriate code to ensure retro
 """
 tags: [ "logpath:HB" ]
 url {
-  src: "git+https://github.com/math-comp/hierarchy-builder.git#coq-master"
+  src: "git+https://github.com/math-comp/hierarchy-builder.git#master"
 }
