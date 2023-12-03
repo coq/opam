@@ -17,7 +17,7 @@ depends: [
   "ocaml" {>= "4.02.0" & < "4.03.0"}
   "ocamlbuild" {build}
   "smart-print"
-  "yojson"
+  "yojson" {< "2.0.0"}
 ]
 tags: [
   "date:2019-05-09"
