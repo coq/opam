@@ -10,8 +10,8 @@ This package provides the `coqidetop` language server, an
 implementation of Coq's [XML protocol](https://github.com/coq/coq/blob/master/dev/doc/xml-protocol.md)
 which allows clients, such as CoqIDE, to interact with Coq in a
 structured way."""
-maintainer: "The Coq development team <coqdev@inria.fr>"
-authors: "The Coq development team, INRIA, CNRS, and contributors"
+maintainer: ["The Coq development team <coqdev@inria.fr>"]
+authors: ["The Coq development team, INRIA, CNRS, and contributors"]
 license: "LGPL-2.1-only"
 homepage: "https://coq.inria.fr/"
 doc: "https://coq.github.io/doc/"
@@ -19,16 +19,23 @@ bug-reports: "https://github.com/coq/coq/issues"
 depends: [
   "dune" {>= "2.9"}
   "coq-core" {= version}
+  "odoc" {with-doc}
 ]
 build: [
-  "dune"
-  "build"
-  "-p"
-  name
-  "-j"
-  jobs
-  "@install"
-  "@doc" {with-doc}
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "--promote-install-files=false"
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+  ["dune" "install" "-p" name "--create-install-files" name]
 ]
 dev-repo: "git+https://github.com/coq/coq.git"
 
