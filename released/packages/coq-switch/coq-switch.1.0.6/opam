@@ -1,0 +1,35 @@
+opam-version: "2.0"
+maintainer: "vzaliva@cmu.edu"
+homepage: "https://github.com/vzaliva/coq-switch"
+dev-repo: "git://git@github.com:vzaliva/coq-switch.git"
+bug-reports: "https://github.com/vzaliva/coq-switch/issues"
+authors: ["Vadim Zaliva <lord@crocodile.org>"]
+license: "MIT"
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" {>= "8.18.0"}
+  "coq-metacoq-template" {>= "1.2.1+8.18"}
+]
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "date:2023-12-13"
+  "logpath:Switch"
+]
+synopsis: "A plugin to implement functionality similar to `switch` statement in C language"
+
+description: """It allows easier dispatch on several constant values
+of a type with decidable equality. Given a type, boolean equality
+predicate, and list of choices, it will generate (using TemplateCoq)
+an inductive type with constructors, one for each of the choices, and
+a function mapping values to this type."""
+
+url {
+  src: "https://github.com/vzaliva/coq-switch/archive/v1.0.6.tar.gz"
+  checksum: "8d0fb0ea1951e551e6b598ebab7feac2"
+}
+             
