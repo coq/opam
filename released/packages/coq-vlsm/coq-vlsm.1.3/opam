@@ -1,0 +1,58 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/runtimeverification/vlsm"
+dev-repo: "git+https://github.com/runtimeverification/vlsm.git"
+bug-reports: "https://github.com/runtimeverification/vlsm/issues"
+license: "BSD-3-Clause"
+
+synopsis: "Coq formalization of validating labelled state transition and message production systems"
+description: """
+The theory of Validating Labelled State transition and Message
+production systems (VLSMs) enables describing and proving properties
+of distributed systems executing in the presence of faults. This
+project contains a formalization of this theory in the Coq proof
+assistant along with several examples of distributed protocols
+modeled and verified using VLSMs, including the ELMO
+(Equivocation-Limited Message Observer) family of message
+validating protocols and the Paxos protocol for crash-tolerant
+distributed consensus."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.16" & < "8.20~"}
+  "coq-stdpp" {>= "1.9.0"}
+  "coq-itauto"
+  "coq-equations"
+]
+
+tags: [
+  "category:Computer Science/Concurrent Systems and Protocols/Theory of concurrent systems"
+  "keyword:consensus"
+  "keyword:fault tolerance"
+  "keyword:distributed algorithms"
+  "keyword:Paxos"
+  "logpath:VLSM"
+  "date:2023-12-15"
+]
+authors: [
+  "Mihai Calancea"
+  "Denisa Diaconescu"
+  "Wojciech Kołowski"
+  "Elaine Li"
+  "Brandon Moore"
+  "Karl Palmskog"
+  "Lucas Peña"
+  "Grigore Roșu"
+  "Traian Florin Șerbănuță"
+  "Ioan Teodorescu"
+  "Dafina Trufaș"
+  "Jan Tušil"
+  "Vlad Zamfir"
+]
+
+url {
+  src: "https://github.com/runtimeverification/vlsm/archive/v1.3.tar.gz"
+  checksum: "sha512=9b8810cb5df66db5616fc162090afbe69781490a86e3d828417edd9d32af61a8c4e66591383ad699a245c5fcac795b2ee486737e268152c29f054699fb63a20b"
+}
