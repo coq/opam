@@ -25,7 +25,7 @@ tags: [
 homepage: "https://github.com/LPCIC/coq-elpi"
 bug-reports: "https://github.com/LPCIC/coq-elpi/issues"
 depends: [
-  "ocaml" {>= "4.09.0"}
+  "ocaml" {>= "4.10.0"}
   "stdlib-shims"
   "elpi" {>= "1.18.1" & < "1.19.0~"}
   "coq" {>= "8.18" & < "8.19~"}
