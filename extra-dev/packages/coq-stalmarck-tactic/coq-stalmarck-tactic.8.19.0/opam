@@ -1,0 +1,36 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/stalmarck"
+dev-repo: "git+https://github.com/coq-community/stalmarck.git"
+bug-reports: "https://github.com/coq-community/stalmarck/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Coq tactic and verified tool for proving tautologies using Stålmarck's algorithm"
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "ocaml" {>= "4.09.0"}
+  "dune" {>= "2.8"}
+  "coq" {>= "8.19" & < "8.20"}
+  "coq-stalmarck" {= version}
+]
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "category:Miscellaneous/Extracted Programs/Decision procedures"
+  "keyword:boolean formula"
+  "keyword:tautology checker"
+  "keyword:tactics"
+  "logpath:Stalmarck.Tactic"
+  "date:2023-12-23"
+]
+authors: [
+  "Pierre Letouzey"
+  "Laurent Théry"
+]
+
+url {
+  src: "https://github.com/coq-community/stalmarck/releases/download/v8.19.0/stalmarck-8.19.0.tar.gz"
+  checksum: "sha512=b7b408366a326a699aaa10e61793cee76238830f9356015ba1fe263727003a5c6237d3471f1d5a3ee3aeeb791b0ad5a531ec78ee93febd1e9d2100f509ff9641"
+}
