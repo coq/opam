@@ -1,0 +1,40 @@
+opam-version: "2.0"
+maintainer: "yeqianchuan@gmail.com"
+
+homepage: "https://github.com/ccyip/coq-idt"
+dev-repo: "git+https://github.com/ccyip/coq-idt.git"
+bug-reports: "https://github.com/ccyip/coq-idt/issues"
+license: "MIT"
+
+authors: [
+  "Qianchuan Ye"
+  "Benjamin Delaware"
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [make "install"]
+
+depends: [
+  "coq-metacoq-template" {>= "1.2"}
+]
+
+synopsis: "Inductive Definition Transformers"
+description: """
+This Coq library allows you to transform an inductive definition to another
+inductive definition, by providing a constructor transformer tactic. It can be
+used to generate boilerplate lemmas for backward and forward reasoning, and to
+generate inductive types with many similar cases.
+"""
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "date:2023-12-25"
+  "logpath:idt"
+]
+
+url {
+  src: "https://github.com/ccyip/coq-idt/archive/refs/tags/v1.2.0.tar.gz"
+  checksum: "sha256=55d9552917e41769fa18f3823eef3d1910067bd33646bf4ddce2d90b2258725e"
+}
