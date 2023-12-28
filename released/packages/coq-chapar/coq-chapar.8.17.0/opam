@@ -16,7 +16,7 @@ of client programs."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.14" & < "8.19"}
+  "coq" {>= "8.14"}
 ]
 
 tags: [
@@ -26,7 +26,7 @@ tags: [
   "keyword:distributed algorithms"
   "keyword:program verification"
   "logpath:Chapar"
-  "date:2023-10-01"
+  "date:2023-12-28"
 ]
 authors: [
   "Mohsen Lesani"
@@ -35,6 +35,6 @@ authors: [
 ]
 
 url {
-  src: "https://github.com/coq-community/chapar/archive/v8.16.0.tar.gz"
-  checksum: "sha512=ac06a04716f0258216939602240f6e0e543a2fd5ff308c2d780eeb431e720aa77980645de13db98743934e1d222f758eddf9dabc54b5f5cba2fa631732a54a11"
+  src: "https://github.com/coq-community/chapar/releases/download/v8.17.0/chapar-8.17.0.tar.gz"
+  checksum: "sha512=3063a748bcb601f4dad385cce11a9fa385c079eb567abe22dafa8adb9e3d860cc85995cfcf5382228dd335390c4f3bb6ecc2f65c31c2fb830581ffda6d600b6c"
 }
