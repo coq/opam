@@ -1,0 +1,48 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/atbr"
+dev-repo: "git+https://github.com/coq-community/atbr.git"
+bug-reports: "https://github.com/coq-community/atbr/issues"
+doc: "https://coq-community.github.io/atbr/"
+license: "LGPL-3.0-or-later"
+
+synopsis: "Coq library and tactic for deciding Kleene algebras"
+description: """
+This library provides algebraic tools for working with binary relations.
+The main tactic provided is a reflexive tactic for solving (in)equations
+in an arbitrary Kleene algebra. The decision procedure goes through
+standard finite automata constructions.
+
+Note that the initial authors consider this library to be superseded
+by the Relation Algebra library, which is based on derivatives
+rather than automata: https://github.com/damien-pous/relation-algebra"""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "ocaml" {>= "4.09.0"}
+  "coq" {>= "8.19" & < "8.20"}
+]
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "keyword:Kleene algebra"
+  "keyword:finite automata"
+  "keyword:semiring"
+  "keyword:matrices"
+  "keyword:decision procedure"
+  "keyword:reflexive tactic"
+  "logpath:ATBR"
+  "date:2023-12-28"
+]
+authors: [
+  "Thomas Braibant"
+  "Damien Pous"
+]
+
+url {
+  src: "https://github.com/coq-community/atbr/releases/download/v8.19.0/atbr-8.19.0.tar.gz"
+  checksum: "sha512=46cda71efa70cb60d8eec7d261ee026f5b7015f25a90a7c76cd42e93222c62e689a0b3970881772a41a2f8afc750ae9726e0317adb4299f4ea34372d1376990f"
+}
