@@ -1,0 +1,38 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/buchberger"
+dev-repo: "git+https://github.com/coq-community/buchberger.git"
+bug-reports: "https://github.com/coq-community/buchberger/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "Verified implementation in Coq of Buchberger's algorithm for computing Gröbner bases"
+description: """
+A verified implementation of Buchberger's algorithm in Coq,
+which computes the Gröbner basis associated with a polynomial ideal.
+Also includes a constructive proof of Dickson's lemma."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.17" & < "8.20"}
+]
+
+tags: [
+  "category:Mathematics/Algebra"
+  "category:Miscellaneous/Extracted Programs/Combinatorics"
+  "keyword:Gröbner basis"
+  "keyword:polynomial ideal"
+  "keyword:Buchberger's algorithm"
+  "logpath:Buchberger"
+  "date:2023-12-28"
+]
+authors: [
+  "Laurent Théry"
+  "Henrik Persson"
+]
+
+url {
+  src: "https://github.com/coq-community/buchberger/releases/download/v8.18.0/buchberger-8.18.0.tar.gz"
+  checksum: "sha512=ce7afdfe719c06776f97939663235cba639e12ea85bd9ddb90599ce27763e0b4495aa6c05b92725ee414c4b2076243984ab96fafb080f0ec8689f07bf040367d"
+}
