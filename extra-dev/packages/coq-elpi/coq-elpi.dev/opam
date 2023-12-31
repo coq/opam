@@ -13,7 +13,7 @@ install: [ make "install" "COQBIN=%{bin}%/" "ELPIDIR=%{prefix}%/lib/elpi" ]
 depends: [
   "ocaml" {>= "4.10.0"}
   "stdlib-shims"
-  "elpi" {>= "1.18.1"}
+  "elpi" {>= "1.18.1" & < "1.19.0" }
   "coq" {= "dev"}
 ]
 tags: [
