@@ -1,0 +1,31 @@
+opam-version: "2.0"
+maintainer: ["G. Allais" "W. Meier"]
+dev-repo: "git+https://github.com/gallais/parseque"
+bug-reports: "https://github.com/gallais/parseque/issues"
+homepage: "https://github.com/gallais/parseque"
+authors: ["G. Allais"]
+license: "MIT"
+
+build: [
+  [make "-j%{jobs}%"]
+]
+
+install: [
+  [make "install"]
+]
+depends: [
+  "coq" {>= "8.16" & < "8.20"}
+]
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2024-01-01"
+  "logpath:parseque"
+]
+
+synopsis: "Total parser combinators in Coq"
+description: "Port of agdarsec to Coq"
+url {
+  src: "https://github.com/coq-community/parseque/archive/refs/tags/v0.2.1.tar.gz"
+  checksum: "sha256=9ab8866df3c119bc9e638948c4c788fbf4c916aeb2f20a7248b402052b59c9d4"
+}
