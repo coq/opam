@@ -1,0 +1,40 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/coq-mmaps"
+dev-repo: "git+https://github.com/coq-community/coq-mmaps.git"
+bug-reports: "https://github.com/coq-community/coq-mmaps/issues"
+license: "LGPL-2.1-only"
+
+synopsis: "Several implementations of finite maps over arbitrary ordered types using Coq functors"
+description: """
+This project contains several implementations of finite maps,
+including implementations based on AVL trees and red-black trees.
+The finite maps are parameterized on arbitrary ordered types using
+Coq functors. This is an updated version of the Coq Stdlib's FMaps
+that is meant to complement the Stdlib's MSet library."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.14" & < "8.20"}
+]
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "keyword:finite maps"
+  "keyword:red-black trees"
+  "keyword:AVL trees"
+  "keyword:ordered types"
+  "logpath:MMaps"
+  "date:2024-01-08"
+]
+authors: [
+  "Pierre Letouzey"
+  "Andrew W. Appel"
+]
+
+url {
+  src: "https://github.com/coq-community/coq-mmaps/releases/download/v1.1/coq-mmaps-1.1.tar.gz"
+  checksum: "sha512=55d2949391edf325e872a1ffa3fe55a4cef3120ee4b4d3498b510ffa22c877c4a40549b8d85e9adb1e06a002334c245608ff4d0a505035dc6710d46efe65b65f"
+}
