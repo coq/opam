@@ -1,0 +1,50 @@
+opam-version: "2.0"
+synopsis: "Graph neural network that predicts tactics for Tactician"
+description:
+  "Graph2Tac is a novel neural network architecture for predicting appropriate
+  tactics for proof states. The crucial innovation of Graph2Tac is that it can
+  build an understanding of the math concepts in an entire Coq development and
+  all of its dependencies on-the-fly. That is, it analyzes the structure of
+  definitions and lemmas and builds an internal representation of each object
+  in the global context. Then, when presented with a proof state that
+  references these mathematical concepts, Graph2Tac can leverage its deep
+  knowledge to predict tactics and arguments."
+maintainer: ["Lasse Blaauwbroek <lasse@blaauwbroek.eu>"]
+authors: [
+  "Jason Rute"
+  "Mirek Olsak"
+  "Lasse Blaauwbroek"
+  "Fidel I. Schaposnik Massolo"
+  "Jelle Piepenbrock"
+  "Vasily Pestun"
+]
+license: "https://zenodo.org/records/10410474/files/LICENSE.md"
+homepage: "https://coq-tactician.github.io/api/graph2tac"
+bug-reports:
+    "https://github.com/IBM/graph2tac/issues"
+conflict-class: ["tactician-neural-model"]
+build: [
+  [ "tar" "-xzf" "model.tar.gz" "--one-top-level" "--strip-components" "1" ]
+]
+install: [
+  [ "mkdir" "-p" "%{share}%/%{name}%/" ]
+  [ "cp" "-r" "model/" "%{share}%/%{name}%/" ]
+
+  [ "cp" "Graph2TacConfig.v" "%{lib}%/coq/user-contrib/Tactician/Graph2TacConfig.v" ]
+
+  # We have to make sure that our injection flags get loaded after the injection flags of coq-tactician-api.
+  # We do this by using a name that is guaranteed to sort after coq-tactician-api.
+  [ "mkdir" "-p" "%{share}%/coq-tactician/plugins/coq-tactician-api-%{name}%/" ]
+  [ "cp" "injection-flags" "%{share}%/coq-tactician/plugins/coq-tactician-api-%{name}%/" ]
+]
+dev-repo: "git+https://github.com/IBM/graph2tac.git"
+depends: [
+  "coq-tactician-api" {= "15.0+8.11"}
+]
+  extra-source "model.tar.gz" {
+  src: "https://zenodo.org/records/10410474/files/graph2tac-anon.tar.gz"
+       checksum: "md5=7ad3473b25bc515fead4353264263cce"
+}
+substs: [
+  "Graph2TacConfig.v"
+]

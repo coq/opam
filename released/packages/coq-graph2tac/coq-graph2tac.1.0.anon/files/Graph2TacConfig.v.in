@@ -1,0 +1,1 @@
+Set Tactician Neural Executable "g2t-server --arch tfgnn --model %{share}%/%{name}%/model --log_level=critical --tf_log_level=critical --tactic_expand_bound=256 --search_expand_bound=256 --update_new_definitions".
