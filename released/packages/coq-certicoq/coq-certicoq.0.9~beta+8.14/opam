@@ -31,7 +31,7 @@ depends: [
   "coq-compcert" {= "3.11"}
   "coq-equations" {= "1.3+8.14"}
   "coq-metacoq-erasure" {>= "1.1.1+8.14" }
-  "coq-ext-lib" {>= "0.11.5"}
+  "coq-ext-lib" {>= "0.11.5" < "0.12.1"}
 ]
 
 synopsis: "A Verified Compiler for Gallina, Written in Gallina "
