@@ -13,7 +13,7 @@ tags: "logpath:HB"
 homepage: "https://github.com/math-comp/hierarchy-builder"
 bug-reports: "https://github.com/math-comp/hierarchy-builder/issues"
 depends: [
-  "coq-elpi" {(>= "2.0") | = "dev"}
+  "coq-elpi" {>= "2.0"}
 ]
 conflicts: ["coq-hierarchy-builder-shim"]
 build: [
