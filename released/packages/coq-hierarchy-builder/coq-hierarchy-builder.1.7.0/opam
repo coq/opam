@@ -17,7 +17,7 @@ depends: [
 ]
 conflicts: ["coq-hierarchy-builder-shim"]
 build: [
-  [make "build"]
+  [make "-j%{jobs}%" "build"]
   [make "test-suite"] {with-test}
 ]
 install: [make "install"]
