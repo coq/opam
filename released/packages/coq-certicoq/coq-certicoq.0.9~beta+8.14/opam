@@ -27,6 +27,7 @@ install: [
 ]
 depends: [
   "ocaml"
+  "conf-clang"
   "coq" {>= "8.14" & < "8.15~"}
   "coq-compcert" {= "3.11"}
   "coq-equations" {= "1.3+8.14"}
