@@ -1,0 +1,50 @@
+opam-version: "2.0"
+synopsis: "Formal matrix theory with multiple implementations in Coq" # One-line description
+description: """
+  Matrix is an important mathematical tool. Although there are at least five matrix 
+  models/libraries in Coq community, the massive verification project involving matrix 
+  are still facing some problems:
+  (1). There havn't a full-feature formal matrix library, because the matrix theory is 
+  complex and need more time to formalize it.
+  (2). Different libraries of these implementations cannot be easily switched at the 
+  later stage of a verification process, because the type of operations and theorems 
+  are different. But some project maybe need more matrix theories while the needed 
+  theorems only avaiable in another libraries.
+
+  Thus, we provide a unified framework for different implementations of formal matrix
+  models, so as to decouple the difference between underlying technologies and 
+  upper-level applications.
+""" # Longer description, can span several lines
+
+homepage: "https://github.com/zhengpushi/CoqMatrix"
+dev-repo: "git+https://github.com/zhengpushi/CoqMatrix.git"
+bug-reports: "https://github.com/zhengpushi/CoqMatrix/issues"
+doc: "https://zhengpushi.github.io/coq-matrix.html"
+maintainer: "zhengpushi@nuaa.edu.cn"
+authors: [
+  "ZhengPu Shi"
+]
+license: "MIT" # Make sure this is reflected by a LICENSE file in your sources
+
+depends: [
+  "coq" {>= "8.18.0"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+  url {
+  src: "https://github.com/zhengpushi/CoqMatrix/archive/refs/tags/1.0.6.tar.gz"
+  checksum: "sha256=ea44c640a681900d2b81c1bc72c81a43cd02c29e78121042fd5cd6b00b9e171b"
+}
+
+tags: [
+  "keyword:matrices"
+  "category:Mathematics/Algebra"
+  "date:2024-01-16"
+  "logpath:CoqMatrix"
+]
