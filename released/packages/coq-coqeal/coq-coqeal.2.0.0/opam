@@ -26,6 +26,7 @@ depends: [
   "coq-mathcomp-multinomials" {>= "2.0"}
   "coq-mathcomp-real-closed" {>= "2.0"}
 ]
+conflicts: [ "coq-hierarchy-builder" {>= "1.7.0"} ]
 
 tags: [
   "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
