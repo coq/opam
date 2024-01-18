@@ -9,7 +9,7 @@ license: "MIT"
 build: [ make "-j" "%{jobs}%" "test" {with-test} ]
 install: [ make "install" ]
 depends: [
-  "coq" { (>= "8.17" & < "8.19~") | (= "dev") }
+  "coq" { (>= "8.17" & < "8.20~") | (= "dev") }
   "coq-mathcomp-ssreflect" {>= "2.0"}
 ]
 
