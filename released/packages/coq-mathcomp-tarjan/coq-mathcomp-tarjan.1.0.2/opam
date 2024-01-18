@@ -16,7 +16,7 @@ sorting with extended guarantees for acyclic graphs."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.16" & < "8.19"}
+  "coq" {>= "8.16" & < "8.20~"}
   "coq-mathcomp-ssreflect" {>= "2.0"}
   "coq-mathcomp-fingroup" 
   "coq-hierarchy-builder" {>= "1.4.0"}
