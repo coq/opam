@@ -27,6 +27,7 @@ install: [
   [make "-C" "template-coq" "install"]
 ]
 depends: [
+  "ocaml" {>= "4.13"}
   "coq-metacoq-common" {= version}
 ]
 synopsis: "A quoting and unquoting library for Coq in Coq"
