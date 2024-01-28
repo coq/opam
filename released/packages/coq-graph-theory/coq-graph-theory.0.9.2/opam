@@ -16,7 +16,7 @@ build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.5"}
   "coq" {>= "8.14" & < "8.19~"}
-  "coq-mathcomp-ssreflect" {>= "1.13" & < "1.19~"}
+  "coq-mathcomp-ssreflect" {>= "1.13" & < "1.20~"}
   "coq-mathcomp-algebra" 
   "coq-mathcomp-finmap" 
   "coq-hierarchy-builder" {>= "1.1.0"}
