@@ -27,6 +27,7 @@ authors: [
  "Michaël Armand"
  "Valentin Blot"
  "Amina Bousalem"
+ "Boris Djalal"
  "Quentin Garchery"
  "Benjamin Grégoire"
  "Chantal Keller"
@@ -39,5 +40,6 @@ description: """
 - decision procedures through new tactics that discharge some Coq goals to ZChaff, veriT, CVC4, and their combination
 - abducts for goals that external solvers fail to prove, which represent possibly missing hypotheses that would allow them to prove the goal, using the cvc5 SMT solver."""
 url {
-  src: "git+https://github.com/smtcoq/smtcoq.git#coq-8.16"
+  src: "https://github.com/smtcoq/smtcoq/archive/refs/tags/SMTCoq-2.2+8.16.tar.gz"
+  checksum: "sha512=bff6ab19c7850beff8f2a11e6db847b9e5910c86dc76d3cca66fd22088e3bac8d7bc751ba1e3e731f9b52282873d10e793fbd0e38241b1d24e476356bc2c2e71"
 }

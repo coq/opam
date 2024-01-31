@@ -13,7 +13,7 @@ install: [
 depends: [
   "ocaml" {>= "4.07.1" }
   "num"
-  "coq" {>= "8.16~" & < "8.17~"}
+  "coq" {>= "8.17~" & < "8.18~"}
 ]
 tags: [ 
   "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
@@ -39,5 +39,5 @@ description: """
 - decision procedures through new tactics that discharge some Coq goals to ZChaff, veriT, CVC4, and their combination
 - abducts for goals that external solvers fail to prove, which represent possibly missing hypotheses that would allow them to prove the goal, using the cvc5 SMT solver."""
 url {
-  src: "git+https://github.com/smtcoq/smtcoq.git#coq-8.16"
+  src: "git+https://github.com/smtcoq/smtcoq.git#coq-8.17"
 }
