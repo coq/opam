@@ -1,0 +1,51 @@
+opam-version: "2.0"
+synopsis: "Coq library for reasoning about quantum programs"
+description: """
+inQWIRE's QuantumLib is a Coq library for reasoning
+ about quantum computation and quantum programs.
+"""
+maintainer: ["inQWIRE Developers"]
+authors: ["inQWIRE"]
+license: "MIT"
+homepage: "https://github.com/inQWIRE/QuantumLib"
+doc: "https://inqwire.github.io/QuantumLib/toc.html"
+bug-reports: "https://github.com/inQWIRE/QuantumLib/issues"
+depends: [
+  "dune" {>= "2.8"}
+  "coq" {>= "8.16" < "8.20"}
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/inQWIRE/QuantumLib.git"
+
+url {
+  src: "https://github.com/inQWIRE/QuantumLib/archive/v1.3.0.tar.gz"
+  checksum: "sha256=770a7ec9dfe67adfa7690107173c79144a72382e6ad3e4067f41b18f14fe72c1"
+}
+
+tags: [
+  "keyword:quantum"
+  "keyword:qwire"
+  "keyword:sqir"
+  "keyword:matrices"
+  "keyword:vectors"
+  "keyword:linear algebra"
+  "keyword:complex numbers"
+  "category:Mathematics/Algebra"
+  "category:Mathematics/Real Calculus and Topology"
+  "date:2023-01-24"
+  "logpath:QuantumLib"
+]
