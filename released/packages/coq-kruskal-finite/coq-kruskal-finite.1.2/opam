@@ -19,7 +19,6 @@ install: [
 ]
 
 depends: [
-  "ocaml"
   "coq" {>= "8.14" & < "8.20~"}
   "coq-kruskal-trees" {>= "1.1"}
 ]
