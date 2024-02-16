@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "Coq-Kruskal-AlmostFull"
 synopsis: "Base Coq library for manipulating Almost Full relations"
 description: """
    This library formalizes ground results about Almost Full relations (AF) in Coq 8.14+, up to Dickson's lemma.
