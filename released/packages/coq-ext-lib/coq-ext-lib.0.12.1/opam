@@ -18,9 +18,9 @@ install: [make "install"]
 dev-repo: "git+https://github.com/coq-community/coq-ext-lib.git"
 url {
   src:
-    "https://github.com/coq-community/coq-ext-lib/archive/refs/tags/v1.2.1.tar.gz"
+    "https://github.com/coq-community/coq-ext-lib/archive/refs/tags/v0.12.1.tar.gz"
   checksum: [
-    "md5=471df57d1f22d166ea70a1ea5cf45b2b"
-    "sha512=351ee61d364b8ab0c68329c8d61f7e9febaf99860cc983a0aa1bef9a88b59dc903eb713b89e9f4a1d860bc031f5513eee2ded97208e0a2345ec1e81ec2893149"
+    "md5=ad2ba3b94f2d86c45e89d9a681ea2a6d"
+    "sha512=4c2beeaf7967304b03f0126a0754de268098aa7acc8d5ebb827b19c28cbf243c9c9c839c00b30320ea2b3fa8ae86c6de15e85232df72b0e8bf8b9794ec55d364"
   ]
 }
