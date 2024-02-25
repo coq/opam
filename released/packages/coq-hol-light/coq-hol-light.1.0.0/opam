@@ -22,5 +22,5 @@ tags: [
 ]
 url {
   src: "https://github.com/Deducteam/coq-hol-light/archive/refs/tags/1.0.0.tar.gz"
-  checksum: "sha256=cab818385d31eaaccff6f0dd03c99a16f14ac2699c035c39b1a2e2532354feb6"
+  checksum: "sha256=69022c902c25d11245bc449059bb09203b3463dcbafe11944388a7b8f7631695"
 }
