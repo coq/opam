@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "Coq-Kruskal-Higman"
 synopsis: "Extending Coq library for manipulating Almost Full relations with Higman's lemma"
 description: """
    This library formalizes additional tools for AF relations, eg quasi morphisms applied to Higman's lemma.
