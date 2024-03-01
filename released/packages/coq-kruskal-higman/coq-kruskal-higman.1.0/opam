@@ -11,7 +11,7 @@ bug-reports: "https://github.com/DmxLarchey/Kruskal-Higman/issues"
 dev-repo: "git+https://github.com:DmxLarchey/Kruskal-Higman/"
 
 build: [
-  [ make "-j%{jobs}%" type]
+  [make "-j%{jobs}%" "type"]
 ]
 install: [
   [make "install"]
