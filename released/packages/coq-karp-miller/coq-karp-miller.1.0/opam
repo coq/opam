@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "Coq-Karp-Miller"
 synopsis: "Certified Karp-Miller algorithm for the covering of Petri nets"
 description: """
    Based on the Kruskal-AlmostFull library, we build two correct by construction Karp-Miller
@@ -24,8 +23,8 @@ install: [
 depends: [
   "coq" {>= "8.14" & < "8.20~"}
   "coq-kruskal-almostfull" {>= "1.0"}
-  "coq-kruskal-trees" {}
-  "coq-kruskal-finite" {} 
+  "coq-kruskal-trees"
+  "coq-kruskal-finite"
 ]
 
 url {
