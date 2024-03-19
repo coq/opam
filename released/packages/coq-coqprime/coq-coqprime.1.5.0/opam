@@ -13,11 +13,11 @@ install: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.20" & < "8.21"}
+  "coq" {>= "8.14" & < "8.20"}
   "coq-bignums"
 ]
 synopsis: "Certifying prime numbers in Coq"
 url {
-  src: "https://github.com/thery/coqprime/archive/refs/tags/v8.20.tar.gz"
-  checksum: "sha256=13cd94a90e4869f22bb00e30ea48faec24bf1698205e6e31b46baf8376bab1c0"
+  src: "https://github.com/thery/coqprime/archive/refs/tags/v8.19.tar.gz"
+  checksum: "sha512=69ab774b265f689aa7a12c45b2f7acb43b0015253cf2bc3efc830b826fb0ea90c0318e0f7ea8e3d4158b815c13071d1d9d9367bc5639e6525cd291aa9a2344c7"
 }
