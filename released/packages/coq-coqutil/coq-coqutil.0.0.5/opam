@@ -12,7 +12,7 @@ build: [
 install: [make "install"]
 depends: [
   "conf-findutils" {build}
-  "coq" {>= "8.15~"}
+  "coq" {>= "8.17~"}
 ]
 conflict-class: [
   "coq-coqutil"

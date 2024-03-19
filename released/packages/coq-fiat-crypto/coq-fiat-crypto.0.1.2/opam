@@ -13,16 +13,20 @@ license: "MIT OR Apache-2.0 OR BSD-1-Clause"
 build: [
   [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "SKIP_COQSCRIPTS_INCLUDE=1" "coq" "standalone-ocaml"]
 ]
-install: [make "EXTERNAL_DEPENDENCIES=1" "SKIP_COQSCRIPTS_INCLUDE=1" "BINDIR=%{bin}%" "install" "install-standalone-ocaml"]
+install: [
+  [make "EXTERNAL_DEPENDENCIES=1" "SKIP_COQSCRIPTS_INCLUDE=1" "BINDIR=%{bin}%" "install" "install-standalone-ocaml"]
+  ["etc/test-run-fiat-crypto-silent.sh" "%{bin}%/fiat_crypto"] {with-test}
+  ["etc/test-run-fiat-crypto-silent.sh" "fiat_crypto"] {with-test}
+]
 depends: [
   "conf-findutils" {build}
   "ocaml" {build & >= "4.08~"}
   "ocamlfind" {build}
-  "coq" {>= "8.16~"}
+  "coq" {>= "8.18~"}
   "coq-coqprime" {>= "1.2.0"}
-  "coq-rewriter" {>= "0.0.6" & <= "0.0.9"}
-  "coq-rupicola" {= "0.0.8"}
-  "coq-bedrock2-compiler" {= "0.0.6"}
+  "coq-rewriter" {>= "0.0.6"}
+  "coq-rupicola" {= "0.0.9"}
+  "coq-bedrock2-compiler" {= "0.0.7"}
 ]
 conflict-class: [
   "coq-fiat-crypto"

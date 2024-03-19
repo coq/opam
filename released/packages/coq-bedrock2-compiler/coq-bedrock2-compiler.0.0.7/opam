@@ -15,9 +15,9 @@ build: [
 install: [make "EXTERNAL_DEPENDENCIES=1" "install_compiler"]
 depends: [
   "conf-findutils" {build}
-  "coq" {>= "8.16~"}
+  "coq" {>= "8.18~"}
   "coq-bedrock2" {= version}
-  "coq-riscv" {= "0.0.4"}
+  "coq-riscv" {= "0.0.5"}
   "zarith" {>= "1.11"}
 ]
 dev-repo: "git+https://github.com/mit-plv/bedrock2.git"
