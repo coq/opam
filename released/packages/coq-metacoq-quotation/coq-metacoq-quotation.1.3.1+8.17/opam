@@ -48,6 +48,6 @@ semicomonad (a functor with `cojoin : □T → □□T` that codistributes over 
 and `×`), which is sufficient for proving Löb's theorem.
 """
 url {
-  src: "https://github.com/MetaCoq/metacoq/archive/refs/tags/v1.3.1-8.17.tar.gz"
+  src: "https://github.com/MetaCoq/metacoq/releases/download/v1.3.1-8.17/v1.3.1-8.17.tar.gz"
   checksum: "sha512=35b7f063ff7c1dcbbf078f261062b2801ef71df069c47af288d7f5c4287067fbd5ea6f776e7355fec0b8620d463f6e897cf5ad3f063785c54bb3665b90e52a22"
 }
