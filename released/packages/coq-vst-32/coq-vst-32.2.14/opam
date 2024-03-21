@@ -49,5 +49,5 @@ tags: [
 ]
 url {
   src: "https://github.com/PrincetonUniversity/VST/archive/refs/tags/v2.14.tar.gz"
-  checksum: "sha512=c11551c454057b8a6c7a958534f3ec783e09450ff7e373bfb7c3d6c009d46c06"
+  checksum: "sha256=c11551c454057b8a6c7a958534f3ec783e09450ff7e373bfb7c3d6c009d46c06"
 }
