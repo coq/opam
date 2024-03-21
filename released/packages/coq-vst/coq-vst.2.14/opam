@@ -35,7 +35,7 @@ depends: [
   "ocaml"
   "coq" {>= "8.17" & < "8.20~"}
   "coq-compcert" {= "3.13.1"}
-  "coq-vst-zlist" {= version}
+  "coq-vst-zlist" {= "2.13"}
   "coq-flocq" {>= "4.1.0"}
 ]
 tags: [
@@ -45,6 +45,6 @@ tags: [
   "date:2024-03-20"
 ]
 url {
-  src: "https://github.com/PrincetonUniversity/VST/archive/refs/tags/v2.14.tar.gz"
+  src: "https://github.com/PrincetonUniversity/VST/releases/download/v2.14/VST-2.14.tar.gz"
   checksum: "sha256=c11551c454057b8a6c7a958534f3ec783e09450ff7e373bfb7c3d6c009d46c06"
 }

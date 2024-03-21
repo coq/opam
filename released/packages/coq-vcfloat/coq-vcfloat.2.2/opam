@@ -32,7 +32,7 @@ depends: [
   "coq-bignums"
 ]
 url {
-  src: "https://github.com/VeriNum/vcfloat/archive/refs/tags/v2.2.tar.gz"
+  src: "https://github.com/VeriNum/vcfloat/releases/download/v2.2/vcfloat-2.2.tar.gz"
   checksum: "sha256=5d57a3f0e69453460e729f26f00597e456a4ee2502f0886acf11d7908692af46"
 }
 tags: [
