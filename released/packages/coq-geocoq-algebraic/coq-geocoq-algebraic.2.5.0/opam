@@ -29,6 +29,7 @@ tags: [
   "keyword:model"
   "keyword:counter-model"
   "keyword:Cartesian space"
+  "date:2024-03-24"
 ]
 authors: [
   "Pierre Boutry       <contact@pierre.boutry.fr>"
@@ -37,5 +38,6 @@ authors: [
 ]
 
 url {
-  src: "git+https://github.com/GeoCoq/GeoCoq.git#361873afd7358905e78b2eaca0c7087eee6ebe24"
+  src: "https://github.com/GeoCoq/GeoCoq/archive/v2.5.0.tar.gz"
+  checksum: "md5=75609aa3fe8a0fc00cd99c96547775df"
 }
