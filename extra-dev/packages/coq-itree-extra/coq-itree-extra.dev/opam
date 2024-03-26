@@ -1,0 +1,27 @@
+opam-version: "2.0"
+synopsis: "Extensions to coq-itree"
+maintainer: ["Li-yao Xia <lysxia@gmail.com>"]
+authors: [
+  "Lucas Silver" "Irene Yoon" "Paul He" "Yannick Zakowski" "Steve Zdancewic"
+]
+license: "MIT"
+tags: ["org:deepspec"]
+homepage: "https://github.com/DeepSpec/InteractionTrees"
+bug-reports: "https://github.com/DeepSpec/InteractionTrees/issues"
+depends: [
+  "dune" {>= "3.14"}
+  "coq"
+  "coq-ext-lib"
+  "coq-paco"
+  "coq-itree"
+  "odoc" {with-doc}
+]
+dev-repo: "git+https://github.com/DeepSpec/InteractionTrees.git"
+build: [
+  [ "./fixup.sh" ]
+  [ "dune" "subst"] {pinned}
+  [ "dune" "build" "-p" name "-j" jobs "@install" ]
+]
+url {
+  src: "git+https://github.com/DeepSpec/InteractionTrees"
+}
