@@ -61,7 +61,7 @@ authors: [
   "Laurent Théry"
 ]
 url {
-  src: "https://github.com/math-comp/analysis/archive/1.1.0.tar.gz"
+  src: "https://github.com/math-comp/analysis/releases/download/1.1.0/analysis-1.1.0.tar.gz"
   checksum: "sha512=4705237025d90c9ccc344f5f64464e2d0a51f472a11eec03236b5b25fe58b62cd468012cb0d105156a7bbb0239225cd548aa9c90c56ae09b1b5e1b8d72f6e6b6"
 }
 
