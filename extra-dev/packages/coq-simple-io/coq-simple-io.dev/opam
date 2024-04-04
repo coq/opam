@@ -7,8 +7,7 @@ bug-reports: "https://github.com/Lysxia/coq-simple-io/issues"
 license: "MIT"
 dev-repo: "git+https://github.com/Lysxia/coq-simple-io.git"
 build: [
-  [make "compat"]
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   [ "dune" "build" "-p" name "-j" jobs "@install" ]
 ]
 depends: [
@@ -18,7 +17,7 @@ depends: [
   "ocamlbuild" {with-test & >= "0.9.0"}
   "cppo" {build & >= "1.6.8"}
   "ocamlfind"
-  "dune" {>= "2.5"}
+  "dune" {>= "3.12" & < "3.14"}
 ]
 tags: [
   "logpath:SimpleIO"
