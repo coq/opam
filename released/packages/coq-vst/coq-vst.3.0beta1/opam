@@ -1,0 +1,52 @@
+opam-version: "2.0"
+synopsis: "Verified Software Toolchain"
+description: "The software toolchain includes static analyzers to check assertions about your program; optimizing compilers to translate your program to machine language; operating systems and libraries to supply context for your program. The Verified Software Toolchain project assures with machine-checked proofs that the assertions claimed at the top of the toolchain really hold in the machine-language program, running in the operating-system context."
+authors: [
+  "Andrew W. Appel"
+  "Lennart Beringer"
+  "William Mansky"
+  "Josiah Dodds"
+  "Qinxiang Cao"
+  "Aquinas Hobor"
+  "Gordon Stewart"
+  "Qinshi Wang"
+  "Sandrine Blazy"
+  "Santiago Cuellar"
+  "Robert Dockins"
+  "Nick Giannarakis"
+  "Samuel Gruetter"
+  "Jean-Marie Madiot"
+]
+maintainer: "VST team"
+homepage: "http://vst.cs.princeton.edu/"
+dev-repo: "git+https://github.com/PrincetonUniversity/VST.git"
+bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
+license: "BSD-2-Clause"
+
+build: [
+  [make "-j%{jobs}%" "vst" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64"]
+]
+install: [
+  [make "install" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64"]
+]
+run-test: [
+  [make "-j%{jobs}%" "test" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64"]
+]
+depends: [
+  "ocaml"
+  "coq" {>= "8.17" & < "8.20~"}
+  "coq-compcert" {= "3.13.1"}
+  "coq-vst-zlist" {= "2.13"}
+  "coq-flocq" {>= "4.1.0"}
+  "coq-iris" {= "dev.2024-02-04.0.0771fa71"}
+]
+tags: [
+  "category:Computer Science/Semantics and Compilation/Semantics"
+  "keyword:C"
+  "logpath:VST"
+  "date:2024-04-10"
+]
+url {
+  src: "https://github.com/PrincetonUniversity/VST/releases/download/v3.0beta1/VST-3.0beta1.tar.gz"
+  checksum: "sha256=776a79efd83f5b345a2b511f7ac6c2224d1c90f843782ffaa3cf3e4ab8195537"
+}
