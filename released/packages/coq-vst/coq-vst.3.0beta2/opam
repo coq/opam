@@ -48,5 +48,5 @@ tags: [
 ]
 url {
   src: "https://github.com/PrincetonUniversity/VST/releases/download/v3.0beta2/VST-3.0beta2.tar.gz"
-  checksum: "sha256=1504a664f1620a1f1c318efa1ddde4bb0992518a8b3621238f88fbcd79bb94eb"
+  checksum: "sha256=98074b2e0335e3446341d6c93c61945281a74109ec865d2eee9434cf070c7f34"
 }
