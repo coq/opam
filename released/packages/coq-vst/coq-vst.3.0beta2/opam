@@ -34,11 +34,11 @@ run-test: [
 ]
 depends: [
   "ocaml"
-  "coq" {>= "8.17" & < "8.20~"}
+  "coq" {>= "8.18" & < "8.20~"}
   "coq-compcert" {= "3.13.1"}
   "coq-vst-zlist" {= "2.13"}
   "coq-flocq" {>= "4.1.0"}
-  "coq-iris" {= "dev.2024-02-04.0.0771fa71"}
+  "coq-iris" {= "4.2.0"}
 ]
 tags: [
   "category:Computer Science/Semantics and Compilation/Semantics"
@@ -47,6 +47,6 @@ tags: [
   "date:2024-04-10"
 ]
 url {
-  src: "https://github.com/PrincetonUniversity/VST/releases/download/v3.0beta1/VST-3.0beta1.tar.gz"
-  checksum: "sha256=776a79efd83f5b345a2b511f7ac6c2224d1c90f843782ffaa3cf3e4ab8195537"
+  src: "https://github.com/PrincetonUniversity/VST/releases/download/v3.0beta2/VST-3.0beta2.tar.gz"
+  checksum: "sha256=7887c56ea0ec8b722d1ff0a8471fdefc8a24f5ae6522bd3763da036691b7c1e7"
 }
