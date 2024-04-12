@@ -24,6 +24,7 @@ bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 license: "BSD-2-Clause"
 
 build: [
+  [make "depend" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64"]
   [make "-j%{jobs}%" "vst" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64"]
 ]
 install: [
