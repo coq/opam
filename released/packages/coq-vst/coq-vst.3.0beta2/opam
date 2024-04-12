@@ -24,7 +24,6 @@ bug-reports: "https://github.com/PrincetonUniversity/VST/issues"
 license: "BSD-2-Clause"
 
 build: [
-  [make "depend" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64"]
   [make "-j%{jobs}%" "vst" "IGNORECOQVERSION=true" "ZLIST=platform" "BITSIZE=64"]
 ]
 install: [
@@ -45,9 +44,9 @@ tags: [
   "category:Computer Science/Semantics and Compilation/Semantics"
   "keyword:C"
   "logpath:VST"
-  "date:2024-04-10"
+  "date:2024-04-12"
 ]
 url {
   src: "https://github.com/PrincetonUniversity/VST/releases/download/v3.0beta2/VST-3.0beta2.tar.gz"
-  checksum: "sha256=7887c56ea0ec8b722d1ff0a8471fdefc8a24f5ae6522bd3763da036691b7c1e7"
+  checksum: "sha256=1504a664f1620a1f1c318efa1ddde4bb0992518a8b3621238f88fbcd79bb94eb"
 }
