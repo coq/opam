@@ -24,8 +24,8 @@ install: [make "-f" "Makefile.coq" "install"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoLoR"]
 depends: [
   "ocaml"
-  "coq" {>= "8.14" & < "8.19~"}
-  "coq-bignums" {>= "8.14" & < "9.0.0+coq8.19~"}
+  "coq" {>= "8.14" & < "8.20~"}
+  "coq-bignums" {>= "8.14.0" & < "9.0.0+coq8.20~"}
 ]
 tags: [
   "date:2023-06-28"
@@ -108,6 +108,6 @@ tags: [
 synopsis: "A library on rewriting theory and termination"
 flags: light-uninstall
 url {
-  src: "https://github.com/fblanqui/color/archive/refs/tags/1.8.4.tar.gz"
-  checksum: "md5=4510f7f4ee7067982440c713b3aa24b0"
+  src: "https://github.com/fblanqui/color/archive/refs/tags/1.8.5.tar.gz"
+  checksum: "md5=3adc2fdd6d69066d690c83c49edd8bac"
 }
