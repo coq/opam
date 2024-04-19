@@ -1,0 +1,43 @@
+opam-version: "2.0"
+synopsis: "The Coq Proof Assistant"
+description: """
+Package for internal use in coq benchmarking.
+Use \"opam install coq --with-test\" to run the test suite normally."""
+maintainer: ["The Coq development team <coqdev@inria.fr>"]
+authors: ["The Coq development team, INRIA, CNRS, and contributors"]
+license: "LGPL-2.1-only"
+homepage: "https://coq.inria.fr/"
+doc: "https://coq.github.io/doc/"
+bug-reports: "https://github.com/coq/coq/issues"
+depends: [
+  "dune" {>= "2.9"}
+  "coq-core" {= version}
+  "coq-stdlib" {= version}
+  "coqide-server" {= version}
+  "ounit2" {with-test}
+  "odoc" {with-doc}
+]
+dev-repo: "git+https://github.com/coq/coq.git"
+build: [
+  ["dune" "subst"] {dev}
+  [ "./configure"
+    "-prefix" prefix
+    "-mandir" man
+    "-libdir" "%{lib}%/coq"
+    "-native-compiler" "yes" {coq-native:installed} "no" {!coq-native:installed}
+  ]
+  [
+    "dune"
+    "build"
+    "-p"
+    "coq"
+    "-j"
+    jobs
+    "--promote-install-files=false"
+    "@runtest"
+  ]
+]
+
+url {
+  src: "git+https://github.com/coq/coq.git#master"
+}
