@@ -19,7 +19,7 @@ depends: [
   "conf-findutils" {build}
   "conf-python-3" {build & with-test}
   "coq" {>= "8.18~"}
-  "coq-coqutil" {= "0.0.5"}
+  "coq-coqutil" {= "0.0.6"}
   "zarith" {>= "1.11"}
 ]
 dev-repo: "git+https://github.com/mit-plv/bedrock2.git"

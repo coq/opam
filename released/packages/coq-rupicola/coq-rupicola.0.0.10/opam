@@ -17,7 +17,7 @@ install: [make "EXTERNAL_DEPENDENCIES=1" "install"]
 depends: [
   "conf-findutils" {build}
   "coq" {>= "8.18~"}
-  "coq-bedrock2" {= "0.0.7"}
+  "coq-bedrock2" {= "0.0.8"}
 ]
 dev-repo: "git+https://github.com/mit-plv/rupicola.git"
 synopsis: "Gallina to imperative code compilation, currently in design phase"
