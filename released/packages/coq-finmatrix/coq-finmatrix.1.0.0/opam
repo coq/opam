@@ -35,13 +35,13 @@ install: [
 ]
 
   url {
-  src: "https://github.com/zhengpushi/FinMatrix/archive/refs/tags/1.0.0.tar.gz"
-  checksum: "sha256=7936d8598dae88d573205459641128c276a6cf965cbaa96b4b10baa08e02277e"
+  src: "https://github.com/zhengpushi/FinMatrix/archive/refs/tags/v1.0.0.tar.gz"
+  checksum: "sha256=0df32351777137cac4ee4380de2e93358298738d81842008ba32fe748d8acfa5"
 }
 
 tags: [
   "keyword:matrices"
   "category:Mathematics/Algebra"
-  "date:2024-04-25"
+  "date:2024-04-26"
   "logpath:FinMatrix"
 ]
