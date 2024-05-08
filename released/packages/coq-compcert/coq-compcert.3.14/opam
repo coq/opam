@@ -50,5 +50,5 @@ dev-repo: "git+https://github.com/AbsInt/CompCert.git"
 url {
   src: "https://github.com/AbsInt/CompCert/archive/v3.14.tar.gz"
   checksum:
-    "sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    "sha512=5b3bdba47989f99340fc3e53e76c4994104cb884af123a09e867f5e66a3fc827e5290879a786dbdcda2fa5419210ffc151b5d6e9b4a459e29ca289fd5c12b19a"
 }
