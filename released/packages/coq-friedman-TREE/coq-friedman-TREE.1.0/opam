@@ -1,0 +1,42 @@
+opam-version: "2.0"
+name: "Coq-Friedman-TREE"
+synopsis: "Implementation of Friedman's TREE function based on Kruskal's theorem"
+description: """
+   Friedman's TREE function is an extremely fast growing function that
+   plays a role in reverse mathematics, that is the classification of
+   mathematical theories w.r.t. what kind of theorems can be proved within
+   those theories or what kind of functions they can prove exist. 
+   See the README.md file for further description.
+"""  
+maintainer: ["Dominique Larchey-Wendling (https://github.com/DmxLarchey)"] 
+authors: "Dominique Larchey-Wendling (https://github.com/DmxLarchey)"
+license: "MPL-2.0"
+homepage: "https://github.com/DmxLarchey/Friedman-TREE/"
+bug-reports: "https://github.com/DmxLarchey/Friedman-TREE/issues"
+dev-repo: "git+https://github.com:DmxLarchey/Friedman-TREE/"
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+depends: [
+  "coq-kruskal-theorems" {>= "1.0"}
+]
+
+url {
+  src: "https://github.com/DmxLarchey/Friedman-TREE/releases/download/v1.0/Friedman.TREE.v1.0.tar.gz"
+  checksum: [
+    "sha256=dbe17bae167367824e035d1d8525c951437589035854942d630bd18baaf20325"
+  ]
+}
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2024-05-10"
+  "logpath:FriedmanTREE"
+]
+
+
