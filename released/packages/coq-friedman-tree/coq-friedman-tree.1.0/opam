@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "Coq-Friedman-TREE"
 synopsis: "Implementation of Friedman's TREE function based on Kruskal's theorem"
 description: """
    Friedman's TREE function is an extremely fast growing function that
