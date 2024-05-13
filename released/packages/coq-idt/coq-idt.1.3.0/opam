@@ -17,7 +17,7 @@ build: [
 install: [make "install"]
 
 depends: [
-  "coq-metacoq-template" {>= "1.2" & < "1.3"}
+  "coq-metacoq-template" {>= "1.3" & < "1.4"}
 ]
 
 synopsis: "Inductive Definition Transformers"
@@ -30,11 +30,11 @@ generate inductive types with many similar cases.
 
 tags: [
   "category:Miscellaneous/Coq Extensions"
-  "date:2023-12-25"
+  "date:2024-05-12"
   "logpath:idt"
 ]
 
 url {
-  src: "https://github.com/ccyip/coq-idt/archive/refs/tags/v1.2.0.tar.gz"
-  checksum: "sha256=55d9552917e41769fa18f3823eef3d1910067bd33646bf4ddce2d90b2258725e"
+  src: "https://github.com/ccyip/coq-idt/archive/refs/tags/v1.3.0.tar.gz"
+  checksum: "sha256=2a0a1c8dc7a6792e59de6b6c0c127fba09b621597bf2118c20cc57888a42a634"
 }
