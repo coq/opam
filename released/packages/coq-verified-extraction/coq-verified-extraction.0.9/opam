@@ -1,0 +1,29 @@
+opam-version: "2.0"
+maintainer: "Matthieu Sozeau <matthieu.sozeau@inria.fr"
+homepage: "https://github.com/yforster/coq-verified-extraction"
+dev-repo: "git+https://github.com/yforster/coq-verified-extraction"
+bug-reports: "https://github.com/yforster/coq-verified-extraction/issues"
+authors:  "Yannick Forster"
+          "Matthieu Sozeau"
+          "Nicolas Tabareau"
+  ]
+license: "MIT"
+build: [
+  [make]
+]
+install: [
+  [make "install"]
+]
+depends: [
+  "ocaml"
+  "malfunction"
+  "coq" {>= "8.19" & < "8.20~"}
+  "coq-equations" {= "1.3+8.19"}
+  "coq-metacoq-erasure" {>= "1.3.1+8.19" }
+]
+
+synopsis: "A Verified Extraction from Gallina to OCaml, written in Gallina"
+url {
+  src: "https://github.com/yforster/coq-verified-extraction/releases/download/v0.9-8.19/coq-verified-extraction-0.9-8.19.tar.gz"
+  checksum: "sha512=b7f00592158aa68697dbf355b73d88d251e7665e220d86e000dfb09460a728b14a71d800ff8b1c55588503d7d94eb31891c758b2d686d8e9b3c977e3dec8a0ef"
+}
