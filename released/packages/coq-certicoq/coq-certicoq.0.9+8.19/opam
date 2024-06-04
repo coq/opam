@@ -27,7 +27,7 @@ install: [
   [make "install"]
 ]
 depends: [
-  "ocaml"
+  "ocaml" { >= "4.13" }
   "conf-clang"
   "coq" {>= "8.19" & < "8.20~"}
   "coq-compcert" {= "3.13.1"}
