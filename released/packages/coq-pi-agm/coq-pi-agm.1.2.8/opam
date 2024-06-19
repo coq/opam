@@ -9,7 +9,7 @@ build: [["coq_makefile" "-f" "_CoqProject" "-o" "Makefile" ]
 install: [ make "install" "DEST='%{lib}%/coq/user-contrib/pi_agm'" ]
 depends: [
   "ocaml"
-  "coq" {>= "8.12" & < "8.17~" }
+  "coq" {<= "8.19"}
   "coq-coquelicot" {>= "3" & < "4~"}
   "coq-interval" {>= "4"}
 ]
@@ -29,6 +29,6 @@ which is close to the one used in mpfr, for instance.
 The whole development can be used to produce mathematically proved and
 formally verified approximations of PI."""
 url {
-  src: "https://github.com/ybertot/pi-agm/archive/v1.2.6.zip"
-  checksum: "sha256=f690dd8e464acafb4c14437a0ad09545a11f4ebd6771b05f4e7f74ca5c08a7ff"
+  src: "https://github.com/ybertot/pi-agm/releases/download/1.2.7/pi-agm-1.2.8.tgz"
+  checksum: "sha256=417bd20488f2480e5792b33cfea2a2d0211995f5dd726fec54302c9eb559b983"
 }
