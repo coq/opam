@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "coq-trakt"
 maintainer: [ "Enzo Crance <enzo.crance@inria.fr>" "Louise Dubois de Prisque <louise.dubois-de-prisque@inria.fr>" "Chantal Keller <ckeller@lmf.cnrs.fr>" "Tomaz Mascarenhas <tomgm1502@gmail.com>" ]
 authors: [ "Enzo Crance" ]
 license: "LGPL-3.0-or-later"
@@ -18,7 +17,6 @@ tags: [
   "category:Miscellaneous/Coq Extensions"
   "keyword:automation"
   "keyword:elpi"
-  "date:2022-05-16"
   "logpath:Trakt"
 ]
 synopsis: "A generic goal preprocessing tool for proof automation tactics in Coq"
