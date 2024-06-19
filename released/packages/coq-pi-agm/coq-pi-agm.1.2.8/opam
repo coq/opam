@@ -29,6 +29,6 @@ which is close to the one used in mpfr, for instance.
 The whole development can be used to produce mathematically proved and
 formally verified approximations of PI."""
 url {
-  src: "https://github.com/ybertot/pi-agm/releases/download/1.2.7/pi-agm-1.2.8.tgz"
+  src: "https://github.com/ybertot/pi-agm/releases/download/1.2.8/pi-agm-1.2.8.tgz"
   checksum: "sha256=417bd20488f2480e5792b33cfea2a2d0211995f5dd726fec54302c9eb559b983"
 }
