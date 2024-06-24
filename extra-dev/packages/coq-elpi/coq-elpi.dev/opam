@@ -6,6 +6,17 @@ description:
 maintainer: ["Enrico Tassi <enrico.tassi@inria.fr>"]
 authors: ["Enrico Tassi <enrico.tassi@inria.fr>"]
 license: "LGPL-2.1-or-later"
+homepage: "https://github.com/LPCIC/coq-elpi"
+bug-reports: "https://github.com/LPCIC/coq-elpi/issues"
+dev-repo: "git+https://github.com/LPCIC/coq-elpi"
+
+depends: [
+  "ocaml" {>= "4.10.0"}
+  "stdlib-shims"
+  "elpi" {= "1.19.2" }
+  "coq" {= "dev"}
+  "ppx_optcomp"
+]
 tags: [
   "category:Miscellaneous/Coq Extensions"
   "keyword:λProlog"
@@ -40,5 +51,5 @@ build: [
 ]
 dev-repo: "git+https://github.com/LPCIC/coq-elpi.git"
 url {
-  src: "git+https://github.com/LPCIC/coq-elpi.git#coq-master"
+  src: "git+https://github.com/LPCIC/coq-elpi.git"
 }
