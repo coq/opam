@@ -1,0 +1,59 @@
+opam-version: "2.0"
+synopsis: "An API exposing Coq's web of formal knowledge to external agents"
+description: """
+   Tactician's API provides external machine learning agents with the data
+   collected by Tactician from the Coq Proof Assistant. It is able to extract
+   large-scale datasets from a wide variety of Coq packages for the purpose of
+   offline machine learning. Additionally, it allows agents to interact with
+   Coq. Proving servers can be connected to Tactician's `synth` tactic and prove
+   theorems for Coq users. Additionally, servers can do proof exploration
+   through the `Tactician Explore` command."""
+maintainer: ["Lasse Blaauwbroek <lasse@blaauwbroek.eu>"]
+authors: ["Lasse Blaauwbroek <lasse@blaauwbroek.eu>"]
+license: "MIT"
+homepage: "https://coq-tactician.github.io"
+bug-reports: "https://github.com/coq-tactician/coq-tactician-api/issues"
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "--promote-install-files=false"
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+  ["dune" "install" "-p" name "--create-install-files" name]
+]
+dev-repo: "git+https://github.com/coq-tactician/coq-tactician-api.git"
+depends: [
+  "ocamlfind"
+  "coq" {>= "8.11" & < "8.12~"}
+  "coq-tactician" {= "1.0~beta2~neural+8.11"}
+  "logs"
+  "fmt"
+  "capnp-rpc-unix"
+  "capnp-rpc-lwt"
+  "capnp" {>= "3.4.0"}
+  "ppx_deriving"
+  "ocamlgraph"
+  "xxhash"
+  "dune" {>= "2.9"}
+  "odoc" {with-doc}
+  # These constraints are to work around
+  # https://github.com/ocsigen/lwt/issues/764 and
+  # https://github.com/ocaml/ocaml/pull/9914
+  "ocaml" {>= "4.12~"} | ("ocaml" {< "4.12~"} & "lwt" {<= "5.1.1"})
+]
+substs: [
+  "src/graph_generator_learner.ml"
+  "theories/injection-flags-loader"
+]
+url {
+  src: "https://github.com/coq-tactician/coq-tactician-api/archive/refs/tags/v15.0-8.11.tar.gz"
+  checksum: "sha512=a42d446726f4cb7a54213f7b546c86165eb3f3901890ad198661424798a4ec676fe22b2e8091683a025da9be834519d73bc518cd405ce0b5fe5c1af47bdea19a"
+}

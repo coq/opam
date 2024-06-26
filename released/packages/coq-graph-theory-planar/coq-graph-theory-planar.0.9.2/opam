@@ -15,7 +15,7 @@ as part of the Coq proof of the Four-Color Theorem."""
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "coq" {>= "8.14" & < "8.19~"}
-  "coq-mathcomp-ssreflect" {>= "1.13" & < "1.19~"}
+  "coq-mathcomp-ssreflect" {>= "1.13" & < "1.20~"}
   "coq-graph-theory" {= version}
   "coq-fourcolor"
 ]

@@ -1,0 +1,29 @@
+opam-version: "2.0"
+maintainer: "pierre-yves@strub.nu"
+
+homepage: "https://github.com/jasmin-lang/coqword"
+bug-reports: "https://github.com/jasmin-lang/coqword/issues"
+dev-repo: "git+https://github.com/jasmin-lang/coqword.git"
+license: "MIT"
+
+synopsis: "Yet Another Coq Library on Machine Words"
+
+build: [ "dune" "build" "-p" name "-j" jobs ]
+depends: [
+  "dune" {>= "2.8"}
+  "coq" {>= "8.16"}
+  "coq-mathcomp-ssreflect" {>= "2.0" & < "2.3~"}
+  "coq-mathcomp-algebra"
+]
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "keyword:machine words"
+  "logpath:mathcomp.word"
+  "date:2024-03-21"
+]
+authors: ["Pierre-Yves Strub"]
+
+url {
+  src: "https://github.com/jasmin-lang/coqword/releases/download/v3.1/coq-mathcomp-word-v3.1.tbz"
+  checksum: "sha512=848c0467c9cbad3671d3e3c0334d748e679017805625a138fe3ffa6ee27e447285f9724c5aace55df501aaa8d0f1b640684d4f1d2b62b2b9103867530c3bf746"
+}

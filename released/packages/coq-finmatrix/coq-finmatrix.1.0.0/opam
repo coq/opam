@@ -1,0 +1,47 @@
+opam-version: "2.0"
+synopsis: "Matrix by fin (finite set over nat) in Coq" # One-line description
+description: """
+  FinMatrix is a formal matrix library in Coq, which we started from
+  finite sets (over natural numbers), vecotr based on finite sets, and
+  matrices based on vectors. This implementation differs from the
+  CoqMatrix project(https://github.com/zhengpushi/CoqMatrix), which
+  have various models.
+
+  We have formalized many algebraic and geometric vector or matrix
+  theories, especially including two inversion matrix algorithms:
+  minvGE (inversion based on Gauss Elimination), minvAM (inversion
+  based on Adjoint Matrix).
+  """ # Longer description, can span several lines
+             
+homepage: "https://zhengpushi.github.io/projects/FinMatrix"
+dev-repo: "git+https://github.com/zhengpushi/FinMatrix.git"
+bug-reports: "https://github.com/zhengpushi/FinMatrix/issues"
+doc: "https://zhengpushi.github.io/projects/FinMatrix/index.html"
+maintainer: "zhengpushi@nuaa.edu.cn"
+authors: [
+  "ZhengPu Shi"
+]
+license: "MIT" # Make sure this is reflected by a LICENSE file in your sources
+
+depends: [
+  "coq" {>= "8.18.0"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+  url {
+  src: "https://github.com/zhengpushi/FinMatrix/archive/refs/tags/v1.0.0.tar.gz"
+  checksum: "sha256=0df32351777137cac4ee4380de2e93358298738d81842008ba32fe748d8acfa5"
+}
+
+tags: [
+  "keyword:matrices"
+  "category:Mathematics/Algebra"
+  "date:2024-04-26"
+  "logpath:FinMatrix"
+]

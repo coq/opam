@@ -1,0 +1,72 @@
+opam-version: "2.0"
+synopsis:
+  "Tactician: A Seamless, Interactive Tactic Learner and Prover for Coq"
+description: """
+This version of Tactician is specifically meant to be used with the 'graph2tac'
+and 'text2tac' for neural-based proof synthesis. Avoid this version for other
+purposes.
+
+Tactician is a tactic learner and prover for the Coq Proof Assistant.
+The system will help users make tactical proof decisions while they retain
+control over the general proof strategy. To this end, Tactician will learn
+from previously written tactic scripts, and either gives the user suggestions
+about the next tactic to be executed or altogether takes over the burden of
+proof synthesis. Tactician's goal is to provide the user with a seamless,
+interactive, and intuitive experience together with strong, adaptive proof
+automation."""
+maintainer: ["Lasse Blaauwbroek <lasse@blaauwbroek.eu>"]
+authors: ["Lasse Blaauwbroek <lasse@blaauwbroek.eu>"]
+license: "MIT"
+homepage: "https://coq-tactician.github.io"
+bug-reports: "https://github.com/coq-tactician/coq-tactician/issues"
+flags: [avoid-version]
+depends: [
+  "ocaml" {>= "4.08"}
+  "dune" {>= "2.8"}
+  "dune-site" {>= "2.9.1"}
+  "opam-client" {>= "2.1.0"}
+  "cmdliner" {>= "1.1.0"}
+  "coq" {>= "8.11.0" & < "8.12~"}
+  "conf-git"
+  "bos" {>= "0.2.1"}
+  "coq-tactician-dummy" {= "1.0~beta2+8.11" & with-test}
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/coq-tactician/coq-tactician.git"
+post-messages: ["
+--- Tactician was successfully installed ---
+
+In order to enable Tactician, you should run
+
+tactician enable
+" {success}]
+tags: [
+  "keyword:tactic-learning"
+  "keyword:machine-learning"
+  "keyword:automation"
+  "keyword:proof-synthesis"
+  "category:Miscellaneous/Coq Extensions"
+  "logpath:Tactician"
+]
+substs: [
+  "coq-shim/tactician-patch"
+  "coq-shim/tactician.ml"
+]
+url {
+  src: "https://github.com/coq-tactician/coq-tactician/archive/refs/tags/1.0-beta2.1-8.11-neural.tar.gz"
+  checksum: "sha512=c3bcc342dc0d1bfa53640f50ab9bdf96de43d0493f594d52e8d6570532afb0edfba1ac828123f516a4d66c6d4ba0947fad5a6d77eb5407c5a4d7aa5ca3c09d13"
+}

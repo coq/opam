@@ -19,7 +19,7 @@ depends: [
   "ocaml" {>= "4.09.0"}
   "stdlib-shims"
   "elpi" {>= "1.18.2" & < "1.20.0~"}
-  "coq" {>= "8.19"}
+  "coq" {= dev}
   "ppx_optcomp"
   "ocaml-lsp-server" {dev}
   "odoc" {with-doc}
@@ -40,5 +40,5 @@ build: [
 ]
 dev-repo: "git+https://github.com/LPCIC/coq-elpi.git"
 url {
-  src: "git+https://github.com/LPCIC/coq-elpi.git#coq-master"
+  src: "git+https://github.com/LPCIC/coq-elpi.git"
 }

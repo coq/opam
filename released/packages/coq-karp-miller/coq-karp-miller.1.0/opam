@@ -1,0 +1,42 @@
+opam-version: "2.0"
+synopsis: "Certified Karp-Miller algorithm for the covering of Petri nets"
+description: """
+   Based on the Kruskal-AlmostFull library, we build two correct by construction Karp-Miller
+   algorithms: the first one decides for the coverability problem; and the second one, a
+   refined version, builds the Karp-Miller tree and, either a path in that tree giving a covering, 
+   or a proof that no such path exists in the Karp-Miller trees.
+"""  
+maintainer: ["Dominique Larchey-Wendling (https://github.com/DmxLarchey)"] 
+authors: "Dominique Larchey-Wendling (https://github.com/DmxLarchey)"
+license: "MPL-2.0"
+homepage: "https://github.com/DmxLarchey/Karp-Miller/"
+bug-reports: "https://github.com/DmxLarchey/Karp-Miller/issues"
+dev-repo: "git+https://github.com:DmxLarchey/Karp-Miller/"
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+depends: [
+  "coq" {>= "8.14" & < "8.20~"}
+  "coq-kruskal-almostfull" {>= "1.0"}
+  "coq-kruskal-trees"
+  "coq-kruskal-finite"
+]
+
+url {
+  src: "https://github.com/DmxLarchey/Karp-Miller/archive/refs/tags/1.0.tar.gz"
+  checksum: [
+    "sha256=02c35ae0701c5e5fd5e0974158d32dda30a07004d41f355ef0b6a5d27b6f269b"
+  ]
+}
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2024-03-13"
+  "logpath:KarpMiller"
+]
+

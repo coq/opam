@@ -1,0 +1,30 @@
+opam-version: "2.0"
+maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
+
+homepage: "https://math-comp.github.io/"
+bug-reports: "https://github.com/math-comp/math-comp/issues"
+dev-repo: "git+https://github.com/math-comp/math-comp.git"
+license: "CECILL-B"
+
+build: [ make "-C" "mathcomp/solvable" "-j" "%{jobs}%" ]
+install: [ make "-C" "mathcomp/solvable"  "install" ]
+depends: [ "coq-mathcomp-algebra" { = version } ]
+
+tags: [
+  "keyword:small scale reflection"
+  "keyword:mathematical components"
+  "keyword:finite groups"
+  "logpath:mathcomp.solvable"
+]
+authors: [ "The Mathematical Components team" ]
+
+synopsis: "Mathematical Components Library on finite groups (II)"
+
+description:"""
+This library contains more definitions and theorems about finite groups.
+"""
+
+url {
+src: "https://github.com/math-comp/math-comp/archive/mathcomp-2.2.0.tar.gz"
+checksum: "sha256=e7e8f3ebfebae10fd290a63fffdbe311d32df7eebc2e66777e194269e72697f5"
+}
