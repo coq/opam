@@ -15,7 +15,7 @@ by extending the zify tactic."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.16" & < "8.20~")}
+  "coq" {(>= "8.16" & < "8.21~")}
   "coq-mathcomp-ssreflect" {(>= "2.0" & < "2.3~")}
   "coq-mathcomp-algebra" 
 ]
