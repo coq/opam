@@ -1,0 +1,45 @@
+opam-version: "2.0"
+name: "coq-rust-extraction"
+version: "0.1.0"
+synopsis: "Coq extraction to Rust"
+description: """
+A framework for extracting Coq programs to Rust
+"""
+maintainer: "Danil Annenkov <danil.v.annenkov@gmail.com>"
+authors: "The COBRA team"
+license: "MIT"
+homepage: "https://github.com/AU-COBRA/coq-rust-extraction"
+dev-repo: "git+https://github.com/AU-COBRA/coq-rust-extraction.git"
+bug-reports: "https://github.com/AU-COBRA/coq-rust-extraction/issues"
+doc: "https://au-cobra.github.io/coq-rust-extraction/toc.html"
+
+depends: [
+  "coq" {>= "8.17" & < "8.20~"}
+  "coq-metacoq-utils" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-common" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-template" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-template-pcuic" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-pcuic" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-safechecker" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-erasure" {>= "1.3.1" & < "1.4~"}
+]
+
+build: [
+  [make "plugin"]
+  [make "tests"] {with-test}
+]
+install: [
+  [make "install"]
+  [make "-C" "tests" "install"] {with-test}
+]
+
+tags: [
+  "keyword:rust"
+  "keyword:extraction"
+  "logpath:RustExtraction"
+]
+
+url {
+  src: "https://github.com/AU-COBRA/coq-rust-extraction/archive/refs/tags/v0.1.0.tar.gz"
+  checksum: "sha512=e5b0e82a21dab68c7191668840baaba4d2f04bf195709d7367ccca400ac45721735990ce36c55577515dd6b1cab53acc79b51b8128afff83ea97d7b0dad56068"
+}
