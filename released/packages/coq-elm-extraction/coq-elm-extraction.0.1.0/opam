@@ -1,6 +1,4 @@
 opam-version: "2.0"
-name: "coq-elm-extraction"
-version: "0.1.0"
 synopsis: "Coq extraction to Elm"
 description: """
 A framework for extracting Coq programs to Elm
