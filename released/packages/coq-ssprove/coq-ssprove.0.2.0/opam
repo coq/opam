@@ -1,6 +1,4 @@
 opam-version: "2.0"
-name: "coq-ssprove"
-version: "0.2.0"
 synopsis: "A Foundational Framework for Modular Cryptographic Proofs"
 maintainer: "philipp@haselwarter.org"
 authors: ["SSProve team"]
