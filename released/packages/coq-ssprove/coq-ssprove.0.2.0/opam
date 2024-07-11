@@ -1,0 +1,32 @@
+opam-version: "2.0"
+synopsis: "A Foundational Framework for Modular Cryptographic Proofs"
+maintainer: "philipp@haselwarter.org"
+authors: ["SSProve team"]
+homepage: "https://github.com/SSProve/ssprove"
+bug-reports: "https://github.com/SSProve/ssprove/issues"
+dev-repo: "git+https://github.com/SSProve/ssprove.git"
+license: "MIT"
+depends: [
+  "coq" {(>= "8.18" & < "8.20~")}
+  "coq-equations" {(>= "1.3+8.18")}
+  "coq-mathcomp-ssreflect" {(>= "2.1.0")}
+  "coq-mathcomp-analysis" {>= "1.0.0"}
+  "coq-extructures" {(>= "0.4.0" & < "dev")}
+  "coq-deriving" {(>= "0.2.0" & < "dev")}
+]
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+tags: [
+  "keyword:cryptography"
+  "logpath:Mon"
+  "logpath:Relational"
+  "logpath:Crypt"
+]
+url {
+  src: "https://github.com/SSProve/ssprove/archive/refs/tags/v0.2.0.tar.gz"
+  checksum: "sha512=84327adc1aa5b46f0b3aea9adacdf21ca00b90758f1fc6248b29e06cb06b865be9879991264239df1bae9a84548a2a622f1040e27623e77cc70a11302a3f8b6c"
+}
