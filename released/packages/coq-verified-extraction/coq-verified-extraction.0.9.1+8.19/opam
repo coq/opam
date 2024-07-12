@@ -10,7 +10,7 @@ authors: [
 ]
 license: "MIT"
 build: [
-  [make]
+  [make "-j%{jobs}%"]
 ]
 install: [
   [make "install"]
