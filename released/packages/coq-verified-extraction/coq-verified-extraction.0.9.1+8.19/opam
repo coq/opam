@@ -3,11 +3,11 @@ maintainer: "Matthieu Sozeau <matthieu.sozeau@inria.fr"
 homepage: "https://github.com/yforster/coq-verified-extraction"
 dev-repo: "git+https://github.com/yforster/coq-verified-extraction"
 bug-reports: "https://github.com/yforster/coq-verified-extraction/issues"
-authors:  [
-          "Yannick Forster"
-          "Matthieu Sozeau"
-          "Nicolas Tabareau"
-  ]
+authors: [
+ "Yannick Forster"
+ "Matthieu Sozeau"
+ "Nicolas Tabareau"
+]
 license: "MIT"
 build: [
   [make]
