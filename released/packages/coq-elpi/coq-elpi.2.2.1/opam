@@ -9,6 +9,7 @@ tags: [
   "category:Miscellaneous/Coq Extensions"
   "keyword:λProlog"
   "keyword:higher order abstract syntax"
+  "date:2024-07-12"
   "logpath:elpi"
 ]
 homepage: "https://github.com/LPCIC/coq-elpi"
