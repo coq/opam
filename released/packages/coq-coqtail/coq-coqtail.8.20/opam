@@ -1,0 +1,40 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/coqtail-math"
+dev-repo: "git+https://github.com/coq-community/coqtail-math.git"
+bug-reports: "https://github.com/coq-community/coqtail-math/issues"
+license: "LGPL-3.0-only"
+
+synopsis: "Library of mathematical theorems and tools proved inside the Coq"
+description: """
+Coqtail is a library of mathematical theorems and tools proved inside
+the Coq proof assistant. Results range mostly from arithmetic to real
+and complex analysis."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {>= "8.17" & < "8.21"}
+]
+
+tags: [
+  "category:Mathematics/Real Calculus and Topology"
+  "keyword:real analysis"
+  "keyword:complex analysis"
+  "date:2024-07-13"
+  "logpath:Coqtail"
+]
+authors: [
+  "Guillaume Allais"
+  "Sylvain Dailler"
+  "Hugo Férée"
+  "Jean-Marie Madiot"
+  "Pierre-Marie Pédrot"
+  "Amaury Pouly"
+]
+
+url {
+  src: "https://github.com/coq-community/coqtail-math/archive/8.20.tar.gz"
+  checksum: "sha512=4f2e9a4b9033d01caa233568a1f7ddb817414a1030e3ebe555f9f93dd6edb4e2f303b11c8d223f1f3d1ab5e857e708faa835287e4470cf038bd0408f9dc11866"
+}
