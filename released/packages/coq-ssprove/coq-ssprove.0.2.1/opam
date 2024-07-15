@@ -22,11 +22,9 @@ install: [
 ]
 tags: [
   "keyword:cryptography"
-  "logpath:Mon"
-  "logpath:Relational"
-  "logpath:Crypt"
+  "logpath:SSProve"
 ]
 url {
-  src: "https://github.com/SSProve/ssprove/archive/refs/tags/v0.2.0.tar.gz"
-  checksum: "sha512=84327adc1aa5b46f0b3aea9adacdf21ca00b90758f1fc6248b29e06cb06b865be9879991264239df1bae9a84548a2a622f1040e27623e77cc70a11302a3f8b6c"
+  src: "https://github.com/SSProve/ssprove/archive/refs/tags/v0.2.1.tar.gz"
+  checksum: "sha512=93645a4de866e2929afb95e521ea0e9614c80044f82c6c67bdea0aa1c364be4a5221a024c81787c9245242d69a5b7588a63800f1413578346800ae9cd2c2570a"
 }
