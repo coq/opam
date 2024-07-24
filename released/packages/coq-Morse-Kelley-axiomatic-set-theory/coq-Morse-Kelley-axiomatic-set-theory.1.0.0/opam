@@ -1,0 +1,53 @@
+opam-version: "2.0"
+synopsis: "A Coq formalization of the Morse-Kelley axiomatic set theory"
+description: """
+In this project, we present a formalization of axiomatic set theory based on the Coq proof assistant.
+The axiomatic system is derived from Morse-Kelley (MK) set theory which is a relatively complete and concise axiomatic set theory.
+
+MK includes eight axioms, one axiom schema, and 181 definitions or theorems. 
+Different from ZFC, MK admits classes (whose quantity is more extensive than that of sets) as fundamental objects. 
+That is to say, every mathematical object (ordered pair, function, integer, etc.) is a class, 
+and only those classes belonging to some other ones are defined as sets. 
+The non-set classes are named “proper classes”. In fact, ZFC can be proven consistent in MK. 
+We consider that MK is a proper extension of ZFC and is convenient to utilize in formalization processes.
+"""
+
+homepage: "https://github.com/1DGW/formalization-of-Morse-Kelley-axiomatic-set-theory"
+dev-repo: "git+https://github.com/1DGW/formalization-of-Morse-Kelley-axiomatic-set-theory.git"
+bug-reports: "https://github.com/1DGW/formalization-of-Morse-Kelley-axiomatic-set-theory/issues"
+maintainer: "dgw@bupt.edu.cn"
+authors: [
+  "Wensheng Yu"
+  "Tianyu Sun"
+  "Yaoshun Fu"
+  "Dakai Guo"
+  "Si Chen"
+  "Qimeng Zhang"
+  "Guowei Dou"
+]
+license: "LGPL-2.1"
+
+depends: [
+  "coq" {>= "8.13.2" & < "8.14~"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/1DGW/formalization-of-Morse-Kelley-axiomatic-set-theory/archive/v1.0.0.tar.gz"
+  checksum: "sha256=4c8868d186accbd09d22a4060287194448bdbd8b53844b147a078066c4fe0dcd"
+}
+
+tags: [
+  "keyword:set theory"
+  "keyword:axiomatic set theory"
+  "keyword:Morse-Kelley axiomatic set theory"
+  "keyword:MK"
+  "category: Computer Science/Mathematics/Set Theory/Coq Formalization"
+  "date:2024-07"
+]
