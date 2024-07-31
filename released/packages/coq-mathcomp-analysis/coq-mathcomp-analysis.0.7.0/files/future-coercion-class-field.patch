@@ -1,0 +1,16 @@
+diff --git a/theories/topology.v b/theories/topology.v
+index 4e95029..3bc3d84 100644
+--- a/theories/topology.v
++++ b/theories/topology.v
+@@ -3181,9 +3181,10 @@ Unshelve. all: by end_near. Qed.
+ Section Tychonoff.
+ 
+ Class UltraFilter T (F : set (set T)) := {
+-  ultra_proper :> ProperFilter F ;
++  ultra_proper : ProperFilter F ;
+   max_filter : forall G : set (set T), ProperFilter G -> F `<=` G -> G = F
+ }.
++#[global] Existing Instance ultra_proper.
+ 
+ Lemma ultra_cvg_clusterE (T : topologicalType) (F : set (set T)) :
+   UltraFilter F -> cluster F = [set p | F --> p].
