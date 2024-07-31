@@ -1,0 +1,48 @@
+opam-version: "2.0"
+synopsis: "Elpi extension language for Coq"
+description:
+  "Coq-elpi provides a Coq plugin that embeds ELPI. It also provides a way to embed Coq's terms into λProlog using the Higher-Order Abstract Syntax approach and a way to read terms back. In addition to that it exports to ELPI a set of Coq's primitives, e.g. printing a message, accessing the environment of theorems and data types, defining a new constant and so on. For convenience it also provides a quotation and anti-quotation for Coq's syntax in λProlog. E.g., `{{nat}}` is expanded to the type name of natural numbers, or `{{A -> B}}` to the representation of a product by unfolding the `->` notation. Finally it provides a way to define new vernacular commands and new tactics."
+maintainer: ["Enrico Tassi <enrico.tassi@inria.fr>"]
+authors: ["Enrico Tassi <enrico.tassi@inria.fr>"]
+license: "LGPL-2.1-or-later"
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "keyword:λProlog"
+  "keyword:higher order abstract syntax"
+  "logpath:elpi"
+]
+homepage: "https://github.com/LPCIC/coq-elpi"
+bug-reports: "https://github.com/LPCIC/coq-elpi/issues"
+depends: [
+  "dune" {>= "3.13"}
+  "ocaml" {>= "4.10.0"}
+  "stdlib-shims"
+  "elpi" {>= "1.18.2" & < "1.20.0~"}
+  "coq" {>= "8.19" & < "8.21"}
+  "ppx_optcomp"
+  "ocaml-lsp-server" {with-dev-setup}
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/LPCIC/coq-elpi.git"
+url {
+  src:
+    "https://github.com/LPCIC/coq-elpi/releases/download/v2.2.3/coq-elpi-2.2.3.tar.gz"
+  checksum: [
+    "md5=c4c90b3a081f00554f81cd1aed8c908c"
+    "sha512=f3d34d4d4548b76ad1b007f67e34e15bed20ef3013b7106ec7dc801a26daead80fd5a166c5e62e47c52e4e70a0aba5c3f19b78fef5a64d2d0aca344a4f581dfa"
+  ]
+}
