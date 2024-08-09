@@ -65,3 +65,4 @@ url {
   src: "https://github.com/math-comp/analysis/releases/download/1.3.0/analysis-1.3.0.tar.gz"
   checksum: "sha512=c002e2cca31fbe00f4b3b896945578e5a0ebe0ffb2e03d510dc139ba59847f1d86bd6a31a754a36298bc90e095ed3a74e4eaa69bf1827c31de4208bb9e19defc"
 }
+flags: [ avoid-version ]
