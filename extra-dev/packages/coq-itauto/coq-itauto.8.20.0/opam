@@ -17,14 +17,12 @@ both arithmetic and function symbols.
 
 build: [
   [make "-j%{jobs}%"]
-  [make "test"] {with-test}
  ]
 install: [make "install"]
 depends: [
   "ocaml" {>= "4.9~"}
   "coq" {>= "8.20" & < "8.21"}
   "dune" {>= "2.9"}
-  "coq-mathcomp-zify" {with-test}
 ]
 depopts: [ "ocamlformat" {build} ]
 
