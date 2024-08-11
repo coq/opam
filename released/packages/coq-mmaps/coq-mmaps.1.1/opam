@@ -14,10 +14,11 @@ The finite maps are parameterized on arbitrary ordered types using
 Coq functors. This is an updated version of the Coq Stdlib's FMaps
 that is meant to complement the Stdlib's MSet library."""
 
+patches: ["class-field-instance.patch"]
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {>= "8.14" & < "8.20"}
+  "coq" {>= "8.14" & < "8.21"}
 ]
 
 tags: [
