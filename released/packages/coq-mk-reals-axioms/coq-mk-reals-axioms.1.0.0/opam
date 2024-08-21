@@ -26,7 +26,7 @@ depends: [
 ]
 
 build: [
-  [make "-j%{jobs}%"]
+  [make ""]
 ]
 install: [
   [make "install"]
