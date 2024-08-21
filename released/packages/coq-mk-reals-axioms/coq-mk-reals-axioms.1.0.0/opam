@@ -34,7 +34,7 @@ install: [
 
 url {
   src: "https://github.com/1DGW/coq-mk-reals-axioms/archive/refs/tags/v1.0.0.tar.gz"
-  checksum: "sha512=3efd9e87bec6b22d6a919036c1d712501a296c1b8a5e84e4e003449183f01a762d6b41b2df35c779f35f596b76fadd87004e803122a9eaaf75076465ae00a194"
+  checksum: "sha512=d7c980baa01fb2eed6e548634b91c700a0322755c95018adca87f4b2353e8a70c0953edadf3b4f77241afa71ce5c40d46127ee1e56602281a7acdeb144747f0b"
 }
 
 tags: [
