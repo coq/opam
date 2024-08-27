@@ -1,0 +1,37 @@
+opam-version: "2.0"
+synopsis: "Coq library for manipulating finiteness, finite choice and decision as used in proof of Kruskal's tree theorem"
+description: """
+   Tools to facilitate proofs of finiteness (ie listability), finite choice principles
+   and finite decidability.
+"""
+maintainer: ["Dominique Larchey-Wendling (https://github.com/DmxLarchey)"]
+authors: "Dominique Larchey-Wendling (https://github.com/DmxLarchey)"
+license: "MPL-2.0"
+homepage: "https://github.com/DmxLarchey/Kruskal-Finite/"
+bug-reports: "https://github.com/DmxLarchey/Kruskal-Finite/issues"
+dev-repo: "git+https://github.com:DmxLarchey/Kruskal-Finite/"
+
+build: [
+  [ make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+depends: [
+  "coq" {>= "8.14" & < "8.20~"}
+  "coq-kruskal-trees" {>= "1.4"}
+]
+
+url {
+  src: "https://github.com/DmxLarchey/Kruskal-Finite/releases/download/1.4/Kruskal-Finite-1.4.tar.gz"
+  checksum: [
+    "sha256=ad8ae37320e6fca0803b3ec1dfb2e959d260374702aaf4d9e7cd611efb5f7d0a"
+  ]
+}
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2024-08-27"
+  "logpath:KruskalFinite"
+]
