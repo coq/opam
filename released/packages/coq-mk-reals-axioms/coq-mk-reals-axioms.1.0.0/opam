@@ -19,7 +19,7 @@ authors: [
   "Guowei Dou"
   "Shukun Len"
 ]
-license: "LGPL-2.1"
+license: "LGPL-2.1-only"
 
 depends: [
   "coq" {>= "8.13.2" & < "8.21~"}
@@ -41,8 +41,8 @@ tags: [
   "keyword:set theory"
   "keyword:Morse-Kelley"
   "keyword:MK"
-  "reals"
-  "category:Mathematics/Logic"
+  "real numbers"
+  "category:Mathematics/Logic/Set theory"
   "date:2024-08-22"
   "logpath:MKReals"
 ]
