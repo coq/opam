@@ -19,18 +19,18 @@ install: [
 
 depends: [
   "coq" {>= "8.14" & < "8.20~"}
-  "coq-kruskal-trees" {>= "1.1"}
-  "coq-kruskal-finite" {>= "1.1"}
+  "coq-kruskal-trees" {>= "1.4"}
+  "coq-kruskal-finite" {>= "1.4"}
 ]
 
 url {
   src: "https://github.com/DmxLarchey/Kruskal-AlmostFull/releases/download/1.1/Kruskal-AlmostFull-1.1.tar.gz"
-  checksum: [ "sha256=9fc4e3f46c28731c75576431b3f2d406332b079dfba21a6a1b8f7d1a0eb4950c" ]
+  checksum: [ "sha256=3d5b09cea62d8399c65c06d9735ac7c049c41929c036aba28cc4adc25d9870b2" ]
 }
 
 tags: [
   "category:Computer Science/Data Types and Data Structures"
-  "date:2024-08-27"
+  "date:2024-08-28"
   "logpath:KruskalAfProp"
   "logpath:KruskalAfType"
 
