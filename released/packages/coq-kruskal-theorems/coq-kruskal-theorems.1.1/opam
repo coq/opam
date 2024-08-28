@@ -1,0 +1,40 @@
+opam-version: "2.0"
+synopsis: "Extending the Coq library for manipulating Almost Full relations with various forms of Kruskal's tree theorem"
+description: """
+   This library formalizes the high-level variants of Higman's theorem (for trees of bounded arity)
+   and Kruskal's theorem (for rose trees), depending on how these datatypes are implemented. Also,
+   Vazsonyi's conjecture to illustrate the expressive power of Kruskal's and Higman's theorem.
+"""  
+maintainer: ["Dominique Larchey-Wendling (https://github.com/DmxLarchey)"] 
+authors: "Dominique Larchey-Wendling (https://github.com/DmxLarchey)"
+license: "MPL-2.0"
+homepage: "https://github.com/DmxLarchey/Kruskal-Theorems/"
+bug-reports: "https://github.com/DmxLarchey/Kruskal-Theorems/issues"
+dev-repo: "git+https://github.com:DmxLarchey/Kruskal-Theorems/"
+
+build: [
+  [make "-j%{jobs}%" "type"]
+]
+install: [
+  [make "install"]
+]
+
+depends: [
+  "coq-kruskal-almostfull"
+  "coq-kruskal-higman" {>= "1.2"}
+  "coq-kruskal-veldman" {>= "1.2"}
+]
+
+url {
+  src: "https://github.com/DmxLarchey/Kruskal-Theorems/releases/download/1.1/Kruskal-Theorems-1.1.tar.gz"
+  checksum: [
+    "sha256=1298e558236c8f760cfd8e93720c2b12a0c7b1773ddf25412220b75f20c0347a"
+  ]
+}
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2024-08-28"
+  "logpath:KruskalThmProp"
+  "logpath:KruskalThmType"
+]
