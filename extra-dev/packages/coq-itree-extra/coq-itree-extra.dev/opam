@@ -19,7 +19,7 @@ depends: [
 dev-repo: "git+https://github.com/DeepSpec/InteractionTrees.git"
 build: [
   [ "./fixup.sh" ]
-  [ "dune" "subst"] {pinned}
+  [ "dune" "subst"] {dev}
   [ "dune" "build" "-p" name "-j" jobs "@install" ]
 ]
 url {
