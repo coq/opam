@@ -17,7 +17,7 @@ which will be used to subsume notations for finite sets, eventually."""
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" { (>= "8.13" & < "8.20~") | (= "dev") }
+  "coq" { (>= "8.13" & < "8.21~") | (= "dev") }
   "coq-mathcomp-ssreflect" {>= "1.12.0" & < "1.20~"}
 ]
 

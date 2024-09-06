@@ -11,6 +11,9 @@ description: """
 This repository contains an experimental library for real analysis for
 the Coq proof-assistant and using the Mathematical Components library."""
 
+patches: [
+  "future-coercion-class-field.patch"
+]
 build: [make "-C" "theories" "-j%{jobs}%"]
 install: [make "-C" "theories" "install"]
 depends: [

@@ -1,0 +1,43 @@
+opam-version: "2.0"
+synopsis: "Coq extraction to Elm"
+description: """
+A framework for extracting Coq programs to Elm
+"""
+maintainer: "Danil Annenkov <danil.v.annenkov@gmail.com>"
+authors: "The COBRA team"
+license: "MIT"
+homepage: "https://github.com/AU-COBRA/coq-elm-extraction"
+dev-repo: "git+https://github.com/AU-COBRA/coq-elm-extraction.git"
+bug-reports: "https://github.com/AU-COBRA/coq-elm-extraction/issues"
+doc: "https://au-cobra.github.io/coq-elm-extraction/toc.html"
+
+depends: [
+  "coq" {>= "8.17" & < "8.20~"}
+  "coq-metacoq-utils" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-common" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-template" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-template-pcuic" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-pcuic" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-safechecker" {>= "1.3.1" & < "1.4~"}
+  "coq-metacoq-erasure" {>= "1.3.1" & < "1.4~"}
+]
+
+build: [
+  [make "theory"]
+  [make "tests"] {with-test}
+]
+install: [
+  [make "install"]
+  [make "-C" "tests" "install"] {with-test}
+]
+
+tags: [
+  "keyword:elm"
+  "keyword:extraction"
+  "logpath:ElmExtraction"
+]
+
+url {
+  src: "https://github.com/AU-COBRA/coq-elm-extraction/archive/refs/tags/v0.1.0.tar.gz"
+  checksum: "sha512=3feb033ff2353b489609d8af57af8b80929b51c3262366941f4be866f54529ae30726b4da3982beaf50c0b70f4dbbb166b1b424b5dd5b37b435ce64fcb3ad434"
+}

@@ -30,7 +30,7 @@ run-test: [
 depends: [
   "coq" {>= "8.16" & < "8.18~"}
   "coq-flocq" {>= "4.1.1" & < "5.0"}
-  "coq-interval" {>= "4.8.0"}
+  "coq-interval" {>= "4.8.0" & < "4.10~"}
   "coq-compcert" {>= "3.12"}
   "coq-bignums"
 ]

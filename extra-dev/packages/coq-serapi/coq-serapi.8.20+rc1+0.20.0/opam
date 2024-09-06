@@ -1,0 +1,58 @@
+opam-version: "2.0"
+maintainer:   "e@x80.org"
+homepage:     "https://github.com/ejgallego/coq-serapi"
+bug-reports:  "https://github.com/ejgallego/coq-serapi/issues"
+dev-repo:     "git+https://github.com/ejgallego/coq-serapi.git"
+license:      "LGPL-2.1-or-later"
+doc:          "https://ejgallego.github.io/coq-serapi/"
+
+synopsis:     "Serialization library and protocol for machine interaction with the Coq proof assistant"
+description:  """
+SerAPI is a library for machine-to-machine interaction with the
+Coq proof assistant, with particular emphasis on applications in IDEs,
+code analysis tools, and machine learning. SerAPI provides automatic
+serialization of Coq's internal OCaml datatypes from/to JSON or
+S-expressions (sexps).
+"""
+
+authors: [
+  "Emilio Jesús Gallego Arias"
+  "Karl Palmskog"
+  "Clément Pit-Claudel"
+  "Kaiyu Yang"
+]
+
+depends: [
+  "dune"                { >= "2.9.1"               }
+  "ocaml"               { >= "4.12.0"              }
+  "coq"                 { >= "8.20" & < "8.21"     }
+  "cmdliner"            { >= "1.1.0"               }
+  "ocamlfind"           { >= "1.8.0"               }
+  "sexplib"             { >= "v0.13.0"             }
+  "dune"                { >= "2.0.1"               }
+  "cmdliner"            { >= "1.1.0"               }
+  "ocamlfind"           { >= "1.8.0"               }
+  "ppx_import"          { >= "1.11.0" & < "2.0"    }
+  "ppx_deriving"        { >= "4.2.1"               }
+  "ppx_deriving_yojson" { >= "3.4"                 }
+  "sexplib"             { >= "v0.13.0" & < "v0.18" }
+  "ppx_sexp_conv"       { >= "v0.13.0" & < "v0.18" }
+  "ppx_compare"         { >= "v0.13.0" & < "v0.18" }
+  "ppx_hash"            { >= "v0.13.0" & < "v0.18" }
+]
+
+conflicts: [
+  "result" {< "1.5"}
+]
+
+build: [ "dune" "build" "-p" name "-j" jobs ]
+run-test: [ [ "dune" "runtest" "-p" name "-j" jobs ] ]
+
+url {
+  src:
+    "https://github.com/ejgallego/coq-serapi/archive/refs/tags/8.20+rc1+0.20.0.tar.gz"
+  checksum: [
+    "sha256=2895a57c0c728d3eec0d25074a6d0bdf9a9647954d5dc4d79e7db7a952241a16"
+    "sha512=3acd936547e358fc0b70bc2565319bc70907d268bbc210e5a0ec5478ba2bf8d405515f468a6fa61b4413c107285591297d410d1adc68e9fef4e8559322ec425c"
+  ]
+}

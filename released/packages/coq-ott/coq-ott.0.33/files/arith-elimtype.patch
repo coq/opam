@@ -1,0 +1,112 @@
+diff --git a/coq/ott_list_base.v b/coq/ott_list_base.v
+index 73cdce9..2543acd 100644
+--- a/coq/ott_list_base.v
++++ b/coq/ott_list_base.v
+@@ -60,7 +60,7 @@ Qed.
+ Lemma length_rev : forall l, length (rev l) = length l.
+ Proof.
+   induction l; auto.
+-  simpl. rewrite length_app. rewrite IHl. simpl. rewrite plus_comm. auto.
++  simpl. rewrite length_app. rewrite IHl. simpl. rewrite Nat.add_comm. auto.
+ Qed.
+ 
+ Definition rev_rev := rev_involutive.
+diff --git a/coq/ott_list_distinct.v b/coq/ott_list_distinct.v
+index 70349df..0d6490f 100644
+--- a/coq/ott_list_distinct.v
++++ b/coq/ott_list_distinct.v
+@@ -162,7 +162,7 @@ Proof.
+   intros xs i j Ineq.
+   replace j with (i + (j-i)). 2: solve [auto with arith].
+   generalize (j-i); clear Ineq j; intros k Distinct Nths Bound.
+-  destruct k. solve [auto with arith]. elimtype False.
++  destruct k. solve [auto with arith]. exfalso.
+   generalize dependent xs; induction i; intros; destruct xs; simpl in * .
+   lia.
+   destruct (andb_prop2 _ _ Distinct) as [Notin _]; clear Distinct Bound.
+diff --git a/coq/ott_list_mem.v b/coq/ott_list_mem.v
+index 16ebf23..741f50b 100644
+--- a/coq/ott_list_mem.v
++++ b/coq/ott_list_mem.v
+@@ -148,7 +148,7 @@ Proof.
+     repeat match goal with |- context C [In_dec ?eq_dec_ ?x_ ?l_] =>
+              destruct (In_dec eq_dec_ x_ l_)
+            end;
+-    intros; try ring; elimtype False;
++    intros; try ring; exfalso;
+     (let a := type of i in (generalize dependent i; fold (~a)));
+     auto with datatypes.
+ Qed.
+diff --git a/coq/ott_list_nth.v b/coq/ott_list_nth.v
+index 12c14bf..df909b6 100644
+--- a/coq/ott_list_nth.v
++++ b/coq/ott_list_nth.v
+@@ -35,13 +35,13 @@ Fixpoint nth_safe l n {struct l} : n < length l -> A :=
+   match l as l1, n as n1 return n1 < length l1 -> A with
+     | h::t, 0 => fun H => h
+     | h::t, S m => fun H => nth_safe t m (le_S_n _ _ H)
+-    | nil, _ => fun H => match le_Sn_O _ H with end
++    | nil, _ => fun H => match Nat.nle_succ_0 _ H with end
+   end.
+ 
+ Lemma nth_safe_eq_nth_error :
+   forall l n H, value (nth_safe l n H) = nth_error l n.
+ Proof.
+-  induction l; intro n; pose (F := le_Sn_O n); destruct n; try (contradiction || tauto).
++  induction l; intro n; pose (F := Nat.nle_succ_0 n); destruct n; try (contradiction || tauto).
+   simpl length; intro H. 
+   simpl nth_error; rewrite <- (IHl n (le_S_n _ _ H)).
+   reflexivity.
+@@ -65,7 +65,7 @@ Lemma nth_safe_app :
+   forall l l' n (H:n<length l),
+     exists H', nth_safe l n H = nth_safe (l++l') n H'.
+ Proof.
+-  induction l; intros. solve [contradiction (le_Sn_O n H)].
++  induction l; intros. solve [contradiction (Nat.nle_succ_0 n H)].
+   destruct n.
+   simpl length. assert (H' : 0 < S (length (l ++ l')));
+                   [solve [auto with arith] | exists H'; reflexivity].
+diff --git a/coq/ott_list_takedrop.v b/coq/ott_list_takedrop.v
+index 4656165..ceafa88 100644
+--- a/coq/ott_list_takedrop.v
++++ b/coq/ott_list_takedrop.v
+@@ -1,8 +1,6 @@
+ (* Additional definitions and lemmas on lists *)
+ 
+ Require Import Arith.
+-Require Import Max.
+-Require Import Min.
+ Require Import List.
+ Require Import Lia.
+ Require Import Ott.ott_list_support.
+@@ -51,7 +49,7 @@ Proof.
+ Qed.
+ 
+ Lemma take_length :
+-  forall l n, length (take n l) = min n (length l).
++  forall l n, length (take n l) = Nat.min n (length l).
+ Proof.
+   induction l; destruct n; intros; simpl; try rewrite IHl; reflexivity.
+ Qed.
+@@ -76,10 +74,10 @@ Proof.
+ Qed.
+ 
+ Lemma take_take :
+-  forall l m n, take m (take n l) = take (min m n) l.
++  forall l m n, take m (take n l) = take (Nat.min m n) l.
+ Proof.
+   induction l; intros; simpl.
+-  destruct (min m n); destruct n; repeat rewrite take_nil; reflexivity.
++  destruct (Nat.min m n); destruct n; repeat rewrite take_nil; reflexivity.
+   destruct n; destruct m; try reflexivity.
+   simpl. rewrite IHl. reflexivity.
+ Qed.
+@@ -209,7 +207,7 @@ Lemma take_take_app :
+   forall l l' n, n <= length l -> take n (take n l ++ l') = take n l.
+ Proof.
+   intros. rewrite take_app_long. rewrite take_take.
+-  destruct (min_dec n n) as [Eq | Eq]; rewrite Eq; reflexivity.
++  destruct (Nat.min_dec n n) as [Eq | Eq]; rewrite Eq; reflexivity.
+   rewrite take_some_length; trivial.
+ Qed.
+ 
