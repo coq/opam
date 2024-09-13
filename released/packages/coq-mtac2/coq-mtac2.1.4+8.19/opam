@@ -11,6 +11,7 @@ authors: [
 ]
 license: "MIT"
 synopsis: "Typed tactic language for Coq"
+patches: ["declare-module.patch"]
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
