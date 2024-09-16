@@ -1,0 +1,42 @@
+opam-version: "2.0"
+synopsis: "Yalla library"
+description: """
+  YALLA: an LL library for Coq
+  Yet Another deep embedding of Linear Logic in Coq
+"""
+
+homepage: "https://perso.ens-lyon.fr/olivier.laurent/yalla/"
+dev-repo: "git+https://github.com/olaure01/yalla.git"
+bug-reports: "https://github.com/olaure01/yalla/issues"
+doc: "https://perso.ens-lyon.fr/olivier.laurent/yalla/"
+maintainer: "olivier.laurent@ens-lyon.fr"
+authors: [
+  "Olivier Laurent"
+]
+license: "LGPL-3.0-or-later"
+
+depends: [
+  "coq" { >= "8.19" & < "8.20~" }
+]
+
+build: [
+  ["./configure"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/olaure01/yalla/archive/v2.0.5.tar.gz"
+  checksum: "sha256=3181ace49fda2e3e0f0d80a967be5739c335bf4bf4a25799f8868ab92b7aa4bc"
+}
+
+tags: [
+  "keyword:linear logic"
+  "keyword:metatheory"
+  "keyword:cut elimination"
+  "category:Mathematics/Logic/Foundations"
+  "date:2024-09-15"
+  "logpath:Yalla"
+]
