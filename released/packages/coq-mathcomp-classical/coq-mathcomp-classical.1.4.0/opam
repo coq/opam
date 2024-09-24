@@ -1,0 +1,53 @@
+opam-version: "2.0"
+maintainer: "Reynald Affeldt <reynald.affeldt@aist.go.jp>"
+
+homepage: "https://github.com/math-comp/analysis"
+dev-repo: "git+https://github.com/math-comp/analysis.git"
+bug-reports: "https://github.com/math-comp/analysis/issues"
+license: "CECILL-C"
+
+synopsis: "A library for classical logic for mathematical components"
+description: """
+This repository contains a library for classical logic for
+the Coq proof-assistant and using the Mathematical Components library."""
+
+build: [make "-C" "classical" "-j%{jobs}%"]
+install: [make "-C" "classical" "install"]
+depends: [
+  "coq" { (>= "8.19" & < "8.21~") | (= "dev") }
+  "coq-mathcomp-ssreflect" { (>= "2.1.0") | (= "dev") }
+  "coq-mathcomp-fingroup"
+  "coq-mathcomp-algebra"
+  "coq-mathcomp-finmap" { (>= "2.0.0") | (= "dev") }
+  "coq-hierarchy-builder" { (>= "1.4.0") }
+]
+
+tags: [
+  "category:Mathematics/Classical Logic"
+  "keyword:classical"
+  "keyword:logic"
+  "keyword:sets"
+  "keyword:set theory"
+  "keyword:function"
+  "keyword:cardinal"
+  "logpath:mathcomp.classical"
+  "date:2024-09-24"
+]
+authors: [
+  "Reynald Affeldt"
+  "Alessandro Bruni"
+  "Yves Bertot"
+  "Cyril Cohen"
+  "Marie Kerjean"
+  "Assia Mahboubi"
+  "Damien Rouhling"
+  "Pierre Roux"
+  "Kazuhiko Sakaguchi"
+  "Zachary Stone"
+  "Pierre-Yves Strub"
+  "Laurent Théry"
+]
+url {
+  src: "https://github.com/math-comp/analysis/releases/download/1.4.0/analysis-1.4.0.tar.gz"
+  checksum: "sha512=883e7f66fcc78b8526338b95a53fb4784d0f46b93ba82ae38882479933a344d10e74e47e757f0dfbc297323aff60c03d7916f92e0fc5699f734adb29cb8721da"
+}
