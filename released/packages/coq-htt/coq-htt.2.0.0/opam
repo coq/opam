@@ -36,7 +36,7 @@ depends: [
   "coq-mathcomp-fingroup"
   "coq-fcsl-pcm" { (>= "2.0.0" & < "2.1~") | (= "dev") }
 ]
-conflicts: [ "coq-htt-core" {>= "2.0.0"} ]
+
 tags: [
   "category:Computer Science/Data Types and Data Structures"
   "keyword:partial commutative monoids"
