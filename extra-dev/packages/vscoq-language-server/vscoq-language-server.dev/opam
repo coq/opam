@@ -20,8 +20,12 @@ depends: [
   "ppx_sexp_conv"
   "ppx_yojson_conv" {< "v0.16.0"}
   "ppx_deriving"
+  "ppx_import"
   "sexplib"
   "uri"
+  "jsonrpc" {>= "1.15"}
+  "lsp" {>= "1.15" & < "1.19"}
+  "sel" {>= "0.4.0"}
 ]
 url {
   src: "git+https://github.com/coq-community/vscoq.git/#main"
