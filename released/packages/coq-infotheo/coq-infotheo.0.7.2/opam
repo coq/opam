@@ -23,7 +23,7 @@ depends: [
   "coq-mathcomp-algebra" { (>= "2.2.0") | (= "dev")  }
   "coq-mathcomp-solvable" { (>= "2.2.0") | (= "dev")  }
   "coq-mathcomp-field" { (>= "2.2.0") | (= "dev")  }
-  "coq-mathcomp-analysis" { (>= "1.2.0") }
+  "coq-mathcomp-analysis" { (>= "1.2.0" & < "1.5.0") }
   "coq-hierarchy-builder" { >= "1.5.0" }
   "coq-mathcomp-algebra-tactics" { >= "1.2.0" }
   "coq-interval" { >= "4.10.0"}
