@@ -1,0 +1,3 @@
+[mapping]
+gitlab = "coq/opam"
+gitlab_domain = "gitlab.inria.fr"
