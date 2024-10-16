@@ -12,7 +12,7 @@ bug-reports: "https://github.com/AU-COBRA/coq-elm-extraction/issues"
 doc: "https://au-cobra.github.io/coq-elm-extraction/toc.html"
 
 depends: [
-  "coq" {>= "8.17" & < "8.20~"}
+  "coq" {>= "8.17" & < "8.21~"}
   "coq-metacoq-utils" {>= "1.3.1" & < "1.4~"}
   "coq-metacoq-common" {>= "1.3.1" & < "1.4~"}
   "coq-metacoq-template" {>= "1.3.1" & < "1.4~"}
