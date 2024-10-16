@@ -32,6 +32,9 @@ before_script:
 
 .opam-build:
   stage: build
+  tags:
+    - ci.inria.fr
+    - medium
   script: |
     PR=${CI_COMMIT_REF_NAME##pr-};
     echo "Github PR number: $PR";
@@ -48,6 +51,9 @@ before_script:
 # Json
 json-data:
   stage: build
+  tags:
+    - ci.inria.fr
+    - medium
   variables:
     COMPILER: "4.11.2"
   script: |
@@ -66,6 +72,9 @@ json-data:
 # Lint
 opam-lint:
   stage: lint
+  tags:
+    - ci.inria.fr
+    - medium
   variables:
     COMPILER: "4.11.2"
   script:
