@@ -39,7 +39,7 @@ build: [
 dev-repo: "git+https://github.com/WasmCert/WasmCert-Coq.git"
 url {
   src: "https://github.com/WasmCert/WasmCert-Coq/archive/refs/tags/v2.0.1.tar.gz"
-  checksum: "sha256=af62a6b3beff4f7b690c742d114a1d3361061664e6295b50a868016928e88a27"
+  checksum: "sha256=3f46e16c8cdcddd9ca2f78f45dddfb1fa561461ca631e5216771fe5c51663114"
 }
 tags: [
   "keyword:WebAssembly"
