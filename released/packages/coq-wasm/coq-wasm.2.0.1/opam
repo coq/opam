@@ -1,5 +1,4 @@
 opam-version: "2.0"
-version: "2.0.1"
 synopsis: "Wasm formalisation in Coq"
 description:
   "Wasm formalisation in Coq, following the AFP formalisation of Conrad Watt"
@@ -44,6 +43,6 @@ url {
 tags: [
   "keyword:WebAssembly"
   "category:Computer Science/Semantics and Compilation/Semantics"
-  "Date:2024-10-17"
+  "date:2024-10-17"
   "logpath:Wasm"
 ]
