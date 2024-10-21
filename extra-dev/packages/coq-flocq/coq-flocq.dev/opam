@@ -8,7 +8,7 @@ build: [
   ["./configure"]
   ["./remake" "-j%{jobs}%"]
 ]
-install: ["./remake" "install"]
+install: ["./remake" "install" "install-glob"]
 remove: ["rm" "-R" "%{lib}%/coq/user-contrib/Flocq"]
 depends: [
   "ocaml"
