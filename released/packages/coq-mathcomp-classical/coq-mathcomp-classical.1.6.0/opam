@@ -18,7 +18,7 @@ depends: [
   "coq-mathcomp-ssreflect" { (>= "2.1.0") }
   "coq-mathcomp-fingroup"
   "coq-mathcomp-algebra"
-  "coq-mathcomp-finmap" { (>= "2.0.0") | (= "dev") }
+  "coq-mathcomp-finmap" { (>= "2.0.0") }
   "coq-hierarchy-builder" { (>= "1.4.0") }
 ]
 
