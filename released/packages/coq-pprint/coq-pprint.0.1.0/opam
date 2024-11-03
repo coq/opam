@@ -24,7 +24,9 @@ build: [
   ]
 ]
 dev-repo: "git+https://github.com/MathisBD/coq-pprint.git"
-url: [
-  src: "https://github.com/MathisBD/coq-pprint/archive/0.1.0.tar.gz"
-  checksum: "sha256=6b451181995bbb6c41b13d34671da976971839142417d4ffb9f190077cd731e1"
-]
+url {
+  src: 
+    "https://github.com/MathisBD/coq-pprint/archive/0.1.0.tar.gz"
+  checksum: 
+    "sha256=6b451181995bbb6c41b13d34671da976971839142417d4ffb9f190077cd731e1"
+}
