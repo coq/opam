@@ -1,7 +1,13 @@
 opam-version: "2.0"
 synopsis: "A modern combinator pretty-printing library for Coq"
+description: """
+A combinator pretty-printing library, in the style of Wadler's "A Prettier Printer".
+- Handles utf-8 strings.
+- Supports generic _annotations_ on text (colors, italics, etc).
+- Well documented."""
 maintainer: ["Mathis Bouverot-Dupuis (mathis.bouverot@ens.psl.eu)"]
 authors: ["Mathis Bouverot-Dupuis"]
+license: "MIT"
 homepage: "https://github.com/MathisBD/coq-pprint"
 bug-reports: "https://github.com/MathisBD/coq-pprint/issues"
 depends: [
@@ -28,5 +34,5 @@ url {
   src: 
     "https://github.com/MathisBD/coq-pprint/archive/0.1.0.tar.gz"
   checksum: 
-    "sha256=6b451181995bbb6c41b13d34671da976971839142417d4ffb9f190077cd731e1"
+    "sha256=72196972e35dc68ccfbf11121081e9eb55b987d0133d25fefc156513b60bf39a"
 }
