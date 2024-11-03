@@ -11,7 +11,11 @@ doc: "https://github.com/Deducteam/coq-hol-light-real"
 maintainer: "frederic.blanqui@inria.fr"
 authors: ["Frédéric Blanqui"]
 license: "CeCILL-2.1"
-depends: [ "coq" {>= "8.19"} ]
+depends: [
+  "coq" {>= "8.19"}
+  "coq-mathcomp-ssreflect" {>= "2.1.0"}
+  "coq-mathcomp-algebra" {>= "2.1.0"}
+]
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 tags: [
