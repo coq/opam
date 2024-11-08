@@ -97,4 +97,6 @@ Pipeline" green button at <https://gitlab.com/coq/opam-coq-archive/pipelines>.
 This will then build only on runners without pre-set timeouts (the Coq Pyrolyse
 server). It may still time out if the build takes longer than the GitLab
 project's timeout setting (24 hours). To skip some packages the first PR
-message can contain a line such as `ci-skip: p1.v1 p2.v2` where `p1` and `p2` are package names, and `v1` and `v2` are versions.
+message can contain a line such as `ci-skip: p1.v1 p2 p3.v3 p4` where
+`p1`, `p2`, `p3` and `p4` are package names, and `v1` and `v3` are
+versions (when no versions are given, skip all versions).
