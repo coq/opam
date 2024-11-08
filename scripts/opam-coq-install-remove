@@ -34,7 +34,7 @@ while [ ! -z "$1" ]; do
         PKG_NAME_VERSION=`basename "$PKG_VERSION_DIR"`
         PKG_VERSION=`echo $PKG_NAME_VERSION | cut -d . -f 2-`
         PKG_NAME=`echo $PKG_NAME_VERSION | cut -d . -f 1`
-        if [ ! -z "${SKIP[$PKG_NAME_VERSION]}" ]; then
+        if [ ! -z "${SKIP[$PKG_NAME_VERSION]}" -o ! -z "${SKIP[$PKG_NAME]}" ]; then
           echo Skip $1 due to user request
         else
           echo Testing $1
