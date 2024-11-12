@@ -25,15 +25,18 @@ depends: [
 tags: [
   "category:Mathematics/Logic/Classical logic"
   "keyword:classical logic"
+  "keyword:classical"
   "keyword:logic"
   "keyword:sets"
   "keyword:set theory"
   "keyword:function"
   "keyword:cardinal"
+  "keyword:filter"
   "logpath:mathcomp.classical"
 ]
 authors: [
   "Reynald Affeldt"
+  "Alessandro Bruni"
   "Yves Bertot"
   "Cyril Cohen"
   "Marie Kerjean"
