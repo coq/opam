@@ -18,7 +18,7 @@ build: [
   [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
 ]
 patches: "compat-8-11.patch"
-extra-files: ["compat-8-11.patch" "sha256=1d54e39e9cda9ce8a408158580c09d0d76ff2accbd7524d1986aee4a7b0563dd"]
+extra-files: ["compat-8-11.patch" "sha512=b16ed5b72266b0e5319deee5aa6c61b1c883e8f32469e088905301eb9474e130c2d79c2134328bb9a6ac7ce8c95c15a40d0f72cfbda18d0b44f9eebf76225964"]
 install: [
   [make "install"]
   ["install" "-m" "0644" "VERSION" "%{lib}%/coq/user-contrib/compcert/"]

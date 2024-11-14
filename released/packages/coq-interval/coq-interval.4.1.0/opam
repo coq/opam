@@ -44,3 +44,7 @@ url {
   src: "https://coqinterval.gitlabpages.inria.fr/releases/interval-4.1.0.tar.gz"
   checksum: "sha512=74f94e1d5a1f9b6562a84e5e3addced7bb2a36fd38b2ed6bcbbd0493ba9c4d470bbb2b5d07e3b322d9a5736bc18358966b4101e0ab9b0b18c2cab4efbb7b8c08"
 }
+extra-files: [
+  "remake.patch"
+  "sha512=0107d6aa9a3e326741cacbbcff8569dd2ca05f31854d8705a5d6f102df8ae53dd29058cadf3b98a177fcf80861281ee04e9498c82f657016235a6291db0549a1"
+]

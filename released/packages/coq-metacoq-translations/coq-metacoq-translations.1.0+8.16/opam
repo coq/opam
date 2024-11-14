@@ -40,3 +40,7 @@ url {
   src: "https://github.com/MetaCoq/metacoq/archive/refs/tags/v1.0-8.16.tar.gz"
   checksum: "sha512=84c59b74d7ed3798593026d00e412ce2a9d1443afdaf98f5f680788ed8e73cf7e67dcd91392efe2243c5cd61b979edea9bf109f72ea5c45de5c31ef732bba593"
 }
+extra-files: [
+  "fix-build.patch"
+  "sha512=69fdb25bbfa75e3fb06cf7c0e53974ea1ae18a6105df87217a847fc56574b86dbece0a0005990ec78d5a41bddffa3b8d3d9a9f72a10c446f0b1ffb6e93afb7a7"
+]

@@ -29,7 +29,7 @@ depends: [
 patches: "fix-coq-version.patch"
 synopsis: "The CompCert C compiler"
 authors: "Xavier Leroy <xavier.leroy@inria.fr>"
-extra-files: ["fix-coq-version.patch" "md5=00fcc55512084b421a97922fb1eb4422"]
+extra-files: ["fix-coq-version.patch" "sha512=d915cd1e1a05af14b8d8bc390bae929a5ef0694598afc4bada4bc384eec64616fc38af1a758753bc025ec2e848129ea5638b81d51b08e8219618bf05a675dc87"]
 url {
   src: "https://github.com/AbsInt/CompCert/archive/v2.7.1.tar.gz"
   checksum: "md5=e1a36bad26870384912de4b4e9eb43b0"

@@ -23,7 +23,7 @@ tags: [ "keyword:geometry"
         "keyword:Elements"
         "category:Mathematics/Geometry/General"
         "date:2018-06-13" ]
-extra-files : [[ "Make.in" "md5=cac845bd85ad41adeeb32378cf505f1c" ]]
+extra-files : ["Make.in""sha512=b338c6468b220f14c59a191c0e888e47c0f5648815e16f986ee86c92a12e400ec98a8b836d69912a311ee73ce867f26998459c39dbba903c2fe09b7a59d829fc"]
 url {
   src: "https://github.com/GeoCoq/GeoCoq/archive/v2.4.0.tar.gz"
   checksum: "md5=4a4ad33b4cad9b815a9b5c6308524c63"
