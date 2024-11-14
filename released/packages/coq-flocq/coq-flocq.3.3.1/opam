@@ -29,3 +29,7 @@ url {
   src: "https://flocq.gitlabpages.inria.fr/releases/flocq-3.3.1.tar.gz"
   checksum: "sha512=4c8079df683d838ef61b3f16ecd2084751a4752c129620efe06dfa847be59257f0c0c342fca2ae510d87c085e857a4d32bac10af8be6f29a8c462df0ee72f557"
 }
+extra-files: [
+  "remake.patch"
+  "sha512=4151a6a8fb2f96b217f7ad678d96b2be42521682bbfafe4ab8f9a01cd1983b1ff3ea8bd6d2c4ee9c003e172ca586bb7a279fbbfe6fec8b0349fcb9897d13a5d5"
+]

@@ -25,7 +25,7 @@ tags: [
 ]
 synopsis: "A proxy to interface concurrent Coq programs with the operating system"
 extra-files: [
-  "coq-concurrency-proxy.install" "md5=96f86b964fc4cd99c310011b83de5f61"
+  "coq-concurrency-proxy.install" "sha512=6dfeebf230cd1a02c6f9b7cf0a98389ec66f66d010fd1a755e5c4860e6fcfe5e3039a9f399fcb07031b5e6c672fd7beb2eaa091891fce8c25e28c3439b108f3f"
 ]
 url {
   src: "https://github.com/coq-concurrency/proxy/archive/1.0.0.tar.gz"
