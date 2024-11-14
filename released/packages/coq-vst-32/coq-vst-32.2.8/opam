@@ -43,3 +43,13 @@ url {
   src: "https://github.com/PrincetonUniversity/VST/archive/v2.8.tar.gz"
   checksum: "sha512=80fae7277baf77319c9789fe4d170857862798988980f14c6ca4e11e5e027aff5dbf908848a193f90b0fb2a0dd7d12cf5f4446e2e5c13682e636d89838a08cae"
 }
+extra-files: [
+  [
+    "0001-Fix-issue-485-make-install-with-IGNORECOQVERSION.patch"
+    "sha512=354d6890b2a8cf3fe489ef1d197e54758cd654624a82b90aa56888dd90754355dd942da10e20ace850f920cff4e573316659672c316d4b7bdaac312c1390d24c"
+  ]
+  [
+    "0002-Fix-Coq-8.14.0.patch"
+    "sha512=567532dac5fa2b516fbcd7d61ccc9f6309b3743c3859d37516bd71659750abf2262a8fe3186d39664f292a188912021792b79649ea1026bafc233b93328d72ac"
+  ]
+]

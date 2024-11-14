@@ -45,3 +45,7 @@ url {
   src: "https://github.com/PrincetonUniversity/VST/archive/v2.6.tar.gz"
   checksum: "sha512=4fea46c423fd5abfa403ae88bc34a859960c6e7bbafddc1f208fc4d93af29b0711804a5eb3c917cd70d407f9a3deffa7157edc4bbfef186635280080153f47b3"
 }
+extra-files: [
+  "makefile.patch"
+  "sha512=d2de46c86bae55992c74361e6072ceff38e47154753276dd2dcdf5ebc453cd6ae7433efcce943bccafd6d86b59e2ac19c8c1597d6c996682b0622eaafa1eb5a8"
+]

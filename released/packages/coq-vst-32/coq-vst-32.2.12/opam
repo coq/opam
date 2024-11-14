@@ -54,3 +54,7 @@ url {
   src: "https://github.com/PrincetonUniversity/VST/archive/refs/tags/v2.12.tar.gz"
   checksum: "sha512=7ca3bf55a7e5888dbfd271d9955c463d00de0e7125c60a45ca568d7de2a75104f0e740ba002e10ce7fd1ab94761c0b876816ffac4ac3f2c49af187891be604b5"
 }
+extra-files: [
+  "0001-coq-native-fix.patch"
+  "sha512=e5cbbd21948aa3c5bb7d9edbbb3f41d5b392a04ad8860fe074a31b89676a5e5aef91e26a45dd85e0be4f9553900c97f72533fb0a23c380fdeba59a007bafd398"
+]
