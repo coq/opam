@@ -1,0 +1,43 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/fourcolor"
+dev-repo: "git+https://github.com/coq-community/fourcolor.git"
+bug-reports: "https://github.com/coq-community/fourcolor/issues"
+license: "CECILL-B"
+
+synopsis: "Mechanization of the Four Color Theorem in Coq"
+description: """
+This library contains a formal proof of the Four Color Theorem in Coq,
+along with the theories needed to support stating and then proving the Theorem.
+This includes an axiomatization of the setoid of classical real numbers,
+basic plane topology definitions, and a theory of combinatorial hypermaps."""
+
+build: [make "-C" "theories/proof" "-j%{jobs}%"]
+install: [make "-C" "theories/proof" "install"]
+depends: [
+  "coq" {(>= "8.16" & < "8.21~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {(>= "2.0.0") & < "2.4~") | (= "dev")}
+  "coq-mathcomp-algebra" 
+  "coq-hierarchy-builder" {>= "1.5.0"}
+  "coq-fourcolor-reals" {= version}
+]
+
+tags: [
+  "category:Mathematics/Combinatorics and Graph Theory"
+  "keyword:Four color theorem"
+  "keyword:small scale reflection"
+  "keyword:Mathematical Components"
+  "logpath:fourcolor.proof"
+]
+
+"date: 2024-11-15"
+
+authors: [
+  "Georges Gonthier"
+]
+
+url {
+  src: "https://github.com/coq-community/fourcolor/archive/refs/tags/v1.4.0.tar.gz"
+  checksum: "sha512=f957d3d3260b6f2960e59cabb64a1f5636370cee7fc8870911855e331a50e86e2f5ef526f1d27921a15ed4870521346415dd1c0542e8b61c403b9c465eb8cd9e"
+}
