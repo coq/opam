@@ -23,9 +23,11 @@ tags: [
   "category:Mathematics/Real Calculus and Topology"
   "keyword:real numbers"
   "logpath:fourcolor.reals"
+  "date: 2024-11-15"
 ]
-
-"date: 2024-11-15"
+conflicts: [
+  "coq-fourcolor" { != version }
+]
 
 authors: [
   "Georges Gonthier"
