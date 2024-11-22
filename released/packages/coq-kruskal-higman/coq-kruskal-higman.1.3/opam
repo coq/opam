@@ -1,0 +1,41 @@
+opam-version: "2.0"
+synopsis: "Extending Coq library for manipulating Almost Full relations with Higman's lemma"
+description: """
+   This library formalizes additional tools for AF relations, eg quasi morphisms applied to Higman's lemma.
+"""  
+maintainer: ["Dominique Larchey-Wendling (https://github.com/DmxLarchey)"] 
+authors: "Dominique Larchey-Wendling (https://github.com/DmxLarchey)"
+license: "MPL-2.0"
+homepage: "https://github.com/DmxLarchey/Kruskal-Higman/"
+bug-reports: "https://github.com/DmxLarchey/Kruskal-Higman/issues"
+dev-repo: "git+https://github.com:DmxLarchey/Kruskal-Higman/"
+
+build: [
+  [make "-j%{jobs}%" "type"]
+]
+install: [
+  [make "install"]
+]
+
+depends: [
+  "coq-kruskal-trees" {}
+  "coq-kruskal-finite" {}
+  "coq-kruskal-almostfull" {}
+  "coq-kruskal-fan" {}
+]
+
+
+url {
+  src: "https://github.com/DmxLarchey/Kruskal-Higman/releases/download/1.3/Kruskal-Higman-1.3.tar.gz"
+  checksum: [
+    "sha256=4dd079239f71bb4827b8dfdd6c33bbecb72e4e8be4379ab8bd0e1a6e5beaad06"
+  ]
+}
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2024-11-22"
+  "logpath:KruskalHigmanProp"
+  "logpath:KruskalHigmanType"
+]
+
