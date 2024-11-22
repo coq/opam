@@ -1,0 +1,64 @@
+opam-version: "2.0"
+maintainer: "Reynald Affeldt <reynald.affeldt@aist.go.jp>"
+
+homepage: "https://github.com/math-comp/analysis"
+dev-repo: "git+https://github.com/math-comp/analysis.git"
+bug-reports: "https://github.com/math-comp/analysis/issues"
+license: "CECILL-C"
+
+synopsis: "An analysis library for mathematical components"
+description: """
+This package contains a library for real analysis for
+the Coq proof-assistant and using the Mathematical Components library."""
+
+build: [make "-C" "theories" "-j%{jobs}%"]
+install: [make "-C" "theories" "install"]
+depends: [
+  "coq-mathcomp-reals" { = version}
+  "coq-mathcomp-solvable"
+  "coq-mathcomp-field"
+  "coq-mathcomp-bigenough" { (>= "1.0.0") }
+]
+
+tags: [
+  "category:Mathematics/Real Calculus and Topology"
+  "keyword:analysis"
+  "keyword:Cantor"
+  "keyword:topology"
+  "keyword:real numbers"
+  "keyword:sequence"
+  "keyword:convexity"
+  "keyword:Landau notation"
+  "keyword:logarithm"
+  "keyword:sin"
+  "keyword:cos"
+  "keyword:tangent"
+  "keyword:trigonometric function"
+  "keyword:exponential"
+  "keyword:differentiation"
+  "keyword:derivative"
+  "keyword:measure theory"
+  "keyword:integration"
+  "keyword:Lebesgue"
+  "keyword:probability"
+  "logpath:mathcomp.analysis"
+]
+authors: [
+  "Reynald Affeldt"
+  "Alessandro Bruni"
+  "Yves Bertot"
+  "Cyril Cohen"
+  "Marie Kerjean"
+  "Assia Mahboubi"
+  "Damien Rouhling"
+  "Pierre Roux"
+  "Kazuhiko Sakaguchi"
+  "Zachary Stone"
+  "Pierre-Yves Strub"
+  "Laurent Théry"
+]
+
+url {
+src: "https://github.com/math-comp/analysis/archive/1.7.0.tar.gz"
+checksum: "sha256=54c6db0f72a8302000bd28c3ec9b26c63f3c620282e3bd714c9c84bd8bafa861"
+}
