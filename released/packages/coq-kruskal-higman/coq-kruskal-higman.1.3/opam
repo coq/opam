@@ -18,10 +18,10 @@ install: [
 ]
 
 depends: [
-  "coq-kruskal-trees" {}
-  "coq-kruskal-finite" {}
-  "coq-kruskal-almostfull" {}
-  "coq-kruskal-fan" {}
+  "coq-kruskal-trees"
+  "coq-kruskal-finite"
+  "coq-kruskal-almostfull"
+  "coq-kruskal-fan"
 ]
 
 
