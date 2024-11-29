@@ -18,11 +18,11 @@ build: [
 install: [make "install"]
 depends: [
   "coq" { (>= "8.19" & < "8.21~") | (= "dev") }
-  "coq-mathcomp-ssreflect" { (>= "2.2.0") | (= "dev") }
-  "coq-mathcomp-fingroup" { (>= "2.2.0") | (= "dev")  }
-  "coq-mathcomp-algebra" { (>= "2.2.0") | (= "dev")  }
-  "coq-mathcomp-solvable" { (>= "2.2.0") | (= "dev")  }
-  "coq-mathcomp-field" { (>= "2.2.0") | (= "dev")  }
+  "coq-mathcomp-ssreflect" { (>= "2.2.0") }
+  "coq-mathcomp-fingroup" { (>= "2.2.0") }
+  "coq-mathcomp-algebra" { (>= "2.2.0") }
+  "coq-mathcomp-solvable" { (>= "2.2.0") }
+  "coq-mathcomp-field" { (>= "2.2.0") }
   "coq-mathcomp-analysis" { (>= "1.7.0") }
   "coq-mathcomp-reals-stdlib" { (>= "1.7.0") }
   "coq-hierarchy-builder" { >= "1.5.0" }
