@@ -80,20 +80,6 @@ opam-lint:
     - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-lint
 
 # Build
-opam-build:4.07.1:
-  extends: .opam-build
-  variables:
-    COMPILER: "4.07.1"
-  except:
-    - web
-
-opam-build:4.11.2:
-  extends: .opam-build
-  variables:
-    COMPILER: "4.11.2"
-  except:
-    - web
-
 opam-build:4.14.2:
   extends: .opam-build
   variables:
