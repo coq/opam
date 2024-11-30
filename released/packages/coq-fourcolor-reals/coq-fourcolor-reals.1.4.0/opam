@@ -15,7 +15,7 @@ build: [make "-C" "theories/reals" "-j%{jobs}%"]
 install: [make "-C" "theories/reals" "install"]
 depends: [
   "coq" {(>= "8.16" & < "8.21~") | (= "dev")}
-  "coq-mathcomp-ssreflect" {(>= "2.0.0" & < "2.4~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {(>= "2.1.0" & < "2.4~") | (= "dev")}
   "coq-mathcomp-algebra" 
 ]
 
@@ -23,7 +23,7 @@ tags: [
   "category:Mathematics/Real Calculus and Topology"
   "keyword:real numbers"
   "logpath:fourcolor.reals"
-  "date: 2024-11-15"
+  "date:2024-11-15"
 ]
 conflicts: [
   "coq-fourcolor" { != version }
