@@ -1,0 +1,31 @@
+opam-version: "2.0"
+maintainer: "Ralf Jung <jung@mpi-sws.org>"
+authors: "The Iris Team"
+license: "BSD-3-Clause"
+homepage: "https://iris-project.org/"
+bug-reports: "https://gitlab.mpi-sws.org/iris/iris/issues"
+dev-repo: "git+https://gitlab.mpi-sws.org/iris/iris.git"
+
+synopsis: "The canonical example language for Iris"
+description: """
+This package defines HeapLang, a concurrent lambda calculus with references, and
+uses Iris to build a program logic for HeapLang programs.
+"""
+tags: [
+  "date:2024-10-31"
+  "logpath:iris.heap_lang"
+]
+
+depends: [
+  "coq-iris" {= version}
+]
+
+build: ["./make-package" "iris_heap_lang" "-j%{jobs}%"]
+install: ["./make-package" "iris_heap_lang" "install"]
+
+url {
+  src:
+    "https://gitlab.mpi-sws.org/iris/iris/-/archive/iris-4.3.0.tar.gz"
+  checksum:
+    "sha512=fcb1d2a9290931f4984cf20e1084876c221ec9f3022761bf6948ef7ce0f22b7babd3d70abddd6b96bcde2108746d23ff790e576db01aff6f2012e0a38ee74afa"
+}

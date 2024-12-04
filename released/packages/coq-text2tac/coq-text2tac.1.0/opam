@@ -36,3 +36,13 @@ extra-source "model.tar.gz" {
 substs: [
   "Text2TacConfig.v"
 ]
+extra-files: [
+  [
+    "Text2TacConfig.v.in"
+    "sha512=d74ad78335f373873f7ef0e6b43d426f412ff760aa933f21f4c0eef1b2dfb50fefe939a455130c0bbf15c7eeeaf834bc926645639fc48a4b46591e8d6fbef76d"
+  ]
+  [
+    "injection-flags"
+    "sha512=08326251b37f00c79f8b74a294b9b20ee6756aaf6110bc760002b10c864fa078838406947425df66c0741e0436dcd4d4330c7958d2d04dd3831396d49e4dbb5c"
+  ]
+]

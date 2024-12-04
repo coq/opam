@@ -1,0 +1,35 @@
+opam-version: "2.0"
+synopsis: "Monadic parser combinator library in Coq"
+description: "Inspired by Haskell Parsec library."
+maintainer: "Yishuai Li <liyishuai.lys@alibaba-inc.com>"
+authors: [
+  "Yishuai Li <yishuai@cis.upenn.edu>"
+  "Azzam Althagafi <aazzam@cis.upenn.edu>"
+  "Yao Li <liyao@cis.upenn.edu>"
+  "Li-yao Xia <xialiyao@cis.upenn.edu>"
+  "Benjamin C. Pierce <bcpierce@cis.upenn.edu>"
+]
+license: "BSD-3-Clause"
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "keyword:string"
+  "logpath:Parsec"
+]
+homepage: "https://github.com/liyishuai/coq-parsec"
+bug-reports: "https://github.com/liyishuai/coq-parsec/issues"
+depends: [
+  "dune" {>= "3.6"}
+  "coq" {>= "8.14~"}
+  "coq-ceres" {>= "0.4.0"}
+  "coq-ext-lib" {>= "0.11.3"}
+]
+build: ["dune" "build" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/liyishuai/coq-parsec.git"
+url {
+  src:
+    "https://github.com/liyishuai/coq-parsec/archive/refs/tags/v0.2.0.tar.gz"
+  checksum: [
+    "md5=40f3c6763eaa5926d57a20f0d3e8986c"
+    "sha512=8d94161e45fb82f4b8c58fb823af85f246c44c646a10a06434537dce81bf28e4208d8a054469b95dee1368e12ff83477456d3f7c16cda85814ddcd530247361e"
+  ]
+}

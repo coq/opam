@@ -34,3 +34,7 @@ url {
   src: "https://gappa.gitlabpages.inria.fr/releases/gappalib-coq-1.4.5.tar.gz"
   checksum: "sha512=79232f0132bc888fac83c45751d1a030c7fefd4a00b3be41941baaf1b5b8057a17b7a635323b07ec0de6b1cfc502cc664a77ae7864ae5387a5cc2727831aaa61"
 }
+extra-files: [
+  "remake.patch"
+  "sha512=0107d6aa9a3e326741cacbbcff8569dd2ca05f31854d8705a5d6f102df8ae53dd29058cadf3b98a177fcf80861281ee04e9498c82f657016235a6291db0549a1"
+]

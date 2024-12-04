@@ -43,3 +43,7 @@ url {
   src: "https://github.com/PrincetonUniversity/VST/archive/v2.7.tar.gz"
   checksum: "sha256=970be13e71bdb013e2b9de64aecf1dda08228dd8ef3a1f6e4bb23ccd3a0896d3"
 }
+extra-files: [
+  "makefile.patch"
+  "sha512=13e4e4f5d102458ff10b78909015dfe2db14a818160e12fe5590ef885c1e2eb13bf40ec96b2fd764f1d7ce2b18a837d15fa565f455a9151ebe53bd0cec99a0e0"
+]

@@ -17,7 +17,7 @@ homepage: "https://coq-tactician.github.io"
 bug-reports: "https://github.com/coq-tactician/coq-tactician-dummy/issues"
 depends: [
   "coq-core"
-  "dune" {>= "3.5" & < "3.8~"}
+  "dune" {>= "3.13"}
   "odoc" {with-doc}
 ]
 build: [

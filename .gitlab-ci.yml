@@ -32,6 +32,8 @@ before_script:
 
 .opam-build:
   stage: build
+  tags:
+    - medium
   script: |
     PR=${CI_COMMIT_REF_NAME##pr-};
     echo "Github PR number: $PR";
@@ -48,6 +50,8 @@ before_script:
 # Json
 json-data:
   stage: build
+  tags:
+    - medium
   variables:
     COMPILER: "4.11.2"
   script: |
@@ -66,6 +70,8 @@ json-data:
 # Lint
 opam-lint:
   stage: lint
+  tags:
+    - medium
   variables:
     COMPILER: "4.11.2"
   script:
@@ -97,7 +103,6 @@ opam-build:5.0.0:
   extends: .opam-build
   variables:
     COMPILER: "5.0.0"
-  tags: [ saas-linux-medium-amd64 ]
   except:
     - web
 

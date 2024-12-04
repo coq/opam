@@ -14,10 +14,11 @@ mathematics. It can then generate a Coq version of the definition, which require
 this library.
 """
 
+patches: ["arith-elimtype.patch"]
 build: [make "-j%{jobs}%" "-C" "coq"]
 install: [make "-C" "coq" "install"]
 depends: [
-  "coq" {>= "8.6" & < "8.19"}
+  "coq" {>= "8.6" & < "8.21"}
 ]
 conflicts: [
   "ott" { != version }
@@ -38,3 +39,7 @@ url {
   src: "https://github.com/ott-lang/ott/archive/0.33.tar.gz"
   checksum: "sha512=fd601ef958e52ca461eaff8175323416e3e524e1ba11fcf5328827ef2cb9ee3d54111843adb54d3c32e2f08c7c70214558bf5519fb8385bfa58049f22237c3c6"
 }
+extra-files: [
+  "arith-elimtype.patch"
+  "sha512=c35f1f2ed05da9842d5474bf7d445dfca6829deb50237863d4baf84764b66936aafd97bb93d6da1fee869c49d49fde0b4a61de5d4f8de8d8ca38ecc882746fb2"
+]

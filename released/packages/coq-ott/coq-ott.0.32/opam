@@ -39,3 +39,7 @@ url {
   src: "https://github.com/ott-lang/ott/archive/0.32.tar.gz"
   checksum: "sha512=f38e12c079426c5a460a9ab24e58f098410ceb5ae0284c1719c50f6d7cd88f6b9c4da6beb5425c03f2dc056c7a9cb597f9bf2983abb525e3c003e45858496ad3"
 }
+extra-files: [
+  "locality-warnings.patch"
+  "sha512=f3617f62b7ba903cae645e73d9546e3e6637adae8e81445ab9512165fb95914a20c81a1ebcb0aa7d293c38333af2724f4d2abcbc0384732d38f2a35bac0396d8"
+]

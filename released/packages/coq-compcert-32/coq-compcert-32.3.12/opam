@@ -67,3 +67,7 @@ url {
   checksum:
     "sha512=fec9badf0051928cc876d8d06a82372973d0e853f345b38ce3ddb16bc0d932b5be88f8d1c270208444163742e9adcac22915bc1e6d495ec861b17474deb5f306"
 }
+extra-files: [
+  "0001-Fix-incomplete-checking-of-unsolved-holes-465.patch"
+  "sha512=0d291488fd205c87c3de9cc2152cc24b994515ce45e4e54ee540cfef1f43756aef6f3a71824d01c4325143ecbcccb8a34a65d5f3ee6377c0a8f3490ce2d50598"
+]

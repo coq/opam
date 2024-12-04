@@ -1,0 +1,48 @@
+
+opam-version: "2.0"
+synopsis: "A Coq formalization of the axiomatic definition of real numbers"
+description: """
+This repository presents a Coq formalization of the axiomatic definition of real numbers,
+guided by the 2nd chapter of Zorich's Mathematical Analysis (Part I, 7th expanded edition) and
+based on the formalization of Morse-Kelley (MK) set theory.
+In this work, the key algebraic properties and the uniqueness of real number structure are verified.
+"""
+
+homepage: "https://github.com/1DGW/coq-mk-reals-axioms"
+dev-repo: "git+https://github.com/1DGW/coq-mk-reals-axioms.git"
+bug-reports: "https://github.com/1DGW/coq-mk-reals-axioms/issues"
+maintainer: "dgw@bupt.edu.cn"
+authors: [
+  "Wensheng Yu"
+  "Dakai Guo"
+  "Si Chen"
+  "Guowei Dou"
+  "Shukun Len"
+]
+license: "LGPL-2.1-only"
+
+depends: [
+  "coq" {>= "8.13.2" & < "8.21~"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/1DGW/coq-mk-reals-axioms/archive/v1.0.0.tar.gz"
+  checksum: "sha512=1ac72d176ed3f52f8ff3eca2adcbfde5b5795af506188dc031870c3f382e35ae665368ac6235d4493113154cdec8d90f25636d9d6b01ec8feaa14099295c1a70"
+}
+
+tags: [
+  "keyword:set theory"
+  "keyword:Morse-Kelley"
+  "keyword:MK"
+  "real numbers"
+  "category:Mathematics/Logic/Set theory"
+  "date:2024-08-22"
+  "logpath:MKReals"
+]
