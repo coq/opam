@@ -36,7 +36,8 @@ authors: [
 synopsis: "A Coq plugin that checks proof witnesses coming from external SAT and SMT solvers"
 description: """
 - a certified checker for proof witnesses coming from the SAT solver ZChaff and the SMT solvers veriT and CVC4. This checker increases the confidence in these tools by checking their answers a posteriori and allows to import new theroems proved by these solvers in Coq;
-- decision procedures through new tactics that discharge some Coq goals to ZChaff, veriT, CVC4, and their combination"""
+- decision procedures through new tactics that discharge some Coq goals to ZChaff, veriT, CVC4, and their combination
+- abducts for goals that external solvers fail to prove, which represent possibly missing hypotheses that would allow them to prove the goal, using the cvc5 SMT solver."""
 url {
   src: "git+https://github.com/smtcoq/smtcoq.git#coq-8.16"
 }

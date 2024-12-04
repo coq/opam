@@ -1,0 +1,33 @@
+opam-version: "2.0"
+synopsis: "JSON in Coq"
+description: "From JSON to Coq, and vice versa."
+maintainer: "Yishuai Li <liyishuai.lys@alibaba-inc.com>"
+authors: "Yishuai Li <liyishuai.lys@alibaba-inc.com>"
+license: "BSD-3-Clause"
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "keyword:serialization"
+  "keyword:JSON"
+  "logpath:JSON"
+]
+homepage: "https://github.com/liyishuai/coq-json"
+bug-reports: "https://github.com/liyishuai/coq-json/issues"
+depends: [
+  "coq" {>= "8.14~"}
+  "coq-parsec" {>= "0.1.1"}
+  "coq-ext-lib"
+  "menhir" {>= "20220210"}
+  "coq-menhirlib" {>= "20220210"}
+]
+build: [make "-j%{jobs}%"]
+run-test: [make "-j%{jobs}%" "test"]
+install: [make "install"]
+dev-repo: "git+https://github.com/liyishuai/coq-json.git"
+url {
+  src:
+    "https://github.com/liyishuai/coq-json/archive/refs/tags/v0.1.3.tar.gz"
+  checksum: [
+    "md5=79a4a65258d14ced6933f41e9cf66b31"
+    "sha512=6edac6aadf770b25ee638948ab9fcc631ba4b189d3f67f7b368c0ca94bfe920300326610ea76c38e0c970dfe47dcc9a706e56be94fd9c4b73f5a22bf5dde5a6c"
+  ]
+}

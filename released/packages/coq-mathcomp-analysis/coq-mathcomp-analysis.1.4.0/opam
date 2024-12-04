@@ -1,0 +1,71 @@
+# This file was generated from `meta.yml`, please do not edit manually.
+# Follow the instructions on https://github.com/coq-community/templates to regenerate.
+
+opam-version: "2.0"
+maintainer: "Reynald Affeldt <reynald.affeldt@aist.go.jp>"
+version: "dev"
+
+homepage: "https://github.com/math-comp/analysis"
+dev-repo: "git+https://github.com/math-comp/analysis.git"
+bug-reports: "https://github.com/math-comp/analysis/issues"
+license: "CECILL-C"
+
+synopsis: "An analysis library for mathematical components"
+description: """
+This repository contains an experimental library for real analysis for
+the Coq proof-assistant and using the Mathematical Components library."""
+
+build: [make "-C" "theories" "-j%{jobs}%"]
+install: [make "-C" "theories" "install"]
+depends: [
+  "coq" { (>= "8.19" & < "8.21~") | (= "dev") }
+  "coq-mathcomp-classical" { = version}
+  "coq-mathcomp-solvable" { (>= "2.0.0") | (= "dev") }
+  "coq-mathcomp-field"
+  "coq-mathcomp-bigenough" { (>= "1.0.0") }
+]
+
+tags: [
+  "category:Mathematics/Real Calculus and Topology"
+  "keyword:analysis"
+  "keyword:extended real numbers"
+  "keyword:filter"
+  "keyword:Cantor"
+  "keyword:topology"
+  "keyword:real numbers"
+  "keyword:sequence"
+  "keyword:convexity"
+  "keyword:Landau notation"
+  "keyword:logarithm"
+  "keyword:sin"
+  "keyword:cos"
+  "keyword:tangent"
+  "keyword:trigonometric function"
+  "keyword:exponential"
+  "keyword:differentiation"
+  "keyword:derivative"
+  "keyword:measure theory"
+  "keyword:integration"
+  "keyword:Lebesgue"
+  "keyword:probability"
+  "logpath:mathcomp.analysis"
+  "date:2024-09-24"
+]
+authors: [
+  "Reynald Affeldt"
+  "Alessandro Bruni"
+  "Yves Bertot"
+  "Cyril Cohen"
+  "Marie Kerjean"
+  "Assia Mahboubi"
+  "Damien Rouhling"
+  "Pierre Roux"
+  "Kazuhiko Sakaguchi"
+  "Zachary Stone"
+  "Pierre-Yves Strub"
+  "Laurent Théry"
+]
+url {
+  src: "https://github.com/math-comp/analysis/releases/download/1.4.0/analysis-1.4.0.tar.gz"
+  checksum: "sha512=883e7f66fcc78b8526338b95a53fb4784d0f46b93ba82ae38882479933a344d10e74e47e757f0dfbc297323aff60c03d7916f92e0fc5699f734adb29cb8721da"
+}

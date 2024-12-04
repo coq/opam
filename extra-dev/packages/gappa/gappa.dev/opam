@@ -42,3 +42,7 @@ synopsis: "Tool intended for formally proving properties on numerical programs d
 url {
   src: "git+https://gitlab.inria.fr/gappa/gappa.git/#master"
 }
+extra-files: [
+  "0001-Added-configure-for-c-11.patch"
+  "sha512=af8bb8a81f87af91e5f8b137e10a2b06e9ccff0f167a4065f19fcea091e57ee5c892a0e2a0d4cb34753955c416e0d66b8e0ef759a1b0b276b79c470b59997f73"
+]

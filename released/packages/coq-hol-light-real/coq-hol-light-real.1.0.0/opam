@@ -1,0 +1,29 @@
+opam-version: "2.0"
+synopsis: "Definition of HOL-Light real numbers in Coq"
+description: """
+This library provides a representation in Coq of the definition of real numbers
+in HOL-Light, automatically generated from HOL-Light using hol2dk and lambdapi.
+"""
+homepage: "https://github.com/Deducteam/coq-hol-light-real"
+dev-repo: "git+https://github.com/Deducteam/coq-hol-light-real.git"
+bug-reports: "https://github.com/Deducteam/coq-hol-light-real/issues"
+doc: "https://github.com/Deducteam/coq-hol-light-real"
+maintainer: "frederic.blanqui@inria.fr"
+authors: ["Frédéric Blanqui"]
+license: "CeCILL-2.1"
+depends: [
+  "coq" {>= "8.19"}
+]
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+tags: [
+  "keyword:HOL-Light"
+  "category:Math/Arith/Misc"
+  "category:Math/Arith/Real numbers"
+  "date:2024-11-03"
+  "logpath:HOLLight_Real"
+]
+url {
+  src: "https://github.com/Deducteam/coq-hol-light-real/archive/refs/tags/1.0.0.tar.gz"
+  checksum: "sha256=e81cae6d20752c610443de5092cf57c76c29b03f063af4010689d74ce92486db"
+}

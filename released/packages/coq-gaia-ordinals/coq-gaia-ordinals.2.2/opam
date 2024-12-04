@@ -1,0 +1,44 @@
+opam-version: "2.0"
+maintainer: "palmskog@gmail.com"
+
+homepage: "https://github.com/coq-community/gaia"
+dev-repo: "git+https://github.com/coq-community/gaia.git"
+bug-reports: "https://github.com/coq-community/gaia/issues"
+license: "MIT"
+
+synopsis: "Implementation and properties of ordinals in Coq using Mathematical Components"
+description: """
+Implementation and properties of ordinals and cardinals in Coq using
+the Mathematical Components library."""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "3.5"}
+  "coq" {>= "8.16"}
+  "coq-mathcomp-ssreflect" {>= "2.0"}
+  "coq-gaia-theory-of-sets" {= version}
+  "coq-gaia-schutte" {= version}
+]
+conflicts: [
+  "coq-gaia"
+]
+
+tags: [
+  "category:Mathematics/Logic/Set theory"
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "keyword:ordered sets"
+  "keyword:ordinal arithmetic"
+  "keyword:ordinal numbers"
+  "keyword:cardinal numbers"
+  "logpath:gaia.ordinals"
+  "date:2024-07-24"
+]
+authors: [
+  "José Grimm"
+  "Alban Quadrat"
+]
+
+url {
+  src: "https://github.com/coq-community/gaia/archive/v2.2.tar.gz"
+  checksum: "sha512=e025071a0e1a3aa5b9bd484913ecda39e4448a34f8d22c8eb3f7e03ce4e65012c2169bc1ce8c4410727fa8a6a4a0debfe6c3772a77b162e0adbbd1acf5a36c2d"
+}

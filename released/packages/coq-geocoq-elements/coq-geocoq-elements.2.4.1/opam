@@ -1,0 +1,30 @@
+opam-version: "2.0"
+synopsis: "A formalization of foundations of geometry in Coq"
+description: "This subpackage contains a formalization of Euclid's proofs from Book I of the Elements."
+maintainer: "Julien Narboux <julien@narboux.fr>"
+authors: ["Michael Beeson <profbeeson@gmail.com>"
+          "Julien Narboux <narboux@unistra.fr>"
+          "Freek Wiedijk <freek@cs.ru.nl>"]
+license: "LGPL 3"
+homepage: "http://geocoq.github.io/GeoCoq/"
+bug-reports: "https://github.com/GeoCoq/GeoCoq/issues"
+dev-repo: "git+https://github.com/GeoCoq/GeoCoq.git"
+depends: [ "coq-geocoq-axioms" { = "2.4.1" } ]
+build: [
+  ["./configure-elements.sh"]
+  [make "-j%{jobs}%"]
+]
+install: [[make "install"]]
+tags: [ "keyword:geometry"
+        "keyword:neutral geometry"
+        "keyword:euclidean geometry"
+        "keyword:foundations"
+        "keyword:Euclid"
+        "keyword:Elements"
+        "category:Mathematics/Geometry/General"
+        "date:2024-03-03" ]
+extra-files : ["_CoqProject.in""sha512=b338c6468b220f14c59a191c0e888e47c0f5648815e16f986ee86c92a12e400ec98a8b836d69912a311ee73ce867f26998459c39dbba903c2fe09b7a59d829fc"]
+url {
+  src: "https://github.com/GeoCoq/GeoCoq/archive/v2.4.1.tar.gz"
+  checksum: "md5=14212f17e868a53ec0b6b84feda5c44d"
+}

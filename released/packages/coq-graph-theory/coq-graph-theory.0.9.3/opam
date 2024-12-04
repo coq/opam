@@ -15,8 +15,8 @@ from the literature (e.g., Menger's Theorem and Hall's Marriage Theorem)."""
 build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
   "dune" {>= "2.8"}
-  "coq" {>= "8.16" & < "8.20"}
-  "coq-mathcomp-ssreflect" {>= "2.0"}
+  "coq" {>= "8.16" & < "8.19"}
+  "coq-mathcomp-ssreflect" {>= "2.0" & < "2.3"}
   "coq-mathcomp-algebra" 
   "coq-mathcomp-finmap" 
   "coq-hierarchy-builder" {>= "1.4.0"}

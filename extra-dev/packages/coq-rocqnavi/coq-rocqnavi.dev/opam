@@ -1,0 +1,34 @@
+opam-version: "2.0"
+maintainer: "Yoshihiro Imai<y.imai@aist.go.jp>"
+
+homepage: "https://github.com/affeldt-aist/coq2html"
+dev-repo: "git+https://github.com/yoshihiro503/coq2html.git"
+bug-reports: "https://github.com/affeldt-aist/coq2html/issues"
+
+license: "GPL-2.0-or-later"
+synopsis: "Extension of coq2html Document Generator"
+
+description: """
+Extension of coq2html Document Generator"""
+
+build: [make]
+install: [make "BINDIR=%{bin}%" "install"]
+depends: [
+  "ocaml" {>= "4.14"}
+]
+
+tags: [
+  "category:Tools/Document Generator"
+  "keyword:document"
+  "keyword:html"
+  "logpath:"
+]
+authors: [
+  "Xavier Leroy <xavier.leroy@college-de-france.fr>"
+  "Reynald Affeldt <reynald.affeldt@aist.go.jp>"
+  "Yoshihiro Imai <y.imai@aist.go.jp>"
+]
+
+url {
+  src: "git+https://github.com/affeldt-aist/coq2html.git#mca2html"
+}

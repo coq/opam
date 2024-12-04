@@ -34,3 +34,7 @@ url {
   src: "https://github.com/clarus/coq-of-ocaml/archive/2.1.0.tar.gz"
   checksum: "sha512=c90c2830c0cf749359a9e1381b8c3dbc0cfb98ca91e174f6d7f07fb031bff732a0e3abf4b3643418024249dbbd6e241859bbab4e75a66b0abab471d7734004c2"
 }
+extra-files: [
+  "coq-of-ocaml.install"
+  "sha512=05517cd59a014cf223dd7caa95210ad3835aa6d3b49c6f6a1ce5b8fe7c0daf1c85a0ffa332d6542315eec8dc9bc13da62b3b9b292809441b87646af80db80d53"
+]

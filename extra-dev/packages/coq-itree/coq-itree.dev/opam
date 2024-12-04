@@ -20,7 +20,7 @@ depends: [
   "coq" {>= "8.13"}
   "coq-ext-lib" {>= "0.11.1"}
   "coq-paco" {>= "4.0.1"}
-  "dune" {>= "2.6"}
+  "dune" {>= "3.14"}
 ]
 authors: [
   "Li-yao Xia <lysxia@gmail.com>"

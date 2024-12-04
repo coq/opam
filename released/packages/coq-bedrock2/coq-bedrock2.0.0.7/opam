@@ -1,0 +1,40 @@
+opam-version: "2.0"
+authors: [
+  "Massachusetts Institute of Technology"
+  "Kevix"
+  "SiFive"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/mit-plv/bedrock2"
+bug-reports: "https://github.com/mit-plv/bedrock2/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "bedrock2_ex"]
+]
+install: [make "EXTERNAL_DEPENDENCIES=1" "install_bedrock2"]
+run-test: [
+  [make "-j%{jobs}%" "-C" "bedrock2" "EXTERNAL_DEPENDENCIES=1" "test"]
+]
+depends: [
+  "conf-findutils" {build}
+  "conf-python-3" {build & with-test}
+  "coq" {>= "8.18~"}
+  "coq-coqutil" {= "0.0.5"}
+  "zarith" {>= "1.11"}
+]
+dev-repo: "git+https://github.com/mit-plv/bedrock2.git"
+synopsis: "A work-in-progress language and compiler for verified low-level programming"
+description: """
+bedrock2 is a low-level systems programming language. This language is
+equipped with a simple program logic for proving correctness of the
+programs.  A verified compiler targeting RISC-V from this language
+exists in the coq-bedrock2-compiler package on opam.
+
+The project has similar goals as bedrock, but uses a different design.
+No code is shared between bedrock and bedrock2.
+"""
+tags: ["logpath:bedrock2"]
+url {
+  src: "https://github.com/mit-plv/bedrock2/archive/refs/tags/v0.0.7.tar.gz"
+  checksum: "sha512=42e264df702c65915635f3a3276d3c841de67b3999ebae9b8727dcaa94222f1832bb56b04025a2aa4eb752531e18dc7f2effe83c491d7d22e8da66ca17cbd182"
+}

@@ -45,3 +45,7 @@ url {
   checksum:
     "sha512=393ae68782370e4206e452d46c44300d5e6e27be15d9aa1dfd33ef0ccef1640f83e741f0a799c106453f305c59c5af1698ef276b47522daaefc86ece0b40f530"
 }
+extra-files: [
+  "0001-Windows-CI-strip-CR-in-result-comparison.patch"
+  "sha512=a44b6eb06ec85852aa00b4a029612a3b4572e23356f89259adfb3e1974d759c13e0c9a9187e174fdebcb328aec01b6e91733a3b3f8b029f8ed0cd0cd78e772fd"
+]

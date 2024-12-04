@@ -5,6 +5,7 @@ homepage: "https://github.com/DistributedComponents/disel"
 dev-repo: "git+https://github.com/DistributedComponents/disel.git"
 bug-reports: "https://github.com/DistributedComponents/disel/issues"
 license: "BSD-2-Clause"
+
 synopsis: "Core framework files for Disel, a separation-style logic for compositional verification of distributed systems in Coq"
 description: """
 Disel is a framework for implementation and compositional verification of
@@ -13,16 +14,15 @@ distributed systems using a domain specific language shallowly embedded in Coq
 which provides both high-level programming constructs as well as low-level
 communication primitives. Components of composite systems are specified in Disel
 as protocols, which capture system-specific logic and disentangle system definitions
-from implementation details.
-"""
+from implementation details."""
 
-build: [make "-j%{jobs}%" "-C" "Core"]
-install: [make "-C" "Core" "install"]
+build: ["dune" "build" "-p" name "-j" jobs]
 depends: [
-  "ocaml"
-  "coq" {(>= "8.7" & < "8.11~") | (= "dev")}
-  "coq-mathcomp-ssreflect" {(>= "1.6.2" & < "1.9~") | (= "dev")}
-  "coq-fcsl-pcm"
+  "dune" {>= "3.5"}
+  "coq" {>= "8.14"}
+  "coq-mathcomp-ssreflect" {>= "1.13" & < "2.0"}
+  "coq-fcsl-pcm" {>= "1.7.0"}
+  "coq-htt" {>= "1.2.0"}
 ]
 
 tags: [
@@ -30,7 +30,7 @@ tags: [
   "keyword:program verification"
   "keyword:separation logic"
   "keyword:distributed algorithms"
-  "logpath:DiSeL"
+  "logpath:DiSeL.Core"
 ]
 authors: [
   "Ilya Sergey"

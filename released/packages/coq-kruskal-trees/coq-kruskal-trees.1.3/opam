@@ -1,0 +1,37 @@
+opam-version: "2.0"
+synopsis: "Coq library for manipulating rose trees (ie finitely branching) as used in proof of Kruskal's tree theorem"
+description: """
+   Several implementations for roses trees are proposed with proper induction principles. 
+   Sons of the root are collected into dependent vectors, vectors, lists, etc.
+"""  
+maintainer: ["Dominique Larchey-Wendling (https://github.com/DmxLarchey)" "Jerome Hugues (https://github.com/jjhugues)"] 
+authors: "Dominique Larchey-Wendling (https://github.com/DmxLarchey)"
+license: "MPL-2.0"
+homepage: "https://github.com/DmxLarchey/Kruskal-Trees/"
+bug-reports: "https://github.com/DmxLarchey/Kruskal-Trees/issues"
+dev-repo: "git+https://github.com:DmxLarchey/Kruskal-Trees/"
+
+build: [
+  [ make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+depends: [
+  "coq" {>= "8.14" & < "8.20~"}
+]
+
+url {
+  src: "https://github.com/DmxLarchey/Kruskal-Trees/archive/refs/tags/1.3.tar.gz"
+  checksum: [
+    "sha256=a4086f30d1cffa862c8795f14de9b71969c75559d3157beed8c7025388dfc86e"
+  ]
+}
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2024-02-16"
+  "logpath:KruskalTrees"
+]
+
