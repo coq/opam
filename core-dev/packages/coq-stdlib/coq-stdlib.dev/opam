@@ -13,24 +13,24 @@ formalization of mathematics (e.g. the full formalization of the
 Feit-Thompson theorem or homotopy type theory) and teaching.
 
 This package includes the Coq Standard Library, that is to say, the
-set of modules usually bound to the Coq.* namespace."""
-maintainer: ["The Coq development team <coqdev@inria.fr>"]
+set of modules usually bound to the Stdlib.* namespace."""
+maintainer: ["The Coq standard library development team"]
 authors: ["The Coq development team, INRIA, CNRS, and contributors"]
 license: "LGPL-2.1-only"
 homepage: "https://coq.inria.fr/"
 doc: "https://coq.github.io/doc/"
 bug-reports: "https://github.com/coq/coq/issues"
 depends: [
-  "dune" {>= "2.9"}
-  "coq-core" {= version}
+  "dune" {>= "3.8"}
+  "coq-core"
+  "rocq-core" {= version}
   "odoc" {with-doc}
 ]
 depopts: ["coq-native"]
 dev-repo: "git+https://github.com/coq/coq.git"
 build: [
+  ["cd" "stdlib"]
   ["dune" "subst"] {dev}
-  # We tell dunestrap to use coq-config from coq-core
-  [ make "dunestrap" "COQ_SPLIT=1" "DUNESTRAPOPT=-p coq-stdlib"]
   [
     "dune"
     "build"
@@ -43,7 +43,7 @@ build: [
     "@runtest" {with-test}
     "@doc" {with-doc}
   ]
-  ["dune" "install" "-p" name "--create-install-files" name]
+  ["dune" "install" "--root" "." "-p" name "--create-install-files" name]
 ]
 
 url {
