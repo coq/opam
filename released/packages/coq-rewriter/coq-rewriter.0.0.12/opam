@@ -14,12 +14,12 @@ install: [make "install"]
 depends: [
   "conf-findutils" {build}
   "ocaml" {build & (arch = "x86_32" | arch = "x86_64" | >= "4.14.0")}
-  "coq" {>= "8.15~" & < "8.20~"}
+  "coq" {>= "8.18~"}
 ]
 dev-repo: "git+https://github.com/mit-plv/rewriter.git"
 synopsis: "Reflective PHOAS rewriting/pattern-matching-compilation framework for simply-typed equalities and let-lifting, experimental and tailored for use in Fiat Cryptography"
 tags: ["logpath:Rewriter"]
 url {
-  src: "https://github.com/mit-plv/rewriter/archive/refs/tags/v0.0.10.tar.gz"
-  checksum: "sha512=b32b03334f9679ae33e51b8745614b1acf7faa76f89ac72c3ba90a314c0981f74f9f0ade8d4fad332e0ab411fba6d4acc39f7d778e3f75d3b21ccc22167946e0"
+  src: "https://github.com/mit-plv/rewriter/archive/refs/tags/v0.0.12.tar.gz"
+  checksum: "sha512=e0c45d39c0d28cd786290292b70d788ab9e6327a4afe9c37e4427dc97f9c6a0d00b0865da25ae2624d7c0f4f339754962bded3a478576e6f6896bbf31904689e"
 }
