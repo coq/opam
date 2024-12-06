@@ -29,7 +29,7 @@ depends: [
 depopts: ["coq-native"]
 dev-repo: "git+https://github.com/coq/coq.git"
 build: [
-  ["cd" "stdlib"]
+  ["sh" "-c" "echo '(dirs stdlib)' > dune"]
   ["dune" "subst"] {dev}
   [
     "dune"
@@ -43,9 +43,9 @@ build: [
     "@runtest" {with-test}
     "@doc" {with-doc}
   ]
-  ["dune" "install" "--root" "." "-p" name "--create-install-files" name]
+  ["dune" "install" "-p" name "--create-install-files" name]
 ]
 
 url {
-  src: "git+https://github.com/coq/coq.git#master"
+  src: "git+https://github.com/proux01/coq.git#fix_opamt"
 }
