@@ -12,6 +12,7 @@ remove: ["rm" "-R" "%{lib}%/coq/user-contrib/CoRN"]
 depends: [
   "ocaml"
   "coq" {= "dev"}
+  "coq-elpi" {= "dev"}
   "coq-math-classes" {= "dev"}
 ]
 tags: [ "keyword:constructive mathematics" "keyword:algebra" "keyword:real calculus" "keyword:real numbers" "keyword:fundamental theorem of algebra" "category:Mathematics/Algebra" "category:Mathematics/Real Calculus and Topology" ]
