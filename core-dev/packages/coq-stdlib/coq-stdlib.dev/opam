@@ -42,6 +42,7 @@ build: [
     "@runtest" {with-test}
     "@doc" {with-doc}
   ]
+  ["mv" "stdlib/coq-stdlib.install" "."]
 ]
 
 url {
