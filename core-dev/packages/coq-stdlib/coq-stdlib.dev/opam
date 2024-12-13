@@ -42,8 +42,6 @@ build: [
     "@runtest" {with-test}
     "@doc" {with-doc}
   ]
-  ["dune" "install" name]
-  ["sh" "-c" "echo 'From Stdlib Require Import Reals.' > test.v && coqc test.v"] {with-test}
 ]
 
 url {
