@@ -5,13 +5,10 @@ bug-reports: "https://github.com/math-comp/multinomials/issues"
 dev-repo: "git+https://github.com/math-comp/multinomials.git"
 license: "CECILL-B"
 authors: ["Pierre-Yves Strub"]
-build: [
-  [ "dune" "build" "-p" name "-j" jobs ]
-]
+build: [make "-j%{jobs}%"]
+install: [make "install"]
 depends: [
   "coq"                    {(>= "8.16" & < "8.21~") | = "dev"}
-  "coq-elpi"               {< "2.2.1~"}
-  "dune"                   {>= "3.8"}
   "coq-mathcomp-ssreflect" {(>= "2.0" & < "2.4~") | = "dev"}
   "coq-mathcomp-algebra"
   "coq-mathcomp-bigenough" {(>= "1.0" & < "1.1~") | = "dev"}
