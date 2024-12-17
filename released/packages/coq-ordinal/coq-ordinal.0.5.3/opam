@@ -11,7 +11,7 @@ license: "MIT"
 build: [make "-j%{jobs}%"]
 install: [make "-f" "Makefile.coq" "install"]
 depends: [
-  "coq" {>= "8.13" & < "8.19~"}
+  "coq" {>= "8.13" & < "8.21~"}
 ]
 tags: [
   "date:2023-10-13"
