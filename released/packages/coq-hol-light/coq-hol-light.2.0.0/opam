@@ -21,7 +21,9 @@ install: [make "install"]
 tags: [
   "keyword:HOL-Light"
   "category:Math/Arith/Misc"
-  "date:2023-11-06"
+  "category:Math/Arith/Real Numbers"
+  "category:Math/Real Numbers"
+  "date:2024-12-17"
   "logpath:HOLLight"
 ]
 url {
