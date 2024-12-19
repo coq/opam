@@ -20,6 +20,6 @@ tags: [
 synopsis: "A Coq formalization of Plouffe formula"
 authors: "Laurent Thery"
 url {
-  src: "https://github.com/thery/Plouffe/archive/v1.5.0.zip"
-  checksum: "sha256=3cb727dcb7e47ccdf50292ce0b859a81fd613cac032722ab14c951968cf661f9d"
+  src: "https://github.com/thery/Plouffe/archive/v1.5.0.tar.gz"
+  checksum: "sha256=4bcfaa6be7a1069056e92c43e6ad8c71ea86204bc707e2970915ec86f7cf56e6"
 }
