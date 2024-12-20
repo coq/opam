@@ -6,7 +6,7 @@ image: buildpack-deps:stable-scm
 
 variables:
   OPAMJOBS: "2"
-  GIT_CLONE_PATH: "$CI_BUILDS_DIR/opam-coq-archive"
+  # GIT_CLONE_PATH: "$CI_BUILDS_DIR/opam-coq-archive"
 
 cache:
   paths:
