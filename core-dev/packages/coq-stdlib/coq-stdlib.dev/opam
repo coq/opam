@@ -22,7 +22,7 @@ doc: "https://coq.github.io/doc/"
 bug-reports: "https://github.com/coq/coq/issues"
 depends: [
   "dune" {>= "3.8"}
-  "coq-core"
+  "rocq-runtime"
   "rocq-core" {= version}
   "odoc" {with-doc}
 ]
@@ -32,6 +32,7 @@ build: [
   ["sh" "-c" "echo '(dirs stdlib)' > dune"]
   ["dune" "subst"] {dev}
   [
+    "stdlib/dev/with-rocq-wrap.sh"
     "dune"
     "build"
     "-p"
