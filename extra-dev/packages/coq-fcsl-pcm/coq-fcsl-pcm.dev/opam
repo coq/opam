@@ -11,6 +11,7 @@ install: [ make "install" ]
 depends: [
   "coq" {>= "8.19"}
   "coq-mathcomp-ssreflect" {>= "2.2.0"}
+  "coq-hierarchy-builder" {>= "1.7.0"}
   "coq-mathcomp-algebra"
 ]
 tags: [
