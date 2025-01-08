@@ -19,7 +19,7 @@ depends: [
   "coq-unimath-ktheory"
 ]
 synopsis: "Aims to formalize a substantial body of mathematics using the univalent point of view"
-extra-files: ["Make" "md5=a0fc39047261f4494c06264fc9801eb6"]
+extra-files: ["Make" "sha512=aee43bde4c9ea6668d88360103538b8b5ff33f9d6e2f78befcb29cd4ada6fafe39743d7a452fdc890bcf2fc555170c31c4e6430290cbed8d14cb1c54b0316c44"]
 url {
   src: "https://github.com/UniMath/UniMath/archive/v0.1.tar.gz"
   checksum: "md5=1ed57c1028e227a309f428a6dc5f0866"

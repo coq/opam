@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "coq-metalib"
 version: "dev"
 synopsis: "Locally Nameless Metatheory Library"
 maintainer: "Yishuai Li <yishuai@cis.upenn.edu>"
@@ -9,7 +8,7 @@ tags: "org:plclub"
 homepage: "https://github.com/plclub/metalib"
 bug-reports: "https://github.com/plclub/metalib/issues"
 depends: [
-  "coq" {>= "8.10"}
+  "coq" {>= "8.14"}
 ]
 build: [make "-j%{jobs}%" "-C" "Metalib"]
 install: [make "-C" "Metalib" "install"]

@@ -1,0 +1,60 @@
+opam-version: "2.0"
+synopsis: "Randomized Property-Based Testing for Coq"
+description: """\
+A library for property-based testing in Coq.
+
+  - Combinators for testable properties and random generators.
+  - QuickChick plugin for running tests in a Coq session.
+  - Includes a mutation testing tool."""
+maintainer: "leonidas@umd.edu"
+authors: [
+  "Leonidas Lampropoulos"
+  "Zoe Paraskevopoulou"
+  "Maxime Denes"
+  "Catalin Hritcu"
+  "Benjamin Pierce"
+  "Li-yao Xia"
+  "Arthur Azevedo de Amorim"
+  "Yishuai Li"
+  "Antal Spector-Zabusky"
+]
+license: "MIT"
+homepage: "https://github.com/QuickChick/QuickChick"
+bug-reports: "https://github.com/QuickChick/QuickChick/issues"
+depends: [
+  "dune" {>= "3.12"}
+  "ocaml" {>= "4.07"}
+  "menhir" {build}
+  "cppo" {build & >= "1.6.8"}
+  "coq" {>= "8.15~"}
+  "coq-ext-lib"
+  "coq-mathcomp-ssreflect"
+  "coq-simple-io" {>= "1.6.0"}
+  "ocamlfind"
+  "ocamlbuild"
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+    "--stop-on-first-error"
+  ]
+]
+dev-repo: "git+https://github.com/QuickChick/QuickChick.git"
+url {
+  src:
+    "https://github.com/QuickChick/QuickChick/archive/refs/tags/v2.0.5.tar.gz"
+  checksum: [
+    "md5=3fe1c7124122fdfd5817d8634c1e68a6"
+    "sha512=f05fd7404c5122a62afac504fab32839fe55858d1b4ba5037db52df1b55ae068298aae642561b1d5f2e93ab5bd1dd6608c1e6c73ef7978cb3b5438c04f874ff8"
+  ]
+}

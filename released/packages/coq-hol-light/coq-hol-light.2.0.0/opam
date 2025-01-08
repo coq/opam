@@ -1,0 +1,32 @@
+opam-version: "2.0"
+synopsis: "HOL-Light library in Coq"
+description: """
+This library contains an automatic translation in Coq of (for the moment) some
+small part the HOL-Light library using https://github.com/Deducteam/hol2dk.
+"""
+homepage: "https://github.com/Deducteam/coq-hol-light"
+dev-repo: "git+https://github.com/Deducteam/coq-hol-light.git"
+bug-reports: "https://github.com/Deducteam/coq-hol-light/issues"
+doc: "https://github.com/Deducteam/coq-hol-light"
+maintainer: "frederic.blanqui@inria.fr"
+authors: ["Frédéric Blanqui"]
+license: "CeCILL-2.1"
+depends: [
+  "coq" {>= "8.19"}
+  "coq-hol-light-real" {>= "1.0"}
+  "coq-fourcolor-reals" {>= "1.4.0"}
+]
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+tags: [
+  "keyword:HOL-Light"
+  "category:Math/Arith/Misc"
+  "category:Math/Arith/Real Numbers"
+  "category:Math/Real Numbers"
+  "date:2024-12-17"
+  "logpath:HOLLight"
+]
+url {
+  src: "https://github.com/Deducteam/coq-hol-light/archive/refs/tags/2.0.0.tar.gz"
+  checksum: "sha256=83d65adc0147c53e2c013a6026593e38fdb0d47d84e098c8247d8553baefe8c0"
+}

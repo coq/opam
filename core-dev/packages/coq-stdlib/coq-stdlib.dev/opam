@@ -1,5 +1,5 @@
 opam-version: "2.0"
-synopsis: "The Coq Proof Assistant -- Standard Library"
+synopsis: "Compatibility metapackage for Coq Stdlib library after the Rocq renaming"
 description: """
 Coq is a formal proof management system. It provides
 a formal language to write mathematical definitions, executable
@@ -13,37 +13,37 @@ formalization of mathematics (e.g. the full formalization of the
 Feit-Thompson theorem or homotopy type theory) and teaching.
 
 This package includes the Coq Standard Library, that is to say, the
-set of modules usually bound to the Coq.* namespace."""
-maintainer: ["The Coq development team <coqdev@inria.fr>"]
+set of modules usually bound to the Stdlib.* namespace."""
+maintainer: ["The Coq standard library development team"]
 authors: ["The Coq development team, INRIA, CNRS, and contributors"]
 license: "LGPL-2.1-only"
 homepage: "https://coq.inria.fr/"
 doc: "https://coq.github.io/doc/"
 bug-reports: "https://github.com/coq/coq/issues"
 depends: [
-  "dune" {>= "2.9"}
-  "coq-core" {= version}
+  "dune" {>= "3.8"}
+  "coq-core"
+  "rocq-stdlib" {= version}
   "odoc" {with-doc}
 ]
 depopts: ["coq-native"]
 dev-repo: "git+https://github.com/coq/coq.git"
 build: [
+  ["sh" "-c" "echo '(dirs stdlib)' > dune"]
   ["dune" "subst"] {dev}
-  # We tell dunestrap to use coq-config from coq-core
-  [ make "dunestrap" "COQ_DUNE_EXTRA_OPT=-split" "DUNESTRAPOPT=-p coq-stdlib"]
   [
+    "stdlib/dev/with-rocq-wrap.sh"
     "dune"
     "build"
     "-p"
     name
     "-j"
     jobs
-    "--promote-install-files=false"
     "@install"
     "@runtest" {with-test}
     "@doc" {with-doc}
   ]
-  ["dune" "install" "-p" name "--create-install-files" name]
+  ["mv" "stdlib/coq-stdlib.install" "."]
 ]
 
 url {

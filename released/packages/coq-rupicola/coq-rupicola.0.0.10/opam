@@ -1,0 +1,28 @@
+opam-version: "2.0"
+authors: [
+  "Clément Pit-Claudel <clement.pitclaudel@live.com>"
+  "Jade Philipoom"
+  "Dustin Jamner"
+  "Andres Erbsen"
+  "Adam Chlipala"
+]
+maintainer: "Jason Gross <jgross@mit.edu>"
+homepage: "https://github.com/mit-plv/rupicola"
+bug-reports: "https://github.com/mit-plv/rupicola/issues"
+license: "MIT"
+build: [
+  [make "-j%{jobs}%" "EXTERNAL_DEPENDENCIES=1" "all"]
+]
+install: [make "EXTERNAL_DEPENDENCIES=1" "install"]
+depends: [
+  "conf-findutils" {build}
+  "coq" {>= "8.18~"}
+  "coq-bedrock2" {= "0.0.8"}
+]
+dev-repo: "git+https://github.com/mit-plv/rupicola.git"
+synopsis: "Gallina to imperative code compilation, currently in design phase"
+tags: ["logpath:Rupicola"]
+url {
+  src: "https://github.com/mit-plv/rupicola/archive/refs/tags/v0.0.10.tar.gz"
+  checksum: "sha512=dcb9ae7c1ee7329b419ca1f524901cb00c574ffd6972e1f10399023c08f919e552223556b056e9419bcbc1079de907095b1524c390fdd81fa57af3c60127c8c7"
+}

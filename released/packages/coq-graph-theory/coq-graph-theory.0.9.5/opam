@@ -1,0 +1,42 @@
+opam-version: "2.0"
+maintainer: "christian.doczkal@mpi-sp.org"
+
+homepage: "https://github.com/coq-community/graph-theory"
+dev-repo: "git+https://github.com/coq-community/graph-theory.git"
+bug-reports: "https://github.com/coq-community/graph-theory/issues"
+license: "CECILL-B"
+
+synopsis: "General graph theory definitions and results in Coq and MathComp"
+description: """
+Formalized general graph theory definitions and results using Coq and
+the Mathematical Components library, including various standard results
+from the literature (e.g., Menger's Theorem and Hall's Marriage Theorem)."""
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "dune" {>= "3.5"}
+  "coq" {>= "8.18" & < "8.21"}
+  "coq-mathcomp-ssreflect" {>= "2.0" & < "2.3"}
+  "coq-mathcomp-algebra"
+  "coq-mathcomp-finmap"
+  "coq-hierarchy-builder" {>= "1.5.0"}
+]
+
+tags: [
+  "category:Computer Science/Graph Theory"
+  "keyword:graph theory"
+  "keyword:minors"
+  "keyword:treewidth"
+  "keyword:algebra"
+  "logpath:GraphTheory.core"
+  "date:2024-06-30"
+]
+authors: [
+  "Christian Doczkal"
+  "Damien Pous"
+]
+
+url {
+  src: "https://github.com/coq-community/graph-theory/releases/download/v0.9.5/graph-theory-0.9.5.tar.gz"
+  checksum: "sha512=20b87467329b3d282a351a7c275cb8963570e375dc8722ecd6eddbcd05e84e254f3bb45612a3b244f61d39ace3361d5b3be399e7af3e4e6c8ca304c130427be6"
+}

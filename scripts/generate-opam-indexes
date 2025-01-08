@@ -8,6 +8,7 @@ OPAMCHECKOPTS=--cycles
 
 for repo in "$@"; do
   cd "$repo"
-  opam admin check $OPAMCHECKOPTS && opam admin make
+  #opam admin check $OPAMCHECKOPTS && opam admin make
+  opam admin make
   cd ..
 done

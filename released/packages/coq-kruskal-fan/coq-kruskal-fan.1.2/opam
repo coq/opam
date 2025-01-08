@@ -1,0 +1,39 @@
+opam-version: "2.0"
+synopsis: "Extending Coq library for manipulating Almost Full relations with the FAN theorem"
+description: """
+   This library formalizes additional tools for AF relations, the FAN theorem for inductive bars
+   and a constructive variant of König's lemma.
+"""  
+maintainer: ["Dominique Larchey-Wendling (https://github.com/DmxLarchey)"] 
+authors: "Dominique Larchey-Wendling (https://github.com/DmxLarchey)"
+license: "MPL-2.0"
+homepage: "https://github.com/DmxLarchey/Kruskal-Higman/"
+bug-reports: "https://github.com/DmxLarchey/Kruskal-Higman/issues"
+dev-repo: "git+https://github.com:DmxLarchey/Kruskal-Higman/"
+
+build: [
+  [make "-j%{jobs}%" "type"]
+]
+install: [
+  [make "install"]
+]
+
+depends: [
+  "coq-kruskal-trees" {>= "1.4"}
+  "coq-kruskal-finite" {>= "1.4"}
+  "coq-kruskal-almostfull" {>= "1.1"}
+]
+
+url {
+  src: "https://github.com/DmxLarchey/Kruskal-Fan/releases/download/1.2/Kruskal-Fan-1.2.tar.gz"
+  checksum: [
+    "sha256=dbd107c4afa5b01a94f69b49f6c33dc7249396865bad9bf82367d5ec49d92c09"
+  ]
+}
+
+tags: [
+  "category:Computer Science/Data Types and Data Structures"
+  "date:2024-11-22"
+  "logpath:KruskalFanProp"
+  "logpath:KruskalFanType"
+]

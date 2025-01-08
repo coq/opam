@@ -59,3 +59,7 @@ tags: [
 url {
   src: "git+https://github.com/AbsInt/CompCert.git"
 }
+extra-files: [
+  "0001-Allow-dev-version-of-Menhir.patch"
+  "sha512=76f4222174fe2ff396ccef236b249a5094f4258459c3d74a074e714ddab7da6ea22d66a264386202988e16e6e5713c7ef06c043751890369e0c35c5915e2c832"
+]

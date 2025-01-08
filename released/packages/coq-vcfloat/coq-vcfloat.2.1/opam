@@ -45,3 +45,7 @@ tags: [
   "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
   "logpath:VCFloat"
   ]
+extra-files: [
+  "0001-coq-native-compat.patch"
+  "sha512=9d7e5595034dc2e2e46a7b9f5865a2c9000f9832fcd3f8aed707f6a35f164bfc7faf6773f1526def58ca862f17f7381cf2fdac00f14fc4de9d6eabe7963b3788"
+]

@@ -48,3 +48,13 @@ depends: [
 substs: [
   "Graph2TacConfig.v"
 ]
+extra-files: [
+  [
+    "Graph2TacConfig.v.in"
+    "sha512=3033d42d7f51941aa9dd6f92c5608167f711941284aedba9b95442c1c980925b80e7bfd982c1eb28b6c69a361516043013d313da5316d3bb06152e252cfa73c4"
+  ]
+  [
+    "injection-flags"
+    "sha512=b8154112fd12cedeabb4bcb9af126a9556d3043ef29b1eb8f95f011bd6c05e5de4f8fa47da91c9c2d30aa7337db8d975836bcc3226ba3247da4570423b6291e3"
+  ]
+]

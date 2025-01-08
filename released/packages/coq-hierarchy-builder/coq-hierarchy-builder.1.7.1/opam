@@ -1,0 +1,30 @@
+opam-version: "2.0"
+name: "coq-hierarchy-builder"
+maintainer: "Enrico Tassi <enrico.tassi@inria.fr>"
+authors: [ "Cyril Cohen" "Kazuhiko Sakaguchi" "Enrico Tassi" ]
+license: "MIT"
+homepage: "https://github.com/math-comp/hierarchy-builder"
+bug-reports: "https://github.com/math-comp/hierarchy-builder/issues"
+dev-repo: "git+https://github.com/math-comp/hierarchy-builder"
+
+build: [ [ make "build"]
+         [ make "test-suite" ] {with-test}
+       ]
+install: [ make "install" ]
+depends: [ "coq-elpi" { (>= "2.0") | = "dev" } ]
+conflicts: [ "coq-hierarchy-builder-shim" ]
+synopsis: "High level commands to declare and evolve a hierarchy based on packed classes"
+description: """
+Hierarchy Builder is a high level language to build hierarchies of algebraic structures and make these
+hierarchies evolve without breaking user code. The key concepts are the ones of factory, builder
+and abbreviation that let the hierarchy developer describe an actual interface for their library.
+Behind that interface the developer can provide appropriate code to ensure retro compatibility.
+"""
+tags: [ "logpath:HB" ]
+url {
+  src:
+    "https://github.com/math-comp/hierarchy-builder/releases/download/v1.7.1/hierarchy-builder-1.7.1.tar.gz"
+  checksum: [
+    "sha256=1408a3ca6fb701375eeb0302d1c7f5297afca47897d074fcb36f53667dddf48b"
+  ]
+}

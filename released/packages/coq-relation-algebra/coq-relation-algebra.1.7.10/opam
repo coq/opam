@@ -7,7 +7,7 @@ bug-reports: "https://github.com/damien-pous/relation-algebra/issues"
 license: "LGPL-3.0-or-later"
 depends: [
   "ocaml"
-  "coq" {>= "8.18" }
+  "coq" {>= "8.18" & < "8.21"}
 ]
 depopts: [ "coq-mathcomp-ssreflect" "coq-aac-tactics" ]
 build: [
