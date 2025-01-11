@@ -1,0 +1,55 @@
+opam-version: "2.0"
+maintainer: "stevez@cis.upenn.edu"
+synopsis: "Coq library implementing (executable) semantics for LLVM IR"
+
+homepage: "https://github.com/vellvm/vellvm"
+dev-repo: "git+https://github.com/vellvm/vellvm.git"
+bug-reports: "https://github.com/vellvm/vellvm/issues"
+authors: [
+  "Steve Zdancewic <stevez@cis.upenn.edu>"
+  "Yannick Zakowski <yannick.zakowski@inria.fr>"
+  "Calvin Beck <hobbes@seas.upenn.edu>"
+  "Irene Yoon <euisuny@cis.upenn.edu>"
+  "Gary (Hanxi) Chen <hanxic@seas.upenn.edu>"
+]
+license: "GPL-3.0-or-later"
+
+
+build: [make "-C" "src" "all" "-j%{jobs}%"]
+install: [make "-C" "src" "install"]
+
+depends: [
+  "ocaml" {>= "4.14.0"}
+  "cppo"
+  "dune" {>= "3.14.0"}
+  "menhir"
+  "qcheck"
+  "coq" {>= "8.20.0" & < "8.21~"}
+  "coq-ext-lib" {>= "0.12.1" & < "0.13~"}
+  "coq-paco"
+  "coq-ceres"
+  "coq-flocq" {>= "4.2.0"}
+  "coq-mathcomp-ssreflect"
+  "coq-simple-io"
+  "coq-itree" {>= "5.2.0" & < "5.3~"}
+  "coq-quickchick" {>= "2.0.4" & < "2.0.5"}
+]
+
+tags: [
+  "date:2025-01-10"
+
+  "category:Computer Science/Programming Languages/Formal Definitions and Theory"
+  "category:Computer Science/Semantics and Compilation/Compilation"
+  "category:Computer Science/Semantics and Compilation/Semantics"
+
+  "keyword:semantics"
+  "keyword:interpreter"
+  "keyword:LLVM"
+
+  "logpath:Vellvm"
+]
+
+url {
+  src: "https://github.com/vellvm/vellvm/releases/download/v2.0.20250110/v2.0.20250110.tar.gz"
+  checksum: "sha256=28ed7b9e441507d679f9cea5efce7bc02cd2e5568c37b52ea2d52dd57baef022"
+}
