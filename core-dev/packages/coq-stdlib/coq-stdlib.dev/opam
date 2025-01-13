@@ -19,7 +19,7 @@ authors: ["The Coq development team, INRIA, CNRS, and contributors"]
 license: "LGPL-2.1-only"
 homepage: "https://coq.inria.fr/"
 doc: "https://coq.github.io/doc/"
-bug-reports: "https://github.com/coq/coq/issues"
+bug-reports: "https://github.com/coq/stdlib/issues"
 depends: [
   "dune" {>= "3.8"}
   "coq-core"
@@ -27,12 +27,11 @@ depends: [
   "odoc" {with-doc}
 ]
 depopts: ["coq-native"]
-dev-repo: "git+https://github.com/coq/coq.git"
+dev-repo: "git+https://github.com/coq/stdlib.git"
 build: [
-  ["sh" "-c" "echo '(dirs stdlib)' > dune"]
   ["dune" "subst"] {dev}
   [
-    "stdlib/dev/with-rocq-wrap.sh"
+    "dev/with-rocq-wrap.sh"
     "dune"
     "build"
     "-p"
@@ -43,9 +42,8 @@ build: [
     "@runtest" {with-test}
     "@doc" {with-doc}
   ]
-  ["mv" "stdlib/coq-stdlib.install" "."]
 ]
 
 url {
-  src: "git+https://github.com/coq/coq.git#master"
+  src: "git+https://github.com/coq/stdlib.git#master"
 }
