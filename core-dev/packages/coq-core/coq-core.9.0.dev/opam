@@ -1,0 +1,36 @@
+opam-version: "2.0"
+synopsis: "Compatibility binaries for Coq after the Rocq renaming"
+maintainer: ["The Coq development team <coqdev@inria.fr>"]
+authors: ["The Coq development team, INRIA, CNRS, and contributors"]
+license: "LGPL-2.1-only"
+homepage: "https://coq.inria.fr/"
+doc: "https://coq.github.io/doc/"
+bug-reports: "https://github.com/coq/coq/issues"
+depends: [
+  "dune" {>= "3.8"}
+  "rocq-runtime" {= version}
+  "odoc" {with-doc}
+]
+conflicts: [
+  "coq"   { < "8.17" }
+]
+depopts: ["coq-native"]
+dev-repo: "git+https://github.com/coq/coq.git"
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+
+url {
+  src: "git+https://github.com/coq/coq.git#master"
+}
