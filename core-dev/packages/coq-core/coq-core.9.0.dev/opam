@@ -32,5 +32,5 @@ build: [
 ]
 
 url {
-  src: "git+https://github.com/coq/coq.git#master"
+  src: "git+https://github.com/coq/coq.git#v9.0"
 }
