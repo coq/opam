@@ -5,9 +5,6 @@ bug-reports: "https://github.com/thery/coqprime/issues"
 dev-repo: "git+https://github.com/thery/coqprime.git"
 license: "LGPL-2.1-only"
 authors: ["Laurent Théry"]
-depends: [
-  "ocaml" {>= "5.0"}
-]
 
 build: [
   # cd to a subfolder in opam is tricky, so just move gencertif to the root folder
@@ -34,7 +31,7 @@ install: [
   [make "install"]
 ]
 depends: [
-  "ocaml"
+  "ocaml" {>= "5.0"}
   "num"
   "conf-gmp"
   "gmp-ecm"
