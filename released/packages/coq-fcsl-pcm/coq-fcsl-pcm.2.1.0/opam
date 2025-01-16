@@ -40,6 +40,6 @@ authors: [
   "Alexander Gryzlov"
 ]
 url {
-  src: "https://github.com/imdea-software/fcsl-pcm/archive/refs/tags/v2.1.0.tar.gz"
+  src: "https://github.com/imdea-software/fcsl-pcm/archive/v2.1.0.tar.gz"
   checksum: "sha256=019ef65ce51b12c623d5c6cc8f98f3499cf3bc5bd273c67097c6106ad082780b"
 }
