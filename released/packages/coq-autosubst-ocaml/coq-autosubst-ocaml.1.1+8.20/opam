@@ -1,0 +1,29 @@
+opam-version: "2.0"
+synopsis: "OCaml implementation of Autosubst for Coq"
+description: """
+    Autosubst can be used to generate substitution boilerplate code for syntax with binders.
+    It takes language definitions written in signature files and outputs a file that
+    contains Coq code implementing the language, the substitution operation, rewriting lemmas
+    and a tactic to automatically solve certain substitution goals using the rewriting lemmas.
+"""
+homepage: "https://github.com/uds-psl/autosubst-ocaml"
+bug-reports: "https://github.com/uds-psl/autosubst-ocaml/issues"
+maintainer: "Yannick Forster yannick.forster@inria.fr"
+authors: [ "Adrian Dapprich" ]
+license: "MIT"
+
+depends: [
+  "ocaml" { >= "4.09" & < "4.15" }
+  "coq" { >= "8.20" & < "8.21" }
+  "angstrom" { >= "0.15.0" }
+  "dune" { >= "2.5" }
+  "ocamlgraph" { >= "2.0.0" }
+  "ppx_deriving" { >= "5.2.1" }
+]
+
+build: [ "dune" "build" "-p" name "-j" jobs ]
+
+url {
+  src: "https://github.com/uds-psl/autosubst-ocaml/archive/refs/tags/1.1+8.20.tar.gz"
+       checksum: "sha256=2c6d208b589e4bd809c2f7bd1ad869d4dba258814dc6239141117892871dac68"
+}
