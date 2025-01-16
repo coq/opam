@@ -33,6 +33,7 @@ install: [
 depends: [
   "ocaml" {>= "5.0"}
   "ocamlfind"
+  "zarith"
   "num"
   "conf-gmp"
   "gmp-ecm"
