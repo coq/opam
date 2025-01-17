@@ -14,7 +14,7 @@ license: "MIT"
 
 depends: [
   "ocaml" { >= "4.09" & < "4.15" }
-  "coq" { >= "8.19" & < "8.20" }
+  "coq" { >= "8.20" & < "8.21" }
   "angstrom" { >= "0.15.0" }
   "dune" { >= "2.5" }
   "ocamlgraph" { >= "2.0.0" }
@@ -24,6 +24,6 @@ depends: [
 build: [ "dune" "build" "-p" name "-j" jobs ]
 
 url {
-  src: "https://github.com/uds-psl/autosubst-ocaml/archive/refs/tags/1.1+8.19.tar.gz"
-       checksum: "sha256=b197053a8201e5de41668dfa4a91c8be00f901508b66f969aeae78d382d66633"
+  src: "https://github.com/uds-psl/autosubst-ocaml/archive/refs/tags/1.1+8.20.tar.gz"
+       checksum: "sha256=2c6d208b589e4bd809c2f7bd1ad869d4dba258814dc6239141117892871dac68"
 }
