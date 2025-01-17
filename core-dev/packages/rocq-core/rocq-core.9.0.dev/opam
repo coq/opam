@@ -1,7 +1,7 @@
 opam-version: "2.0"
 synopsis: "The Rocq Prover with its prelude"
 description: """
-Rocq is a formal proof management system. It provides
+The Rocq Prover is an interactive theorem prover, or proof assistant. It provides
 a formal language to write mathematical definitions, executable
 algorithms and theorems together with an environment for
 semi-interactive development of machine-checked proofs.
@@ -23,14 +23,13 @@ doc: "https://coq.github.io/doc/"
 bug-reports: "https://github.com/coq/coq/issues"
 depends: [
   "dune" {>= "3.8"}
-  "coq-core" {= version}
+  "rocq-runtime" {= version}
   "odoc" {with-doc}
 ]
-depopts: ["coq-native"]
 dev-repo: "git+https://github.com/coq/coq.git"
 build: [
   ["dune" "subst"] {dev}
-  # We tell dunestrap to use coq-config from coq-core
+  # We tell dunestrap to use coq-config from rocq-runtime
   [ make "dunestrap" "COQ_SPLIT=1" "DUNESTRAPOPT=-p rocq-core"]
   [
     "dune"

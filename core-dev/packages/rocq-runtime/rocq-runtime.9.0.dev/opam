@@ -1,7 +1,7 @@
 opam-version: "2.0"
 synopsis: "The Rocq Prover -- Core Binaries and Tools"
 description: """
-Rocq is a formal proof management system. It provides
+The Rocq Prover is an interactive theorem prover, or proof assistant. It provides
 a formal language to write mathematical definitions, executable
 algorithms and theorems together with an environment for
 semi-interactive development of machine-checked proofs.
@@ -12,7 +12,7 @@ project, or the Bedrock verified low-level programming library), the
 formalization of mathematics (e.g. the full formalization of the
 Feit-Thompson theorem or homotopy type theory) and teaching.
 
-This package includes the Rocq core binaries, plugins, and tools, but
+This package includes the Rocq Prover core binaries, plugins, and tools, but
 not the vernacular standard library.
 
 Note that in this setup, Rocq needs to be started with the -boot and
@@ -33,9 +33,10 @@ depends: [
   "odoc" {with-doc}
 ]
 conflicts: [
-  "coq"   { < "8.17" }
+  "coq" { < "8.17" }
+  "coq-core" { < "8.21" }
 ]
-depopts: ["coq-native"]
+depopts: ["rocq-native" "memprof-limits" "memtrace"]
 dev-repo: "git+https://github.com/coq/coq.git"
 build: [
   ["dune" "subst"] {dev}
@@ -43,7 +44,7 @@ build: [
     "-prefix" prefix
     "-mandir" man
     "-libdir" "%{lib}%/coq"
-    "-native-compiler" "yes" {coq-native:installed} "no" {!coq-native:installed}
+    "-native-compiler" "yes" {rocq-native:installed} "no" {!rocq-native:installed}
   ]
   [
     "dune"
