@@ -1,5 +1,5 @@
 opam-version: "2.0"
-synopsis: "Definition of HOL-Light real numbers in Coq"
+synopsis: "Definition of HOL-Light real numbers in Coq using nat"
 description: """
 This library provides a representation in Coq of the definition of real numbers
 in HOL-Light using the Coq type nat for natural numbers, automatically generated
