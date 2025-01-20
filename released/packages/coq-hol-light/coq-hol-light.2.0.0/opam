@@ -13,7 +13,7 @@ authors: ["Frédéric Blanqui"]
 license: "CeCILL-2.1"
 depends: [
   "coq" {>= "8.19"}
-  "coq-hol-light-real" {>= "1.0"}
+  "coq-hol-light-real-with-nat" {>= "1.0"}
   "coq-fourcolor-reals" {>= "1.4.0"}
 ]
 build: [make "-j%{jobs}%"]
