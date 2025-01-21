@@ -18,13 +18,13 @@ depends: [
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 tags: [
-  "keyword:HOL-Light"
+  "logpath:HOLLight_Real_With_N"
+  "date:2025-01-21"
   "category:Math/Arith/Misc"
   "category:Math/Arith/Real numbers"
-  "date:2025-01-20"
-  "logpath:HOLLight_Real"
+  "keyword:HOL-Light"
 ]
 url {
   src: "https://github.com/Deducteam/coq-hol-light-real-with-N/archive/refs/tags/1.0.0.tar.gz"
-  checksum: "sha256=97895ee619541adf57617f23ea975489f5ceac7be718b03e7f45ac7d878cb479"
+  checksum: "sha256=b4e60de1322965dc6daf7beb63fd7ff270e341e162428fddd1ac5e32e47054b5"
 }
