@@ -1,0 +1,50 @@
+opam-version: "2.0"
+synopsis: "Compatibility metapackage for Coq after the Rocq renaming"
+maintainer: ["The Rocq development team <coqdev@inria.fr>"]
+authors: ["The Rocq development team, INRIA, CNRS, and contributors"]
+license: "LGPL-2.1-only"
+homepage: "https://coq.inria.fr/"
+doc: "https://coq.github.io/doc/"
+bug-reports: "https://github.com/coq/coq/issues"
+depends: [
+  "dune" {>= "3.8"}
+  "rocq-prover" {= version}
+  "coq-core" {= version}
+  "coq-stdlib"
+  "coqide-server" {= version}
+  "ounit2" {with-test}
+  "odoc" {with-doc}
+]
+dev-repo: "git+https://github.com/coq/coq.git"
+build: [
+  ["dune" "subst"] {dev}
+  [ "./configure"
+    "-release" # -release must be the first command line argument
+    "-prefix" prefix
+    "-mandir" man
+    "-libdir" "%{lib}%/coq"
+    "-native-compiler" "yes" {rocq-native:installed} "no" {!rocq-native:installed}
+  ] {with-test}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "--promote-install-files=false"
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+  ["dune" "install" "-p" name "--create-install-files" name]
+]
+
+url {
+  src:
+    "https://github.com/coq/coq/releases/download/V9.0+rc1/coq-9.0-rc1.tar.gz"
+  checksum: [
+    "md5=ebb23830fc6d43a1d955d28bdccfd7d5"
+    "sha512=31cb5eca83620ac5f517422f445c37a9345f3ba973f43db9101996d45368856e07e2c4b4ebb2103c169f742aeef095026b2c947765b78be51bfe7fdf43b5d693"
+  ]
+}
