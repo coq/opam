@@ -1,7 +1,7 @@
 opam-version: "2.0"
-synopsis: "Compatibility binaries for Coq after the Rocq renaming"
+synopsis: "The Rocq Proof Assistant -- Standard Library"
 description: """
-The Rocq Prover is an interactive theorem prover, or proof assistant. It provides
+Rocq is a formal proof management system. It provides
 a formal language to write mathematical definitions, executable
 algorithms and theorems together with an environment for
 semi-interactive development of machine-checked proofs.
@@ -12,23 +12,26 @@ project, or the Bedrock verified low-level programming library), the
 formalization of mathematics (e.g. the full formalization of the
 Feit-Thompson theorem or homotopy type theory) and teaching.
 
-This package includes compatibility binaries to call Rocq
-through previous Coq commands like coqc coqtop,..."""
-maintainer: ["The Rocq development team <coqdev@inria.fr>"]
+This package includes the Rocq Standard Library, that is to say, the
+set of modules usually bound to the Stdlib.* namespace."""
+maintainer: ["The Rocq standard library development team"]
 authors: ["The Rocq development team, INRIA, CNRS, and contributors"]
 license: "LGPL-2.1-only"
 homepage: "https://coq.inria.fr/"
 doc: "https://coq.github.io/doc/"
-bug-reports: "https://github.com/coq/coq/issues"
+bug-reports: "https://github.com/coq/stdlib/issues"
 depends: [
   "dune" {>= "3.8"}
-  "rocq-runtime" {= version}
+  "rocq-runtime"
+  "rocq-core" {>= "9.0" & < "9.1~"}
   "odoc" {with-doc}
 ]
-dev-repo: "git+https://github.com/coq/coq.git"
+depopts: ["coq-native"]
+dev-repo: "git+https://github.com/coq/stdlib.git"
 build: [
   ["dune" "subst"] {dev}
   [
+    "dev/with-rocq-wrap.sh"
     "dune"
     "build"
     "-p"
@@ -42,5 +45,9 @@ build: [
 ]
 
 url {
-  src: "git+https://github.com/coq/coq.git#master"
+  src:
+    "https://github.com/coq/stdlib/releases/download/V9.0+rc1/stdlib-9.0-rc1.tar.gz"
+  checksum: [
+    "sha512=413f457db022ddb635c18bf04fed48025c23ac1d69dfadc12e889d86dca44d8e1e4fe1e53caac03b881c9b79cf74063e540e369a800c167e386a9ae53a025b9e"
+  ]
 }

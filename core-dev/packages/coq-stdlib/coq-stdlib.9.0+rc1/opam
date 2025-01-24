@@ -30,5 +30,9 @@ build: [
 ]
 
 url {
-  src: "git+https://github.com/coq/stdlib.git#master"
+  src:
+    "https://github.com/coq/stdlib/releases/download/V9.0+rc1/stdlib-9.0-rc1.tar.gz"
+  checksum: [
+    "sha512=413f457db022ddb635c18bf04fed48025c23ac1d69dfadc12e889d86dca44d8e1e4fe1e53caac03b881c9b79cf74063e540e369a800c167e386a9ae53a025b9e"
+  ]
 }
