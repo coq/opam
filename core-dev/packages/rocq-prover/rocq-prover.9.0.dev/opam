@@ -1,5 +1,5 @@
 opam-version: "2.0"
-synopsis: "The Rocq Prover -- Core Binaries and Tools"
+synopsis: "The Rocq Prover with Stdlib"
 description: """
 The Rocq Prover is an interactive theorem prover, or proof assistant. It provides
 a formal language to write mathematical definitions, executable
@@ -12,12 +12,7 @@ project, or the Bedrock verified low-level programming library), the
 formalization of mathematics (e.g. the full formalization of the
 Feit-Thompson theorem or homotopy type theory) and teaching.
 
-This package includes the Rocq Prover core binaries, plugins, and tools, but
-not the vernacular standard library.
-
-Note that in this setup, Rocq needs to be started with the -boot and
--noinit options, as will otherwise fail to find the regular Rocq
-prelude, now living in the rocq-core package."""
+This package is a virtual package gathering the rocq-core and rocq-stdlib packages."""
 maintainer: ["The Rocq development team <coqdev@inria.fr>"]
 authors: ["The Rocq development team, INRIA, CNRS, and contributors"]
 license: "LGPL-2.1-only"
@@ -25,41 +20,28 @@ homepage: "https://coq.inria.fr/"
 doc: "https://coq.github.io/doc/"
 bug-reports: "https://github.com/coq/coq/issues"
 depends: [
-  "dune" {>= "3.8" & < "3.14"}
-  "ocaml" {>= "4.09.0"}
-  "ocamlfind" {>= "1.8.1"}
-  "zarith" {>= "1.11"}
-  "conf-linux-libc-dev" {os = "linux"}
+  "dune" {>= "3.8"}
+  "rocq-core" {= version}
+  "rocq-stdlib"
+  "ounit2" {with-test}
+  "conf-python-3" {with-test}
+  "conf-time" {with-test}
   "odoc" {with-doc}
-]
-depopts: ["rocq-native" "memprof-limits" "memtrace"]
-conflicts: [
-  "coq" { < "8.17" }
-  "coq-core" { < "8.21" }
 ]
 dev-repo: "git+https://github.com/coq/coq.git"
 build: [
   ["dune" "subst"] {dev}
-  [ "./configure"
-    "-release" # -release must be the first command line argument
-    "-prefix" prefix
-    "-mandir" man
-    "-libdir" "%{lib}%/coq"
-    "-native-compiler" "yes" {rocq-native:installed} "no" {!rocq-native:installed}
-  ]
   [
     "dune"
     "build"
     "-p"
-    name
+    "rocq"
     "-j"
     jobs
-    "--promote-install-files=false"
     "@install"
     "@runtest" {with-test}
     "@doc" {with-doc}
   ]
-  ["dune" "install" "-p" name "--create-install-files" name]
 ]
 
 url {
