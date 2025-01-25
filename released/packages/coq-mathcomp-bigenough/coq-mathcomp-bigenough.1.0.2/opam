@@ -1,0 +1,39 @@
+
+opam-version: "2.0"
+maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
+
+homepage: "https://github.com/math-comp/bigenough"
+dev-repo: "git+https://github.com/math-comp/bigenough.git"
+bug-reports: "https://github.com/math-comp/bigenough/issues"
+license: "CeCILL-B"
+
+synopsis: "A small library to do epsilon - N reasoning"
+description: """
+The package contains a package to reasoning with big enough objects
+(mostly natural numbers). This package is essentially for backward
+compatibility purposes as `bigenough` will be subsumed by the near
+tactics. The formalization is based on the Mathematical Components
+library."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.10" & < "9.1~") | (= "dev")}
+  "coq-mathcomp-ssreflect" {>= "1.6"}
+]
+
+tags: [
+  "keyword:bigenough"
+  "keyword:asymptotic reasonning"
+  "keyword:small scale reflection"
+  "keyword:mathematical components"
+  "logpath:mathcomp.bigenough"
+]
+authors: [
+  "Cyril Cohen"
+]
+
+url {
+  src: "https://github.com/math-comp/bigenough/archive/1.0.2.tar.gz"
+  checksum: "sha512=faaa56c7db5b00a3e3b1a60dc0b3623d8ef5bcf7d08a228df2184e79a124f9dbd4917b2c24cef0bd9ad98b3dd7aae331d5fbe6dd2d154b80fdc108d8dc828b29"
+}
