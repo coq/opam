@@ -1,0 +1,47 @@
+opam-version: "2.0"
+maintainer: "pierre.roux@onera.fr"
+
+homepage: "https://github.com/coq-community/bignums"
+dev-repo: "git+https://github.com/coq-community/bignums.git"
+bug-reports: "https://github.com/coq-community/bignums/issues"
+license: "LGPL-2.1-only"
+
+synopsis: "Bignums, the Rocq library of arbitrarily large numbers"
+description: """
+This Rocq library provides BigN, BigZ, and BigQ that used to
+be part of the standard library."""
+
+build: [make "-j%{jobs}%"]
+install: [
+  [make "install"]
+  [make "-C" "tests" "-j%{jobs}%"] {with-test}
+]
+depends: [
+  "ocaml"
+  "rocq-core" {>= "9.0" & < "9.1~"}
+  "rocq-stdlib"
+]
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "category:Mathematics/Arithmetic and Number Theory/Number theory"
+  "category:Mathematics/Arithmetic and Number Theory/Rational numbers"
+  "keyword:integer numbers"
+  "keyword:rational numbers"
+  "keyword:arithmetic"
+  "keyword:arbitrary precision"
+  "logpath:Bignums"
+  "date:2024-06-20"
+]
+authors: [
+  "Laurent Théry"
+  "Benjamin Grégoire"
+  "Arnaud Spiwack"
+  "Evgeny Makarov"
+  "Pierre Letouzey"
+]
+
+url {
+  src: "https://github.com/coq/bignums/archive/v9.0.0+rocq9.0.tar.gz"
+  checksum: "sha512=8ce63ee88b671ab7d20359dcd7025286af61d2b6e4e1b88f0deb39a716a455f824f739bbd1cd291e673c870e9fd95f3f5d2326192bdcca786b25f1663d9cb326"
+}
