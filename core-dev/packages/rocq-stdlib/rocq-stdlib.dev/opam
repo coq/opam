@@ -23,7 +23,7 @@ bug-reports: "https://github.com/coq/stdlib/issues"
 depends: [
   "dune" {>= "3.8"}
   "rocq-runtime"
-  "rocq-core" {= version}
+  "rocq-core" {>= "9.0" | = "dev"}
   "odoc" {with-doc}
 ]
 depopts: ["coq-native"]
