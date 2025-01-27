@@ -35,7 +35,7 @@ build: [
     "dune"
     "build"
     "-p"
-    "rocq"
+    name
     "-j"
     jobs
     "@install"
