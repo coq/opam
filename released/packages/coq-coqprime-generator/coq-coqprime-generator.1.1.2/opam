@@ -31,7 +31,7 @@ install: [
   [make "install"]
 ]
 depends: [
-  "ocaml" {>= "4.14.2"}
+  "ocaml"
   "ocamlfind"
   "zarith"
   "num"
