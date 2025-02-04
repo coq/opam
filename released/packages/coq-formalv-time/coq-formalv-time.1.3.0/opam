@@ -1,0 +1,53 @@
+opam-version: "2.0"
+synopsis: "A Coq library for time and date arithmetic according to the UTC standard with leap seconds" # One-line description
+description: """
+FV Time is a library for managing conversions between time formats (UTC and
+timestamps), as well as commonly used functions for time arithmetic. As a
+library for time conversions, its novelty is the implementation of leap
+seconds (which are part of the UTC standard but usually not implemented in
+commercial libraries).
+""" # Longer description, can span several lines
+
+homepage: "https://gitlab.com/formalv/formalv"
+dev-repo: "git+https://gitlab.com/formalv/formalv"
+bug-reports: "https://gitlab.com/formalv/formalv/-/issues"
+doc: "https://formalv.gitlab.io/formalv/coqdoc/toc.html"
+maintainer: "Mireia González Bedmar <mireia.gbedmar@formalv.com>"
+
+tags: [
+  "keyword:time"
+  "keyword:date"
+  "keyword:timestamp"
+  "logpath:formalv.time"
+]
+
+authors: [
+  "Ana de Almeida Borges"
+  "Quim Casals Buñuel"
+  "Juan Conejero Rodriguez"
+  "Mireia González Bedmar"
+  "Eduardo Hermo Reyes"
+]
+
+license: "PolyForm Noncommercial License 1.0.0" # Make sure this is reflected by a LICENSE file in your sources
+
+depends: [
+  "coq" {>= "8.19" & < "8.20~"}
+  "coq-mathcomp-algebra" {>= "2.3" & < "2.4~" }
+  "coq-mathcomp-ssreflect" {>= "2.3" & < "2.4~" }
+  "coq-formalv-prim63_mathcomp" {= version}
+  "coq-formalv-check_range" {= version}
+]
+
+build: [
+  [make "-C" "theories/time" "-j" "%{jobs}%"]
+]
+
+install: [
+  [make "-C" "theories/time" "install"]
+]
+
+url {
+  src: "https://gitlab.com/formalv/formalv/-/archive/1.3.0/formalv-1.3.0.tar.gz"
+  checksum: "sha256=a1045f3555371940e807046781e43702802560ef309c4be6cfe65088a8bf8347"
+}
