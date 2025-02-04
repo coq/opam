@@ -17,7 +17,7 @@ maintainer: "Mireia González Bedmar <mireia.gbedmar@formalv.com>"
 tags: [
   "keyword:refinement"
   "keyword:primitive integers"
-  "logpath:formalv"
+  "logpath:formalv.prim63_mathcomp"
 ]
 
 authors: [

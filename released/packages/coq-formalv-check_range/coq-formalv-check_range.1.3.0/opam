@@ -15,7 +15,7 @@ maintainer: "Mireia González Bedmar <mireia.gbedmar@formalv.com>"
 tags: [
   "keyword:automation"
   "keyword:primitive integers"
-  "logpath:formalv"
+  "logpath:formalv.check_range"
 ]
 
 authors: [

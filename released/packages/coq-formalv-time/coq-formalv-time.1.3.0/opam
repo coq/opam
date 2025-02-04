@@ -18,8 +18,7 @@ tags: [
   "keyword:time"
   "keyword:date"
   "keyword:timestamp"
-  "keyword:coq formalization"
-  "logpath:formalv"
+  "logpath:formalv.time"
 ]
 
 authors: [
