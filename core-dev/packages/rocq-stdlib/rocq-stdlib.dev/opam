@@ -30,18 +30,14 @@ depopts: ["coq-native"]
 dev-repo: "git+https://github.com/coq/stdlib.git"
 build: [
   ["dune" "subst"] {dev}
-  [
-    "dev/with-rocq-wrap.sh"
-    "dune"
-    "build"
-    "-p"
-    name
-    "-j"
-    jobs
-    "@install"
-    "@runtest" {with-test}
-    "@doc" {with-doc}
-  ]
+  [ "find" "theories" "-name" "_*" "-prune" "-exec" "rm" "-rf" "{}" "+" ]
+  # without rocq-wrap dune will complain about missing coqc even though it shouldn't be needed
+  [ "dev/with-rocq-wrap.sh" "dune" "build" "--root" "." "theories/All.v" ]
+  [ "cp" "_build/default/theories/All.v" "theories/All.v" ]
+  [ "find" "theories" "-name" "*.v" "-fprint" "_CoqProject" ]
+  [ "sh" "-c" "echo '-Q theories Stdlib' >> _CoqProject" ]
+  [ "rocq" "makefile" "-f" "_CoqProject" "-o" "Makefile" ]
+  [ make "-j%{jobs}%" ]
 ]
 
 url {
