@@ -39,6 +39,7 @@ build: [
   [ "rocq" "makefile" "-f" "_CoqProject" "-o" "Makefile" ]
   [ make "-j%{jobs}%" ]
 ]
+install: [ make "install" ]
 
 url {
   src: "git+https://github.com/coq/stdlib.git#master"
