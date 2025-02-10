@@ -7,8 +7,8 @@ bug-reports: "https://github.com/math-comp/math-comp/issues"
 dev-repo: "git+https://github.com/math-comp/math-comp.git"
 license: "CeCILL-B"
 
-build: [ make "-C" "mathcomp/field" "-j" "%{jobs}%" ]
-install: [ make "-C" "mathcomp/field" "install" ]
+build: [ make "-C" "field" "-j" "%{jobs}%" ]
+install: [ make "-C" "field" "install" ]
 depends: [ "coq-mathcomp-solvable" { = version } ]
 
 tags: [ "keyword:algebra" "keyword:field" "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" "logpath:mathcomp.field" ]

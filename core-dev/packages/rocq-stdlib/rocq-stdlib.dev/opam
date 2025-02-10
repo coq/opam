@@ -19,33 +19,28 @@ authors: ["The Rocq development team, INRIA, CNRS, and contributors"]
 license: "LGPL-2.1-only"
 homepage: "https://coq.inria.fr/"
 doc: "https://coq.github.io/doc/"
-bug-reports: "https://github.com/coq/coq/issues"
+bug-reports: "https://github.com/coq/stdlib/issues"
 depends: [
   "dune" {>= "3.8"}
   "rocq-runtime"
-  "rocq-core" {= version}
+  "rocq-core" {>= "9.0" | = "dev"}
   "odoc" {with-doc}
 ]
 depopts: ["coq-native"]
-dev-repo: "git+https://github.com/coq/coq.git"
+dev-repo: "git+https://github.com/coq/stdlib.git"
 build: [
-  ["sh" "-c" "echo '(dirs stdlib)' > dune"]
   ["dune" "subst"] {dev}
-  [
-    "stdlib/dev/with-rocq-wrap.sh"
-    "dune"
-    "build"
-    "-p"
-    name
-    "-j"
-    jobs
-    "@install"
-    "@runtest" {with-test}
-    "@doc" {with-doc}
-  ]
-  ["mv" "stdlib/rocq-stdlib.install" "."]
+  [ "find" "theories" "-name" "_*" "-prune" "-exec" "rm" "-rf" "{}" "+" ]
+  # without rocq-wrap dune will complain about missing coqc even though it shouldn't be needed
+  [ "dev/with-rocq-wrap.sh" "dune" "build" "--root" "." "theories/All.v" ]
+  [ "cp" "_build/default/theories/All.v" "theories/All.v" ]
+  [ "find" "theories" "-name" "*.v" "-fprint" "_CoqProject" ]
+  [ "sh" "-c" "echo '-Q theories Stdlib' >> _CoqProject" ]
+  [ "rocq" "makefile" "-f" "_CoqProject" "-o" "Makefile" ]
+  [ make "-j%{jobs}%" ]
 ]
+install: [ make "install" ]
 
 url {
-  src: "git+https://github.com/coq/coq.git#master"
+  src: "git+https://github.com/coq/stdlib.git#master"
 }
