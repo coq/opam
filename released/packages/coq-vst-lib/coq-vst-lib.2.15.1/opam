@@ -30,7 +30,7 @@ depends: [
 ]
 url {
   src: "https://github.com/PrincetonUniversity/VST/archive/refs/tags/lib-2.15.1.tar.gz"
-  checksum: "sha256=689f35815ba405e78562d9dcc458cac19c753c5b7da40f44153a2f764c42997b"
+  checksum: "sha256=b08762b1b250e3e351e179fbf82c8618148f3160c545daab9e3b2103cf9e0d4e"
 }
 
 tags: [
