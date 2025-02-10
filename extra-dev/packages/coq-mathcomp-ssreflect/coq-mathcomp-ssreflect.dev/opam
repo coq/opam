@@ -7,8 +7,8 @@ bug-reports: "https://github.com/math-comp/math-comp/issues"
 dev-repo: "git+https://github.com/math-comp/math-comp.git"
 license: "CeCILL-B"
 
-build: [ make "-C" "mathcomp/ssreflect" "-j" "%{jobs}%" ]
-install: [ make "-C" "mathcomp/ssreflect" "install" ]
+build: [ make "-C" "ssreflect" "-j" "%{jobs}%" ]
+install: [ make "-C" "ssreflect" "install" ]
 depends: [
   ( ( "coq" {>= "8.16" & < "8.17~"} & "elpi" {>= "1.16.5"} ) |
   # The line above can be removed at the time support for 8.16 is dropped

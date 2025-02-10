@@ -1,0 +1,38 @@
+opam-version: "2.0"
+synopsis: "Compatibility metapackage for Coq Stdlib library after the Rocq renaming"
+maintainer: ["The Rocq standard library development team"]
+authors: ["The Rocq development team, INRIA, CNRS, and contributors"]
+license: "LGPL-2.1-only"
+homepage: "https://coq.inria.fr/"
+doc: "https://coq.github.io/doc/"
+bug-reports: "https://github.com/coq/stdlib/issues"
+depends: [
+  "dune" {>= "3.8"}
+  "coq-core"
+  "rocq-stdlib" {= version}
+  "odoc" {with-doc}
+]
+dev-repo: "git+https://github.com/coq/stdlib.git"
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dev/with-rocq-wrap.sh"
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+
+url {
+  src:
+    "https://github.com/coq/stdlib/releases/download/V9.0+rc1/stdlib-9.0-rc1.tar.gz"
+  checksum: [
+    "sha512=413f457db022ddb635c18bf04fed48025c23ac1d69dfadc12e889d86dca44d8e1e4fe1e53caac03b881c9b79cf74063e540e369a800c167e386a9ae53a025b9e"
+  ]
+}

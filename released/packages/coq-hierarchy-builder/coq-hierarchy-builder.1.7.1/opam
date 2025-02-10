@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "coq-hierarchy-builder"
 maintainer: "Enrico Tassi <enrico.tassi@inria.fr>"
 authors: [ "Cyril Cohen" "Kazuhiko Sakaguchi" "Enrico Tassi" ]
 license: "MIT"
@@ -11,7 +10,7 @@ build: [ [ make "build"]
          [ make "test-suite" ] {with-test}
        ]
 install: [ make "install" ]
-depends: [ "coq-elpi" { (>= "2.0") | = "dev" } ]
+depends: [ "coq-elpi" {>= "2.0" & < "2.4"} ]
 conflicts: [ "coq-hierarchy-builder-shim" ]
 synopsis: "High level commands to declare and evolve a hierarchy based on packed classes"
 description: """
