@@ -43,3 +43,4 @@ dev-repo: "git+https://github.com/LPCIC/coq-elpi.git"
 url {
   src: "git+https://github.com/LPCIC/coq-elpi.git"
 }
+
