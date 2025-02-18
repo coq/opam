@@ -1,0 +1,55 @@
+opam-version: "2.0"
+maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
+
+homepage: "https://github.com/coq-community/coqeal"
+dev-repo: "git+https://github.com/coq-community/coqeal.git"
+bug-reports: "https://github.com/coq-community/coqeal/issues"
+license: "MIT"
+
+synopsis: "CoqEAL - The Coq Effective Algebra Library"
+description: """
+This Coq library contains a subset of the work that was developed in the context
+of the ForMath EU FP7 project (2009-2013). It has two parts:
+- theory, which contains developments in algebra including normal forms of matrices,
+  and optimized algorithms on MathComp data structures.
+- refinements, which is a framework to ease change of data representations during a proof."""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" {(>= "8.20" & < "9.1~") | (= "dev")}
+  "coq-bignums"
+  "coq-elpi" {>= "2.5.0"}
+  "coq-hierarchy-builder" {>= "1.4.0"}
+  "coq-mathcomp-ssreflect" {>= "2.3" & < "2.4~"}
+  "coq-mathcomp-algebra"
+  "coq-mathcomp-multinomials" {>= "2.0"}
+  "coq-mathcomp-real-closed" {>= "2.0"}
+]
+
+tags: [
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Correctness proofs of algorithms"
+  "keyword:effective algebra"
+  "keyword:elementary divisor rings"
+  "keyword:Smith normal form"
+  "keyword:mathematical components"
+  "keyword:Bareiss"
+  "keyword:Karatsuba multiplication"
+  "keyword:refinements"
+  "logpath:CoqEAL"
+]
+authors: [
+  "Guillaume Cano"
+  "Cyril Cohen"
+  "Maxime Dénès"
+  "Érik Martin-Dorel"
+  "Anders Mörtberg"
+  "Damien Rouhling"
+  "Pierre Roux"
+  "Vincent Siles"
+]
+
+url {
+  src: "https://github.com/coq-community/coqeal/archive/refs/tags/2.1.0.tar.gz"
+  checksum: "sha512=5d771d442a403bdf38a8d159df38299e6409f248a6a7b62b9608dae1df440ec796067ce16ecd3b6088d47a07cf5b6f0bc9eceb75aacb8a9ca9c63a80f597d00b"
+}
