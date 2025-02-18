@@ -14,7 +14,7 @@ homepage: "https://github.com/math-comp/hierarchy-builder"
 bug-reports: "https://github.com/math-comp/hierarchy-builder/issues"
 depends: [
   ("coq" {>= "8.18" & < "8.20~"} & "coq-elpi" {>= "2.0"}
-  | "coq" {>= "8.20" | = "dev"} & "coq-elpi" {(>= "2.4" < "2.5") | = "dev"})
+  | "coq" {>= "8.20" | = "dev"} & "coq-elpi" {(>= "2.4" < "2.6") | = "dev"})
 ]
 conflicts: ["coq-hierarchy-builder-shim"]
 build: [
