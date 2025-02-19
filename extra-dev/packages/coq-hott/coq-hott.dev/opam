@@ -10,7 +10,8 @@ install: [make "install"]
 depends: [
   "ocaml"
   "ocamlfind" {build}
-  "coq" {= "dev"}
+  "rocq-core" {= "dev"}
+  "coq-core" {= "dev"}
 ]
 authors: ["The Coq-HoTT Development Team"]
 dev-repo: "git+https://github.com/HoTT/Coq-HoTT.git"
