@@ -1,5 +1,9 @@
+# This file was generated from `meta.yml`, please do not edit manually.
+# Follow the instructions on https://github.com/coq-community/templates to regenerate.
+
 opam-version: "2.0"
 maintainer: "Reynald Affeldt <reynald.affeldt@aist.go.jp>"
+version: "dev"
 
 homepage: "https://github.com/affeldt-aist/infotheo"
 dev-repo: "git+https://github.com/affeldt-aist/infotheo.git"
@@ -11,7 +15,10 @@ description: """
 Infotheo is a Coq library for reasoning about discrete probabilities,
 information theory, and linear error-correcting codes."""
 
-build: [make "-j%{jobs}%" ]
+build: [
+  [make "-j%{jobs}%" ]
+  [make "-C" "extraction" "tests"] {with-test}
+]
 install: [make "install"]
 depends: [
   "coq" { (>= "8.19" & < "8.21~") | (= "dev") }
@@ -20,8 +27,8 @@ depends: [
   "coq-mathcomp-algebra" { (>= "2.3.0") }
   "coq-mathcomp-solvable" { (>= "2.3.0") }
   "coq-mathcomp-field" { (>= "2.3.0") }
-  "coq-mathcomp-analysis" { (>= "1.7.0") }
-  "coq-mathcomp-reals-stdlib" { (>= "1.7.0") }
+  "coq-mathcomp-analysis" { (>= "1.9.0") }
+  "coq-mathcomp-reals-stdlib" { (>= "1.9.0") }
   "coq-hierarchy-builder" { >= "1.5.0" }
   "coq-mathcomp-algebra-tactics" { >= "1.2.0" }
   "coq-interval" { >= "4.10.0"}
@@ -33,7 +40,7 @@ tags: [
   "keyword:error-correcting codes"
   "keyword:convexity"
   "logpath:infotheo"
-  "date:2025-02-18"
+  "date:2025-02-21"
 ]
 authors: [
   "Reynald Affeldt, AIST"
@@ -46,8 +53,8 @@ authors: [
   "Naruomi Obata, Titech (M2)"
   "Alessandro Bruni, IT-University of Copenhagen"
 ]
-flags: avoid-version # tests relying on extraction broken
 url {
-  src: "https://github.com/affeldt-aist/infotheo/archive/0.9.0.tar.gz"
-  checksum: "sha512=a1e79d5ef9e99ebeb20287cfa13ca260a70a61d0dd56546cb669cdadd2d6b2eeb1e3babce5bfbf5da5f9adf4cd66ce3635ffcc1cf62a3180e58314f838758fda"
+  src: "https://github.com/affeldt-aist/infotheo/archive/0.9.1.tar.gz"
+  checksum: "sha512=a37b632e9b75259081ffb9d815cc8292692e3126da24fa14abcbe67f44c246a823799d8acbbd80e7fda271e253e87ececd8312271df950ba53a24b8d34ef49f0"
 }
+
