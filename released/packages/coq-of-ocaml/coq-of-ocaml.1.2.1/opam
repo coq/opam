@@ -25,7 +25,7 @@ tags: [
   "keyword:OCaml"
 ]
 synopsis: "Compile OCaml to Coq"
-extra-files: ["coq-of-ocaml.install" "md5=aaa1f52ec40bedefd2674f46a44cd578"]
+extra-files: ["coq-of-ocaml.install" "sha512=55fb085980e7b09981d927fdd4c123e5e473de5888761e12e14ec9d1810eaad2ef599245e3ceaef22b0369c51f16533b0893ffdc7c1b54b4b91dd232bd4ba4db"]
 url {
   src: "https://github.com/clarus/coq-of-ocaml/archive/1.2.1.tar.gz"
   checksum: "md5=e8cb5565b8ce622d2afa5bcc59873ad2"

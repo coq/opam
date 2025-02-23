@@ -1,7 +1,7 @@
 opam-version: "2.0"
-synopsis: "The Coq Proof Assistant -- Core Binaries and Tools"
+synopsis: "Compatibility binaries for Coq after the Rocq renaming"
 description: """
-Coq is a formal proof management system. It provides
+The Rocq Prover is an interactive theorem prover, or proof assistant. It provides
 a formal language to write mathematical definitions, executable
 algorithms and theorems together with an environment for
 semi-interactive development of machine-checked proofs.
@@ -12,38 +12,22 @@ project, or the Bedrock verified low-level programming library), the
 formalization of mathematics (e.g. the full formalization of the
 Feit-Thompson theorem or homotopy type theory) and teaching.
 
-This package includes the Coq core binaries, plugins, and tools, but
-not the vernacular standard library.
-
-Note that in this setup, Coq needs to be started with the -boot and
--noinit options, as will otherwise fail to find the regular Coq
-prelude, now living in the coq-stdlib package."""
-maintainer: ["The Coq development team <coqdev@inria.fr>"]
-authors: ["The Coq development team, INRIA, CNRS, and contributors"]
+This package includes compatibility binaries to call Rocq
+through previous Coq commands like coqc coqtop,..."""
+maintainer: ["The Rocq development team <coqdev@inria.fr>"]
+authors: ["The Rocq development team, INRIA, CNRS, and contributors"]
 license: "LGPL-2.1-only"
 homepage: "https://coq.inria.fr/"
 doc: "https://coq.github.io/doc/"
 bug-reports: "https://github.com/coq/coq/issues"
 depends: [
-  "dune" {>= "2.9" & < "3.14"}
-  "ocaml" {>= "4.09.0"}
-  "ocamlfind" {>= "1.8.1"}
-  "zarith" {>= "1.11"}
+  "dune" {>= "3.8"}
+  "rocq-runtime" {= version}
   "odoc" {with-doc}
 ]
-conflicts: [
-  "coq"   { < "8.17" }
-]
-depopts: ["coq-native"]
 dev-repo: "git+https://github.com/coq/coq.git"
 build: [
   ["dune" "subst"] {dev}
-  [ "./configure"
-    "-prefix" prefix
-    "-mandir" man
-    "-libdir" "%{lib}%/coq"
-    "-native-compiler" "yes" {coq-native:installed} "no" {!coq-native:installed}
-  ]
   [
     "dune"
     "build"
@@ -51,12 +35,10 @@ build: [
     name
     "-j"
     jobs
-    "--promote-install-files=false"
     "@install"
     "@runtest" {with-test}
     "@doc" {with-doc}
   ]
-  ["dune" "install" "-p" name "--create-install-files" name]
 ]
 
 url {

@@ -24,7 +24,7 @@ depends: [
 ]
 synopsis: "A web server written in Coq"
 extra-files: [
-  "coq-concurrency-pluto.install" "md5=c191e439136807d785f0d582e0b8783e"
+  "coq-concurrency-pluto.install" "sha512=df2cd4dd5cdc892a66ebfb07aceae6f4d5921ca5a1ad7fbaad5de8b24313c67e13aa842095d9959d2b0eb7ce71b7d6122ad6ee638b723d2bb4e66627bf6851aa"
 ]
 url {
   src: "https://github.com/coq-concurrency/pluto/archive/1.1.0.tar.gz"

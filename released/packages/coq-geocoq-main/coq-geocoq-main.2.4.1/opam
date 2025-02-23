@@ -36,7 +36,7 @@ tags: [ "keyword:geometry"
         "keyword:parallel postulates"
         "category:Mathematics/Geometry/General"
         "date:2024-03-03" ]
-extra-files : [[ "_CoqProject.in" "md5=ee7f1852debd8d9621ebafa3c8b25dcc" ]]
+extra-files : ["_CoqProject.in""sha512=1f2926898f38b03f8fc233fbe226e30c94fd27693df82d16ba43ee6afb72600400705774572241d6d381aea56e242ed4b24dc81792287a353385fa9abdfe6c3a"]
 url {
   src: "https://github.com/GeoCoq/GeoCoq/archive/v2.4.1.tar.gz"
   checksum: "md5=14212f17e868a53ec0b6b84feda5c44d"

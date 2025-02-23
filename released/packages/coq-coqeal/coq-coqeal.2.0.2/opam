@@ -21,7 +21,7 @@ depends: [
   "coq-bignums" 
   "coq-paramcoq" {>= "1.1.3"}
   "coq-hierarchy-builder" {>= "1.4.0"}
-  "coq-mathcomp-ssreflect" {>= "2.0"}
+  "coq-mathcomp-ssreflect" {>= "2.0" & < "2.3"}
   "coq-mathcomp-algebra" 
   "coq-mathcomp-multinomials" {>= "2.0"}
   "coq-mathcomp-real-closed" {>= "2.0"}

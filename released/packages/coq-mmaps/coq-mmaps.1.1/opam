@@ -39,3 +39,7 @@ url {
   src: "https://github.com/coq-community/coq-mmaps/releases/download/v1.1/coq-mmaps-1.1.tar.gz"
   checksum: "sha512=55d2949391edf325e872a1ffa3fe55a4cef3120ee4b4d3498b510ffa22c877c4a40549b8d85e9adb1e06a002334c245608ff4d0a505035dc6710d46efe65b65f"
 }
+extra-files: [
+  "class-field-instance.patch"
+  "sha512=e2a31edebd40f3526acd8017dd3aafd623851ca200b4b1d4d29d7a99bddfcbee08fedddcf3120db7e97b29c3c02f8097f68af259d88a8f4df29c24ff98cbef64"
+]

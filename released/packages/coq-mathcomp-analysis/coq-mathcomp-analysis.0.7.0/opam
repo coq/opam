@@ -66,4 +66,8 @@ url {
   src: "https://github.com/math-comp/analysis/archive/0.7.0.tar.gz"
   checksum: "sha512=d970066c54da0e2941f5aefd8c8d79c2c9c4fc08afc771993e72eeb50566f07812501a7e076f53aa2e33822c051b958c4c7b5fc55f3c67aa17e59b5576708645"
 }
+extra-files: [
+  "future-coercion-class-field.patch"
+  "sha512=e407ca51490acf9ef3c3d9a940f5d4f47825ed73ce17b4f7b525aaf8f79db73ec12054a1c65f52bacfb9532dc11f3ae62b1a4155bc0609f94309483e5a4dbc60"
+]
 

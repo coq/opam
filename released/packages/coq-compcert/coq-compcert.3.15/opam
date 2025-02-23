@@ -1,0 +1,56 @@
+opam-version: "2.0"
+synopsis: "The CompCert C compiler (64 bit)"
+maintainer: "Michael Soegtrop and Xavier Leroy"
+authors: "Xavier Leroy <xavier.leroy@college-de-france.fr>"
+license: "INRIA Non-Commercial License Agreement"
+tags: [
+  "category:Computer Science/Semantics and Compilation/Compilation"
+  "category:Computer Science/Semantics and Compilation/Semantics"
+  "keyword:C"
+  "keyword:compiler"
+  "logpath:compcert"
+  "date:2024-12-13"
+]
+homepage: "https://compcert.org/"
+bug-reports: "https://github.com/AbsInt/CompCert/issues"
+depends: [
+  "coq" {>= "8.13.0" & < "8.21~"}
+  "menhir" {>= "20200624" & != "dev"}
+  "ocaml" {>= "4.05.0" & < "5~"}
+  "coq-flocq" {>= "4.1.0" & < "5~"}
+  "coq-menhirlib" {>= "20200624"}
+]
+build: [
+  [
+    "./configure"
+    "amd64-linux" {os = "linux" & arch = "x86_64"}
+    "amd64-macosx" {os = "macos" & arch = "x86_64"}
+    "arm64-linux" {os = "linux" & (arch = "arm64" | arch = "aarch64")}
+    "arm64-macosx" {os = "macos" & (arch = "arm64" | arch = "aarch64")}
+    "amd64-cygwin" {os = "cygwin"}
+    "amd64-cygwin" {os = "win32" & os-distribution = "cygwinports"}
+    "-toolprefix"
+      {os = "win32" & os-distribution = "cygwinports" & arch = "i686"}
+    "x86_64-pc-cygwin-"
+      {os = "win32" & os-distribution = "cygwinports" & arch = "i686"}
+    "-prefix"
+    "%{prefix}%"
+    "-install-coqdev"
+    "-clightgen"
+    "-use-external-Flocq"
+    "-use-external-MenhirLib"
+    "-coqdevdir"
+    "%{lib}%/coq/user-contrib/compcert"
+    "-ignore-coq-version"
+  ]
+  [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
+]
+install: [make "install"]
+dev-repo: "git+https://github.com/AbsInt/CompCert.git"
+url {
+  src: "https://github.com/AbsInt/CompCert/archive/v3.15.tar.gz"
+  checksum: [
+    "sha256=6baae8f69bdbf0192d02fae911207cbde73bb1ff6b9790b1e745be0bd9b2342a"
+    "sha512=bde000d0da4ed5ba1c951a0d6677eb3f1386eb446cd85b59758145910bae2d002316396b12fdd0c11f31da8534fffa6a1dc74272ef6d2a96e245a7f44571c2dc"
+  ]
+}

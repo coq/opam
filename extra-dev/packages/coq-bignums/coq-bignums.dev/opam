@@ -1,22 +1,16 @@
 opam-version: "2.0"
-maintainer: "Laurent.Thery@inria.fr"
+maintainer: "pierre.roux@onera.fr"
 
-homepage: "https://github.com/coq/bignums"
-dev-repo: "git+https://github.com/coq/bignums.git"
-bug-reports: "https://github.com/coq/bignums/issues"
+homepage: "https://github.com/coq-community/bignums"
+dev-repo: "git+https://github.com/coq-community/bignums.git"
+bug-reports: "https://github.com/coq-community/bignums/issues"
 license: "LGPL-2.1-only"
 
-synopsis: "Bignums, the Coq library of arbitrary large numbers"
-description: """
-Provides BigN, BigZ, BigQ that used to be part of Coq standard library
-"""
-
-build: [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
-install: [make "install"]
+synopsis: "Compatibility wrapper for rocq-bignums"
 
 depends: [
-  "ocaml"
-  "coq" {= "dev"}
+  "rocq-bignums" {= version}
+  "coq-stdlib"
 ]
 
 tags: [

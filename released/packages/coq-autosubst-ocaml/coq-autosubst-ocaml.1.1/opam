@@ -1,7 +1,7 @@
 opam-version: "2.0"
-synopsis: "OCaml implementation of Autosubst for Coq"
+synopsis: "OCaml implementation of Autosubst 2 for Coq"
 description: """
-    Autosubst can be used to generate substitution boilerplate code for syntax with binders.
+    Autosubst 2 can be used to generate substitution boilerplate code for syntax with binders.
     It takes language definitions written in signature files and outputs a file that
     contains Coq code implementing the language, the substitution operation, rewriting lemmas
     and a tactic to automatically solve certain substitution goals using the rewriting lemmas.

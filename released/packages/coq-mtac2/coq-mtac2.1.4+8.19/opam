@@ -11,6 +11,7 @@ authors: [
 ]
 license: "MIT"
 synopsis: "Typed tactic language for Coq"
+patches: ["declare-module.patch"]
 build: [
   ["./configure.sh"]
   [make "-j%{jobs}%"]
@@ -28,3 +29,7 @@ url {
     "sha512=4c5f17576bdfa6e127d5901666da640352ad472211bf21cf5ae67944e84ba9bf6306215cfcad83ca2117e29ec40429db8daf7421249e857537a08e827b3c4132"
   ]
 }
+extra-files: [
+  "declare-module.patch"
+  "sha512=1e719907f13bff785fc28bf1a1eb4e1179d71e2e9fb7831c2dd982808e39296af66b6e08b79a65325411aaf04638f6e6d46f9b7bce742b63ea9141db37e925e2"
+]

@@ -61,3 +61,7 @@ url {
   src: "https://github.com/AbsInt/CompCert/archive/v3.8.tar.gz"
   checksum: "sha512=ba669eb2098eb80ba393404f45b814113cf9e1d9497b074f7158c8e3857fdfdf72a95c7b177b1342689cf802efd7e0004356a89bb010cbbf496fca8a4f9fbda7"
 }
+extra-files: [
+  "0001-Configure-the-correct-archiver-to-build-runtime-libc.patch"
+  "sha512=e4e0865341ff067b27e3bf896c4b3479fd1ba926f83597594ae620356e4a0b9da0e85b2ce8712814d61bfbb51de2ae02096f024e9330a1a0ce33de005d3c739c"
+]
