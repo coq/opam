@@ -43,7 +43,7 @@ install: [
 
 url {
   src: "https://github.com/zhang3651/Machine-Proof-of-the-Axiom-of-Choice-and-Its-Equivalent-Propositions/archive/refs/tags/v1.0.tar.gz"
-  checksum: "sha512=5085f92369fbe1d993dabba91a5edca6e53c75eee48cd1a981aab32c4788841aa9f682027b5798803818106e31165fe5fdd424c0d805e8cbd2a0f5c0694f5ec4"
+  checksum: "sha512=e5cb3199b383443bc88bb7a596db5723d51df558efedea20fe9c4c7c6521f1658f28e19fed6b23b243f244380e4d52846e455627ee3df731efad3c9b8fb54e1d"
 }
 
 tags: [
