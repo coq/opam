@@ -37,8 +37,8 @@ tags: [
   "keyword:intuitionistic logic"
   "keyword:proof theory"
   "keyword:propositional quantifiers"
-  "category:CS/Algo/Decision procedures"
-  "category:Math/Logic/Foundations"
-  "category:Math/Logic/Modal Logic"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "category:Mathematics/Logic/Foundations"
+  "category:Mathematics/Logic/Modal logic"
   "logpath:ISL"
 ]
