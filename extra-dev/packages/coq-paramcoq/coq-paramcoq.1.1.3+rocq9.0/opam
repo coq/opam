@@ -1,0 +1,57 @@
+opam-version: "2.0"
+
+maintainer: "Pierre Roux <pierre.roux@onera.fr>"
+homepage: "https://github.com/coq-community/paramcoq"
+dev-repo: "git+https://github.com/coq-community/paramcoq.git"
+bug-reports: "https://github.com/coq-community/paramcoq/issues"
+license: "MIT"
+
+synopsis: "Plugin for generating parametricity statements to perform refinement proofs"
+description: """
+/!\ Paramcoq is no longer actually maintained and released. It is only
+kept as a test case for Rocq's OCaml API. The release for Rocq 9.0
+will be the last one and is known to suffer some universe issues
+(for instance iit no longer enable to compile CoqEAL). Users are
+invited to switch to [coq-elpi](https://github.com/LPCIC/coq-elpi)
+derive.param2. One can look at
+[CoqEAL](https://github.com/coq-community/coqeal) for an example of
+porting. Main current caveat: support for mutual inductives isn't
+implemented yet.
+
+A Rocq plugin providing commands for generating parametricity statements.
+Typical applications of such statements are in data refinement proofs.
+Note that the plugin is still in an experimental state - it is not very user
+friendly (lack of good error messages) and still contains bugs. But it
+is usable enough to "translate" a large chunk of the standard library."""
+
+messages: ["/!\ This is the last release of paramcoq, more details on https://github.com/coq-community/paramcoq/blob/master/README.md"]
+build: [make "-j%{jobs}%"]
+install: [
+  [make "install"]
+  [make "-C" "test-suite" "examples"] {with-test}
+]
+depends: [
+  "coq" {>= "9.0" & < "9.1~" }
+]
+
+tags: [
+  "keyword:paramcoq"
+  "keyword:parametricity"
+  "keyword:OCaml modules"
+  "category:Miscellaneous/Rocq Extensions"
+  "logpath:Param"
+  "date:2024-06-29"
+]
+authors: [
+  "Chantal Keller (Inria, École polytechnique)"
+  "Marc Lasson (ÉNS de Lyon)"
+  "Abhishek Anand"
+  "Pierre Roux"
+  "Emilio Jesús Gallego Arias"
+  "Cyril Cohen"
+  "Matthieu Sozeau"
+]
+url {
+  src: "https://github.com/coq-community/paramcoq/archive/v1.1.3+coq9.0.tar.gz"
+  checksum: "sha512=de4f727f196e473dc975dac54f282ff05a1c4bbbc670121e0f7fe47423206c2038fd3e277ce9a809fe0aa4e48befcc77dd1e39cc595094be50127ed6e0bbb0bf"
+}
