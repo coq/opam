@@ -5,19 +5,39 @@ maintainer: "Mathematical Components <mathcomp-dev@sympa.inria.fr>"
 homepage: "https://math-comp.github.io/"
 bug-reports: "https://github.com/math-comp/math-comp/issues"
 dev-repo: "git+https://github.com/math-comp/math-comp.git"
-license: "CeCILL-B"
+license: "CECILL-B"
 
 build: [ make "-C" "ssreflect" "-j" "%{jobs}%" ]
 install: [ make "-C" "ssreflect" "install" ]
 depends: [
-  ( ( "coq" {>= "8.16" & < "8.17~"} & "elpi" {>= "1.16.5"} ) |
-  # The line above can be removed at the time support for 8.16 is dropped
-    ( "coq" {>= "8.17"}
-      & "elpi" {>= "1.17.0"} ) )
-  "coq-hierarchy-builder" {>= "1.5.0"}
+  ("coq" {>= "8.19" & < "8.21~"}
+  | "rocq-core" {>= "9.0" | = "dev"})
+  # Please keep the "dev" above as it is required for the coq-dev Docker images
+  "elpi" {>= "1.17.0"}
+  "coq-hierarchy-builder" { >= "1.7.0"}
 ]
 
-tags: [ "keyword:small scale reflection" "keyword:mathematical components" "keyword:odd order theorem" "logpath:mathcomp.ssreflect" ]
+tags: [
+  "keyword:small scale reflection"
+  "keyword:mathematical components"
+  "keyword:bigop"
+  "keyword:big operators"
+  "keyword:biomial coefficient"
+  "keyword:integer division theory"
+  "keyword:finite sets"
+  "keyword:functions with finite domain"
+  "keyword:finite graphs"
+  "keyword:quotient types"
+  "keyword:order theory"
+  "keyword:partial order"
+  "keyword:lattices"
+  "keyword:lists"
+  "keyword:ordering and sorting lists"
+  "keyword:prime numbers"
+  "keyword:tuples"
+  "keyword:bounded lists"
+  "logpath:mathcomp.ssreflect"
+]
 authors: [ "The Mathematical Components team" ]
 
 synopsis: "Small Scale Reflection"
