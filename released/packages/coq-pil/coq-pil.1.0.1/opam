@@ -28,7 +28,7 @@ install: [
 
 url {
   src: "https://github.com/hferee/rocq-pil/archive/1.0.1.tar.gz"
-  checksum: "sha256=45f516160f30506e2605fba55ff94c1d5dd53e43815b29b8d04b53119d0b43b2"
+  checksum: "sha256=de73d133b8dd50539ff50208d82df13b0a5d7429f8be9ce27472211a6a0cabac"
 }
 
 tags: [
