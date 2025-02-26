@@ -67,6 +67,10 @@ while [ ! -z "$1" ]; do
             else
               SUCCESSES="$SUCCESSES $PKG_NAME_VERSION";
             fi
+            echo
+            echo Installed files:
+            opam show --list-files "$PKG_NAME" | cut "-b$(opam var prefix | wc -c)-"
+            echo
             echo Removing $PKG_NAME
             opam remove "$PKG_NAME" -y >> $LOG
             set -e
