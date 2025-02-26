@@ -32,7 +32,8 @@ tags: [
   "keyword:effects"
   "keyword:probability"
   "keyword:nondeterminism"
-  "logpath:monae"
+  "logpath:monae.theories"
+  "logpath:monaeImpredicativeSet"
   "date: 2025-02-26"
 ]
 authors: [
