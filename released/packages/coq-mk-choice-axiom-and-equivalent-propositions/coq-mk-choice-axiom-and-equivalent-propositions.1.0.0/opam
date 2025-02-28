@@ -1,0 +1,57 @@
+
+opam-version: "2.0"
+synopsis: "Machine-Proof-of-the-Axiom-of-Choice-and-Its-Equivalent-Propositions"
+description: """
+The axiom of choice is an axiom about the existence of mappings in set theory.
+It was first proposed by Zermelo in 1904 and used to prove the well-ordering theorem.
+The axiom of choice plays an important role in modern mathematics and is closely related to many profound mathematical conclusions.
+Without the axiom of choice, it is even impossible to determine whether two sets can compare the number of elements,
+whether the product of non-empty sets is non-empty, whether a linear space must have a set of bases, whether a ring must have a maximal ideal, etc.
+The axiom of choice has multiple equivalent theorems, including Tukey lemma, Hausdorf maximum principle, Zermelo assumption, Zorn lemma, and the well-ordering theorem.
+The important Tychonoff product theorem in topology is a more profound application of the axiom of choice.
+Starting from the axiom of choice, we prove Tukey lemma, Hausdorff maximum principle, the maximum principle, Zermelo assumption, Zorn lemma,
+and the well-ordering theorem in turn, and then regard the axiom of choice as a theorem,
+which is respectively represented by Tukey lemma, Zermelo maximum principle, Zorn lemma, and the well-ordering theorem.
+Assumptions and the well-ordered theorem prove the axiom of choice, completing the proof of the entire cycle strategy, thus showing that the above propositions are equivalent to the axiom of choice.
+The manual proof process of these propositions is standard and can be found in related monographs or textbooks on topology or set theory.
+"""
+
+homepage: "https://github.com/zhang3651/Machine-Proof-of-the-Axiom-of-Choice-and-Its-Equivalent-Propositions"
+dev-repo: "git+https://github.com/zhang3651/Machine-Proof-of-the-Axiom-of-Choice-and-Its-Equivalent-Propositions.git"
+bug-reports: "https://github.com/zhang3651/Machine-Proof-of-the-Axiom-of-Choice-and-Its-Equivalent-Propositions/issues"
+maintainer: "dgw@bupt.edu.cn"
+authors: [
+  "Wensheng Yu"
+  "Tianyu Sun"
+  "Yaoshun Fu"
+  "Sheng Yan"
+  "Si Chen"
+  "Ce Zhang"
+]
+license: "LGPL-2.1-only"
+
+depends: [
+  "coq" {>= "8.20"}
+]
+
+build: [
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/zhang3651/Machine-Proof-of-the-Axiom-of-Choice-and-Its-Equivalent-Propositions/archive/refs/tags/v1.0.0.tar.gz"
+  checksum: "sha512=d1af98ae9272bbb97a4a6045fb7e442c13645ae9751ccd8b6ee98ec4b316889d4938c0a93c66c4ad54f43cd8e0d17b0143648e7cb50b9dc14dcf4ed4e427530f"
+}
+
+tags: [
+  "keyword:set theory"
+  "keyword:choice axiom"
+  "keyword:Morse-Kelley"
+  "keyword:MK"
+  "category:Mathematics/Logic/Set theory"
+  "date:2025-02-28"
+  "logpath:MKACs"
+]
