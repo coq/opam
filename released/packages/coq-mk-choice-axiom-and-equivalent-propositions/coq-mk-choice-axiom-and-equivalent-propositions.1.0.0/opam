@@ -28,7 +28,7 @@ authors: [
   "Si Chen"
   "Ce Zhang"
 ]
-license: "LGPL-2.1"
+license: "LGPL-2.1-only"
 
 depends: [
   "coq" {>= "8.20"}
