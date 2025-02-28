@@ -14,7 +14,8 @@ the Coq proof-assistant and using the Mathematical Components library."""
 build: [make "-C" "classical" "-j%{jobs}%"]
 install: [make "-C" "classical" "install"]
 depends: [
-  "coq" { (>= "8.19") }
+  ("coq" {>= "8.19" & < "8.21~"}
+  | "rocq-core" { (>= "9.0" & < "9.1~") | (= "dev") })
   "coq-mathcomp-ssreflect" { (>= "2.1.0") }
   "coq-mathcomp-fingroup"
   "coq-mathcomp-algebra"
@@ -25,7 +26,6 @@ depends: [
 tags: [
   "category:Mathematics/Logic/Classical logic"
   "keyword:classical logic"
-  "keyword:classical"
   "keyword:logic"
   "keyword:sets"
   "keyword:set theory"

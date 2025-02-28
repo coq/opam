@@ -7,10 +7,14 @@ bug-reports: "https://github.com/math-comp/hierarchy-builder/issues"
 dev-repo: "git+https://github.com/math-comp/hierarchy-builder"
 
 build: [ [ make "build"]
-         [ make "test-suite" ] {with-test}
+         [ make "test-suite" ] {with-test & rocq-core:installed}
        ]
 install: [ make "install" ]
-depends: [ "coq-elpi" {>= "1.15"} "coq" {= "dev"} ]
+depends: [
+  ("coq" {>= "8.18" & < "8.20~"} & "coq-elpi" {>= "2.0"}
+  | "coq" {>= "8.20" & < "8.21~"} & "coq-elpi" {>= "2.4" | = "dev"}
+  | "rocq-core" {>= "9.0" | = "dev"} & "coq-elpi" {>= "2.4" | = "dev"})
+]
 depexts: [
   [ "wdiff" ] {os-family = "debian" & with-test}
 ]
