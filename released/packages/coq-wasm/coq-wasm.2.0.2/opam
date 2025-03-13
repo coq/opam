@@ -1,0 +1,48 @@
+opam-version: "2.0"
+synopsis: "Wasm formalisation in Coq"
+description:
+  "Wasm formalisation in Coq, following the AFP formalisation of Conrad Watt"
+maintainer: ["Xiaojia Rao" "Martin Bodin"]
+authors: [
+  "Martin Bodin" "Philippa Gardner" "Jean Pichon" "Xiaojia Rao" "Conrad Watt"
+]
+license: "MIT"
+homepage: "https://github.com/WasmCert/WasmCert-Coq"
+bug-reports: "https://github.com/WasmCert/WasmCert-Coq/issues"
+depends: [
+  "dune" {>= "3.0"}
+  "coq" {>= "8.20" & < "8.21~"}
+  "coq-compcert" {>= "3.14"}
+  "coq-ext-lib" {>= "0.11.8"}
+  "coq-mathcomp-ssreflect" {< "2.0.0~"}
+  "coq-parseque" {>= "0.2.0"}
+  "cmdliner" {>= "1.1.0"}
+  "linenoise" {>= "1.4.0"}
+  "mdx" {>= "1.9.0"}
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/WasmCert/WasmCert-Coq.git"
+url {
+  src: "https://github.com/WasmCert/WasmCert-Coq/archive/refs/tags/v2.0.2.tar.gz"
+  checksum: "sha256=6b63db9ba1749c6a7268c22e21ab680237d0130704ba76b293052ad488454ff5"
+}
+tags: [
+  "keyword:WebAssembly"
+  "category:Computer Science/Semantics and Compilation/Semantics"
+  "date:2025-03-13"
+  "logpath:Wasm"
+]
