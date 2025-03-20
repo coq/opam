@@ -38,6 +38,6 @@ authors: [
   "Pierre Roux"
 ]
 url {
-  src: "https://github.com/math-comp/algebra-tactics/archive/refs/tags/1.2.3.tar.gz"
-  checksum: "sha256=a556875e9ed8db1f77474de77c6ae56142c4477a9f11438d70e1f346c90001e4"
+  src: "https://github.com/math-comp/algebra-tactics/archive/refs/tags/1.2.4.tar.gz"
+  checksum: "sha512=1776f6fd142df8018546087f01d412e82fb629f7c653794dc2669b2016cd026e2e9c660a54211e1875d411092750dc6da8c2168ec3b1e1a5a810ee04676429bb"
 }
