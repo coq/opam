@@ -1,0 +1,41 @@
+opam-version: "2.0"
+maintainer: "matthieu.sozeau@inria.fr"
+homepage: "https://metarocq.github.io/metarocq"
+dev-repo: "git+https://github.com/MetaRocq/metarocq.git#main"
+bug-reports: "https://github.com/MetaRocq/metarocq/issues"
+authors: ["Abhishek Anand <aa755@cs.cornell.edu>"
+          "Danil Annenkov <danil.v.annenkov@gmail.com>"
+          "Simon Boulier <simon.boulier@inria.fr>"
+          "Cyril Cohen <cyril.cohen@inria.fr>"
+          "Yannick Forster <forster@ps.uni-saarland.de>"
+          "Jason Gross <jgross@mit.edu>"
+          "Fabian Kunze <fkunze@fakusb.de>"
+          "Meven Lennon-Bertrand <Meven.Bertrand@univ-nantes.fr>"
+          "Kenji Maillard <kenji.maillard@inria.fr>"
+          "Gregory Malecha <gmalecha@gmail.com>"
+          "Jakob Botsch Nielsen <Jakob.botsch.nielsen@gmail.com>"
+          "Matthieu Sozeau <matthieu.sozeau@inria.fr>"
+          "Nicolas Tabareau <nicolas.tabareau@inria.fr>"
+          "Théo Winterhalter <theo.winterhalter@inria.fr>"
+]
+license: "MIT"
+build: [
+  ["bash" "./configure.sh"]
+  [make "-j" "%{jobs}%" "utils"]
+]
+install: [
+  [make "-C" "utils" "install"]
+]
+depends: [
+  "stdlib-shims"
+  "rocq-prover" { >= "9.0~" & != "9.0.dev" & < "10" }
+  "coq-equations" { = "1.3.1+9.0" }
+]
+synopsis: "The utility library of Template Rocq and PCUIC"
+description: """
+MetaRocq is a meta-programming framework for Rocq.
+"""
+url {
+  src: "https://github.com/MetaRocq/metarocq/releases/download/v1.4-9.0/v1.4-9.0.tar.gz"
+  checksum: "sha512=47adfad51b4abaa91bc7875848516e2870b6258ff0c4376ce7afb9d7e3ba209b6501c2506c952f369ec5061d786a474990abb26033a98305b4e3264329f3a1e9"
+}
