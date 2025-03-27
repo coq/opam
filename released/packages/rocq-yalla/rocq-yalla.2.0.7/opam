@@ -1,0 +1,43 @@
+opam-version: "2.0"
+synopsis: "Yalla library"
+description: """
+  YALLA: an LL library for the Rocq Prover
+  Yet Another deep embedding of Linear Logic in Rocq
+"""
+
+homepage: "https://perso.ens-lyon.fr/olivier.laurent/yalla/"
+dev-repo: "git+https://github.com/olaure01/yalla.git"
+bug-reports: "https://github.com/olaure01/yalla/issues"
+doc: "https://perso.ens-lyon.fr/olivier.laurent/yalla/"
+maintainer: "olivier.laurent@ens-lyon.fr"
+authors: [
+  "Olivier Laurent"
+]
+license: "LGPL-3.0-or-later"
+
+depends: [
+  "rocq-core" { >= "9.0" & < "9.1~" }
+  "rocq-stdlib" { >= "9.0" & < "9.1~" }
+]
+
+build: [
+  ["./configure"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]
+
+url {
+  src: "https://github.com/olaure01/yalla/archive/v2.0.7.tar.gz"
+  checksum: "sha256=400b5edb0740c6d9961206480c92f57ff3b073a40b5d81b0493c4827129b0481"
+}
+
+tags: [
+  "keyword:linear logic"
+  "keyword:metatheory"
+  "keyword:cut elimination"
+  "category:Mathematics/Logic/Foundations"
+  "date:2025-03-26"
+  "logpath:Yalla"
+]
