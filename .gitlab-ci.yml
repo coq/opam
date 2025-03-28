@@ -21,9 +21,8 @@ before_script:
   - export OPAM_ROOT_DIR=${HOME}/opam-root-${COMPILER}-${OPAM_VERSION}-${OPAM_VARIANT}
   - export OPAM_ROOT_CACHE=${HOME}/opam-cache/cache-${COMPILER}-${OPAM_VERSION}-${OPAM_VARIANT}.tgz
   - apt-get update -qy
-  - apt-get install libgtksourceview2.0-dev -y || true # gone with Debian bullseye
   - apt-get install build-essential -y # missing with Debian bullseye
-  - apt-get install unzip libgtksourceview-3.0-dev libncurses5-dev curl jq ruby bubblewrap time libgmp-dev coinor-csdp libstring-shellquote-perl libipc-system-simple-perl automake autoconf libtool wdiff -y # wdiff is used in test-suite of hierarchy-builder
+  - apt-get install unzip libgtksourceview-3.0-dev libncurses5-dev curl jq ruby bubblewrap time libgmp-dev coinor-csdp libstring-shellquote-perl libipc-system-simple-perl automake autoconf libtool wdiff aspcud -y # wdiff is used in test-suite of hierarchy-builder
   - apt-get install clang -y
   - test -e $OPAM_ROOT_CACHE || scripts/opam-coq-init
   - curl -L https://github.com/ocaml/opam/releases/download/${OPAM_VERSION}/opam-${OPAM_VERSION}-x86_64-linux >/usr/local/bin/opam
@@ -78,107 +77,33 @@ opam-lint:
     - scripts/opam-coq-list-pr-files | xargs scripts/opam-coq-lint
 
 # Build
-opam-build:4.07.1:
+opam-build:4.14.2:
   extends: .opam-build
   variables:
-    COMPILER: "4.07.1"
+    COMPILER: "4.14.2"
   except:
     - web
 
-opam-build:4.11.2:
+opam-build:4.14.2:minimal:
   extends: .opam-build
   variables:
-    COMPILER: "4.11.2"
+    COMPILER: "4.14.2"
+    OPAMSOLVERTIMEOUT: "300"
+    EXTRA_OPAM_OPTION: "--solver=aspcud --criteria=-count(removed),-count(down),-count(changed),+sum(changed,version-lag)"
   except:
     - web
 
-opam-build:4.14.0:
+opam-build:5.2.1:
   extends: .opam-build
   variables:
-    COMPILER: "4.14.0"
-  except:
-    - web
-
-opam-build:5.0.0:
-  extends: .opam-build
-  variables:
-    COMPILER: "5.0.0"
+    COMPILER: "5.2.1"
   except:
     - web
 
 opam-build:any:
   extends: .opam-build
   variables:
-    COMPILER: "4.09.0"
+    COMPILER: "4.11.2"
     EXTRA_OPAM_OPTION: "--update-invariant"
   except:
     - web
-
-# Build without timeout
-opam-build-no-timeout:4.05.0:
-  extends: .opam-build
-  variables:
-    COMPILER: "4.05.0"
-  only:
-    - web
-  tags:
-    - no-timeout
-
-opam-build-no-timeout:4.07.1:
-  extends: .opam-build
-  variables:
-    COMPILER: "4.07.1"
-  only:
-    - web
-  tags:
-    - no-timeout
-
-opam-build-no-timeout:4.09.0:
-  extends: .opam-build
-  variables:
-    COMPILER: "4.09.0"
-  only:
-    - web
-  tags:
-    - no-timeout
-
-opam-build-no-timeout:4.11.2:
-  extends: .opam-build
-  variables:
-    COMPILER: "4.11.2"
-  only:
-    - web
-  tags:
-    - no-timeout
-
-opam-build-no-timeout:4.13.1:
-  extends: .opam-build
-  variables:
-    COMPILER: "4.13.1"
-  only:
-    - web
-  tags:
-    - no-timeout
-
-opam-build-no-timeout:any:
-  extends: .opam-build
-  variables:
-    COMPILER: "4.09.0"
-    EXTRA_OPAM_OPTION: "--update-invariant"
-  only:
-    - web
-  tags:
-    - no-timeout
-
-# JSON data
-# json-data:
-#   image: nixos/nix:2.3.12
-#   cache: {}
-#   before_script: []
-#   script:
-#     - nix-shell --run "dune exec --profile=release -- archive2web released extra-dev > coq-packages.json"
-#   artifacts:
-#     name: "$CI_JOB_NAME"
-#     paths:
-#       - coq-packages.json
-#     expire_in: 1 year
