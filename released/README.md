@@ -1,6 +1,9 @@
 # Released repository
-The repository for all the released packages.
 
-    opam repo add coq-released https://coq.inria.fr/opam/released
+The repository for all released packages. This is the recommended default.
 
-If you want to add your package, please do a pull-request to this repository.
+    ```
+    opam repo add rocq-released https://rocq-prover.org/opam/released
+    ```
+
+If you want to add your package, please do a pull request to this repository.

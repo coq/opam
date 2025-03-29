@@ -1,6 +1,9 @@
 # Core-Dev repository
-The repository for the development versions of Coq. Use it at your own risks.
 
-    opam repo add coq-core-dev https://coq.inria.fr/opam/core-dev
+The repository for development versions of the Rocq Prover and Coq. Use it at your own risk.
 
-If you want to add your Coq version, please do a pull-request to this repository.
+    ```
+    opam repo add rocq-core-dev https://rocq-prover.org/opam/core-dev
+    ```
+
+If you want to add your Rocq Prover version, please do a pull-request to this repository.
