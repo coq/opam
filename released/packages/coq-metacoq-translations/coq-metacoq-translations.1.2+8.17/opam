@@ -38,6 +38,6 @@ from type theory to type theory, e.g. parametricity and the `cross-bool`
 translation that invalidates functional extensionality.
 """
 url {
-  src: "https://github.com/MetaCoq/metacoq/archive/refs/tags/v1.2-8.17.tar.gz"
-  checksum: "sha512=a5ce2f5d94120a00703331a3cfdb7d51653fb44adeba89fa84b5f76e711ee9f582a22551f81fd144dc974e3f05e58d85cd716f8fcf69ec89923bc64774d82668"
+  src: "https://github.com/MetaRocq/metarocq/releases/download/v1.2-8.17/metacoq-1.2-8.17.tar.gz"
+  checksum: "sha512=ef36dfe0e7864c67e223484f400f38531b41059c6e6e206a329b4dfa2c29e36ee133a711656fec3edcb37b046e5602d1a81c9989c399729f4547f19e854ccdbd"
 }

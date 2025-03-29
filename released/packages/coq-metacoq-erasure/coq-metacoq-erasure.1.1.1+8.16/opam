@@ -43,6 +43,6 @@ into a dummy `tBox` constructor, following closely P. Letouzey's PhD
 thesis.
 """
 url {
-  src: "https://github.com/MetaCoq/metacoq/archive/refs/tags/v1.1.1-8.16.tar.gz"
-  checksum: "sha512=82397806d842f0839eb82066ed5dfe9a54b49989ca7efdab8b861a8d8bea6ec3739746b0d338857d4df01790a636f106601ed8e01ebbf9b02e7e4e76ca47d6fe"
+  src: "https://github.com/MetaRocq/metarocq/releases/download/v1.1.1-8.16/metacoq-1.1.1-8.16.tar.gz"
+  checksum: "sha512=babae48068b31833a695ddbf7cac1043ccab778dcb5ea1cd6db3277f77f994a926636b10e58254615c88d080f69fc1885ea11d5bc8743e313e621aab2c9e48db"
 }

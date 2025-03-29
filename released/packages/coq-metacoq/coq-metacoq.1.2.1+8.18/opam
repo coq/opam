@@ -41,6 +41,6 @@ a safe type checker and verified erasure for PCUIC and example translations.
 See individual packages for more detailed descriptions.
 """
 url {
-  src: "https://github.com/MetaCoq/metacoq/archive/v1.2.1-8.18.tar.gz"
-  checksum: "sha256=dd129826edd22e611f84cdc82f6486fc57343e13c8223ce041a3d0574b6f5262"
+  src: "https://github.com/MetaRocq/metarocq/releases/download/v1.2.1-8.18/metacoq-1.2.1-8.18.tar.gz"
+  checksum: "sha512=3b2a6c1cb8005a7f675c47209b17f0b3f2ded6b3ae324f6a6782f0b23e5e5e5e25ac1d1c8a97be1c9b89b4490dda80567a3f57c254314a185a01ca9f0fc94d82"
 }

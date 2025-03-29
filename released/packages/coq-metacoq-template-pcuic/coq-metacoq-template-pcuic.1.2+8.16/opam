@@ -34,6 +34,6 @@ synopsis: "Translations between Template Coq and PCUIC and proofs of correctness
 description: """
 """
 url {
-  src: "https://github.com/MetaCoq/metacoq/archive/refs/tags/v1.2-8.16.tar.gz"
-  checksum: "sha512=1fc976740f2ff5a6c4137cf4722e09cae5765d0d71f55e6a020883218396856558a6534aa7d2bd192b60778427edbbc2f096a0e738e95551808702613edbbb31"
+  src: "https://github.com/MetaRocq/metarocq/releases/download/v1.2-8.16/metacoq-1.2-8.16.tar.gz"
+  checksum: "sha512=80739c1424f5c28afadfcc581fa7016bc26f28f3a8b79597abc52ba5cc404cbe3728cccb260ab5ff7ed71ecb9a66690bcaa8d9cc6c0b79d2d1b5e660c34d5008"
 }

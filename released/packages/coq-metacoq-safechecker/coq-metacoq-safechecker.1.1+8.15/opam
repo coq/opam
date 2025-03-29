@@ -36,6 +36,6 @@ The SafeChecker modules provides a correct implementation of
 weak-head reduction, conversion and typechecking of Coq definitions and global environments.
 """
 url {
-  src: "https://github.com/MetaCoq/metacoq/archive/refs/tags/v1.1-8.15.tar.gz"
-  checksum: "sha512=e75c1171fb6a41b21fc5c3f8f788698939dfa8abe950f16afaee2425426236e61be464f4eb69a2d36430fe6b51e980e83b97e88e58a1aa78ae253e249a49d49b"
+  src: "https://github.com/MetaRocq/metarocq/releases/download/v1.1-8.15/metacoq-1.1-8.15.tar.gz"
+  checksum: "sha512=ebb88e267033fc6167f41d51ccb233c171eb70775ba3b04aa3c7517ff073be31dcdf331e9901897d6c3e5893f6d12ec48d5851d44c23b1ec8c7e7d3d505eb360"
 }
